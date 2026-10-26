@@ -2,32 +2,32 @@
 
 - **Duración total:** 60 Minutos
 - **Alumna:** Anabela Hotian (Traductora de Inglés · Localization & Project Management)
-- **Objetivo del Mentor:** Construir los cimientos técnicos de ingeniería de software moderna (Frontend, Backend, APIs REST, Git, CI/CD, Cloud/AWS, Ambientes y Bases de Datos) y conectar directamente el rol actual de Anabela como Service Delivery Manager (SDM) con el mundo IT (IT Service Delivery Manager / Technical PM / Agile Delivery), incluyendo qué camino tomar con AWS.
+- **Objetivo del Mentor:** Construir los cimientos técnicos de ingeniería de software moderna (Frontend, Backend, APIs REST, Git, CI/CD, Cloud/AWS, Ambientes y Bases de Datos) con una visión general y versátil del mundo IT, para que Anabela entienda cómo funcionan los equipos y sistemas tecnológicos sin importar qué camino específico decida tomar.
 - **Total de Diapositivas:** 18 slides (con guion verbatim + acción en pantalla + puente exacto de transición a la siguiente diapositiva)
 
 ## 🧭 Cronograma y Bloques de la Sesión
 
 | Bloque Horario | Módulo | Diapositivas | Foco Pedagógico |
 | :--- | :--- | :--- | :--- |
-| **00 - 10 min** | De Software Clásico a la Era IA & Cloud (AWS) | Slides 1 a 4 | Bienvenida, conexión Service Delivery -> IT, el paper 'Attention Is All You Need' (2017) y el salto a Cloud (AWS) + consejo sobre qué curso de AWS hacer. |
-| **10 - 25 min** | Arquitectura Web, APIs, HTTP & SLAs | Slides 5 a 7 | Cómo hablan los sistemas: APIs REST, verbos HTTP y cómo usar los códigos de estado (200, 400, 500) para Incident Management y SLAs. |
-| **25 - 42 min** | Ciclo DevOps, Roles & Git | Slides 8 a 13 | El viaje de un feature por CI/CD, dinámicas de roles (Startup vs. Corporación), puntos de control de Delivery/PM y ramas de Git. |
-| **42 - 50 min** | Infraestructura AWS: Ambientes & Datos | Slides 14 a 15 | Aislamiento de ambientes en la nube (Dev, Staging, Prod) y elección estratégica entre SQL, NoSQL y Bases Vectoriales. |
-| **50 - 60 min** | Taller CV (SDM -> IT), Entrevistas & Cierre | Slides 16 a 18 | Traducción del perfil de Service Delivery Manager al léxico IT/Cloud/AI, simulacro de 3 preguntas rompe-entrevistas y hoja de ruta. |
+| **00 - 10 min** | De Software Clásico a la Era IA & Cloud | Slides 1 a 4 | Bienvenida, evolución del software (el paper 'Attention Is All You Need' de 2017) y el salto de Monolitos a Cloud (AWS) y Microservicios. |
+| **10 - 25 min** | Arquitectura Web, APIs & HTTP | Slides 5 a 7 | Cómo hablan los sistemas entre sí: APIs REST, verbos HTTP (GET, POST, PUT, DELETE) y códigos de estado (200, 400, 500). |
+| **25 - 42 min** | Ciclo DevOps, Roles & Git | Slides 8 a 13 | El viaje de un feature por CI/CD, dinámicas de roles (Startup vs. Corporación), puntos de control en un proyecto y ramas de Git. |
+| **42 - 50 min** | Infraestructura: Ambientes & Datos | Slides 14 a 15 | Aislamiento de ambientes (Dev, Staging, Prod) y elección estratégica entre SQL, NoSQL y Bases Vectoriales. |
+| **50 - 60 min** | Taller CV, Entrevistas & Cierre | Slides 16 a 18 | Cómo traducir experiencia de gestión al léxico IT/Agile, simulacro de 3 preguntas rompe-entrevistas y hoja de ruta. |
 
 ---
 
 ## Slide 1: Portada: De la Gestión Tradicional a la Era de la IA
-- **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Bienvenida · Service Delivery -> IT · Hoja de Ruta 4 Sesiones
+- **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Bienvenida · Panorama General IT · Hoja de Ruta 4 Sesiones
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Hola Anabela, ¡bienvenida a nuestra primera sesión! Armé este recorrido de cuatro encuentros pensando específicamente en el punto en el que estás hoy: vos ya venís trabajando como **Service Delivery Manager (SDM)** en una industria súper exigente, manejando clientes globales, SLAs, tiempos de entrega, calidad y coordinación de equipos. Y como tu objetivo es meterte de lleno en el **mundo IT** —ya sea como *IT Service Delivery Manager*, *Technical PM* o *Agile Delivery Manager*— y además te habían ofrecido hacer un curso de **AWS**, hoy vamos a conectar todos esos puntos. Te vas a dar cuenta de que el 70% de lo que hace un líder de Delivery en software vos ya lo sabés hacer; lo único que te falta es dominar el vocabulario técnico (APIs, Cloud/AWS, CI/CD, Git, arquitecturas de IA) para hablar de igual a igual con ingenieros y entender qué pasa adentro de los sistemas."
+> "Hola Anabela, ¡bienvenida a nuestra primera sesión! La idea de estos cuatro encuentros es darte un mapa mental súper claro, general y práctico de cómo funciona por dentro el mundo de IT hoy: cómo se construye el software, qué hace cada rol técnico en un equipo ágil, qué es la nube (como AWS) y cómo se integran los sistemas de Inteligencia Artificial. Más allá de qué camino específico decidas tomar más adelante o cómo quieras aplicar esto en tu carrera, entender este lenguaje técnico te va a permitir hablar de igual a igual con cualquier equipo de tecnología y entender qué pasa atrás de cualquier plataforma digital."
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Mostrá la línea de tiempo inferior de las 4 sesiones (1. DevOps & Cloud -> 2. IA & RAG -> 3. Agentes Autónomos -> 4. ROI, Evals & Entrevistas).
 
 ### 🔗 Puente de Conexión → Slide 2 (La Ola de la IA Generativa & El Paper Fundacional (2017))
-> **"Antes de meternos en los servidores de AWS y en cómo trabaja un equipo de desarrollo día a día, miremos la foto grande de por qué hoy todas las empresas de tecnología están reestructurando sus servicios. Pasemos a la Slide 2."**
+> **"Antes de meternos en qué hace un equipo técnico día a día, miremos la foto grande de cómo evolucionó la tecnología hasta hoy. Pasemos a la Slide 2."**
 
 ---
 
@@ -54,24 +54,24 @@
 ### ⚡ Dinámica / Interacción en Pantalla
 - Destacá la frase central dorada y cómo el modelo de IA vive 'adentro' de una arquitectura de software clásica.
 
-### 🔗 Puente de Conexión → Slide 4 (El Gran Salto Temporal: 2012 vs. 2026 & El Rol de AWS)
+### 🔗 Puente de Conexión → Slide 4 (El Gran Salto Temporal: 2012 vs. 2026)
 > **"Para entender cómo trabajan hoy los developers sobre estos cimientos, veamos cómo cambió la forma de construir software en los últimos diez años. Vamos a la Slide 4."**
 
 ---
 
-## Slide 4: El Gran Salto Temporal: 2012 vs. 2026 & El Rol de AWS
-- **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Waterfall vs Agile · Monolito vs Microservicios · AWS Cloud Practitioner · IT Service Delivery
+## Slide 4: El Gran Salto Temporal: 2012 vs. 2026
+- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Waterfall vs Agile · Monolito vs Microservicios · AWS & Cloud Native
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Fijate este contraste porque acá empieza tu mundo como **Service Delivery Manager en IT**. Hace diez o doce años dominaba el modelo 'Waterfall' y la arquitectura 'Monolítica': toda la aplicación estaba atada adentro de un único bloque gigante de código corriendo en servidores físicos comprados por la empresa. Si había un pico de clientes o se rompía un disco rígido, el servicio se caía por horas y se incumplía el SLA con el cliente. Hoy en 2026 trabajamos con **Microservicios en la Nube (Cloud)** y metodologías Ágiles: el sistema se divide en piezas independientes y vive en **AWS (Amazon Web Services)**, Azure o Google Cloud.
+> "Fijate este contraste porque es clave en cualquier charla de IT. Hace diez o doce años dominaba el modelo 'Waterfall' (Cascada) y la arquitectura 'Monolítica': toda la aplicación estaba atada adentro de un único bloque gigante de código en un servidor físico propio de la empresa. Si un programador tocaba una coma en el módulo de reportes y metía un error, se caía toda la plataforma entera. Hoy en 2026 trabajamos con 'Microservicios en la Nube (Cloud)' y metodologías Ágiles: dividimos el sistema en piezas chiquitas e independientes.
 
-Y acá me detengo en algo que me habías comentado sobre la posibilidad de hacer un **curso de AWS**: ¡hacelo sin dudarlo, pero elegí el enfoque correcto para tu rol! En el mundo IT, un Service Delivery Manager o PM **no entra a la consola de AWS a programar redes ni configurar servidores Linux** (eso lo hace el ingeniero DevOps o Cloud Architect). ¿Para qué te sirve AWS a vos como SDM? Para tres cosas clave: 1) **SLAs y Alta Disponibilidad**: entender qué significa que un servicio esté en múltiples zonas para garantizar un 99.9% de Uptime al cliente; 2) **Costos y FinOps**: entender cómo factura AWS por uso (cómputo, almacenamiento, tráfico y llamadas a IA) para cuidar el margen de rentabilidad de tu cuenta; y 3) **Lenguaje común con el equipo técnico**: cuando un ingeniero te diga *'se llenó el bucket de S3'*, *'escalamos las instancias EC2'* o *'desplegamos en AWS Lambda'*, saber exactamente de qué componente te está hablando. Por eso, el curso o certificación ideal para vos es el **AWS Certified Cloud Practitioner (CLF-C02)**: es el curso oficial pensado específicamente para roles de gestión, Service Delivery y negocio en IT."
+Y mirá las tres tarjetas de abajo porque son palabras que vas a escuchar todo el tiempo en IT: 1) **AWS / Cloud** (Amazon Web Services, Azure o Google Cloud): en vez de comprar servidores físicos, las empresas alquilan capacidad de cómputo, bases de datos y almacenamiento en la nube por segundo (si en algún momento hacés ese curso introductorio de AWS que habías visto, como el *Cloud Practitioner*, te da justamente este mapa general de qué piezas existen en la nube y cómo se cobran, sin necesidad de programar); 2) **Docker**: es como una caja estándar donde el programador empaqueta su código para que funcione igual en su compu que en AWS; y 3) **Kubernetes**: el director de orquesta que maneja cientos de esas cajas automáticamente cuando sube el tráfico."
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Hacé clic sobre el diagrama comparativo a la izquierda para abrirlo en pantalla completa (Lightbox), y luego detenete especialmente en la primera tarjeta inferior ('AWS / Cloud - Clave IT SDM') para responder su duda sobre el curso de AWS.
+- Hacé clic sobre el diagrama comparativo a la izquierda para abrirlo en pantalla completa (Lightbox), y luego recorré las 3 tarjetas inferiores del Glosario de Infraestructura (AWS / Cloud, Docker, Kubernetes).
 
 ### 🔗 Puente de Conexión → Slide 5 (APIs: El Pegamento del Software Moderno)
-> **"Ahora bien: si en AWS tenemos nuestro sistema dividido en múltiples piezas y servidores independientes, ¿cómo hacen esas piezas para hablar entre sí y pasarse información en milisegundos? Ahí entra el concepto más importante para gestionar integraciones en IT: las APIs. Pasemos a la Slide 5."**
+> **"Pero si ahora el sistema está dividido en piezas independientes que viven en distintos servidores en la nube, ¿cómo hacen esas piezas para hablar entre sí y pasarse información? Ahí entra el concepto más importante de todos: las APIs. Pasemos a la Slide 5."**
 
 ---
 
@@ -98,22 +98,22 @@ Y acá me detengo en algo que me habías comentado sobre la posibilidad de hacer
 ### ⚡ Dinámica / Interacción en Pantalla
 - Recorré las 4 tarjetas (GET en azul, POST en verde, PUT/PATCH en naranja, DELETE en rojo) relacionándolas con acciones cotidianas de una plataforma.
 
-### 🔗 Puente de Conexión → Slide 7 (Códigos de Estado HTTP: El Semáforo de SLAs e Incidentes)
+### 🔗 Puente de Conexión → Slide 7 (Códigos de Estado HTTP: El Semáforo de la Web)
 > **"Cuando el mesero (la API) vuelve de la cocina hacia la pantalla, antes de darte el plato te muestra un número de tres dígitos para avisarte si salió todo bien o si hubo un accidente. Vamos a la Slide 7 para ver el Semáforo de los Códigos de Estado."**
 
 ---
 
-## Slide 7: Códigos de Estado HTTP: El Semáforo de SLAs e Incidentes
-- **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** 200 OK · 400 Bad Request · 500 Server Error · Incident Management & SLA
+## Slide 7: Códigos de Estado HTTP: El Semáforo de la Web
+- **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** 200 OK · 400 Bad Request · 401/403 Auth · 500 Server Error
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Mirá cómo esto conecta directo con tu trabajo de **Service Delivery Manager**. En IT, vos tenés un **SLA (Service Level Agreement)** firmado con el cliente —por ejemplo, que la plataforma esté disponible el 99.9% del mes—. Cuando un cliente te escala un ticket urgente diciendo *'no anda el sistema'*, mirar el código HTTP en el reporte técnico te dice en 5 segundos qué pasó y a quién llamar: Si devuelve **2xx (200 OK)**, el servicio funciona perfecto. Si devuelve **4xx (400 Bad Request, 401 Unauthorized, 404 Not Found)**, ¡nuestro servidor en AWS NO está caído! El problema está del lado del cliente: mandó mal un dato, se le venció la contraseña/token o está entrando a un link viejo; no rompe tu SLA de infraestructura. En cambio, si devuelve **5xx (500 Internal Server Error o 503 Service Unavailable)**, ¡alerta roja de Incident Management!: la cocina (nuestro Backend o base de datos en AWS) se cayó. Ahí sí corre el reloj del SLA, activás al equipo de guardia (On-Call / DevOps) y comunicás estado al cliente."
+> "Esto te da un superpoder enorme para diagnosticar problemas en IT sin saber programar. Cuando algo falla en una plataforma, el código numérico te dice inmediatamente de quién es la culpa: Si empieza con **2 (200 OK)**, luz verde: todo funcionó perfecto. Si empieza con **4 (errores 4xx)**, nuestros servidores están sanos; el error vino del lado del usuario o del pedido: por ejemplo, **400 Bad Request** es que se envió un formulario con datos inválidos; **401 o 403** es falta de permisos; y el famoso **404 Not Found** es que pidió una página o recurso que no existe. En cambio, si empieza con **5 (500 Internal Server Error o 503)**, ¡alerta roja!: la cocina se prendió fuego. El pedido estaba bien hecho, pero nuestro servidor Backend o la base de datos en la nube se cayó, afectando la disponibilidad (SLA) del servicio."
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Señalá los 3 bloques de códigos (2xx Verde, 4xx Naranja, 5xx Rojo) y conectalo directo con cómo una Service Delivery Manager gestiona un incidente o reclamo de un cliente en IT.
+- Señalá los 3 bloques de códigos (2xx Verde, 4xx Naranja, 5xx Rojo) y explicá cómo cualquier rol de gestión en IT diagnostica un incidente con esto.
 
 ### 🔗 Puente de Conexión → Slide 8 (El Viaje de un Feature: Pipeline de CI/CD)
-> **"Ya entendemos qué construyen los developers (Frontend, Backend, APIs) y cómo se miden los incidentes. Ahora veamos CÓMO viaja una entrega desde que se pide hasta que llega al cliente en IT. Pasemos a la Slide 8: El Viaje de un Feature."**
+> **"Ya entendemos qué construyen los developers (Frontend, Backend, APIs). Ahora veamos CÓMO viaja ese código desde la computadora del programador hasta el usuario final sin romper nada. Pasemos a la Slide 8: El Viaje de un Feature."**
 
 ---
 
@@ -224,22 +224,22 @@ Y acá me detengo en algo que me habías comentado sobre la posibilidad de hacer
 ### ⚡ Dinámica / Interacción en Pantalla
 - Compará las 3 tarjetas: Relacional SQL (Azul), No-Relacional NoSQL (Naranja) y Base Vectorial de IA (Violeta).
 
-### 🔗 Puente de Conexión → Slide 16 (Taller Práctico: De SDM Tradicional a IT & AI Leader)
+### 🔗 Puente de Conexión → Slide 16 (Taller Práctico: Tu Perfil en Clave IT & AI)
 > **"¡Impresionante todo el recorrido técnico que hicimos! Ahora bajemos todo este vocabulario a tierra firme para vos: ¿cómo traducimos tu experiencia real al idioma que buscan las empresas de IT? Vamos a la Slide 16."**
 
 ---
 
-## Slide 16: Taller Práctico: De SDM Tradicional a IT & AI Leader
-- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Posicionamiento CV · IT Service Delivery · Cloud (AWS) & APIs · IA, FinOps & SLAs
+## Slide 16: Taller Práctico: Tu Perfil en Clave IT & AI
+- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Posicionamiento CV · Gestión & Agile · Sistemas & Cloud · IA & Calidad
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Mirá esta tabla porque la armé pensando exactamente en tu rol de **Service Delivery Manager** para cuando armes tu CV o tengas entrevistas en empresas de software. Muchas veces uno hace gestión de altísimo nivel pero la cuenta con palabras de operaciones tradicionales. Fijate en la fila 1 (**Service Delivery & Agile**): en vez de decir *'coordiné entregas, fechas (SLAs) y trato con clientes'*, en clave IT decís: **'Lideré el IT Service Delivery & ejecución end-to-end bajo marcos Agile (Scrum/Kanban), gestionando SLAs críticos, mitigación de riesgos, priorización de backlog en Jira y coordinación de squads multifuncionales'**. Mirá la fila 2 (**Cloud AWS, APIs & Releases**): en vez de *'seguimiento en plataformas y reclamos'*, es **'Gestioné flujos de entrega continua integrados vía APIs REST, pipelines CI/CD e infraestructura Cloud (AWS), liderando Incident Management, validación UAT en Staging y Release Management'**. Y en la fila 3 (**IA, FinOps & Calidad**): transformar el control de calidad y costos en **'Diseño de flujos de automatización con LLMs y arquitecturas RAG, optimizando márgenes operativos (FinOps) con 99.9% de cumplimiento de SLA'**. Si a esto le sumás el curso de *AWS Cloud Practitioner*, tu perfil queda blindado para entrar a cualquier tecnológica."
+> "Mirá esta tabla porque acá se ve cómo todo el vocabulario técnico que vimos hoy sirve para traducir experiencia de gestión tradicional al idioma que usan las empresas de tecnología, sea para el rol que elijas explorar. Fijate en la fila 1 (**Gestión & Agile**): cómo el coordinar equipos, entregas y clientes se traduce en clave tecnológica a liderar el delivery bajo marcos Agile (Scrum/Kanban), gestionando SLAs y priorizando un backlog en Jira. Mirá la fila 2 (**Sistemas & Cloud**): cómo el seguimiento en plataformas y resolución de reclamos se conecta con flujos integrados vía APIs REST, pipelines de CI/CD, validación en Staging (UAT) e infraestructura Cloud. Y en la fila 3 (**IA & Calidad**): cómo llevar el control de calidad tradicional hacia flujos de automatización asistida por LLMs y arquitecturas RAG."
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Leé en conjunto las 3 filas comparativas ('Antes: Service Delivery Tradicional' en rojo vs. 'Después: IT Service Delivery, Agile & AI' en verde) diseñadas específicamente para el perfil de Service Delivery Manager de Anabela.
+- Leé en conjunto las 3 filas comparativas ('Antes: Enfoque Operativo / Tradicional' en rojo vs. 'Después: Enfoque IT, Agile & AI' en verde) como ejercicio general de traducción de perfil.
 
 ### 🔗 Puente de Conexión → Slide 17 (Preguntas 'Rompe-Entrevistas' (Simulador Flip-Cards))
-> **"Y cuando ese hiring manager de IT vea este perfil y te invite a una entrevista para probar cómo reaccionás en un equipo de software real, te va a hacer alguna de estas tres preguntas clásicas. Pasemos a la Slide 17 para practicarlas."**
+> **"Y si en algún momento tenés una charla o entrevista en el mundo IT y quieren ver si entendés cómo funciona la dinámica de un equipo de software en la práctica, suelen hacer alguna de estas tres preguntas clásicas. Pasemos a la Slide 17 para verlas."**
 
 ---
 
