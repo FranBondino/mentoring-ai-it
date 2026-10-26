@@ -2303,8 +2303,8 @@
             
             <div class="grid-2" style="align-items: center; max-width: 1200px; width: 100%;">
                 <!-- Left: Beautiful conceptual diagram -->
-                <div class="glass-card" style="display: flex; align-items: center; justify-content: center; padding: 1.5rem; height: 100%; min-height: 400px; background: rgba(15, 23, 42, 0.4); border-color: rgba(59, 130, 246, 0.1);">
-                    <img src="../monolith_vs_microservices.png" alt="Monolitos vs Microservicios" onclick="openLightbox(this)" style="width: 100%; height: auto; max-height: 380px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); object-fit: contain; border: 1px solid rgba(255,255,255,0.05); cursor: zoom-in;">
+                <div class="glass-card" style="display: flex; align-items: center; justify-content: center; padding: 1.5rem; height: 100%; min-height: 240px; background: rgba(15, 23, 42, 0.4); border-color: rgba(59, 130, 246, 0.1);">
+                    <img src="../monolith_vs_microservices.png" alt="Monolitos vs Microservicios" onclick="openLightbox(this)" style="width: 100%; height: auto; max-height: 235px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); object-fit: contain; border: 1px solid rgba(255,255,255,0.05); cursor: zoom-in;">
                 </div>
 
                 <!-- Right: Stacking comparison cards -->
@@ -3486,83 +3486,82 @@
             50% { transform: scale(1.4); opacity: 1; }
         }
 
-        /* Push slide content slightly down to respect Top HUD */
+        /* Push slide content down cleanly to respect Top HUD and fit 1366x768 without vertical scroll */
+        .anabela-top-hud {
+            height: 42px !important;
+            top: 10px !important;
+        }
+        .slides-wrapper {
+            height: calc(100vh - 56px) !important;
+        }
+        .controls-bar, .nav-bar {
+            height: 56px !important;
+            background: rgba(8, 12, 22, 0.88) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+        /* Hide redundant bottom menu button in S2/S3 since Top HUD has the visual drawer */
+        .slides-menu-btn {
+            display: none !important;
+        }
         .slide {
-            padding-top: 4.5rem !important;
+            padding-top: 3.8rem !important;
+            padding-bottom: 1.2rem !important;
+        }
+        @media (min-width: 769px) {
+            .slide > *:last-child {
+                margin-bottom: 0.4rem !important;
+            }
+        }
+        @media (max-height: 820px) and (min-width: 769px) {
+            .slide {
+                padding-top: 3.6rem !important;
+                padding-bottom: 0.8rem !important;
+            }
+            .slide-title {
+                font-size: 1.75rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            .slide-subtitle {
+                font-size: 0.86rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .git-visual-container {
+                padding: 0.85rem 1rem !important;
+                margin: 0.4rem 0 !important;
+            }
         }
 
-        /* Staggered Spring Entrance Animations when slide becomes active */
+        /* Crisp, Zero-Blur Spring Entrance Animation (Single-layer, no nested double-opacity) */
         @keyframes anabelaSpringUp {
             0% {
                 opacity: 0;
-                transform: translateY(26px) scale(0.975);
-                filter: blur(6px);
+                transform: translateY(14px) scale(0.99);
             }
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
-                filter: blur(0px);
             }
         }
 
         .slide.active > .slide-title,
         .slide.active > .cover-container {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both;
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.01s both;
         }
 
         .slide.active > .slide-subtitle {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
         }
 
-        .slide.active > .glass-card,
-        .slide.active > .grid-2,
-        .slide.active > .grid-3,
-        .slide.active > .role-bento-grid,
-        .slide.active > .pm-pipeline-grid,
-        .slide.active > .us-branch-layout,
-        .slide.active > .http-methods-grid,
-        .slide.active > .status-codes-container,
-        .slide.active > .pipeline-container,
-        .slide.active > .git-visual-container,
-        .slide.active > .cv-workshop-wrapper,
-        .slide.active > .q-card-grid,
-        .slide.active > .roadmap-timeline,
-        .slide.active > .orchestrator-layout,
-        .slide.active > .react-loop-container,
-        .slide.active > .hitl-pipeline {
-            animation: anabelaSpringUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+        .slide.active > *:not(.slide-title):not(.slide-subtitle):not(.cover-container) {
+            animation: anabelaSpringUp 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both;
         }
 
-        .slide.active .grid-2 > *:nth-child(1),
-        .slide.active .grid-3 > *:nth-child(1),
-        .slide.active .pm-pipeline-grid > *:nth-child(1),
-        .slide.active .http-methods-grid > *:nth-child(1),
-        .slide.active .status-codes-container > *:nth-child(1),
-        .slide.active .q-card-grid > *:nth-child(1) {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
-        }
-        .slide.active .grid-2 > *:nth-child(2),
-        .slide.active .grid-3 > *:nth-child(2),
-        .slide.active .pm-pipeline-grid > *:nth-child(2),
-        .slide.active .http-methods-grid > *:nth-child(2),
-        .slide.active .status-codes-container > *:nth-child(2),
-        .slide.active .q-card-grid > *:nth-child(2) {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
-        }
-        .slide.active .grid-3 > *:nth-child(3),
-        .slide.active .pm-pipeline-grid > *:nth-child(3),
-        .slide.active .http-methods-grid > *:nth-child(3),
-        .slide.active .status-codes-container > *:nth-child(3),
-        .slide.active .q-card-grid > *:nth-child(3) {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
-        }
-        .slide.active .pm-pipeline-grid > *:nth-child(4),
-        .slide.active .http-methods-grid > *:nth-child(4),
-        .slide.active .status-codes-container > *:nth-child(4) {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
-        }
-        .slide.active .pm-pipeline-grid > *:nth-child(5) {
-            animation: anabelaSpringUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.44s both;
+        /* High-Contrast Glass Card Polish */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.72) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
         }
 
         /* Interactive Spotlight Glow & 3D Hover Polish on Glass Cards */
@@ -4039,8 +4038,12 @@
 
         function syncHudCounter() {
             const idx = getActiveSlideIndex();
-            if (hudCounter && idx !== -1) {
-                hudCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+            if (idx !== -1) {
+                if (hudCounter) hudCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const bottomCounter = document.getElementById('slide-counter') || document.getElementById('slideCounter');
+                if (bottomCounter) bottomCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const navSession = document.querySelector('.nav-session');
+                if (navSession) navSession.textContent = 'Slide ' + (idx + 1) + ' / ' + slidesList.length;
             }
         }
 
