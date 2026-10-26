@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta de Mentoría IT & IA - Anabela Hotian</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      font-size: 9pt;
+      line-height: 1.4;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* ENCABEZADO */
+    .header-container {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .header-left {
+      flex: 1;
+    }
+
+    .header-left h1 {
+      font-size: 15pt;
+      color: #0f172a;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .header-left .subtitle {
+      font-size: 9.5pt;
+      color: #2563eb;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 8.2pt;
+      color: #475569;
+      line-height: 1.45;
+      min-width: 185px;
+      flex-shrink: 0;
+    }
+
+    .header-right p {
+      text-align: right;
+      margin-bottom: 2px;
+    }
+
+    .badge-row {
+      margin-top: 6px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2.5px 8px;
+      border-radius: 9999px;
+      font-size: 7.3pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .badge-purple { background-color: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+    .badge-green { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+
+    /* SECCIONES */
+    .section-title {
+      font-size: 9.8pt;
+      color: #0f172a;
+      border-left: 4px solid #2563eb;
+      padding-left: 8px;
+      margin-top: 9px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin-bottom: 5px;
+      color: #334155;
+      text-align: justify;
+    }
+
+    /* GRILLAS Y TARJETAS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 8px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 8px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .card h4 {
+      font-size: 8.8pt;
+      margin-bottom: 3px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .card p {
+      font-size: 8.1pt;
+      color: #475569;
+      line-height: 1.36;
+      margin: 0;
+      text-align: left;
+    }
+
+    /* BLOQUES DE SESIONES */
+    .session-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      margin-bottom: 7px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .session-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 5px 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .session-header h3 {
+      color: #ffffff;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .session-tag {
+      background: rgba(59, 130, 246, 0.25);
+      border: 1px solid #60a5fa;
+      color: #eff6ff;
+      font-size: 7pt;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+
+    .session-body {
+      padding: 6.5px 11px;
+    }
+
+    .session-goal {
+      font-size: 8.1pt;
+      color: #1e40af;
+      background: #eff6ff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 4.5px;
+      font-weight: 600;
+    }
+
+    .topic-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topic-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 2.5px;
+      font-size: 8.1pt;
+      color: #334155;
+      line-height: 1.34;
+    }
+
+    .topic-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .topic-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    /* TABLAS */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      margin-bottom: 7px;
+      font-size: 8.1pt;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 4.5px 8px;
+      border: 1px solid #0f172a;
+    }
+
+    td {
+      padding: 4.5px 8px;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .table-total {
+      background-color: #eff6ff !important;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    /* CALLOUT */
+    .callout {
+      background-color: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border-top: 1px solid #bbf7d0;
+      border-right: 1px solid #bbf7d0;
+      border-bottom: 1px solid #bbf7d0;
+      padding: 6px 10px;
+      border-radius: 0 6px 6px 0;
+      margin: 6px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: #15803d;
+      font-size: 8.4pt;
+      margin-bottom: 1.5px;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 7.9pt;
+      color: #166534;
+      text-align: left;
+    }
+
+    /* PANEL DE PRECIO DESTACADO */
+    .pricing-highlight {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 7px;
+      margin: 5px 0;
+    }
+
+    .pricing-highlight-left h3 {
+      color: #ffffff;
+      font-size: 10pt;
+      margin-bottom: 1.5px;
+    }
+
+    .pricing-highlight-left p {
+      color: #cbd5e1;
+      font-size: 7.9pt;
+      margin: 0;
+      text-align: left;
+    }
+
+    .pricing-highlight-right {
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .price-amount {
+      font-size: 14.5pt;
+      font-weight: 800;
+      color: #60a5fa;
+      line-height: 1.1;
+    }
+
+    .price-sub {
+      font-size: 7.5pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* FIRMA */
+    .signature-area {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 7px;
+      page-break-inside: avoid;
+    }
+
+    .signature-left {
+      font-size: 8.2pt;
+      color: #64748b;
+    }
+
+    .signature-right {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #334155;
+    }
+
+    .signature-right strong {
+      display: block;
+      color: #0f172a;
+      font-size: 9.5pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <div class="header-container">
+    <div class="header-left">
+      <h1>PROGRAMA DE MENTORÍA: SISTEMAS, AGILE &amp; IA</h1>
+      <div class="subtitle">Arquitectura de Software, Prácticas de Desarrollo, LLMs y Construcción de Chatbots</div>
+      <div class="badge-row">
+        <span class="badge badge-blue">Para: Anabela Hotian</span>
+        <span class="badge badge-purple">Modalidad: 4 Sesiones 1 a 1 (Online)</span>
+        <span class="badge badge-green">Incluye Portal Web &amp; Glosarios</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <p><strong>Consultor:</strong> Ing. Francisco Bondino</p>
+      <p><strong>Fecha:</strong> Octubre 2026</p>
+      <p><strong>Validez del presupuesto:</strong> 15 días</p>
+    </div>
+  </div>
+
+  <!-- 1. INTRODUCCIÓN Y ENFOQUE -->
+  <h2 class="section-title">1. Objetivo y Enfoque del Programa</h2>
+  <p>
+    Esta propuesta presenta un programa práctico e intensivo de <strong>4 sesiones individuales (1 a 1)</strong> diseñado para brindar una comprensión clara, estructurada y sin cajas negras sobre <strong>cómo trabajan los equipos de desarrollo de software hoy, cómo funcionan los modelos de lenguaje (LLMs) por dentro y cómo se diseña y construye un chatbot o agente de IA moderno</strong>.
+  </p>
+  <p>
+    El enfoque combina conceptos de <strong>Ingeniería de Sistemas, prácticas Agile y Producto Digital</strong> con casos prácticos transversales (incluyendo flujos de procesamiento de lenguaje, localización, gestión de contenidos y automatización corporativa), permitiendo dialogar con solvencia técnica junto a desarrolladores, liderar iniciativas tecnológicas y especificar soluciones con IA.
+  </p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>💻 El Mundo del Developer</h4>
+      <p>Qué pasa detrás de escena desde que se define una idea en un sprint hasta que el código llega a producción (APIs, Git, servidores, testing y CI/CD).</p>
+    </div>
+    <div class="card">
+      <h4>🧠 LLMs &amp; Chatbots Reales</h4>
+      <p>Cómo funcionan los modelos de IA generativa, cómo conectarlos con documentos privados (arquitectura RAG) y cómo evitar alucinaciones.</p>
+    </div>
+    <div class="card">
+      <h4>⚡ Agentes &amp; Gestión Agile</h4>
+      <p>Cómo pasar de un chatbot que solo responde preguntas a un agente que ejecuta acciones, y cómo gestionar proyectos de IA (tiempos, costos y calidad).</p>
+    </div>
+  </div>
+
+  <!-- 2. PROGRAMA DETALLADO DE LAS 4 SESIONES -->
+  <h2 class="section-title">2. Temario Detallado (4 Sesiones de 1 Hora)</h2>
+
+  <!-- SESIÓN 1 -->
+  <div class="session-card">
+    <div class="session-header">
+      <h3>Sesión 1: Ecosistema IT Moderno, Rol del Developer &amp; Prácticas Agile</h3>
+      <span class="session-tag">Semana 1 • 60 min</span>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Objetivo: Entender qué hace exactamente cada rol técnico, cómo se construye el software actual y cómo fluye el trabajo en Agile.</div>
+      <ul class="topic-list">
+        <li><strong>El día a día de un Developer:</strong> Qué hace un perfil Frontend, Backend, Fullstack, QA y DevOps. Cómo piensan los programadores y qué necesitan de un PM.</li>
+        <li><strong>Arquitectura en lenguaje claro:</strong> De sistemas monolíticos a Microservicios en la nube (Cloud). Qué es una API (REST, JSON, Webhooks) y cómo se conectan distintas plataformas entre sí.</li>
+        <li><strong>El viaje del código (De Jira a Producción):</strong> Cómo usan los devs <em>Git / GitHub</em> (ramas, Pull Requests, Code Review), qué es un pipeline de <em>CI/CD</em> y para qué sirven los ambientes de <em>Dev, Staging y Producción</em>.</li>
+        <li><strong>Prácticas Agile en la vida real:</strong> Sprints, Refinamiento de Backlog, definición de historias de usuario técnicas, criterios de aceptación (DoD) y gestión de bloqueos en equipos de software.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SESIÓN 2 -->
+  <div class="session-card">
+    <div class="session-header">
+      <h3>Sesión 2: Overview de LLMs &amp; Cómo Construir un Chatbot con Datos Propios (RAG)</h3>
+      <span class="session-tag">Semana 2 • 60 min</span>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Objetivo: Comprender la mecánica interna de los LLMs y la arquitectura estándar para crear chatbots que consulten documentos privados.</div>
+      <ul class="topic-list">
+        <li><strong>Software Tradicional vs. IA:</strong> El paso de la programación determinista (reglas fijas <code>SI/ENTONCES</code>) a los sistemas probabilísticos.</li>
+        <li><strong>Cómo funciona un LLM por dentro:</strong> Qué son los <em>Tokens</em> (y cómo impactan en el idioma y los costos), qué es la <em>Ventana de Contexto</em> (memoria de corto plazo), Temperatura y <em>System Prompts</em>.</li>
+        <li><strong>Cómo construir un Chatbot moderno (Arquitectura RAG):</strong> Por qué no alcanza con usar ChatGPT suelto. Cómo conectar un modelo a manuales, bases de conocimiento, glosarios o memorias corporativas sin re-entrenar la IA.</li>
+        <li><strong>Embeddings y Bases Vectoriales:</strong> Cómo busca la IA por significado semántico (en vez de palabras exactas), cómo dividir documentos (<em>Chunking</em>) y cómo armar la especificación (PRD) de un chatbot.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SESIÓN 3 -->
+  <div class="session-card">
+    <div class="session-header">
+      <h3>Sesión 3: Chatbots Avanzados, Agentes Autónomos &amp; Automatización de Flujos</h3>
+      <span class="session-tag">Semana 3 • 60 min</span>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Objetivo: Pasar de un chatbot informativo a un Agente de IA capaz de usar herramientas, conectarse a sistemas y ejecutar tareas.</div>
+      <ul class="topic-list">
+        <li><strong>De Chatbot Pasivo a Agente Activo:</strong> La diferencia entre un bot que solo contesta dudas y un agente que agenda turnos, consulta stock en un sistema externo, procesa archivos o traduce y valida formatos automáticamente.</li>
+        <li><strong>El Ciclo ReAct y Tool Calling:</strong> Cómo razona un agente paso a paso (<em>Pensamiento → Acción → Observación</em>) y cómo se le conectan herramientas mediante APIs.</li>
+        <li><strong>Orquestación Multi-Agente:</strong> Cómo dividir un problema complejo en varios agentes especialistas coordinados por un agente supervisor (ej. flujo automatizado de redacción/traducción + agente revisor de calidad/glosario + entrega en JSON).</li>
+        <li><strong>Control de Riesgos y Human-in-the-Loop (HITL):</strong> Cómo evitar alucinaciones, forzar respuestas estructuradas y definir en qué pasos críticos el agente debe pedir aprobación humana.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SESIÓN 4 -->
+  <div class="session-card">
+    <div class="session-header">
+      <h3>Sesión 4: Costos de IA, Evaluación de Calidad (Evals), Seguridad &amp; Práctica Integral</h3>
+      <span class="session-tag">Semana 4 • 60 min</span>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Objetivo: Dominar los costos operativos, la medición de calidad y la seguridad de proyectos de IA en entornos profesionales.</div>
+      <ul class="topic-list">
+        <li><strong>Economía de un Proyecto de IA:</strong> Cómo estimar cuánto cuesta operar un chatbot por mes (precios de tokens de entrada vs. salida, <em>Prompt Caching</em> para ahorrar hasta 75%, y cuándo elegir modelos rápidos vs. modelos de razonamiento).</li>
+        <li><strong>¿Cómo se testea un Chatbot? (Evals y Observabilidad):</strong> Si la IA redacta distinto cada vez, ¿cómo sabemos si funciona bien? Creación de datasets de prueba, <em>LLM-as-a-Judge</em> y paneles de monitoreo (Langfuse).</li>
+        <li><strong>Seguridad y Privacidad Corporativa:</strong> Prevención de fuga de datos confidenciales (<em>Data Leakage</em>), anonimización de datos sensibles (PII) y defensas contra <em>Prompt Injection</em>.</li>
+        <li><strong>Taller Integrador Práctico:</strong> Diseño de punta a punta de la arquitectura de un asistente/chatbot real combinando lo aprendido en las 4 sesiones.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. MATERIALES Y RECURSOS INCLUIDOS -->
+  <h2 class="section-title">3. Portal Interactivo y Materiales Entregables</h2>
+  <p>
+    Además de las 4 clases en vivo, el programa incluye acceso permanente a un <strong>Portal Web de Recursos</strong> diseñado a medida para acompañar el aprendizaje y servir como material de consulta rápida en el trabajo diario:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">Recurso Incluido</th>
+        <th style="width: 70%;">Descripción y Utilidad Práctica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>4 Presentaciones Interactivas Web</strong></td>
+        <td>Más de 60 diapositivas navegables con diagramas visuales de arquitectura, simulaciones paso a paso del viaje de un feature, comparativas de tokens/embeddings y flujos de agentes.</td>
+      </tr>
+      <tr>
+        <td><strong>4 Glosarios Técnicos con Buscador</strong></td>
+        <td>Diccionario interactivo por sesión con todos los términos de sistemas, Agile, DevOps, LLMs y Agentes explicados en lenguaje claro y con ejemplos reales de aplicación en reuniones.</td>
+      </tr>
+      <tr>
+        <td><strong>Guías &amp; Plantilla de PRD de IA</strong></td>
+        <td>Resúmenes ejecutivos por sesión y plantilla modelo de <em>Product Requirements Document (PRD)</em> para estructurar propuestas o requerimientos de chatbots y sistemas de IA.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. INVERSIÓN Y MODALIDAD DE PAGO -->
+  <h2 class="section-title">4. Inversión y Condiciones de Pago (Por Adelantado)</h2>
+
+  <div class="pricing-highlight">
+    <div class="pricing-highlight-left">
+      <h3>Programa Completo de Mentoría IT, Agile &amp; IA (4 Sesiones)</h3>
+      <p>Incluye las 4 sesiones individuales en vivo (1 hora c/u) + Acceso completo al Portal Web, Presentaciones y Glosarios.</p>
+    </div>
+    <div class="pricing-highlight-right">
+      <div class="price-amount">$300.000 ARS</div>
+      <div class="price-sub">Pago por adelantado ($75.000 ARS / sesión)</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 34%;">Modalidad de Pago (Por Adelantado)</th>
+        <th style="width: 46%;">Detalle y Condición</th>
+        <th style="width: 20%;">Importe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Opción A: Pack Completo por Adelantado</strong></td>
+        <td>Abono del 100% por adelantado al confirmar la reserva y previo al inicio de la Sesión 1.</td>
+        <td><strong>$300.000 ARS</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Opción B: En 2 Tramos por Adelantado (50% / 50%)</strong></td>
+        <td>Primer 50% por adelantado antes de la Sesión 1 (cubre Sesiones 1 y 2) y segundo 50% por adelantado antes de la Sesión 3 (cubre Sesiones 3 y 4).</td>
+        <td><strong>2 pagos de $150.000 ARS</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Opción C: Por Sesión por Adelantado</strong></td>
+        <td>Abono individual de cada clase por adelantado, acreditado previo al inicio de cada encuentro.</td>
+        <td><strong>$75.000 ARS / sesión</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Modalidad de Cursada, Reserva y Flexibilidad Horaria</div>
+    <p>
+      Las sesiones son 100% personalizadas (1 a 1 por Google Meet / Zoom) con frecuencia sugerida de <strong>1 encuentro semanal de 60 minutos</strong> en día y horario a coordinar. <strong>La reserva y habilitación de cada clase o tramo requiere el pago por adelantado.</strong> En caso de necesitar reprogramar una fecha, puede hacerse sin inconvenientes avisando con antelación.
+    </p>
+  </div>
+
+  <!-- FIRMA -->
+  <div class="signature-area">
+    <div class="signature-left">
+      Propuesta elaborada especialmente para <strong>Anabela Hotian</strong>.<br>
+      Condición de pago: <strong>Por adelantado vía transferencia bancaria en ARS.</strong>
+    </div>
+    <div class="signature-right">
+      <strong>Ing. Francisco Bondino</strong>
+      Ingeniero en Sistemas Informáticos<br>
+      Consultoría en Arquitectura de Software &amp; IA
+    </div>
+  </div>
+
+</body>
+</html>

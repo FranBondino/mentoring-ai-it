@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Mentoría IT, Agile &amp; IA — Anabela Hotian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #070a12;
+            --bg-surface: rgba(17, 24, 39, 0.65);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-violet: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            background-image:
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 85% 25%, rgba(139, 92, 246, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+        }
+
+        #portal-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .portal-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            animation: heroReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes heroReveal {
+            from { opacity: 0; transform: translateY(24px); filter: blur(6px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #93c5fd;
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .hero-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3b82f6;
+            box-shadow: 0 0 10px #3b82f6;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.4); opacity: 1; }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, #93c5fd 70%, #c4b5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.6;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-tab:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .filter-tab.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.25));
+            border-color: rgba(96, 165, 250, 0.6);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        /* Session Module Grid */
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .session-module {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 22px;
+            padding: 1.8rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.35s ease,
+                        box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: cardStagger 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .session-module:nth-child(1) { animation-delay: 0.08s; --mod-rgb: 59, 130, 246; --mod-hex: #3b82f6; }
+        .session-module:nth-child(2) { animation-delay: 0.16s; --mod-rgb: 16, 185, 129; --mod-hex: #10b981; }
+        .session-module:nth-child(3) { animation-delay: 0.24s; --mod-rgb: 139, 92, 246; --mod-hex: #8b5cf6; }
+        .session-module:nth-child(4) { animation-delay: 0.32s; --mod-rgb: 245, 158, 11; --mod-hex: #f59e0b; }
+
+        @keyframes cardStagger {
+            from { opacity: 0; transform: translateY(28px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .session-module::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                550px circle at var(--mouse-x, 50%) var(--mouse-y, -200%),
+                rgba(var(--mod-rgb), 0.15),
+                transparent 45%
+            );
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .session-module:hover {
+            transform: translateY(-6px);
+            border-color: rgba(var(--mod-rgb), 0.45);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 30px rgba(var(--mod-rgb), 0.15);
+        }
+
+        .session-module:hover::before {
+            opacity: 1;
+        }
+
+        .module-top {
+            position: relative;
+            z-index: 1;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .module-pill {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(var(--mod-rgb), 0.15);
+            color: var(--mod-hex);
+            border: 1px solid rgba(var(--mod-rgb), 0.35);
+        }
+
+        .module-duration {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .module-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+            line-height: 1.25;
+        }
+
+        .module-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1.1rem;
+        }
+
+        .topic-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .topic-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .module-actions {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 0.9fr;
+            gap: 0.6rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .btn-resource {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 0.83rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-slides {
+            background: linear-gradient(135deg, var(--mod-hex), rgba(var(--mod-rgb), 0.75));
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(var(--mod-rgb), 0.3);
+        }
+
+        .btn-slides:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(var(--mod-rgb), 0.45);
+            filter: brightness(1.08);
+        }
+
+        .btn-glossary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e2e8f0;
+        }
+
+        .btn-glossary:hover {
+            background: rgba(var(--mod-rgb), 0.15);
+            border-color: var(--mod-hex);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Extra Tools Banner */
+        .tools-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin-bottom: 3rem;
+        }
+
+        .tool-card {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.45);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .tool-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #ffffff;
+        }
+
+        .tool-info p {
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        .tool-badge {
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #93c5fd;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            font-size: 0.84rem;
+        }
+
+        footer strong {
+            color: #ffffff;
+            font-family: var(--font-display);
+        }
+
+        @media (max-width: 900px) {
+            .sessions-grid, .tools-banner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .portal-wrapper {
+                padding: 2rem 1rem 3rem;
+            }
+            .session-module {
+                padding: 1.35rem;
+            }
+            .module-actions {
+                grid-template-columns: 1fr;
+            }
+            .tool-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="portal-canvas"></canvas>
+
+    <div class="portal-wrapper">
+        <header class="hero-section">
+            <div class="hero-badge">
+                <span class="hero-pulse"></span>
+                <span>Programa Ejecutivo 1 a 1 · Anabela Hotian</span>
+            </div>
+            <h1 class="hero-title">Ecosistema IT, Prácticas Agile<br>&amp; Inteligencia Artificial</h1>
+            <p class="hero-subtitle">
+                Portal interactivo de presentaciones, simuladores en vivo, glosarios técnicos y plantillas prácticas diseñadas a medida para dominar el lenguaje de desarrollo de software, LLMs y chatbots empresariales.
+            </p>
+
+            <div class="filter-bar" role="tablist">
+                <button class="filter-tab active" onclick="filterSessions('all', this)">✨ Todas las Sesiones (4)</button>
+                <button class="filter-tab" onclick="filterSessions('s1', this)">1. DevOps &amp; Agile</button>
+                <button class="filter-tab" onclick="filterSessions('s2', this)">2. LLMs &amp; RAG</button>
+                <button class="filter-tab" onclick="filterSessions('s3', this)">3. Agentes &amp; Chatbots</button>
+                <button class="filter-tab" onclick="filterSessions('s4', this)">4. Finanzas IA &amp; Evals</button>
+            </div>
+        </header>
+
+        <section class="sessions-grid" id="sessions-grid">
+            <!-- SESIÓN 1 -->
+            <article class="session-module" data-session="s1">
+                <div class="module-top">
+                    <div class="module-header">
+                        <span class="module-pill">Sesión 01 · Base Técnica</span>
+                        <span class="module-duration">⏱ 60 min · 18 Slides Interactivas</span>
+                    </div>
+                    <h2 class="module-title">Qué hace un Developer, Arquitectura Cloud &amp; Agile</h2>
+                    <p class="module-desc">
+                        El puente entre negocio e ingeniería: Frontend vs. Backend, APIs REST, bases de datos, repositorios Git, pipelines CI/CD y dinámicas reales de un equipo Scrum/Kanban.
+                    </p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">APIs &amp; HTTP</span>
+                        <span class="topic-tag">Git &amp; Pull Requests</span>
+                        <span class="topic-tag">CI/CD Pipeline</span>
+                        <span class="topic-tag">Roles Scrum &amp; CV IT</span>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <a href="./sesiones/slides_sesion_1.html" class="btn-resource btn-slides">▶ Presentación S1</a>
+                    <a href="./guias-mentor/guia_sesion_1_pm.html" class="btn-resource btn-glossary">🎙️ Guion + Puentes S1</a>
+                    <a href="./sesiones/glosario_completo_sesion_1.html" class="btn-resource btn-glossary">📖 Glosario S1</a>
+                </div>
+            </article>
+
+            <!-- SESIÓN 2 -->
+            <article class="session-module" data-session="s2">
+                <div class="module-top">
+                    <div class="module-header">
+                        <span class="module-pill">Sesión 02 · Fundamentos IA</span>
+                        <span class="module-duration">⏱ 60 min · 15 Slides + Demos</span>
+                    </div>
+                    <h2 class="module-title">Overview de LLMs, Embeddings &amp; Arquitectura RAG</h2>
+                    <p class="module-desc">
+                        Cómo funcionan por dentro ChatGPT y Claude: tokenización BPE, ventana de contexto, búsqueda semántica vectorial, fragmentación documental (Chunking) y control de alucinaciones.
+                    </p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Tokens &amp; BPE</span>
+                        <span class="topic-tag">Embeddings &amp; Vector DB</span>
+                        <span class="topic-tag">Pipeline RAG</span>
+                        <span class="topic-tag">RAG vs. Fine-Tuning</span>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <a href="./sesiones/slides_sesion_2.html" class="btn-resource btn-slides">▶ Presentación S2</a>
+                    <a href="./guias-mentor/guia_sesion_2_pm.html" class="btn-resource btn-glossary">🎙️ Guion + Puentes S2</a>
+                    <a href="./sesiones/glosario_completo_sesion_2.html" class="btn-resource btn-glossary">📖 Glosario S2</a>
+                </div>
+            </article>
+
+            <!-- SESIÓN 3 -->
+            <article class="session-module" data-session="s3">
+                <div class="module-top">
+                    <div class="module-header">
+                        <span class="module-pill">Sesión 03 · Construcción Bot</span>
+                        <span class="module-duration">⏱ 60 min · 15 Slides + Simuladores</span>
+                    </div>
+                    <h2 class="module-title">Cómo Construir un Chatbot Corporativo &amp; Agentes</h2>
+                    <p class="module-desc">
+                        De un bot pasivo a un sistema agéntico conectado a APIs: ciclo de razonamiento ReAct, Tool Calling JSON, validación estructurada con Pydantic y frenos Human-in-the-Loop.
+                    </p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Loop ReAct</span>
+                        <span class="topic-tag">Tool Calling API</span>
+                        <span class="topic-tag">Pydantic Guardrails</span>
+                        <span class="topic-tag">Human-in-the-Loop</span>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <a href="./sesiones/slides_sesion_3.html" class="btn-resource btn-slides">▶ Presentación S3</a>
+                    <a href="./guias-mentor/guia_sesion_3_pm.html" class="btn-resource btn-glossary">🎙️ Guion + Puentes S3</a>
+                    <a href="./sesiones/glosario_completo_sesion_3.html" class="btn-resource btn-glossary">📖 Glosario S3</a>
+                </div>
+            </article>
+
+            <!-- SESIÓN 4 -->
+            <article class="session-module" data-session="s4">
+                <div class="module-top">
+                    <div class="module-header">
+                        <span class="module-pill">Sesión 04 · Liderazgo &amp; ROI</span>
+                        <span class="module-duration">⏱ 60 min · 15 Slides + Calculadora</span>
+                    </div>
+                    <h2 class="module-title">Finanzas de la IA, Evaluación (Evals) &amp; Entrevistas</h2>
+                    <p class="module-desc">
+                        Cómo presupuestar y auditar productos de IA en producción: costos por millón de tokens, Prompt Caching, observabilidad en Langfuse, métricas de calidad y simulador de entrevistas IT.
+                    </p>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Calculadora ROI &amp; Tokens</span>
+                        <span class="topic-tag">Prompt Caching</span>
+                        <span class="topic-tag">Evals &amp; Langfuse</span>
+                        <span class="topic-tag">Roleplay Entrevista</span>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <a href="./sesiones/slides_sesion_4.html" class="btn-resource btn-slides">▶ Presentación S4</a>
+                    <a href="./guias-mentor/guia_sesion_4_pm.html" class="btn-resource btn-glossary">🎙️ Guion + Puentes S4</a>
+                    <a href="./sesiones/glosario_completo_sesion_4.html" class="btn-resource btn-glossary">📖 Glosario S4</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="tools-banner">
+            <a href="./guias-mentor/guia_completa_mentoria.html" class="tool-card">
+                <div class="tool-info">
+                    <h3>🎙️ Copiloto de Orador: Guiones y Conexiones (63 Slides)</h3>
+                    <p>Guion literal palabra por palabra, dinámicas en pantalla y todos los puentes de conexión entre diapositivas de las 4 sesiones.</p>
+                </div>
+                <span class="tool-badge">Abrir Guiones →</span>
+            </a>
+
+            <a href="./sesiones/mock_prd_tarea_sesion_2.html" class="tool-card">
+                <div class="tool-info">
+                    <h3>🛠️ Taller Interactivo: Generador de PRD para Chatbot IA</h3>
+                    <p>Plantilla guiada paso a paso para especificar requerimientos, chunking, SLA y Golden Dataset de un asistente RAG.</p>
+                </div>
+                <span class="tool-badge">Abrir App PRD →</span>
+            </a>
+
+            <a href="./propuesta_mentoria_anabela_hotian.html" class="tool-card">
+                <div class="tool-info">
+                    <h3>📄 Propuesta Académica &amp; Presupuesto Detallado</h3>
+                    <p>Temario completo de las 4 sesiones, metodología práctica, entregables y condiciones del programa.</p>
+                </div>
+                <span class="tool-badge">Ver Propuesta →</span>
+            </a>
+        </section>
+
+        <footer>
+            <p>Programa diseñado y personalizado para <strong>Anabela Hotian</strong> · Mentor: <strong>Ing. Francisco Bondino</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        // Filter sessions interactively
+        function filterSessions(key, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('.session-module');
+            cards.forEach(card => {
+                if (key === 'all' || card.dataset.session === key) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Spotlight hover effect
+        document.addEventListener('mousemove', (e) => {
+            document.querySelectorAll('.session-module').forEach(card => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+                card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+            });
+        }, { passive: true });
+
+        // Ambient background canvas
+        const canvas = document.getElementById('portal-canvas');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+        window.addEventListener('resize', () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        });
+
+        const nodes = Array.from({ length: window.innerWidth < 768 ? 22 : 45 }, () => ({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            r: Math.random() * 1.8 + 0.8
+        }));
+
+        function animatePortal() {
+            ctx.clearRect(0, 0, w, h);
+            for (let i = 0; i < nodes.length; i++) {
+                const n = nodes[i];
+                n.x += n.vx;
+                n.y += n.vy;
+                if (n.x < 0 || n.x > w) n.vx *= -1;
+                if (n.y < 0 || n.y > h) n.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(96, 165, 250, 0.4)';
+                ctx.fill();
+
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const n2 = nodes[j];
+                    const d = Math.hypot(n.x - n2.x, n.y - n2.y);
+                    if (d < 135) {
+                        ctx.beginPath();
+                        ctx.moveTo(n.x, n.y);
+                        ctx.lineTo(n2.x, n2.y);
+                        ctx.strokeStyle = 'rgba(139, 92, 246, ' + ((1 - d / 135) * 0.12).toFixed(3) + ')';
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animatePortal);
+        }
+        animatePortal();
+    </script>
+</body>
+</html>
