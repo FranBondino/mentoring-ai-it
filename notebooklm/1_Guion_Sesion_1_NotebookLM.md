@@ -32,15 +32,25 @@
 ---
 
 ## Slide 2: La Ola de la IA Generativa & El Paper Fundacional (2017)
-- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Software Determinista · Red Neuronal · Attention Is All You Need (2017) · Transformers & LLMs
+- **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Software Determinista · Red Neuronal · Attention Is All You Need (2017) · Transformers & LLMs
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Mirá estas tres columnas porque resumen cómo llegamos hasta acá, y la del medio tiene una conexión directa con el mundo de la traducción. En la columna uno tenés el Software Tradicional ('determinista'): un programador escribe reglas fijas (`if / else`, 'si pasa A, ejecutá B'). Pero en junio de 2017 ocho investigadores de Google publican un paper histórico llamado **'Attention Is All You Need'** para resolver el problema de la **traducción automática**.
+> "Mirá primero las **tres tarjetas de arriba**, porque resumen cómo evolucionó la tecnología hasta hoy, y fijate que el corazón de esta historia nace justamente en el mundo de la **traducción de idiomas**:
 
-Mirá el diagrama de abajo para entenderlo en muy pocas palabras: en lugar de programar reglas a mano, la IA usa una **Red Neuronal**, que son capas de nodos matemáticos (inspirados en neuronas) que aprenden patrones analizando millones de ejemplos. Antes de 2017, esas redes leían palabra por palabra en fila y 'olvidaban' el principio de la frase. Lo que inventó el paper con la arquitectura **Transformer** (la 'T' de GPT) es el paso 2 del dibujo: la **Auto-Atención (Self-Attention)**. Fijate cómo en la frase *'El banco cerró'*, la palabra *'cerró'* se conecta con *'banco'* al mismo tiempo, dándole el contexto financiero para que las capas de la red neuronal traduzcan *'The bank closed'* y no *'bench'* (banco de plaza). En la **Sesión 2** vamos a abrir este motor en detalle."
+• **1. Software Tradicional (Era Determinista, Pre-2017):** Durante décadas el software funcionó únicamente con reglas rígidas escritas a mano por programadores (`if / else`, es decir: *'si pasa A, ejecutá B'*). Si el usuario hace clic en un botón y tiene saldo, el sistema ejecuta la transferencia. Es exacto y predecible, pero si le das un texto libre o una frase ambigua en lenguaje humano, se rompe o no sabe qué hacer porque no entiende contexto.
+• **2. El Paper Base de 2017 y el boom de ChatGPT (2022):** En junio de 2017, ocho investigadores de Google buscaban mejorar la **traducción automática** y publicaron un paper histórico llamado **'Attention Is All You Need'** (*La atención es todo lo que necesitás*). Ahí inventaron una arquitectura nueva de red neuronal llamada **Transformer** —que es literalmente la letra **T** de **GPT** (*Generative Pre-trained Transformer*)—. Ese motor científico fue evolucionando hasta que en **noviembre de 2022** OpenAI lanzó **ChatGPT**, poniéndole una ventana de chat amigable para que cualquier persona del mundo pudiera conversar con ese modelo.
+• **3. Era de Sistemas con LLMs (2023 - Actualidad):** Hoy las empresas no tiran a la basura el software tradicional, sino que integran estos modelos de lenguaje (**LLMs**) adentro de sus aplicaciones mediante APIs y bases de datos para que el software pueda leer documentos, comprender intenciones y ejecutar tareas complejas.
+
+Ahora mirá el **diagrama de abajo** para entender de forma súper sencilla cómo funciona ese motor del paper de 2017 en **4 pasos**:
+• **¿Qué es una Red Neuronal?** En vez de programar reglas `if / else` a mano, una Red Neuronal es una estructura de **capas de nodos matemáticos conectados entre sí** (los círculos del dibujo, inspirados en las neuronas del cerebro) que aprenden patrones analizando millones de ejemplos. Antes de 2017, las redes neuronales leían una oración palabra por palabra en fila y, cuando llegaban al final de una frase larga, ya se habían 'olvidado' de las primeras palabras.
+• **Paso 1 (Entrada):** Imaginate que entra la frase en español *'El'*, *'banco'*, *'cerró'*. Si tomás la palabra *'banco'* aislada, es ambigua: en inglés podría ser *'bank'* (entidad financiera) o *'bench'* (banco de plaza).
+• **Paso 2 (Auto-Atención / Self-Attention — El gran invento de 2017):** En lugar de leer palabra por palabra a ciegas, el **Transformer** introduce la **Auto-Atención**: hace que todas las palabras de la oración se conecten entre sí al mismo tiempo y calcula cuánta relevancia tiene una sobre la otra. Fijate en las líneas naranjas cómo el modelo detecta que la palabra *'cerró'* está fuertemente vinculada con *'banco'*, dándole instantáneamente el **contexto financiero**.
+• **Paso 3 y Paso 4 (Capas de la Red Neuronal y Salida):** Esa información ya enriquecida con su contexto viaja por las **capas de nodos de la Red Neuronal** (los nodos violetas) y en el **Paso 4** genera la traducción correcta: *'The bank closed'* en lugar de *'bench'*.
+
+Con esta idea visual ya tenés claro qué cambió en 2017; en la **Sesión 2** vamos a meternos más en detalle en cómo operan estos modelos por dentro."
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Señalá de izquierda a derecha las 3 tarjetas superiores y luego recorré el diagrama inferior de 4 pasos (1. Entrada -> 2. Auto-Atención -> 3. Red Neuronal en Capas -> 4. Salida) explicando en pocas palabras qué es una Red Neuronal.
+- Señalá primero de izquierda a derecha las 3 tarjetas superiores (1. Software Tradicional -> 2. El Paper de 2017 y ChatGPT -> 3. Era de Sistemas con LLMs) y luego recorré paso por paso el diagrama inferior (1. Entrada -> 2. Auto-Atención -> 3. Red Neuronal en Capas -> 4. Salida).
 
 ### 🔗 Puente de Conexión → Slide 3 (La Regla de Oro: IA + Ingeniería de Software)
 > **"Ahora bien, acá aparece una pregunta clave: ¿por qué en esta primera sesión no arrancamos directo con IA y vemos primero software tradicional? Pasemos a la Slide 3 para ver la Regla de Oro."**
