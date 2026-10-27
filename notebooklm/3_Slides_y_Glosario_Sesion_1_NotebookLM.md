@@ -344,7 +344,7 @@ Acción del PM
 
 Escribís las User Stories con criterios de aceptación nítidos. Si definís mal la base, todo lo que haga el equipo después va a fallar.
 
-PM -   PO
+PM ↔ PO
 
 02
 
@@ -354,7 +354,7 @@ Acción del PM
 
 Tenés que estar disponible para despejar dudas de negocio sin hacer micromanagement. El dev trabaja tranquilo en su rama aislada.
 
-PM -   Tech Lead
+PM ↔ Tech Lead
 
 03
 
@@ -364,7 +364,7 @@ Acción del PM
 
 Revisás con el QA Lead la cobertura de tests. Si el pipeline da rojo, la subida queda bloqueada: no se negocia la calidad.
 
-PM -   QA Lead
+PM ↔ QA Lead
 
 04
 
@@ -384,11 +384,11 @@ Acción del PM
 
 Autorizás el Release (decidís cuándo lo ve el cliente). El DevOps gestiona el Deploy. Controlás el timing con un Feature Flag.
 
-PM -   DevOps
+PM ↔ DevOps
 
-Regla de Oro: Deploy ≠ Release. Los devs deciden cómo y dónde suben el código. Vos decidís cuándo se lo habilitás a tus usuarios.
+Regla de Oro (Deploy ≠ Release): Los desarrolladores deciden cómo y dónde suben el código al servidor (Deploy). Vos decidís cuándo se lo habilitás comercialmente a los usuarios (Release).
 
-¿Qué es un Feature Flag? Es un interruptor en el código. El equipo técnico puede subir una funcionalidad al servidor de producción con ese interruptor en «apagado». El PM decide exactamente cuándo «encenderlo» para los usuarios -  puede ser para todos a la vez, solo para un grupo piloto, o coordinado con el equipo comercial. Así el trabajo técnico nunca bloquea al negocio, ni viceversa.
+¿Qué es un Feature Flag? Es un interruptor en el código: el equipo sube la funcionalidad a producción en «apagado» y vos decidís cuándo «encenderla» (para un grupo piloto o para todos), sin que el desarrollo bloquee al negocio.
 
 ---
 

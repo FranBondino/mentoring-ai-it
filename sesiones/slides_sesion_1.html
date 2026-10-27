@@ -635,29 +635,43 @@
 
         /* Color code each branch path */
         .git-branch-line-main::before {
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0.9) 100%);
-        }
-        .git-branch-line-preprod::before {
-            background: linear-gradient(90deg, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.9) 100%);
-        }
-        .git-branch-line-testing::before {
-            background: linear-gradient(90deg, rgba(249, 115, 22, 0.18) 0%, rgba(249, 115, 22, 0.9) 100%);
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0.95) 100%);
         }
         .git-branch-line-develop::before {
-            background: linear-gradient(90deg, rgba(139, 92, 246, 0.18) 0%, rgba(139, 92, 246, 0.9) 100%);
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.25) 0%, rgba(139, 92, 246, 0.95) 100%);
         }
+        /* Sub-branches (feature, testing, pre-prod) use bounded segments instead of full-width lines */
+        .git-branch-line-preprod::before,
+        .git-branch-line-testing::before,
         .git-branch-line-feature::before {
-            display: none;
+            background: rgba(255, 255, 255, 0.03);
         }
-        .git-feature-segment {
+        .git-subbranch-segment {
             position: absolute;
             top: 50%;
+            height: 3px;
+            border-radius: 3px;
+            transform: translateY(-50%);
+            z-index: 3;
+            transition: box-shadow 0.35s ease, opacity 0.35s ease;
+        }
+        .git-segment-feature {
             left: 10%;
             width: 32%;
-            height: 2px;
-            background: rgba(244, 63, 94, 0.9);
-            transform: translateY(-50%);
-            z-index: 1;
+            background: linear-gradient(90deg, #f43f5e, #fb7185);
+            box-shadow: 0 0 10px rgba(244, 63, 94, 0.45);
+        }
+        .git-segment-testing {
+            left: 42%;
+            width: 24%;
+            background: linear-gradient(90deg, #f97316, #fbbf24);
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.45);
+        }
+        .git-segment-preprod {
+            left: 66%;
+            width: 24%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.45);
         }
 
         /* Branch labels styling */
@@ -2726,7 +2740,7 @@
                         <p class="pm-action-label">Acción del PM</p>
                         <p class="pm-action-text">Escribís las <strong>User Stories</strong> con criterios de aceptación nítidos. Si definís mal la base, todo lo que haga el equipo después va a fallar.</p>
                         <div class="pm-role-chip" style="border-color: var(--color-blue); color: #60a5fa;">
-                            <i data-lucide="user-cog" class="icon-xs"></i> PM -   PO
+                            <i data-lucide="user-cog" class="icon-xs"></i> PM ↔ PO
                         </div>
                     </div>
                 </div>
@@ -2742,7 +2756,7 @@
                         <p class="pm-action-label">Acción del PM</p>
                         <p class="pm-action-text">Tenés que estar <strong>disponible</strong> para despejar dudas de negocio sin hacer micromanagement. El dev trabaja tranquilo en su rama aislada.</p>
                         <div class="pm-role-chip" style="border-color: var(--color-purple); color: #c084fc;">
-                            <i data-lucide="cpu" class="icon-xs"></i> PM -   Tech Lead
+                            <i data-lucide="cpu" class="icon-xs"></i> PM ↔ Tech Lead
                         </div>
                     </div>
                 </div>
@@ -2758,7 +2772,7 @@
                         <p class="pm-action-label">Acción del PM</p>
                         <p class="pm-action-text">Revisás con el QA Lead la <strong>cobertura de tests</strong>. Si el pipeline da rojo, la subida queda bloqueada: no se negocia la calidad.</p>
                         <div class="pm-role-chip" style="border-color: var(--color-orange); color: #fbbf24;">
-                            <i data-lucide="shield-check" class="icon-xs"></i> PM -   QA Lead
+                            <i data-lucide="shield-check" class="icon-xs"></i> PM ↔ QA Lead
                         </div>
                     </div>
                 </div>
@@ -2790,22 +2804,26 @@
                         <p class="pm-action-label">Acción del PM</p>
                         <p class="pm-action-text">Autorizás el <strong>Release</strong> (decidís cuándo lo ve el cliente). El DevOps gestiona el <strong>Deploy</strong>. Controlás el timing con un <strong>Feature Flag</strong>.</p>
                         <div class="pm-role-chip" style="border-color: var(--color-red); color: #f87171;">
-                            <i data-lucide="zap" class="icon-xs"></i> PM -   DevOps
+                            <i data-lucide="zap" class="icon-xs"></i> PM ↔ DevOps
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="pm-key-insight glass-card" style="margin-top: 1.2rem; padding: 0.9rem 1.5rem; border-left: 3px solid var(--color-green); max-width: 900px; text-align: center;">
-                <i data-lucide="lightbulb" class="icon-sm" style="color: var(--color-green); vertical-align: middle; margin-right: 6px;"></i>
-                <strong style="color: var(--color-green);">Regla de Oro:</strong> Deploy ≠ Release. Los devs deciden <em>cómo</em> y <em>dónde</em> suben el código. Vos decidís <em>cuándo</em> se lo habilitás a tus usuarios.
-            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1.45fr; gap: 0.9rem; width: 100%; max-width: 1150px; margin-top: 0.9rem;">
+                <div class="pm-key-insight glass-card" style="padding: 0.85rem 1.2rem; border-left: 3px solid var(--color-green); text-align: left; display: block !important;">
+                    <p style="margin: 0; font-size: 0.84rem; line-height: 1.45; color: var(--text-primary);">
+                        <i data-lucide="lightbulb" class="icon-sm" style="color: var(--color-green); vertical-align: middle; margin-right: 6px;"></i>
+                        <strong style="color: var(--color-green);">Regla de Oro (Deploy ≠ Release):</strong> Los desarrolladores deciden <em>cómo</em> y <em>dónde</em> suben el código al servidor (<strong>Deploy</strong>). Vos decidís <em>cuándo</em> se lo habilitás comercialmente a los usuarios (<strong>Release</strong>).
+                    </p>
+                </div>
 
-            <div class="pm-key-insight glass-card" style="margin-top: 0.8rem; padding: 0.9rem 1.5rem; border-left: 3px solid var(--color-purple); max-width: 900px;">
-                <p style="margin: 0; font-size: 0.9rem; color: var(--text-primary);">
-                    <i data-lucide="toggle-right" class="icon-sm" style="color: var(--color-purple); vertical-align: middle; margin-right: 6px;"></i>
-                    <strong style="color: var(--color-purple);">¿Qué es un Feature Flag?</strong> Es un interruptor en el código. El equipo técnico puede subir una funcionalidad al servidor de producción con ese interruptor en «apagado». El PM decide exactamente cuándo «encenderlo» para los usuarios -  puede ser para todos a la vez, solo para un grupo piloto, o coordinado con el equipo comercial. Así el trabajo técnico nunca bloquea al negocio, ni viceversa.
-                </p>
+                <div class="pm-key-insight glass-card" style="padding: 0.85rem 1.2rem; border-left: 3px solid var(--color-purple); text-align: left; display: block !important;">
+                    <p style="margin: 0; font-size: 0.84rem; line-height: 1.45; color: var(--text-primary);">
+                        <i data-lucide="toggle-right" class="icon-sm" style="color: var(--color-purple); vertical-align: middle; margin-right: 6px;"></i>
+                        <strong style="color: var(--color-purple);">¿Qué es un Feature Flag?</strong> Es un interruptor en el código: el equipo sube la funcionalidad a producción en «apagado» y vos decidís cuándo «encenderla» (para un grupo piloto o para todos), sin que el desarrollo bloquee al negocio.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -2913,23 +2931,25 @@
                     </div>
                 </div>
 
-                <!-- 2. PRE-PROD (STAGING) -->
+                <!-- 2. PRE-PROD (STAGING) — Sub-rama (66% a 90%) -->
                 <div class="git-branch-line git-branch-line-preprod">
                     <span class="git-branch-name git-branch-name-preprod">pre-prod</span>
                     <div class="git-nodes-container">
+                        <div class="git-subbranch-segment git-segment-preprod"></div>
                         <div class="git-flow-connector" data-conn-step="5" style="left: 90%;"></div>
-                        <div class="git-node git-node-preprod" data-node-idx="4" style="left: 74%;" onclick="activateGitNode(4, this)">
+                        <div class="git-node git-node-preprod" data-node-idx="4" style="left: 78%;" onclick="activateGitNode(4, this)">
                             <span class="git-node-label">5. Security Gate</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. TESTING (QA) -->
+                <!-- 3. TESTING (QA) — Sub-rama (42% a 66%) -->
                 <div class="git-branch-line git-branch-line-testing">
                     <span class="git-branch-name git-branch-name-testing">testing</span>
                     <div class="git-nodes-container">
-                        <div class="git-flow-connector" data-conn-step="4" style="left: 74%;"></div>
-                        <div class="git-node git-node-testing" data-node-idx="3" style="left: 58%;" onclick="activateGitNode(3, this)">
+                        <div class="git-subbranch-segment git-segment-testing"></div>
+                        <div class="git-flow-connector" data-conn-step="4" style="left: 66%;"></div>
+                        <div class="git-node git-node-testing" data-node-idx="3" style="left: 54%;" onclick="activateGitNode(3, this)">
                             <span class="git-node-label">4. QA Testing</span>
                         </div>
                     </div>
@@ -2939,18 +2959,18 @@
                 <div class="git-branch-line git-branch-line-develop">
                     <span class="git-branch-name git-branch-name-develop">develop</span>
                     <div class="git-nodes-container">
-                        <div class="git-flow-connector" data-conn-step="3" style="left: 58%;"></div>
+                        <div class="git-flow-connector" data-conn-step="3" style="left: 42%;"></div>
                         <div class="git-node git-node-develop" data-node-idx="2" style="left: 42%;" onclick="activateGitNode(2, this)">
                             <span class="git-node-label">3. Merge a develop</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. FEATURE BRANCH -->
+                <!-- 5. FEATURE BRANCH — Sub-rama (10% a 42%) -->
                 <div class="git-branch-line git-branch-line-feature">
                     <span class="git-branch-name git-branch-name-feature">feature/US-42</span>
                     <div class="git-nodes-container">
-                        <div class="git-feature-segment"></div>
+                        <div class="git-subbranch-segment git-segment-feature"></div>
                         <div class="git-flow-connector active-connector" data-conn-step="0" style="left: 10%;"></div>
                         <div class="git-flow-connector" data-conn-step="2" style="left: 42%;"></div>
                         <div class="git-node git-node-feature git-node-active" data-node-idx="0" style="left: 10%;" onclick="activateGitNode(0, this)">
