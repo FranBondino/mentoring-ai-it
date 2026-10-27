@@ -72,18 +72,24 @@ Con esta idea visual ya tenés claro qué cambió en 2017; en la **Sesión 2** v
 ---
 
 ## Slide 4: El Gran Salto Temporal: 2012 vs. 2026
-- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Waterfall vs Agile · Monolito vs Microservicios · AWS & Cloud Native
+- **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Waterfall vs Agile · Monolito vs Microservicios · AWS, Docker & Kubernetes (K8s)
 
 ### 🗣️ Guion Literal (Qué decir)
-> "Fijate este contraste porque es clave en cualquier charla de IT. Hace diez o doce años dominaba el modelo 'Waterfall' (Cascada) y la arquitectura 'Monolítica': toda la aplicación estaba atada adentro de un único bloque gigante de código en un servidor físico propio de la empresa. Si un programador tocaba una coma en el módulo de reportes y metía un error, se caía toda la plataforma entera. Hoy en 2026 trabajamos con 'Microservicios en la Nube (Cloud)' y metodologías Ágiles: dividimos el sistema en piezas chiquitas e independientes.
+> "Fijate este contraste porque es clave en cualquier charla de IT. Hace diez o doce años dominaba el modelo **'Waterfall' (Cascada)** y la arquitectura **'Monolítica'**: toda la aplicación estaba atada adentro de un único bloque gigante de código en un servidor físico propio de la empresa. Si un programador tocaba una coma en el módulo de reportes y metía un error, se caía toda la plataforma entera. Hoy en 2026 trabajamos con **'Microservicios en la Nube (Cloud)'** y metodologías Ágiles: dividimos el sistema en piezas chiquitas e independientes.
 
-Y mirá las tres tarjetas de abajo porque son palabras que vas a escuchar todo el tiempo en IT: 1) **AWS / Cloud** (Amazon Web Services, Azure o Google Cloud): en vez de comprar servidores físicos, las empresas alquilan capacidad de cómputo, bases de datos y almacenamiento en la nube por segundo (si en algún momento hacés ese curso introductorio de AWS que habías visto, como el *Cloud Practitioner*, te da justamente este mapa general de qué piezas existen en la nube y cómo se cobran, sin necesidad de programar); 2) **Docker**: es como una caja estándar donde el programador empaqueta su código para que funcione igual en su compu que en AWS; y 3) **Kubernetes**: el director de orquesta que maneja cientos de esas cajas automáticamente cuando sube el tráfico."
+Y mirá las **tres tarjetas de abajo** porque son palabras que vas a escuchar todo el tiempo en reuniones de tecnología:
+• **1) AWS / Cloud** (*Amazon Web Services*, *Microsoft Azure* o *Google Cloud*): en vez de comprar servidores físicos carísimos, las empresas alquilan capacidad de cómputo, bases de datos y almacenamiento en la nube pagando solo por lo que usan (si en algún momento hacés ese curso introductorio de AWS que habías visto, como el *Cloud Practitioner*, te da justamente este mapa general de qué piezas existen en la nube y cómo se cobran, sin necesidad de programar).
+• **2) Docker (Contenedores):** Antes era un clásico que el programador dijera *'en mi computadora anda'* y cuando subían el código al servidor se rompiera todo porque tenían distintas versiones instaladas. **Docker** resolvió eso inventando los **contenedores** (como los containers metálicos de los barcos): una caja estándar y cerrada donde el programador mete su código junto con todo lo que necesita para correr. Así, esa caja funciona exactamente igual en su notebook que en AWS.
+• **3) Kubernetes (también llamado `K8s` — El Orquestador):** Ahora imaginate qué pasa cuando tu aplicación crece y ya no tenés una sola cajita de Docker, sino **cientos de contenedores** corriendo al mismo tiempo (para login, pagos, catálogo, notificaciones). ¿Quién los controla? Ahí entra **Kubernetes**: es el **director de orquesta automático** (o el jefe de puerto que maneja todos los barcos). Hace tres cosas fundamentales solo:
+  1. **Escala en picos de tráfico (Auto-scaling):** Si hay un *CyberMonday* y entran 50.000 personas a pagar, Kubernetes multiplica automáticamente las cajitas de Docker del módulo de pagos de 2 a 20 en segundos, y cuando termina el pico las apaga para ahorrar costos en la nube.
+  2. **Se repara solo (Self-healing):** Si un contenedor se cuelga a las 3 de la mañana, Kubernetes lo detecta, lo tira a la basura y levanta uno nuevo sano en segundos sin que ningún cliente note la caída.
+  3. **Actualiza sin cortar el servicio:** Cuando el equipo sube una versión nueva, va reemplazando las cajas viejas por las nuevas gradualmente sin apagar la plataforma."
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Hacé clic sobre el diagrama comparativo a la izquierda para abrirlo en pantalla completa (Lightbox), y luego recorré las 3 tarjetas inferiores del Glosario de Infraestructura (AWS / Cloud, Docker, Kubernetes).
 
 ### 🔗 Puente de Conexión → Slide 5 (APIs: El Pegamento del Software Moderno)
-> **"Pero si ahora el sistema está dividido en piezas independientes que viven en distintos servidores en la nube, ¿cómo hacen esas piezas para hablar entre sí y pasarse información? Ahí entra el concepto más importante de todos: las APIs. Pasemos a la Slide 5."**
+> **"Pero si ahora el sistema está dividido en piezas independientes que viven en distintos contenedores en la nube, ¿cómo hacen esas piezas para hablar entre sí y pasarse información? Ahí entra el concepto más importante de todos: las APIs. Pasemos a la Slide 5."**
 
 ---
 
