@@ -184,6 +184,32 @@ Ejemplo: Dar de baja una suscripción.
 
 Riesgo: Acción irreversible. Asegurate de que siempre requiera confirmación en la UI.
 
+Ejemplos en la Práctica: ¿Qué viaja por la API cuando el usuario usa una App?
+
+📱 1. Abrir perfil o historial
+
+GET /api/proyectos?estado=activo
+
+Trae la lista de proyectos en pantalla. Si refrescás 10 veces, no duplica ni cambia nada.
+
+🛒 2. Crear ticket o enviar prompt
+
+POST /api/tickets { "titulo": "Bug" }
+
+Envía un JSON en el cuerpo y crea un registro nuevo en la BD (o envía un prompt a ChatGPT).
+
+✏️ 3. Cambiar estado o dirección
+
+PUT /api/tickets/42 { "estado": "Done" }
+
+Busca el ticket #42 que ya existía en la base de datos y actualiza su estado a finalizado.
+
+🗑️ 4. Quitar ítem o cancelar cuenta
+
+DELETE /api/carrito/item/99
+
+Apunta al ID específico (#99) y lo remueve de la base de datos tras confirmar en la pantalla.
+
 ---
 
 ## Diapositiva 7 (slide4c)
@@ -390,13 +416,13 @@ US-44
 
 Notificaciones push
 
-- 
+→
 
-- 
+→
 
-- 
+→
 
-- 
+→
 
 Ramas de Git (Repositorio)
 

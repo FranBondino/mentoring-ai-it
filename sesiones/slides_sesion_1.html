@@ -2499,6 +2499,38 @@
                     </p>
                 </div>
             </div>
+
+            <!-- EJEMPLOS PRACTICOS ABAJO -->
+            <div style="width: 100%; max-width: 1200px; margin-top: 0.2rem;">
+                <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.45rem;">
+                    <i data-lucide="terminal" class="icon-sm" style="color: var(--color-blue);"></i> Ejemplos en la Práctica: ¿Qué viaja por la API cuando el usuario usa una App?
+                </div>
+                <div class="http-methods-grid" style="margin-bottom: 0;">
+                    <div class="glass-card" style="padding: 0.75rem 0.9rem; border-top: 2px solid var(--color-blue); text-align: left;">
+                        <div style="font-size: 0.74rem; font-weight: 700; color: #60a5fa; margin-bottom: 0.25rem;">📱 1. Abrir perfil o historial</div>
+                        <code style="display: block; font-size: 0.7rem; color: #e2e8f0; background: rgba(0,0,0,0.35); padding: 4px 6px; border-radius: 5px; margin-bottom: 0.35rem;">GET /api/proyectos?estado=activo</code>
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35; margin: 0;">Trae la lista de proyectos en pantalla. Si refrescás 10 veces, no duplica ni cambia nada.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 0.75rem 0.9rem; border-top: 2px solid var(--color-green); text-align: left;">
+                        <div style="font-size: 0.74rem; font-weight: 700; color: #34d399; margin-bottom: 0.25rem;">🛒 2. Crear ticket o enviar prompt</div>
+                        <code style="display: block; font-size: 0.7rem; color: #e2e8f0; background: rgba(0,0,0,0.35); padding: 4px 6px; border-radius: 5px; margin-bottom: 0.35rem;">POST /api/tickets { "titulo": "Bug" }</code>
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35; margin: 0;">Envía un JSON en el cuerpo y crea un registro nuevo en la BD (o envía un prompt a ChatGPT).</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 0.75rem 0.9rem; border-top: 2px solid var(--color-orange); text-align: left;">
+                        <div style="font-size: 0.74rem; font-weight: 700; color: #fdba74; margin-bottom: 0.25rem;">✏️ 3. Cambiar estado o dirección</div>
+                        <code style="display: block; font-size: 0.7rem; color: #e2e8f0; background: rgba(0,0,0,0.35); padding: 4px 6px; border-radius: 5px; margin-bottom: 0.35rem;">PUT /api/tickets/42 { "estado": "Done" }</code>
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35; margin: 0;">Busca el ticket #42 que ya existía en la base de datos y actualiza su estado a finalizado.</p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 0.75rem 0.9rem; border-top: 2px solid var(--color-red); text-align: left;">
+                        <div style="font-size: 0.74rem; font-weight: 700; color: #f87171; margin-bottom: 0.25rem;">🗑️ 4. Quitar ítem o cancelar cuenta</div>
+                        <code style="display: block; font-size: 0.7rem; color: #e2e8f0; background: rgba(0,0,0,0.35); padding: 4px 6px; border-radius: 5px; margin-bottom: 0.35rem;">DELETE /api/carrito/item/99</code>
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.35; margin: 0;">Apunta al ID específico (#99) y lo remueve de la base de datos tras confirmar en la pantalla.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE 4c: CODIGOS DE ESTADO -->
