@@ -550,7 +550,7 @@
                 <a href="./glosario_completo_sesion_1.html" class="btn-nav">📖 Glosario S1</a>
             </div>
             <div class="score-pill" id="scoreTracker">
-                <span>🎯 Progreso Práctico: <strong id="scoreCount">0 / 11</strong> desafíos resueltos</span>
+                <span>🎯 Progreso Práctico: <strong id="scoreCount">0 / 19</strong> desafíos resueltos</span>
             </div>
         </div>
     </header>
@@ -559,25 +559,25 @@
         <section class="hero-banner">
             <span class="hero-eyebrow">⚡ Laboratorio Práctico Interactivo · Sesión 1</span>
             <h1>Simulador de Decisiones en IT, Agile &amp; DevOps</h1>
-            <p>Nada de preguntas teóricas de memoria: ponete a prueba en <strong>4 misiones interactivas</strong> simulando situaciones reales de una aplicación moderna, un Sprint en Jira/Git, la elección entre Scrum y Kanban, y la traducción de experiencia al lenguaje IT.</p>
+            <p>Nada de preguntas teóricas de memoria: ponete a prueba en <strong>4 misiones interactivas (19 desafíos reales)</strong> simulando situaciones cotidianas de una aplicación moderna (RESTful API, HTTP y BBDD), un Sprint en Jira/Git/GitHub, decisiones de arquitectura Agile/IA y traducción de perfil al lenguaje IT.</p>
         </section>
 
         <!-- TABS DE LAS 4 MISIONES -->
         <div class="mission-tabs">
             <button class="mission-tab active" onclick="switchMission(1, this)">
-                <div class="mission-tab-num"><span>Misión 01</span> <span id="badge-m1">0/4</span></div>
+                <div class="mission-tab-num"><span>Misión 01</span> <span id="badge-m1">0/6</span></div>
                 <div class="mission-tab-title">Rayos X de una App</div>
-                <div class="mission-tab-sub">APIs, Verbos HTTP, Códigos y BBDD</div>
+                <div class="mission-tab-sub">RESTful API, Verbos HTTP, Códigos y BBDD</div>
             </button>
             <button class="mission-tab" onclick="switchMission(2, this)">
-                <div class="mission-tab-num"><span>Misión 02</span> <span id="badge-m2">0/4</span></div>
+                <div class="mission-tab-num"><span>Misión 02</span> <span id="badge-m2">0/7</span></div>
                 <div class="mission-tab-title">Decisiones en el Pipeline</div>
-                <div class="mission-tab-sub">Git, Ambientes, Feature Flags y Rollback</div>
+                <div class="mission-tab-sub">Git vs. GitHub, Comandos, Ramas y Cloud</div>
             </button>
             <button class="mission-tab" onclick="switchMission(3, this)">
-                <div class="mission-tab-num"><span>Misión 03</span> <span id="badge-m3">0/3</span></div>
-                <div class="mission-tab-title">Consultorio Agile</div>
-                <div class="mission-tab-sub">Microservicios, Scrum, Kanban y Scrumban</div>
+                <div class="mission-tab-num"><span>Misión 03</span> <span id="badge-m3">0/6</span></div>
+                <div class="mission-tab-title">Consultorio Agile &amp; Tech</div>
+                <div class="mission-tab-sub">Scrum, Kanban, Roles, BBDD e IA (2017)</div>
             </button>
             <button class="mission-tab" onclick="switchMission(4, this)">
                 <div class="mission-tab-num"><span>Misión 04</span> <span>Interactivo</span></div>
@@ -591,8 +591,8 @@
             <div class="sim-card">
                 <div class="sim-header">
                     <div>
-                        <h2>🔍 Misión 1: Inspector de Rayos X de una Aplicación</h2>
-                        <p>Elegí una acción cotidiana a la izquierda y configurá a la derecha qué viaja por la API (Verbo HTTP, Código de Estado esperado y tipo de Base de Datos).</p>
+                        <h2>🔍 Misión 1: Inspector de Rayos X de una Aplicación (RESTful API)</h2>
+                        <p>Elegí una de las 6 acciones cotidianas a la izquierda y configurá qué viaja por la RESTful API (Verbo HTTP, Código de Estado esperado y tipo de Base de Datos).</p>
                     </div>
                 </div>
 
@@ -627,6 +627,20 @@
                                 <div style="font-size: 0.78rem; color: var(--text-secondary);">El usuario pregunta en lenguaje natural pero el servidor de la nube se cae en ese instante.</div>
                             </div>
                             <span id="scen-check-3">⏳</span>
+                        </button>
+                        <button class="scenario-btn" id="scen-4" onclick="selectScenario(4)">
+                            <div>
+                                <strong>Caso 5: Eliminar una suscripción o proveedor dado de baja</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">Un administrador confirma la baja definitiva de un registro en el padrón estructurado y todo sale bien.</div>
+                            </div>
+                            <span id="scen-check-4">⏳</span>
+                        </button>
+                        <button class="scenario-btn" id="scen-5" onclick="selectScenario(5)">
+                            <div>
+                                <strong>Caso 6: Guardar una ficha de catálogo flexible con datos incompletos</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">El usuario intenta crear un ítem en el catálogo JSON pero olvida completar un campo obligatorio, por lo que la API rechaza el envío.</div>
+                            </div>
+                            <span id="scen-check-5">⏳</span>
                         </button>
 
                         <!-- Selectors -->
@@ -686,8 +700,8 @@
             <div class="sim-card">
                 <div class="sim-header">
                     <div>
-                        <h2>🚀 Misión 2: Decisiones Reales en el Pipeline (Git, Ambientes y Deploys)</h2>
-                        <p>Estás coordinando un equipo de desarrollo y surgen estas 4 situaciones cotidianas. ¿Qué decisión tomás en cada una?</p>
+                        <h2>🚀 Misión 2: Decisiones Reales en el Pipeline (Git vs. GitHub, Comandos, Ramas, Ambientes y Cloud)</h2>
+                        <p>Estás coordinando un equipo de desarrollo y surgen estas 7 situaciones cotidianas basadas en las Slides de la Sesión 1. ¿Qué decisión tomás en cada una?</p>
                     </div>
                 </div>
 
@@ -695,7 +709,7 @@
                     <!-- Caso 2.1 -->
                     <div class="case-card">
                         <div>
-                            <span class="case-badge" style="background:rgba(139,92,246,0.15); color:#c084fc;">Situación 1 · Git &amp; Ramas</span>
+                            <span class="case-badge" style="background:rgba(139,92,246,0.15); color:#c084fc;">Situación 1 · Git &amp; Pull Request</span>
                             <h3 class="case-title">El programador terminó la User Story #42</h3>
                             <p class="case-desc">Un desarrollador te dice en la Daily: <em>"Ya terminé de programar el filtro nuevo en mi computadora"</em>. ¿Cuál es el paso correcto en Git?</p>
                             <button class="case-option" onclick="answerCase('m2-1', false, this, '¡Peligro! Subir directo a main (Producción) sin revisión ni pruebas automáticas puede romper el sistema en vivo.')">
@@ -755,21 +769,69 @@
                         </div>
                         <div id="exp-m2-4" class="case-explain"></div>
                     </div>
+
+                    <!-- Caso 2.5 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(59,130,246,0.15); color:#60a5fa;">Situación 5 · Git vs. GitHub y Comandos</span>
+                            <h3 class="case-title">"Ya hice <code>git commit</code>, pero todavía no hice <code>git push</code>"</h3>
+                            <p class="case-desc">En la Daily, un programador comenta esa frase sobre su tarea y QA pregunta si ya puede probarla en el servidor. ¿Qué está pasando en realidad?</p>
+                            <button class="case-option" onclick="answerCase('m2-5', true, this, '¡Exacto! Git es el motor local y GitHub es la plataforma en la nube. Un git commit guarda una foto en su computadora, pero hasta que no haga git push y se apruebe la Pull Request en GitHub, QA no lo verá en el servidor.')">
+                                A) Sus cambios están guardados solo en su computadora local (<strong>Git</strong>); falta hacer <code>git push</code> para subirlos a la nube (<strong>GitHub</strong>) y abrir la Pull Request.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-5', false, this, 'Ojo: git commit solo guarda el punto de control en el disco de la notebook del programador. Para enviarlo a GitHub necesita ejecutar git push.')">
+                                B) Con <code>git commit</code> el código ya se publica solo en GitHub y en Producción sin ningún paso adicional.
+                            </button>
+                        </div>
+                        <div id="exp-m2-5" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 2.6 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(168,85,247,0.15); color:#c084fc;">Situación 6 · Flujo de Ramas Corporativo (Slide 14)</span>
+                            <h3 class="case-title">El camino de 5 ramas hacia Producción</h3>
+                            <p class="case-desc">Una funcionalidad nació en <code>feature</code>, se unió en <code>develop</code> y el equipo de QA acaba de aprobarla en la subrama <code>testing</code>. Según el flujo de ramas corporativo, ¿cuál es el paso previo antes de ir a <code>main (Producción)</code>?</p>
+                            <button class="case-option" onclick="answerCase('m2-6', false, this, 'Saltarse pre-prod (Staging) deja afuera tu validación funcional de negocio (UAT Sign-Off) y el Security Gate.')">
+                                A) Fusionar directo de <code>testing</code> a <code>main (Producción)</code> sin validación de negocio ni auditoría de seguridad.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-6', true, this, '¡Impecable! El flujo completo de la Slide 14 es: feature → develop → testing (QA) → pre-prod (Staging, donde das el UAT Sign-Off y pasa el Security Gate) → main (Producción).')">
+                                B) Pasar a la subrama <code>pre-prod (Staging)</code> para tu aprobación funcional (<strong>UAT Sign-Off</strong>) y el <strong>Security Gate</strong> antes del merge a <code>main</code>.
+                            </button>
+                        </div>
+                        <div id="exp-m2-6" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 2.7 -->
+                    <div class="case-card" style="grid-column: 1 / -1;">
+                        <div>
+                            <span class="case-badge" style="background:rgba(6,182,212,0.15); color:#22d3ee;">Situación 7 · Cloud AWS, Docker y Kubernetes (Slide 4)</span>
+                            <h3 class="case-title">Pico masivo de tráfico y el clásico "en mi máquina funcionaba"</h3>
+                            <p class="case-desc">Van a lanzar una campaña con 50.000 usuarios simultáneos. Querés evitar dos riesgos: (1) que el código falle al pasar de la notebook del dev al servidor, y (2) que el servidor colapse cuando entren todos los usuarios juntos. ¿Qué combinación de infraestructura resuelve ambos problemas?</p>
+                            <button class="case-option" onclick="answerCase('m2-7', true, this, '¡Respuesta 10/10! Docker empaqueta el código en una caja estandarizada para que corra igual en todos lados, y Kubernetes (K8s) sobre AWS actúa como el director de orquesta que multiplica contenedores cuando sube el tráfico y reinicia cualquiera que falle.')">
+                                A) Empaquetar la app en contenedores <strong>Docker</strong> y orquestarlos con <strong>Kubernetes (K8s)</strong> sobre la nube elástica de <strong>AWS</strong> para auto-escalar y auto-reparar.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-7', false, this, 'Un servidor físico local (On-Premise) sin contenedores tarda semanas en ampliarse y sufre el problema de diferencias de configuración entre máquinas.')">
+                                B) Comprar un servidor físico local (On-Premise) e instalar los archivos manualmente el día de la campaña.
+                            </button>
+                        </div>
+                        <div id="exp-m2-7" class="case-explain"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== MISIÓN 3: CONSULTORIO AGILE ==================== -->
+        <!-- ==================== MISIÓN 3: CONSULTORIO AGILE & TECH ==================== -->
         <section id="mission-3" class="mission-section">
             <div class="sim-card">
                 <div class="sim-header">
                     <div>
-                        <h2>🧩 Misión 3: Consultorio Agile (Arquitectura, Scrum y Kanban)</h2>
-                        <p>Elegí cómo organizarías la arquitectura y la metodología de trabajo en estos 3 escenarios reales de la industria.</p>
+                        <h2>🧩 Misión 3: Consultorio Agile, Roles, Bases de Datos e IA</h2>
+                        <p>Elegí cómo resolverías estos 6 escenarios reales sobre arquitectura, Scrum/Kanban, roles en equipos IT, bases de datos y el salto a las Redes Neuronales.</p>
                     </div>
                 </div>
 
-                <div class="cases-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="cases-grid" style="grid-template-columns: repeat(2, 1fr);">
                     <!-- Caso 3.1 -->
                     <div class="case-card">
                         <div>
@@ -817,6 +879,54 @@
                         </div>
                         <div id="exp-m3-3" class="case-explain"></div>
                     </div>
+
+                    <!-- Caso 3.4 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(168,85,247,0.15); color:#c084fc;">Escenario 4 · Reglas Fijas vs. Transformer (Slide 2)</span>
+                            <h3 class="case-title">¿Cuándo usar código tradicional y cuándo IA?</h3>
+                            <p class="case-desc">Tenés dos requerimientos en el Backlog: (1) calcular el 21% de IVA exacto en una factura, y (2) resumir correos largos de clientes entendiendo el contexto de cada frase. ¿Qué motor elegís para cada uno?</p>
+                            <button class="case-option" onclick="answerCase('m3-4', false, this, 'Usar un modelo probabilístico para sumar impuestos es riesgoso y costoso; y usar reglas if/else fijas no sirve para entender texto humano libre.')">
+                                A) Usar un LLM para calcular el IVA y programar reglas <code>if / else</code> manuales para entender los correos.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-4', true, this, '¡Criterio de PM Senior! El software determinista (if/else) es imbatible para cálculos exactos; mientras que la arquitectura Transformer con Auto-Atención (Paper 2017) brilla conectando palabras para entender contexto e intención.')">
+                                B) <strong>Software Determinista (<code>if / else</code>)</strong> para el cálculo exacto del IVA, y un <strong>LLM (Red Neuronal Transformer con Auto-Atención)</strong> vía API para resumir y comprender los correos.
+                            </button>
+                        </div>
+                        <div id="exp-m3-4" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 3.5 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(236,72,153,0.15); color:#f472b6;">Escenario 5 · Roles en Corporación (Slides 11 y 12)</span>
+                            <h3 class="case-title">¿A quién buscás en cada reunión?</h3>
+                            <p class="case-desc">Entrás a una empresa grande donde los roles están especializados. Necesitás: (1) detallar las User Stories del Sprint diario, (2) validar cuánto cuesta técnicamente hacer una integración y (3) automatizar el servidor en AWS. ¿Con quién hablás en cada caso?</p>
+                            <button class="case-option" onclick="answerCase('m3-5', true, this, '¡Clarísimo! En corporaciones el PO lleva el detalle táctico del backlog diario, el Tech Lead es tu socio para arquitectura y factibilidad técnica, y el DevOps Engineer administra la nube y los pipelines.')">
+                                A) Con el <strong>Product Owner (PO)</strong> para el backlog del Sprint, con el <strong>Tech Lead</strong> para la arquitectura/estimación técnica y con <strong>DevOps</strong> para la nube y CI/CD.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-5', false, this, 'En una corporación los roles están desdoblados: el QA diseña pruebas de calidad, no administra servidores de AWS ni define el backlog comercial.')">
+                                B) Le pedís las tres cosas únicamente al analista de QA Manual.
+                            </button>
+                        </div>
+                        <div id="exp-m3-5" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 3.6 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(6,182,212,0.15); color:#22d3ee;">Escenario 6 · SQL vs. NoSQL vs. Vector DB (Slide 16)</span>
+                            <h3 class="case-title">Arquitectura de Datos de un E-Commerce con IA</h3>
+                            <p class="case-desc">Un portal necesita guardar: (1) facturas y saldos contables sin errores, (2) fichas de productos muy distintas entre sí en documentos JSON flexibles, y (3) manuales para un buscador por significado con IA. ¿Qué motor usa en cada capa?</p>
+                            <button class="case-option" onclick="answerCase('m3-6', true, this, '¡Dominio total de la Slide 16! Las empresas modernas combinan las 3: SQL para transacciones contables rígidas, NoSQL para documentos JSON flexibles y Vector DB para búsquedas semánticas de IA.')">
+                                A) <strong>SQL Relacional</strong> para facturación, <strong>NoSQL Documental</strong> para el catálogo JSON flexible y <strong>Base de Datos Vectorial</strong> para el buscador semántico de IA.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-6', false, this, 'Una planilla suelta o un único motor no resuelve bien los tres mundos: las búsquedas por significado requieren vectores (Embeddings) y la contabilidad requiere tablas relacionales SQL.')">
+                                B) Guardar las facturas, los documentos JSON y los vectores de IA en un único archivo de texto plano sin estructura.
+                            </button>
+                        </div>
+                        <div id="exp-m3-6" class="case-explain"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -827,7 +937,7 @@
                 <div class="sim-header">
                     <div>
                         <h2>✨ Misión 4: Traductor Interactivo de Experiencia al Lenguaje IT</h2>
-                        <p>Hacé clic en cualquiera de las experiencias tradicionales de la izquierda para ver cómo se transforma al vocabulario IT, Agile &amp; Cloud, o armá tu propia frase abajo.</p>
+                        <p>Hacé clic en cualquiera de las 4 experiencias tradicionales de la izquierda para ver cómo se transforma al vocabulario IT, Agile &amp; Cloud, o armá tu propia frase abajo.</p>
                     </div>
                 </div>
 
@@ -845,6 +955,10 @@
                         <div class="phrase-card" onclick="showTranslation(2, this)">
                             <div style="font-size:0.75rem; color:#f87171; font-weight:700; text-transform:uppercase;">Experiencia 3 · Herramientas y Plataformas</div>
                             <p style="font-size:0.9rem; color:#e2e8f0; margin-top:0.25rem;">"Usábamos distintas plataformas conectadas para recibir pedidos de clientes, guardar glosarios y llevar el control de las cuentas."</p>
+                        </div>
+                        <div class="phrase-card" onclick="showTranslation(3, this)">
+                            <div style="font-size:0.75rem; color:#f87171; font-weight:700; text-transform:uppercase;">Experiencia 4 · Mejora de Procesos e IA</div>
+                            <p style="font-size:0.9rem; color:#e2e8f0; margin-top:0.25rem;">"Buscábamos formas de automatizar tareas repetitivas del equipo y usar herramientas de inteligencia artificial para responder más rápido sin perder calidad."</p>
                         </div>
                     </div>
 
@@ -887,7 +1001,7 @@
                 altDb: "NoSQL",
                 endpoint: "GET /api/v1/proyectos?estado=activo",
                 json: `{\n  "status": 200,\n  "method": "GET",\n  "data": [\n    { "id": 42, "cliente": "Global Corp", "estado": "In Progress" },\n    { "id": 43, "cliente": "Tech Latam", "estado": "QA Review" }\n  ]\n}`,
-                explain: "¡Exacto! Cuando solo querés consultar y mostrar datos en pantalla sin modificar nada, la API usa **GET**, devuelve **200 OK** y lee los registros desde la base de datos (**SQL** o **NoSQL**)."
+                explain: "¡Exacto! Cuando solo querés consultar y mostrar datos en pantalla sin modificar nada, la RESTful API usa **GET**, devuelve **200 OK** y lee los registros desde la base de datos (**SQL** o **NoSQL**)."
             },
             {
                 title: "Caso 2: Crear una nueva orden de compra y pagarla",
@@ -917,6 +1031,27 @@
                 endpoint: "POST /api/v1/ia/buscar-contexto",
                 json: `{\n  "status": 500,\n  "error": "Internal Server Error",\n  "target_db": "Pinecone Vector DB (Embeddings)",\n  "message": "El servidor Backend no pudo responder la consulta semántica"\n}`,
                 explain: "¡Brillante! Las búsquedas por significado e intención para IA consultan una **Base de Datos Vectorial (Vector DB)**, y como el problema fue una caída de nuestros servidores en la nube, el código es **500 (Server Error)**."
+            },
+            {
+                title: "Caso 5: Eliminar una suscripción o proveedor dado de baja",
+                verb: "DELETE",
+                status: "200",
+                db: "SQL",
+                altDb: "NoSQL",
+                endpoint: "DELETE /api/v1/proveedores/512",
+                json: `{\n  "status": 200,\n  "method": "DELETE",\n  "deleted_id": 512,\n  "message": "Registro eliminado correctamente del padrón SQL"\n}`,
+                explain: "¡Perfecto! Cuando se da de baja o borra un registro existente, la RESTful API utiliza el verbo **DELETE**, devuelve **200 OK** al confirmar la operación e impacta sobre la base **SQL**."
+            },
+            {
+                title: "Caso 6: Guardar una ficha de catálogo flexible con datos incompletos",
+                verb: "POST",
+                altVerb: "PUT",
+                status: "400",
+                db: "NoSQL",
+                altDb: "SQL",
+                endpoint: "POST /api/v1/catalogo/productos",
+                json: `{\n  "status": 400,\n  "error": "Bad Request (Error del Cliente)",\n  "target_db": "MongoDB (NoSQL Documental JSON)",\n  "details": "Falta el campo obligatorio 'precio_unitario' en el JSON enviado"\n}`,
+                explain: "¡Excelente ojo clínico! Intentar crear o guardar una ficha usa **POST** sobre el catálogo **NoSQL (JSON)**, pero como el usuario envió el formulario con datos faltantes, el servidor responde **4xx (400 Bad Request - Error del Cliente)**."
             }
         ];
 
@@ -972,8 +1107,8 @@
                 updateScore();
             } else {
                 let hints = [];
-                if (!verbOk) hints.push(`fijate si la acción consulta, crea o actualiza datos (Verbo sugerido: <strong>${s.verb}</strong>)`);
-                if (!statusOk) hints.push(`revisá si la operación fue exitosa o si cayó el servidor (Código esperado: <strong>${s.status}</strong>)`);
+                if (!verbOk) hints.push(`fijate si la acción consulta, crea, actualiza o borra datos (Verbo sugerido: <strong>${s.verb}</strong>)`);
+                if (!statusOk) hints.push(`revisá si la operación fue exitosa, si faltaron datos del cliente (4xx) o si cayó el servidor (Código esperado: <strong>${s.status}</strong>)`);
                 if (!dbOk) hints.push(`pensá qué motor se ajusta mejor a ese dato (Base ideal: <strong>${s.db}</strong>)`);
                 fb.className = 'feedback-banner err';
                 fb.innerHTML = '💡 <strong>Casi:</strong> ' + hints.join('; ') + '. ¡Probá ajustarlo y volvé a simular!';
@@ -999,13 +1134,13 @@
         }
 
         function updateScore() {
-            const m1 = [0,1,2,3].filter(i => solvedMap['m1-' + i]).length;
-            const m2 = [1,2,3,4].filter(i => solvedMap['m2-' + i]).length;
-            const m3 = [1,2,3].filter(i => solvedMap['m3-' + i]).length;
-            document.getElementById('badge-m1').textContent = m1 + '/4';
-            document.getElementById('badge-m2').textContent = m2 + '/4';
-            document.getElementById('badge-m3').textContent = m3 + '/3';
-            document.getElementById('scoreCount').textContent = (m1 + m2 + m3) + ' / 11';
+            const m1 = [0,1,2,3,4,5].filter(i => solvedMap['m1-' + i]).length;
+            const m2 = [1,2,3,4,5,6,7].filter(i => solvedMap['m2-' + i]).length;
+            const m3 = [1,2,3,4,5,6].filter(i => solvedMap['m3-' + i]).length;
+            document.getElementById('badge-m1').textContent = m1 + '/6';
+            document.getElementById('badge-m2').textContent = m2 + '/7';
+            document.getElementById('badge-m3').textContent = m3 + '/6';
+            document.getElementById('scoreCount').textContent = (m1 + m2 + m3) + ' / 19';
         }
 
         const translations = [
@@ -1014,12 +1149,16 @@
                 chips: ["Agile (Scrum / Kanban)", "Priorización de Backlog", "Gestión de SLAs", "Delivery End-to-End"]
             },
             {
-                text: `"Gestioné el control de calidad funcional y las pruebas de aceptación (<strong>UAT en Staging</strong>) contra <strong>Criterios de Aceptación</strong> previo al <strong>Release</strong> a Producción, coordinando la resolución de incidentes para garantizar un 99% de calidad en las entregas."`,
+                text: `"Gestioné el control de calidad funcional y las pruebas de aceptación (<strong>UAT en Staging / Pre-Prod</strong>) contra <strong>Criterios de Aceptación</strong> previo al <strong>Release</strong> a Producción, coordinando la resolución de incidentes para garantizar un 99% de calidad en las entregas."`,
                 chips: ["Staging & UAT", "Criterios de Aceptación", "Release Management", "Gestión de Incidentes"]
             },
             {
-                text: `"Coordiné flujos operativos sobre plataformas en la nube (<strong>Cloud</strong>) integradas vía <strong>APIs REST</strong> y bases de datos estructuradas, optimizando la trazabilidad de entregas y la consistencia de la información entre equipos."`,
-                chips: ["APIs REST", "Plataformas Cloud", "Bases de Datos", "Trazabilidad Técnica"]
+                text: `"Coordiné flujos operativos sobre plataformas en la nube (<strong>Cloud AWS</strong>) integradas vía <strong>RESTful APIs (JSON)</strong> y bases de datos estructuradas, optimizando la trazabilidad de entregas y la consistencia de la información entre equipos."`,
+                chips: ["RESTful APIs", "Plataformas Cloud", "Bases de Datos", "Trazabilidad Técnica"]
+            },
+            {
+                text: `"Impulsé la automatización de procesos operativos integrando <strong>LLMs vía API</strong> y búsquedas contextuales sobre bases de conocimiento (<strong>Vector DB / RAG</strong>), reduciendo tiempos manuales de revisión y manteniendo el control humano de calidad (<strong>Human-in-the-Loop</strong>)."`,
+                chips: ["LLMs vía API", "Vector DB & Contexto", "Automatización de Flujos", "Human-in-the-Loop QA"]
             }
         ];
 

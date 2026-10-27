@@ -1083,6 +1083,22 @@ Enfoque PM (Estrategia)
 
 Es la pieza clave de los sistemas modernos. Como PM, las APIs son tus mayores aliadas para integrar tu app a pasarelas de pago (ej. Stripe), sistemas de envío (ej. DHL) o modelos de IA (ej. OpenAI) de forma súper veloz sin programar todo desde cero.
 
+08b API REST (RESTful API), Verbos HTTP y Códigos de Estado
+
+RESTful & HTTP
+
+Definición: REST (Representational State Transfer) es el estilo de arquitectura estándar del 90% de las APIs web. Una API es RESTful cuando expone recursos en URLs claras llamadas Endpoints (ej. https://api.empresa.com/v1/clientes), intercambia paquetes JSON sin guardar estado entre peticiones (stateless) y utiliza los 4 verbos HTTP universales:
+
+- GET (Consultar): Lee datos sin modificar nada (ej. GET /api/proyectos).
+- POST (Crear / Enviar): Envía un JSON en el cuerpo para crear un registro nuevo (ej. POST /api/pagos).
+- PUT / PATCH (Actualizar): Modifica un registro existente (ej. PUT /api/tareas/42).
+- DELETE (Eliminar): Borra un registro existente (ej. DELETE /api/items/99).
+
+Semáforo de Códigos de Estado HTTP:
+- 200 OK / 201 Created (2xx): Éxito total.
+- 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found (4xx): Error del lado del Cliente (faltan datos, sin sesión, sin permisos o URL inexistente).
+- 500 Internal Server Error, 502, 503 (5xx): Error o caída del lado del Servidor Backend en la nube.
+
 09 JSON vs. XML
 
 Formatos de Datos
@@ -1263,37 +1279,41 @@ Análisis Estático de Código. Revisa de forma automática que no haya brechas 
 
 Las reglas y metodologías técnicas para sincronizar el trabajo diario de decenas de ingenieros en un repositorio central estable.
 
-16 Git vs. GitHub (Diferencia Crítica)
+16 Diferencia entre Git y GitHub (o GitLab)
 
-Git
+Git vs. GitHub
 
-*   Git: Es el software local instalable que lleva el historial de cambios, reversiones y versiones de los archivos en la computadora del programador.
-
-*   GitHub: Plataforma en la nube que aloja los repositorios Git facilitando la gobernanza, revisiones cruzadas, foros y flujos automáticos de CI/CD.
+- Git (Motor Local): Es el software de control de versiones instalado en la computadora de cada programador. Guarda el historial de cambios (commits) y permite crear ramas locales incluso sin internet.
+- GitHub / GitLab (Plataforma Cloud): Es la plataforma colaborativa en la nube donde se alojan los repositorios Git para que todo el equipo pueda abrir Pull Requests (PR), hacer Code Review entre pares y ejecutar los pipelines de CI/CD.
 
 💡
 
-Metáfora: Git es la cámara fotográfica con la que capturas la realidad localmente; GitHub es Instagram, la red social en la nube donde organizas, compartes e interactúas sobre esas fotos.
+Metáfora: Git es la cámara fotográfica con la que capturás fotos en tu teléfono; GitHub es el álbum compartido en la nube donde subís esas fotos para que tu equipo las revise y apruebe.
 
-17 Branching y Git Workflow
+17 Comandos Esenciales de Git (El Idioma de la Daily)
 
-Git
+Comandos Git
 
-Conceptos clave del flujo diario de código:
-
-- Repository (Repo): El espacio en la nube donde vive todo el historial de código del producto.
-
-- Branch (Rama): Línea de trabajo paralela y aislada donde un dev programa un feature sin tocar el código estable. Te vas a topar con ramas por funcionalidad.
-
-- Pull Request (PR): Solicitud de un programador para integrar sus cambios a la rama principal, invitando a auditoría técnica.
-
-- Code Review: Auditoría cruzada obligatoria donde un ingeniero revisa el código de otro antes de autorizar el Merge (fusión).
-
-- Git Clone / Push / Pull: Acciones de descargar el repo localmente (Clone), subir cambios propios a la nube (Push) y traer cambios ajenos (Pull).
+- git clone: Descarga por primera vez el repositorio desde GitHub a la computadora del desarrollador.
+- git branch / git checkout -b: Crea una rama aislada (ej. feature/login) para programar sin tocar el código principal.
+- git add + git commit -m: Guarda una "foto" o punto de control de los cambios en la computadora local del programador.
+- git pull: Trae y actualiza en la computadora local los últimos cambios subidos por el resto del equipo.
+- git push: Sube los commits locales hacia la nube (GitHub) para poder abrir la Pull Request (PR).
+- git merge: Fusiona los cambios de una rama aprobada en Code Review hacia una rama superior.
 
 Enfoque PM (Estrategia)
 
-La velocidad de tu roadmap se ve impactada por esto. Si tu equipo tiene cuellos de botella en los *Code Reviews* (PRs estancadas por días), tu velocidad de delivery caerá drásticamente. Fomenta revisiones ágiles y diarias.
+La velocidad de tu roadmap se ve impactada por esto. Si tu equipo tiene cuellos de botella en los Code Reviews (PRs estancadas por días en GitHub), tu velocidad de delivery caerá drásticamente.
+
+17b Flujo de Ramas Corporativo (feature → develop → testing → pre-prod → main)
+
+Git Workflow
+
+1. feature/nueva-funcion: Rama aislada donde el dev programa su historia.
+2. develop: Rama donde se integran los cambios de los desarrolladores tras Code Review.
+3. testing: Subrama donde el equipo de QA ejecuta pruebas funcionales y automatizadas.
+4. pre-prod (Staging): Subrama espejo de producción para validación de negocio (UAT Sign-Off) y Security Gate.
+5. main (Producción): El código real que ven los usuarios finales.
 
 07. Bases de Datos: SQL vs. NoSQL Estructuración de Datos
 

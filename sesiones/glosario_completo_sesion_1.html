@@ -822,7 +822,7 @@
                 </div>
                 <div class="metaphor-box">
                     <div class="metaphor-icon">💡</div>
-                    <div><strong>Metáfora:</strong> Una calculadora estándar. No importa cuántas veces hagas `2 + 2`, siempre va a dar `4` de forma exacta porque sigue una regla cableada. No aprende, solo procesa según la fórmula fija.</div>
+                    <div><strong>Metáfora:</strong> Una calculadora estándar. No importa cuántas veces hagas <code>2 + 2</code>, siempre va a dar <code>4</code> de forma exacta porque sigue una regla cableada (<code>if / else</code>). No aprende, solo procesa según la fórmula fija.</div>
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
@@ -846,6 +846,29 @@
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
                     Como PM, acá tu rol cambia: en lugar de esperar que el sistema ande siempre igual (sí/no), tenés que gestionar márgenes de error aceptables, medir la precisión del modelo y controlar que la IA no invente datos (alucinaciones).
+                </div>
+            </div>
+
+            <!-- Concepto 2b -->
+            <div class="glossary-card">
+                <div class="card-header">
+                    <div class="concept-title"><span class="concept-index">02b</span> Red Neuronal y Arquitectura Transformer (Paper 2017)</div>
+                    <span class="concept-tag tag-paradigm">IA &amp; Deep Learning</span>
+                </div>
+                <div class="definition-box">
+                    <strong>Definición:</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Red Neuronal Artificial:</strong> Modelo matemático inspirado en el cerebro humano formado por capas de nodos conectados (<em>Entrada → Capas Ocultas → Salida</em>). En lugar de seguir reglas fijas (<code>if / else</code>), aprende patrones ajustando sus pesos matemáticos a partir de millones de ejemplos.</li>
+                        <li><strong>Arquitectura Transformer (<em>"Attention Is All You Need"</em>, Google 2017):</strong> El descubrimiento científico que revolucionó las redes neuronales y dio origen a los LLMs modernos (la <strong>"T"</strong> de ChatGPT). Introdujo el mecanismo de <strong>Auto-Atención (Self-Attention)</strong>, que permite a la red conectar todas las palabras de un párrafo en paralelo para entender el contexto real.</li>
+                    </ul>
+                </div>
+                <div class="metaphor-box">
+                    <div class="metaphor-icon">💡</div>
+                    <div><strong>Metáfora:</strong> Antes de 2017, la IA leía una oración palabra por palabra mirando por una cerradura: cuando llegaba al final del párrafo, se olvidaba del principio. El <strong>Transformer</strong> prende la luz de toda la habitación y mira todas las palabras al mismo tiempo (por ejemplo, al ver <em>"El banco cerró"</em>, conecta <em>"cerró"</em> con <em>"banco"</em> y deduce que es una entidad financiera —<em>bank</em>— y no un asiento de plaza —<em>bench</em>—).</div>
+                </div>
+                <div class="pm-insight-box">
+                    <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
+                    Te da el criterio para decidir qué tecnología usar en cada requerimiento: <strong>código determinista (<code>if/else</code>)</strong> cuando necesitás exactitud contable al 100%, y <strong>Redes Neuronales / Transformers (LLMs)</strong> cuando necesitás comprender lenguaje humano, resumir documentos o clasificar intenciones con contexto.
                 </div>
             </div>
 
@@ -883,7 +906,7 @@
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
-                    Es la base para implementar **RAG** (Retrieval-Augmented Generation). Permite conectar los modelos de IA generales con los documentos confidenciales e históricos de tu corporación sin exponer datos de forma pública.
+                    Es la base para implementar <strong>RAG (Retrieval-Augmented Generation)</strong>. Permite conectar los modelos de IA generales con los documentos confidenciales e históricos de tu corporación sin exponer datos de forma pública.
                 </div>
             </div>
 
@@ -959,7 +982,31 @@
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
-                    Elimina el clásico problema de los desarrolladores: *"En mi computadora andaba bien, no sé por qué falla en el servidor"*. Garantiza que el sistema corra exactamente igual en la laptop del programador, en el servidor de pruebas y en producción.
+                    Elimina el clásico problema de los desarrolladores: <em>"En mi computadora andaba bien, no sé por qué falla en el servidor"</em>. Garantiza que el sistema corra exactamente igual en la laptop del programador, en el servidor de pruebas y en producción.
+                </div>
+            </div>
+
+            <!-- Kubernetes -->
+            <div class="glossary-card">
+                <div class="card-header">
+                    <div class="concept-title"><span class="concept-index">05b</span> Kubernetes (K8s — Orquestador de Contenedores)</div>
+                    <span class="concept-tag tag-infra">Infraestructura</span>
+                </div>
+                <div class="definition-box">
+                    <strong>Definición:</strong> Sistema de orquestación automatizada (creado originalmente por Google) que administra decenas o miles de contenedores <strong>Docker</strong> en la nube. Se encarga de tres tareas críticas sin intervención humana:
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Auto-reparación (Self-Healing):</strong> Si un contenedor se tilda o se cae a las 3 AM, Kubernetes lo detecta, lo apaga y levanta uno nuevo en segundos.</li>
+                        <li><strong>Auto-escalado (Auto-Scaling):</strong> Si de golpe entran 50.000 usuarios por una promoción, multiplica automáticamente la cantidad de contenedores activos y luego los reduce cuando baja el tráfico para no gastar de más.</li>
+                        <li><strong>Despliegues sin caída (Rolling Updates):</strong> Actualiza la versión de la aplicación cambiando los contenedores de a poco para que el usuario nunca vea la página caída.</li>
+                    </ul>
+                </div>
+                <div class="metaphor-box">
+                    <div class="metaphor-icon">💡</div>
+                    <div><strong>Metáfora:</strong> Si <strong>Docker</strong> es un contenedor marítimo individual (o un músico con su instrumento), <strong>Kubernetes</strong> es el Capitán automatizado del puerto (o el Director de Orquesta) que coordina miles de contenedores a la vez, reemplaza al que falla y suma más barcos cuando crece la demanda.</div>
+                </div>
+                <div class="pm-insight-box">
+                    <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
+                    En el mundo IT vas a ver su abreviatura <strong>K8s</strong> (porque hay 8 letras entre la "K" y la "s"). Cuando tu equipo de DevOps dice <em>"el clúster de Kubernetes escala solo en AWS"</em>, significa que el producto tiene alta disponibilidad garantizada ante picos de usuarios.
                 </div>
             </div>
 
@@ -1091,6 +1138,63 @@
                 <img src="../api_restaurant_metaphor.png" alt="Metáfora del Restaurante y el Mozo API" class="responsive-img">
             </div>
 
+            <!-- API REST / RESTful API, Verbos HTTP y Códigos de Estado -->
+            <div class="glossary-card">
+                <div class="card-header">
+                    <div class="concept-title"><span class="concept-index">08b</span> API REST (RESTful API), Verbos HTTP y Códigos de Estado</div>
+                    <span class="concept-tag tag-api">RESTful &amp; HTTP</span>
+                </div>
+                <div class="definition-box">
+                    <strong>¿Qué significa que una API sea "REST" o "RESTful"?</strong><br>
+                    <strong>REST</strong> (<em>Representational State Transfer</em>) es el estilo de arquitectura estándar del 90% de las APIs modernas. Una API es <strong>RESTful</strong> cuando organiza la información en direcciones web claras llamadas <strong>Endpoints</strong> (ej. <code>https://api.empresa.com/v1/clientes</code>), intercambia datos livianos en formato <strong>JSON</strong> y opera bajo tres reglas:
+                    <ul style="margin-left: 20px; margin-top: 8px; margin-bottom: 14px;">
+                        <li><strong>Sin Estado (Stateless):</strong> Cada pedido del cliente al servidor viaja con toda la información necesaria (quién sos, qué permiso tenés y qué pedís); el servidor no necesita "recordar" tu clic anterior.</li>
+                        <li><strong>Verbos HTTP Estandarizados (CRUD):</strong> En vez de inventar comandos distintos en cada empresa, usa los 4 verbos universales del protocolo web para indicar la acción.</li>
+                        <li><strong>Códigos de Estado HTTP:</strong> El servidor siempre responde con un número de 3 dígitos que indica en milisegundos si el pedido salió bien o por qué falló.</li>
+                    </ul>
+
+                    <strong>1. Los 4 Verbos HTTP de una RESTful API:</strong>
+                    <div class="comparison-table-wrapper" style="margin-top: 8px; margin-bottom: 14px;">
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-header">Verbo HTTP</div>
+                            <div class="comparison-header">Acción sobre los Datos</div>
+                            <div class="comparison-header">Ejemplo Real en una App</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>GET</code></strong> (Consultar)</div>
+                            <div class="comparison-cell">Solo lee y trae datos sin modificar nada en la base de datos.</div>
+                            <div class="comparison-cell"><code>GET /api/proyectos</code> → Abre el listado de proyectos o el saldo en pantalla.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>POST</code></strong> (Crear / Enviar)</div>
+                            <div class="comparison-cell">Envía un paquete JSON oculto en el cuerpo del mensaje para crear un registro nuevo.</div>
+                            <div class="comparison-cell"><code>POST /api/pagos</code> → Registra una compra nueva o envía un prompt a un LLM.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>PUT / PATCH</code></strong> (Actualizar)</div>
+                            <div class="comparison-cell">Modifica los datos de un registro que ya existía previamente.</div>
+                            <div class="comparison-cell"><code>PUT /api/tareas/42</code> → Cambia el estado de una tarea a "Finalizada" o edita tu dirección.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>DELETE</code></strong> (Eliminar)</div>
+                            <div class="comparison-cell">Borra o da de baja un registro existente en el servidor.</div>
+                            <div class="comparison-cell"><code>DELETE /api/items/99</code> → Quita un producto o cancela una suscripción.</div>
+                        </div>
+                    </div>
+
+                    <strong>2. El Semáforo de Códigos de Estado HTTP:</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>🟢 <strong><code>200 OK</code> / <code>201 Created</code> (Familia 2xx — Éxito):</strong> El pedido se procesó perfecto y el servidor devuelve el JSON solicitado.</li>
+                        <li>🟡 <strong><code>400</code>, <code>401</code>, <code>403</code>, <code>404</code> (Familia 4xx — Error del lado del Cliente):</strong> El servidor funciona bien, pero el pedido tiene un problema: <code>400 Bad Request</code> (faltan datos obligatorios o formato inválido), <code>401 Unauthorized</code> (no iniciaste sesión), <code>403 Forbidden</code> (no tenés permisos de rol para ver eso), <code>404 Not Found</code> (el recurso o URL no existe).</li>
+                        <li>🔴 <strong><code>500</code>, <code>502</code>, <code>503</code> (Familia 5xx — Error del lado del Servidor):</strong> El usuario hizo todo bien, pero nuestro Backend, código o Base de Datos en la nube falló o se cayó (alerta crítica para ingeniería).</li>
+                    </ul>
+                </div>
+                <div class="pm-insight-box">
+                    <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
+                    Cuando QA o un cliente reporta una falla, mirar si la API REST devuelve un <strong>4xx</strong> o un <strong>5xx</strong> te ahorra horas de discusión: un <code>400/403</code> suele ser un problema de validación de formulario o permisos de usuario, mientras que un <code>500</code> es una caída real del servidor Backend que requiere atención inmediata del equipo técnico.
+                </div>
+            </div>
+
             <!-- JSON vs XML -->
             <div class="glossary-card">
                 <div class="card-header">
@@ -1188,8 +1292,8 @@
                 </div>
                 <div class="definition-box">
                     <strong>Definición:</strong>
-                    *   <strong>Deploy (Despliegue):</strong> Acto puramente técnico de subir el nuevo código a los servidores de producción (puede permanecer inactivo y oculto).<br>
-                    *   <strong>Release (Lanzamiento):</strong> Acto de negocio por el cual los usuarios reales comienzan a ver e interactuar formalmente con la nueva funcionalidad.
+                    • <strong>Deploy (Despliegue):</strong> Acto puramente técnico de subir el nuevo código a los servidores de producción (puede permanecer inactivo y oculto).<br>
+                    • <strong>Release (Lanzamiento):</strong> Acto de negocio por el cual los usuarios reales comienzan a ver e interactuar formalmente con la nueva funcionalidad.
                 </div>
                 <div class="metaphor-box">
                     <div class="metaphor-icon">💡</div>
@@ -1197,7 +1301,7 @@
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
-                    La separación se logra mediante **Feature Flags** (variables de configuración). Te dan el poder como PM de decidir exactamente cuándo lanzar una función comercialmente sin presionar técnicamente a ingeniería el día de la fecha de entrega.
+                    La separación se logra mediante <strong>Feature Flags</strong> (variables de configuración). Te dan el poder como PM de decidir exactamente cuándo lanzar una función comercialmente sin presionar técnicamente a ingeniería el día de la fecha de entrega.
                 </div>
             </div>
 
@@ -1210,7 +1314,7 @@
                 <div class="definition-box">
                     <strong>Protocolo de incidentes modernos:</strong>
                     <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li><strong>Rollback:</strong> Volver el sistema de producción al estado exacto de la versión anterior estable de forma inmediata (`Ctrl+Z` de servidores).</li>
+                        <li><strong>Rollback:</strong> Volver el sistema de producción al estado exacto de la versión anterior estable de forma inmediata (<code>Ctrl+Z</code> de servidores).</li>
                         <li><strong>Hotfix:</strong> Código de emergencia de máxima prioridad desarrollado para solucionar un error crítico directamente en producción.</li>
                         <li><strong>Post-Mortem:</strong> Reunión de análisis no punitivo posterior al incidente para identificar la causa raíz y prevenir futuros incidentes.</li>
                     </ul>
@@ -1307,44 +1411,126 @@
 
         <!-- ==================== BLOQUE 6 ==================== -->
         <div id="bloque6" class="page-content section-break">
-            <h2 class="page-header-title">06. Control de Versiones y Git <span>Código y Colaboración</span></h2>
-            <p class="section-intro">Las reglas y metodologías técnicas para sincronizar el trabajo diario de decenas de ingenieros en un repositorio central estable.</p>
+            <h2 class="page-header-title">06. Control de Versiones, Git y GitHub <span>Código, Comandos y Ramas</span></h2>
+            <p class="section-intro">Las reglas, herramientas y comandos técnicos que usan los equipos de ingeniería todos los días para escribir código en paralelo sin pisarse el trabajo.</p>
 
             <!-- Git vs GitHub -->
             <div class="glossary-card">
                 <div class="card-header">
-                    <div class="concept-title"><span class="concept-index">16</span> Git vs. GitHub (Diferencia Crítica)</div>
-                    <span class="concept-tag tag-git">Git</span>
+                    <div class="concept-title"><span class="concept-index">16</span> Diferencia entre Git y GitHub (o GitLab)</div>
+                    <span class="concept-tag tag-git">Git vs. GitHub</span>
                 </div>
                 <div class="definition-box">
-                    *   <strong>Git:</strong> Es el software local instalable que lleva el historial de cambios, reversiones y versiones de los archivos en la computadora del programador.<br>
-                    *   <strong>GitHub:</strong> Plataforma en la nube que aloja los repositorios Git facilitando la gobernanza, revisiones cruzadas, foros y flujos automáticos de CI/CD.
+                    Aunque suenen parecido, cumplen roles completamente distintos y complementarios:
+                    <div class="comparison-table-wrapper" style="margin-top: 10px; margin-bottom: 10px;">
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-header">Dimensión</div>
+                            <div class="comparison-header">Git (El Motor Local)</div>
+                            <div class="comparison-header">GitHub / GitLab (La Plataforma en la Nube)</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong>¿Qué es?</strong></div>
+                            <div class="comparison-cell">Software de control de versiones que se instala en la computadora de cada programador.</div>
+                            <div class="comparison-cell">Plataforma web colaborativa en la nube donde se alojan y comparten los proyectos que usan Git.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong>¿Dónde vive?</strong></div>
+                            <div class="comparison-cell">En la notebook del desarrollador (funciona incluso sin conexión a internet).</div>
+                            <div class="comparison-cell">En internet (nube), accesible desde el navegador por todo el equipo.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong>¿Para qué sirve?</strong></div>
+                            <div class="comparison-cell">Para crear ramas locales, guardar "fotos" del código (<code>commits</code>) y volver atrás si algo se rompe.</div>
+                            <div class="comparison-cell">Para abrir <strong>Pull Requests (PR)</strong>, hacer <strong>Code Review</strong> entre pares, gestionar permisos y disparar el pipeline de <strong>CI/CD</strong>.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong>Alternativas</strong></div>
+                            <div class="comparison-cell">Es el estándar mundial indiscutido (creado por Linus Torvalds).</div>
+                            <div class="comparison-cell"><strong>GitHub</strong> (Microsoft), <strong>GitLab</strong> o <strong>Bitbucket</strong> (Atlassian/Jira).</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="metaphor-box">
                     <div class="metaphor-icon">💡</div>
-                    <div><strong>Metáfora:</strong> Git es la cámara fotográfica con la que capturas la realidad localmente; GitHub es Instagram, la red social en la nube donde organizas, compartes e interactúas sobre esas fotos.</div>
-                </div>
-            </div>
-
-            <!-- Workflow Git -->
-            <div class="glossary-card">
-                <div class="card-header">
-                    <div class="concept-title"><span class="concept-index">17</span> Branching y Git Workflow</div>
-                    <span class="concept-tag tag-git">Git</span>
-                </div>
-                <div class="definition-box">
-                    Conceptos clave del flujo diario de código:
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li><strong>Repository (Repo):</strong> El espacio en la nube donde vive todo el historial de código del producto.</li>
-                        <li><strong>Branch (Rama):</strong> Línea de trabajo paralela y aislada donde un dev programa un feature sin tocar el código estable. Te vas a topar con ramas por funcionalidad.</li>
-                        <li><strong>Pull Request (PR):</strong> Solicitud de un programador para integrar sus cambios a la rama principal, invitando a auditoría técnica.</li>
-                        <li><strong>Code Review:</strong> Auditoría cruzada obligatoria donde un ingeniero revisa el código de otro antes de autorizar el <strong>Merge</strong> (fusión).</li>
-                        <li><strong>Git Clone / Push / Pull:</strong> Acciones de descargar el repo localmente (Clone), subir cambios propios a la nube (Push) y traer cambios ajenos (Pull).</li>
-                    </ul>
+                    <div><strong>Metáfora:</strong> <strong>Git</strong> es la cámara de fotos profesional con la que sacás y editás fotos en la memoria de tu teléfono; <strong>GitHub</strong> es el álbum compartido en la nube (como Google Photos o Instagram) donde subís esas fotos para que tu equipo las revise, comente y apruebe.</div>
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
-                    La velocidad de tu roadmap se ve impactada por esto. Si tu equipo tiene cuellos de botella en los *Code Reviews* (PRs estancadas por días), tu velocidad de delivery caerá drásticamente. Fomenta revisiones ágiles y diarias.
+                    Si un desarrollador te dice en la Daily: <em>"Ya lo tengo commiteado en Git pero todavía no lo subí a GitHub"</em>, significa que el avance está guardado únicamente en su computadora personal y el resto del equipo (ni QA ni los servidores) todavía puede verlo.
+                </div>
+            </div>
+
+            <!-- Comandos de Git -->
+            <div class="glossary-card">
+                <div class="card-header">
+                    <div class="concept-title"><span class="concept-index">17</span> Comandos Esenciales de Git (El Idioma de la Daily)</div>
+                    <span class="concept-tag tag-git">Comandos Git</span>
+                </div>
+                <div class="definition-box">
+                    No necesitás escribir estos comandos vos misma, pero escucharlos en las reuniones diarias te permite saber exactamente en qué etapa está cada tarea:
+                    <div class="comparison-table-wrapper" style="margin-top: 10px;">
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-header">Comando de Git</div>
+                            <div class="comparison-header">¿Qué hace técnicamente?</div>
+                            <div class="comparison-header">Traducción para Gestión / PM</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git clone</code></strong></div>
+                            <div class="comparison-cell">Descarga por primera vez una copia completa del proyecto desde GitHub a la computadora del dev.</div>
+                            <div class="comparison-cell">Lo usa un programador nuevo el primer día que se suma al equipo para bajar el proyecto.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git branch</code> / <code>checkout -b</code></strong></div>
+                            <div class="comparison-cell">Crea una <strong>rama aislada</strong> (ej. <code>feature/login</code>) para trabajar sin tocar el código principal.</div>
+                            <div class="comparison-cell">El dev acaba de arrancar una User Story de Jira en su propio espacio seguro.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git add</code> + <code>git commit -m</code></strong></div>
+                            <div class="comparison-cell">Guarda un punto de control ("foto" con nombre y fecha) de sus cambios en su computadora local.</div>
+                            <div class="comparison-cell">El programador avanzó y guardó cambios seguros en su máquina, pero aún no los compartió en la nube.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git pull</code></strong></div>
+                            <div class="comparison-cell">Trae y actualiza en su computadora los últimos cambios que subieron sus compañeros a GitHub.</div>
+                            <div class="comparison-cell">Evita trabajar sobre código viejo y previene conflictos con el trabajo del resto del equipo.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git push</code></strong></div>
+                            <div class="comparison-cell">Envía sus <code>commits</code> locales desde su computadora hacia el repositorio en la nube (GitHub).</div>
+                            <div class="comparison-cell">El código ya está en la nube listo para abrir una <strong>Pull Request (PR)</strong> y pasar a revisión.</div>
+                        </div>
+                        <div class="comparison-grid-3cols">
+                            <div class="comparison-cell"><strong><code>git merge</code></strong></div>
+                            <div class="comparison-cell">Fusiona e integra los cambios de una rama aprobada dentro de otra rama mayor (ej. a <code>develop</code> o <code>main</code>).</div>
+                            <div class="comparison-cell">Se ejecuta luego del <strong>Code Review</strong> y de que los tests automáticos dan verde.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pm-insight-box">
+                    <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
+                    La velocidad de tu roadmap depende de que el ciclo <code>branch → commit → push → Pull Request → Code Review → merge</code> fluya sin trabas. Si las Pull Requests quedan esperando revisión durante 4 días en GitHub, el Sprint se atrasa aunque el código ya esté programado.
+                </div>
+            </div>
+
+            <!-- Flujo de Ramas Corporativo -->
+            <div class="glossary-card">
+                <div class="card-header">
+                    <div class="concept-title"><span class="concept-index">17b</span> Flujo de Ramas Corporativo (De Feature a Producción)</div>
+                    <span class="concept-tag tag-git">Git Workflow</span>
+                </div>
+                <div class="definition-box">
+                    Como vimos en la <strong>Slide 14</strong>, en un equipo profesional el código nunca salta directo de la computadora del programador a los clientes reales, sino que avanza por <strong>5 niveles de ramas y compuertas de calidad</strong>:
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong><code>feature/nueva-funcion</code> (Rama de Trabajo):</strong> Cada desarrollador crea su rama para programar su historia de Jira sin afectar a nadie.</li>
+                        <li><strong><code>develop</code> (Rama de Integración Dev):</strong> Vía Pull Request y Code Review, los cambios de los distintos desarrolladores se unen acá para verificar que conviven sin conflictos.</li>
+                        <li><strong><code>testing</code> (Subrama de QA):</strong> El código pasa al entorno donde el equipo de <strong>QA</strong> ejecuta pruebas funcionales, de integración y automatizadas.</li>
+                        <li><strong><code>pre-prod / staging</code> (Subrama de Pre-Producción):</strong> Ambiente espejo de producción donde vos como PM/PO hacés la validación de negocio (<strong>UAT Sign-Off</strong>) y se aplica el <strong>Security Gate</strong>.</li>
+                        <li><strong><code>main</code> (Rama de Producción):</strong> El código inmaculado que ven y usan los clientes reales en vivo.</li>
+                    </ol>
+                </div>
+                <div class="pm-insight-box">
+                    <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
+                    Tu punto de control directo en este mapa es la compuerta entre <strong><code>pre-prod (Staging)</code> y <code>main (Producción)</code></strong>: nada debería fusionarse a <code>main</code> sin haber superado las pruebas de QA en <code>testing</code> y tu aprobación funcional (UAT) en <code>pre-prod</code>.
                 </div>
             </div>
         </div>
@@ -1400,9 +1586,9 @@
                     <span class="concept-tag tag-agile">Ágil</span>
                 </div>
                 <div class="definition-box">
-                    *   <strong>User Story:</strong> Unidad de requerimiento simplificada redactada desde la perspectiva del valor para el usuario final.<br>
+                    • <strong>User Story:</strong> Unidad de requerimiento simplificada redactada desde la perspectiva del valor para el usuario final.<br>
                     <em style="font-size:0.85rem; color:var(--text-muted);">"Como [rol de usuario], quiero [acción] para poder [beneficio de negocio]."</em><br>
-                    *   <strong>Epic (Épica):</strong> Contenedor estratégico de gran escala que agrupa múltiples Historias de Usuario individuales y que no se puede terminar en un solo sprint.
+                    • <strong>Epic (Épica):</strong> Contenedor estratégico de gran escala que agrupa múltiples Historias de Usuario individuales y que no se puede terminar en un solo sprint.
                 </div>
                 <div class="pm-insight-box">
                     <div class="pm-insight-header">Enfoque PM (Estrategia)</div>
@@ -1420,7 +1606,7 @@
                     El latido de entrega constante del squad:
                     <ul style="margin-left: 20px; margin-top: 10px;">
                         <li><strong>Sprint:</strong> Bloque de tiempo de 2 semanas donde el equipo se enfoca en entregar un incremento funcional terminado.</li>
-                        <li><strong>Sprint Planning:</strong> Planificación inicial donde el PO prioriza el Sprint Backlog basándose en la **Velocity** (velocidad de entrega histórica del equipo).</li>
+                        <li><strong>Sprint Planning:</strong> Planificación inicial donde el PO prioriza el Sprint Backlog basándose en la <strong>Velocity</strong> (velocidad de entrega histórica del equipo).</li>
                         <li><strong>Daily Scrum:</strong> Sincronización diaria de 15 minutos para alinear avances y destrabar bloqueantes técnicos.</li>
                         <li><strong>Sprint Review:</strong> Demo en vivo del software funcional presentado a los stakeholders al cierre del sprint.</li>
                         <li><strong>Retrospective:</strong> Sesión de autoevaluación interna para optimizar procesos en el siguiente ciclo.</li>
@@ -1481,8 +1667,8 @@
                 </div>
                 <div class="definition-box">
                     <strong>Definición:</strong>
-                    *   <strong>Product Manager (PM):</strong> Rol orientado al negocio, la visión estratégica de mercado, la viabilidad financiera (ROI) y el descubrimiento de producto (Product Discovery).<br>
-                    *   <strong>Product Owner (PO):</strong> Rol táctico en el squad, encargado de refinar historias de usuario, priorizar el backlog diario y responder dudas técnicas inmediatas de los ingenieros.
+                    • <strong>Product Manager (PM):</strong> Rol orientado al negocio, la visión estratégica de mercado, la viabilidad financiera (ROI) y el descubrimiento de producto (Product Discovery).<br>
+                    • <strong>Product Owner (PO):</strong> Rol táctico en el squad, encargado de refinar historias de usuario, priorizar el backlog diario y responder dudas técnicas inmediatas de los ingenieros.
                 </div>
                 <div class="metaphor-box">
                     <div class="metaphor-icon">💡</div>

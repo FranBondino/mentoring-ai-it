@@ -48,53 +48,90 @@ Para cada uno de los siguientes **4 casos reales**, identificá:
 - **Acción del usuario:** Escribís en el chat de ayuda: *"¿Cómo pido el reintegro de un cobro duplicado?"* y el sistema busca en segundos los manuales internos más parecidos por significado.
 - **Resolución esperada (Rayos X IT):**
   - **Verbo HTTP:** `POST` (envía tu consulta al servicio de IA para generar una respuesta).
-  - **Código HTTP:** `200 OK`.
+  - **Código HTTP:** `200 OK` (o `500 Internal Server Error` si se cae el servidor en la nube).
   - **Base de Datos:** **Base de Datos Vectorial (Vector DB)**, que convierte tu pregunta en vectores numéricos (*embeddings*) y busca fragmentos de manuales por **similitud semántica** (concepto clave para RAG en la Sesión 2).
+
+### Caso 1.5: Eliminar una suscripción o proveedor dado de baja del padrón
+- **Acción del usuario:** Un administrador confirma la baja definitiva de un registro en el sistema y se elimina correctamente.
+- **Resolución esperada (Rayos X IT):**
+  - **Verbo HTTP:** `DELETE` (borra un registro existente).
+  - **Código HTTP:** `200 OK`.
+  - **Base de Datos:** **SQL Relacional** (padrón estructurado de clientes/proveedores).
+
+### Caso 1.6: Intentar guardar una ficha de catálogo flexible olvidando un campo obligatorio
+- **Acción del usuario:** El usuario intenta crear un ítem en el catálogo de productos pero deja vacío el precio obligatorio, y la RESTful API rechaza el pedido.
+- **Resolución esperada (Rayos X IT):**
+  - **Verbo HTTP:** `POST` (intento de creación) o `PUT` (actualización).
+  - **Código HTTP:** `400 Bad Request` (**Familia `4xx` — Error del lado del Cliente**, porque faltan datos requeridos en el JSON enviado).
+  - **Base de Datos:** **NoSQL Documental (JSON)** (ideal para catálogos flexibles de e-commerce).
 
 ---
 
-## Misión 2: Decisiones en el Pipeline (Git, Ambientes y CI/CD)
+## Misión 2: Decisiones en el Pipeline (Git vs. GitHub, Comandos, Ramas, Ambientes y Cloud)
 
 **Contexto:** Estás participando en el seguimiento de un lanzamiento de software. En cada situación, elegí qué decisión tomarías junto al equipo técnico para cuidar la estabilidad del producto:
 
 ### Escenario 2.1: Dos desarrolladores quieren trabajar al mismo tiempo sin pisarse el código
 - **Situación:** Un programador está armando el botón de "Exportar a Excel" y otra programadora está arreglando el filtro de fechas en la misma pantalla.
 - **¿Cómo trabajan ordenados?**
-  - **Práctica IT correcta:** Cada uno crea su propia **rama independiente (`feature branch`) en Git** a partir de la rama principal (`main`). Cuando terminan, abren un **Pull Request (PR)** para revisión de código (*Code Review*) antes de fusionarlo (*merge*).
+  - **Práctica IT correcta:** Cada uno crea su propia **rama independiente (`feature branch`) en Git**. Cuando terminan, hacen `git push` a **GitHub** y abren un **Pull Request (PR)** para revisión de código (*Code Review*) y pruebas automáticas (**CI**) antes de fusionarlo (*merge*).
 
 ### Escenario 2.2: Aparece un error en las pruebas antes del lanzamiento
 - **Situación:** El equipo de negocio y QA está probando una versión nueva en **Staging / Pre-Producción (UAT)** y detecta que el cálculo de impuestos da error para clientes del interior.
 - **¿Qué significa que haya pasado en Staging y qué se hace?**
-  - **Práctica IT correcta:** ¡Buenas noticias! Como ocurrió en **Staging** (el ambiente espejo previo a Producción), **ningún cliente real fue afectado**. Se frena el pase a Producción, los desarrolladores corrigen el bug en una subrama, el pipeline de **CI/CD** vuelve a correr los tests automáticos y se valida nuevamente en Staging antes de salir en vivo.
+  - **Práctica IT correcta:** ¡Buenas noticias! Como ocurrió en **Staging** (el ambiente espejo previo a Producción), **ningún cliente real fue afectado**. Se frena el **UAT Sign-Off**, los desarrolladores corrigen el bug en su rama, el pipeline de **CI/CD** vuelve a correr los tests automáticos y se valida nuevamente en Staging antes de salir en vivo.
 
 ### Escenario 2.3: El código ya tiene que subirse hoy, pero Comercial quiere activar la pantalla recién el lunes
 - **Situación:** El equipo técnico quiere evitar subir todo de golpe el lunes a las 9 AM, pero Marketing pide que ningún cliente vea el botón nuevo hasta que salga la campaña.
 - **¿Cómo separás el trabajo técnico del lanzamiento comercial?**
-  - **Práctica IT correcta:** Aplicando **Deploy vs. Release con Feature Flags**. El equipo hace el **Deploy** (despliegue técnico del código a Producción) hoy mismo pero con la funcionalidad **apagada detrás de un Feature Flag**. El lunes a las 9 AM se enciende el interruptor (**Release** comercial) sin necesidad de tocar código ni reiniciar servidores, o incluso activándolo primero para el 5% de los usuarios (**Canary Release**).
+  - **Práctica IT correcta:** Aplicando **Deploy vs. Release con Feature Flags**. El equipo hace el **Deploy** (despliegue técnico del código a Producción) hoy mismo pero con la funcionalidad **apagada detrás de un Feature Flag**. El lunes a las 9 AM se enciende el interruptor (**Release** comercial) sin necesidad de tocar código ni reiniciar servidores.
 
 ### Escenario 2.4: Viernes 16:00 hs — Después de una subida a Producción, el login empieza a devolver "Error 500"
 - **Situación:** Acaban de desplegar la versión `v2.4` y el monitoreo alerta que los usuarios no pueden entrar porque la API devuelve **500 Internal Server Error**.
 - **¿Cuál es la prioridad número uno en ese minuto?**
-  - **Práctica IT correcta:** Ejecutar un **Rollback inmediato** a la versión anterior estable (`v2.3`) desde el pipeline de CI/CD para **restaurar el servicio en minutos**. No se intenta adivinar ni programar el arreglo en vivo con el sistema caído. Una vez que el servicio volvió a funcionar, se analiza el problema en Staging y se realiza un **Post-Mortem sin culpa (Blameless)** para que no se repita.
+  - **Práctica IT correcta:** Ejecutar un **Rollback inmediato** a la versión anterior estable (`v2.3`) desde el pipeline de CI/CD para **restaurar el servicio en minutos**. Una vez que el servicio volvió a funcionar, se analiza el problema en Staging y se realiza un **Post-Mortem sin culpa (Blameless)**.
+
+### Escenario 2.5: Diferencia entre Git y GitHub (`git commit` vs. `git push`)
+- **Situación:** En la reunión Daily, un desarrollador dice: *"Ya hice tres `git commit` en mi rama, pero todavía no hice `git push` a GitHub"*. QA pregunta si ya puede probar el cambio en el servidor.
+- **¿Qué significa exactamente?**
+  - **Práctica IT correcta:** **Git** es el motor de versiones local y **GitHub** es la plataforma en la nube. Hacer `git commit` solo guarda una "foto" en la computadora personal del programador. Hasta que no ejecute `git push` (subir a GitHub) y se apruebe la **Pull Request**, el cambio no llega al servidor de QA.
+
+### Escenario 2.6: El Flujo de Ramas Corporativo (`feature` -> `develop` -> `testing` -> `pre-prod` -> `main`)
+- **Situación:** Un cambio nació en `feature`, se integró en `develop` y acaba de superar las pruebas de QA en la subrama `testing`. ¿A qué rama pasa antes de llegar a `main (Producción)`?
+- **Práctica IT correcta:** Pasa a la subrama **`pre-prod (Staging)`**, donde el PM/PO realiza la aprobación funcional (**UAT Sign-Off**) y se ejecuta el **Security Gate** antes de autorizar el `merge` final hacia `main (Producción)`.
+
+### Escenario 2.7: Pico de 50.000 usuarios — Cloud AWS, Docker y Kubernetes (`K8s`)
+- **Situación:** Se lanza una promoción masiva y querés evitar tanto el clásico *"en mi máquina andaba"* como la caída del servidor por exceso de visitas.
+- **Práctica IT correcta:** Empaquetar la aplicación en contenedores **Docker** (garantiza que corra idéntico en cualquier máquina) y orquestarlos con **Kubernetes (`K8s`)** sobre **AWS** para que el sistema multiplique contenedores automáticamente ante el pico de tráfico (*auto-scaling*) y reemplace en segundos cualquier contenedor que falle (*self-healing*).
 
 ---
 
-## Misión 3: Consultorio Agile — Arquitectura Moderna, Scrum, Kanban y "Scrumban"
+## Misión 3: Consultorio Agile, Roles, Bases de Datos e IA
 
-**Contexto:** Como vimos en la Sesión 1, el paso del **Monolito** (donde todo el sistema estaba atado en un solo bloque y se hacían entregas gigantes cada 6 meses en cascada) a los **Microservicios y APIs** permitió que las empresas organicen equipos más chicos y autónomos (**Squads**).
+**Contexto:** Como vimos en la Sesión 1, el paso del **Monolito** a los **Microservicios y APIs** permitió que las empresas organicen equipos más chicos y autónomos (**Squads**). Analizá qué enfoque recomendarías en cada caso:
 
-Analizá qué enfoque ágil recomendarías en cada caso:
-
-### Caso 3.1: Equipo de Producto construyendo una nueva billetera digital
-- **Necesidad:** Tienen una hoja de ruta trimestral, necesitan coordinar entregas visibles cada 2 semanas con los stakeholders y mostrar avances reales al final de cada ciclo.
-- **Enfoque recomendado:** **Scrum (Trabajo por Sprints)**. Trabajan en ciclos fijos de 2 semanas (*Sprints*), eligen qué historias del *Product Backlog* entran en la *Sprint Planning*, se sincronizan 15 minutos por día en la *Daily*, muestran el software funcionando en la *Sprint Review* y mejoran su proceso en la *Retrospectiva*.
+### Caso 3.1: Equipo de Producto construyendo una nueva billetera digital (Monolito vs. Microservicios + Scrum)
+- **Necesidad:** 5 equipos necesitan avanzar en paralelo sin bloquearse mutuamente durante 3 meses y mostrar avances reales cada 2 semanas.
+- **Enfoque recomendado:** Desacoplar el Monolito en **Microservicios + RESTful APIs** y trabajar con **Scrum (Sprints de 2 semanas)** (*Sprint Planning*, *Daily*, *Sprint Review* y *Retrospectiva*).
 
 ### Caso 3.2: Equipo de Soporte Técnico, Infraestructura Cloud o Guardia de Incidentes
-- **Necesidad:** No pueden planificar qué se va a romper de acá a dos semanas. Reciben tickets urgentes, pedidos de accesos y alertas todos los días, y si intentan hacer todo a la vez se saturan.
-- **Enfoque recomendado:** **Kanban (Flujo Continuo + Límite de WIP)**. No usan Sprints fijos; trabajan con un tablero visual (`Por hacer -> En curso -> En revisión -> Listo`) donde la regla de oro es **limitar el Trabajo en Curso (WIP Limit)** para destrabar cuellos de botella y medir el **Lead Time / Cycle Time** (cuánto tarda un ticket desde que entra hasta que se resuelve).
+- **Necesidad:** Reciben tickets urgentes todos los días y no pueden esperar 2 semanas a abrir un Sprint nuevo.
+- **Enfoque recomendado:** **Kanban (Flujo Continuo + Límite de WIP)** (`To Do -> In Progress -> QA -> Done`), limitando el trabajo en paralelo (**WIP Limit**) y midiendo el **Cycle Time**.
 
 ### Caso 3.3: ¿Qué pasa en la vida real cuando te preguntan en una entrevista por Scrum vs. Kanban?
-- **Realidad de la industria:** Casi ninguna empresa aplica un método "de manual" al 100%. La mayoría adapta **modelos híbridos ("Scrumban")**: usan el tablero continuo y límites de WIP de Kanban, pero mantienen rituales de Scrum (como la *Daily*, una planificación quincenal y la *Retrospectiva*) para dar previsibilidad al negocio.
+- **Realidad de la industria:** La mayoría de las empresas aplica **modelos híbridos ("Scrumban")**: mantienen las ceremonias de orden de Scrum (Planning, Daily, Review, Retro) pero operan sobre la flexibilidad de un tablero Kanban en **Jira** con despliegues continuos.
+
+### Caso 3.4: Software Determinista (`if/else`) vs. Redes Neuronales / Arquitectura Transformer (Paper 2017)
+- **Necesidad:** (1) Calcular el 21% de IVA exacto al centavo en una factura, y (2) resumir reclamos escritos en lenguaje libre entendiendo el contexto de cada oración.
+- **Enfoque recomendado:** Usar **Software Determinista (`if/else`)** para el cálculo impositivo exacto, y consumir un **LLM basado en la arquitectura Transformer con Auto-Atención** (nacida del paper *"Attention Is All You Need"* de 2017) vía API para comprender texto libre y contexto.
+
+### Caso 3.5: Roles en una Corporación (PM, PO, Tech Lead y DevOps)
+- **Necesidad:** Saber con qué rol articular cada decisión cuando la estructura está especializada.
+- **Enfoque recomendado:** Articular con el **Product Owner (PO)** el detalle táctico del backlog del Sprint, validar con el **Tech Lead** la arquitectura y estimaciones técnicas, y apoyarse en **DevOps / SecOps** para la infraestructura en AWS, Kubernetes y pipelines de CI/CD.
+
+### Caso 3.6: Elección de Base de Datos (SQL vs. NoSQL vs. Vector DB)
+- **Necesidad:** Guardar cobros contables blindados, un catálogo flexible de productos con atributos cambiantes y manuales para búsqueda semántica con IA.
+- **Enfoque recomendado:** Combinar **SQL Relacional** (integridad contable en tablas), **NoSQL Documental** (documentos JSON flexibles para el catálogo) y **Base de Datos Vectorial** (vectores/embeddings para búsqueda por significado con IA).
 
 ---
 
