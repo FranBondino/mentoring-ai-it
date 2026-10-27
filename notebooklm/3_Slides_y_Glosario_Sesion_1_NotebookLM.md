@@ -1229,8 +1229,6 @@ Enfoque PM (Estrategia)
 
 Te sirve para preguntar qué porcentaje de cobertura de pruebas automáticas (Test Coverage) tiene el código. Si no se automatizan las pruebas, cada nuevo cambio tiene un alto riesgo de romper cosas que ya andaban (regresiones).
 
-Ejemplo Propuesta Arquitectura Newcells
-
 15 Postman y Pruebas de API
 
 Herramientas
