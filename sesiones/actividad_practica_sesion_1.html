@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Interactivo Sesión 1 · Simulador IT, Agile & DevOps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-primary: #070b14;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.78);
+            --bg-panel: rgba(2, 6, 23, 0.75);
+            --border-card: rgba(148, 163, 184, 0.14);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --blue: #3b82f6;
+            --green: #10b981;
+            --purple: #8b5cf6;
+            --orange: #f59e0b;
+            --red: #ef4444;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(circle at 12% 15%, rgba(59, 130, 246, 0.14) 0%, transparent 42%),
+                radial-gradient(circle at 88% 82%, rgba(139, 92, 246, 0.14) 0%, transparent 42%);
+            background-attachment: fixed;
+            padding-bottom: 4rem;
+        }
+
+        /* STICKY HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(7, 11, 20, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-card);
+            padding: 0.9rem 1.8rem;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav {
+            text-decoration: none;
+            color: var(--text-primary);
+            background: rgba(30, 41, 59, 0.75);
+            border: 1px solid var(--border-card);
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: 0.2s;
+        }
+
+        .btn-nav:hover {
+            border-color: var(--blue);
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .score-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #34d399;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 2rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        /* HERO */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 27, 75, 0.65));
+            border: 1px solid rgba(59, 130, 246, 0.28);
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #93c5fd;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-banner h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .hero-banner p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            max-width: 900px;
+        }
+
+        /* MISSION TABS */
+        .mission-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .mission-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 0.95rem 1.1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.22s;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .mission-tab:hover {
+            border-color: rgba(59, 130, 246, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .mission-tab.active {
+            background: rgba(59, 130, 246, 0.14);
+            border-color: var(--blue);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.18);
+        }
+
+        .mission-tab-num {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #60a5fa;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .mission-tab-title {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .mission-tab-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.15rem;
+        }
+
+        .mission-section {
+            display: none;
+            animation: fadeIn 0.28s ease;
+        }
+
+        .mission-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CARD BASE */
+        .sim-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+        }
+
+        .sim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-card);
+            flex-wrap: wrap;
+        }
+
+        .sim-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .sim-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        /* MISSION 1: API & DB X-RAY SIMULATOR */
+        .xray-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 1.4rem;
+            align-items: stretch;
+        }
+
+        .scenario-btn {
+            width: 100%;
+            text-align: left;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 0.65rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+
+        .scenario-btn:hover {
+            border-color: var(--blue);
+        }
+
+        .scenario-btn.active {
+            border-color: var(--blue);
+            background: rgba(59, 130, 246, 0.14);
+        }
+
+        .scenario-btn.solved {
+            border-left: 4px solid var(--green);
+        }
+
+        .choice-group {
+            margin-top: 1.1rem;
+        }
+
+        .choice-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #93c5fd;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .pill-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pill-opt {
+            background: rgba(2, 6, 23, 0.8);
+            border: 1px solid var(--border-card);
+            color: #e2e8f0;
+            padding: 0.48rem 0.9rem;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.18s;
+        }
+
+        .pill-opt:hover {
+            border-color: #60a5fa;
+        }
+
+        .pill-opt.selected {
+            background: rgba(59, 130, 246, 0.22);
+            border-color: var(--blue);
+            color: #fff;
+        }
+
+        .console-box {
+            background: var(--bg-panel);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 14px;
+            padding: 1.2rem;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .console-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0.7rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .feedback-banner {
+            margin-top: 1rem;
+            padding: 1rem 1.15rem;
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .feedback-banner.ok {
+            display: block;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #d1fae5;
+        }
+
+        .feedback-banner.err {
+            display: block;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #fef3c7;
+        }
+
+        .btn-run {
+            margin-top: 1.2rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.3rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .btn-run:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        /* MISSION 2 & 3: DECISION CARDS */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .case-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .case-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.45rem;
+        }
+
+        .case-desc {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .case-option {
+            width: 100%;
+            text-align: left;
+            background: rgba(2, 6, 23, 0.7);
+            border: 1px solid var(--border-card);
+            color: #e2e8f0;
+            padding: 0.65rem 0.9rem;
+            border-radius: 10px;
+            font-size: 0.83rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: 0.18s;
+            line-height: 1.4;
+        }
+
+        .case-option:hover {
+            border-color: var(--blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .case-option.correct {
+            background: rgba(16, 185, 129, 0.16);
+            border-color: var(--green);
+            color: #ecfdf5;
+        }
+
+        .case-option.wrong {
+            background: rgba(239, 68, 68, 0.14);
+            border-color: var(--red);
+            color: #fecaca;
+        }
+
+        .case-explain {
+            margin-top: 0.75rem;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            line-height: 1.45;
+            display: none;
+        }
+
+        /* MISSION 4: CV TRANSLATOR LAB */
+        .translator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.3rem;
+        }
+
+        .phrase-card {
+            background: rgba(2, 6, 23, 0.7);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 1rem 1.15rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .phrase-card:hover, .phrase-card.active {
+            border-color: var(--purple);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        .kw-chip {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #93c5fd;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0.2rem 0.2rem 0 0;
+        }
+
+        @media (max-width: 900px) {
+            .mission-tabs { grid-template-columns: repeat(2, 1fr); }
+            .xray-layout, .cases-grid, .translator-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="nav-links">
+                <a href="../index.html" class="btn-nav">⬅ Portal Principal</a>
+                <a href="./slides_sesion_1.html" class="btn-nav">🖥️ Slides Sesión 1</a>
+                <a href="./glosario_completo_sesion_1.html" class="btn-nav">📖 Glosario S1</a>
+            </div>
+            <div class="score-pill" id="scoreTracker">
+                <span>🎯 Progreso Práctico: <strong id="scoreCount">0 / 11</strong> desafíos resueltos</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-banner">
+            <span class="hero-eyebrow">⚡ Laboratorio Práctico Interactivo · Sesión 1</span>
+            <h1>Simulador de Decisiones en IT, Agile &amp; DevOps</h1>
+            <p>Nada de preguntas teóricas de memoria: ponete a prueba en <strong>4 misiones interactivas</strong> simulando situaciones reales de una aplicación moderna, un Sprint en Jira/Git, la elección entre Scrum y Kanban, y la traducción de experiencia al lenguaje IT.</p>
+        </section>
+
+        <!-- TABS DE LAS 4 MISIONES -->
+        <div class="mission-tabs">
+            <button class="mission-tab active" onclick="switchMission(1, this)">
+                <div class="mission-tab-num"><span>Misión 01</span> <span id="badge-m1">0/4</span></div>
+                <div class="mission-tab-title">Rayos X de una App</div>
+                <div class="mission-tab-sub">APIs, Verbos HTTP, Códigos y BBDD</div>
+            </button>
+            <button class="mission-tab" onclick="switchMission(2, this)">
+                <div class="mission-tab-num"><span>Misión 02</span> <span id="badge-m2">0/4</span></div>
+                <div class="mission-tab-title">Decisiones en el Pipeline</div>
+                <div class="mission-tab-sub">Git, Ambientes, Feature Flags y Rollback</div>
+            </button>
+            <button class="mission-tab" onclick="switchMission(3, this)">
+                <div class="mission-tab-num"><span>Misión 03</span> <span id="badge-m3">0/3</span></div>
+                <div class="mission-tab-title">Consultorio Agile</div>
+                <div class="mission-tab-sub">Microservicios, Scrum, Kanban y Scrumban</div>
+            </button>
+            <button class="mission-tab" onclick="switchMission(4, this)">
+                <div class="mission-tab-num"><span>Misión 04</span> <span>Interactivo</span></div>
+                <div class="mission-tab-title">Traductor de Perfil IT</div>
+                <div class="mission-tab-sub">De Gestión Tradicional a Lenguaje Tech</div>
+            </button>
+        </div>
+
+        <!-- ==================== MISIÓN 1: RAYOS X DE UNA APP ==================== -->
+        <section id="mission-1" class="mission-section active">
+            <div class="sim-card">
+                <div class="sim-header">
+                    <div>
+                        <h2>🔍 Misión 1: Inspector de Rayos X de una Aplicación</h2>
+                        <p>Elegí una acción cotidiana a la izquierda y configurá a la derecha qué viaja por la API (Verbo HTTP, Código de Estado esperado y tipo de Base de Datos).</p>
+                    </div>
+                </div>
+
+                <div class="xray-layout">
+                    <!-- Left: Scenarios -->
+                    <div>
+                        <span class="choice-label">1. Elegí la situación en la App:</span>
+                        <button class="scenario-btn active" id="scen-0" onclick="selectScenario(0)">
+                            <div>
+                                <strong>Caso 1: Abrir el panel de proyectos activos</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">El usuario entra a su cuenta y la pantalla le muestra el listado de sus entregas en curso.</div>
+                            </div>
+                            <span id="scen-check-0">⏳</span>
+                        </button>
+                        <button class="scenario-btn" id="scen-1" onclick="selectScenario(1)">
+                            <div>
+                                <strong>Caso 2: Crear una nueva orden de compra y pagarla</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">El usuario confirma su carrito y el sistema registra la factura contable por primera vez.</div>
+                            </div>
+                            <span id="scen-check-1">⏳</span>
+                        </button>
+                        <button class="scenario-btn" id="scen-2" onclick="selectScenario(2)">
+                            <div>
+                                <strong>Caso 3: Cambiar la fecha de entrega de una tarea existente</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">El líder de proyecto edita una tarjeta que ya existía en el sistema y guarda el cambio.</div>
+                            </div>
+                            <span id="scen-check-2">⏳</span>
+                        </button>
+                        <button class="scenario-btn" id="scen-3" onclick="selectScenario(3)">
+                            <div>
+                                <strong>Caso 4: Buscar en el manual interno con IA por significado</strong>
+                                <div style="font-size: 0.78rem; color: var(--text-secondary);">El usuario pregunta en lenguaje natural pero el servidor de la nube se cae en ese instante.</div>
+                            </div>
+                            <span id="scen-check-3">⏳</span>
+                        </button>
+
+                        <!-- Selectors -->
+                        <div class="choice-group">
+                            <span class="choice-label">2. ¿Qué verbo HTTP usa el Mesero (API)?</span>
+                            <div class="pill-options" id="verb-options">
+                                <button class="pill-opt" onclick="pickOption('verb', 'GET', this)">GET (Consultar)</button>
+                                <button class="pill-opt" onclick="pickOption('verb', 'POST', this)">POST (Crear/Enviar)</button>
+                                <button class="pill-opt" onclick="pickOption('verb', 'PUT', this)">PUT (Actualizar)</button>
+                                <button class="pill-opt" onclick="pickOption('verb', 'DELETE', this)">DELETE (Borrar)</button>
+                            </div>
+                        </div>
+
+                        <div class="choice-group">
+                            <span class="choice-label">3. ¿Qué Código de Estado devuelve el servidor?</span>
+                            <div class="pill-options" id="status-options">
+                                <button class="pill-opt" onclick="pickOption('status', '200', this)">200 / 201 (Éxito)</button>
+                                <button class="pill-opt" onclick="pickOption('status', '400', this)">4xx (Error del Cliente)</button>
+                                <button class="pill-opt" onclick="pickOption('status', '500', this)">500 (Caída del Servidor)</button>
+                            </div>
+                        </div>
+
+                        <div class="choice-group">
+                            <span class="choice-label">4. ¿Qué Base de Datos es la protagonista acá?</span>
+                            <div class="pill-options" id="db-options">
+                                <button class="pill-opt" onclick="pickOption('db', 'SQL', this)">SQL (Tablas / Contable)</button>
+                                <button class="pill-opt" onclick="pickOption('db', 'NoSQL', this)">NoSQL (Documentos JSON)</button>
+                                <button class="pill-opt" onclick="pickOption('db', 'VectorDB', this)">Vector DB (Significado IA)</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-run" onclick="verifyXray()">⚡ Simular Llamada a la API</button>
+                    </div>
+
+                    <!-- Right: Live API Console -->
+                    <div class="console-box">
+                        <div>
+                            <div class="console-top">
+                                <div class="dots">
+                                    <span class="dot" style="background:#ef4444;"></span>
+                                    <span class="dot" style="background:#f59e0b;"></span>
+                                    <span class="dot" style="background:#10b981;"></span>
+                                </div>
+                                <span>INSPECTOR DE RED · JSON &amp; CLOUD</span>
+                            </div>
+                            <pre id="consoleOutput" style="white-space: pre-wrap; color: #cbd5e1; line-height: 1.55;">// Seleccioná el Verbo HTTP, el Código de Estado y la Base de Datos para el Caso 1 y presioná "Simular Llamada a la API"...</pre>
+                        </div>
+
+                        <div id="xrayFeedback" class="feedback-banner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 2: DECISIONES EN EL PIPELINE ==================== -->
+        <section id="mission-2" class="mission-section">
+            <div class="sim-card">
+                <div class="sim-header">
+                    <div>
+                        <h2>🚀 Misión 2: Decisiones Reales en el Pipeline (Git, Ambientes y Deploys)</h2>
+                        <p>Estás coordinando un equipo de desarrollo y surgen estas 4 situaciones cotidianas. ¿Qué decisión tomás en cada una?</p>
+                    </div>
+                </div>
+
+                <div class="cases-grid">
+                    <!-- Caso 2.1 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(139,92,246,0.15); color:#c084fc;">Situación 1 · Git &amp; Ramas</span>
+                            <h3 class="case-title">El programador terminó la User Story #42</h3>
+                            <p class="case-desc">Un desarrollador te dice en la Daily: <em>"Ya terminé de programar el filtro nuevo en mi computadora"</em>. ¿Cuál es el paso correcto en Git?</p>
+                            <button class="case-option" onclick="answerCase('m2-1', false, this, '¡Peligro! Subir directo a main (Producción) sin revisión ni pruebas automáticas puede romper el sistema en vivo.')">
+                                A) Subir el cambio directo a la rama <code>main (Producción)</code> para ganar tiempo.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-1', true, this, '¡Exacto! El dev sube su rama aislada (feature/US-42), abre una Pull Request para que otro dev revise el código (Code Review) y el robot de CI corra los tests antes de pasar a testing.')">
+                                B) Subir su rama <code>feature/US-42</code> y abrir una <strong>Pull Request</strong> para Code Review y pruebas automáticas (CI).
+                            </button>
+                        </div>
+                        <div id="exp-m2-1" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 2.2 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(245,158,11,0.15); color:#fbbf24;">Situación 2 · Ambientes (Staging vs. Prod)</span>
+                            <h3 class="case-title">Error detectado durante la prueba UAT</h3>
+                            <p class="case-desc">Estás probando una función nueva en el ambiente de <strong>Staging (Pre-Prod)</strong> y notás que el botón de descarga no funciona. Un director pregunta si los clientes reales están afectados.</p>
+                            <button class="case-option" onclick="answerCase('m2-2', true, this, '¡Impecable! Staging es el simulador de vuelo aislado. Los usuarios reales viven en Producción, así que nadie afuera vio el error. Simplemente no das el Sign-Off hasta que lo corrijan.')">
+                                A) Le confirmás que <strong>los clientes en Producción no están afectados</strong> porque Staging es un entorno de prueba aislado, y frenás el Sign-Off.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-2', false, this, 'Recordá que Staging (Pre-Prod) está separado de Producción justamente para atajar estos errores antes de que los vea el cliente.')">
+                                B) Pedís apagar toda la plataforma en vivo porque Staging y Producción usan la misma pantalla para los clientes.
+                            </button>
+                        </div>
+                        <div id="exp-m2-2" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 2.3 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(16,185,129,0.15); color:#34d399;">Situación 3 · Deploy vs. Release</span>
+                            <h3 class="case-title">El código está listo el miércoles, pero el lanzamiento es el lunes</h3>
+                            <p class="case-desc">El equipo técnico ya probó todo y quiere subir el código el miércoles para no acumular ramas viejas, pero Marketing quiere lanzar el lunes.</p>
+                            <button class="case-option" onclick="answerCase('m2-3', false, this, 'Bloquear los deploys técnicos genera cuellos de botella y conflictos de código acumulados al final de la semana.')">
+                                A) Prohibirle al equipo técnico hacer deploys hasta el lunes a la mañana.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-3', true, this, '¡Respuesta de experta! Separás el Deploy técnico (miércoles) del Release comercial (lunes) mediante un Feature Flag (interruptor apagado).')">
+                                B) Permitir el <strong>Deploy</strong> el miércoles oculto detrás de un <strong>Feature Flag</strong> apagado, y hacer el <strong>Release</strong> (encenderlo) el lunes.
+                            </button>
+                        </div>
+                        <div id="exp-m2-3" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 2.4 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(239,68,68,0.15); color:#f87171;">Situación 4 · Incidente en Producción</span>
+                            <h3 class="case-title">Alerta Roja tras una subida a Producción</h3>
+                            <p class="case-desc">Se acaba de subir una actualización a Producción y el login empieza a devolver error <code>500</code> a todos los usuarios. ¿Qué priorizás en los primeros 5 minutos?</p>
+                            <button class="case-option" onclick="answerCase('m2-4', true, this, '¡Tal cual! En un incidente crítico primero se apaga el incendio restaurando la versión anterior (Rollback) en minutos, y recién con el sistema estable se analiza la causa raíz.')">
+                                A) Coordinar un <strong>Rollback</strong> inmediato a la versión anterior que funcionaba bien, y luego hacer una reunión de análisis (Post-Mortem).
+                            </button>
+                            <button class="case-option" onclick="answerCase('m2-4', false, this, 'Dejar a los usuarios caídos durante horas mientras se investiga el código rompe los acuerdos de nivel de servicio (SLA). Primero se hace Rollback.')">
+                                B) Dejar el sistema caído mientras los desarrolladores investigan línea por línea dónde está el error.
+                            </button>
+                        </div>
+                        <div id="exp-m2-4" class="case-explain"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 3: CONSULTORIO AGILE ==================== -->
+        <section id="mission-3" class="mission-section">
+            <div class="sim-card">
+                <div class="sim-header">
+                    <div>
+                        <h2>🧩 Misión 3: Consultorio Agile (Arquitectura, Scrum y Kanban)</h2>
+                        <p>Elegí cómo organizarías la arquitectura y la metodología de trabajo en estos 3 escenarios reales de la industria.</p>
+                    </div>
+                </div>
+
+                <div class="cases-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <!-- Caso 3.1 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(59,130,246,0.15); color:#60a5fa;">Escenario 1 · Arquitectura y Equipos</span>
+                            <h3 class="case-title">5 equipos pisándose el trabajo</h3>
+                            <p class="case-desc">Una empresa tiene toda su plataforma en un único bloque gigante. Cada vez que el equipo de Pagos sube un cambio, tiene que esperar 3 meses a que terminen los demás equipos.</p>
+                            <button class="case-option" onclick="answerCase('m3-1', true, this, '¡Exacto! Pasar del Monolito (Waterfall) a Microservicios comunicados por APIs permite que cada Squad Ágil despliegue su parte de forma independiente.')">
+                                A) Desacoplar el Monolito en <strong>Microservicios + APIs</strong> para que cada <strong>Squad Ágil</strong> despliegue su módulo sin bloquear al resto.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-1', false, this, 'Hacer entregas cada 12 meses empeora el riesgo: cuanto más grande es la entrega acumulada, más cosas se rompen.')">
+                                B) Seguir en un solo bloque monolítico y hacer una sola entrega gigante por año.
+                            </button>
+                        </div>
+                        <div id="exp-m3-1" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 3.2 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(245,158,11,0.15); color:#fbbf24;">Escenario 2 · Scrum vs. Kanban</span>
+                            <h3 class="case-title">Mesa de Operaciones y Soporte Continuo</h3>
+                            <p class="case-desc">Coordinás un equipo que recibe pedidos urgentes de clientes y ajustes rápidos todos los días; no pueden esperar 2 semanas para planificar qué atender.</p>
+                            <button class="case-option" onclick="answerCase('m3-2', false, this, 'Un Sprint cerrado de 3 semanas es demasiado rígido cuando las prioridades operativas cambian todos los días.')">
+                                A) Scrum rígido con Sprints cerrados de 3 semanas donde no puede entrar ningún pedido nuevo.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-2', true, this, '¡Brillante! Kanban está diseñado para flujo continuo: las tareas avanzan por el tablero limitando el trabajo en curso (WIP Limit) y midiendo el Cycle Time.')">
+                                B) <strong>Kanban</strong> de flujo continuo (<code>To Do → In Progress → QA → Done</code>) con límite de tareas en paralelo (<strong>WIP Limit</strong>).
+                            </button>
+                        </div>
+                        <div id="exp-m3-2" class="case-explain"></div>
+                    </div>
+
+                    <!-- Caso 3.3 -->
+                    <div class="case-card">
+                        <div>
+                            <span class="case-badge" style="background:rgba(16,185,129,0.15); color:#34d399;">Escenario 3 · La Realidad en IT</span>
+                            <h3 class="case-title">Equipo de Producto en Crecimiento</h3>
+                            <p class="case-desc">En una entrevista te preguntan: <em>"¿Trabajás con Scrum puro de manual o con Kanban?"</em>. ¿Qué respuesta demuestra mayor experiencia real en IT?</p>
+                            <button class="case-option" onclick="answerCase('m3-3', true, this, '¡Excelente! En la industria casi todos los equipos usan versiones adaptadas (Scrumban): ceremonias y ritmo de Scrum con la flexibilidad visual de Kanban en Jira.')">
+                                A) Explicar que conocés ambos marcos y que en la práctica se suele usar una <strong>versión adaptada (híbrido Scrum + tablero Kanban en Jira)</strong> según el ritmo del producto.
+                            </button>
+                            <button class="case-option" onclick="answerCase('m3-3', false, this, 'En IT se valora mucho más el pragmatismo orientado a entregar valor que la rigidez teórica de manual.')">
+                                B) Decir que solo aceptás trabajar si se cumple el manual teórico de Scrum al 100% sin ninguna adaptación.
+                            </button>
+                        </div>
+                        <div id="exp-m3-3" class="case-explain"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 4: TRADUCTOR DE PERFIL IT ==================== -->
+        <section id="mission-4" class="mission-section">
+            <div class="sim-card">
+                <div class="sim-header">
+                    <div>
+                        <h2>✨ Misión 4: Traductor Interactivo de Experiencia al Lenguaje IT</h2>
+                        <p>Hacé clic en cualquiera de las experiencias tradicionales de la izquierda para ver cómo se transforma al vocabulario IT, Agile &amp; Cloud, o armá tu propia frase abajo.</p>
+                    </div>
+                </div>
+
+                <div class="translator-grid">
+                    <div>
+                        <span class="choice-label">Elegí una experiencia de gestión / operaciones:</span>
+                        <div class="phrase-card active" onclick="showTranslation(0, this)">
+                            <div style="font-size:0.75rem; color:#f87171; font-weight:700; text-transform:uppercase;">Experiencia 1 · Coordinación y Entregas</div>
+                            <p style="font-size:0.9rem; color:#e2e8f0; margin-top:0.25rem;">"Organizaba las tareas del equipo todas las semanas, hacía seguimiento de los tiempos y hablaba con el cliente para que todo se entregara en fecha."</p>
+                        </div>
+                        <div class="phrase-card" onclick="showTranslation(1, this)">
+                            <div style="font-size:0.75rem; color:#f87171; font-weight:700; text-transform:uppercase;">Experiencia 2 · Calidad y Revisión de Entregables</div>
+                            <p style="font-size:0.9rem; color:#e2e8f0; margin-top:0.25rem;">"Antes de mandar un proyecto final al cliente, revisaba que cumpliera con todo lo pedido y si había un error pedía corregirlo rápido."</p>
+                        </div>
+                        <div class="phrase-card" onclick="showTranslation(2, this)">
+                            <div style="font-size:0.75rem; color:#f87171; font-weight:700; text-transform:uppercase;">Experiencia 3 · Herramientas y Plataformas</div>
+                            <p style="font-size:0.9rem; color:#e2e8f0; margin-top:0.25rem;">"Usábamos distintas plataformas conectadas para recibir pedidos de clientes, guardar glosarios y llevar el control de las cuentas."</p>
+                        </div>
+                    </div>
+
+                    <div class="console-box" style="font-family: var(--font-body);">
+                        <div>
+                            <span class="choice-label" style="color:#34d399;">Traducción Estratégica en Clave IT &amp; Agile:</span>
+                            <div id="transOutput" style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:1.1rem; font-size:0.95rem; color:#f8fafc; line-height:1.6;">
+                                "Lideré el delivery end-to-end de proyectos con equipos multifuncionales utilizando marcos <strong>Agile (Scrum y tableros Kanban en Jira)</strong>, priorizando el <strong>Backlog</strong>, facilitando ceremonias de seguimiento y asegurando el cumplimiento de <strong>SLAs</strong> y entregas a tiempo."
+                            </div>
+
+                            <div style="margin-top:1rem;">
+                                <span class="choice-label">Conceptos de la Sesión 1 aplicados acá:</span>
+                                <div id="transChips">
+                                    <span class="kw-chip">Agile (Scrum / Kanban)</span>
+                                    <span class="kw-chip">Priorización de Backlog</span>
+                                    <span class="kw-chip">Gestión de SLAs</span>
+                                    <span class="kw-chip">Delivery End-to-End</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:1.2rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+                            <label class="choice-label">✍️ Probá redactar un logro tuyo usando 2 o 3 conceptos de hoy:</label>
+                            <textarea id="customNote" rows="3" placeholder="Ej: Coordiné flujos de trabajo en tableros Kanban, validando criterios de aceptación (UAT) antes del Release final..." style="width:100%; background:rgba(15,23,42,0.9); border:1px solid var(--border-card); border-radius:10px; padding:0.75rem; color:#fff; font-family:var(--font-body); font-size:0.86rem;"></textarea>
+                            <button class="btn-run" style="margin-top:0.6rem; padding:0.5rem 1rem; font-size:0.8rem;" onclick="copyCustomNote(this)">📋 Copiar mi nota para la próxima sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const scenarios = [
+            {
+                title: "Caso 1: Abrir el panel de proyectos activos",
+                verb: "GET",
+                status: "200",
+                db: "SQL",
+                altDb: "NoSQL",
+                endpoint: "GET /api/v1/proyectos?estado=activo",
+                json: `{\n  "status": 200,\n  "method": "GET",\n  "data": [\n    { "id": 42, "cliente": "Global Corp", "estado": "In Progress" },\n    { "id": 43, "cliente": "Tech Latam", "estado": "QA Review" }\n  ]\n}`,
+                explain: "¡Exacto! Cuando solo querés consultar y mostrar datos en pantalla sin modificar nada, la API usa **GET**, devuelve **200 OK** y lee los registros desde la base de datos (**SQL** o **NoSQL**)."
+            },
+            {
+                title: "Caso 2: Crear una nueva orden de compra y pagarla",
+                verb: "POST",
+                status: "200",
+                db: "SQL",
+                endpoint: "POST /api/v1/ordenes-pago",
+                json: `{\n  "status": 201,\n  "method": "POST",\n  "storage": "PostgreSQL (Relacional SQL)",\n  "factura_id": "FAC-2026-8891",\n  "monto_usd": 1450.00\n}`,
+                explain: "¡Impecable! Como estás creando un registro nuevo en el servidor se usa **POST**, responde con éxito (**200/201**) y se guarda obligatoriamente en una base **SQL Relacional** porque en pagos y contabilidad la integridad de las tablas es sagrada."
+            },
+            {
+                title: "Caso 3: Cambiar la fecha de entrega de una tarea existente",
+                verb: "PUT",
+                status: "200",
+                db: "SQL",
+                altDb: "NoSQL",
+                endpoint: "PUT /api/v1/tareas/108",
+                json: `{\n  "status": 200,\n  "method": "PUT",\n  "updated_fields": {\n    "fecha_entrega": "2026-11-15",\n    "estado": "Reprogramado"\n  }\n}`,
+                explain: "¡Muy bien! Para modificar un registro que ya existía se usa **PUT** (o PATCH), el servidor confirma el cambio con **200 OK** y actualiza la fila o documento en la base de datos."
+            },
+            {
+                title: "Caso 4: Buscar en el manual interno con IA pero el servidor se cae",
+                verb: "POST",
+                altVerb: "GET",
+                status: "500",
+                db: "VectorDB",
+                endpoint: "POST /api/v1/ia/buscar-contexto",
+                json: `{\n  "status": 500,\n  "error": "Internal Server Error",\n  "target_db": "Pinecone Vector DB (Embeddings)",\n  "message": "El servidor Backend no pudo responder la consulta semántica"\n}`,
+                explain: "¡Brillante! Las búsquedas por significado e intención para IA consultan una **Base de Datos Vectorial (Vector DB)**, y como el problema fue una caída de nuestros servidores en la nube, el código es **500 (Server Error)**."
+            }
+        ];
+
+        let currentScen = 0;
+        let selected = { verb: null, status: null, db: null };
+        const solvedMap = {};
+
+        function switchMission(num, btn) {
+            document.querySelectorAll('.mission-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.mission-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('mission-' + num).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function selectScenario(idx) {
+            currentScen = idx;
+            document.querySelectorAll('.scenario-btn').forEach((b, i) => {
+                b.classList.toggle('active', i === idx);
+            });
+            selected = { verb: null, status: null, db: null };
+            document.querySelectorAll('.pill-opt').forEach(p => p.classList.remove('selected'));
+            document.getElementById('xrayFeedback').className = 'feedback-banner';
+            document.getElementById('consoleOutput').textContent = `// Caso seleccionado: ${scenarios[idx].title}\n// Elegí Verbo HTTP + Código de Estado + Base de Datos y tocá "Simular Llamada a la API"...`;
+        }
+
+        function pickOption(group, val, btn) {
+            selected[group] = val;
+            btn.parentElement.querySelectorAll('.pill-opt').forEach(p => p.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        function verifyXray() {
+            const s = scenarios[currentScen];
+            const fb = document.getElementById('xrayFeedback');
+            if (!selected.verb || !selected.status || !selected.db) {
+                fb.className = 'feedback-banner err';
+                fb.innerHTML = '⚠️ Elegí una opción en los 3 pasos (Verbo HTTP, Código de Estado y Base de Datos) antes de simular.';
+                return;
+            }
+
+            const verbOk = selected.verb === s.verb || (s.altVerb && selected.verb === s.altVerb);
+            const statusOk = selected.status === s.status;
+            const dbOk = selected.db === s.db || (s.altDb && selected.db === s.altDb);
+
+            document.getElementById('consoleOutput').textContent = `Request: ${selected.verb} ${s.endpoint.split(' ')[1]}\nTarget Storage: ${selected.db}\n\nResponse:\n${s.json}`;
+
+            if (verbOk && statusOk && dbOk) {
+                fb.className = 'feedback-banner ok';
+                fb.innerHTML = '✅ ' + s.explain.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                solvedMap['m1-' + currentScen] = true;
+                document.getElementById('scen-' + currentScen).classList.add('solved');
+                document.getElementById('scen-check-' + currentScen).textContent = '✅';
+                updateScore();
+            } else {
+                let hints = [];
+                if (!verbOk) hints.push(`fijate si la acción consulta, crea o actualiza datos (Verbo sugerido: <strong>${s.verb}</strong>)`);
+                if (!statusOk) hints.push(`revisá si la operación fue exitosa o si cayó el servidor (Código esperado: <strong>${s.status}</strong>)`);
+                if (!dbOk) hints.push(`pensá qué motor se ajusta mejor a ese dato (Base ideal: <strong>${s.db}</strong>)`);
+                fb.className = 'feedback-banner err';
+                fb.innerHTML = '💡 <strong>Casi:</strong> ' + hints.join('; ') + '. ¡Probá ajustarlo y volvé a simular!';
+            }
+        }
+
+        function answerCase(id, isCorrect, btn, explanation) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.case-option').forEach(b => b.classList.remove('correct', 'wrong'));
+            btn.classList.add(isCorrect ? 'correct' : 'wrong');
+
+            const expBox = document.getElementById('exp-' + id);
+            expBox.style.display = 'block';
+            expBox.style.background = isCorrect ? 'rgba(16, 185, 129, 0.12)' : 'rgba(245, 158, 11, 0.12)';
+            expBox.style.border = isCorrect ? '1px solid rgba(16, 185, 129, 0.35)' : '1px solid rgba(245, 158, 11, 0.35)';
+            expBox.style.color = isCorrect ? '#d1fae5' : '#fef3c7';
+            expBox.innerHTML = (isCorrect ? '✅ ' : '💡 ') + explanation;
+
+            if (isCorrect) {
+                solvedMap[id] = true;
+                updateScore();
+            }
+        }
+
+        function updateScore() {
+            const m1 = [0,1,2,3].filter(i => solvedMap['m1-' + i]).length;
+            const m2 = [1,2,3,4].filter(i => solvedMap['m2-' + i]).length;
+            const m3 = [1,2,3].filter(i => solvedMap['m3-' + i]).length;
+            document.getElementById('badge-m1').textContent = m1 + '/4';
+            document.getElementById('badge-m2').textContent = m2 + '/4';
+            document.getElementById('badge-m3').textContent = m3 + '/3';
+            document.getElementById('scoreCount').textContent = (m1 + m2 + m3) + ' / 11';
+        }
+
+        const translations = [
+            {
+                text: `"Lideré el delivery end-to-end de proyectos con equipos multifuncionales utilizando marcos <strong>Agile (Scrum y tableros Kanban en Jira)</strong>, priorizando el <strong>Backlog</strong>, facilitando ceremonias de seguimiento y asegurando el cumplimiento de <strong>SLAs</strong> y entregas a tiempo."`,
+                chips: ["Agile (Scrum / Kanban)", "Priorización de Backlog", "Gestión de SLAs", "Delivery End-to-End"]
+            },
+            {
+                text: `"Gestioné el control de calidad funcional y las pruebas de aceptación (<strong>UAT en Staging</strong>) contra <strong>Criterios de Aceptación</strong> previo al <strong>Release</strong> a Producción, coordinando la resolución de incidentes para garantizar un 99% de calidad en las entregas."`,
+                chips: ["Staging & UAT", "Criterios de Aceptación", "Release Management", "Gestión de Incidentes"]
+            },
+            {
+                text: `"Coordiné flujos operativos sobre plataformas en la nube (<strong>Cloud</strong>) integradas vía <strong>APIs REST</strong> y bases de datos estructuradas, optimizando la trazabilidad de entregas y la consistencia de la información entre equipos."`,
+                chips: ["APIs REST", "Plataformas Cloud", "Bases de Datos", "Trazabilidad Técnica"]
+            }
+        ];
+
+        function showTranslation(idx, card) {
+            document.querySelectorAll('.phrase-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            document.getElementById('transOutput').innerHTML = translations[idx].text;
+            document.getElementById('transChips').innerHTML = translations[idx].chips.map(c => `<span class="kw-chip">${c}</span>`).join('');
+        }
+
+        function copyCustomNote(btn) {
+            const val = document.getElementById('customNote').value.trim() || document.getElementById('transOutput').innerText;
+            navigator.clipboard.writeText(val).then(() => {
+                const prev = btn.textContent;
+                btn.textContent = '✅ ¡Copiado al portapapeles!';
+                setTimeout(() => { btn.textContent = prev; }, 1800);
+            });
+        }
+    </script>
+</body>
+</html>
