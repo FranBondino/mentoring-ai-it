@@ -26,7 +26,7 @@ Sesión 1: Ecosistema IT, DevOps y Dinámicas de Equipos
 
 La Ola de la IA Generativa
 
-Del software clásico al paper fundacional de 2017 que revolucionó la traducción y dio origen a todos los LLMs actuales:
+Del software clásico al paper fundacional de 2017 que revolucionó las redes neuronales y dio origen a los LLMs:
 
 1. Software Tradicional
 
@@ -34,13 +34,107 @@ Era Determinista (Pre-2017): Los programadores escriben reglas rígidas a mano (
 
 2. El Paper Base (2017) & ChatGPT
 
-"Attention Is All You Need" (Google, 2017): El paper científico que nació para mejorar la traducción automática creando la arquitectura Transformer (la "T" de GPT). En Nov 2022, ChatGPT lleva ese motor al mundo entero.
+"Attention Is All You Need" (Google, 2017): El paper científico que nació para mejorar la traducción automática creando la red neuronal Transformer (la "T" de GPT). En Nov 2022, ChatGPT lleva ese motor al mundo entero.
 
 3. Era de Sistemas con LLMs
 
 2023 - Actualidad: Las empresas ya no construyen software clásico aislado. Integran LLMs vía API sobre bases de datos privadas (RAG) y agentes autónomos que comprenden contexto y ejecutan flujos de negocio.
 
-El Hito Fundacional (2017) conectado con tu mundo: Todo el auge actual de la IA nació de un problema de traducción. En el paper "Attention Is All You Need" (Vaswani et al., 2017), ocho investigadores de Google inventaron el mecanismo de Self-Attention (Auto-Atención) para que una red neuronal pudiera leer una oración entera en simultáneo y entender cómo el contexto cambia el sentido de cada palabra.
+En pocas palabras · El Motor del Paper (2017)
+
+¿Qué es una Red Neuronal y qué inventó Google?
+
+• Red Neuronal: En vez de reglas fijas (if/else), son capas de nodos matemáticos (como neuronas) que aprenden patrones a partir de millones de ejemplos.
+
+• El giro de 2017 (Auto-Atención): Antes, la red leía palabra por palabra en fila y "olvidaba" el inicio. El Transformer permitió que la red conecte todas las palabras entre sí al mismo tiempo para entender el contexto real.
+
+En la Sesión 2 vamos a abrir esta arquitectura en detalle (Tokens, Embeddings y Transformers).
+
+-
+
+1. ENTRADA
+
+2. AUTO-ATENCIÓN
+
+3. RED NEURONAL (CAPAS)
+
+4. SALIDA
+
+"El"
+
+"banco"
+
+"cerró"
+
+-
+
+-
+
+-
+
+-
+
+Contexto = Finanzas
+
+Hidden Layer A (x=315) -->
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Hidden Layer B (x=395) -->
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Output (x=448) -->
+
+-
+
+-
+
+-
+
+Traducción IA:
+
+"The bank
+
+closed"
+
+"cerró" conecta con "banco" (Auto-Atención) → La Red Neuronal deduce "bank" (finanzas) y no "bench" (plaza)
 
 ---
 
@@ -296,6 +390,8 @@ Full-Stack Developer: Un programador generalista que domina todo el stack tecnol
 
 Canal del PM: Comunicación informal y directa (Slack sin intermediarios o charlas rápidas de pasillo). Las alineaciones son inmediatas y sin burocracia técnica.
 
+Dinámica Agile en Startups: Suelen usar Kanban (flujo continuo) o Sprints cortos de 1 semana con ceremonias mínimas, aprovechando que la arquitectura modular en la nube permite subir mejoras todos los días.
+
 ---
 
 ## Diapositiva 10 (slide5c)
@@ -328,9 +424,77 @@ PM vs. PO (Responsabilidades Separadas): El Project Manager (PM) lidera el roadm
 
 Canal del PM: El PM colabora de cerca con el PO para traducir la estrategia de negocio en trabajo ejecutable, sin entrometerse en el micromanagement diario del sprint.
 
+Dinámica Agile en Corporaciones: Al dejar atrás el Monolito, la empresa se organiza en Squads Ágiles autónomos (cada uno dueño de un microservicio o área del producto) trabajando con versiones adaptadas de Scrum y Kanban.
+
 ---
 
-## Diapositiva 11 (slide5d)
+## Diapositiva 11 (slide5c_agile)
+
+Agile en IT: De la Nueva Arquitectura a Scrum y Kanban
+
+Por qué dejar atrás el Monolito cambió la forma de organizar a los equipos y qué metodologías se usan realmente en el día a día.
+
+Agile -->
+
+Por qué la arquitectura define cómo trabaja el equipo
+
+Cuando el software era un Monolito (un único bloque gigante), cualquier cambio afectaba a todo el sistema y obligaba a trabajar en Waterfall (Cascada) con entregas cada 6 meses. Al pasar a Microservicios y APIs independientes, cada equipo (Squad) puede construir, probar y desplegar su parte todas las semanas sin frenar al resto. Eso hizo posible Agile.
+
+Monolito
+
+Waterfall (6 meses)
+
+→
+
+Microservicios + APIs
+
+Squads Ágiles (Continuo)
+
+Ciclos Fijos (Sprints)
+
+1. Scrum
+
+El trabajo se organiza en iteraciones cerradas de 1 a 2 semanas (Sprints) donde el equipo se compromete a entregar funcionalidades listas para usar.
+
+• Planning: Qué historias entran al Sprint.
+
+• Daily (15 min): Sincronización y bloqueos.
+
+• Review / Demo: Mostrar avances reales.
+
+• Retro: Qué mejorar para el próximo ciclo.
+
+Ideal para: Desarrollo de producto y nuevas features.
+
+Flujo Continuo
+
+2. Kanban
+
+No hay Sprints fijos. El trabajo fluye de forma continua por un tablero visual limitando cuántas tareas se hacen al mismo tiempo (WIP Limit).
+
+• Tablero: To Do → In Progress → QA → Done.
+
+• Prioridad dinámica: Entra lo más urgente apenas se libera capacidad.
+
+• Métrica clave: Lead Time / Cycle Time (cuánto tarda un ticket de punta a punta).
+
+Ideal para: Operaciones, soporte, infraestructura o entregas continuas.
+
+Lo Más Usado Hoy
+
+3. Híbridos ("Scrumban")
+
+En la práctica real de IT, casi ninguna empresa aplica Scrum o Kanban "de libro" al 100%: usan versiones adaptadas combinando lo mejor de ambos.
+
+• Ritmo de Scrum (planificación cada 2 semanas, Dailies y Retrospectivas).
+
+• Flexibilidad visual de Kanban en Jira (columnas de Code Review, QA, Staging y deploys continuos sin esperar al viernes).
+
+Clave en entrevistas: Mostrar pragmatismo sobre el marco, no rigidez teórica.
+
+---
+
+## Diapositiva 12 (slide5d)
 
 El PM en el Pipeline: Puntos de Intervención
 
@@ -392,7 +556,7 @@ Regla de Oro (Deploy ≠ Release): Los desarrolladores deciden cómo y dónde su
 
 ---
 
-## Diapositiva 12 (slide5e)
+## Diapositiva 13 (slide5e)
 
 Cada User Story = Una Rama de Git
 
@@ -456,7 +620,7 @@ Decidís el momento de encender la función. El Release es tu responsabilidad ex
 
 ---
 
-## Diapositiva 13 (slide6)
+## Diapositiva 14 (slide6)
 
 Git: Control de Versiones Moderno
 
@@ -492,7 +656,7 @@ Hacer clic en los nodos numerados para explorar cómo se construye, revisa, prue
 
 ---
 
-## Diapositiva 14 (slide7)
+## Diapositiva 15 (slide7)
 
 Dónde Vive el Software
 
@@ -536,7 +700,7 @@ El Estadio Lleno
 
 ---
 
-## Diapositiva 15 (slide7b)
+## Diapositiva 16 (slide7b)
 
 Bases de Datos: Dónde y Cómo se Guarda la Info
 
@@ -580,7 +744,7 @@ La Biblioteca Mágica en 3D
 
 ---
 
-## Diapositiva 16 (slide8)
+## Diapositiva 17 (slide8)
 
 Taller Práctico: Tu Perfil en Clave IT & AI
 
@@ -612,7 +776,7 @@ IA & Calidad
 
 ---
 
-## Diapositiva 17 (slide9)
+## Diapositiva 18 (slide9)
 
 Preguntas "Rompe-Entrevistas"
 
@@ -1208,6 +1372,22 @@ El latido de entrega constante del squad:
 Enfoque PM (Estrategia)
 
 El backlog de producto es de tu exclusiva propiedad y responsabilidad. Tu rol no consiste en supervisar el código de tus ingenieros, sino en nutrir, refinar y priorizar constantemente la lista de tareas para maximizar el valor comercial entregado en cada sprint.
+
+19B Kanban, Híbridos ("Scrumban") y Nueva Arquitectura
+
+Kanban & Agile
+
+Por qué Agile nace con la Nueva Arquitectura: Cuando el software era un Monolito, tocar un módulo afectaba a todo el sistema y obligaba a entregas en cascada (Waterfall) cada 6 meses. Al pasar a Microservicios y APIs independientes, los equipos se dividieron en Squads autónomos capaces de iterar y desplegar todas las semanas.
+
+- Scrum (Ciclos Fijos): Iteraciones cerradas de 1 a 2 semanas (Sprints) con un alcance comprometido. Ideal para desarrollo de nuevas funcionalidades de producto.
+
+- Kanban (Flujo Continuo): Tablero visual continuo (To Do → In Progress → Code Review → QA → Done) sin Sprints fijos, donde se limita la cantidad de tareas en paralelo (WIP Limit) y se mide el Cycle Time. Ideal para operaciones, soporte o entregas diarias.
+
+- La Realidad en IT ("Scrumban"): En la práctica, la mayoría de las empresas utiliza versiones adaptadas que combinan las ceremonias de orden de Scrum (Planning, Daily, Retro) con la flexibilidad del tablero Kanban en Jira y despliegues continuos.
+
+Enfoque en Entrevistas
+
+Si te preguntan con qué metodología trabajás, destacá que entendés la diferencia entre Scrum (foco en planificación por Sprints) y Kanban (foco en flujo continuo y tiempos de ciclo), y que te adaptás al marco híbrido que mejor destrabe la entrega de valor del equipo.
 
 09. Roles en Equipos de Software Estructuras de Trabajo
 

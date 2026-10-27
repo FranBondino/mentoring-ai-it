@@ -27,6 +27,9 @@ Elegí una acción que hagas todos los días en tu celular o computadora (por ej
 4. **Bases de Datos (`SQL` vs. `NoSQL` vs. `Vector DB`):**
    - ¿Qué dato de esa app guardarías sí o sí en una **Base Relacional (SQL)** por seguridad contable?
    - Si esa app tuviera un buscador inteligente con IA que entiende sinónimos e intención, ¿qué tipo de base de datos usaría?
+5. **Arquitectura Modular y Metodología Agile (`Scrum` vs. `Kanban`):**
+   - ¿Por qué esa app puede actualizar su buscador o su pantalla sin que se caiga el módulo de pagos (**Microservicios vs. Monolito**)?
+   - Si el equipo tiene que construir una funcionalidad grande desde cero durante 2 semanas, ¿usaría **Scrum (Sprints)** o **Kanban (flujo continuo)**? ¿Y para el equipo que resuelve reclamos o bugs rápidos del día a día?
 
 ---
 
