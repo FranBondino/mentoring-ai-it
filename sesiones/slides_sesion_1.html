@@ -607,11 +607,11 @@
             background: rgba(15, 23, 42, 0.45);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.07);
-            padding: 1.5rem 1.5rem 1.1rem;
-            margin-bottom: 0.7rem;
+            padding: 1.15rem 1.4rem 0.85rem;
+            margin-bottom: 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1.05rem;
+            gap: 0.8rem;
             position: relative;
         }
 
@@ -774,16 +774,16 @@
         }
 
         .git-node-desc {
-            margin-top: 1rem;
+            margin-top: 0.55rem;
             text-align: center;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            line-height: 1.5;
-            min-height: 50px;
+            line-height: 1.45;
+            min-height: auto;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            padding: 1rem;
+            padding: 0.7rem 1.1rem;
             max-width: 1000px;
             width: 100%;
         }
@@ -1512,7 +1512,7 @@
         .role-bento-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 0.75rem;
             width: 100%;
             max-width: 1100px;
         }
@@ -1521,10 +1521,10 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            padding: 1.2rem;
+            padding: 0.85rem 1.1rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.9rem;
         }
 
         .role-bento-card:hover {
@@ -1623,16 +1623,16 @@
         .role-detail-panel {
             width: 100%;
             max-width: 1100px;
-            margin-top: 1.5rem;
-            padding: 1.2rem 1.5rem;
+            margin-top: 0.7rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 12px;
             background: rgba(15, 23, 42, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.03);
-            min-height: 80px;
+            min-height: auto;
             text-align: left;
             transition: all 0.3s ease;
-            font-size: 0.88rem;
-            line-height: 1.5;
+            font-size: 0.84rem;
+            line-height: 1.45;
             color: #e2e8f0;
         }
 
@@ -2801,10 +2801,10 @@
             </div>
             
             <div class="role-detail-panel" id="startupRolePanel" style="border-left: 4px solid var(--color-purple);">
-                <strong><i data-lucide="laptop" class="icon-sm" style="margin-right: 6px; color: var(--color-purple); vertical-align: middle;"></i> Full-Stack Developer:</strong> Un programador generalista que domina todo el stack tecnológico. Diseña la interfaz gráfica del usuario (Frontend) y escribe la lógica del servidor y APIs (Backend). Incluso suele configurar servidores básicos en AWS o Vercel (DevOps). <br><br><strong><i data-lucide="message-square" class="icon-sm" style="margin-right: 4px; color: var(--color-blue); vertical-align: middle;"></i> Canal del PM:</strong> Comunicación informal y directa (Slack sin intermediarios o charlas rápidas de pasillo). Las alineaciones son inmediatas y sin burocracia técnica.
+                <strong><i data-lucide="laptop" class="icon-sm" style="margin-right: 6px; color: var(--color-purple); vertical-align: middle;"></i> Full-Stack Developer:</strong> Un programador generalista que domina todo el stack tecnológico. Diseña la interfaz gráfica del usuario (Frontend) y escribe la lógica del servidor y APIs (Backend). Incluso suele configurar servidores básicos en AWS o Vercel (DevOps). <div style="height: 0.35rem;"></div><strong><i data-lucide="message-square" class="icon-sm" style="margin-right: 4px; color: var(--color-blue); vertical-align: middle;"></i> Canal del PM:</strong> Comunicación informal y directa (Slack sin intermediarios o charlas rápidas de pasillo). Las alineaciones son inmediatas y sin burocracia técnica.
             </div>
 
-            <div class="glass-card" style="display: block !important; margin-top: 0.75rem; width: 100%; max-width: 1000px; padding: 0.65rem 1.1rem; border-left: 3px solid var(--color-green); text-align: left; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+            <div class="glass-card" style="display: block !important; margin-top: 0.55rem; width: 100%; max-width: 1100px; padding: 0.55rem 1.05rem; border-left: 3px solid var(--color-green); text-align: left; font-size: 0.79rem; color: var(--text-secondary); line-height: 1.38;">
                 <p style="margin: 0;"><strong style="color: #34d399;"><i data-lucide="zap" class="icon-xs" style="vertical-align: middle; margin-right: 4px;"></i> Dinámica Agile en Startups:</strong> Suelen usar <strong>Kanban</strong> (flujo continuo) o <strong>Sprints cortos de 1 semana</strong> con ceremonias mínimas, aprovechando que la arquitectura modular en la nube permite subir mejoras todos los días.</p>
             </div>
         </div>
@@ -2857,10 +2857,10 @@
             </div>
             
             <div class="role-detail-panel" id="corporateRolePanel" style="border-left: 4px solid var(--color-purple);">
-                <strong><i data-lucide="users" class="icon-sm" style="margin-right: 6px; color: var(--color-purple); vertical-align: middle;"></i> PM vs. PO (Responsabilidades Separadas):</strong> El Project Manager (PM) lidera el roadmap a largo plazo, el ROI del producto y las alineaciones con directores corporativos. El Product Owner (PO) vive dentro del squad Scrum, escribe épicas e Historias de Usuario granulares y lidera las ceremonias diarias (Dailies, Refinement, Planning). <br><br><strong><i data-lucide="message-square" class="icon-sm" style="margin-right: 4px; color: var(--color-blue); vertical-align: middle;"></i> Canal del PM:</strong> El PM colabora de cerca con el PO para traducir la estrategia de negocio en trabajo ejecutable, sin entrometerse en el micromanagement diario del sprint.
+                <strong><i data-lucide="users" class="icon-sm" style="margin-right: 6px; color: var(--color-purple); vertical-align: middle;"></i> PM vs. PO (Responsabilidades Separadas):</strong> El Project Manager (PM) lidera el roadmap a largo plazo, el ROI del producto y las alineaciones con directores corporativos. El Product Owner (PO) vive dentro del squad Scrum, escribe épicas e Historias de Usuario granulares y lidera las ceremonias diarias (Dailies, Refinement, Planning). <div style="height: 0.35rem;"></div><strong><i data-lucide="message-square" class="icon-sm" style="margin-right: 4px; color: var(--color-blue); vertical-align: middle;"></i> Canal del PM:</strong> El PM colabora de cerca con el PO para traducir la estrategia de negocio en trabajo ejecutable, sin entrometerse en el micromanagement diario del sprint.
             </div>
 
-            <div class="glass-card" style="display: block !important; margin-top: 0.75rem; width: 100%; max-width: 1000px; padding: 0.65rem 1.1rem; border-left: 3px solid var(--color-blue); text-align: left; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+            <div class="glass-card" style="display: block !important; margin-top: 0.55rem; width: 100%; max-width: 1100px; padding: 0.55rem 1.05rem; border-left: 3px solid var(--color-blue); text-align: left; font-size: 0.79rem; color: var(--text-secondary); line-height: 1.38;">
                 <p style="margin: 0;"><strong style="color: #60a5fa;"><i data-lucide="layers" class="icon-xs" style="vertical-align: middle; margin-right: 4px;"></i> Dinámica Agile en Corporaciones:</strong> Al dejar atrás el Monolito, la empresa se organiza en <strong>Squads Ágiles autónomos</strong> (cada uno dueño de un microservicio o área del producto) trabajando con versiones adaptadas de <strong>Scrum y Kanban</strong>.</p>
             </div>
         </div>
@@ -3155,9 +3155,8 @@
             <p class="slide-subtitle">En corporaciones, el software pasa por ambientes y controles estrictos para no romper nada. Hacé clic en los nodos para ver el flujo.</p>
             
             <!-- Tarjeta Explicativa de Valor para el PM -->
-            <div class="glass-card" style="margin: 0 auto 1.5rem auto; padding: 0.8rem 1.2rem; border-left: 3px solid var(--color-blue); max-width: 1000px; width: 100%; text-align: left; font-size: 0.85rem; line-height: 1.45;">
-                <strong style="color: var(--color-blue);"><i data-lucide="info" class="icon-sm" style="vertical-align: middle; margin-right: 6px;"></i> ¿Por qué un Project Manager debe entender Git?</strong> 
-                Entender Git te permite hablar el mismo idioma que los desarrolladores, hacer un seguimiento real en Jira (detectando cuellos de botella en Code Review o QA) y anticipar riesgos cuando gestionás varias funciones a la vez.
+            <div class="glass-card" style="display: block !important; margin: 0 auto 0.65rem auto; padding: 0.6rem 1.1rem; border-left: 3px solid var(--color-blue); max-width: 1000px; width: 100%; text-align: left; font-size: 0.82rem; line-height: 1.4;">
+                <p style="margin: 0;"><strong style="color: var(--color-blue);"><i data-lucide="info" class="icon-sm" style="vertical-align: middle; margin-right: 6px;"></i> ¿Por qué un Project Manager debe entender Git?</strong> Entender Git te permite hablar el mismo idioma que los desarrolladores, hacer un seguimiento real en Jira (detectando cuellos de botella en Code Review o QA) y anticipar riesgos cuando gestionás varias funciones a la vez.</p>
             </div>
             
             <div class="git-visual-container">
@@ -3623,10 +3622,10 @@
 
         // Slide 5b: Startup Roles details
         const startupRoleDetails = [
-            "<strong><i data-lucide='laptop' class='icon-sm' style='margin-right: 6px; color: var(--color-purple); vertical-align: middle;'></i> Full-Stack Developer:</strong> Un programador generalista que domina todo el stack tecnológico. Diseña la interfaz gráfica del usuario (Frontend) y escribe la lógica del servidor y APIs (Backend). Incluso suele configurar servidores básicos en AWS o Vercel (DevOps). <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Comunicación informal y directa (Slack sin intermediarios o charlas rápidas de pasillo). Las alineaciones son inmediatas y sin burocracia técnica.",
-            "<strong><i data-lucide='user-cog' class='icon-sm' style='margin-right: 6px; color: var(--color-blue); vertical-align: middle;'></i> Project Manager / PO:</strong> En startups pequeñas, se asume un rol integral de 360 grados. Se diseñan mockups rápidos, se gestiona el backlog, se realizan pruebas manuales de aceptación (QA), se capacita al equipo de soporte y se lideran los lanzamientos comerciales. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se actúa como el centro del ecosistema, exigiendo agilidad extrema, priorizando de forma implacable y manteniendo la satisfacción del cliente con entregas veloces.",
-            "<strong><i data-lucide='check-square' class='icon-sm' style='margin-right: 6px; color: var(--color-green); vertical-align: middle;'></i> QA / Tester Liviano:</strong> Un tester ágil centrado en validar rápidamente flujos críticos a mano. Rara vez implementa automatización compleja, delegando el peso del control de calidad en los propios desarrolladores y en las pruebas de UAT del PM. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Comunicación continua durante el sprint. El PM actúa como la 'segunda línea de defensa' para certificar que todo funcione antes de autorizar el merge final.",
-            "<strong><i data-lucide='pie-chart' class='icon-sm' style='margin-right: 6px; color: var(--color-orange); vertical-align: middle;'></i> Analista de Datos Generalista:</strong> Un rol clave enfocado en configurar herramientas analíticas auto-gestionadas (ej: Amplitude, Mixpanel, Google Analytics), estructurar la base de datos SQL inicial y generar los reportes comerciales solicitados por el PM. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Colaboración constante para medir la adopción del producto y el éxito de cada feature lanzado a producción."
+            "<strong><i data-lucide='laptop' class='icon-sm' style='margin-right: 6px; color: var(--color-purple); vertical-align: middle;'></i> Full-Stack Developer:</strong> Un programador generalista que domina todo el stack tecnológico. Diseña la interfaz gráfica del usuario (Frontend) y escribe la lógica del servidor y APIs (Backend). Incluso suele configurar servidores básicos en AWS o Vercel (DevOps). <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Comunicación informal y directa (Slack sin intermediarios o charlas rápidas de pasillo). Las alineaciones son inmediatas y sin burocracia técnica.",
+            "<strong><i data-lucide='user-cog' class='icon-sm' style='margin-right: 6px; color: var(--color-blue); vertical-align: middle;'></i> Project Manager / PO:</strong> En startups pequeñas, se asume un rol integral de 360 grados. Se diseñan mockups rápidos, se gestiona el backlog, se realizan pruebas manuales de aceptación (QA), se capacita al equipo de soporte y se lideran los lanzamientos comerciales. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se actúa como el centro del ecosistema, exigiendo agilidad extrema, priorizando de forma implacable y manteniendo la satisfacción del cliente con entregas veloces.",
+            "<strong><i data-lucide='check-square' class='icon-sm' style='margin-right: 6px; color: var(--color-green); vertical-align: middle;'></i> QA / Tester Liviano:</strong> Un tester ágil centrado en validar rápidamente flujos críticos a mano. Rara vez implementa automatización compleja, delegando el peso del control de calidad en los propios desarrolladores y en las pruebas de UAT del PM. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Comunicación continua durante el sprint. El PM actúa como la 'segunda línea de defensa' para certificar que todo funcione antes de autorizar el merge final.",
+            "<strong><i data-lucide='pie-chart' class='icon-sm' style='margin-right: 6px; color: var(--color-orange); vertical-align: middle;'></i> Analista de Datos Generalista:</strong> Un rol clave enfocado en configurar herramientas analíticas auto-gestionadas (ej: Amplitude, Mixpanel, Google Analytics), estructurar la base de datos SQL inicial y generar los reportes comerciales solicitados por el PM. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Colaboración constante para medir la adopción del producto y el éxito de cada feature lanzado a producción."
         ];
 
         function activateStartupRole(roleIndex, cardElement) {
@@ -3652,11 +3651,11 @@
 
         // Slide 5c: Corporate Roles details
         const corporateRoleDetails = [
-            "<strong><i data-lucide='users' class='icon-sm' style='margin-right: 6px; color: var(--color-purple); vertical-align: middle;'></i> PM vs. PO (Responsabilidades Separadas):</strong> El Project Manager (PM) lidera el roadmap a largo plazo, el ROI del producto y las alineaciones con directores corporativos. El Product Owner (PO) vive dentro del squad Scrum, escribe épicas e Historias de Usuario granulares y lidera las ceremonias diarias (Dailies, Refinement, Planning). <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> El PM colabora de cerca con el PO para traducir la estrategia de negocio en trabajo ejecutable, sin entrometerse en el micromanagement diario del sprint.",
-            "<strong><i data-lucide='cpu' class='icon-sm' style='margin-right: 6px; color: var(--color-blue); vertical-align: middle;'></i> Especialistas en Ingeniería:</strong> Squad de desarrollo segregado compuesto por Frontend Devs (exclusivos de la interfaz en React/NextJS), Backend Devs (exclusivos de bases de datos y microservicios Java/Node), Mobile Devs (sólo iOS/Android) y Tech Leads (expertos que definen estándares de código y arquitecturas de APIs). <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> La comunicación se realiza a través del Tech Lead o del PO. Se debe respetar la estructura de sprints para no desviar los enfoques especializados.",
-            "<strong><i data-lucide='shield-check' class='icon-sm' style='margin-right: 6px; color: var(--color-green); vertical-align: middle;'></i> QA Automation Engineers & Dedicated Squads:</strong> Ingenieros de calidad dedicados a automatizar regresiones y tests de estrés (con Playwright o Cypress). Cuentan con un pipeline estricto de control de calidad. El software no se despliega en producción si la suite de tests de QA no da 'verde'. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se coordinan con el QA Lead los planes de UAT para garantizar la cobertura funcional de los casos de uso del negocio.",
-            "<strong><i data-lucide='database' class='icon-sm' style='margin-right: 6px; color: var(--color-orange); vertical-align: middle;'></i> Data Stack Specialists (Data Squads):</strong> Squads independientes con roles separados. Los Data Engineers crean tuberías ETL complejas para ingesta masiva. Los Data Scientists entrenan modelos matemáticos y de IA para optimizar predicciones. Los BI Analysts configuran reportes interactivos corporativos en Tableau/PowerBI. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se negocian recursos con el Data Manager para priorizar modelos de datos e insights clave para medir los productos.",
-            "<strong><i data-lucide='network' class='icon-sm' style='margin-right: 6px; color: var(--color-red); vertical-align: middle;'></i> DevOps & SecOps Dedicated:</strong> Ingenieros expertos dedicados en exclusiva a gestionar el ecosistema cloud de la corporación (AWS/Azure con Kubernetes o Docker) y robustecer el cumplimiento y la ciberseguridad. Controlan auditorías de accesos, encriptación y firewalls corporativos. <br><br><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se debe coordinar y justificar el cumplimiento regulatorio y la infraestructura técnica para cada funcionalidad con suficiente antelación."
+            "<strong><i data-lucide='users' class='icon-sm' style='margin-right: 6px; color: var(--color-purple); vertical-align: middle;'></i> PM vs. PO (Responsabilidades Separadas):</strong> El Project Manager (PM) lidera el roadmap a largo plazo, el ROI del producto y las alineaciones con directores corporativos. El Product Owner (PO) vive dentro del squad Scrum, escribe épicas e Historias de Usuario granulares y lidera las ceremonias diarias (Dailies, Refinement, Planning). <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> El PM colabora de cerca con el PO para traducir la estrategia de negocio en trabajo ejecutable, sin entrometerse en el micromanagement diario del sprint.",
+            "<strong><i data-lucide='cpu' class='icon-sm' style='margin-right: 6px; color: var(--color-blue); vertical-align: middle;'></i> Especialistas en Ingeniería:</strong> Squad de desarrollo segregado compuesto por Frontend Devs (exclusivos de la interfaz en React/NextJS), Backend Devs (exclusivos de bases de datos y microservicios Java/Node), Mobile Devs (sólo iOS/Android) y Tech Leads (expertos que definen estándares de código y arquitecturas de APIs). <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> La comunicación se realiza a través del Tech Lead o del PO. Se debe respetar la estructura de sprints para no desviar los enfoques especializados.",
+            "<strong><i data-lucide='shield-check' class='icon-sm' style='margin-right: 6px; color: var(--color-green); vertical-align: middle;'></i> QA Automation Engineers & Dedicated Squads:</strong> Ingenieros de calidad dedicados a automatizar regresiones y tests de estrés (con Playwright o Cypress). Cuentan con un pipeline estricto de control de calidad. El software no se despliega en producción si la suite de tests de QA no da 'verde'. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se coordinan con el QA Lead los planes de UAT para garantizar la cobertura funcional de los casos de uso del negocio.",
+            "<strong><i data-lucide='database' class='icon-sm' style='margin-right: 6px; color: var(--color-orange); vertical-align: middle;'></i> Data Stack Specialists (Data Squads):</strong> Squads independientes con roles separados. Los Data Engineers crean tuberías ETL complejas para ingesta masiva. Los Data Scientists entrenan modelos matemáticos y de IA para optimizar predicciones. Los BI Analysts configuran reportes interactivos corporativos en Tableau/PowerBI. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se negocian recursos con el Data Manager para priorizar modelos de datos e insights clave para medir los productos.",
+            "<strong><i data-lucide='network' class='icon-sm' style='margin-right: 6px; color: var(--color-red); vertical-align: middle;'></i> DevOps & SecOps Dedicated:</strong> Ingenieros expertos dedicados en exclusiva a gestionar el ecosistema cloud de la corporación (AWS/Azure con Kubernetes o Docker) y robustecer el cumplimiento y la ciberseguridad. Controlan auditorías de accesos, encriptación y firewalls corporativos. <div style='height: 0.35rem;'></div><strong><i data-lucide='message-square' class='icon-sm' style='margin-right: 4px; color: var(--color-blue); vertical-align: middle;'></i> Canal del PM:</strong> Se debe coordinar y justificar el cumplimiento regulatorio y la infraestructura técnica para cada funcionalidad con suficiente antelación."
         ];
 
         function activateCorporateRole(roleIndex, cardElement) {
@@ -3873,6 +3872,13 @@
         .slide {
             padding-top: 3.8rem !important;
             padding-bottom: 1.2rem !important;
+        }
+        .slide > * {
+            flex-shrink: 0 !important;
+        }
+        .slide::before,
+        .slide::after {
+            min-height: 0 !important;
         }
         @media (min-width: 769px) {
             .slide > *:last-child {
