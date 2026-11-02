@@ -324,25 +324,199 @@
                 border-left: 3px solid #10b981 !important;
                 border: 1px solid #d1e7dd;
             }
+            .glossary-top-nav, .glossary-search-bar {
+                display: none !important;
+            }
+        }
+
+        /* Sticky Top Navigation & Search Bar */
+        .glossary-top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 150;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.65rem 1.25rem;
+            border-radius: 14px;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+        }
+        .glossary-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+        }
+        .glossary-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: #f8fafc;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-body);
+        }
+        .glossary-nav-btn:hover {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: #10b981;
+            color: #ffffff;
+        }
+        .glossary-search-bar {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .glossary-search-input {
+            flex: 1;
+            min-width: 220px;
+            padding: 0.55rem 0.9rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.88rem;
+            font-family: var(--font-body);
+            outline: none;
+        }
+        .glossary-search-input:focus {
+            border-color: var(--color-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .glossary-filter-pills {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .glossary-filter-pill {
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: var(--text-body);
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+        .glossary-filter-pill.active, .glossary-filter-pill:hover {
+            background: var(--text-title);
+            color: #ffffff;
+            border-color: var(--text-title);
+        }
+        .comparison-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin: 1.2rem 0 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.8rem 1rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+        }
+        .comparison-table td {
+            padding: 0.8rem 1rem;
+            border-top: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+        .comparison-table tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        /* Mobile Responsive Overrides */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.75rem 0.5rem;
+            }
+            .glossary-container {
+                padding: 1.35rem 1.05rem;
+                border-radius: 14px;
+            }
+            .glossary-header h1 {
+                font-size: 1.65rem;
+            }
+            .term-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .term-title {
+                font-size: 1.15rem;
+            }
+            .section-metaphor, .section-insight {
+                flex-direction: column;
+                padding: 0.85rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="glossary-container">
+        <!-- STICKY TOP NAVIGATION -->
+        <nav class="glossary-top-nav" aria-label="Navegación de Glosario S2">
+            <div class="glossary-nav-links">
+                <a href="../index.html" class="glossary-nav-btn">⬅ Portal Principal</a>
+                <a href="./slides_sesion_2.html" class="glossary-nav-btn">🖥️ Slides S2</a>
+                <a href="./actividad_practica_sesion_2.html" class="glossary-nav-btn">⚡ Actividad Práctica S2</a>
+                <a href="./mock_prd_tarea_sesion_2.html" class="glossary-nav-btn">🛠️ App Mock PRD</a>
+            </div>
+            <button type="button" class="glossary-nav-btn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        </nav>
+
         <!-- HEADER -->
         <header class="glossary-header">
             <div class="header-top">
-                <span class="badge-session">Mentoría Estratégica PM</span>
-                <span style="font-size: 0.8rem; font-family: var(--font-display); font-weight: 700; color: var(--text-light);">SESIÓN 2</span>
+                <span class="badge-session">Mentoría Estratégica PM · Anabela Hotian</span>
+                <span style="font-size: 0.8rem; font-family: var(--font-display); font-weight: 700; color: var(--text-light);">SESIÓN 2 · 22 TÉRMINOS + TABLAS COMPARATIVAS</span>
             </div>
             <div class="header-title-wrapper">
-                <h1>Glosario de Inteligencia Artificial &amp; RAG</h1>
+                <h1>Glosario de Inteligencia Artificial Generativa &amp; Arquitectura RAG</h1>
                 <p class="header-desc">
-                    Conceptos técnicos y estratégicos fundamentales de IA Generativa. Diseñado específicamente para Project Managers y líderes de negocio en transición al mercado IT.
+                    Diccionario técnico-ejecutivo de IA Generativa, LLMs, FinOps de Tokens, Bases Vectoriales y Gobernanza. Diseñado para liderar equipos de ingeniería y defender decisiones de producto.
                 </p>
             </div>
         </header>
+
+        <!-- INTERACTIVE SEARCH & FILTER BAR -->
+        <div class="glossary-search-bar">
+            <input type="search" id="glossary-search" class="glossary-search-input" placeholder="🔍 Buscar término (ej. Token, BPE, RAG, Cosine, Overlap, Umbral 0.75, SLA)..." oninput="filterGlossaryTerms()">
+            <div class="glossary-filter-pills">
+                <button type="button" class="glossary-filter-pill active" onclick="setCategoryFilter('all', this)">Todos (22)</button>
+                <button type="button" class="glossary-filter-pill" onclick="setCategoryFilter('Arquitectura', this)">Arquitectura</button>
+                <button type="button" class="glossary-filter-pill" onclick="setCategoryFilter('Ingeniería', this)">Ingeniería</button>
+                <button type="button" class="glossary-filter-pill" onclick="setCategoryFilter('Estrategia', this)">Estrategia &amp; FinOps</button>
+                <a href="#tablas-comparativas-s2" class="glossary-filter-pill" style="text-decoration: none;">📊 Tablas &amp; Entrevista ↓</a>
+            </div>
+        </div>
 
         <!-- SECTION I -->
         <div style="margin-bottom: 2.5rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 1rem;">
@@ -588,8 +762,7 @@
                     <i data-lucide="help-circle"></i>
                 </div>
                 <p class="metaphor-content">
-                    <strong>La Metáfora:</strong> <strong>La segmentación de un flujo continuo de mineral en tolvas de carga estandarizadas</strong>. Si se intenta procesar un bloque masivo de datos de una sola vez, la capacidad de entrada del sistema colapsará. Para evitarlo, los ingenieros implementan un algoritmo que divide la documentación de operaciones en fracciones homogéneas y manejables (chunks), garantizando que el sistema pueda procesar e indexar cada bloque de información de manera eficiente y sin pérdida de la continuidad lógica.
-                </p>
+                    <strong>La Metáfora:</strong> <strong>Dividir una enciclopedia técnica en fichas temáticas numeradas y auto-contenidas</strong>. Si intentás entregarle un manual de 300 páginas de una sola vez a un traductor o analista para responder una duda puntual, tardará demasiado y se perderá. En cambio, el algoritmo de <em>Recursive Character Chunking</em> recorta el documento respetando capítulos, párrafos y oraciones completas (ej. fichas de 250 palabras), asegurando que cada fragmento conserve su sentido gramatical intacto para ser indexado en la base vectorial.</p>
             </div>
 
             <div class="section-insight">
@@ -839,8 +1012,7 @@
                     <i data-lucide="help-circle"></i>
                 </div>
                 <p class="metaphor-content">
-                    <strong>La Metáfora:</strong> <strong>La planta de tratamiento de crudo de una refinería petroquímica</strong>. El sistema de procesamiento exige que la materia prima (datos) cumpla con estándares estrictos de viscosidad y pureza. Si se alimenta la refinería con hidrocarburos tratados y canalizados mediante oleoductos estables (datos normalizados legibles expuestos por APIs), la planta producirá combustibles refinados de alta calidad de forma continua. Por el contrario, si se inyectan sedimentos no procesados o crudo altamente contaminado (PDFs escaneados sin OCR o archivos de texto corruptos), el sistema de filtrado colapsará e interrumpirá la operación.
-                </p>
+                    <strong>La Metáfora:</strong> <strong>Preparar los archivos fuente antes de cargarlos en una Memoria de Traducción (CAT Tool) o sistema de gestión documental</strong>. Si intentás procesar PDFs escaneados borrosos, tablas rotas o versiones viejas mezcladas con borradores sin aprobar, el motor devolverá resultados inconsistentes. En cambio, cuando los documentos están en formatos limpios (Markdown, JSON, PDF nativo con texto seleccionable), con codificación UTF-8 y etiquetados con su versión vigente, el pipeline de IA procesa la información con máxima fidelidad.</p>
             </div>
 
             <div class="section-insight">
@@ -1116,11 +1288,133 @@
                 </p>
             </div>
         </article>
+
+        <!-- SECTION III: TABLAS COMPARATIVAS & PREGUNTAS DE CONTROL EN ENTREVISTAS -->
+        <div id="tablas-comparativas-s2" style="margin: 3rem 0 1.5rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.8rem;">
+            <h2 style="font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; color: var(--text-title); letter-spacing: -0.02em;">
+                III. Tablas Comparativas &amp; Preguntas de Control para Entrevistas IT
+            </h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.35rem;">
+                Matrices de decisión rápida para defender arquitectura, costos y seguridad frente a CTOs, Tech Leads y reclutadores.
+            </p>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text-title); margin-bottom: 0.5rem;">
+            1. Matriz de Decisión: Prompt Engineering vs. RAG vs. Fine-Tuning
+        </h3>
+        <div class="comparison-table-wrap">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Criterio de Producto</th>
+                        <th>Prompt Engineering + Caching</th>
+                        <th>RAG (Retrieval-Augmented Generation)</th>
+                        <th>Fine-Tuning (Re-entrenamiento)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Objetivo Principal</strong></td>
+                        <td>Definir rol, reglas de formato (JSON/Markdown) y ejemplos base (Few-Shot).</td>
+                        <td>Conectar el LLM con <strong>conocimiento privado o cambiante</strong> (manuales, glosarios, wikis) sin alucinar.</td>
+                        <td>Enseñar un <strong>tono de voz, estilo específico</strong> o jerga de nicho muy estable.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Frecuencia de Cambio del Dato</strong></td>
+                        <td>Estático en el System Prompt (ideal para <em>Prompt Caching</em> con 50%-75% de descuento).</td>
+                        <td><strong>Alta (Diaria / Semanal / Tiempo Real):</strong> basta con actualizar el vector en Pinecone sin re-entrenar.</td>
+                        <td><strong>Baja (Estática):</strong> si los datos cambian cada semana, el modelo queda desactualizado de inmediato.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mitigación de Alucinaciones y Citas</strong></td>
+                        <td>Media (depende de lo que ya sabe el modelo o lo que entra en el prompt).</td>
+                        <td><strong>Muy Alta ("Examen a Libro Abierto"):</strong> permite exigir umbral &ge; 0.75 y cita obligatoria al documento fuente.</td>
+                        <td><strong>Baja para hechos:</strong> el modelo responde de memoria estadística y no puede citar páginas exactas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Costo e Complejidad Técnica</strong></td>
+                        <td>Bajo (Horas de configuración).</td>
+                        <td>Medio (Pipeline de Chunking, Embeddings y Vector DB). <strong>Estándar corporativo #1</strong>.</td>
+                        <td>Alto (Curación de miles de pares, horas de GPU y mantenimiento de pesos).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text-title); margin-bottom: 0.5rem;">
+            2. Matriz de Gobernanza: Chat Público / Consumer vs. API Enterprise SLA
+        </h3>
+        <div class="comparison-table-wrap">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Dimensión de Seguridad</th>
+                        <th>❌ Chat Público / Licencias Gratuitas</th>
+                        <th>✅ API Corporativa bajo Enterprise SLA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Retención y Entrenamiento</strong></td>
+                        <td>Los prompts y documentos subidos pueden retenerse y usarse para entrenar futuros modelos comerciales (<em>Data Leakage</em>).</td>
+                        <td><strong>Zero-Data Retention (Retención Cero):</strong> prohibición contractual y técnica de usar tus datos para entrenar modelos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cumplimiento Legal (NDA / GDPR)</strong></td>
+                        <td>Viola acuerdos de confidencialidad con clientes al exponer propiedad intelectual o PII.</td>
+                        <td>Cumple auditorías <strong>SOC2 Type II, ISO 27001, HIPAA y GDPR</strong> con cifrado TLS y AES-256.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Control de Costos y Cuotas</strong></td>
+                        <td>Sin trazabilidad programática ni filtros de acceso por rol.</td>
+                        <td>Control granular por API Key, <em>Rate Limiting</em>, <em>Prompt Caching</em> y monitoreo en Langfuse.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text-title); margin-bottom: 0.75rem;">
+            3. Cinco Preguntas de Control de una PM Senior para el Equipo de Ingeniería
+        </h3>
+        <div class="section-insight" style="margin-bottom: 1.5rem;">
+            <div class="insight-icon-wrapper">
+                <i data-lucide="award"></i>
+            </div>
+            <div class="insight-content">
+                <ol style="padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.45rem;">
+                    <li><strong>Sobre Chunking y Overlap:</strong> <em>"¿Estamos usando Recursive Character Splitting con al menos un 15% de Overlap para que las tablas de tarifas y reglas de estilo no queden cortadas por la mitad entre dos fragmentos?"</em></li>
+                    <li><strong>Sobre Lost in the Middle:</strong> <em>"¿Cuántos fragmentos (Top-K) estamos inyectando en la ventana de contexto y cómo nos aseguramos de ubicar las instrucciones críticas al inicio y al final del prompt?"</em></li>
+                    <li><strong>Sobre Metadata Filtering:</strong> <em>"¿Qué etiquetas de metadatos duros (idioma, vigencia 2026, cliente) aplicamos en la base vectorial ANTES de calcular la similitud por coseno para no recuperar manuales obsoletos?"</em></li>
+                    <li><strong>Sobre Umbral Anti-Alucinación:</strong> <em>"¿Cuál es nuestro Confidence Threshold (ej. 0.75) para cortocircuitar la llamada al LLM y devolver el mensaje de Fallback seguro cuando no hay respaldo documental?"</em></li>
+                    <li><strong>Sobre Calidad y CI/CD:</strong> <em>"¿Tenemos integrado un Golden Dataset de al menos 50 casos certificados en nuestro pipeline de CI/CD para bloquear el despliegue si el Context Adherence baja del 90%?"</em></li>
+                </ol>
+            </div>
+        </div>
     </div>
 
-    <!-- Initialize Lucide icons on page load -->
     <script>
         lucide.createIcons();
+
+        let currentCatFilter = 'all';
+        function setCategoryFilter(cat, btnEl) {
+            currentCatFilter = cat;
+            document.querySelectorAll('.glossary-filter-pill').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            filterGlossaryTerms();
+        }
+
+        function filterGlossaryTerms() {
+            const q = (document.getElementById('glossary-search').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.term-card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const badgeEl = card.querySelector('.badge-category');
+                const catText = badgeEl ? badgeEl.textContent.trim() : '';
+                const matchesQuery = !q || text.includes(q);
+                const matchesCat = currentCatFilter === 'all' || catText.toLowerCase().includes(currentCatFilter.toLowerCase());
+                card.style.display = (matchesQuery && matchesCat) ? '' : 'none';
+            });
+        }
     </script>
 </body>
 </html>

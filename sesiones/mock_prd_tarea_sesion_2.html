@@ -674,21 +674,27 @@
     </div>
 
     <header>
-        <div class="header-container">
+        <div class="header-container" style="flex-wrap: wrap; gap: 0.75rem;">
             <div class="header-title-area">
                 <div class="logo-badge">SESIÓN 2</div>
                 <div class="header-text">
-                    <h1>Actividad Semanal: Mock PRD - Enterprise Knowledge Bot</h1>
-                    <p>Mentoría PM de IA / Anabela Hotian</p>
+                    <h1>Actividad Práctica: Mock PRD — Enterprise Knowledge Bot</h1>
+                    <p>Mentoría IT Product / Project Management &amp; IA · Anabela Hotian</p>
                 </div>
             </div>
-            
-            <div class="progress-widget">
-                <span class="progress-text" id="progress-val">0%</span>
-                <div class="progress-bar-bg">
-                    <div id="progress-fill" class="progress-bar-fill"></div>
+
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <a href="../index.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;font-size:0.76rem;font-weight:600;color:#e2e8f0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);text-decoration:none;">⬅ Portal</a>
+                <a href="./slides_sesion_2.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;font-size:0.76rem;font-weight:600;color:#e2e8f0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);text-decoration:none;">🖥️ Slides S2</a>
+                <a href="./actividad_practica_sesion_2.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;font-size:0.76rem;font-weight:600;color:#6ee7b7;background:rgba(16,185,129,0.14);border:1px solid rgba(16,185,129,0.35);text-decoration:none;">⚡ Simulador S2</a>
+                <a href="./glosario_completo_sesion_2.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;font-size:0.76rem;font-weight:600;color:#e2e8f0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);text-decoration:none;">📖 Glosario S2</a>
+                <div class="progress-widget">
+                    <span class="progress-text" id="progress-val">0%</span>
+                    <div class="progress-bar-bg">
+                        <div id="progress-fill" class="progress-bar-fill"></div>
+                    </div>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Completado</span>
                 </div>
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Completado</span>
             </div>
         </div>
     </header>
@@ -744,7 +750,7 @@
             <div class="section-panel active" id="sec-0">
                 <div class="section-header">
                     <h2><i data-lucide="compass" style="color: var(--color-blue);"></i> 1. Visión del Producto & Fuentes de Datos</h2>
-                    <p>Definí cuál es el problema que viene a resolver el bot de Enterprise y con qué documentos entrenados/indexados operará en su base de conocimiento.</p>
+                    <p>Definí cuál es el problema que viene a resolver el asistente corporativo y con qué documentos indexados operará en su base de conocimiento.</p>
                 </div>
 
                 <div class="form-group">
@@ -777,7 +783,7 @@
                 <div class="info-box">
                     <i data-lucide="help-circle"></i>
                     <div>
-                        <strong>Regla de Oro de Negocio:</strong> "No se puede automatizar el caos". Antes de conectar la base de datos, asegurate de que los manuales oficiales de Enterprise estén consolidados y vigentes.
+                        <strong>Regla de Oro de Negocio:</strong> "No se puede automatizar el caos". Antes de conectar la base de datos vectorial, asegurate de que los manuales y glosarios oficiales de la organización estén consolidados y vigentes.
                     </div>
                 </div>
             </div>
@@ -832,7 +838,7 @@
                         <span id="chunk-panel-title">Recursive Character Chunking (500 tokens / 15% overlap)</span>
                     </div>
                     <p class="dynamic-panel-desc" id="chunk-panel-desc">
-                        Esta configuración es el estándar de oro en RAG corporativo. Al utilizar Recursive Character Chunking, el pipeline cortará los manuales respetando primero los párrafos, luego las oraciones y finalmente los espacios. El overlap de 15% (75 tokens) asegura que si una regla terminológica o especificación de producto queda dividida entre dos fragmentos, las definiciones mantendrán la cohesión en la costura del corte, previniendo alucinaciones de precios por pérdida de contexto.
+                        Esta configuración es el estándar de oro en RAG corporativo. Al utilizar Recursive Character Chunking, el pipeline cortará los manuales respetando primero los párrafos, luego las oraciones y finalmente los espacios. El overlap de 15% (75 tokens) asegura que si una regla terminológica o especificación de producto queda dividida entre dos fragmentos, las definiciones mantendrán la cohesión en la costura del corte, previniendo alucinaciones y reglas truncadas por pérdida de contexto.
                     </p>
                 </div>
 
@@ -856,7 +862,7 @@
                         <label for="select-threshold">Umbral de Confianza (Threshold)</label>
                         <select id="select-threshold" onchange="updateInferencePanel()">
                             <option value="0.50">0.50 (Muy flexible, propicio a alucinaciones)</option>
-                            <option value="0.75" selected>0.75 (Precisión balanceada para documentación oficials - Recomendado)</option>
+                            <option value="0.75" selected>0.75 (Precisión balanceada para documentación oficial - Recomendado)</option>
                             <option value="0.90">0.90 (Muy estricto, puede no responder consultas válidas)</option>
                         </select>
                     </div>
@@ -866,7 +872,7 @@
                         <select id="select-sla" onchange="updateInferencePanel()">
                             <option value="public">API Pública (Los datos entrenan futuros modelos públicos)</option>
                             <option value="enterprise" selected>Enterprise SLA con Zero-Retention (Recomendado)</option>
-                            <option value="local">Modelo local en servidores de Enterprise (On-Premise)</option>
+                            <option value="local">Modelo local en servidores propios (On-Premise)</option>
                         </select>
                     </div>
                 </div>
@@ -893,7 +899,7 @@
                         <span id="inference-panel-title">Umbral 0.75 + Enterprise SLA (Zero-Retention)</span>
                     </div>
                     <p class="dynamic-panel-desc" id="inference-panel-desc">
-                        El umbral de confianza a 0.75 asegura que solo se enviarán al LLM aquellos fragmentos que tengan una alta similitud de coseno semántica con la consulta técnica o lingüística. Si el score es inferior, el sistema ejecuta la lógica "No-Answer" evitando inventar datos. Además, el Enterprise SLA con Zero-Retention garantiza contractualmente que las consultas de producto, traducciones y documentos confidenciales de Enterprise no se almacenarán en servidores externos ni se utilizarán para entrenar modelos públicos comerciales.
+                        El umbral de confianza a 0.75 asegura que solo se enviarán al LLM aquellos fragmentos que tengan una alta similitud de coseno semántica con la consulta técnica o lingüística. Si el score es inferior, el sistema ejecuta la lógica "No-Answer" evitando inventar datos. Además, el Enterprise SLA con Zero-Retention garantiza contractualmente que las consultas de producto, traducciones y documentos confidenciales de la organización no se almacenarán en servidores externos ni se utilizarán para entrenar modelos públicos comerciales.
                     </p>
                 </div>
             </div>
@@ -944,7 +950,7 @@
                             <input type="checkbox" id="chk-dod-5" onchange="updateProgress()">
                             <div class="checklist-content">
                                 <span class="checklist-title">Golden Dataset de pruebas con al menos 50 preguntas difíciles</span>
-                                <span class="checklist-desc">Base de testeo inmutable con respuestas Ground Truth validadas por expertos en documentación oficials.</span>
+                                <span class="checklist-desc">Base de testeo inmutable con respuestas Ground Truth validadas por expertos en documentación oficial.</span>
                             </div>
                         </label>
 
@@ -1163,10 +1169,10 @@
 
             if (algo === 'recursive') {
                 algoText = "Recursive Character Chunking";
-                descText = "Excelente elección. El algoritmo recortará los documentos de Enterprise de forma jerárquica respetando saltos de párrafo, puntos seguidos y espacios. Esto evita que una regulación de documentación oficials pierda coherencia. ";
+                descText = "Excelente elección. El algoritmo recortará los documentos corporativos de forma jerárquica respetando saltos de párrafo, puntos seguidos y espacios. Esto evita que una regla de documentación oficial pierda coherencia. ";
             } else if (algo === 'fixed') {
                 algoText = "Fixed-size Chunking (Cortes fijos)";
-                descText = "Atención: Los cortes mecánicos rígidos son rápidos pero ignoran la sintaxis gramatical. Es altamente probable que una regla crítica de negocio o glosario o una fecha se corte por la mitad entre dos chunks, causando pérdida de significado y alucinaciones. ";
+                descText = "Atención: Los cortes mecánicos rígidos son rápidos pero ignoran la sintaxis gramatical. Es altamente probable que una regla crítica de negocio, glosario o condición se corte por la mitad entre dos chunks, causando pérdida de significado y alucinaciones. ";
             } else {
                 algoText = "Semantic Chunking (Por significado)";
                 descText = "Interesante. Divide el texto cuando detecta un cambio en el significado conceptual de las oraciones. Requiere un modelo de embeddings activo para calcular las divisiones, lo cual añade costo computacional y latencia en el proceso de ingesta. ";
@@ -1208,17 +1214,17 @@
             if (threshold === '0.50') {
                 fullDesc += "Alerta de Negocio: Un umbral de 0.50 es demasiado laxo. La base vectorial aceptará chunks con baja coincidencia semántica, inyectando ruido e induciendo al LLM a alucinar reglas de negocio o traducciones incorrectas. ";
             } else if (threshold === '0.75') {
-                fullDesc += "El umbral de 0.75 es el punto de calibración ideal para Enterprise. Garantiza que solo los documentos altamente alineados con la consulta del PM o especialista de localización se inyecten sobre la Ventana de Contexto del modelo. Si no se alcanza, el bot ejecuta la lógica 'No-Answer' segura. ";
+                fullDesc += "El umbral de 0.75 es el punto de calibración ideal para entornos corporativos. Garantiza que solo los documentos altamente alineados con la consulta del PM o especialista de localización se inyecten sobre la Ventana de Contexto del modelo. Si no se alcanza, el bot ejecuta la lógica 'No-Answer' segura. ";
             } else {
                 fullDesc += "Un umbral de 0.90 es sumamente conservador. Si bien previene alucinaciones al 100%, bloqueará consultas legítimas del sistema si el usuario utiliza sinónimos o lenguaje informal, restando utilidad comercial al bot. ";
             }
 
             if (sla === 'public') {
-                fullDesc += "Peligro de Data Leakage: Las documentos confidenciales de clientes y glosarios propietarios de Enterprise serán expuestas a la nube del proveedor y utilizadas para re-entrenar modelos comerciales públicos. Esto constituye una violación directa a las políticas de compliance empresarial.";
+                fullDesc += "Peligro de Data Leakage: Los documentos confidenciales de clientes y glosarios propietarios de la compañía serán expuestos a la nube del proveedor y utilizados para re-entrenar modelos comerciales públicos. Esto constituye una violación directa a las políticas de compliance empresarial.";
             } else if (sla === 'enterprise') {
                 fullDesc += "La política de Zero-Retention bajo Enterprise SLA (como Azure OpenAI) asegura contractualmente que tus datos viajan por canales cifrados con TLS y AES-256 en reposo, y se destruyen del servidor de procesamiento inmediatamente después de la inferencia, previniendo fugas comerciales.";
             } else {
-                fullDesc += "El despliegue local (On-Premise) de modelos open-source (como Llama 3) elimina cualquier salida de datos de la red de Enterprise, pero requiere una alta inversión en infraestructura de servidores físicos GPU y mantenimiento técnico continuo.";
+                fullDesc += "El despliegue local (On-Premise) de modelos open-source (como Llama 3) elimina cualquier salida de datos de la red corporativa, pero requiere una alta inversión en infraestructura de servidores físicos GPU y mantenimiento técnico continuo.";
             }
 
             titleEl.textContent = `${thresholdText} + ${slaText}`;
@@ -1402,7 +1408,7 @@ ${datasetRows}
             const url = URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = "mock_prd_Enterprise_customs_bot.md";
+            a.download = "mock_prd_enterprise_knowledge_bot_s2.md";
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

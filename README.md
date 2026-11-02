@@ -15,7 +15,11 @@ Repositorio oficial y portal interactivo del programa de mentoría 1 a 1 diseña
   - [`sesiones/slides_sesion_1.html`](./sesiones/slides_sesion_1.html) — Slides Sesión 1 (Ecosistema IT, Cloud, RESTful API, Git/GitHub, CI/CD y Agile).
   - [`sesiones/glosario_completo_sesion_1.html`](./sesiones/glosario_completo_sesion_1.html) — Glosario Completo Sesión 1.
   - [`sesiones/actividad_practica_sesion_1.html`](./sesiones/actividad_practica_sesion_1.html) — Simulador Práctico Interactivo Sesión 1 (19 desafíos en 4 misiones).
-  - `slides_sesion_2.html`, `slides_sesion_3.html`, `slides_sesion_4.html` y sus respectivos glosarios (`glosario_completo_sesion_2..4.html`).
+  - [`sesiones/slides_sesion_2.html`](./sesiones/slides_sesion_2.html) — Slides Sesión 2 con Simuladores React 18 (LLMs, Tokens BPE, Prompt Caching, Embeddings, Metadata Filtering, Chunking/Overlap, RAG y Gobernanza).
+  - [`sesiones/glosario_completo_sesion_2.html`](./sesiones/glosario_completo_sesion_2.html) — Glosario Completo Sesión 2 (22 términos, buscador interactivo, tablas comparativas y preguntas de control).
+  - [`sesiones/actividad_practica_sesion_2.html`](./sesiones/actividad_practica_sesion_2.html) — Simulador Práctico Interactivo Sesión 2 (4 misiones de IA Generativa, FinOps y Arquitectura RAG).
+  - [`sesiones/mock_prd_tarea_sesion_2.html`](./sesiones/mock_prd_tarea_sesion_2.html) — Generador Interactivo de Mock PRD (*Enterprise Knowledge Bot*) con exportación a Markdown.
+  - `slides_sesion_3.html`, `slides_sesion_4.html` y sus respectivos glosarios (`glosario_completo_sesion_3..4.html`).
   - [`sesiones/evaluacion_final_y_entrevistas.html`](./sesiones/evaluacion_final_y_entrevistas.html) — Evaluación integradora y simulador de entrevistas.
 - **`guias-mentor/`** — Guiones de orador palabra por palabra para el mentor (`guia_sesion_1_pm.html` .. `guia_sesion_4_pm.html` y versiones `.md`).
 - **`notebooklm/`** — Documentos Markdown listos para cargar como fuentes de estudio en **Google NotebookLM**.

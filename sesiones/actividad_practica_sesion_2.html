@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Práctico S2: IA Generativa &amp; Arquitectura RAG — Anabela Hotian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070b14;
+            --bg-card: rgba(15, 23, 42, 0.78);
+            --border-card: rgba(255, 255, 255, 0.09);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(circle at 12% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 88% 20%, rgba(139, 92, 246, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            padding-bottom: 4rem;
+        }
+
+        /* Sticky Top Navbar */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(7, 11, 20, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-card);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .top-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            background: rgba(16, 185, 129, 0.18);
+            border-color: var(--accent-green);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .xp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(59, 130, 246, 0.22));
+            border: 1px solid rgba(16, 185, 129, 0.45);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #6ee7b7;
+            font-family: var(--font-mono);
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero Header */
+        .hero-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.75));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 22px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.12);
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            max-width: 880px;
+        }
+
+        /* Mission Tabs */
+        .mission-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .mission-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 14px;
+            padding: 0.95rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            color: var(--text-main);
+            font-family: inherit;
+        }
+
+        .mission-tab:hover {
+            border-color: rgba(59, 130, 246, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .mission-tab.active {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(59, 130, 246, 0.15));
+            border-color: var(--accent-green);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .mission-tab-num {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .mission-tab-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+        }
+
+        .mission-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .mission-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .sim-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .sim-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sim-card p.desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .btn-sim {
+            background: rgba(59, 130, 246, 0.16);
+            border: 1px solid rgba(59, 130, 246, 0.45);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn-sim:hover {
+            background: rgba(59, 130, 246, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-sim.active {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: var(--accent-green);
+            color: #6ee7b7;
+        }
+
+        .token-chip {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 3px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .tc-1 { background: rgba(59, 130, 246, 0.22); border: 1px solid rgba(59, 130, 246, 0.5); color: #93c5fd; }
+        .tc-2 { background: rgba(16, 185, 129, 0.22); border: 1px solid rgba(16, 185, 129, 0.5); color: #6ee7b7; }
+        .tc-3 { background: rgba(139, 92, 246, 0.22); border: 1px solid rgba(139, 92, 246, 0.5); color: #c4b5fd; }
+        .tc-4 { background: rgba(249, 115, 22, 0.22); border: 1px solid rgba(249, 115, 22, 0.5); color: #fdba74; }
+
+        .feedback-banner {
+            margin-top: 0.9rem;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            font-size: 0.83rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feedback-banner.ok {
+            background: rgba(16, 185, 129, 0.12);
+            border-color: rgba(16, 185, 129, 0.45);
+            color: #d1fae5;
+        }
+
+        .feedback-banner.warn {
+            background: rgba(239, 68, 68, 0.12);
+            border-color: rgba(239, 68, 68, 0.45);
+            color: #fee2e2;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.55rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            font-size: 0.84rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .quiz-option:hover {
+            background: rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .quiz-option.correct {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: var(--accent-green);
+            color: #ffffff;
+        }
+
+        .quiz-option.wrong {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--accent-red);
+            color: #fca5a5;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-green);
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .mission-tabs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .top-nav {
+                padding: 0.6rem 0.9rem;
+            }
+            .container {
+                padding: 1.2rem 0.95rem;
+            }
+            .hero-box {
+                padding: 1.35rem 1.2rem;
+            }
+            .mission-tabs {
+                grid-template-columns: 1fr;
+            }
+            .sim-card {
+                padding: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY TOP NAVIGATION -->
+    <nav class="top-nav" aria-label="Navegación de Actividad Práctica S2">
+        <div class="top-nav-inner">
+            <div class="nav-links">
+                <a href="../index.html" class="nav-pill">⬅ Portal Principal</a>
+                <a href="./slides_sesion_2.html" class="nav-pill">🖥️ Slides S2</a>
+                <a href="./mock_prd_tarea_sesion_2.html" class="nav-pill">🛠️ App Mock PRD</a>
+                <a href="./glosario_completo_sesion_2.html" class="nav-pill">📖 Glosario S2</a>
+            </div>
+            <div class="xp-badge" id="xp-counter">⚡ Progreso Práctico: 0 / 4 Misiones</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HERO -->
+        <header class="hero-box">
+            <span class="hero-eyebrow">Sesión 2 · Laboratorio Interactivo de Product Management en IA</span>
+            <h1 class="hero-title">Simulador Práctico: IA Generativa, FinOps &amp; Arquitectura RAG</h1>
+            <p class="hero-subtitle">
+                Experimentá en primera persona con las decisiones técnicas que toma una IT Product / Project Manager al diseñar productos impulsados por LLMs: tokenización BPE, temperatura, sesgo <em>Lost in the Middle</em>, bases vectoriales, chunking con overlap y compuertas anti-alucinación.
+            </p>
+        </header>
+
+        <!-- MISSION SELECTOR TABS -->
+        <div class="mission-tabs" role="tablist">
+            <button type="button" class="mission-tab active" onclick="switchMission(1)" id="tab-m1">
+                <span class="mission-tab-num">Misión 01 · Física del LLM</span>
+                <span class="mission-tab-title">Tokens, Temperatura &amp; Curva U</span>
+            </button>
+            <button type="button" class="mission-tab" onclick="switchMission(2)" id="tab-m2">
+                <span class="mission-tab-num">Misión 02 · Búsqueda Semántica</span>
+                <span class="mission-tab-title">Embeddings &amp; Metadata Filter</span>
+            </button>
+            <button type="button" class="mission-tab" onclick="switchMission(3)" id="tab-m3">
+                <span class="mission-tab-num">Misión 03 · Arquitectura RAG</span>
+                <span class="mission-tab-title">Chunking, Overlap &amp; Pipeline</span>
+            </button>
+            <button type="button" class="mission-tab" onclick="switchMission(4)" id="tab-m4">
+                <span class="mission-tab-num">Misión 04 · Gobernanza &amp; QA</span>
+                <span class="mission-tab-title">Umbral 0.75, SLA &amp; Entrevista</span>
+            </button>
+        </div>
+
+        <!-- ==================== MISIÓN 1: TOKENS, TEMPERATURA & CURVA U ==================== -->
+        <section class="mission-panel active" id="panel-m1">
+            <div class="card-grid-2">
+                <!-- Card 1A: BPE Tokenizer & Prompt Caching Calculator -->
+                <div class="sim-card">
+                    <h3>✂️ 1A. Laboratorio de Tokenización BPE y FinOps</h3>
+                    <p class="desc">
+                        Escribí o seleccioná un texto de producto para ver cómo el algoritmo BPE lo divide en sub-palabras y calculá el ahorro mensual activando <strong>Prompt Caching</strong>.
+                    </p>
+                    <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.7rem;">
+                        <button type="button" class="btn-sim active" onclick="setSampleText(0)">Ejemplo Localización</button>
+                        <button type="button" class="btn-sim" onclick="setSampleText(1)">Ejemplo Regla Pagos</button>
+                        <button type="button" class="btn-sim" onclick="setSampleText(2)">Ejemplo Payload JSON</button>
+                    </div>
+                    <textarea id="bpe-input" rows="2" oninput="updateBpeTokens()" style="width: 100%; background: rgba(2,6,23,0.7); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; color: #ffffff; padding: 0.65rem; font-family: var(--font-sans); font-size: 0.85rem; margin-bottom: 0.7rem;">La localización automática con IA optimiza glosarios técnicos globales.</textarea>
+
+                    <div id="bpe-output" style="background: rgba(2,6,23,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.75rem; min-height: 68px; margin-bottom: 0.75rem;"></div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.76rem; color: #93c5fd;">
+                        <span id="bpe-metrics">9 palabras → 15 tokens BPE (Ratio: 1.67x)</span>
+                        <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: #6ee7b7;">
+                            <input type="checkbox" id="cache-toggle" checked onchange="updateBpeTokens()">
+                            <span>Activar Prompt Caching (-55% costo Input)</span>
+                        </label>
+                    </div>
+                    <div class="feedback-banner ok" id="bpe-cost-banner">
+                        💰 Costo proyectado (20.000 consultas/mes con System Prompt de 1.500 tokens): <strong>$33.75 USD/mes</strong> (Ahorrás $41.25 USD/mes gracias a Prompt Caching).
+                    </div>
+                </div>
+
+                <!-- Card 1B: Temperature & Lost in the Middle Calibrator -->
+                <div class="sim-card">
+                    <h3>🌡️ 1B. Calibrador de Temperatura y Ventana de Contexto</h3>
+                    <p class="desc">
+                        Elegí el parámetro de <strong>Temperatura</strong> y la <strong>Ubicación en el Prompt</strong> adecuados para un <em>Bot Corporativo de Reglas de Negocio y Glosarios</em>:
+                    </p>
+                    <div style="margin-bottom: 0.9rem;">
+                        <label style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">
+                            <span>Temperatura del LLM:</span>
+                            <strong id="temp-val-label" style="color: var(--accent-green); font-family: var(--font-mono);">T = 0.0 (Determinista / RAG)</strong>
+                        </label>
+                        <input type="range" id="temp-slider" min="0" max="1" step="0.1" value="0" oninput="evaluateMission1()">
+                    </div>
+
+                    <div style="margin-bottom: 0.9rem;">
+                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.4rem;">
+                            ¿Dónde inyectás los fragmentos recuperados por RAG y las reglas críticas?
+                        </label>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <button type="button" class="btn-sim active" id="pos-btn-edges" onclick="selectPromptPos('edges')">🟢 Al Inicio y Final del Prompt (Extremos)</button>
+                            <button type="button" class="btn-sim" id="pos-btn-middle" onclick="selectPromptPos('middle')">🔴 En el Medio de 50 páginas de historial</button>
+                        </div>
+                    </div>
+
+                    <div class="feedback-banner ok" id="m1-feedback">
+                        ✅ <strong>Configuración Óptima de PM:</strong> Con <code>T = 0.0</code> asegurás respuestas deterministas pegadas al documento, y al ubicar la evidencia en los extremos evitás el sesgo <em>Lost in the Middle</em> (99% de retención).
+                    </div>
+                    <button type="button" class="btn-sim active" style="margin-top: 0.9rem; width: 100%;" onclick="completeMission(1)">
+                        ✓ Validar Misión 1 y Sumar Progreso
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 2: EMBEDDINGS & METADATA FILTERING ==================== -->
+        <section class="mission-panel" id="panel-m2">
+            <div class="card-grid-2">
+                <div class="sim-card">
+                    <h3>🧭 2A. Simulador de Similitud por Coseno (1536d)</h3>
+                    <p class="desc">
+                        Consulta del usuario: <em>"¿Cómo debemos traducir 'Chargeback' y 'Checkout' en la app para clientes de Argentina y México?"</em>. Hacé clic en los vectores candidatos para inspeccionar su distancia semántica:
+                    </p>
+                    <div id="vector-candidates-list" style="display: flex; flex-direction: column; gap: 0.55rem;">
+                        <button type="button" class="quiz-option correct" onclick="inspectCandidate(0)">
+                            <strong>Vector #104 — Glosario Oficial Fintech ES-LATAM (2026)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #6ee7b7;">Cosine: 0.93 ✅</span>
+                        </button>
+                        <button type="button" class="quiz-option" onclick="inspectCandidate(1)">
+                            <strong>Vector #209 — Guía de Estilo UX Pagos LATAM (2026)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #93c5fd;">Cosine: 0.87 ✅</span>
+                        </button>
+                        <button type="button" class="quiz-option" onclick="inspectCandidate(2)">
+                            <strong>Vector #512 — Manual de Pagos España ES-ES (2021 Obsoleto)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #fdba74;">Cosine: 0.81 ⚠️</span>
+                        </button>
+                        <button type="button" class="quiz-option" onclick="inspectCandidate(3)">
+                            <strong>Vector #899 — Política de Vacaciones Recursos Humanos</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #fca5a5;">Cosine: 0.14 🚫</span>
+                        </button>
+                    </div>
+                    <div class="feedback-banner ok" id="candidate-inspector">
+                        🔍 <strong>Vector #104:</strong> Coordenadas <code>[0.881, 0.742, -0.119, ... 1536d]</code>. Aunque el documento dice "Contracargo" y "Finalizar compra", el modelo de Embeddings entiende que equivale semánticamente a la consulta del usuario.
+                    </div>
+                </div>
+
+                <div class="sim-card">
+                    <h3>🏷️ 2B. Pre-Filtrado por Metadatos (Metadata Filtering)</h3>
+                    <p class="desc">
+                        Observá el <strong>Vector #512</strong>: tiene un score alto (<code>0.81</code>) porque habla de pagos en español, ¡pero es de <strong>España (ES-ES) y del año 2021</strong>! Activá los filtros de metadatos correctos para eliminarlo antes de la búsqueda vectorial:
+                    </p>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.9rem;">
+                        <button type="button" class="btn-sim active" id="mf-lang" onclick="toggleMetaSim('lang')">🏷️ region = "ES-LATAM"</button>
+                        <button type="button" class="btn-sim active" id="mf-year" onclick="toggleMetaSim('year')">📅 status = "vigente_2026"</button>
+                        <button type="button" class="btn-sim" id="mf-dept" onclick="toggleMetaSim('dept')">🏢 domain = "fintech_localization"</button>
+                    </div>
+                    <div class="feedback-banner ok" id="mf-feedback">
+                        ✅ <strong>Pre-Filtro Activo:</strong> El Vector #512 (España 2021) fue descartado en 2ms por metadatos. El LLM solo recibe los fragmentos vigentes de LATAM 2026.
+                    </div>
+                    <button type="button" class="btn-sim active" style="margin-top: 0.9rem; width: 100%;" onclick="completeMission(2)">
+                        ✓ Validar Misión 2 y Sumar Progreso
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 3: CHUNKING, OVERLAP & PIPELINE RAG ==================== -->
+        <section class="mission-panel" id="panel-m3">
+            <div class="card-grid-2">
+                <div class="sim-card">
+                    <h3>🧩 3A. Calibrador de Chunk Size &amp; Overlap</h3>
+                    <p class="desc">
+                        Configurá la estrategia de fragmentación para ingestar manuales técnicos y guías de localización sin cortar reglas condicionales por la mitad:
+                    </p>
+                    <div style="margin-bottom: 0.85rem;">
+                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">Tamaño de Fragmento (Chunk Size):</label>
+                        <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+                            <button type="button" class="btn-sim" id="cs-100" onclick="setChunkConfig(100, currentOverlap)">100 chars (Micro)</button>
+                            <button type="button" class="btn-sim active" id="cs-1000" onclick="setChunkConfig(1000, currentOverlap)">1000 chars (~220 palabras)</button>
+                            <button type="button" class="btn-sim" id="cs-8000" onclick="setChunkConfig(8000, currentOverlap)">8000 chars (Bloque Masivo)</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 0.85rem;">
+                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">Solapamiento (Overlap %):</label>
+                        <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+                            <button type="button" class="btn-sim" id="ov-0" onclick="setChunkConfig(currentChunkSize, 0)">0% (Sin Puente)</button>
+                            <button type="button" class="btn-sim active" id="ov-15" onclick="setChunkConfig(currentChunkSize, 15)">15% (Puente Semántico Ideal)</button>
+                            <button type="button" class="btn-sim" id="ov-50" onclick="setChunkConfig(currentChunkSize, 50)">50% (Duplicación Excesiva)</button>
+                        </div>
+                    </div>
+                    <div class="feedback-banner ok" id="chunk-sim-feedback">
+                        ✅ <strong>Sweet Spot de Arquitectura (1000 chars + 15% Overlap):</strong> Cada fragmento retiene contexto completo y comparte 150 caracteres de puente con el siguiente sin inflar la factura de tokens.
+                    </div>
+                </div>
+
+                <div class="sim-card">
+                    <h3>⚙️ 3B. Ordená las 2 Fases de la Arquitectura RAG</h3>
+                    <p class="desc">
+                        Hacé clic en cada etapa para verificar cómo se separan los procesos de <strong>Fase 1 (Batch Offline)</strong> y <strong>Fase 2 (Consulta en Tiempo Real)</strong>:
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+                        <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); border-radius: 10px; padding: 0.75rem;">
+                            <strong style="color: #93c5fd; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">📦 Fase 1: Ingestión (Offline)</strong>
+                            <ol style="padding-left: 1.1rem; font-size: 0.78rem; color: #e2e8f0; line-height: 1.55;">
+                                <li>Extracción de PDFs / Glosarios</li>
+                                <li>Recursive Chunking (1000ch / 15%)</li>
+                                <li>Generación de Embeddings (1536d)</li>
+                                <li>Guardado en Vector DB + Metadatos</li>
+                            </ol>
+                        </div>
+                        <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); border-radius: 10px; padding: 0.75rem;">
+                            <strong style="color: #6ee7b7; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">⚡ Fase 2: Consulta (Live)</strong>
+                            <ol style="padding-left: 1.1rem; font-size: 0.78rem; color: #e2e8f0; line-height: 1.55;">
+                                <li>Vectorización de la Pregunta</li>
+                                <li>Metadata Filter + Top-K Cosine</li>
+                                <li>Validación de Umbral (&ge; 0.75)</li>
+                                <li>Inyección al Prompt + Respuesta Citada</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-sim active" style="margin-top: 0.95rem; width: 100%;" onclick="completeMission(3)">
+                        ✓ Validar Misión 3 y Sumar Progreso
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MISIÓN 4: GOBERNANZA, UMBRAL 0.75 & QUIZ EJECUTIVO ==================== -->
+        <section class="mission-panel" id="panel-m4">
+            <div class="card-grid-2">
+                <div class="sim-card">
+                    <h3>🛡️ 4A. Simulador de Compuerta Anti-Alucinación (0.75)</h3>
+                    <p class="desc">
+                        Probá cómo responde tu arquitectura ante 3 consultas reales cuando aplicamos un <strong>Confidence Threshold = 0.75</strong> y <strong>Enterprise SLA (Zero-Retention)</strong>:
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem;">
+                        <button type="button" class="quiz-option correct" onclick="testThresholdCase(0)">
+                            <strong>Caso A:</strong> "¿Qué término oficial usamos para 'Split Payment' en México?" (Score: 0.91)
+                        </button>
+                        <button type="button" class="quiz-option" onclick="testThresholdCase(1)">
+                            <strong>Caso B:</strong> "¿Cuál va a ser la cotización del dólar en diciembre de 2028?" (Score: 0.29)
+                        </button>
+                        <button type="button" class="quiz-option" onclick="testThresholdCase(2)">
+                            <strong>Caso C:</strong> "¿Qué acuerdos privados firmó el directorio ayer sin publicar?" (Score: 0.42)
+                        </button>
+                    </div>
+                    <div class="feedback-banner ok" id="threshold-case-output">
+                        ✅ <strong>Score 0.91 &ge; 0.75 (AUTORIZADO):</strong> El backend inyecta el fragmento al LLM con Temperatura 0.0 y responde: <em>"En México se utiliza 'Pago dividido' (Fuente: Glosario LATAM 2026, pág. 12)."</em>
+                    </div>
+                </div>
+
+                <div class="sim-card">
+                    <h3>🎙️ 4B. Desafío de Entrevista Técnica (CTO Roleplay)</h3>
+                    <p class="desc">
+                        El CTO te pregunta: <em>"Anabela, ¿por qué no hacemos Fine-Tuning del modelo cada viernes con los nuevos manuales en vez de armar una base de datos vectorial con RAG?"</em> Elegí la mejor defensa ejecutiva:
+                    </p>
+                    <div id="cto-quiz-options">
+                        <button type="button" class="quiz-option" onclick="checkCtoAnswer(0, this)">
+                            A) Porque el Fine-Tuning solo funciona en modelos open-source y no existe en las APIs de OpenAI o Google.
+                        </button>
+                        <button type="button" class="quiz-option" onclick="checkCtoAnswer(1, this)">
+                            B) Porque el Fine-Tuning sirve para enseñar estilo, tono o formato (como JSON), pero no para actualizar hechos cambiantes: es lento, caro, sigue alucinando y no permite citar la fuente exacta ni filtrar permisos en tiempo real como lo hace RAG.
+                        </button>
+                        <button type="button" class="quiz-option" onclick="checkCtoAnswer(2, this)">
+                            C) Porque con ventanas de contexto de 1 millón de tokens conviene pegar los 500 manuales crudos en cada llamada de usuario sin usar ni Fine-Tuning ni RAG.
+                        </button>
+                    </div>
+                    <div class="feedback-banner" id="cto-quiz-feedback" style="display: none;"></div>
+                    <button type="button" class="btn-sim active" style="margin-top: 0.9rem; width: 100%;" onclick="completeMission(4)">
+                        🏆 Completar Simulador de Sesión 2
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const completedMissions = new Set();
+        let currentPromptPos = 'edges';
+        let currentChunkSize = 1000;
+        let currentOverlap = 15;
+        const metaState = { lang: true, year: true, dept: false };
+
+        const BPE_SAMPLES = [
+            'La localización automática con IA optimiza glosarios técnicos globales.',
+            'Si el score de similitud semántica es menor a 0.75 el bot bloquea la respuesta.',
+            '{"product": "Enterprise Knowledge Bot", "chunk_size": 1000, "overlap": 0.15}'
+        ];
+
+        function switchMission(num) {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('tab-m' + i).classList.toggle('active', i === num);
+                document.getElementById('panel-m' + i).classList.toggle('active', i === num);
+            }
+        }
+
+        function completeMission(num) {
+            completedMissions.add(num);
+            const badge = document.getElementById('xp-counter');
+            badge.textContent = '⚡ Progreso Práctico: ' + completedMissions.size + ' / 4 Misiones Completadas';
+            if (num < 4) {
+                switchMission(num + 1);
+            } else {
+                badge.style.background = 'linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(139, 92, 246, 0.4))';
+                badge.textContent = '🏆 ¡4 / 4 Misiones de Sesión 2 Completadas!';
+            }
+        }
+
+        function setSampleText(idx) {
+            document.getElementById('bpe-input').value = BPE_SAMPLES[idx];
+            updateBpeTokens();
+        }
+
+        function simulateBpeSplit(text) {
+            const words = text.trim().split(/\s+/).filter(Boolean);
+            const tokens = [];
+            words.forEach(w => {
+                if (w.length <= 4) {
+                    tokens.push(w);
+                } else if (w.length <= 8) {
+                    tokens.push(w.slice(0, 4), w.slice(4));
+                } else {
+                    tokens.push(w.slice(0, 4), w.slice(4, 8), w.slice(8));
+                }
+            });
+            return { wordsCount: words.length, tokens };
+        }
+
+        function updateBpeTokens() {
+            const text = document.getElementById('bpe-input').value || '';
+            const { wordsCount, tokens } = simulateBpeSplit(text);
+            const out = document.getElementById('bpe-output');
+            out.innerHTML = tokens.map((t, i) =>
+                '<span class="token-chip tc-' + ((i % 4) + 1) + '">' + t.replace(/</g, '&lt;') + '</span>'
+            ).join('');
+            const ratio = wordsCount > 0 ? (tokens.length / wordsCount).toFixed(2) : '0.00';
+            document.getElementById('bpe-metrics').textContent =
+                wordsCount + ' palabras → ' + tokens.length + ' tokens BPE (Ratio: ' + ratio + 'x)';
+
+            const cacheOn = document.getElementById('cache-toggle').checked;
+            const baseCost = 75.00;
+            const finalCost = cacheOn ? (baseCost * 0.45).toFixed(2) : baseCost.toFixed(2);
+            const banner = document.getElementById('bpe-cost-banner');
+            banner.className = 'feedback-banner ' + (cacheOn ? 'ok' : 'warn');
+            banner.innerHTML = cacheOn
+                ? '💰 Costo proyectado (20.000 consultas/mes con System Prompt de 1.500 tokens): <strong>$' + finalCost + ' USD/mes</strong> (Ahorrás $41.25 USD/mes gracias a Prompt Caching).'
+                : '⚠️ Sin Prompt Caching: Pagás el 100% de los 1.500 tokens fijos en cada consulta → <strong>$' + finalCost + ' USD/mes</strong>.';
+        }
+
+        function selectPromptPos(pos) {
+            currentPromptPos = pos;
+            document.getElementById('pos-btn-edges').classList.toggle('active', pos === 'edges');
+            document.getElementById('pos-btn-middle').classList.toggle('active', pos === 'middle');
+            evaluateMission1();
+        }
+
+        function evaluateMission1() {
+            const temp = parseFloat(document.getElementById('temp-slider').value);
+            const label = document.getElementById('temp-val-label');
+            label.textContent = 'T = ' + temp.toFixed(1) + (temp <= 0.2 ? ' (Determinista / RAG)' : temp <= 0.5 ? ' (Moderada)' : ' (Alta Creatividad / Riesgo)');
+            label.style.color = temp <= 0.2 ? 'var(--accent-green)' : 'var(--accent-orange)';
+
+            const fb = document.getElementById('m1-feedback');
+            if (temp <= 0.2 && currentPromptPos === 'edges') {
+                fb.className = 'feedback-banner ok';
+                fb.innerHTML = '✅ <strong>Configuración Óptima de PM:</strong> Con <code>T = ' + temp.toFixed(1) + '</code> asegurás respuestas fieles al documento y ubicando la evidencia al inicio/final evitás el sesgo <em>Lost in the Middle</em> (99% Recall).';
+            } else {
+                fb.className = 'feedback-banner warn';
+                fb.innerHTML = '⚠️ <strong>Riesgo de Alucinación o Olvido:</strong> Para un bot corporativo RAG necesitás <code>T &le; 0.2</code> y colocar los fragmentos críticos en los extremos del prompt, nunca enterrados en el medio.';
+            }
+        }
+
+        const CANDIDATE_DETAILS = [
+            '🔍 <strong>Vector #104 (Cosine 0.93 ✅):</strong> Coordenadas <code>[0.881, 0.742, -0.119, ... 1536d]</code>. Match semántico directo con terminología aprobada para Argentina y México.',
+            '🔍 <strong>Vector #209 (Cosine 0.87 ✅):</strong> Coordenadas <code>[0.845, 0.710, -0.095, ... 1536d]</code>. Complementa las reglas de microcopy en pantallas de pago LATAM.',
+            '⚠️ <strong>Vector #512 (Cosine 0.81 — RUIDO PELIGROSO):</strong> Habla de pagos en español pero corresponde a <strong>España 2021</strong>. Sin Metadata Filtering, contaminaría el prompt con términos incorrectos.',
+            '🚫 <strong>Vector #899 (Cosine 0.14 — DESCARTADO):</strong> Ángulo ortogonal en el espacio vectorial. Totalmente por debajo del umbral 0.75.'
+        ];
+
+        function inspectCandidate(idx) {
+            const buttons = document.querySelectorAll('#vector-candidates-list .quiz-option');
+            buttons.forEach((b, i) => b.classList.toggle('correct', i === idx));
+            const box = document.getElementById('candidate-inspector');
+            box.className = 'feedback-banner ' + (idx <= 1 ? 'ok' : 'warn');
+            box.innerHTML = CANDIDATE_DETAILS[idx];
+        }
+
+        function toggleMetaSim(key) {
+            metaState[key] = !metaState[key];
+            document.getElementById('mf-' + key).classList.toggle('active', metaState[key]);
+            const fb = document.getElementById('mf-feedback');
+            if (metaState.lang && metaState.year) {
+                fb.className = 'feedback-banner ok';
+                fb.innerHTML = '✅ <strong>Pre-Filtro Activo (ES-LATAM + Vigente 2026):</strong> El Vector #512 (España 2021) fue eliminado antes del cálculo vectorial. Precisión del 98% y menor latencia.';
+            } else {
+                fb.className = 'feedback-banner warn';
+                fb.innerHTML = '⚠️ <strong>Filtro Incompleto:</strong> Al desactivar <code>region="ES-LATAM"</code> o <code>status="vigente_2026"</code>, el Vector #512 obsoleto se cuela en el Top-3 por tener score 0.81.';
+            }
+        }
+
+        function setChunkConfig(size, overlap) {
+            currentChunkSize = size;
+            currentOverlap = overlap;
+            [100, 1000, 8000].forEach(s => document.getElementById('cs-' + s).classList.toggle('active', s === size));
+            [0, 15, 50].forEach(o => document.getElementById('ov-' + o).classList.toggle('active', o === overlap));
+            const fb = document.getElementById('chunk-sim-feedback');
+            if (size === 1000 && overlap === 15) {
+                fb.className = 'feedback-banner ok';
+                fb.innerHTML = '✅ <strong>Sweet Spot de Arquitectura (1000 chars + 15% Overlap):</strong> Cada fragmento retiene contexto completo y comparte 150 caracteres de puente con el siguiente sin inflar la factura de tokens.';
+            } else if (overlap === 0) {
+                fb.className = 'feedback-banner warn';
+                fb.innerHTML = '⚠️ <strong>Peligro sin Overlap (0%):</strong> Las oraciones y tablas que caigan justo en el corte de caracteres quedarán mutiladas entre dos fragmentos.';
+            } else {
+                fb.className = 'feedback-banner warn';
+                fb.innerHTML = '⚠️ <strong>Desbalance Costo/Precisión:</strong> Chunks de ' + size + ' chars con ' + overlap + '% overlap generan fragmentos demasiado ' + (size === 100 ? 'pequeños y sin contexto' : 'pesados y costosos para el prompt') + '.';
+            }
+        }
+
+        function testThresholdCase(idx) {
+            const out = document.getElementById('threshold-case-output');
+            if (idx === 0) {
+                out.className = 'feedback-banner ok';
+                out.innerHTML = '✅ <strong>Score 0.91 &ge; 0.75 (AUTORIZADO):</strong> El backend inyecta el fragmento al LLM con Temperatura 0.0 y responde: <em>"En México se utiliza \'Pago dividido\' (Fuente: Glosario LATAM 2026, pág. 12)."</em>';
+            } else if (idx === 1) {
+                out.className = 'feedback-banner warn';
+                out.innerHTML = '🛑 <strong>Score 0.29 &lt; 0.75 (BLOQUEADO POR GUARDRAIL):</strong> No se llama al LLM (ahorro de tokens). El bot responde el Fallback seguro: <em>"No dispongo de información oficial verificada sobre ese punto en la base documental."</em>';
+            } else {
+                out.className = 'feedback-banner warn';
+                out.innerHTML = '🛑 <strong>Score 0.42 &lt; 0.75 (BLOQUEADO POR GUARDRAIL):</strong> Previene alucinación sobre documentos no publicados y protege la gobernanza.';
+            }
+        }
+
+        function checkCtoAnswer(idx, btnEl) {
+            const buttons = document.querySelectorAll('#cto-quiz-options .quiz-option');
+            buttons.forEach(b => { b.classList.remove('correct', 'wrong'); });
+            const fb = document.getElementById('cto-quiz-feedback');
+            fb.style.display = 'block';
+            if (idx === 1) {
+                btnEl.classList.add('correct');
+                fb.className = 'feedback-banner ok';
+                fb.innerHTML = '🎯 <strong>¡Respuesta Ejecutiva Perfecta!</strong> Demostrás dominio técnico y visión de negocio: el Fine-Tuning ajusta la forma/tono, mientras que RAG sobre una base vectorial garantiza datos frescos en tiempo real, citas verificables y control de costos.';
+            } else {
+                btnEl.classList.add('wrong');
+                fb.className = 'feedback-banner warn';
+                fb.innerHTML = '💡 <strong>Revisá tu argumento:</strong> Recordá que Fine-Tuning sí existe en APIs comerciales, pero congela hechos estáticos; y pegar 500 manuales en cada llamada dispara el costo, la latencia y el fenómeno <em>Lost in the Middle</em>. La opción correcta es la <strong>B</strong>.';
+            }
+        }
+
+        updateBpeTokens();
+    </script>
+</body>
+</html>
