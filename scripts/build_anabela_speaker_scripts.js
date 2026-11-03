@@ -23,6 +23,7 @@ function normalizeSession(raw) {
       time: sl.duration,
       badge: (sl.tags || []).join(' · '),
       tags: sl.tags || [],
+      plainTerms: sl.plainTerms || [],
       interaction: sl.interaction,
       script: sl.script,
       bridge: sl.bridge
@@ -70,6 +71,13 @@ function generateSessionMarkdown(s) {
     md += `- **⏱️ Tiempo estimado:** ${sl.time} | **🏷️ Etiquetas:** ${sl.badge}\n\n`;
     md += `### 🗣️ Guion Literal (Qué decir)\n`;
     md += `> "${sl.script}"\n\n`;
+    if (sl.plainTerms && sl.plainTerms.length > 0) {
+      md += `### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)\n`;
+      for (const pt of sl.plainTerms) {
+        md += `- **${pt.term}:** ${pt.simple}\n`;
+      }
+      md += `\n`;
+    }
     md += `### ⚡ Dinámica / Interacción en Pantalla\n`;
     md += `- ${sl.interaction}\n\n`;
     if (nextSl) {
@@ -125,6 +133,20 @@ function generateSingleSessionHTML(s) {
       ? `🔗 Puente de Conexión → Slide ${nextSl.num}: ${nextSl.title}`
       : `🏁 Cierre de Sesión ${s.id} y Puente a la Siguiente Clase`;
 
+    const plainTermsHTML = (sl.plainTerms && sl.plainTerms.length > 0) ? `
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            ${sl.plainTerms.map(pt => `
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 ${mdToHtml(pt.term)}</span>
+                <p class="pt-desc">${mdToHtml(pt.simple)}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+    ` : '';
+
     return `
       <article class="slide-script-card" id="slide-${sl.num}" data-slide="${sl.num}">
         <div class="card-header">
@@ -143,13 +165,15 @@ function generateSingleSessionHTML(s) {
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
             <button class="copy-btn" onclick="copyText(this, \`${stripMd(sl.script)}\`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
             “${mdToHtml(sl.script)}”
           </blockquote>
         </div>
+
+        ${plainTermsHTML}
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -575,6 +599,52 @@ function generateSingleSessionHTML(s) {
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
 
+    .plain-terms-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(168, 85, 247, 0.07));
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .plain-terms-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .plain-terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .plain-term-item {
+      background: rgba(7, 11, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem 0.95rem;
+    }
+
+    .pt-term {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.28rem;
+    }
+
+    .pt-desc {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
     .interaction-box {
       background: rgba(16, 185, 129, 0.07);
       border: 1px solid rgba(16, 185, 129, 0.28);
@@ -636,6 +706,7 @@ function generateSingleSessionHTML(s) {
     }
 
     body.bridges-only .script-section,
+    body.bridges-only .plain-terms-box,
     body.bridges-only .interaction-box {
       display: none;
     }
@@ -660,6 +731,7 @@ function generateSingleSessionHTML(s) {
       <a href="guia_completa_mentoria.html" class="portal-btn">📚 Hub Maestro (63 Slides)</a>
       <a href="../sesiones/${s.slidesFile}" target="_blank" class="open-slides-btn">🖥️ Abrir Slides Sesión ${s.id} ↗</a>
       ${s.id === 1 ? '<a href="../sesiones/actividad_practica_sesion_1.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S1 ↗</a>' : ''}
+      ${s.id === 2 ? '<a href="../sesiones/actividad_practica_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S2 ↗</a><a href="../sesiones/mock_prd_tarea_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(168,85,247,0.5); color: #d8b4fe;">📝 Plantilla PRD Tarea ↗</a><a href="../sesiones/glosario_completo_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S2 ↗</a>' : ''}
     </div>
     <nav class="nav-pills">
       ${otherLinks}
@@ -775,6 +847,20 @@ function generateMasterHubHTML() {
             <div class="hub-label">🗣️ GUION DEL ORADOR</div>
             <p>“${mdToHtml(sl.script)}”</p>
           </div>
+
+          ${(sl.plainTerms && sl.plainTerms.length > 0) ? `
+          <div class="hub-plain-terms" style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.9rem;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:700; color:#38bdf8; margin-bottom:0.5rem;">💡 TRADUCCIÓN "EN CRIOLLO" DE LA TERMINOLOGÍA TÉCNICA</div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.55rem;">
+              ${sl.plainTerms.map(pt => `
+                <div style="background:rgba(7,11,20,0.65); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.6rem 0.8rem;">
+                  <strong style="display:block; color:#fff; font-size:0.86rem; margin-bottom:0.2rem;">🔹 ${mdToHtml(pt.term)}</strong>
+                  <span style="color:#cbd5e1; font-size:0.82rem; line-height:1.45;">${mdToHtml(pt.simple)}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
 
           <div class="hub-action">
             <strong>⚡ Dinámica en Pantalla:</strong> ${mdToHtml(sl.interaction)}
@@ -1065,6 +1151,7 @@ function generateMasterHubHTML() {
     }
     .hub-bridge p { color: #fef3c7; font-style: italic; font-size: 0.98rem; }
     body.only-bridges .hub-script,
+    body.only-bridges .hub-plain-terms,
     body.only-bridges .hub-action { display: none; }
   </style>
 </head>
@@ -1144,12 +1231,14 @@ for (const s of sessions) {
 
   const mdPath = path.join(guiasDir, `guia_sesion_${s.id}_pm.md`);
   const htmlPath = path.join(guiasDir, `guia_sesion_${s.id}_pm.html`);
+  const aliasHtmlPath = path.join(guiasDir, `guion_mentor_sesion_${s.id}.html`);
 
   fs.writeFileSync(mdPath, mdContent, 'utf8');
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
+  fs.writeFileSync(aliasHtmlPath, htmlContent, 'utf8');
 
   fullMasterMd += mdContent + `\n\n`;
-  console.log(`Generated S${s.id}: ${s.slides.length} slides -> ${htmlPath} & ${mdPath}`);
+  console.log(`Generated S${s.id}: ${s.slides.length} slides -> ${htmlPath}, ${aliasHtmlPath} & ${mdPath}`);
 }
 
 const masterHtmlPath = path.join(guiasDir, 'guia_completa_mentoria.html');

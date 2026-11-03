@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guion Orador - Sesión 1: Ecosistema IT, DevOps y Dinámicas de Equipos Ágiles | Anabela Hotian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #070b14;
+      --bg-card: #0f172a;
+      --bg-elevated: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --bridge-color: #f59e0b;
+      --action-color: #10b981;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.12), transparent 35%),
+        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.07), transparent 35%);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding-bottom: 5rem;
+    }
+
+    .top-copilot-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 20, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .portal-btn {
+      text-decoration: none;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .portal-btn:hover { background: rgba(255, 255, 255, 0.14); }
+
+    .open-slides-btn {
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .open-slides-btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+
+    .nav-pills {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-pill {
+      text-decoration: none;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .nav-pill:hover { color: var(--text-main); border-color: var(--accent); }
+    .active-nav-pill {
+      color: var(--text-main);
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--accent);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+
+    .hero-box {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .hero-box h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.7rem, 3.3vw, 2.35rem);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-goal {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .agenda-item {
+      background: rgba(7, 11, 20, 0.65);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      font-size: 0.84rem;
+    }
+    .agenda-time {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .agenda-slides {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+    .agenda-item p {
+      color: #94a3b8;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 240px;
+      background: rgba(7, 11, 20, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+
+    .mode-btn {
+      background: rgba(245, 158, 11, 0.14);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .mode-btn:hover { background: rgba(245, 158, 11, 0.24); }
+
+    .progress-stat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--action-color);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+    }
+
+    .quick-jump {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .quick-jump-title {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+    .jump-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .jump-chip {
+      text-decoration: none;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.7rem;
+      border-radius: 8px;
+      transition: 0.18s;
+    }
+    .jump-chip span {
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      margin-right: 0.25rem;
+    }
+    .jump-chip:hover { border-color: var(--accent); color: #fff; transform: translateY(-1px); }
+    .jump-chip.done-chip {
+      opacity: 0.5;
+      border-color: var(--action-color);
+      text-decoration: line-through;
+    }
+
+    .slide-script-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.75rem;
+      margin-bottom: 2.25rem;
+      position: relative;
+      transition: 0.25s;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    .slide-script-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .slide-script-card.card-done {
+      opacity: 0.62;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .check-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .slide-check {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--action-color);
+      cursor: pointer;
+    }
+
+    .slide-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.28rem 0.7rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .slide-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.38rem;
+      color: #fff;
+    }
+
+    .header-right {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+    }
+
+    .time-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .script-section {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      gap: 0.5rem;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.18s;
+    }
+    .copy-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+
+    .spoken-script {
+      background: rgba(15, 23, 42, 0.9);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.4rem;
+      font-size: 1.07rem;
+      line-height: 1.78;
+      color: #f1f5f9;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .plain-terms-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(168, 85, 247, 0.07));
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .plain-terms-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .plain-terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .plain-term-item {
+      background: rgba(7, 11, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem 0.95rem;
+    }
+
+    .pt-term {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.28rem;
+    }
+
+    .pt-desc {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .interaction-box {
+      background: rgba(16, 185, 129, 0.07);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .interaction-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #34d399;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .interaction-box p {
+      font-size: 0.95rem;
+      color: #d1fae5;
+    }
+
+    .bridge-connector {
+      position: relative;
+      margin-top: 1.2rem;
+    }
+
+    .bridge-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.13), rgba(234, 88, 12, 0.08));
+      border: 1px dashed rgba(245, 158, 11, 0.55);
+      border-left: 4px solid var(--bridge-color);
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+    }
+
+    .bridge-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .bridge-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fbbf24;
+      letter-spacing: 0.03em;
+    }
+
+    .bridge-text {
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: #fef3c7;
+      font-style: italic;
+    }
+
+    body.bridges-only .script-section,
+    body.bridges-only .plain-terms-box,
+    body.bridges-only .interaction-box {
+      display: none;
+    }
+    body.bridges-only .slide-script-card {
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .top-copilot-bar { padding: 0.65rem 1rem; }
+      .hero-box { padding: 1.35rem; }
+      .slide-script-card { padding: 1.25rem; }
+      .spoken-script { font-size: 1rem; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-copilot-bar">
+    <div class="bar-left">
+      <a href="../index.html" class="portal-btn">⬅ Portal Mentoría</a>
+      <a href="guia_completa_mentoria.html" class="portal-btn">📚 Hub Maestro (63 Slides)</a>
+      <a href="../sesiones/slides_sesion_1.html" target="_blank" class="open-slides-btn">🖥️ Abrir Slides Sesión 1 ↗</a>
+      <a href="../sesiones/actividad_practica_sesion_1.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S1 ↗</a>
+      
+    </div>
+    <nav class="nav-pills">
+      <a href="guia_sesion_1_pm.html" class="nav-pill active-nav-pill">Sesión 1 (19 slides)</a>
+          <a href="guia_sesion_2_pm.html" class="nav-pill ">Sesión 2 (15 slides)</a>
+          <a href="guia_sesion_3_pm.html" class="nav-pill ">Sesión 3 (15 slides)</a>
+          <a href="guia_sesion_4_pm.html" class="nav-pill ">Sesión 4 (15 slides)</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero-box">
+      <span class="hero-eyebrow">COPILOTO DE ORADOR · MENTORÍA ANABELA HOTIAN</span>
+      <h1>Sesión 1: Ecosistema IT, DevOps y Dinámicas de Equipos Ágiles</h1>
+      <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Construir los cimientos técnicos de ingeniería de software moderna (Frontend, Backend, APIs REST, Git, CI/CD, Cloud/AWS, Metodologías Ágiles Scrum/Kanban, Ambientes y Bases de Datos) con una visión general y versátil del mundo IT, para que Anabela entienda cómo funcionan los equipos y sistemas tecnológicos sin importar qué camino específico decida tomar.</p>
+
+      <div class="agenda-grid">
+        
+    <div class="agenda-item">
+      <span class="agenda-time">00 - 10 min</span>
+      <div>
+        <strong>De Software Clásico a la Era IA & Cloud</strong> <span class="agenda-slides">(Slides 1 a 4)</span>
+        <p>Bienvenida, evolución del software (Red Neuronal y el paper 'Attention Is All You Need' de 2017) y el salto de Monolitos a Cloud (AWS) y Microservicios.</p>
+      </div>
+    </div>
+  
+
+    <div class="agenda-item">
+      <span class="agenda-time">10 - 22 min</span>
+      <div>
+        <strong>Arquitectura Web, APIs & HTTP</strong> <span class="agenda-slides">(Slides 5 a 7)</span>
+        <p>Cómo hablan los sistemas entre sí: APIs REST, verbos HTTP (GET, POST, PUT, DELETE) con ejemplos reales y códigos de estado (200, 400, 500).</p>
+      </div>
+    </div>
+  
+
+    <div class="agenda-item">
+      <span class="agenda-time">22 - 42 min</span>
+      <div>
+        <strong>Ciclo DevOps, Roles, Agile (Scrum/Kanban) & Git</strong> <span class="agenda-slides">(Slides 8 a 14)</span>
+        <p>El viaje de un feature por CI/CD, dinámicas de roles (Startup vs. Corporación), cómo la arquitectura de microservicios habilitó Agile (Scrum, Kanban y Scrumban), puntos de control del PM y ramas de Git.</p>
+      </div>
+    </div>
+  
+
+    <div class="agenda-item">
+      <span class="agenda-time">42 - 50 min</span>
+      <div>
+        <strong>Infraestructura: Ambientes & Datos</strong> <span class="agenda-slides">(Slides 15 a 16)</span>
+        <p>Aislamiento de ambientes (Dev, Staging, Prod) y elección estratégica entre SQL, NoSQL y Bases Vectoriales.</p>
+      </div>
+    </div>
+  
+
+    <div class="agenda-item">
+      <span class="agenda-time">50 - 60 min</span>
+      <div>
+        <strong>Taller CV, Entrevistas & Cierre</strong> <span class="agenda-slides">(Slides 17 a 19)</span>
+        <p>Cómo traducir experiencia de gestión al léxico IT/Agile, simulacro de 3 preguntas rompe-entrevistas y hoja de ruta.</p>
+      </div>
+    </div>
+  
+      </div>
+
+      <div class="controls-row">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
+        <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        <div class="progress-stat" id="progressStat">0 / 19 dictadas</div>
+      </div>
+    </section>
+
+    <nav class="quick-jump">
+      <div class="quick-jump-title">⚡ Salto Rápido a Diapositivas (19 Slides)</div>
+      <div class="jump-grid">
+        <a href="#slide-1" class="jump-chip" id="chip-1"><span>#1</span> Portada: De la Gestión Tradicional a la Era de la IA</a>
+        <a href="#slide-2" class="jump-chip" id="chip-2"><span>#2</span> La Ola de la IA Generativa & El Paper Fundacional (2017)</a>
+        <a href="#slide-3" class="jump-chip" id="chip-3"><span>#3</span> La Regla de Oro: IA + Ingeniería de Software</a>
+        <a href="#slide-4" class="jump-chip" id="chip-4"><span>#4</span> El Gran Salto Temporal: 2012 vs. 2026</a>
+        <a href="#slide-5" class="jump-chip" id="chip-5"><span>#5</span> APIs: El Pegamento del Software Moderno</a>
+        <a href="#slide-6" class="jump-chip" id="chip-6"><span>#6</span> Verbos HTTP: El Vocabulario de las APIs</a>
+        <a href="#slide-7" class="jump-chip" id="chip-7"><span>#7</span> Códigos de Estado HTTP: El Semáforo de la Web</a>
+        <a href="#slide-8" class="jump-chip" id="chip-8"><span>#8</span> El Viaje de un Feature: Pipeline de CI/CD</a>
+        <a href="#slide-9" class="jump-chip" id="chip-9"><span>#9</span> Dinámica de Roles: El Ecosistema Startup</a>
+        <a href="#slide-10" class="jump-chip" id="chip-10"><span>#10</span> Dinámica de Roles: La Matriz Corporativa</a>
+        <a href="#slide-11" class="jump-chip" id="chip-11"><span>#11</span> Agile en IT: De la Nueva Arquitectura a Scrum y Kanban</a>
+        <a href="#slide-12" class="jump-chip" id="chip-12"><span>#12</span> El PM en el Pipeline: Puntos de Intervención</a>
+        <a href="#slide-13" class="jump-chip" id="chip-13"><span>#13</span> Cada User Story de Jira = Una Rama de Git</a>
+        <a href="#slide-14" class="jump-chip" id="chip-14"><span>#14</span> Git: Control de Versiones Moderno</a>
+        <a href="#slide-15" class="jump-chip" id="chip-15"><span>#15</span> Dónde Vive el Software: Los 3 Ambientes</a>
+        <a href="#slide-16" class="jump-chip" id="chip-16"><span>#16</span> Bases de Datos: SQL vs. NoSQL vs. Vectorial (IA)</a>
+        <a href="#slide-17" class="jump-chip" id="chip-17"><span>#17</span> Taller Práctico: Tu Perfil en Clave IT & AI</a>
+        <a href="#slide-18" class="jump-chip" id="chip-18"><span>#18</span> Preguntas 'Rompe-Entrevistas' (Simulador Flip-Cards)</a>
+        <a href="#slide-19" class="jump-chip" id="chip-19"><span>#19</span> Cierre Sesión 1: Ruta hacia el Liderazgo en IA</a>
+      </div>
+    </nav>
+
+    <section id="slidesContainer">
+      
+      <article class="slide-script-card" id="slide-1" data-slide="1">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(1, this.checked)">
+              <span class="slide-num">SLIDE 01</span>
+            </label>
+            <h2 class="slide-title">Portada: De la Gestión Tradicional a la Era de la IA</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Bienvenida · Panorama General IT · Hoja de Ruta 4 Sesiones</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Hola Anabela, ¡bienvenida a nuestra primera sesión! La idea de estos cuatro encuentros es darte un mapa mental súper claro, general y práctico de cómo funciona por dentro el mundo de IT hoy: cómo se construye el software, qué hace cada rol técnico en un equipo ágil, qué es la nube (como AWS) y cómo se integran los sistemas de Inteligencia Artificial. Más allá de qué camino específico decidas tomar más adelante o cómo quieras aplicar esto en tu carrera, entender este lenguaje técnico te va a permitir hablar de igual a igual con cualquier equipo de tecnología y entender qué pasa atrás de cualquier plataforma digital.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Hola Anabela, ¡bienvenida a nuestra primera sesión! La idea de estos cuatro encuentros es darte un mapa mental súper claro, general y práctico de cómo funciona por dentro el mundo de IT hoy: cómo se construye el software, qué hace cada rol técnico en un equipo ágil, qué es la nube (como AWS) y cómo se integran los sistemas de Inteligencia Artificial. Más allá de qué camino específico decidas tomar más adelante o cómo quieras aplicar esto en tu carrera, entender este lenguaje técnico te va a permitir hablar de igual a igual con cualquier equipo de tecnología y entender qué pasa atrás de cualquier plataforma digital.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Mostrá la línea de tiempo inferior de las 4 sesiones (1. DevOps & Cloud -> 2. IA & RAG -> 3. Agentes Autónomos -> 4. ROI, Evals & Entrevistas).</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 2: La Ola de la IA Generativa & El Paper Fundacional (2017)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Antes de meternos en qué hace un equipo técnico día a día, miremos la foto grande de cómo evolucionó la tecnología hasta hoy. Pasemos a la Slide 2.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Antes de meternos en qué hace un equipo técnico día a día, miremos la foto grande de cómo evolucionó la tecnología hasta hoy. Pasemos a la Slide 2.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-2" data-slide="2">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(2, this.checked)">
+              <span class="slide-num">SLIDE 02</span>
+            </label>
+            <h2 class="slide-title">La Ola de la IA Generativa & El Paper Fundacional (2017)</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Software Determinista · Red Neuronal · Attention Is All You Need (2017) · Transformers & LLMs</span>
+            <span class="time-tag">⏱️ 5 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá primero las tres tarjetas de arriba, porque resumen cómo evolucionó la tecnología hasta hoy, y fijate que el corazón de esta historia nace justamente en el mundo de la traducción de idiomas:
+
+• 1. Software Tradicional (Era Determinista, Pre-2017): Durante décadas el software funcionó únicamente con reglas rígidas escritas a mano por programadores (if / else, es decir: 'si pasa A, ejecutá B'). Si el usuario hace clic en un botón y tiene saldo, el sistema ejecuta la transferencia. Es exacto y predecible, pero si le das un texto libre o una frase ambigua en lenguaje humano, se rompe o no sabe qué hacer porque no entiende contexto.
+• 2. El Paper Base de 2017 y el boom de ChatGPT (2022): En junio de 2017, ocho investigadores de Google buscaban mejorar la traducción automática y publicaron un paper histórico llamado 'Attention Is All You Need' (La atención es todo lo que necesitás). Ahí inventaron una arquitectura nueva de red neuronal llamada Transformer —que es literalmente la letra T de GPT (Generative Pre-trained Transformer)—. Ese motor científico fue evolucionando hasta que en noviembre de 2022 OpenAI lanzó ChatGPT, poniéndole una ventana de chat amigable para que cualquier persona del mundo pudiera conversar con ese modelo.
+• 3. Era de Sistemas con LLMs (2023 - Actualidad): Hoy las empresas no tiran a la basura el software tradicional, sino que integran estos modelos de lenguaje (LLMs) adentro de sus aplicaciones mediante APIs y bases de datos para que el software pueda leer documentos, comprender intenciones y ejecutar tareas complejas.
+
+Ahora mirá el diagrama de abajo para entender de forma súper sencilla cómo funciona ese motor del paper de 2017 en 4 pasos:
+• ¿Qué es una Red Neuronal? En vez de programar reglas if / else a mano, una Red Neuronal es una estructura de capas de nodos matemáticos conectados entre sí (los círculos del dibujo, inspirados en las neuronas del cerebro) que aprenden patrones analizando millones de ejemplos. Antes de 2017, las redes neuronales leían una oración palabra por palabra en fila y, cuando llegaban al final de una frase larga, ya se habían 'olvidado' de las primeras palabras.
+• Paso 1 (Entrada): Imaginate que entra la frase en español 'El', 'banco', 'cerró'. Si tomás la palabra 'banco' aislada, es ambigua: en inglés podría ser 'bank' (entidad financiera) o 'bench' (banco de plaza).
+• Paso 2 (Auto-Atención / Self-Attention — El gran invento de 2017): En lugar de leer palabra por palabra a ciegas, el Transformer introduce la Auto-Atención: hace que todas las palabras de la oración se conecten entre sí al mismo tiempo y calcula cuánta relevancia tiene una sobre la otra. Fijate en las líneas naranjas cómo el modelo detecta que la palabra 'cerró' está fuertemente vinculada con 'banco', dándole instantáneamente el contexto financiero.
+• Paso 3 y Paso 4 (Capas de la Red Neuronal y Salida): Esa información ya enriquecida con su contexto viaja por las capas de nodos de la Red Neuronal (los nodos violetas) y en el Paso 4 genera la traducción correcta: 'The bank closed' en lugar de 'bench'.
+
+Con esta idea visual ya tenés claro qué cambió en 2017; en la Sesión 2 vamos a meternos más en detalle en cómo operan estos modelos por dentro.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Mirá primero las <strong style="color:#fff; font-weight:700;">tres tarjetas de arriba</strong>, porque resumen cómo evolucionó la tecnología hasta hoy, y fijate que el corazón de esta historia nace justamente en el mundo de la <strong style="color:#fff; font-weight:700;">traducción de idiomas</strong>:<br><br>• <strong style="color:#fff; font-weight:700;">1. Software Tradicional (Era Determinista, Pre-2017):</strong> Durante décadas el software funcionó únicamente con reglas rígidas escritas a mano por programadores (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">if / else</code>, es decir: <em style="color:#fde68a;">'si pasa A, ejecutá B'</em>). Si el usuario hace clic en un botón y tiene saldo, el sistema ejecuta la transferencia. Es exacto y predecible, pero si le das un texto libre o una frase ambigua en lenguaje humano, se rompe o no sabe qué hacer porque no entiende contexto.<br>• <strong style="color:#fff; font-weight:700;">2. El Paper Base de 2017 y el boom de ChatGPT (2022):</strong> En junio de 2017, ocho investigadores de Google buscaban mejorar la <strong style="color:#fff; font-weight:700;">traducción automática</strong> y publicaron un paper histórico llamado <strong style="color:#fff; font-weight:700;">'Attention Is All You Need'</strong> (<em style="color:#fde68a;">La atención es todo lo que necesitás</em>). Ahí inventaron una arquitectura nueva de red neuronal llamada <strong style="color:#fff; font-weight:700;">Transformer</strong> —que es literalmente la letra <strong style="color:#fff; font-weight:700;">T</strong> de <strong style="color:#fff; font-weight:700;">GPT</strong> (<em style="color:#fde68a;">Generative Pre-trained Transformer</em>)—. Ese motor científico fue evolucionando hasta que en <strong style="color:#fff; font-weight:700;">noviembre de 2022</strong> OpenAI lanzó <strong style="color:#fff; font-weight:700;">ChatGPT</strong>, poniéndole una ventana de chat amigable para que cualquier persona del mundo pudiera conversar con ese modelo.<br>• <strong style="color:#fff; font-weight:700;">3. Era de Sistemas con LLMs (2023 - Actualidad):</strong> Hoy las empresas no tiran a la basura el software tradicional, sino que integran estos modelos de lenguaje (<strong style="color:#fff; font-weight:700;">LLMs</strong>) adentro de sus aplicaciones mediante APIs y bases de datos para que el software pueda leer documentos, comprender intenciones y ejecutar tareas complejas.<br><br>Ahora mirá el <strong style="color:#fff; font-weight:700;">diagrama de abajo</strong> para entender de forma súper sencilla cómo funciona ese motor del paper de 2017 en <strong style="color:#fff; font-weight:700;">4 pasos</strong>:<br>• <strong style="color:#fff; font-weight:700;">¿Qué es una Red Neuronal?</strong> En vez de programar reglas <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">if / else</code> a mano, una Red Neuronal es una estructura de <strong style="color:#fff; font-weight:700;">capas de nodos matemáticos conectados entre sí</strong> (los círculos del dibujo, inspirados en las neuronas del cerebro) que aprenden patrones analizando millones de ejemplos. Antes de 2017, las redes neuronales leían una oración palabra por palabra en fila y, cuando llegaban al final de una frase larga, ya se habían 'olvidado' de las primeras palabras.<br>• <strong style="color:#fff; font-weight:700;">Paso 1 (Entrada):</strong> Imaginate que entra la frase en español <em style="color:#fde68a;">'El'</em>, <em style="color:#fde68a;">'banco'</em>, <em style="color:#fde68a;">'cerró'</em>. Si tomás la palabra <em style="color:#fde68a;">'banco'</em> aislada, es ambigua: en inglés podría ser <em style="color:#fde68a;">'bank'</em> (entidad financiera) o <em style="color:#fde68a;">'bench'</em> (banco de plaza).<br>• <strong style="color:#fff; font-weight:700;">Paso 2 (Auto-Atención / Self-Attention — El gran invento de 2017):</strong> En lugar de leer palabra por palabra a ciegas, el <strong style="color:#fff; font-weight:700;">Transformer</strong> introduce la <strong style="color:#fff; font-weight:700;">Auto-Atención</strong>: hace que todas las palabras de la oración se conecten entre sí al mismo tiempo y calcula cuánta relevancia tiene una sobre la otra. Fijate en las líneas naranjas cómo el modelo detecta que la palabra <em style="color:#fde68a;">'cerró'</em> está fuertemente vinculada con <em style="color:#fde68a;">'banco'</em>, dándole instantáneamente el <strong style="color:#fff; font-weight:700;">contexto financiero</strong>.<br>• <strong style="color:#fff; font-weight:700;">Paso 3 y Paso 4 (Capas de la Red Neuronal y Salida):</strong> Esa información ya enriquecida con su contexto viaja por las <strong style="color:#fff; font-weight:700;">capas de nodos de la Red Neuronal</strong> (los nodos violetas) y en el <strong style="color:#fff; font-weight:700;">Paso 4</strong> genera la traducción correcta: <em style="color:#fde68a;">'The bank closed'</em> en lugar de <em style="color:#fde68a;">'bench'</em>.<br><br>Con esta idea visual ya tenés claro qué cambió en 2017; en la <strong style="color:#fff; font-weight:700;">Sesión 2</strong> vamos a meternos más en detalle en cómo operan estos modelos por dentro.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Señalá primero de izquierda a derecha las 3 tarjetas superiores (1. Software Tradicional -> 2. El Paper de 2017 y ChatGPT -> 3. Era de Sistemas con LLMs) y luego recorré paso por paso el diagrama inferior (1. Entrada -> 2. Auto-Atención -> 3. Red Neuronal en Capas -> 4. Salida).</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 3: La Regla de Oro: IA + Ingeniería de Software</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien, acá aparece una pregunta clave: ¿por qué en esta primera sesión no arrancamos directo con IA y vemos primero software tradicional? Pasemos a la Slide 3 para ver la Regla de Oro.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Ahora bien, acá aparece una pregunta clave: ¿por qué en esta primera sesión no arrancamos directo con IA y vemos primero software tradicional? Pasemos a la Slide 3 para ver la Regla de Oro.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-3" data-slide="3">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(3, this.checked)">
+              <span class="slide-num">SLIDE 03</span>
+            </label>
+            <h2 class="slide-title">La Regla de Oro: IA + Ingeniería de Software</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Arquitectura · Cimientos Técnicos · Criterio de PM</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Grabate esta regla de oro: un modelo de Inteligencia Artificial como GPT-4 o Claude no flota en el aire por arte de magia. Para que un usuario real pueda usarlo en una app o en una plataforma corporativa, ese cerebro de IA tiene que vivir envuelto en software tradicional: se consume a través de una API, guarda su contexto en una Base de Datos y se despliega en servidores en la nube con código y pipelines. Por eso hoy, en esta Sesión 1, vamos a dominar primero los cimientos del software, la nube y las metodologías ágiles. Cuando entiendas estas piezas hoy, en las Sesiones 2 y 3 vas a ver que armar un producto con IA es simplemente conectar un bloque nuevo sobre esta misma arquitectura.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Grabate esta regla de oro: un modelo de Inteligencia Artificial como GPT-4 o Claude no flota en el aire por arte de magia. Para que un usuario real pueda usarlo en una app o en una plataforma corporativa, ese cerebro de IA tiene que vivir envuelto en software tradicional: se consume a través de una <strong style="color:#fff; font-weight:700;">API</strong>, guarda su contexto en una <strong style="color:#fff; font-weight:700;">Base de Datos</strong> y se despliega en servidores en la nube con <strong style="color:#fff; font-weight:700;">código y pipelines</strong>. Por eso hoy, en esta Sesión 1, vamos a dominar primero los cimientos del software, la nube y las metodologías ágiles. Cuando entiendas estas piezas hoy, en las Sesiones 2 y 3 vas a ver que armar un producto con IA es simplemente conectar un bloque nuevo sobre esta misma arquitectura.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Destacá las 3 tarjetas ('El LLM es una API', 'El Contexto es una BD', 'La Automatización es Código') y la frase inferior sobre por qué primero dominamos los cimientos del software.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 4: El Gran Salto Temporal: 2012 vs. 2026</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Para entender cómo trabajan hoy los equipos sobre estos cimientos, veamos cómo cambió la arquitectura del software en los últimos diez años. Vamos a la Slide 4.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Para entender cómo trabajan hoy los equipos sobre estos cimientos, veamos cómo cambió la arquitectura del software en los últimos diez años. Vamos a la Slide 4.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-4" data-slide="4">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(4, this.checked)">
+              <span class="slide-num">SLIDE 04</span>
+            </label>
+            <h2 class="slide-title">El Gran Salto Temporal: 2012 vs. 2026</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Waterfall vs Agile · Monolito vs Microservicios · AWS, Docker & Kubernetes (K8s)</span>
+            <span class="time-tag">⏱️ 5 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Fijate este contraste porque es clave en cualquier charla de IT. Hace diez o doce años dominaba el modelo 'Waterfall' (Cascada) y la arquitectura 'Monolítica': toda la aplicación estaba atada adentro de un único bloque gigante de código en un servidor físico propio de la empresa. Si un programador tocaba una coma en el módulo de reportes y metía un error, se caía toda la plataforma entera. Hoy en 2026 trabajamos con 'Microservicios en la Nube (Cloud)' y metodologías Ágiles: dividimos el sistema en piezas chiquitas e independientes.
+
+Y mirá las tres tarjetas de abajo porque son palabras que vas a escuchar todo el tiempo en reuniones de tecnología:
+• 1) AWS / Cloud (Amazon Web Services, Microsoft Azure o Google Cloud): en vez de comprar servidores físicos carísimos, las empresas alquilan capacidad de cómputo, bases de datos y almacenamiento en la nube pagando solo por lo que usan (si en algún momento hacés ese curso introductorio de AWS que habías visto, como el Cloud Practitioner, te da justamente este mapa general de qué piezas existen en la nube y cómo se cobran, sin necesidad de programar).
+• 2) Docker (Contenedores): Antes era un clásico que el programador dijera 'en mi computadora anda' y cuando subían el código al servidor se rompiera todo porque tenían distintas versiones instaladas. Docker resolvió eso inventando los contenedores (como los containers metálicos de los barcos): una caja estándar y cerrada donde el programador mete su código junto con todo lo que necesita para correr. Así, esa caja funciona exactamente igual en su notebook que en AWS.
+• 3) Kubernetes (también llamado K8s — El Orquestador): Ahora imaginate qué pasa cuando tu aplicación crece y ya no tenés una sola cajita de Docker, sino cientos de contenedores corriendo al mismo tiempo (para login, pagos, catálogo, notificaciones). ¿Quién los controla? Ahí entra Kubernetes: es el director de orquesta automático (o el jefe de puerto que maneja todos los barcos). Hace tres cosas fundamentales solo:
+  1. Escala en picos de tráfico (Auto-scaling): Si hay un CyberMonday y entran 50.000 personas a pagar, Kubernetes multiplica automáticamente las cajitas de Docker del módulo de pagos de 2 a 20 en segundos, y cuando termina el pico las apaga para ahorrar costos en la nube.
+  2. Se repara solo (Self-healing): Si un contenedor se cuelga a las 3 de la mañana, Kubernetes lo detecta, lo tira a la basura y levanta uno nuevo sano en segundos sin que ningún cliente note la caída.
+  3. Actualiza sin cortar el servicio: Cuando el equipo sube una versión nueva, va reemplazando las cajas viejas por las nuevas gradualmente sin apagar la plataforma.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Fijate este contraste porque es clave en cualquier charla de IT. Hace diez o doce años dominaba el modelo <strong style="color:#fff; font-weight:700;">'Waterfall' (Cascada)</strong> y la arquitectura <strong style="color:#fff; font-weight:700;">'Monolítica'</strong>: toda la aplicación estaba atada adentro de un único bloque gigante de código en un servidor físico propio de la empresa. Si un programador tocaba una coma en el módulo de reportes y metía un error, se caía toda la plataforma entera. Hoy en 2026 trabajamos con <strong style="color:#fff; font-weight:700;">'Microservicios en la Nube (Cloud)'</strong> y metodologías Ágiles: dividimos el sistema en piezas chiquitas e independientes.<br><br>Y mirá las <strong style="color:#fff; font-weight:700;">tres tarjetas de abajo</strong> porque son palabras que vas a escuchar todo el tiempo en reuniones de tecnología:<br>• <strong style="color:#fff; font-weight:700;">1) AWS / Cloud</strong> (<em style="color:#fde68a;">Amazon Web Services</em>, <em style="color:#fde68a;">Microsoft Azure</em> o <em style="color:#fde68a;">Google Cloud</em>): en vez de comprar servidores físicos carísimos, las empresas alquilan capacidad de cómputo, bases de datos y almacenamiento en la nube pagando solo por lo que usan (si en algún momento hacés ese curso introductorio de AWS que habías visto, como el <em style="color:#fde68a;">Cloud Practitioner</em>, te da justamente este mapa general de qué piezas existen en la nube y cómo se cobran, sin necesidad de programar).<br>• <strong style="color:#fff; font-weight:700;">2) Docker (Contenedores):</strong> Antes era un clásico que el programador dijera <em style="color:#fde68a;">'en mi computadora anda'</em> y cuando subían el código al servidor se rompiera todo porque tenían distintas versiones instaladas. <strong style="color:#fff; font-weight:700;">Docker</strong> resolvió eso inventando los <strong style="color:#fff; font-weight:700;">contenedores</strong> (como los containers metálicos de los barcos): una caja estándar y cerrada donde el programador mete su código junto con todo lo que necesita para correr. Así, esa caja funciona exactamente igual en su notebook que en AWS.<br>• <strong style="color:#fff; font-weight:700;">3) Kubernetes (también llamado <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">K8s</code> — El Orquestador):</strong> Ahora imaginate qué pasa cuando tu aplicación crece y ya no tenés una sola cajita de Docker, sino <strong style="color:#fff; font-weight:700;">cientos de contenedores</strong> corriendo al mismo tiempo (para login, pagos, catálogo, notificaciones). ¿Quién los controla? Ahí entra <strong style="color:#fff; font-weight:700;">Kubernetes</strong>: es el <strong style="color:#fff; font-weight:700;">director de orquesta automático</strong> (o el jefe de puerto que maneja todos los barcos). Hace tres cosas fundamentales solo:<br>  1. <strong style="color:#fff; font-weight:700;">Escala en picos de tráfico (Auto-scaling):</strong> Si hay un <em style="color:#fde68a;">CyberMonday</em> y entran 50.000 personas a pagar, Kubernetes multiplica automáticamente las cajitas de Docker del módulo de pagos de 2 a 20 en segundos, y cuando termina el pico las apaga para ahorrar costos en la nube.<br>  2. <strong style="color:#fff; font-weight:700;">Se repara solo (Self-healing):</strong> Si un contenedor se cuelga a las 3 de la mañana, Kubernetes lo detecta, lo tira a la basura y levanta uno nuevo sano en segundos sin que ningún cliente note la caída.<br>  3. <strong style="color:#fff; font-weight:700;">Actualiza sin cortar el servicio:</strong> Cuando el equipo sube una versión nueva, va reemplazando las cajas viejas por las nuevas gradualmente sin apagar la plataforma.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic sobre el diagrama comparativo a la izquierda para abrirlo en pantalla completa (Lightbox), y luego recorré las 3 tarjetas inferiores del Glosario de Infraestructura (AWS / Cloud, Docker, Kubernetes).</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 5: APIs: El Pegamento del Software Moderno</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Pero si ahora el sistema está dividido en piezas independientes que viven en distintos contenedores en la nube, ¿cómo hacen esas piezas para hablar entre sí y pasarse información? Ahí entra el concepto más importante de todos: las APIs. Pasemos a la Slide 5.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Pero si ahora el sistema está dividido en piezas independientes que viven en distintos contenedores en la nube, ¿cómo hacen esas piezas para hablar entre sí y pasarse información? Ahí entra el concepto más importante de todos: las APIs. Pasemos a la Slide 5.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-5" data-slide="5">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(5, this.checked)">
+              <span class="slide-num">SLIDE 05</span>
+            </label>
+            <h2 class="slide-title">APIs: El Pegamento del Software Moderno</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">API REST · Frontend vs Backend · JSON · Contrato de Datos</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Si te preguntan qué es una API (Application Programming Interface), olvidate de las definiciones de Wikipedia y pensalo como el mesero de un restaurante. En cualquier aplicación tenés dos mundos: el 'Frontend' (la pantalla del celular o la web que ve el usuario, que sería la mesa del cliente con el menú) y el 'Backend' (los servidores y bases de datos donde ocurre la lógica pesada y segura, que sería la cocina). El cliente en la mesa no puede meterse directo a la cocina a revolver las ollas por seguridad. Necesita un intermediario: el mesero (la API). Cuando vos hacés clic en un botón en una plataforma, el Frontend le entrega un mensajito estructurado en formato JSON al mesero (la API), la API corre al Backend, busca el dato en la base de datos y vuelve a la pantalla con la respuesta lista. Incluso cuando conectemos a ChatGPT en la Sesión 2, lo vamos a hacer llamando a la API de OpenAI.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Si te preguntan qué es una API (Application Programming Interface), olvidate de las definiciones de Wikipedia y pensalo como el mesero de un restaurante. En cualquier aplicación tenés dos mundos: el 'Frontend' (la pantalla del celular o la web que ve el usuario, que sería la mesa del cliente con el menú) y el 'Backend' (los servidores y bases de datos donde ocurre la lógica pesada y segura, que sería la cocina). El cliente en la mesa no puede meterse directo a la cocina a revolver las ollas por seguridad. Necesita un intermediario: el mesero (la API). Cuando vos hacés clic en un botón en una plataforma, el Frontend le entrega un mensajito estructurado en formato JSON al mesero (la API), la API corre al Backend, busca el dato en la base de datos y vuelve a la pantalla con la respuesta lista. Incluso cuando conectemos a ChatGPT en la Sesión 2, lo vamos a hacer llamando a la API de OpenAI.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic en el diagrama del Restaurante (Frontend / Mesero API / Cocina Backend) para ampliarlo y recorrer el viaje del pedido.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 6: Verbos HTTP: El Vocabulario de las APIs</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora, ese mesero (la API) no habla en español coloquial; usa cuatro palabras universales para saber qué acción tiene que ejecutar en la cocina. Pasemos a la Slide 6 para conocer los 4 verbos HTTP y sus ejemplos prácticos.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Ahora, ese mesero (la API) no habla en español coloquial; usa cuatro palabras universales para saber qué acción tiene que ejecutar en la cocina. Pasemos a la Slide 6 para conocer los 4 verbos HTTP y sus ejemplos prácticos.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-6" data-slide="6">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(6, this.checked)">
+              <span class="slide-num">SLIDE 06</span>
+            </label>
+            <h2 class="slide-title">Verbos HTTP: El Vocabulario de las APIs</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">GET · POST · PUT / PATCH · DELETE · Ejemplos en la Práctica</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Cada vez que los developers hablan de un 'endpoint de la API', van a mencionar uno de estos cuatro verbos HTTP. Mirá tanto las tarjetas de arriba como los ejemplos reales de abajo:
+1) GET (Consultar): es solo lectura, no modifica nada. Ejemplo práctico abajo: abrís tu perfil o el panel de un proyecto y la app dispara GET /proyectos/42 para traerte los datos en pantalla.
+2) POST (Crear): envía datos nuevos al servidor para crear un registro o disparar un proceso. Ejemplo abajo: completás un formulario de 'Nueva tarea' o enviás un mensaje al chatbot (POST /tickets).
+3) PUT o PATCH (Actualizar): modifica un registro que ya existía. Ejemplo abajo: cambiás el estado de un entregable a 'Aprobado' o editás su fecha límite (PUT /proyectos/42).
+4) DELETE (Eliminar): borra un recurso de la base de datos (DELETE /usuarios/19). Cuando en una reunión escuchás 'ya está listo el GET pero falta el POST', entendés en un segundo que ya se puede ver la pantalla pero todavía falta guardar datos nuevos.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Cada vez que los developers hablan de un 'endpoint de la API', van a mencionar uno de estos cuatro verbos HTTP. Mirá tanto las tarjetas de arriba como los ejemplos reales de abajo:<br>1) <strong style="color:#fff; font-weight:700;">GET</strong> (Consultar): es solo lectura, no modifica nada. Ejemplo práctico abajo: abrís tu perfil o el panel de un proyecto y la app dispara <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">GET /proyectos/42</code> para traerte los datos en pantalla.<br>2) <strong style="color:#fff; font-weight:700;">POST</strong> (Crear): envía datos nuevos al servidor para crear un registro o disparar un proceso. Ejemplo abajo: completás un formulario de 'Nueva tarea' o enviás un mensaje al chatbot (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">POST /tickets</code>).<br>3) <strong style="color:#fff; font-weight:700;">PUT o PATCH</strong> (Actualizar): modifica un registro que ya existía. Ejemplo abajo: cambiás el estado de un entregable a 'Aprobado' o editás su fecha límite (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">PUT /proyectos/42</code>).<br>4) <strong style="color:#fff; font-weight:700;">DELETE</strong> (Eliminar): borra un recurso de la base de datos (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">DELETE /usuarios/19</code>). Cuando en una reunión escuchás 'ya está listo el GET pero falta el POST', entendés en un segundo que ya se puede ver la pantalla pero todavía falta guardar datos nuevos.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Recorré las 4 tarjetas superiores (GET, POST, PUT, DELETE) y luego señalá los 4 ejemplos prácticos inferiores ('¿Qué viaja por la API cuando el usuario usa una App?').</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 7: Códigos de Estado HTTP: El Semáforo de la Web</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Cuando el mesero (la API) vuelve de la cocina hacia la pantalla, antes de darte el plato te muestra un número de tres dígitos para avisarte si salió todo bien o si hubo un accidente. Vamos a la Slide 7 para ver el Semáforo de los Códigos de Estado.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Cuando el mesero (la API) vuelve de la cocina hacia la pantalla, antes de darte el plato te muestra un número de tres dígitos para avisarte si salió todo bien o si hubo un accidente. Vamos a la Slide 7 para ver el Semáforo de los Códigos de Estado.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-7" data-slide="7">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(7, this.checked)">
+              <span class="slide-num">SLIDE 07</span>
+            </label>
+            <h2 class="slide-title">Códigos de Estado HTTP: El Semáforo de la Web</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">200 OK · 400 Bad Request · 401/403 Auth · 500 Server Error</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Esto te da un superpoder enorme para diagnosticar problemas en IT sin saber programar. Cuando algo falla en una plataforma, el código numérico te dice inmediatamente de quién es la culpa: Si empieza con 2 (200 OK), luz verde: todo funcionó perfecto. Si empieza con 4 (errores 4xx), nuestros servidores están sanos; el error vino del lado del usuario o del pedido: por ejemplo, 400 Bad Request es que se envió un formulario con datos inválidos; 401 o 403 es falta de permisos; y el famoso 404 Not Found es que pidió una página o recurso que no existe. En cambio, si empieza con 5 (500 Internal Server Error o 503), ¡alerta roja!: la cocina se prendió fuego. El pedido estaba bien hecho, pero nuestro servidor Backend o la base de datos en la nube se cayó, afectando la disponibilidad (SLA) del servicio.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Esto te da un superpoder enorme para diagnosticar problemas en IT sin saber programar. Cuando algo falla en una plataforma, el código numérico te dice inmediatamente de quién es la culpa: Si empieza con <strong style="color:#fff; font-weight:700;">2 (200 OK)</strong>, luz verde: todo funcionó perfecto. Si empieza con <strong style="color:#fff; font-weight:700;">4 (errores 4xx)</strong>, nuestros servidores están sanos; el error vino del lado del usuario o del pedido: por ejemplo, <strong style="color:#fff; font-weight:700;">400 Bad Request</strong> es que se envió un formulario con datos inválidos; <strong style="color:#fff; font-weight:700;">401 o 403</strong> es falta de permisos; y el famoso <strong style="color:#fff; font-weight:700;">404 Not Found</strong> es que pidió una página o recurso que no existe. En cambio, si empieza con <strong style="color:#fff; font-weight:700;">5 (500 Internal Server Error o 503)</strong>, ¡alerta roja!: la cocina se prendió fuego. El pedido estaba bien hecho, pero nuestro servidor Backend o la base de datos en la nube se cayó, afectando la disponibilidad (SLA) del servicio.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Señalá los 3 bloques de códigos (2xx Verde, 4xx Naranja, 5xx Rojo) y explicá cómo cualquier rol de gestión en IT diagnostica un incidente con esto.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 8: El Viaje de un Feature: Pipeline de CI/CD</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya entendemos qué construyen los developers (Frontend, Backend, APIs). Ahora veamos CÓMO viaja ese código desde la computadora del programador hasta el usuario final sin romper nada. Pasemos a la Slide 8: El Viaje de un Feature.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Ya entendemos qué construyen los developers (Frontend, Backend, APIs). Ahora veamos CÓMO viaja ese código desde la computadora del programador hasta el usuario final sin romper nada. Pasemos a la Slide 8: El Viaje de un Feature.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-8" data-slide="8">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(8, this.checked)">
+              <span class="slide-num">SLIDE 08</span>
+            </label>
+            <h2 class="slide-title">El Viaje de un Feature: Pipeline de CI/CD</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">CI/CD · Automatización · Pull Request · QA Automático</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Hacé clic conmigo en cada paso de esta línea porque este es el corazón del trabajo diario en IT: el famoso pipeline de CI/CD (Integración Continua y Entrega/Despliegue Continuo). Paso 1 (Jira Ticket): se define la necesidad en una Historia de Usuario con criterios de aceptación claros. Paso 2 (Codificación): el developer escribe la solución en su computadora local. Paso 3 (CI - Integración Continua): cuando el dev sube su código, un robot automático en la nube compila todo y corre pruebas automáticas para verificar que ese cambio no haya roto nada de lo que ya funcionaba. Paso 4 (CD - Entrega Continua): si el robot da luz verde, el código pasa por un ambiente de prueba (Staging) y, tras la aprobación, se despliega a Producción sin cortar el servicio.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Hacé clic conmigo en cada paso de esta línea porque este es el corazón del trabajo diario en IT: el famoso pipeline de <strong style="color:#fff; font-weight:700;">CI/CD</strong> (Integración Continua y Entrega/Despliegue Continuo). Paso 1 (<strong style="color:#fff; font-weight:700;">Jira Ticket</strong>): se define la necesidad en una Historia de Usuario con criterios de aceptación claros. Paso 2 (<strong style="color:#fff; font-weight:700;">Codificación</strong>): el developer escribe la solución en su computadora local. Paso 3 (<strong style="color:#fff; font-weight:700;">CI - Integración Continua</strong>): cuando el dev sube su código, un robot automático en la nube compila todo y corre pruebas automáticas para verificar que ese cambio no haya roto nada de lo que ya funcionaba. Paso 4 (<strong style="color:#fff; font-weight:700;">CD - Entrega Continua</strong>): si el robot da luz verde, el código pasa por un ambiente de prueba (Staging) y, tras la aprobación, se despliega a Producción sin cortar el servicio.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic secuencialmente en los 4 nodos interactivos del pipeline (1. Jira Ticket -> 2. Codificación -> 3. CI Pruebas -> 4. CD Deploy) para que la barra de progreso se ilumine y muestre el detalle abajo.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 9: Dinámica de Roles: El Ecosistema Startup</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora, ¿quiénes son las personas de carne y hueso que empujan este pipeline todos los días y cómo se organizan? Depende mucho del tamaño de la empresa. Pasemos a la Slide 9 para ver el Ecosistema Startup.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Ahora, ¿quiénes son las personas de carne y hueso que empujan este pipeline todos los días y cómo se organizan? Depende mucho del tamaño de la empresa. Pasemos a la Slide 9 para ver el Ecosistema Startup.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-9" data-slide="9">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(9, this.checked)">
+              <span class="slide-num">SLIDE 09</span>
+            </label>
+            <h2 class="slide-title">Dinámica de Roles: El Ecosistema Startup</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Full-Stack · Product Manager · Velocidad vs Estructura · Kanban & Sprints Cortos</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Cuando trabajás en una startup o en un equipo digital chico (de 5 a 15 personas), la regla es la versatilidad: acá no hay compartimentos rígidos. Fijate en las tarjetas: el Project Manager / PO concentra la estrategia, el backlog y las demos; los desarrolladores suelen ser Full-Stack (tocan tanto la pantalla Frontend como el servidor Backend y hasta configuran la nube); y el QA es liviano y rápido. Y mirá la barra verde de abajo: por esa misma velocidad, las startups suelen organizarse en Kanban (flujo continuo) o Sprints cortos de 1 semana con muy pocas reuniones, aprovechando que su arquitectura modular en la nube les permite subir mejoras todos los días.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Cuando trabajás en una startup o en un equipo digital chico (de 5 a 15 personas), la regla es la versatilidad: acá no hay compartimentos rígidos. Fijate en las tarjetas: el <strong style="color:#fff; font-weight:700;">Project Manager / PO</strong> concentra la estrategia, el backlog y las demos; los desarrolladores suelen ser <strong style="color:#fff; font-weight:700;">Full-Stack</strong> (tocan tanto la pantalla Frontend como el servidor Backend y hasta configuran la nube); y el QA es liviano y rápido. Y mirá la barra verde de abajo: por esa misma velocidad, las startups suelen organizarse en <strong style="color:#fff; font-weight:700;">Kanban</strong> (flujo continuo) o <strong style="color:#fff; font-weight:700;">Sprints cortos de 1 semana</strong> con muy pocas reuniones, aprovechando que su arquitectura modular en la nube les permite subir mejoras todos los días.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic en las 4 tarjetas de roles (Full-Stack Developer, Project Manager / PO, QA / Tester Liviano, Analista de Datos) y señalá el recuadro verde inferior sobre la dinámica Agile en Startups.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 10: Dinámica de Roles: La Matriz Corporativa</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `¿Y qué pasa cuando pasás de una startup chica a una gran corporación tecnológica o un banco digital con cientos de ingenieros? El mapa cambia por completo. Vamos a la Slide 10 para ver la Matriz Corporativa.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“¿Y qué pasa cuando pasás de una startup chica a una gran corporación tecnológica o un banco digital con cientos de ingenieros? El mapa cambia por completo. Vamos a la Slide 10 para ver la Matriz Corporativa.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-10" data-slide="10">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(10, this.checked)">
+              <span class="slide-num">SLIDE 10</span>
+            </label>
+            <h2 class="slide-title">Dinámica de Roles: La Matriz Corporativa</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Especialización · PO vs PM · QA Automation · DevOps & SecOps · Squads Ágiles</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `En una corporación grande, un error en producción cuesta millones, así que la clave es la especialización extrema. Acá el rol se divide: el Project / Product Manager (PM) mira el roadmap a largo plazo, el presupuesto y los directores, mientras que el Product Owner (PO) vive adentro del equipo técnico escribiendo historias de usuario y liderando el día a día. Los devs se dividen en Frontend, Backend, Mobile y Tech Leads; aparece QA Automation (que programa robots de prueba en el pipeline), el equipo de Data y DevOps & SecOps. Y fijate en el recuadro azul de abajo: como el sistema ya no es un Monolito sino Microservicios, la empresa divide a toda esta gente en Squads Ágiles autónomos, donde cada Squad es dueño de una parte del producto.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “En una corporación grande, un error en producción cuesta millones, así que la clave es la especialización extrema. Acá el rol se divide: el <strong style="color:#fff; font-weight:700;">Project / Product Manager (PM)</strong> mira el roadmap a largo plazo, el presupuesto y los directores, mientras que el <strong style="color:#fff; font-weight:700;">Product Owner (PO)</strong> vive adentro del equipo técnico escribiendo historias de usuario y liderando el día a día. Los devs se dividen en <strong style="color:#fff; font-weight:700;">Frontend</strong>, <strong style="color:#fff; font-weight:700;">Backend</strong>, <strong style="color:#fff; font-weight:700;">Mobile</strong> y <strong style="color:#fff; font-weight:700;">Tech Leads</strong>; aparece <strong style="color:#fff; font-weight:700;">QA Automation</strong> (que programa robots de prueba en el pipeline), el equipo de <strong style="color:#fff; font-weight:700;">Data</strong> y <strong style="color:#fff; font-weight:700;">DevOps & SecOps</strong>. Y fijate en el recuadro azul de abajo: como el sistema ya no es un Monolito sino <strong style="color:#fff; font-weight:700;">Microservicios</strong>, la empresa divide a toda esta gente en <strong style="color:#fff; font-weight:700;">Squads Ágiles autónomos</strong>, donde cada Squad es dueño de una parte del producto.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic en las 5 tarjetas de roles corporativos (PM vs. PO, Especialistas Devs, QA Automation, Data Stack Team, DevOps & SecOps) y destacá la barra azul inferior sobre Squads Ágiles.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 11: Agile en IT: De la Nueva Arquitectura a Scrum y Kanban</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Recién nombramos Squads Ágiles, Scrum y Kanban. Veamos en una sola pantalla cómo se conectan estos conceptos de Agile con la nueva arquitectura que dejó atrás al Monolito. Pasemos a la Slide 11.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Recién nombramos Squads Ágiles, Scrum y Kanban. Veamos en una sola pantalla cómo se conectan estos conceptos de Agile con la nueva arquitectura que dejó atrás al Monolito. Pasemos a la Slide 11.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-11" data-slide="11">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(11, this.checked)">
+              <span class="slide-num">SLIDE 11</span>
+            </label>
+            <h2 class="slide-title">Agile en IT: De la Nueva Arquitectura a Scrum y Kanban</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Monolito/Waterfall vs Microservicios/Agile · Scrum (Sprints) · Kanban (Flujo Continuo) · Híbridos (Scrumban)</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá esta diapositiva porque une todo lo que venimos hablando: por qué existe Agile en IT y cómo se relaciona directo con la arquitectura técnica. Fijate en el bloque de arriba: cuando el software era un Monolito (un único bloque gigante acoplado), cambiar cualquier cosa afectaba a todo el sistema; por eso las empresas estaban obligadas a trabajar en Waterfall (Cascada): meses diseñando, meses programando, meses probando y una sola entrega gigante cada 6 meses. Cuando la arquitectura evolucionó a Microservicios, APIs independientes y CI/CD, cada equipo chico (Squad) pudo empezar a construir y subir cambios de su propio módulo todas las semanas sin frenar a los demás. Eso hizo posible trabajar con Metodologías Ágiles.
+
+¿Y qué se usa principalmente hoy en el mercado? Mirá las 3 tarjetas de abajo:
+1) Scrum (Ciclos Fijos / Sprints): trabajás en iteraciones cerradas de 1 a 2 semanas llamadas Sprints, con cuatro ceremonias clave: Planning (qué entra al Sprint), Daily (15 minutos diarios para ver avances y bloqueos), Review/Demo (mostrar el software funcionando) y Retrospectiva (qué mejorar). Es el estándar para crear producto nuevo.
+2) Kanban (Flujo Continuo): no hay sprints cerrados; es un tablero continuo (To Do -> In Progress -> QA -> Done) donde se limita cuántas tareas se hacen a la vez (WIP Limit) y se mide cuánto tarda un ticket de punta a punta (Cycle Time). Muy usado en operaciones, soporte o entregas continuas.
+3) La realidad en las empresas ('Scrumban' o versiones adaptadas): casi ninguna empresa usa Scrum o Kanban 'de libro' al 100%. La mayoría usa una versión adaptada: toman las ceremonias y Sprints de Scrum para ordenarse, pero mueven los tickets en un tablero Kanban en Jira desplegando a medida que están listos.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Mirá esta diapositiva porque une todo lo que venimos hablando: <strong style="color:#fff; font-weight:700;">por qué existe Agile en IT y cómo se relaciona directo con la arquitectura técnica</strong>. Fijate en el bloque de arriba: cuando el software era un <strong style="color:#fff; font-weight:700;">Monolito</strong> (un único bloque gigante acoplado), cambiar cualquier cosa afectaba a todo el sistema; por eso las empresas estaban obligadas a trabajar en <strong style="color:#fff; font-weight:700;">Waterfall (Cascada)</strong>: meses diseñando, meses programando, meses probando y una sola entrega gigante cada 6 meses. Cuando la arquitectura evolucionó a <strong style="color:#fff; font-weight:700;">Microservicios, APIs independientes y CI/CD</strong>, cada equipo chico (<em style="color:#fde68a;">Squad</em>) pudo empezar a construir y subir cambios de su propio módulo todas las semanas sin frenar a los demás. Eso hizo posible trabajar con <strong style="color:#fff; font-weight:700;">Metodologías Ágiles</strong>.<br><br>¿Y qué se usa principalmente hoy en el mercado? Mirá las 3 tarjetas de abajo:<br>1) <strong style="color:#fff; font-weight:700;">Scrum (Ciclos Fijos / Sprints):</strong> trabajás en iteraciones cerradas de 1 a 2 semanas llamadas <em style="color:#fde68a;">Sprints</em>, con cuatro ceremonias clave: <em style="color:#fde68a;">Planning</em> (qué entra al Sprint), <em style="color:#fde68a;">Daily</em> (15 minutos diarios para ver avances y bloqueos), <em style="color:#fde68a;">Review/Demo</em> (mostrar el software funcionando) y <em style="color:#fde68a;">Retrospectiva</em> (qué mejorar). Es el estándar para crear producto nuevo.<br>2) <strong style="color:#fff; font-weight:700;">Kanban (Flujo Continuo):</strong> no hay sprints cerrados; es un tablero continuo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">To Do -> In Progress -> QA -> Done</code>) donde se limita cuántas tareas se hacen a la vez (<em style="color:#fde68a;">WIP Limit</em>) y se mide cuánto tarda un ticket de punta a punta (<em style="color:#fde68a;">Cycle Time</em>). Muy usado en operaciones, soporte o entregas continuas.<br>3) <strong style="color:#fff; font-weight:700;">La realidad en las empresas ('Scrumban' o versiones adaptadas):</strong> casi ninguna empresa usa Scrum o Kanban 'de libro' al 100%. La mayoría usa una <strong style="color:#fff; font-weight:700;">versión adaptada</strong>: toman las ceremonias y Sprints de Scrum para ordenarse, pero mueven los tickets en un tablero Kanban en Jira desplegando a medida que están listos.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Señalá primero el bloque superior violeta ('Monolito / Waterfall 6 meses -> Microservicios + APIs / Squads Ágiles') y luego compará las 3 columnas inferiores: 1. Scrum, 2. Kanban y 3. Híbridos ('Scrumban').</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 12: El PM en el Pipeline: Puntos de Intervención</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Entendiendo cómo trabajan los Squads con Scrum y Kanban, la pregunta clave es: ¿en qué momentos exactos del pipeline interviene un PM o líder de proyecto? Pasemos a la Slide 12.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Entendiendo cómo trabajan los Squads con Scrum y Kanban, la pregunta clave es: ¿en qué momentos exactos del pipeline interviene un PM o líder de proyecto? Pasemos a la Slide 12.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-12" data-slide="12">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(12, this.checked)">
+              <span class="slide-num">SLIDE 12</span>
+            </label>
+            <h2 class="slide-title">El PM en el Pipeline: Puntos de Intervención</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">User Stories · Cobertura de Tests · Staging / UAT · Deploy vs Release · Feature Flags</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Esta diapositiva es oro puro para el día a día y para cualquier entrevista. Un PM o líder de entrega no escribe código, pero controla las compuertas del pipeline. En la etapa 01 (Jira Ticket), definís las User Stories con criterios de aceptación claros. En la 02 (Desarrollo), acompañás al Tech Lead para despejar dudas de negocio sin hacer micromanagement. En la 03 (CI / Tests), si las pruebas automáticas dan rojo, no se negocia la calidad. En la 04 (Staging / UAT), hacés la validación funcional antes de dar el Sign-Off. Y en la 05 (Producción) aplicás las dos cajas de abajo: Deploy no es lo mismo que Release. Deploy es técnico (subir el código al servidor); Release es de negocio (habilitarlo a los usuarios usando un Feature Flag, que funciona como un interruptor para prender o apagar la función cuando quieras).`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Esta diapositiva es oro puro para el día a día y para cualquier entrevista. Un PM o líder de entrega no escribe código, pero controla las compuertas del pipeline. En la etapa <strong style="color:#fff; font-weight:700;">01 (Jira Ticket)</strong>, definís las User Stories con criterios de aceptación claros. En la <strong style="color:#fff; font-weight:700;">02 (Desarrollo)</strong>, acompañás al Tech Lead para despejar dudas de negocio sin hacer micromanagement. En la <strong style="color:#fff; font-weight:700;">03 (CI / Tests)</strong>, si las pruebas automáticas dan rojo, no se negocia la calidad. En la <strong style="color:#fff; font-weight:700;">04 (Staging / UAT)</strong>, hacés la validación funcional antes de dar el <em style="color:#fde68a;">Sign-Off</em>. Y en la <strong style="color:#fff; font-weight:700;">05 (Producción)</strong> aplicás las dos cajas de abajo: <strong style="color:#fff; font-weight:700;">Deploy no es lo mismo que Release</strong>. <em style="color:#fde68a;">Deploy</em> es técnico (subir el código al servidor); <em style="color:#fde68a;">Release</em> es de negocio (habilitarlo a los usuarios usando un <strong style="color:#fff; font-weight:700;">Feature Flag</strong>, que funciona como un interruptor para prender o apagar la función cuando quieras).”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Recorré las 5 columnas numeradas (01 Jira Ticket, 02 Desarrollo, 03 CI / Tests, 04 Staging / UAT, 05 Producción) y remarcá las 2 tarjetas inferiores: Regla de Oro (Deploy ≠ Release) y ¿Qué es un Feature Flag?.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 13: Cada User Story de Jira = Una Rama de Git</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Recién mencionamos que cada tarea que se prioriza en el backlog de Jira pasa a manos de un developer. ¿Cómo se conecta exactamente ese ticket de Jira con el código que escriben ellos? Vamos a la Slide 13.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Recién mencionamos que cada tarea que se prioriza en el backlog de Jira pasa a manos de un developer. ¿Cómo se conecta exactamente ese ticket de Jira con el código que escriben ellos? Vamos a la Slide 13.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-13" data-slide="13">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(13, this.checked)">
+              <span class="slide-num">SLIDE 13</span>
+            </label>
+            <h2 class="slide-title">Cada User Story de Jira = Una Rama de Git</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Trazabilidad · Jira a Git · Feature Branch · Pull Request</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá qué limpia es esta simetría: a la izquierda tenés el tablero de Jira con las User Stories del Sprint (US-41, US-42, US-43). A la derecha tenés el repositorio de código en Git. Por cada historia de usuario que pasa a 'En Desarrollo', el programador crea una copia aislada del código con ese mismo código, llamada rama o branch (por ejemplo, feature/US-42-dashboard). Así, si en la Daily un dev comenta 'la rama de la US-42 ya está en Code Review', sabés al instante qué funcionalidad está terminada y esperando revisión antes de pasar a QA.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Mirá qué limpia es esta simetría: a la izquierda tenés el tablero de Jira con las User Stories del Sprint (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">US-41</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">US-42</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">US-43</code>). A la derecha tenés el repositorio de código en Git. Por cada historia de usuario que pasa a 'En Desarrollo', el programador crea una copia aislada del código con ese mismo código, llamada <strong style="color:#fff; font-weight:700;">rama o branch</strong> (por ejemplo, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">feature/US-42-dashboard</code>). Así, si en la Daily un dev comenta 'la rama de la US-42 ya está en Code Review', sabés al instante qué funcionalidad está terminada y esperando revisión antes de pasar a QA.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Pasá el mouse por los tickets de la izquierda (US-41, US-42, US-43, US-44) para ver cómo se iluminan en pareja con su flecha y su rama correspondiente en Git a la derecha.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 14: Git: Control de Versiones Moderno</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Para que nunca te mareen cuando hablen de ramas, sub-ramas, merges o ambientes en Git, veamos visualmente cómo viaja esa rama hasta Producción. Pasemos a la Slide 14.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Para que nunca te mareen cuando hablen de ramas, sub-ramas, merges o ambientes en Git, veamos visualmente cómo viaja esa rama hasta Producción. Pasemos a la Slide 14.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-14" data-slide="14">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(14, this.checked)">
+              <span class="slide-num">SLIDE 14</span>
+            </label>
+            <h2 class="slide-title">Git: Control de Versiones Moderno</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Git · Main / Develop · Sub-ramas (Feature, Testing, Pre-Prod) · Pull Request & Merge</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Pensá en Git como una máquina del tiempo que guarda cada cambio del código para que nadie pise el trabajo de otro. Hacé clic conmigo en los 6 pasos del gráfico: abajo tenés la línea azul continua de develop y arriba de todo la línea verde continua de main (Producción), donde vive el sistema real. Fijate cómo en el paso 1 y 2 el programador saca una sub-rama violeta (feature/US-42) desde develop, programa ahí aislado y abre un Code Review (Pull Request). En el paso 3, su código se integra (Merge) a develop. De ahí, en el paso 4, sale una sub-rama amarilla hacia testing para las pruebas de QA; cuando aprueba, en el paso 5 pasa a la sub-rama naranja de pre-prod (Staging) para el control final de seguridad y UAT; y recién en el paso 6 se fusiona a main (Producción).`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Pensá en <strong style="color:#fff; font-weight:700;">Git</strong> como una máquina del tiempo que guarda cada cambio del código para que nadie pise el trabajo de otro. Hacé clic conmigo en los 6 pasos del gráfico: abajo tenés la línea azul continua de <strong style="color:#fff; font-weight:700;">develop</strong> y arriba de todo la línea verde continua de <strong style="color:#fff; font-weight:700;">main (Producción)</strong>, donde vive el sistema real. Fijate cómo en el paso <strong style="color:#fff; font-weight:700;">1 y 2</strong> el programador saca una sub-rama violeta (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">feature/US-42</code>) desde <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">develop</code>, programa ahí aislado y abre un <strong style="color:#fff; font-weight:700;">Code Review (Pull Request)</strong>. En el paso <strong style="color:#fff; font-weight:700;">3</strong>, su código se integra (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Merge</code>) a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">develop</code>. De ahí, en el paso <strong style="color:#fff; font-weight:700;">4</strong>, sale una sub-rama amarilla hacia <strong style="color:#fff; font-weight:700;">testing</strong> para las pruebas de QA; cuando aprueba, en el paso <strong style="color:#fff; font-weight:700;">5</strong> pasa a la sub-rama naranja de <strong style="color:#fff; font-weight:700;">pre-prod (Staging)</strong> para el control final de seguridad y UAT; y recién en el paso <strong style="color:#fff; font-weight:700;">6</strong> se fusiona a <strong style="color:#fff; font-weight:700;">main (Producción)</strong>.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Hacé clic en los 6 nodos numerados del diagrama (1. Nueva Rama -> 2. Code Review -> 3. Merge a develop -> 4. QA Testing -> 5. Security Gate en pre-prod -> 6. Release Final en main) para ver cómo cambia la explicación abajo.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 15: Dónde Vive el Software: Los 3 Ambientes</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Vimos que en Git el código va pasando por testing, pre-prod y main. Eso nos lleva directo a los 3 ambientes de infraestructura donde corre ese software. Vamos a la Slide 15.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Vimos que en Git el código va pasando por testing, pre-prod y main. Eso nos lleva directo a los 3 ambientes de infraestructura donde corre ese software. Vamos a la Slide 15.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-15" data-slide="15">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(15, this.checked)">
+              <span class="slide-num">SLIDE 15</span>
+            </label>
+            <h2 class="slide-title">Dónde Vive el Software: Los 3 Ambientes</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Development · Staging / Pre-Prod · Production · Aislamiento</span>
+            <span class="time-tag">⏱️ 3 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `En software profesional jamás se prueba un cambio directamente frente a los clientes. Por eso la infraestructura en la nube se divide en tres 'escenarios' o ambientes aislados: 1) Dev Environment (El Laboratorio): donde los programadores prueban y rompen cosas todos los días con datos ficticios. 2) Staging / Pre-Prod (El Simulador de Vuelo): es una réplica exacta de producción pero cerrada al público; acá es donde se hacen las pruebas de aceptación (UAT) y se da el Sign-Off. 3) Prod Environment (El Estadio Lleno): acá viven los usuarios reales y todo cambio entra validado y controlado con Feature Flags.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “En software profesional jamás se prueba un cambio directamente frente a los clientes. Por eso la infraestructura en la nube se divide en tres 'escenarios' o ambientes aislados: 1) <strong style="color:#fff; font-weight:700;">Dev Environment (El Laboratorio)</strong>: donde los programadores prueban y rompen cosas todos los días con datos ficticios. 2) <strong style="color:#fff; font-weight:700;">Staging / Pre-Prod (El Simulador de Vuelo)</strong>: es una réplica exacta de producción pero cerrada al público; acá es donde se hacen las pruebas de aceptación (UAT) y se da el <em style="color:#fde68a;">Sign-Off</em>. 3) <strong style="color:#fff; font-weight:700;">Prod Environment (El Estadio Lleno)</strong>: acá viven los usuarios reales y todo cambio entra validado y controlado con Feature Flags.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Señalá las 3 tarjetas de ambientes (1. Dev Environment, 2. Staging Environment, 3. Prod Environment) destacando el rol en cada uno.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 16: Bases de Datos: SQL vs. NoSQL vs. Vectorial (IA)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Adentro de esos ambientes, el software necesita guardar toda la información del negocio. Y hoy, con la llegada de la IA, convivimos con tres tipos de bases de datos. Pasemos a la Slide 16.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Adentro de esos ambientes, el software necesita guardar toda la información del negocio. Y hoy, con la llegada de la IA, convivimos con tres tipos de bases de datos. Pasemos a la Slide 16.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-16" data-slide="16">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(16, this.checked)">
+              <span class="slide-num">SLIDE 16</span>
+            </label>
+            <h2 class="slide-title">Bases de Datos: SQL vs. NoSQL vs. Vectorial (IA)</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">SQL Relacional · NoSQL Documental · Vector DB (IA) · Criterio de Negocio</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá estas tres tarjetas porque conectan directo con lo que vamos a ver la clase que viene de Inteligencia Artificial. Según qué dato quieras guardar, los ingenieros eligen entre tres motores: 1) Base Relacional (SQL), como PostgreSQL: pensala como un Excel ultra estricto de filas y columnas. Es obligatoria para pagos, facturación o contabilidad donde no puede faltar ni un centavo. 2) Base No-Relacional (NoSQL), como MongoDB: pensala como una carpeta de hojas sueltas en formato JSON donde cada documento puede tener campos distintos; ideal para catálogos dinámicos o lanzar productos rápido. Y 3) Base de Datos Vectorial (Vector DB), como Pinecone: la estrella de la IA. Guarda representaciones matemáticas del significado de los textos (Embeddings) para buscar por concepto y alimentar modelos de IA con datos privados (RAG).`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Mirá estas tres tarjetas porque conectan directo con lo que vamos a ver la clase que viene de Inteligencia Artificial. Según qué dato quieras guardar, los ingenieros eligen entre tres motores: 1) <strong style="color:#fff; font-weight:700;">Base Relacional (SQL)</strong>, como PostgreSQL: pensala como un Excel ultra estricto de filas y columnas. Es obligatoria para pagos, facturación o contabilidad donde no puede faltar ni un centavo. 2) <strong style="color:#fff; font-weight:700;">Base No-Relacional (NoSQL)</strong>, como MongoDB: pensala como una carpeta de hojas sueltas en formato JSON donde cada documento puede tener campos distintos; ideal para catálogos dinámicos o lanzar productos rápido. Y 3) <strong style="color:#fff; font-weight:700;">Base de Datos Vectorial (Vector DB)</strong>, como Pinecone: la estrella de la IA. Guarda representaciones matemáticas del <em style="color:#fde68a;">significado</em> de los textos (Embeddings) para buscar por concepto y alimentar modelos de IA con datos privados (RAG).”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Compará las 3 tarjetas: Relacional SQL (Azul), No-Relacional NoSQL (Naranja) y Base Vectorial de IA (Violeta).</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 17: Taller Práctico: Tu Perfil en Clave IT & AI</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Impresionante todo el recorrido técnico que hicimos! Ahora bajemos todo este vocabulario a tierra firme: ¿cómo se traduce la experiencia de gestión tradicional al idioma que usan las empresas de IT? Vamos a la Slide 17.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“¡Impresionante todo el recorrido técnico que hicimos! Ahora bajemos todo este vocabulario a tierra firme: ¿cómo se traduce la experiencia de gestión tradicional al idioma que usan las empresas de IT? Vamos a la Slide 17.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-17" data-slide="17">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(17, this.checked)">
+              <span class="slide-num">SLIDE 17</span>
+            </label>
+            <h2 class="slide-title">Taller Práctico: Tu Perfil en Clave IT & AI</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Posicionamiento CV · Gestión & Agile · Sistemas & Cloud · IA & Calidad</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá esta tabla porque acá se ve cómo todo el vocabulario técnico que vimos hoy sirve para traducir experiencia de gestión tradicional al idioma que usan las empresas de tecnología, sea para el rol que elijas explorar. Fijate en la fila 1 (Gestión & Agile): cómo el coordinar equipos, entregas y clientes se traduce en clave tecnológica a liderar el delivery bajo marcos Agile (Scrum/Kanban), gestionando SLAs y priorizando un backlog en Jira. Mirá la fila 2 (Sistemas & Cloud): cómo el seguimiento en plataformas y resolución de reclamos se conecta con flujos integrados vía APIs REST, pipelines de CI/CD, validación en Staging (UAT) e infraestructura Cloud (AWS). Y en la fila 3 (IA & Calidad): cómo llevar el control de calidad tradicional hacia flujos de automatización asistida por LLMs y arquitecturas RAG.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Mirá esta tabla porque acá se ve cómo todo el vocabulario técnico que vimos hoy sirve para traducir experiencia de gestión tradicional al idioma que usan las empresas de tecnología, sea para el rol que elijas explorar. Fijate en la fila 1 (<strong style="color:#fff; font-weight:700;">Gestión & Agile</strong>): cómo el coordinar equipos, entregas y clientes se traduce en clave tecnológica a liderar el delivery bajo marcos Agile (Scrum/Kanban), gestionando SLAs y priorizando un backlog en Jira. Mirá la fila 2 (<strong style="color:#fff; font-weight:700;">Sistemas & Cloud</strong>): cómo el seguimiento en plataformas y resolución de reclamos se conecta con flujos integrados vía APIs REST, pipelines de CI/CD, validación en Staging (UAT) e infraestructura Cloud (AWS). Y en la fila 3 (<strong style="color:#fff; font-weight:700;">IA & Calidad</strong>): cómo llevar el control de calidad tradicional hacia flujos de automatización asistida por LLMs y arquitecturas RAG.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Leé en conjunto las 3 filas comparativas ('Antes: Enfoque Operativo / Tradicional' vs. 'Después: Enfoque IT, Agile & AI') como ejercicio general de traducción de perfil.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 18: Preguntas 'Rompe-Entrevistas' (Simulador Flip-Cards)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Y si en algún momento tenés una charla o entrevista en el mundo IT y quieren ver si entendés cómo funciona la dinámica de un equipo de software en la práctica, suelen hacer alguna de estas tres preguntas clásicas. Pasemos a la Slide 18 para verlas.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Y si en algún momento tenés una charla o entrevista en el mundo IT y quieren ver si entendés cómo funciona la dinámica de un equipo de software en la práctica, suelen hacer alguna de estas tres preguntas clásicas. Pasemos a la Slide 18 para verlas.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-18" data-slide="18">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(18, this.checked)">
+              <span class="slide-num">SLIDE 18</span>
+            </label>
+            <h2 class="slide-title">Preguntas 'Rompe-Entrevistas' (Simulador Flip-Cards)</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Feature Flags · Git & Pull Requests · Rollback & Incidentes</span>
+            <span class="time-tag">⏱️ 4 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Hagamos un juego rápido con estas tres tarjetas interactivas. Mirá la primera: '¿Cómo se controla el momento en que una funcionalidad llega al usuario si el código ya está en producción?'. Hacemos clic para girarla: tu respuesta ganadora es hablar de Feature Flags (interruptores que separan el Deploy técnico del Release comercial). Mirá la segunda: '¿Cómo evitás que varios desarrolladores trabajando en paralelo se pisen el código?'. La giramos: hablás de ramas aisladas (Feature Branches) y Pull Requests con revisión de pares antes de fusionar a la rama principal. Y la tercera: '¿Qué hacés si se sube algo a producción y falla?'. La giramos: primero restaurar el servicio coordinando un Rollback a la versión estable anterior, y después hacer una reunión de análisis (Post-Mortem) sin buscar culpables para mejorar los filtros en QA/Staging.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “Hagamos un juego rápido con estas tres tarjetas interactivas. Mirá la primera: <em style="color:#fde68a;">'¿Cómo se controla el momento en que una funcionalidad llega al usuario si el código ya está en producción?'</em>. Hacemos clic para girarla: tu respuesta ganadora es hablar de <strong style="color:#fff; font-weight:700;">Feature Flags</strong> (interruptores que separan el Deploy técnico del Release comercial). Mirá la segunda: <em style="color:#fde68a;">'¿Cómo evitás que varios desarrolladores trabajando en paralelo se pisen el código?'</em>. La giramos: hablás de <strong style="color:#fff; font-weight:700;">ramas aisladas (Feature Branches) y Pull Requests</strong> con revisión de pares antes de fusionar a la rama principal. Y la tercera: <em style="color:#fde68a;">'¿Qué hacés si se sube algo a producción y falla?'</em>. La giramos: primero restaurar el servicio coordinando un <strong style="color:#fff; font-weight:700;">Rollback</strong> a la versión estable anterior, y después hacer una reunión de análisis (Post-Mortem) sin buscar culpables para mejorar los filtros en QA/Staging.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Pedile a Anabela que elija una tarjeta, leé la pregunta del frente y hacé clic sobre la tarjeta para girarla en 3D y revelar la 'Respuesta Estrella'. Repetí con las 3 tarjetas.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🔗 Puente de Conexión → Slide 19: Cierre Sesión 1: Ruta hacia el Liderazgo en IA</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con estas tres respuestas ya hablás el mismo idioma que cualquier equipo de ingeniería de software. Pasemos a la última diapositiva, la Slide 19, para cerrar esta primera sesión y ver qué nos espera en la próxima.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“Con estas tres respuestas ya hablás el mismo idioma que cualquier equipo de ingeniería de software. Pasemos a la última diapositiva, la Slide 19, para cerrar esta primera sesión y ver qué nos espera en la próxima.”</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="slide-script-card" id="slide-19" data-slide="19">
+        <div class="card-header">
+          <div class="header-left">
+            <label class="check-wrap" title="Marcar slide como dictada">
+              <input type="checkbox" class="slide-check" onchange="toggleDone(19, this.checked)">
+              <span class="slide-num">SLIDE 19</span>
+            </label>
+            <h2 class="slide-title">Cierre Sesión 1: Ruta hacia el Liderazgo en IA</h2>
+          </div>
+          <div class="header-right">
+            <span class="badge-tag">Cierre S1 · Glosario S1 · Puente a Sesión 2 (LLMs & RAG)</span>
+            <span class="time-tag">⏱️ 2 Min</span>
+          </div>
+        </div>
+
+        <div class="script-section">
+          <div class="section-head">
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `¡Felicitaciones Anabela, completamos la Sesión 1! Hoy armaste toda la estructura mental de cómo trabaja un equipo de desarrollo moderno: el salto del Monolito a Microservicios y Cloud (AWS), Frontend, Backend, APIs, verbos y códigos HTTP, el pipeline de CI/CD, los roles en Startups y Corporaciones, Agile (Scrum, Kanban y Scrumban), Git, los ambientes y las bases de datos. En el portal tenés el Glosario Completo de la Sesión 1 y una actividad práctica cortita de 10 minutos para bajar todo esto a aplicaciones cotidianas.`)">📋 Copiar Guion</button>
+          </div>
+          <blockquote class="spoken-script">
+            “¡Felicitaciones Anabela, completamos la Sesión 1! Hoy armaste toda la estructura mental de cómo trabaja un equipo de desarrollo moderno: el salto del Monolito a Microservicios y Cloud (AWS), Frontend, Backend, APIs, verbos y códigos HTTP, el pipeline de CI/CD, los roles en Startups y Corporaciones, Agile (Scrum, Kanban y Scrumban), Git, los ambientes y las bases de datos. En el portal tenés el Glosario Completo de la Sesión 1 y una actividad práctica cortita de 10 minutos para bajar todo esto a aplicaciones cotidianas.”
+          </blockquote>
+        </div>
+
+        
+
+        <div class="interaction-box">
+          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
+          <p>Señalá el paso 1 completado en el roadmap y mostrá en la barra superior el botón '📖 Glosario S1' para que repase los términos durante la semana.</p>
+        </div>
+
+        <div class="bridge-connector">
+          <div class="bridge-card">
+            <div class="bridge-head">
+              <span class="bridge-badge">🏁 Cierre de Sesión 1 y Puente a la Siguiente Clase</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `🔗 Conexión con la Sesión 2: Ahora que ya sabés qué es una Red Neuronal en pocas palabras, cómo funcionan las APIs y qué es una Base de Datos Vectorial, en nuestra próxima sesión vamos a abrir en detalle ese paper de 2017 y el cerebro de los LLMs: Tokens, Ventanas de Contexto, Embeddings y cómo diseñar una arquitectura RAG.`)">📋 Copiar Puente</button>
+            </div>
+            <p class="bridge-text">“🔗 Conexión con la Sesión 2: Ahora que ya sabés qué es una Red Neuronal en pocas palabras, cómo funcionan las APIs y qué es una Base de Datos Vectorial, en nuestra próxima sesión vamos a abrir en detalle ese paper de 2017 y el cerebro de los LLMs: Tokens, Ventanas de Contexto, Embeddings y cómo diseñar una arquitectura RAG.”</p>
+          </div>
+        </div>
+      </article>
+    
+    </section>
+  </main>
+
+  <script>
+    const totalSlides = 19;
+
+    function updateProgress() {
+      const checks = document.querySelectorAll('.slide-check:checked').length;
+      document.getElementById('progressStat').textContent = checks + ' / ' + totalSlides + ' dictadas';
+    }
+
+    function toggleDone(num, checked) {
+      const card = document.getElementById('slide-' + num);
+      const chip = document.getElementById('chip-' + num);
+      if (checked) {
+        card.classList.add('card-done');
+        chip.classList.add('done-chip');
+      } else {
+        card.classList.remove('card-done');
+        chip.classList.remove('done-chip');
+      }
+      updateProgress();
+    }
+
+    function toggleBridgesMode(btn) {
+      document.body.classList.toggle('bridges-only');
+      const active = document.body.classList.contains('bridges-only');
+      btn.textContent = active ? '🎙️ Mostrar Guion Completo + Puentes' : '🔗 Ver Solo Puentes entre Slides';
+    }
+
+    function filterSlides() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.slide-script-card');
+      cards.forEach(c => {
+        const text = c.innerText.toLowerCase();
+        c.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+
+    function copyText(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const prev = btn.textContent;
+        btn.textContent = '✅ Copiado';
+        setTimeout(() => { btn.textContent = prev; }, 1600);
+      });
+    }
+  </script>
+</body>
+</html>

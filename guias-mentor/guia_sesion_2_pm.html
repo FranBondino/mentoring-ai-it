@@ -400,6 +400,52 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
 
+    .plain-terms-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(168, 85, 247, 0.07));
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .plain-terms-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .plain-terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .plain-term-item {
+      background: rgba(7, 11, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem 0.95rem;
+    }
+
+    .pt-term {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.28rem;
+    }
+
+    .pt-desc {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
     .interaction-box {
       background: rgba(16, 185, 129, 0.07);
       border: 1px solid rgba(16, 185, 129, 0.28);
@@ -461,6 +507,7 @@
     }
 
     body.bridges-only .script-section,
+    body.bridges-only .plain-terms-box,
     body.bridges-only .interaction-box {
       display: none;
     }
@@ -485,6 +532,7 @@
       <a href="guia_completa_mentoria.html" class="portal-btn">📚 Hub Maestro (63 Slides)</a>
       <a href="../sesiones/slides_sesion_2.html" target="_blank" class="open-slides-btn">🖥️ Abrir Slides Sesión 2 ↗</a>
       
+      <a href="../sesiones/actividad_practica_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S2 ↗</a><a href="../sesiones/mock_prd_tarea_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(168,85,247,0.5); color: #d8b4fe;">📝 Plantilla PRD Tarea ↗</a><a href="../sesiones/glosario_completo_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S2 ↗</a>
     </div>
     <nav class="nav-pills">
       <a href="guia_sesion_1_pm.html" class="nav-pill ">Sesión 1 (19 slides)</a>
@@ -498,7 +546,7 @@
     <section class="hero-box">
       <span class="hero-eyebrow">COPILOTO DE ORADOR · MENTORÍA ANABELA HOTIAN</span>
       <h1>Sesión 2: Overview de LLMs, Embeddings y Arquitectura RAG</h1>
-      <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Desmitificar el funcionamiento interno de los Grandes Modelos de Lenguaje (LLMs), aprovechando la afinidad lingüística de Anabela para dominar Tokenización BPE, Ventanas de Contexto, Embeddings Vectoriales, Chunking con Overlap y el diseño end-to-end de un sistema RAG corporativo.</p>
+      <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Mantener toda la terminología técnica real de la industria (LLMs, Transformers, BPE, Prompt Caching, Lost in the Middle, Embeddings, Cosine Similarity, Metadata Filtering, Chunking, Overlap, RAG, Enterprise SLA, Golden Dataset), pero explicada con analogías cotidianas y del mundo de la traducción/gestión para que Anabela la entienda con total claridad y naturalidad.</p>
 
       <div class="agenda-grid">
         
@@ -506,7 +554,7 @@
       <span class="agenda-time">00 - 15 min</span>
       <div>
         <strong>Dentro del Cerebro del LLM</strong> <span class="agenda-slides">(Slides 1 a 4)</span>
-        <p>Naturaleza probabilística (Next-Token Prediction), Tokenización BPE en vivo y el sesgo 'Lost in the Middle' en la Ventana de Contexto.</p>
+        <p>Cómo funciona realmente un LLM (autocompletado probabilístico), Temperatura, Tokenización BPE en vivo, Prompt Caching y por qué los modelos se olvidan de la mitad del texto ('Lost in the Middle').</p>
       </div>
     </div>
   
@@ -515,7 +563,7 @@
       <span class="agenda-time">15 - 30 min</span>
       <div>
         <strong>Geometría del Lenguaje & Datos</strong> <span class="agenda-slides">(Slides 5 a 7)</span>
-        <p>Embeddings (mapas vectoriales 3D), Bases de Datos Vectoriales con Metadata Filtering y fragmentación documental (Chunking + Overlap).</p>
+        <p>Cómo traducimos significado a coordenadas de GPS (Embeddings 1536d), Similitud por Coseno, Bases Vectoriales con filtros de etiquetas (Metadata Filtering) y corte inteligente de manuales (Chunking + Overlap).</p>
       </div>
     </div>
   
@@ -524,7 +572,7 @@
       <span class="agenda-time">30 - 45 min</span>
       <div>
         <strong>Arquitectura RAG & Taller PRD</strong> <span class="agenda-slides">(Slides 8 a 10)</span>
-        <p>Pipeline RAG Fase 1 (Ingestión Offline) y Fase 2 (Consulta Online en vivo), más taller práctico del Mock PRD.</p>
+        <p>El 'examen a libro abierto' en 2 etapas: Fase 1 (preparar la biblioteca en segundo plano) y Fase 2 (responder en vivo con citas), más armado del documento de requisitos (Mock PRD).</p>
       </div>
     </div>
   
@@ -533,7 +581,7 @@
       <span class="agenda-time">45 - 60 min</span>
       <div>
         <strong>Gobernanza, Calidad & Roleplay</strong> <span class="agenda-slides">(Slides 11 a 15)</span>
-        <p>Prevención de Data Leakage (Enterprise SLA), umbrales anti-alucinación, Golden Dataset (Evals) y defensa RAG vs. Fine-Tuning.</p>
+        <p>Cómo cuidar los datos privados (Enterprise SLA & Zero-Retention), la barrera del 0.75 para que el bot sepa decir 'no sé', el examen automático de 100 preguntas (Golden Dataset) y práctica de entrevista.</p>
       </div>
     </div>
   
@@ -586,31 +634,58 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `¡Bienvenida a la Sesión 2, Anabela! En nuestro primer encuentro vimos cómo se construye el software moderno con APIs, servidores, ambientes y bases de datos. Hoy nos vamos a meter en el corazón de la revolución actual: cómo nacieron y cómo funcionan por dentro los Grandes Modelos de Lenguaje (LLMs como GPT-4, Claude o Gemini) y cómo hacen las empresas para conectarlos con sus propios documentos, manuales y glosarios privados sin que el modelo invente respuestas.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `¡Bienvenida a la Sesión 2, Anabela! En nuestro primer encuentro armamos la base de cómo se construye el software: vimos qué es el Frontend, el Backend, las APIs, Git y las bases de datos. Hoy vamos a dar un paso hermoso, porque nos metemos de lleno en tu terreno natural —el lenguaje—, pero visto desde la ingeniería de Inteligencia Artificial.
 
- 1. Módulo 1 — Límites Físicos (Slides 2 a 4): Desmitificamos la 'magia' de la IA probando en vivo predicción de tokens, Temperatura, BPE, Prompt Caching y el sesgo Lost in the Middle*.
-* 2. Módulo 2 — Bloques de RAG (Slides 5 a 7): Exploramos cómo tu experiencia en lingüística y traducción se convierte en geometría mediante Embeddings de 1536 dimensiones, Similitud por Coseno, Metadata Filtering y Chunking con Overlap.
- 3. Módulo 3 — Taller Práctico (Slides 8 a 10): Recorremos las 2 fases de RAG (Ingestión Batch vs. Consulta en Tiempo Real) y especificamos el Mock PRD de un Enterprise Knowledge Bot*.
-* 4. Módulo 4 — Gobernanza & QA (Slides 11 a 15): Blindamos el producto con contratos Enterprise SLA (Zero-Retention), umbrales de confianza en 0.75, Golden Datasets en CI/CD y roleplay de entrevista ejecutiva.`)">📋 Copiar Guion</button>
+Hoy vas a escuchar muchos términos técnicos en inglés que se usan todos los días en las empresas de tecnología —como LLM, Tokens BPE, Embeddings, Similitud por Coseno o Arquitectura RAG—. Mi objetivo hoy es que te quedes con todos los nombres técnicos reales para que nadie te pueda hablar en difícil, pero bajando cada uno a tierra con ejemplos súper simples de la vida real y de tu mundo de traducción y gestión.
+
+Mirá las 4 tarjetas de abajo, que son nuestras 4 paradas de hoy:
+ 1. Límites Físicos (Slides 2 a 4): Vamos a abrir la 'caja negra' de ChatGPT o Claude. Vas a ver por qué no piensan como humanos, qué es un Token, cómo ahorrar más de la mitad del presupuesto con Prompt Caching y por qué a la IA le agarra 'amnesia' en la mitad de los textos largos (Lost in the Middle*).
+* 2. Bloques de RAG (Slides 5 a 7): Vamos a ver cómo la IA transforma el significado de una frase en coordenadas como si fuera un GPS (Embeddings), cómo guarda eso en una Base Vectorial con etiquetas (Metadata Filtering) y cómo cortamos manuales largos sin romper ideas a la mitad (Chunking & Overlap).
+* 3. Taller Práctico (Slides 8 a 10): Unimos todas las piezas para armar una Arquitectura RAG completa en 2 fases y la bajamos a un PRD (Documento de Requisitos de Producto) real.
+ 4. Gobernanza y Entrevistas (Slides 11 a 15): Cómo proteger los secretos de la empresa (Enterprise SLA), cómo obligar al bot a decir 'no sé'* antes de inventar (Umbral 0.75), cómo auditarlo con un examen automático (Golden Dataset) y cómo defender todo esto en una entrevista.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “¡Bienvenida a la Sesión 2, Anabela! En nuestro primer encuentro vimos cómo se construye el software moderno con APIs, servidores, ambientes y bases de datos. Hoy nos vamos a meter en el corazón de la revolución actual: cómo nacieron y cómo funcionan por dentro los Grandes Modelos de Lenguaje (LLMs como GPT-4, Claude o Gemini) y cómo hacen las empresas para conectarlos con sus propios documentos, manuales y glosarios privados sin que el modelo invente respuestas.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">1. Módulo 1 — Límites Físicos (Slides 2 a 4):</strong> Desmitificamos la 'magia' de la IA probando en vivo predicción de tokens, Temperatura, BPE, Prompt Caching y el sesgo </em>Lost in the Middle*.<br>* <strong style="color:#fff; font-weight:700;">2. Módulo 2 — Bloques de RAG (Slides 5 a 7):</strong> Exploramos cómo tu experiencia en lingüística y traducción se convierte en geometría mediante Embeddings de 1536 dimensiones, Similitud por Coseno, Metadata Filtering y Chunking con Overlap.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">3. Módulo 3 — Taller Práctico (Slides 8 a 10):</strong> Recorremos las 2 fases de RAG (Ingestión Batch vs. Consulta en Tiempo Real) y especificamos el Mock PRD de un </em>Enterprise Knowledge Bot*.<br>* <strong style="color:#fff; font-weight:700;">4. Módulo 4 — Gobernanza & QA (Slides 11 a 15):</strong> Blindamos el producto con contratos Enterprise SLA (Zero-Retention), umbrales de confianza en <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.75</code>, Golden Datasets en CI/CD y roleplay de entrevista ejecutiva.”
+            “¡Bienvenida a la Sesión 2, Anabela! En nuestro primer encuentro armamos la base de cómo se construye el software: vimos qué es el Frontend, el Backend, las APIs, Git y las bases de datos. Hoy vamos a dar un paso hermoso, porque nos metemos de lleno en tu terreno natural —el lenguaje—, pero visto desde la ingeniería de Inteligencia Artificial.<br><br>Hoy vas a escuchar muchos términos técnicos en inglés que se usan todos los días en las empresas de tecnología —como <strong style="color:#fff; font-weight:700;">LLM</strong>, <strong style="color:#fff; font-weight:700;">Tokens BPE</strong>, <strong style="color:#fff; font-weight:700;">Embeddings</strong>, <strong style="color:#fff; font-weight:700;">Similitud por Coseno</strong> o <strong style="color:#fff; font-weight:700;">Arquitectura RAG</strong>—. Mi objetivo hoy es que te quedes con <strong style="color:#fff; font-weight:700;">todos los nombres técnicos reales</strong> para que nadie te pueda hablar en difícil, pero bajando cada uno a tierra con ejemplos súper simples de la vida real y de tu mundo de traducción y gestión.<br><br>Mirá las 4 tarjetas de abajo, que son nuestras 4 paradas de hoy:<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">1. Límites Físicos (Slides 2 a 4):</strong> Vamos a abrir la 'caja negra' de ChatGPT o Claude. Vas a ver por qué no piensan como humanos, qué es un <strong style="color:#fff; font-weight:700;">Token</strong>, cómo ahorrar más de la mitad del presupuesto con <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> y por qué a la IA le agarra 'amnesia' en la mitad de los textos largos (</em>Lost in the Middle*).<br>* <strong style="color:#fff; font-weight:700;">2. Bloques de RAG (Slides 5 a 7):</strong> Vamos a ver cómo la IA transforma el significado de una frase en coordenadas como si fuera un GPS (<strong style="color:#fff; font-weight:700;">Embeddings</strong>), cómo guarda eso en una <strong style="color:#fff; font-weight:700;">Base Vectorial</strong> con etiquetas (<strong style="color:#fff; font-weight:700;">Metadata Filtering</strong>) y cómo cortamos manuales largos sin romper ideas a la mitad (<strong style="color:#fff; font-weight:700;">Chunking & Overlap</strong>).<br>* <strong style="color:#fff; font-weight:700;">3. Taller Práctico (Slides 8 a 10):</strong> Unimos todas las piezas para armar una <strong style="color:#fff; font-weight:700;">Arquitectura RAG</strong> completa en 2 fases y la bajamos a un <strong style="color:#fff; font-weight:700;">PRD (Documento de Requisitos de Producto)</strong> real.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">4. Gobernanza y Entrevistas (Slides 11 a 15):</strong> Cómo proteger los secretos de la empresa (<strong style="color:#fff; font-weight:700;">Enterprise SLA</strong>), cómo obligar al bot a decir </em>'no sé'* antes de inventar (<strong style="color:#fff; font-weight:700;">Umbral 0.75</strong>), cómo auditarlo con un examen automático (<strong style="color:#fff; font-weight:700;">Golden Dataset</strong>) y cómo defender todo esto en una entrevista.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 IA Generativa (GenAI)</span>
+                <p class="pt-desc">A diferencia de la IA clásica que solo clasificaba datos (ej. detectar spam), la IA Generativa crea contenido nuevo (texto, traducciones, código, resúmenes).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 LLM (Large Language Model / Gran Modelo de Lenguaje)</span>
+                <p class="pt-desc">Es el 'motor cerebral' detrás de ChatGPT, Claude o Gemini. Se llama 'Grande' porque fue entrenado leyendo casi todo internet para aprender cómo se conectan las palabras.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 RAG (Retrieval-Augmented Generation)</span>
+                <p class="pt-desc">En criollo: 'tomarle examen a la IA a libro abierto'. En vez de dejar que responda de memoria (donde puede inventar), primero buscamos el párrafo exacto en los manuales privados de nuestra empresa y se lo damos para que responda solo con esa evidencia.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Presentá la portada destacando cómo hoy conectamos los cimientos de software de la Sesión 1 con la Inteligencia Artificial Generativa. Mostrá que las 4 tarjetas Bento son clicables para saltar directo a cada módulo.</p>
+          <p>Presentá la portada conectando lo visto en la Sesión 1 con el mundo de la IA. Mostrale a Anabela que las 4 tarjetas de abajo son el mapa de ruta de hoy y que puede hacer clic en cualquiera para saltar a ese módulo.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 2: El Origen y Motor de los LLMs: 'Attention Is All You Need' (2017)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Para arrancar bien desde la raíz, veamos cuál fue el paper científico que disparó el advenimiento de todos los LLMs modernos y cómo funciona su motor probabilístico bajo el capó. Pasemos a la Slide 2.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Para empezar desde el kilómetro cero, veamos de dónde salieron estos modelos de lenguaje y cómo funciona realmente su cerebro por dentro. Pasemos a la Slide 2.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Para arrancar bien desde la raíz, veamos cuál fue el paper científico que disparó el advenimiento de todos los LLMs modernos y cómo funciona su motor probabilístico bajo el capó. Pasemos a la Slide 2.”</p>
+            <p class="bridge-text">“Para empezar desde el kilómetro cero, veamos de dónde salieron estos modelos de lenguaje y cómo funciona realmente su cerebro por dentro. Pasemos a la Slide 2.”</p>
           </div>
         </div>
       </article>
@@ -633,30 +708,66 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Para entender qué es un LLM de verdad, vayamos al momento exacto en que nació todo este auge: junio de 2017, cuando un equipo de investigadores de Google publica el paper 'Attention Is All You Need' (Vaswani et al.). Y mirá qué conexión directa con tu carrera: ese paper se escribió para resolver un cuello de botella de la traducción automática de idiomas.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Arranquemos derribando el mito más grande del mercado. Mirá la tarjeta roja de la izquierda versus la verde de la derecha: cuando uno habla con ChatGPT y ve que redacta tan bien, parece un 'cerebro mágico' que razona como un humano y que se sabe todo. La realidad técnica es otra: un LLM es una calculadora gigante de probabilidades que hace una sola cosa: Next-Token Prediction (Predicción del Siguiente Token).
 
-* El Mecanismo de Self-Attention (Auto-Atención): Antes de 2017, las redes leían palabra por palabra en fila india y al llegar al final de un párrafo largo ya se habían olvidado del principio. La arquitectura Transformer (la 'T' de GPT) mira toda la oración en paralelo y calcula matemáticamente cómo cada palabra modifica el sentido de las demás según el contexto.
-* Simulador en Vivo — Next-Token & Temperatura: Mirá el simulador React en el centro de la diapositiva. El LLM no 'piensa': calcula probabilidades sobre cuál es el siguiente token. Cuando hacemos clic en Temp = 0.0 (RAG / Precisión), el modelo elige siempre el token más probable (glosario_aprobado con 88%), ideal para bots corporativos. Pero si subimos a Temp = 0.9, aplanamos la curva y el modelo puede elegir un término inventado, disparando una alucinación factual.
-* Fine-Tuning (Estilo) vs. RAG (Conocimiento): Fijate en la tarjeta violeta inferior: el Fine-Tuning solo sirve para enseñar tono o formato (ej. responder en JSON), nunca para cargar datos que cambian cada semana. Para conectar el modelo con tus manuales y glosarios privados sin alucinar, usamos RAG.`)">📋 Copiar Guion</button>
+ ¿Qué significa esto en criollo?: Pensá en el texto predictivo de WhatsApp en tu celular: cuando escribís 'Buen', te sugiere 'día' (80%), 'fin de semana' (15%) o 'provecho'* (5%). Un LLM hace exactamente eso pero habiendo leído miles de millones de textos. ¿Y por qué ocurre entonces la famosa Alucinación? Porque si le preguntás una regla interna de tu empresa que no conoce, su instinto estadístico es seguir completando palabras que 'suenen coherentes'. Es como ese alumno que en un examen oral no estudió, pero tiene mucha labia y te chamuya con total seguridad.
+ Simulador en Vivo — Qué es la Temperatura: Mirá el simulador React acá en el medio. La oración dice: 'Para traducir Checkout en LATAM debemos consultar el...'*. El modelo calcula los candidatos posibles. Si nosotros como PMs configuramos Temperatura = 0.0 (hacé clic en el botón verde), apagamos la creatividad: el modelo está obligado a elegir siempre la opción con mayor puntaje estadístico (glosario_aprobado con 88%). En cambio, si subimos a Temperatura = 0.9 (hacé clic al lado), achicamos la diferencia entre las opciones y dejamos que tire los dados: ahí puede elegir invento_alucinado (14%). Regla de oro para vos como PM: en asistentes de soporte, legales o traducción técnica, en tu documento técnico pedís siempre Temperatura 0.0.
+* Las dos joyas de abajo (Origen y Regla de Arquitectura):
+  1. El Paper de 2017 ('Attention Is All You Need'): Mirá qué lindo dato para tu perfil de traductora: toda esta revolución nació en 2017 porque Google quería mejorar la traducción automática. Antes las máquinas leían palabra por palabra y se olvidaban del principio de la frase. Ahí inventaron el Transformer (la 'T' de GPT) y el Self-Attention (Auto-Atención), que lee toda la oración de un vistazo y entiende cómo cada palabra cambia el sentido de las demás según el contexto.
+  2. Fine-Tuning vs. RAG: Si un cliente te dice 'Re-entrenemos el modelo (Fine-Tuning) con nuestros manuales de cada semana', vos le explicás que no: el Fine-Tuning sirve para enseñarle un tono de voz o formato, pero es carísimo y congela la memoria. Para que lea manuales y glosarios que cambian todo el tiempo sin inventar, se usa RAG, que es conectarlo a una biblioteca viva.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Para entender qué es un LLM de verdad, vayamos al momento exacto en que nació todo este auge: junio de 2017, cuando un equipo de investigadores de Google publica el paper <strong style="color:#fff; font-weight:700;">'Attention Is All You Need'</strong> (Vaswani et al.). Y mirá qué conexión directa con tu carrera: ese paper se escribió para resolver un cuello de botella de la <strong style="color:#fff; font-weight:700;">traducción automática de idiomas</strong>.<br><br>* <strong style="color:#fff; font-weight:700;">El Mecanismo de Self-Attention (Auto-Atención):</strong> Antes de 2017, las redes leían palabra por palabra en fila india y al llegar al final de un párrafo largo ya se habían olvidado del principio. La arquitectura <strong style="color:#fff; font-weight:700;">Transformer</strong> (la <strong style="color:#fff; font-weight:700;">'T'</strong> de <strong style="color:#fff; font-weight:700;">GPT</strong>) mira toda la oración en paralelo y calcula matemáticamente cómo cada palabra modifica el sentido de las demás según el contexto.<br>* <strong style="color:#fff; font-weight:700;">Simulador en Vivo — Next-Token & Temperatura:</strong> Mirá el simulador React en el centro de la diapositiva. El LLM no 'piensa': calcula probabilidades sobre cuál es el siguiente token. Cuando hacemos clic en <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Temp = 0.0 (RAG / Precisión)</code></strong>, el modelo elige siempre el token más probable (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">glosario_aprobado</code> con 88%), ideal para bots corporativos. Pero si subimos a <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Temp = 0.9</code></strong>, aplanamos la curva y el modelo puede elegir un término inventado, disparando una <strong style="color:#fff; font-weight:700;">alucinación factual</strong>.<br>* <strong style="color:#fff; font-weight:700;">Fine-Tuning (Estilo) vs. RAG (Conocimiento):</strong> Fijate en la tarjeta violeta inferior: el Fine-Tuning solo sirve para enseñar tono o formato (ej. responder en JSON), nunca para cargar datos que cambian cada semana. Para conectar el modelo con tus manuales y glosarios privados sin alucinar, usamos <strong style="color:#fff; font-weight:700;">RAG</strong>.”
+            “Arranquemos derribando el mito más grande del mercado. Mirá la tarjeta roja de la izquierda versus la verde de la derecha: cuando uno habla con ChatGPT y ve que redacta tan bien, parece un 'cerebro mágico' que razona como un humano y que se sabe todo. <strong style="color:#fff; font-weight:700;">La realidad técnica es otra</strong>: un <strong style="color:#fff; font-weight:700;">LLM</strong> es una calculadora gigante de probabilidades que hace una sola cosa: <strong style="color:#fff; font-weight:700;">Next-Token Prediction (Predicción del Siguiente Token)</strong>.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">¿Qué significa esto en criollo?:</strong> Pensá en el texto predictivo de WhatsApp en tu celular: cuando escribís </em>'Buen'<em style="color:#fde68a;">, te sugiere </em>'día'<em style="color:#fde68a;"> (80%), </em>'fin de semana'<em style="color:#fde68a;"> (15%) o </em>'provecho'* (5%). Un LLM hace exactamente eso pero habiendo leído miles de millones de textos. ¿Y por qué ocurre entonces la famosa <strong style="color:#fff; font-weight:700;">Alucinación</strong>? Porque si le preguntás una regla interna de tu empresa que no conoce, su instinto estadístico es seguir completando palabras que 'suenen coherentes'. Es como ese alumno que en un examen oral no estudió, pero tiene mucha labia y te chamuya con total seguridad.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Simulador en Vivo — Qué es la Temperatura:</strong> Mirá el simulador React acá en el medio. La oración dice: </em>'Para traducir Checkout en LATAM debemos consultar el...'*. El modelo calcula los candidatos posibles. Si nosotros como PMs configuramos <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Temperatura = 0.0</code></strong> (hacé clic en el botón verde), apagamos la creatividad: el modelo está obligado a elegir siempre la opción con mayor puntaje estadístico (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">glosario_aprobado</code> con 88%). En cambio, si subimos a <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Temperatura = 0.9</code></strong> (hacé clic al lado), achicamos la diferencia entre las opciones y dejamos que tire los dados: ahí puede elegir <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">invento_alucinado</code> (14%). <strong style="color:#fff; font-weight:700;">Regla de oro para vos como PM:</strong> en asistentes de soporte, legales o traducción técnica, en tu documento técnico pedís siempre <strong style="color:#fff; font-weight:700;">Temperatura 0.0</strong>.<br>* <strong style="color:#fff; font-weight:700;">Las dos joyas de abajo (Origen y Regla de Arquitectura):</strong><br>  1. <strong style="color:#fff; font-weight:700;">El Paper de 2017 (<em style="color:#fde68a;">'Attention Is All You Need'</em>):</strong> Mirá qué lindo dato para tu perfil de traductora: toda esta revolución nació en 2017 porque Google quería mejorar la <strong style="color:#fff; font-weight:700;">traducción automática</strong>. Antes las máquinas leían palabra por palabra y se olvidaban del principio de la frase. Ahí inventaron el <strong style="color:#fff; font-weight:700;">Transformer</strong> (la <strong style="color:#fff; font-weight:700;">'T'</strong> de <strong style="color:#fff; font-weight:700;">GPT</strong>) y el <strong style="color:#fff; font-weight:700;">Self-Attention (Auto-Atención)</strong>, que lee toda la oración de un vistazo y entiende cómo cada palabra cambia el sentido de las demás según el contexto.<br>  2. <strong style="color:#fff; font-weight:700;">Fine-Tuning vs. RAG:</strong> Si un cliente te dice <em style="color:#fde68a;">'Re-entrenemos el modelo (Fine-Tuning) con nuestros manuales de cada semana'</em>, vos le explicás que no: el <strong style="color:#fff; font-weight:700;">Fine-Tuning</strong> sirve para enseñarle un <em style="color:#fde68a;">tono de voz o formato</em>, pero es carísimo y congela la memoria. Para que lea manuales y glosarios que cambian todo el tiempo sin inventar, se usa <strong style="color:#fff; font-weight:700;">RAG</strong>, que es conectarlo a una biblioteca viva.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Next-Token Prediction (Predicción del Siguiente Token)</span>
+                <p class="pt-desc">Es el autocompletado predictivo del teclado de tu celular pero hiper-vitaminado. El modelo no 'sabe' ni 'razona': solo calcula matemáticamente qué palabra o sílaba tiene más probabilidad de seguir a la anterior.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Alucinación Factual (Hallucination)</span>
+                <p class="pt-desc">Cuando la IA no tiene un dato privado pero, con tal de completar la oración de forma elocuente y sonar segura, te inventa un dato falso muy bien redactado.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Temperatura (0.0 vs 0.9)</span>
+                <p class="pt-desc">Es la 'perilla de creatividad vs. rigor'. En 0.0 la IA elige siempre la palabra #1 más segura (cero inventos, ideal para empresas). En 0.9 la dejamos arriesgar con palabras menos probables (sirve para creatividad, pero alucina en datos técnicos).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Transformer & Self-Attention (Auto-Atención)</span>
+                <p class="pt-desc">Nacieron en Google en 2017 para traducir idiomas. En vez de leer palabra por palabra olvidándose del principio, saca una 'foto panorámica' de toda la oración y entiende que la palabra 'banco' cambia de significado si al lado dice 'plaza' o 'hipoteca'.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Fine-Tuning vs. RAG</span>
+                <p class="pt-desc">Fine-Tuning es mandarlo a un 'curso de modales y estilo' (aprende a hablar formal o en código JSON, pero no sirve para datos que cambian cada semana). RAG es darle acceso en vivo a los manuales actualizados de la empresa.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Contrastá primero las tarjetas superiores (Mito vs. Realidad). Luego interactuá en vivo con el Simulador React de Next-Token alternando entre 'Temp = 0.0 (RAG / Precisión)' y 'Temp = 0.9 (Creativa / Riesgo)' y cerrá con las dos tarjetas fundacionales inferiores.</p>
+          <p>Compará primero las tarjetas superiores (El Mito Roja vs. La Realidad Verde). Luego jugá en vivo con el Simulador React del medio haciendo clic en 'Temp = 0.0 (RAG / Precisión)' y 'Temp = 0.9 (Creativa / Riesgo)' para que vea cómo cambian las barritas de probabilidad. Cerrá con las dos tarjetas de abajo.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 3: Tokens: La Economía y Lingüística de la IA</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Recién vimos en el simulador que el Transformer no predice palabras enteras, sino 'tokens', y que así es como nos facturan las APIs. Pasemos a la Slide 3 para experimentar en vivo con el Tokenizador BPE y la calculadora FinOps.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Recién viste que en el simulador hablamos de 'Tokens' en vez de palabras, y que así es como miden el texto las empresas de IA. Pasemos a la Slide 3 para ver en vivo cómo se corta una oración en Tokens y cómo se calcula el presupuesto.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Recién vimos en el simulador que el Transformer no predice palabras enteras, sino 'tokens', y que así es como nos facturan las APIs. Pasemos a la Slide 3 para experimentar en vivo con el Tokenizador BPE y la calculadora FinOps.”</p>
+            <p class="bridge-text">“Recién viste que en el simulador hablamos de 'Tokens' en vez de palabras, y que así es como miden el texto las empresas de IA. Pasemos a la Slide 3 para ver en vivo cómo se corta una oración en Tokens y cómo se calcula el presupuesto.”</p>
           </div>
         </div>
       </article>
@@ -679,29 +790,61 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Mirá el simulador izquierdo de Tokenización BPE (Byte Pair Encoding): nuestra frase de 9 palabras ('La localización automática con IA optimiza glosarios técnicos globales.') se divide en 15 tokens de colores (La,  locali, zación,  auto, mática...). En vez de memorizar un diccionario infinito, el modelo separa raíces conceptuales (locali) de sufijos morfológicos (zación).
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Cuando contratás la luz en tu casa te cobran por Kilowatt; cuando una empresa contrata una API de Inteligencia Artificial, le cobran por millón de Tokens. Pero, ¿qué es exactamente un Token y por qué no cobran por palabra?
 
-* Regla de Conversión y Asimetría de Costos: En promedio, 1.000 tokens equivalen a ~750 palabras en inglés (y ~650 en español por tildes y morfología). Además, las APIs cobran de forma asimétrica: generar tokens de salida (Output) cuesta de 3x a 5x más caro que leer tokens de entrada (Input).
-* Calculadora FinOps de Prompt Caching: Mirá el simulador de la derecha. Si tu chatbot recibe 5.000 consultas por día y en cada una enviás un System Prompt fijo de 1.500 tokens con las reglas de estilo, pagarías \$225 USD/mes. Al activar Prompt Caching, el proveedor guarda ese prefijo estático en memoria caché, ahorrando entre un 50% y 75% de la factura y bajando la latencia al primer token de 1.150 ms a 380 ms.`)">📋 Copiar Guion</button>
+ Simulador BPE en Vivo (Tarjeta Izquierda): Mirá la frase en español: 'La localización automática con IA optimiza glosarios técnicos globales'*. Son 9 palabras, pero cuando activamos el tokenizador BPE (Byte Pair Encoding), se parte en 15 bloquecitos de colores: La,  locali, zación,  auto, mática... Para vos que venís de traducción, esto te va a resultar súper familiar: es morfología pura. La máquina no guarda todas las palabras conjugadas del mundo; guarda raíces frecuentes (locali, opti, glosa) y terminaciones (zación, miza, rios).
+* Dos detalles económicos clave para una PM:
+  1. El español gasta un poquito más de tokens que el inglés: Por los acentos, los plurales más largos y las conjugaciones, 1.000 tokens rinden unas 750 palabras en inglés, pero unas 650 palabras en español.
+  2. Asimetría Input vs. Output: Las APIs te cobran distinto lo que entra (Input) de lo que sale (Output). Que el modelo lea 10 páginas tuyas es barato; que el modelo redacte 10 páginas nuevas cuesta de 3 a 5 veces más caro. Por eso siempre le pedimos respuestas concisas.
+ Calculadora FinOps y Prompt Caching (Tarjeta Derecha): Ahora mirá cómo le ahorrás miles de dólares a tu empresa con una sola decisión. Supongamos que en tu chatbot corporativo tenés 5.000 consultas por día, y en cada consulta le mandás al principio un manual de instrucciones fijo (el System Prompt*) de 1.500 tokens. Si apagás el botón de Prompt Caching en el simulador, pagás esos 1.500 tokens una y otra vez (\$225 USD/mes) y el usuario espera más de 1 segundo (1150 ms) para ver la primera letra (TTFT). Cuando activás Prompt Caching, obligás a los programadores a poner todo lo fijo al principio del prompt: el servidor lo deja 'congelado en memoria rápida', la factura baja más de la mitad (\$101 USD/mes) y la respuesta arranca en apenas 380 ms.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Mirá el simulador izquierdo de <strong style="color:#fff; font-weight:700;">Tokenización BPE (Byte Pair Encoding)</strong>: nuestra frase de 9 palabras (<em style="color:#fde68a;">'La localización automática con IA optimiza glosarios técnicos globales.'</em>) se divide en <strong style="color:#fff; font-weight:700;">15 tokens de colores</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">La</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;"> locali</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">zación</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;"> auto</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">mática</code>...). En vez de memorizar un diccionario infinito, el modelo separa raíces conceptuales (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">locali</code>) de sufijos morfológicos (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">zación</code>).<br><br>* <strong style="color:#fff; font-weight:700;">Regla de Conversión y Asimetría de Costos:</strong> En promedio, <strong style="color:#fff; font-weight:700;">1.000 tokens equivalen a ~750 palabras en inglés</strong> (y ~650 en español por tildes y morfología). Además, las APIs cobran de forma asimétrica: generar tokens de salida (<strong style="color:#fff; font-weight:700;">Output</strong>) cuesta de <strong style="color:#fff; font-weight:700;">3x a 5x más caro</strong> que leer tokens de entrada (<strong style="color:#fff; font-weight:700;">Input</strong>).<br>* <strong style="color:#fff; font-weight:700;">Calculadora FinOps de Prompt Caching:</strong> Mirá el simulador de la derecha. Si tu chatbot recibe 5.000 consultas por día y en cada una enviás un System Prompt fijo de 1.500 tokens con las reglas de estilo, pagarías $225 USD/mes. Al activar <strong style="color:#fff; font-weight:700;">Prompt Caching</strong>, el proveedor guarda ese prefijo estático en memoria caché, <strong style="color:#fff; font-weight:700;">ahorrando entre un 50% y 75% de la factura</strong> y bajando la latencia al primer token de 1.150 ms a 380 ms.”
+            “Cuando contratás la luz en tu casa te cobran por Kilowatt; cuando una empresa contrata una API de Inteligencia Artificial, <strong style="color:#fff; font-weight:700;">le cobran por millón de Tokens</strong>. Pero, ¿qué es exactamente un Token y por qué no cobran por palabra?<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Simulador BPE en Vivo (Tarjeta Izquierda):</strong> Mirá la frase en español: </em>'La localización automática con IA optimiza glosarios técnicos globales'*. Son <strong style="color:#fff; font-weight:700;">9 palabras</strong>, pero cuando activamos el tokenizador <strong style="color:#fff; font-weight:700;">BPE (Byte Pair Encoding)</strong>, se parte en <strong style="color:#fff; font-weight:700;">15 bloquecitos de colores</strong>: <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">La</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;"> locali</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">zación</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;"> auto</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">mática</code>... Para vos que venís de traducción, esto te va a resultar súper familiar: es <strong style="color:#fff; font-weight:700;">morfología pura</strong>. La máquina no guarda todas las palabras conjugadas del mundo; guarda raíces frecuentes (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">locali</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">opti</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">glosa</code>) y terminaciones (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">zación</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">miza</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">rios</code>).<br>* <strong style="color:#fff; font-weight:700;">Dos detalles económicos clave para una PM:</strong><br>  1. <strong style="color:#fff; font-weight:700;">El español gasta un poquito más de tokens que el inglés:</strong> Por los acentos, los plurales más largos y las conjugaciones, 1.000 tokens rinden unas <strong style="color:#fff; font-weight:700;">750 palabras en inglés</strong>, pero unas <strong style="color:#fff; font-weight:700;">650 palabras en español</strong>.<br>  2. <strong style="color:#fff; font-weight:700;">Asimetría Input vs. Output:</strong> Las APIs te cobran distinto lo que entra (<strong style="color:#fff; font-weight:700;">Input</strong>) de lo que sale (<strong style="color:#fff; font-weight:700;">Output</strong>). Que el modelo lea 10 páginas tuyas es barato; que el modelo redacte 10 páginas nuevas cuesta <strong style="color:#fff; font-weight:700;">de 3 a 5 veces más caro</strong>. Por eso siempre le pedimos respuestas concisas.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Calculadora FinOps y Prompt Caching (Tarjeta Derecha):</strong> Ahora mirá cómo le ahorrás miles de dólares a tu empresa con una sola decisión. Supongamos que en tu chatbot corporativo tenés 5.000 consultas por día, y en cada consulta le mandás al principio un manual de instrucciones fijo (el </em>System Prompt*) de 1.500 tokens. Si apagás el botón de <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> en el simulador, pagás esos 1.500 tokens una y otra vez ($225 USD/mes) y el usuario espera más de 1 segundo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1150 ms</code>) para ver la primera letra (<strong style="color:#fff; font-weight:700;">TTFT</strong>). Cuando activás <strong style="color:#fff; font-weight:700;">Prompt Caching</strong>, obligás a los programadores a poner todo lo fijo al principio del prompt: el servidor lo deja 'congelado en memoria rápida', <strong style="color:#fff; font-weight:700;">la factura baja más de la mitad ($101 USD/mes)</strong> y la respuesta arranca en apenas <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">380 ms</code>.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Token</span>
+                <p class="pt-desc">Es la unidad mínima que lee y cobra la IA. No es ni una letra ni una palabra entera: es un 'ladrillito o sílaba' de unas 3 o 4 letras. Regla práctica: 1.000 tokens son unas 750 palabras en inglés (o ~650 en español).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 BPE (Byte Pair Encoding)</span>
+                <p class="pt-desc">Es el método que usa la IA para partir palabras en tokens: separa raíces comunes ('locali-') de sufijos ('-zación'). Así con solo ~100.000 ladrillitos puede armar cualquier palabra de cualquier idioma.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Asimetría Input vs. Output</span>
+                <p class="pt-desc">Leer lo que vos le mandás (Input) es barato; pero generar la respuesta palabra por palabra (Output) le exige mucho más cálculo al servidor y cuesta entre 3 y 5 veces más caro.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Prompt Caching & TTFT (Time To First Token)</span>
+                <p class="pt-desc">Prompt Caching es guardar en la 'memoria rápida' del servidor las instrucciones fijas que se repiten en cada consulta para que te cobren entre 50% y 75% menos. TTFT es cuántos milisegundos tarda en aparecer la primera palabra de la respuesta en pantalla.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En la tarjeta izquierda, alterná entre las 3 frases del Tokenizador React ('Frase 1: Localización', 'Frase 2: Regla RAG', 'Frase 3: Output JSON') y el botón 'Ver Texto Crudo / Tokenizar BPE'. En la tarjeta derecha, mové el slider de consultas diarias y activá/desactivá 'Prompt Caching'. Podés ampliar la imagen BPE con un clic.</p>
+          <p>En la tarjeta izquierda, hacé clic en las 3 frases de ejemplo ('Frase 1: Localización', 'Frase 2: Regla RAG', 'Frase 3: Output JSON') y en el botón 'Ver Texto Crudo / Tokenizar BPE'. En la tarjeta derecha, mové el deslizador de consultas por día y prendé/apagá el botón de 'Prompt Caching'.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 4: Ventanas de Contexto & El Sesgo 'Lost in the Middle'</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Si los tokens son las unidades que entran y salen del modelo, la siguiente pregunta crítica de arquitectura es: ¿cuántos tokens entran en una sola llamada y por qué el modelo pierde atención en el medio? Vamos a la Slide 4.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya sabemos qué son los tokens y cómo se cobran. Ahora bien: ¿cuántos tokens le podemos mandar de golpe a la IA en una sola pregunta, y qué pasa si le mandamos un libro entero? Vamos a la Slide 4.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Si los tokens son las unidades que entran y salen del modelo, la siguiente pregunta crítica de arquitectura es: ¿cuántos tokens entran en una sola llamada y por qué el modelo pierde atención en el medio? Vamos a la Slide 4.”</p>
+            <p class="bridge-text">“Ya sabemos qué son los tokens y cómo se cobran. Ahora bien: ¿cuántos tokens le podemos mandar de golpe a la IA en una sola pregunta, y qué pasa si le mandamos un libro entero? Vamos a la Slide 4.”</p>
           </div>
         </div>
       </article>
@@ -724,29 +867,56 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `La Ventana de Contexto es la memoria RAM de corto plazo del modelo en cada llamada a la API. Como hoy existen ventanas de 128k a 1 millón de tokens, un error típico de principiante es decir: 'No hagamos RAG, metamos los 50 manuales enteros adentro del prompt en cada pregunta'.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Acá aparece una duda súper común en los equipos de producto. Antes, los primeros modelos de IA tenían una Ventana de Contexto (su memoria de corto plazo en una charla) muy chiquita, de unas 3.000 palabras. Hoy existen modelos donde caben 128.000 o hasta 1 millón de tokens (¡varios libros enteros!). Entonces alguien del equipo te puede decir: 'Che, si ahora caben 10 manuales enteros en el prompt, ¿para qué vamos a armar una arquitectura RAG? ¡Peguemos los 10 manuales enteros en cada pregunta y listo!'.
 
- El Fenómeno 'Lost in the Middle' (Curva en U): Probemos el simulador de la derecha. Cuando inyectás una regla crítica al Inicio del Prompt (Posición 8%) o al Final (Posición 94%), el modelo la recuerda con un 95% a 99% de precisión (sesgos de Primacy y Recency*). Pero si el dato cae enterrado en el Centro Geométrico (Posición 50%) de un prompt masivo, la retención se desploma al ~38%.
-* Decisión de Producto: Como PM, exigís usar RAG para inyectar únicamente los 3 a 5 fragmentos más relevantes (Top-K) y ordenarlos estratégicamente en los extremos del prompt.`)">📋 Copiar Guion</button>
+Mirá por qué como PM les vas a decir que eso es una trampa peligrosa, no solo porque pagarías millones de tokens en cada pregunta, sino por un problema neurológico de los modelos llamado Lost in the Middle (Perdido en el Medio):
+
+* La Curva en 'U' de Atención (Simulador Derecho): A los LLMs les pasa exactamente lo mismo que a una persona cuando va al supermercado sin anotador y le dictás una lista de 40 productos. ¿Cuáles se acuerda seguro? Los primeros 3 que le dijiste (Primacy Bias / Sesgo de Primacía, ~99% de retención) y los últimos 3 que escuchó antes de entrar (Recency Bias / Sesgo de Recencia, ~96%). ¿Y qué pasó con los productos 18, 19 y 20 del medio? Se los olvidó por completo.
+* Probémoslo en el Simulador: Hacé clic en el botón rojo del Centro Geométrico (Posición 50%). Si la regla que prohíbe un reembolso quedó enterrada en la página 25 de un prompt de 50 páginas, la atención del modelo cae al 38% y te responde cualquier cosa.
+* Tu conclusión ejecutiva: Como se ve en la analogía de la izquierda, que en tu escritorio físico entren 50 libros apilados no significa que tengas que leer los 50 para responder una duda. Con RAG, buscamos primero solo los 3 párrafos exactos y se los ponemos bien al principio y al final del prompt, donde su atención es casi del 100%.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “La <strong style="color:#fff; font-weight:700;">Ventana de Contexto</strong> es la memoria RAM de corto plazo del modelo en cada llamada a la API. Como hoy existen ventanas de 128k a 1 millón de tokens, un error típico de principiante es decir: <em style="color:#fde68a;">'No hagamos RAG, metamos los 50 manuales enteros adentro del prompt en cada pregunta'</em>.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">El Fenómeno 'Lost in the Middle' (Curva en U):</strong> Probemos el simulador de la derecha. Cuando inyectás una regla crítica al <strong style="color:#fff; font-weight:700;">Inicio del Prompt (Posición 8%)</strong> o al <strong style="color:#fff; font-weight:700;">Final (Posición 94%)</strong>, el modelo la recuerda con un <strong style="color:#fff; font-weight:700;">95% a 99% de precisión</strong> (sesgos de </em>Primacy<em style="color:#fde68a;"> y </em>Recency*). Pero si el dato cae enterrado en el <strong style="color:#fff; font-weight:700;">Centro Geométrico (Posición 50%)</strong> de un prompt masivo, la retención se desploma al <strong style="color:#fff; font-weight:700;">~38%</strong>.<br>* <strong style="color:#fff; font-weight:700;">Decisión de Producto:</strong> Como PM, exigís usar RAG para inyectar únicamente los <strong style="color:#fff; font-weight:700;">3 a 5 fragmentos más relevantes</strong> (Top-K) y ordenarlos estratégicamente en los extremos del prompt.”
+            “Acá aparece una duda súper común en los equipos de producto. Antes, los primeros modelos de IA tenían una <strong style="color:#fff; font-weight:700;">Ventana de Contexto</strong> (su memoria de corto plazo en una charla) muy chiquita, de unas 3.000 palabras. Hoy existen modelos donde caben <strong style="color:#fff; font-weight:700;">128.000 o hasta 1 millón de tokens</strong> (¡varios libros enteros!). Entonces alguien del equipo te puede decir: <em style="color:#fde68a;">'Che, si ahora caben 10 manuales enteros en el prompt, ¿para qué vamos a armar una arquitectura RAG? ¡Peguemos los 10 manuales enteros en cada pregunta y listo!'</em>.<br><br>Mirá por qué como PM les vas a decir que <strong style="color:#fff; font-weight:700;">eso es una trampa peligrosa</strong>, no solo porque pagarías millones de tokens en cada pregunta, sino por un problema neurológico de los modelos llamado <strong style="color:#fff; font-weight:700;">Lost in the Middle (Perdido en el Medio)</strong>:<br><br>* <strong style="color:#fff; font-weight:700;">La Curva en 'U' de Atención (Simulador Derecho):</strong> A los LLMs les pasa exactamente lo mismo que a una persona cuando va al supermercado sin anotador y le dictás una lista de 40 productos. ¿Cuáles se acuerda seguro? Los primeros 3 que le dijiste (<strong style="color:#fff; font-weight:700;">Primacy Bias / Sesgo de Primacía</strong>, ~99% de retención) y los últimos 3 que escuchó antes de entrar (<strong style="color:#fff; font-weight:700;">Recency Bias / Sesgo de Recencia</strong>, ~96%). ¿Y qué pasó con los productos 18, 19 y 20 del medio? <strong style="color:#fff; font-weight:700;">Se los olvidó por completo</strong>.<br>* <strong style="color:#fff; font-weight:700;">Probémoslo en el Simulador:</strong> Hacé clic en el botón rojo del <strong style="color:#fff; font-weight:700;">Centro Geométrico (Posición 50%)</strong>. Si la regla que prohíbe un reembolso quedó enterrada en la página 25 de un prompt de 50 páginas, la atención del modelo cae al <strong style="color:#fff; font-weight:700;">38%</strong> y te responde cualquier cosa.<br>* <strong style="color:#fff; font-weight:700;">Tu conclusión ejecutiva:</strong> Como se ve en la analogía de la izquierda, que en tu escritorio físico entren 50 libros apilados no significa que tengas que leer los 50 para responder una duda. Con <strong style="color:#fff; font-weight:700;">RAG</strong>, buscamos primero solo los <strong style="color:#fff; font-weight:700;">3 párrafos exactos</strong> y se los ponemos bien al principio y al final del prompt, donde su atención es casi del 100%.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Ventana de Contexto (Context Window)</span>
+                <p class="pt-desc">Es el tamaño del 'escritorio o memoria de corto plazo' que tiene el modelo en una consulta. Todo lo que le mandás más lo que te responde tiene que caber adentro de esa ventana.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Lost in the Middle (Perdido en el Medio)</span>
+                <p class="pt-desc">Estudio de Stanford que demostró que cuando le metés muchísimo texto de golpe a un LLM, presta mucha atención al principio y al final, pero se olvida o ignora hasta el 60% de los datos que quedaron en la mitad.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Primacy Bias & Recency Bias</span>
+                <p class="pt-desc">Son los nombres psicológicos y estadísticos de ese efecto: Primacy Bias es recordar perfecto lo primero que leíste (~99%), y Recency Bias es recordar perfecto lo último que leíste (~96%).</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador React de la derecha, hacé clic en los 3 botones ('Inicio del Prompt 8%', 'Centro Geométrico 50%', 'Final del Prompt 94%') o arrastrá el slider para ver cómo cae la atención del 99% al 38% en la zona media. Ampliá la imagen de la curva U si querés mostrar el paper de Stanford.</p>
+          <p>En el simulador React de la derecha, hacé clic en los 3 botones ('Inicio del Prompt 8%', 'Centro Geométrico 50%', 'Final del Prompt 94%') o mové la barrita para que vea cómo el indicador pasa de verde (95%-99% de atención) a rojo en el medio (38% de atención).</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 5: Embeddings: Traduciendo Significado a Coordenadas</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: para traer solo los 3 fragmentos exactos entre miles de páginas, necesitamos un buscador que entienda el significado conceptual y no solo palabras idénticas. Pasemos a la Slide 5: Embeddings.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora la pregunta del millón es: ¿cómo hace el sistema para encontrar en milisegundos esos 3 párrafos exactos adentro de 50 manuales, incluso cuando el usuario usa palabras distintas a las del manual? Pasemos a la Slide 5: Embeddings.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ahora bien: para traer solo los 3 fragmentos exactos entre miles de páginas, necesitamos un buscador que entienda el significado conceptual y no solo palabras idénticas. Pasemos a la Slide 5: Embeddings.”</p>
+            <p class="bridge-text">“Ahora la pregunta del millón es: ¿cómo hace el sistema para encontrar en milisegundos esos 3 párrafos exactos adentro de 50 manuales, incluso cuando el usuario usa palabras distintas a las del manual? Pasemos a la Slide 5: Embeddings.”</p>
           </div>
         </div>
       </article>
@@ -769,29 +939,59 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Un buscador tradicional por palabras clave (Ctrl + F o SQL LIKE) es ciego al significado: si el usuario busca 'reembolso por contracargo' y el manual dice 'devolución por disputa de tarjeta', da cero resultados. La IA lo resuelve mediante Embeddings.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Esta diapositiva es el corazón de cómo busca información la Inteligencia Artificial. Pensá qué pasa cuando usás el buscador clásico (Ctrl + F) en un PDF o en una base de datos vieja: busca letras idénticas. Si un usuario pregunta en el chat: '¿Cómo valido la terminología antes de salir a otros países?', y tu manual dice: 'Protocolo de revisión de glosarios para localización global', ¡no comparten ni una sola palabra clave! Un buscador tradicional te da cero resultados.
 
-* Geometría del Lenguaje (1536 Dimensiones): Un modelo de Embeddings toma cualquier texto y lo traduce en una lista de 1536 coordenadas numéricas que capturan su intención semántica.
- Similitud por Coseno en Vivo: Hagamos clic en los puntos del mapa. Mirá cómo 'Glosario Técnico' (0.96), 'Localización Software' (0.92) y 'Memoria de Traducción' (0.89) viven en el mismo vecindario geométrico. En cambio, los nodos verdes de DevOps ('Pipeline CI/CD') quedan a media distancia (0.48), y el nodo rojo 'Automóvil Deportivo'* da una similitud de 0.12 (totalmente descartado).`)">📋 Copiar Guion</button>
+¿Cómo logra la IA entender que esas dos frases significan exactamente lo mismo? Usando Embeddings:
+
+* El GPS de las Ideas (Pasos 01 y 02 arriba): Imaginate que tuvieras un mapa gigante donde cada idea del mundo tiene una dirección de GPS (latitud y longitud). Cuando entra una frase, el Modelo de Embeddings analiza su sentido y la convierte en una lista de 1536 números (su coordenada exacta en el mapa). ¿Por qué 1536 números? Porque cada número evalúa una característica del concepto: qué tan relacionado está con idiomas, qué tan técnico es, si habla de finanzas, si habla de software, etc.
+* Similitud por Coseno en Vivo (Paso 03 y Mapa Interactivo): Una vez que cada párrafo tiene su coordenada en el mapa, medir si dos textos hablan de lo mismo es tan fácil como medir la distancia entre dos casas en Google Maps. A esa cuenta matemática la llamamos Similitud por Coseno (Cosine Similarity) y da una nota del 0.00 al 1.00.
+* Probemos el mapa haciendo clic en los puntos:
+  * Hacé clic en los puntos azules de arriba a la izquierda: 'Glosario Técnico' (0.96), 'Localización Software' (0.92) y 'Memoria de Traducción' (0.89). Fijate cómo quedaron todos juntitos en el mismo 'barrio lingüístico' porque conceptualmente son hermanos.
+  * Ahora hacé clic en los puntos verdes de abajo a la derecha ('Deploy en Cloud' 0.54 o 'Pipeline CI/CD' 0.48): hablan de tecnología, pero de otro tema, así que quedan en otro barrio más lejos.
+  * Y si hacés clic en el punto rojo del medio ('Automóvil Deportivo'), la similitud cae a 0.12: no tiene nada que ver y el sistema lo descarta de inmediato.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Un buscador tradicional por palabras clave (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Ctrl + F</code> o SQL <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">LIKE</code>) es ciego al significado: si el usuario busca <em style="color:#fde68a;">'reembolso por contracargo'</em> y el manual dice <em style="color:#fde68a;">'devolución por disputa de tarjeta'</em>, da cero resultados. La IA lo resuelve mediante <strong style="color:#fff; font-weight:700;">Embeddings</strong>.<br><br>* <strong style="color:#fff; font-weight:700;">Geometría del Lenguaje (1536 Dimensiones):</strong> Un modelo de Embeddings toma cualquier texto y lo traduce en una lista de 1536 coordenadas numéricas que capturan su <strong style="color:#fff; font-weight:700;">intención semántica</strong>.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Similitud por Coseno en Vivo:</strong> Hagamos clic en los puntos del mapa. Mirá cómo </em>'Glosario Técnico'<em style="color:#fde68a;"> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.96</code>), </em>'Localización Software'<em style="color:#fde68a;"> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.92</code>) y </em>'Memoria de Traducción'<em style="color:#fde68a;"> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.89</code>) viven en el mismo vecindario geométrico. En cambio, los nodos verdes de DevOps (</em>'Pipeline CI/CD'<em style="color:#fde68a;">) quedan a media distancia (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.48</code>), y el nodo rojo </em>'Automóvil Deportivo'* da una similitud de <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.12</code></strong> (totalmente descartado).”
+            “Esta diapositiva es el corazón de cómo busca información la Inteligencia Artificial. Pensá qué pasa cuando usás el buscador clásico (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Ctrl + F</code>) en un PDF o en una base de datos vieja: busca <strong style="color:#fff; font-weight:700;">letras idénticas</strong>. Si un usuario pregunta en el chat: <em style="color:#fde68a;">'¿Cómo valido la terminología antes de salir a otros países?'</em>, y tu manual dice: <em style="color:#fde68a;">'Protocolo de revisión de glosarios para localización global'</em>, ¡no comparten ni una sola palabra clave! Un buscador tradicional te da cero resultados.<br><br>¿Cómo logra la IA entender que esas dos frases <strong style="color:#fff; font-weight:700;">significan exactamente lo mismo</strong>? Usando <strong style="color:#fff; font-weight:700;">Embeddings</strong>:<br><br>* <strong style="color:#fff; font-weight:700;">El GPS de las Ideas (Pasos 01 y 02 arriba):</strong> Imaginate que tuvieras un mapa gigante donde cada idea del mundo tiene una dirección de GPS (latitud y longitud). Cuando entra una frase, el <strong style="color:#fff; font-weight:700;">Modelo de Embeddings</strong> analiza su sentido y la convierte en una lista de <strong style="color:#fff; font-weight:700;">1536 números</strong> (su coordenada exacta en el mapa). ¿Por qué 1536 números? Porque cada número evalúa una característica del concepto: qué tan relacionado está con idiomas, qué tan técnico es, si habla de finanzas, si habla de software, etc.<br>* <strong style="color:#fff; font-weight:700;">Similitud por Coseno en Vivo (Paso 03 y Mapa Interactivo):</strong> Una vez que cada párrafo tiene su coordenada en el mapa, medir si dos textos hablan de lo mismo es tan fácil como medir la distancia entre dos casas en Google Maps. A esa cuenta matemática la llamamos <strong style="color:#fff; font-weight:700;">Similitud por Coseno (Cosine Similarity)</strong> y da una nota del <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.00</code> al <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.00</code></strong>.<br>* <strong style="color:#fff; font-weight:700;">Probemos el mapa haciendo clic en los puntos:</strong><br>  * Hacé clic en los puntos azules de arriba a la izquierda: <strong style="color:#fff; font-weight:700;">'Glosario Técnico' (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.96</code>)</strong>, <strong style="color:#fff; font-weight:700;">'Localización Software' (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.92</code>)</strong> y <strong style="color:#fff; font-weight:700;">'Memoria de Traducción' (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.89</code>)</strong>. Fijate cómo quedaron todos juntitos en el mismo 'barrio lingüístico' porque conceptualmente son hermanos.<br>  * Ahora hacé clic en los puntos verdes de abajo a la derecha (<strong style="color:#fff; font-weight:700;">'Deploy en Cloud' <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.54</code></strong> o <strong style="color:#fff; font-weight:700;">'Pipeline CI/CD' <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.48</code></strong>): hablan de tecnología, pero de otro tema, así que quedan en otro barrio más lejos.<br>  * Y si hacés clic en el punto rojo del medio (<strong style="color:#fff; font-weight:700;">'Automóvil Deportivo'</strong>), la similitud cae a <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.12</code></strong>: no tiene nada que ver y el sistema lo descarta de inmediato.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Embedding (Vector Semántico)</span>
+                <p class="pt-desc">Es traducir el 'significado' de una frase a una lista de números (como las coordenadas de latitud y longitud de un GPS). Así la computadora puede medir matemáticamente si dos textos hablan de lo mismo aunque no usen ninguna palabra igual.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Espacio Vectorial (1536 Dimensiones)</span>
+                <p class="pt-desc">En un mapa común tenés 2 dimensiones (Norte-Sur y Este-Oeste). La IA usa un mapa de 1536 dimensiones donde cada número mide un matiz distinto del concepto (si es técnico, si habla de pagos, si es de traducción, etc.).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Similitud por Coseno (Cosine Similarity)</span>
+                <p class="pt-desc">Es la 'regla' que mide qué tan cerca quedaron dos frases en ese mapa, dando un puntaje entre 0.00 (nada que ver) y 1.00 (significado idéntico).</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en los distintos nodos de colores del mapa vectorial ('Glosario Técnico', 'Memoria de Traducción', 'Deploy en Cloud', 'Automóvil Deportivo') para que el panel inferior derecho muestre en vivo su vector de 1536 dimensiones y su puntaje de Similitud por Coseno.</p>
+          <p>Hacé clic en los puntitos de colores del mapa ('Glosario Técnico', 'Memoria de Traducción', 'Deploy en Cloud', 'Automóvil Deportivo') para que Anabela vea en el recuadro de abajo a la derecha cómo cambia el puntaje de Similitud por Coseno de 0.96 a 0.12.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 6: Bases Vectoriales & Metadata Filtering</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `¿Y dónde guardamos millones de estos vectores de 1536 dimensiones para buscarlos en menos de 20 milisegundos sin mezclar documentos viejos con nuevos? Pasemos a la Slide 6.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya convertimos todos los párrafos de nuestros manuales en coordenadas de este mapa. Ahora, ¿dónde se guardan millones de coordenadas y cómo evitamos que el buscador traiga un manual viejo de hace 5 años? Vamos a la Slide 6.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“¿Y dónde guardamos millones de estos vectores de 1536 dimensiones para buscarlos en menos de 20 milisegundos sin mezclar documentos viejos con nuevos? Pasemos a la Slide 6.”</p>
+            <p class="bridge-text">“Ya convertimos todos los párrafos de nuestros manuales en coordenadas de este mapa. Ahora, ¿dónde se guardan millones de coordenadas y cómo evitamos que el buscador traiga un manual viejo de hace 5 años? Vamos a la Slide 6.”</p>
           </div>
         </div>
       </article>
@@ -814,29 +1014,56 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Esos vectores se almacenan en una Base de Datos Vectorial (como Pinecone, Qdrant o pgvector). Pero atención a esta trampa real de producto: si buscás únicamente por similitud vectorial pura, la base puede traerte un fragmento con score altísimo (0.86) pero que pertenece a un Manual Legacy de 2021 que ya está derogado o a la guía de Estados Unidos.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `En la Sesión 1 vimos que las empresas tenían bases SQL (tablas tipo Excel) y NoSQL (documentos flexibles). Bueno, para guardar todos esos vectores de 1536 dimensiones que vimos recién, usamos el tercer tipo: las Bases de Datos Vectoriales (vas a escuchar nombres muy famosos como Pinecone, Qdrant o pgvector).
 
-* Metadata Pre-Filtering (Filtro Duro + Semántico): Mirá el simulador de la derecha. Cuando activamos las etiquetas Idioma: ES-LATAM y Año: 2026, la base aplica primero un filtro lógico instantáneo que descarta el 67% de ruido documental y calcula la similitud por coseno solo sobre los documentos vigentes.
-* Rol de la PM: Definir qué metadatos obligatorios lleva cada documento (idioma, año_vigencia, cliente, módulo) es una tarea clave que especificás vos en el PRD.`)">📋 Copiar Guion</button>
+Pero acá quiero enseñarte un secreto de Product Manager que separa a un principiante de un experto. Mirá el cuadro comparativo de la izquierda (Búsqueda Vectorial Pura vs. Híbrida con Metadata Filtering):
+
+ El peligro de buscar solo por significado (Caja Roja): Supongamos que un traductor o analista pregunta '¿Qué términos están aprobados para la pantalla de pagos en Argentina?'*. Si la base busca solamente por parecido semántico, puede encontrar un párrafo que habla exactamente de pagos en Argentina con un puntaje altísimo (0.86), ¡pero que pertenece al Manual Legacy de 2021 que ya está vencido, o al manual en inglés de Estados Unidos!
+* La solución: Metadata Pre-Filtering (Simulador Derecho): ¿Cómo lo resolvemos? Igual que cuando comprás en MercadoLibre o Amazon: antes de mirar productos, filtrás por talle y color. Esas etiquetas se llaman Metadatos. Mirá el simulador de la derecha: cuando activamos las etiquetas Idioma: ES-LATAM, Año: 2026 (Vigente) y Doc: Guía de Estilo, la base de datos primero apaga de un plumazo el manual viejo de 2021 y los documentos en inglés (descartando el 67% de basura), y recién ahí mide la Similitud por Coseno únicamente sobre los 2 documentos vigentes.
+* Por qué esto es 100% trabajo tuyo como PM: Los programadores no saben cómo se organizan los documentos del negocio; sos vos como PM quien define en el PRD qué etiquetas (metadatos) debe tener cada archivo (idioma, año_vigencia, cliente, módulo).`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Esos vectores se almacenan en una <strong style="color:#fff; font-weight:700;">Base de Datos Vectorial</strong> (como Pinecone, Qdrant o <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">pgvector</code>). Pero atención a esta trampa real de producto: si buscás únicamente por similitud vectorial pura, la base puede traerte un fragmento con score altísimo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.86</code>) pero que pertenece a un <strong style="color:#fff; font-weight:700;">Manual Legacy de 2021 que ya está derogado</strong> o a la guía de Estados Unidos.<br><br>* <strong style="color:#fff; font-weight:700;">Metadata Pre-Filtering (Filtro Duro + Semántico):</strong> Mirá el simulador de la derecha. Cuando activamos las etiquetas <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Idioma: ES-LATAM</code></strong> y <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Año: 2026</code></strong>, la base aplica primero un filtro lógico instantáneo que descarta el 67% de ruido documental y calcula la similitud por coseno solo sobre los documentos vigentes.<br>* <strong style="color:#fff; font-weight:700;">Rol de la PM:</strong> Definir qué metadatos obligatorios lleva cada documento (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">idioma</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">año_vigencia</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">cliente</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">módulo</code>) es una tarea clave que especificás vos en el PRD.”
+            “En la Sesión 1 vimos que las empresas tenían bases SQL (tablas tipo Excel) y NoSQL (documentos flexibles). Bueno, para guardar todos esos vectores de 1536 dimensiones que vimos recién, usamos el tercer tipo: las <strong style="color:#fff; font-weight:700;">Bases de Datos Vectoriales</strong> (vas a escuchar nombres muy famosos como <strong style="color:#fff; font-weight:700;">Pinecone</strong>, <strong style="color:#fff; font-weight:700;">Qdrant</strong> o <strong style="color:#fff; font-weight:700;">pgvector</strong>).<br><br>Pero acá quiero enseñarte un secreto de Product Manager que separa a un principiante de un experto. Mirá el cuadro comparativo de la izquierda (<strong style="color:#fff; font-weight:700;">Búsqueda Vectorial Pura vs. Híbrida con Metadata Filtering</strong>):<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">El peligro de buscar solo por significado (Caja Roja):</strong> Supongamos que un traductor o analista pregunta </em>'¿Qué términos están aprobados para la pantalla de pagos en Argentina?'*. Si la base busca <strong style="color:#fff; font-weight:700;">solamente por parecido semántico</strong>, puede encontrar un párrafo que habla exactamente de pagos en Argentina con un puntaje altísimo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.86</code>), ¡pero que pertenece al <strong style="color:#fff; font-weight:700;">Manual Legacy de 2021 que ya está vencido</strong>, o al manual en inglés de Estados Unidos!<br>* <strong style="color:#fff; font-weight:700;">La solución: Metadata Pre-Filtering (Simulador Derecho):</strong> ¿Cómo lo resolvemos? Igual que cuando comprás en MercadoLibre o Amazon: antes de mirar productos, filtrás por talle y color. Esas etiquetas se llaman <strong style="color:#fff; font-weight:700;">Metadatos</strong>. Mirá el simulador de la derecha: cuando activamos las etiquetas <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Idioma: ES-LATAM</code></strong>, <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Año: 2026 (Vigente)</code></strong> y <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Doc: Guía de Estilo</code></strong>, la base de datos primero apaga de un plumazo el manual viejo de 2021 y los documentos en inglés (descartando el 67% de basura), y recién ahí mide la Similitud por Coseno únicamente sobre los 2 documentos vigentes.<br>* <strong style="color:#fff; font-weight:700;">Por qué esto es 100% trabajo tuyo como PM:</strong> Los programadores no saben cómo se organizan los documentos del negocio; <strong style="color:#fff; font-weight:700;">sos vos como PM quien define en el PRD qué etiquetas (metadatos) debe tener cada archivo</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">idioma</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">año_vigencia</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">cliente</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">módulo</code>).”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Base de Datos Vectorial (Vector DB: Pinecone, Qdrant, pgvector)</span>
+                <p class="pt-desc">Es la 'biblioteca especializada' donde se guardan los Embeddings (las coordenadas numéricas de los textos) para poder buscar por cercanía de significado en milisegundos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Metadatos (Metadata Schema)</span>
+                <p class="pt-desc">Son las 'etiquetas de clasificación' explícitas que le pegamos a cada documento al guardarlo: Idioma = ES-LATAM, Año = 2026, Tipo = Guía de Estilo, Sector = Pagos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Metadata Pre-Filtering (Pre-filtrado por Metadatos)</span>
+                <p class="pt-desc">Es aplicar primero un filtro duro por etiquetas (ej. 'quedate solo con manuales en Español del año 2026') ANTES de buscar por significado, para no recuperar documentos vencidos o de otro país.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador React de la derecha, activá y desactivá los botones 'Idioma: ES-LATAM', 'Año: 2026 (Vigente)' y 'Doc: Guía de Estilo' para mostrar cómo se apagan los vectores obsoletos (como el Manual Legacy 2021 o el documento EN-US) y cómo baja la latencia en milisegundos.</p>
+          <p>En el simulador React de la derecha, prendé y apagá las tres etiquetas ('Idioma: ES-LATAM', 'Año: 2026', 'Doc: Guía de Estilo') para mostrarle cómo se tachan/apagan en tiempo real el 'Manual Legacy 2021' y el 'US Checkout Styleguide (English)'.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 7: Chunking & Overlap: El Arte de Fragmentar Documentos</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Antes de guardar un manual de 200 páginas en esta base vectorial, tenemos que dividirlo en bloques manejables sin romper oraciones ni reglas a la mitad. Vamos a la Slide 7: Chunking y Overlap.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya sabemos dónde vamos a guardar nuestros documentos y con qué etiquetas. Pero antes de meter un manual PDF de 300 páginas adentro de la base vectorial, tenemos que cortarlo en pedacitos. Veamos en la Slide 7 cómo cortarlo sin romperle el sentido.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Antes de guardar un manual de 200 páginas en esta base vectorial, tenemos que dividirlo en bloques manejables sin romper oraciones ni reglas a la mitad. Vamos a la Slide 7: Chunking y Overlap.”</p>
+            <p class="bridge-text">“Ya sabemos dónde vamos a guardar nuestros documentos y con qué etiquetas. Pero antes de meter un manual PDF de 300 páginas adentro de la base vectorial, tenemos que cortarlo en pedacitos. Veamos en la Slide 7 cómo cortarlo sin romperle el sentido.”</p>
           </div>
         </div>
       </article>
@@ -859,29 +1086,56 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `No podemos vectorizar un PDF de 300 páginas como un único bloque. El proceso de dividirlo en trozos de ~500 tokens (unos 1.000 caracteres) se llama Chunking.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Imaginate que tenés una Guía de Estilo o un Manual Operativo de 300 páginas. Si intentáramos convertir las 300 páginas enteras en un solo vector (un solo punto en el mapa), sería una ensalada de mil temas mezclados y no serviría para buscar nada específico. Por eso, el primer paso técnico es cortar ese documento largo en bloques chiquitos de unas 200 palabras (~1.000 caracteres). En ingeniería de IA, a cada uno de esos bloquecitos se le dice Chunk, y al proceso de cortarlos se le llama Chunking.
 
- Recursive Character Split vs. Corte Ciego: Nunca cortamos por cantidad fija de caracteres a ciegas; pedimos Recursive Character Chunking*, que respeta encabezados, párrafos y puntos seguidos.
- Simulador de Overlap (Solapamiento): Mirá qué pasa en el simulador derecho cuando ponemos 0% Overlap: la regla se corta justo al medio y el Fragmento B pierde el sujeto de la oración, haciendo que el LLM alucine. Ahora hagamos clic en 15% Overlap: los últimos 150 caracteres del Fragmento A ('despliegue de la versión en producción si hay errores P1'*) se repiten al inicio del Fragmento B, creando un puente semántico que preserva el contexto completo.`)">📋 Copiar Guion</button>
+Acá hay dos términos técnicos que te van a hacer brillar cuando los nombres:
+
+ 1. Recursive Character Chunking (Corte Inteligente por Párrafos): Si vos le decís a la computadora 'cortame el texto cada 1.000 letras exactas'*, te va a meter la tijera en la mitad de una oración. Por eso pedimos Recursive Character Chunking: el sistema busca cortar primero por títulos, si el párrafo sigue siendo largo corta por punto y aparte, y si no, por punto y seguido, respetando siempre la gramática.
+ 2. Chunk Overlap (Solapamiento — Simulador en Vivo a la Derecha): Pero incluso cortando en un punto y seguido, mirá lo que pasa si el Fragmento A dice: 'Se prohíbe publicar la versión si hay errores críticos' y el Fragmento B que sigue dice: 'En ese caso, se debe bloquear el lanzamiento hasta que QA apruebe'. Mirá en el simulador cuando ponemos 0% Overlap: si el buscador recupera solo el Fragmento B, dice 'En ese caso se bloquea el lanzamiento'*, ¡pero perdió el sujeto de la regla y no sabe en qué caso!
+* Ahora hacé clic en 15% Overlap en el simulador: Mirá cómo se ilumina esa frase puente en ambos fragmentos. ¿Qué hizo el sistema? Tomó el último 15% del Fragmento A y lo volvió a copiar al principio del Fragmento B. Es exactamente igual que cuando fotocopiás un plano grande en dos hojas A4: dejás un bordecito repetido en las dos hojas para poder unir la historia sin que nada se pierda en el corte. El estándar ideal de la industria que siempre vas a pedir en tus PRDs es 10% a 15% de Overlap.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “No podemos vectorizar un PDF de 300 páginas como un único bloque. El proceso de dividirlo en trozos de ~500 tokens (unos 1.000 caracteres) se llama <strong style="color:#fff; font-weight:700;">Chunking</strong>.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Recursive Character Split vs. Corte Ciego:</strong> Nunca cortamos por cantidad fija de caracteres a ciegas; pedimos </em>Recursive Character Chunking*, que respeta encabezados, párrafos y puntos seguidos.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Simulador de Overlap (Solapamiento):</strong> Mirá qué pasa en el simulador derecho cuando ponemos <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0% Overlap</code></strong>: la regla se corta justo al medio y el Fragmento B pierde el sujeto de la oración, haciendo que el LLM alucine. Ahora hagamos clic en <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">15% Overlap</code></strong>: los últimos 150 caracteres del Fragmento A (</em>'despliegue de la versión en producción si hay errores P1'*) se repiten al inicio del Fragmento B, creando un <strong style="color:#fff; font-weight:700;">puente semántico</strong> que preserva el contexto completo.”
+            “Imaginate que tenés una Guía de Estilo o un Manual Operativo de 300 páginas. Si intentáramos convertir las 300 páginas enteras en un solo vector (un solo punto en el mapa), sería una ensalada de mil temas mezclados y no serviría para buscar nada específico. Por eso, el primer paso técnico es cortar ese documento largo en bloques chiquitos de unas 200 palabras (~1.000 caracteres). En ingeniería de IA, a cada uno de esos bloquecitos se le dice <strong style="color:#fff; font-weight:700;">Chunk</strong>, y al proceso de cortarlos se le llama <strong style="color:#fff; font-weight:700;">Chunking</strong>.<br><br>Acá hay dos términos técnicos que te van a hacer brillar cuando los nombres:<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">1. Recursive Character Chunking (Corte Inteligente por Párrafos):</strong> Si vos le decís a la computadora </em>'cortame el texto cada 1.000 letras exactas'*, te va a meter la tijera en la mitad de una oración. Por eso pedimos <strong style="color:#fff; font-weight:700;">Recursive Character Chunking</strong>: el sistema busca cortar primero por títulos, si el párrafo sigue siendo largo corta por punto y aparte, y si no, por punto y seguido, respetando siempre la gramática.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">2. Chunk Overlap (Solapamiento — Simulador en Vivo a la Derecha):</strong> Pero incluso cortando en un punto y seguido, mirá lo que pasa si el Fragmento A dice: </em>'Se prohíbe publicar la versión si hay errores críticos'<em style="color:#fde68a;"> y el Fragmento B que sigue dice: </em>'En ese caso, se debe bloquear el lanzamiento hasta que QA apruebe'<em style="color:#fde68a;">. Mirá en el simulador cuando ponemos <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0% Overlap</code></strong>: si el buscador recupera solo el Fragmento B, dice </em>'En ese caso se bloquea el lanzamiento'*, ¡pero <strong style="color:#fff; font-weight:700;">perdió el sujeto de la regla</strong> y no sabe en qué caso!<br>* <strong style="color:#fff; font-weight:700;">Ahora hacé clic en <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">15% Overlap</code> en el simulador:</strong> Mirá cómo se ilumina esa frase puente en ambos fragmentos. ¿Qué hizo el sistema? Tomó el último 15% del Fragmento A y lo volvió a copiar al principio del Fragmento B. Es exactamente igual que cuando fotocopiás un plano grande en dos hojas A4: dejás un bordecito repetido en las dos hojas para poder unir la historia sin que nada se pierda en el corte. El estándar ideal de la industria que siempre vas a pedir en tus PRDs es <strong style="color:#fff; font-weight:700;">10% a 15% de Overlap</strong>.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Chunking (Fragmentación Documental)</span>
+                <p class="pt-desc">Es cortar un documento largo (ej. un PDF de 200 páginas) en 'fichas' o bloques pequeños de texto (llamados Chunks, de unas 200 palabras o 1.000 caracteres) antes de convertirlos en vectores.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Recursive Character Chunking</span>
+                <p class="pt-desc">En vez de cortar cada 1.000 letras a ciegas partiendo oraciones por la mitad, corta de forma inteligente respetando primero títulos, luego párrafos y luego puntos seguidos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Chunk Overlap (Solapamiento del 10% al 20%)</span>
+                <p class="pt-desc">Es repetir el final del Fragmento A al comienzo del Fragmento B (como cuando sacás una foto panorámica solapando un borde con el otro) para que ninguna idea o regla quede cortada al medio.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador React de la derecha, llevá el slider de Overlap a '0%' para mostrar la alerta roja de corte abrupto, y luego subilo a '15%' para iluminar en azul el puente semántico compartido entre el Fragmento A y el Fragmento B.</p>
+          <p>En el simulador React de la derecha, hacé clic primero en el botón '0%' para que vea el cartel rojo '[CORTE ABRUPTO SIN PUENTE]' y '[FALTA SUJETO DE LA REGLA]', y después hacé clic en '15%' para que vea cómo aparece resaltado en naranja el texto compartido entre el Fragmento A y el Fragmento B.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 8: Anatomía de RAG — Fase 1: Ingestión Offline (Batch)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Ya dominás todas las piezas! Ahora unamos todo en la arquitectura completa de RAG en dos etapas. Pasemos a la Slide 8 para ver la Fase 1: Ingestión Batch.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Impecable! Ya tenés todas las piezas del rompecabezas: Tokens, Ventana de Contexto, Embeddings, Base Vectorial con Metadatos y Chunking con Overlap. Ahora veamos cómo se arma la máquina completa de RAG en dos fases. Vamos a la Slide 8.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“¡Ya dominás todas las piezas! Ahora unamos todo en la arquitectura completa de RAG en dos etapas. Pasemos a la Slide 8 para ver la Fase 1: Ingestión Batch.”</p>
+            <p class="bridge-text">“¡Impecable! Ya tenés todas las piezas del rompecabezas: Tokens, Ventana de Contexto, Embeddings, Base Vectorial con Metadatos y Chunking con Overlap. Ahora veamos cómo se arma la máquina completa de RAG en dos fases. Vamos a la Slide 8.”</p>
           </div>
         </div>
       </article>
@@ -904,31 +1158,57 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `RAG (Retrieval-Augmented Generation) es tomarle examen al LLM a libro abierto, y se divide en dos fases independientes. Acá en la Slide 8 vemos la Fase 1: Ingestión del Dato (Batch Offline), que corre en segundo plano cuando cargamos o actualizamos manuales:
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Llegamos al corazón de la sesión: cómo explicarle a cualquier persona o líder técnico cómo funciona una Arquitectura RAG de punta a punta. Para que sea súper fácil de visualizar, dividimos RAG en dos momentos separados (Fase 1 en esta diapositiva y Fase 2 en la siguiente). Pensalo como un restaurante: la Fase 1 es preparar y ordenar la despensa antes de abrir, y la Fase 2 es cocinar el plato en el momento en que entra el cliente.
 
-* Paso 1 — Documentos (Ground Truth): Extraemos y limpiamos los PDFs, Markdowns, wikis de Confluence y memorias de traducción aprobadas.
-* Paso 2 — Chunking: Los fragmentamos en bloques de ~1.000 caracteres con 15% de Overlap.
-* Paso 3 — Embedding: Convertimos cada bloque en su vector semántico de 1536 dimensiones.
-* Paso 4 — Vector DB: Guardamos los vectores en Pinecone junto con su esquema JSON de metadatos. Nuestra biblioteca queda indexada.`)">📋 Copiar Guion</button>
+Acá en la Slide 8 estamos en la Fase 1: Ingestión del Dato (Batch Offline). Decimos Offline o Batch porque esto ocurre en segundo plano (por ejemplo, cada vez que vos o alguien del equipo sube un glosario nuevo o actualiza un PDF), sin que haya ningún usuario chateando. Hacé clic en '▶ Simular Pipeline Batch' y sigamos los 4 pasos que ya conocés:
+
+* Paso 1 — Documentos (Ground Truth): Recolectamos y limpiamos los archivos oficiales de la empresa (PDFs, Word, Confluence, memorias de traducción). En la jerga de IA a estos documentos oficiales les decimos el Ground Truth (la Verdad de Base).
+* Paso 2 — Chunking: Agarramos esos manuales largos y los cortamos en fichas prolijas de ~1.000 caracteres con un 15% de Overlap (solapamiento) para no romper ninguna regla por la mitad.
+* Paso 3 — Embedding: Pasamos cada ficha por el modelo de Embeddings para calcular su coordenada de GPS de 1536 dimensiones según su significado.
+* Paso 4 — Vector DB: Guardamos cada coordenada junto con su texto y sus etiquetas (Metadatos: idioma, año, módulo) adentro de nuestra Base de Datos Vectorial (como Pinecone). ¡Listo! La biblioteca inteligente ya quedó armada y ordenada.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “<strong style="color:#fff; font-weight:700;">RAG</strong> (<em style="color:#fde68a;">Retrieval-Augmented Generation</em>) es tomarle examen al LLM a <strong style="color:#fff; font-weight:700;">libro abierto</strong>, y se divide en dos fases independientes. Acá en la Slide 8 vemos la <strong style="color:#fff; font-weight:700;">Fase 1: Ingestión del Dato (Batch Offline)</strong>, que corre en segundo plano cuando cargamos o actualizamos manuales:<br><br>* <strong style="color:#fff; font-weight:700;">Paso 1 — Documentos (Ground Truth):</strong> Extraemos y limpiamos los PDFs, Markdowns, wikis de Confluence y memorias de traducción aprobadas.<br>* <strong style="color:#fff; font-weight:700;">Paso 2 — Chunking:</strong> Los fragmentamos en bloques de ~1.000 caracteres con <strong style="color:#fff; font-weight:700;">15% de Overlap</strong>.<br>* <strong style="color:#fff; font-weight:700;">Paso 3 — Embedding:</strong> Convertimos cada bloque en su vector semántico de <strong style="color:#fff; font-weight:700;">1536 dimensiones</strong>.<br>* <strong style="color:#fff; font-weight:700;">Paso 4 — Vector DB:</strong> Guardamos los vectores en Pinecone junto con su esquema JSON de metadatos. Nuestra biblioteca queda indexada.”
+            “Llegamos al corazón de la sesión: cómo explicarle a cualquier persona o líder técnico cómo funciona una <strong style="color:#fff; font-weight:700;">Arquitectura RAG</strong> de punta a punta. Para que sea súper fácil de visualizar, dividimos RAG en <strong style="color:#fff; font-weight:700;">dos momentos separados</strong> (Fase 1 en esta diapositiva y Fase 2 en la siguiente). Pensalo como un restaurante: la <strong style="color:#fff; font-weight:700;">Fase 1 es preparar y ordenar la despensa antes de abrir</strong>, y la <strong style="color:#fff; font-weight:700;">Fase 2 es cocinar el plato en el momento en que entra el cliente</strong>.<br><br>Acá en la Slide 8 estamos en la <strong style="color:#fff; font-weight:700;">Fase 1: Ingestión del Dato (Batch Offline)</strong>. Decimos <em style="color:#fde68a;">Offline</em> o <em style="color:#fde68a;">Batch</em> porque esto ocurre en segundo plano (por ejemplo, cada vez que vos o alguien del equipo sube un glosario nuevo o actualiza un PDF), sin que haya ningún usuario chateando. Hacé clic en <strong style="color:#fff; font-weight:700;">'▶ Simular Pipeline Batch'</strong> y sigamos los 4 pasos que ya conocés:<br><br>* <strong style="color:#fff; font-weight:700;">Paso 1 — Documentos (Ground Truth):</strong> Recolectamos y limpiamos los archivos oficiales de la empresa (PDFs, Word, Confluence, memorias de traducción). En la jerga de IA a estos documentos oficiales les decimos el <strong style="color:#fff; font-weight:700;">Ground Truth (la Verdad de Base)</strong>.<br>* <strong style="color:#fff; font-weight:700;">Paso 2 — Chunking:</strong> Agarramos esos manuales largos y los cortamos en fichas prolijas de ~1.000 caracteres con un <strong style="color:#fff; font-weight:700;">15% de Overlap (solapamiento)</strong> para no romper ninguna regla por la mitad.<br>* <strong style="color:#fff; font-weight:700;">Paso 3 — Embedding:</strong> Pasamos cada ficha por el modelo de Embeddings para calcular su coordenada de GPS de <strong style="color:#fff; font-weight:700;">1536 dimensiones</strong> según su significado.<br>* <strong style="color:#fff; font-weight:700;">Paso 4 — Vector DB:</strong> Guardamos cada coordenada junto con su texto y sus etiquetas (<strong style="color:#fff; font-weight:700;">Metadatos</strong>: idioma, año, módulo) adentro de nuestra Base de Datos Vectorial (como Pinecone). ¡Listo! La biblioteca inteligente ya quedó armada y ordenada.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Fase 1: Ingestión Offline (Batch Pipeline)</span>
+                <p class="pt-desc">Es 'preparar la cocina antes de abrir el restaurante'. Corre en segundo plano cuando subimos o actualizamos manuales, sin que haya ningún usuario esperando en el chat.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Ground Truth (Fuente Única de Verdad)</span>
+                <p class="pt-desc">Son los documentos oficiales validados por humanos (manuales vigentes, glosarios aprobados, políticas legales) que tomamos como verdad absoluta para alimentar al bot.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Upsert en Vector DB</span>
+                <p class="pt-desc">Término que combina 'Update' (actualizar) + 'Insert' (insertar): guarda los vectores nuevos y pisa los viejos para que la biblioteca esté siempre al día.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en el botón '▶ Simular Pipeline Batch' (o en cada uno de los 4 nodos: 1. Documentos -> 2. Chunking -> 3. Embedding -> 4. Vector DB) para recorrer la explicación técnica e indicadores de cada etapa.</p>
+          <p>Hacé clic en el botón '▶ Simular Pipeline Batch' arriba a la derecha (o hacé clic paso por paso en los 4 círculos: 1. Documentos -> 2. Chunking -> 3. Embedding -> 4. Vector DB) para que vea cómo avanza la luz por la tubería y cambia el texto explicativo abajo.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 9: Anatomía de RAG — Fase 2: Consulta en Tiempo Real (Live)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con la base vectorial ya indexada, ¿qué ocurre en los milisegundos posteriores a que un usuario envía una pregunta en el chat? Pasemos a la Slide 9: Fase 2 de RAG en Tiempo Real.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora que la biblioteca ya está lista y ordenada en nuestra Base Vectorial, abrimos las puertas del restaurante: un usuario entra al chat y hace una pregunta. Pasemos a la Slide 9 para ver qué pasa en vivo en esos 2 segundos.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Con la base vectorial ya indexada, ¿qué ocurre en los milisegundos posteriores a que un usuario envía una pregunta en el chat? Pasemos a la Slide 9: Fase 2 de RAG en Tiempo Real.”</p>
+            <p class="bridge-text">“Ahora que la biblioteca ya está lista y ordenada en nuestra Base Vectorial, abrimos las puertas del restaurante: un usuario entra al chat y hace una pregunta. Pasemos a la Slide 9 para ver qué pasa en vivo en esos 2 segundos.”</p>
           </div>
         </div>
       </article>
@@ -951,31 +1231,55 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Mirá la Fase 2: Consulta en Tiempo Real (Online) cuando alguien pregunta: '¿Qué criterios de estilo y terminología se aplican al módulo de pagos para LATAM?':
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Ahora estamos en la Fase 2: Consulta de Usuario en Tiempo Real. Una persona del equipo abre el chatbot y escribe: '¿Qué criterios de estilo y terminología se aplican al módulo de pagos para usuarios de Latinoamérica?'. Mirá todo lo que hace el sistema por atrás en menos de 2 segundos (hacé clic en '▶ Simular Consulta Live'):
 
-* Paso 1 — Vectorización de la Pregunta (~35 ms): Convertimos la duda del usuario en un vector de 1536 dimensiones con el mismo modelo de Embeddings.
-* Paso 2 — Recuperación (Metadata Filter + Top-K): Filtramos por ES-LATAM + 2026 y recuperamos los 3 fragmentos con mayor Similitud por Coseno (Score >= 0.75).
- Paso 3 — Prompt Aumentado (Examen a Libro Abierto): El backend inserta esos 3 fragmentos oficiales dentro del System Prompt instruyendo al modelo a responder únicamente* con esa evidencia.
- Paso 4 — Generación con Cita (T = 0.0): El LLM redacta la respuesta exacta y adjunta la fuente clicable (ej. Guía de Estilo Pagos LATAM 2026, pág. 14*).`)">📋 Copiar Guion</button>
+* Paso 1 — Pregunta y Vectorización (~35 milisegundos): El sistema agarra la pregunta del usuario y la pasa por el mismo GPS matemático (Embedding) para obtener sus 1536 coordenadas. ¿Por qué? Porque para buscar en el mapa de la base vectorial necesitamos saber en qué coordenada cayó la pregunta.
+* Paso 2 — Recuperación con Filtro y Top-K: El sistema va a la Base Vectorial, filtra primero por las etiquetas vigentes (idioma = ES-LATAM y año = 2026) y busca por Similitud de Coseno los 3 párrafos más cercanos a la pregunta. A traer los 3 mejores resultados se le llama técnicamente Top-K Retrieval (Top-K = 3).
+ Paso 3 — El Prompt Aumentado (El Examen a Libro Abierto): ¡Acá ocurre la magia de RAG! El usuario cree que habló directo con el LLM, pero en realidad nuestro servidor armó en secreto un Prompt Aumentado: le pegó arriba la regla estricta ('Respondé ÚNICAMENTE usando estos 3 fragmentos oficiales. No inventes nada'*), le pegó los 3 párrafos recuperados del manual y recién abajo puso la pregunta del usuario.
+ Paso 4 — LLM con Temperatura 0.0 y Cita Verificable: El LLM lee esos 3 párrafos (como un alumno con el libro abierto en la página exacta), redacta la respuesta en lenguaje natural claro y te agrega abajo la cita: 'Fuente: Guía de Estilo Pagos LATAM 2026, pág. 14'*. Cero alucinación y 100% auditable.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Mirá la <strong style="color:#fff; font-weight:700;">Fase 2: Consulta en Tiempo Real (Online)</strong> cuando alguien pregunta: <em style="color:#fde68a;">'¿Qué criterios de estilo y terminología se aplican al módulo de pagos para LATAM?'</em>:<br><br>* <strong style="color:#fff; font-weight:700;">Paso 1 — Vectorización de la Pregunta (~35 ms):</strong> Convertimos la duda del usuario en un vector de 1536 dimensiones con el mismo modelo de Embeddings.<br>* <strong style="color:#fff; font-weight:700;">Paso 2 — Recuperación (Metadata Filter + Top-K):</strong> Filtramos por <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">ES-LATAM</code> + <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">2026</code> y recuperamos los 3 fragmentos con mayor Similitud por Coseno (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score >= 0.75</code>).<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Paso 3 — Prompt Aumentado (Examen a Libro Abierto):</strong> El backend inserta esos 3 fragmentos oficiales dentro del System Prompt instruyendo al modelo a responder </em>únicamente* con esa evidencia.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Paso 4 — Generación con Cita (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">T = 0.0</code>):</strong> El LLM redacta la respuesta exacta y adjunta la fuente clicable (ej. </em>Guía de Estilo Pagos LATAM 2026, pág. 14*).”
+            “Ahora estamos en la <strong style="color:#fff; font-weight:700;">Fase 2: Consulta de Usuario en Tiempo Real</strong>. Una persona del equipo abre el chatbot y escribe: <em style="color:#fde68a;">'¿Qué criterios de estilo y terminología se aplican al módulo de pagos para usuarios de Latinoamérica?'</em>. Mirá todo lo que hace el sistema por atrás en menos de 2 segundos (hacé clic en <strong style="color:#fff; font-weight:700;">'▶ Simular Consulta Live'</strong>):<br><br>* <strong style="color:#fff; font-weight:700;">Paso 1 — Pregunta y Vectorización (~35 milisegundos):</strong> El sistema agarra la pregunta del usuario y la pasa por el mismo GPS matemático (<strong style="color:#fff; font-weight:700;">Embedding</strong>) para obtener sus 1536 coordenadas. ¿Por qué? Porque para buscar en el mapa de la base vectorial necesitamos saber en qué coordenada cayó la pregunta.<br>* <strong style="color:#fff; font-weight:700;">Paso 2 — Recuperación con Filtro y Top-K:</strong> El sistema va a la Base Vectorial, filtra primero por las etiquetas vigentes (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">idioma = ES-LATAM</code> y <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">año = 2026</code>) y busca por <strong style="color:#fff; font-weight:700;">Similitud de Coseno</strong> los <strong style="color:#fff; font-weight:700;">3 párrafos más cercanos</strong> a la pregunta. A traer los 3 mejores resultados se le llama técnicamente <strong style="color:#fff; font-weight:700;">Top-K Retrieval (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Top-K = 3</code>)</strong>.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Paso 3 — El Prompt Aumentado (El Examen a Libro Abierto):</strong> ¡Acá ocurre la magia de RAG! El usuario cree que habló directo con el LLM, pero en realidad nuestro servidor armó en secreto un <strong style="color:#fff; font-weight:700;">Prompt Aumentado</strong>: le pegó arriba la regla estricta (</em>'Respondé ÚNICAMENTE usando estos 3 fragmentos oficiales. No inventes nada'*), le pegó los 3 párrafos recuperados del manual y recién abajo puso la pregunta del usuario.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Paso 4 — LLM con Temperatura 0.0 y Cita Verificable:</strong> El LLM lee esos 3 párrafos (como un alumno con el libro abierto en la página exacta), redacta la respuesta en lenguaje natural claro y te agrega abajo la cita: </em>'Fuente: Guía de Estilo Pagos LATAM 2026, pág. 14'*. Cero alucinación y 100% auditable.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Fase 2: Consulta en Tiempo Real (Online Inference)</span>
+                <p class="pt-desc">Es lo que ocurre en menos de 2 segundos desde que el usuario aprieta 'Enviar' en el chat hasta que recibe la respuesta con su cita.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Top-K Retrieval (ej. Top-K = 3)</span>
+                <p class="pt-desc">Es pedirle a la base vectorial que nos devuelva únicamente los 'K' fragmentos más parecidos a la pregunta (por lo general los mejores 3 o 5 fragmentos).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Prompt Aumentado (Context Injection)</span>
+                <p class="pt-desc">Es el truco central de RAG: antes de mandarle la pregunta del usuario al LLM, el sistema le 'inyecta' en secreto los 3 párrafos oficiales encontrados y le ordena responder solo con esa información.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en '▶ Simular Consulta Live' para animar los 4 pasos en tiempo real y luego abrí el botón '🔍 Ver Diagrama Completo RAG' para mostrar en pantalla completa cómo se conectan las Fases 1 y 2.</p>
+          <p>Hacé clic en '▶ Simular Consulta Live' para recorrer los 4 pasos animados, y después hacé clic en el botón violeta '🔍 Ver Diagrama Completo RAG' para mostrarle la ilustración completa que une Fase 1 y Fase 2.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 10: Taller Práctico: El Mock PRD de tu Chatbot RAG</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `¿Cómo volcás toda esta arquitectura en un documento ejecutivo que tu equipo de ingeniería pueda construir y QA pueda auditar? Pasemos a la Slide 10: Taller del Mock PRD.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Entender estas dos fases te da una ventaja enorme. Ahora veamos cómo bajás todo esto a un documento real de trabajo cuando liderás un proyecto: pasemos a la Slide 10 para ver el Mock PRD.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“¿Cómo volcás toda esta arquitectura en un documento ejecutivo que tu equipo de ingeniería pueda construir y QA pueda auditar? Pasemos a la Slide 10: Taller del Mock PRD.”</p>
+            <p class="bridge-text">“Entender estas dos fases te da una ventaja enorme. Ahora veamos cómo bajás todo esto a un documento real de trabajo cuando liderás un proyecto: pasemos a la Slide 10 para ver el Mock PRD.”</p>
           </div>
         </div>
       </article>
@@ -998,30 +1302,53 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Como IT Product Manager o Project Manager en IA, tu entregable estrella no es el código: es el PRD (Product Requirements Document) y sus criterios de aceptación (Definition of Done).
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Acá bajamos toda la teoría al rol diario de una Product Manager o Project Manager en IT. Cuando vos liderás la creación de una herramienta con IA, a vos no te van a pedir que programes el código, pero sí te van a pedir tu entregable más importante: el PRD (Product Requirements Document) y su Definition of Done (DoD).
 
- Especificación Funcional y Datos: Definís el problema de negocio, las fuentes oficiales (Ground Truth*) y las etiquetas de metadatos obligatorias (idioma, año_vigencia, módulo).
-* Definition of Done (DoD) Técnico de IA: Establecés métricas innegociables para aprobar el paso a producción: Chunking de 1000 chars / 15% overlap, Vector DB con Score >= 0.75, contrato Zero-Retention SLA y evaluación automatizada >= 90%.
-* Herramientas Interactivas: Desde los botones de abajo podés abrir tanto la App Interactiva del Mock PRD (que exporta tu documento en Markdown) como el Simulador Práctico de 4 Misiones.`)">📋 Copiar Guion</button>
+Imaginate la diferencia entre dos PMs:
+ Un PM sin base técnica escribe en su PRD: 'Hacer un chatbot con IA que responda preguntas de los manuales de la empresa y ande bien'*. Los programadores adivinan todo, el bot mezcla manuales viejos con nuevos y alucina.
+* Ahora mirá lo que escribís vos en tu PRD después de esta clase (Tarjetas Izquierda y Derecha):
+  1. En Fuentes y Datos (Izquierda): Definís cuál es el Ground Truth (manuales de producto, guías de estilo y glosarios .md/.pdf), exigís que toda respuesta tenga cita clicable obligatoria y definís el Esquema de Metadatos (idioma, año_vigencia, modulo, tipo_doc).
+  2. En el Definition of Done de IA (Derecha): Ponés reglas medibles para aprobar el proyecto: Chunking de 1000 caracteres con 15% de overlap, Base Vectorial con nota mínima de similitud de Score >= 0.75, contrato de privacidad Zero-Retention SLA y que apruebe el examen de calidad con >= 90%. Cuando un Tech Lead lee un PRD así, te respeta de inmediato porque le diste el plano arquitectónico exacto.
+
+Abajo tenés el botón para abrir la App Interactiva del Mock PRD, donde podés completar estos campos paso a paso y descargarte el documento final listo para tu portfolio.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Como IT Product Manager o Project Manager en IA, tu entregable estrella no es el código: es el <strong style="color:#fff; font-weight:700;">PRD (Product Requirements Document)</strong> y sus criterios de aceptación (<strong style="color:#fff; font-weight:700;">Definition of Done</strong>).<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Especificación Funcional y Datos:</strong> Definís el problema de negocio, las fuentes oficiales (</em>Ground Truth*) y las etiquetas de metadatos obligatorias (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">idioma</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">año_vigencia</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">módulo</code>).<br>* <strong style="color:#fff; font-weight:700;">Definition of Done (DoD) Técnico de IA:</strong> Establecés métricas innegociables para aprobar el paso a producción: Chunking de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1000 chars / 15% overlap</code>, Vector DB con <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score >= 0.75</code>, contrato <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Zero-Retention SLA</code> y evaluación automatizada <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">>= 90%</code>.<br>* <strong style="color:#fff; font-weight:700;">Herramientas Interactivas:</strong> Desde los botones de abajo podés abrir tanto la <strong style="color:#fff; font-weight:700;">App Interactiva del Mock PRD</strong> (que exporta tu documento en Markdown) como el <strong style="color:#fff; font-weight:700;">Simulador Práctico de 4 Misiones</strong>.”
+            “Acá bajamos toda la teoría al rol diario de una <strong style="color:#fff; font-weight:700;">Product Manager o Project Manager en IT</strong>. Cuando vos liderás la creación de una herramienta con IA, a vos no te van a pedir que programes el código, pero sí te van a pedir tu entregable más importante: el <strong style="color:#fff; font-weight:700;">PRD (Product Requirements Document)</strong> y su <strong style="color:#fff; font-weight:700;">Definition of Done (DoD)</strong>.<br><br>Imaginate la diferencia entre dos PMs:<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Un PM sin base técnica escribe en su PRD:</strong> </em>'Hacer un chatbot con IA que responda preguntas de los manuales de la empresa y ande bien'*. Los programadores adivinan todo, el bot mezcla manuales viejos con nuevos y alucina.<br>* <strong style="color:#fff; font-weight:700;">Ahora mirá lo que escribís vos en tu PRD después de esta clase (Tarjetas Izquierda y Derecha):</strong><br>  1. <strong style="color:#fff; font-weight:700;">En Fuentes y Datos (Izquierda):</strong> Definís cuál es el <strong style="color:#fff; font-weight:700;">Ground Truth</strong> (manuales de producto, guías de estilo y glosarios <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">.md/.pdf</code>), exigís que toda respuesta tenga <strong style="color:#fff; font-weight:700;">cita clicable obligatoria</strong> y definís el <strong style="color:#fff; font-weight:700;">Esquema de Metadatos</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">idioma</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">año_vigencia</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">modulo</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">tipo_doc</code>).<br>  2. <strong style="color:#fff; font-weight:700;">En el Definition of Done de IA (Derecha):</strong> Ponés reglas medibles para aprobar el proyecto: <strong style="color:#fff; font-weight:700;">Chunking</strong> de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1000 caracteres con 15% de overlap</code>, <strong style="color:#fff; font-weight:700;">Base Vectorial</strong> con nota mínima de similitud de <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score >= 0.75</code></strong>, contrato de privacidad <strong style="color:#fff; font-weight:700;">Zero-Retention SLA</strong> y que apruebe el examen de calidad con <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">>= 90%</code></strong>. Cuando un Tech Lead lee un PRD así, te respeta de inmediato porque le diste el plano arquitectónico exacto.<br><br>Abajo tenés el botón para abrir la <strong style="color:#fff; font-weight:700;">App Interactiva del Mock PRD</strong>, donde podés completar estos campos paso a paso y descargarte el documento final listo para tu portfolio.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 PRD (Product Requirements Document)</span>
+                <p class="pt-desc">Es el documento madre que escribe el Product Manager para definir qué producto se va a construir, para quién, con qué datos y bajo qué reglas.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Definition of Done (DoD / Definición de Terminado)</span>
+                <p class="pt-desc">Es el contrato de calidad con los programadores y QA: la lista de requisitos técnicos y métricas que deben cumplirse sí o sí para dar por aprobada la funcionalidad.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Repasá las dos tarjetas del PRD (Especificación Funcional vs. Definition of Done de IA) y mostrá los dos botones inferiores para lanzar en vivo la 'App Mock PRD S2' y el 'Simulador Práctico S2'.</p>
+          <p>Recorré las dos tarjetas (Especificación Funcional a la izquierda y Definition of Done de IA a la derecha) y mostrale los dos botones de abajo ('🛠️ Abrir App Mock PRD S2' y '⚡ Abrir Simulador Práctico S2').</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 11: Gobernanza de IA, Privacidad & Prevención de Data Leakage</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Veamos ahora en detalle las tres compuertas de Gobernanza y Calidad que pusimos en ese Definition of Done. Empecemos en la Slide 11 por la seguridad corporativa y el riesgo de Data Leakage.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `En esa tarjeta de la derecha pusimos tres requisitos clave de seguridad y calidad: Zero-Retention SLA, Score >= 0.75 y Evals >= 90%. Veamos cada uno en detalle en las próximas tres slides. Vamos a la Slide 11.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Veamos ahora en detalle las tres compuertas de Gobernanza y Calidad que pusimos en ese Definition of Done. Empecemos en la Slide 11 por la seguridad corporativa y el riesgo de Data Leakage.”</p>
+            <p class="bridge-text">“En esa tarjeta de la derecha pusimos tres requisitos clave de seguridad y calidad: Zero-Retention SLA, Score >= 0.75 y Evals >= 90%. Veamos cada uno en detalle en las próximas tres slides. Vamos a la Slide 11.”</p>
           </div>
         </div>
       </article>
@@ -1044,29 +1371,54 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `El primer freno de cualquier directorio o comité de ciberseguridad ante un proyecto de IA es el Data Leakage (Fuga de Propiedad Intelectual).
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Hablemos de Gobernanza y Privacidad, que es lo primero que te va a preguntar cualquier director, cliente corporativo o área de Legales antes de aprobar un proyecto de IA.
 
-* Tarjeta Roja — Chat Público / Licencias Consumer: Si un miembro del equipo pega un glosario confidencial o contrato bajo NDA en una cuenta gratuita o pública, el proveedor puede retener esos datos para re-entrenar futuros modelos públicos (RLHF), violando acuerdos de confidencialidad y normativas GDPR / ISO 27001.
-* Tarjeta Verde — API bajo Enterprise SLA con Zero-Data Retention: En producción exigimos consumir los modelos vía API corporativa (Azure OpenAI, AWS Bedrock, Anthropic Enterprise) con cláusula contractual de Retención Cero (Zero-Retention) y enmascaramiento previo de datos personales (PII Masking). Probá el simulador de abajo para ver cómo pasa la auditoría SOC2 / ISO 27001.`)">📋 Copiar Guion</button>
+* El Peligro Real — Data Leakage (Tarjeta Roja): ¿Por qué muchas empresas prohibieron al principio usar ChatGPT? Porque cuando usás la versión gratuita o común de navegador, en los términos y condiciones dice que todo lo que escribas ahí puede ser leído por entrenadores humanos y usado para alimentar las próximas versiones públicas del modelo. Si alguien pega ahí un contrato bajo NDA (Acuerdo de Confidencialidad) o un glosario de un lanzamiento secreto, estás cometiendo una Fuga de Datos (Data Leakage) e incumpliendo normas internacionales como GDPR o ISO 27001.
+* La Solución Corporativa — API bajo Enterprise SLA con Zero-Data Retention (Tarjeta Verde): ¿Cómo se hace bien en las empresas? Nunca se usa el chat público; se conecta el sistema por atrás mediante una API Corporativa (por ejemplo, Azure OpenAI, AWS Bedrock o Anthropic Enterprise) bajo un contrato llamado Enterprise SLA con Zero-Data Retention (Retención Cero).
+* ¿Qué significa Retención Cero en criollo?: Hacé clic en el botón verde del simulador de abajo. Significa que por contrato legal y bloqueo técnico, el proveedor recibe tu consulta cifrada, te genera la respuesta en milisegundos y destruye el texto de su memoria inmediatamente. Nadie lo lee y ningún modelo aprende de tus datos. Y como doble cinturón de seguridad, aplicamos PII Masking: antes de que la consulta salga de nuestra empresa, un filtro oculta nombres reales, DNI o teléfonos.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “El primer freno de cualquier directorio o comité de ciberseguridad ante un proyecto de IA es el <strong style="color:#fff; font-weight:700;">Data Leakage (Fuga de Propiedad Intelectual)</strong>.<br><br>* <strong style="color:#fff; font-weight:700;">Tarjeta Roja — Chat Público / Licencias Consumer:</strong> Si un miembro del equipo pega un glosario confidencial o contrato bajo NDA en una cuenta gratuita o pública, el proveedor puede retener esos datos para re-entrenar futuros modelos públicos (RLHF), violando acuerdos de confidencialidad y normativas GDPR / ISO 27001.<br>* <strong style="color:#fff; font-weight:700;">Tarjeta Verde — API bajo Enterprise SLA con Zero-Data Retention:</strong> En producción exigimos consumir los modelos vía API corporativa (Azure OpenAI, AWS Bedrock, Anthropic Enterprise) con cláusula contractual de <strong style="color:#fff; font-weight:700;">Retención Cero (Zero-Retention)</strong> y enmascaramiento previo de datos personales (<strong style="color:#fff; font-weight:700;">PII Masking</strong>). Probá el simulador de abajo para ver cómo pasa la auditoría SOC2 / ISO 27001.”
+            “Hablemos de <strong style="color:#fff; font-weight:700;">Gobernanza y Privacidad</strong>, que es lo primero que te va a preguntar cualquier director, cliente corporativo o área de Legales antes de aprobar un proyecto de IA.<br><br>* <strong style="color:#fff; font-weight:700;">El Peligro Real — Data Leakage (Tarjeta Roja):</strong> ¿Por qué muchas empresas prohibieron al principio usar ChatGPT? Porque cuando usás la versión gratuita o común de navegador, en los términos y condiciones dice que <strong style="color:#fff; font-weight:700;">todo lo que escribas ahí puede ser leído por entrenadores humanos y usado para alimentar las próximas versiones públicas del modelo</strong>. Si alguien pega ahí un contrato bajo <strong style="color:#fff; font-weight:700;">NDA (Acuerdo de Confidencialidad)</strong> o un glosario de un lanzamiento secreto, estás cometiendo una <strong style="color:#fff; font-weight:700;">Fuga de Datos (Data Leakage)</strong> e incumpliendo normas internacionales como <strong style="color:#fff; font-weight:700;">GDPR</strong> o <strong style="color:#fff; font-weight:700;">ISO 27001</strong>.<br>* <strong style="color:#fff; font-weight:700;">La Solución Corporativa — API bajo Enterprise SLA con Zero-Data Retention (Tarjeta Verde):</strong> ¿Cómo se hace bien en las empresas? Nunca se usa el chat público; se conecta el sistema por atrás mediante una <strong style="color:#fff; font-weight:700;">API Corporativa</strong> (por ejemplo, Azure OpenAI, AWS Bedrock o Anthropic Enterprise) bajo un contrato llamado <strong style="color:#fff; font-weight:700;">Enterprise SLA con Zero-Data Retention (Retención Cero)</strong>.<br>* <strong style="color:#fff; font-weight:700;">¿Qué significa Retención Cero en criollo?:</strong> Hacé clic en el botón verde del simulador de abajo. Significa que por contrato legal y bloqueo técnico, el proveedor recibe tu consulta cifrada, te genera la respuesta en milisegundos y <strong style="color:#fff; font-weight:700;">destruye el texto de su memoria inmediatamente</strong>. Nadie lo lee y ningún modelo aprende de tus datos. Y como doble cinturón de seguridad, aplicamos <strong style="color:#fff; font-weight:700;">PII Masking</strong>: antes de que la consulta salga de nuestra empresa, un filtro oculta nombres reales, DNI o teléfonos.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Data Leakage (Fuga de Datos / Propiedad Intelectual)</span>
+                <p class="pt-desc">Es el riesgo de que información privada de la empresa o de un cliente termine filtrada afuera por pegarla en herramientas de IA gratuitas o públicas.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Enterprise SLA & Zero-Data Retention (Retención Cero)</span>
+                <p class="pt-desc">Es el contrato corporativo que firmás con OpenAI, Anthropic, Microsoft o AWS donde se comprometen legal y técnicamente a procesar tus textos en memoria temporal y borrarlos en el acto, sin usarlos jamás para entrenar sus modelos públicos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 PII Masking (Enmascaramiento de Datos Personales)</span>
+                <p class="pt-desc">PII significa 'Información Personal Identificable' (nombres, DNI, emails, tarjetas). El Masking es un filtro automático que tapa o reemplaza esos datos por etiquetas genéricas ('[NOMBRE_OCULTO]') antes de enviar el texto a la IA.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Contrastá la tarjeta roja izquierda (Chat Público / Licencias Consumer) con la tarjeta verde derecha (API Corporativa bajo Enterprise SLA). Luego alterná los dos botones del Simulador React inferior ('Enviar por Chat Gratuito' vs. 'Enviar por API Enterprise SLA').</p>
+          <p>Compará la tarjeta roja (peligro de cuentas gratuitas/públicas) con la tarjeta verde (estándar corporativo Enterprise SLA). Abajo, hacé clic en los dos botones del simulador ('🚨 Enviar por Chat Gratuito' vs. '🛡️ Enviar por API Enterprise SLA').</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 12: Mitigación de Alucinaciones: Umbral de Confianza y 'No-Answer'</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya blindamos la privacidad legal. Ahora blindemos la veracidad funcional: ¿cómo obligamos técnicamente al bot a decir 'no sé' cuando le preguntan algo fuera de los manuales? Vamos a la Slide 12.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya protegimos los datos legales de la empresa. Ahora protejamos al usuario de las mentiras de la IA: ¿cómo hacemos técnicamente para que el bot sepa callarse y decir 'no sé' cuando le preguntan algo que no está en los manuales? Vamos a la Slide 12.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ya blindamos la privacidad legal. Ahora blindemos la veracidad funcional: ¿cómo obligamos técnicamente al bot a decir 'no sé' cuando le preguntan algo fuera de los manuales? Vamos a la Slide 12.”</p>
+            <p class="bridge-text">“Ya protegimos los datos legales de la empresa. Ahora protejamos al usuario de las mentiras de la IA: ¿cómo hacemos técnicamente para que el bot sepa callarse y decir 'no sé' cuando le preguntan algo que no está en los manuales? Vamos a la Slide 12.”</p>
           </div>
         </div>
       </article>
@@ -1089,29 +1441,57 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `Un LLM por defecto siempre intenta complacerte, aunque tenga que inventar. Para ponerle un guardrail determinista, usamos el Confidence Threshold (Umbral de Confianza Semántica) calibrado en 0.75.
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Mirá qué importante es esta diapositiva. Dijimos que el LLM por naturaleza es 'complaciente': siempre quiere darte una respuesta. Entonces, ¿qué pasa si a nuestro bot de manuales de localización alguien le pregunta: '¿Cuál es el sueldo confidencial del Director de Finanzas?' o '¿Cómo arreglo la cafetera de la oficina?'?
 
-* Camino Verde (Score >= 0.75 — Autorizado): Hacé clic en el Caso 1 (Score 0.91). Como la similitud en la base vectorial supera 0.75, el backend autoriza la llamada al LLM y devuelve la respuesta con su cita oficial.
- Camino Rojo (Score < 0.75 — Cortocircuito y Fallback): Ahora hacé clic en el Caso 3 (Score 0.34) o bajá el slider. Cuando alguien pregunta algo que no está en los manuales, el backend bloquea la llamada al LLM (ahorrando tokens y evitando alucinaciones) y devuelve una respuesta controlada (No-Answer Fallback): 'No dispongo de información oficial verificada sobre ese punto en la base documental'*.`)">📋 Copiar Guion</button>
+Si no pusiéramos un freno, la Base Vectorial buscaría los 3 párrafos 'menos lejanos' (aunque tengan una nota pobrísima de parecido, como 0.34) y se los mandaría al LLM tratando de forzar una respuesta. Para evitar eso, como PMs definimos una barrera llamada Confidence Threshold (Umbral de Confianza Semántica), que suele fijarse en 0.75 (en una escala de 0 a 1):
+
+* Probémoslo en el Simulador de la Derecha:
+   Hacé clic en el Caso 1 (Score 0.91): La pregunta es '¿Cómo se traduce Chargeback en Pagos LATAM?'*. La base vectorial encuentra el glosario oficial con una similitud de 0.91. Como 0.91 es mayor a 0.75, el semáforo se pone en VERDE (AUTORIZADO) y pasa al LLM para que responda citando la página 8.
+   Ahora hacé clic en el Caso 3 (Score 0.34): La pregunta es '¿Cuál es el salario del Director de Finanzas?'*. Cuando la base vectorial busca en los manuales técnicos, lo más parecido que encuentra da un puntaje de apenas 0.34. Como es menor a 0.75, el semáforo se pone en ROJO (BLOQUEADO).
+ ¿Y qué hace el sistema cuando bloquea?: Hace un cortocircuito: ni siquiera despierta al LLM (así que gastás \$0 en tokens de generación) y muestra automáticamente un No-Answer Fallback (el mensajito seguro de la izquierda): 'No dispongo de información oficial verificada sobre ese punto en la base documental vigente'*. Es la forma más limpia y segura de eliminar alucinaciones.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “Un LLM por defecto siempre intenta complacerte, aunque tenga que inventar. Para ponerle un guardrail determinista, usamos el <strong style="color:#fff; font-weight:700;">Confidence Threshold (Umbral de Confianza Semántica)</strong> calibrado en <strong style="color:#fff; font-weight:700;">0.75</strong>.<br><br>* <strong style="color:#fff; font-weight:700;">Camino Verde (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score >= 0.75</code> — Autorizado):</strong> Hacé clic en el <strong style="color:#fff; font-weight:700;">Caso 1 (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score 0.91</code>)</strong>. Como la similitud en la base vectorial supera 0.75, el backend autoriza la llamada al LLM y devuelve la respuesta con su cita oficial.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Camino Rojo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score < 0.75</code> — Cortocircuito y Fallback):</strong> Ahora hacé clic en el <strong style="color:#fff; font-weight:700;">Caso 3 (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score 0.34</code>)</strong> o bajá el slider. Cuando alguien pregunta algo que no está en los manuales, el backend <strong style="color:#fff; font-weight:700;">bloquea la llamada al LLM</strong> (ahorrando tokens y evitando alucinaciones) y devuelve una respuesta controlada (<strong style="color:#fff; font-weight:700;">No-Answer Fallback</strong>): </em>'No dispongo de información oficial verificada sobre ese punto en la base documental'*.”
+            “Mirá qué importante es esta diapositiva. Dijimos que el LLM por naturaleza es 'complaciente': siempre quiere darte una respuesta. Entonces, ¿qué pasa si a nuestro bot de manuales de localización alguien le pregunta: <em style="color:#fde68a;">'¿Cuál es el sueldo confidencial del Director de Finanzas?'</em> o <em style="color:#fde68a;">'¿Cómo arreglo la cafetera de la oficina?'</em>?<br><br>Si no pusiéramos un freno, la Base Vectorial buscaría los 3 párrafos 'menos lejanos' (aunque tengan una nota pobrísima de parecido, como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.34</code>) y se los mandaría al LLM tratando de forzar una respuesta. Para evitar eso, como PMs definimos una barrera llamada <strong style="color:#fff; font-weight:700;">Confidence Threshold (Umbral de Confianza Semántica)</strong>, que suele fijarse en <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.75</code></strong> (en una escala de 0 a 1):<br><br>* <strong style="color:#fff; font-weight:700;">Probémoslo en el Simulador de la Derecha:</strong><br>  <em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Hacé clic en el Caso 1 (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score 0.91</code>):</strong> La pregunta es </em>'¿Cómo se traduce Chargeback en Pagos LATAM?'*. La base vectorial encuentra el glosario oficial con una similitud de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.91</code>. Como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.91</code> es mayor a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.75</code>, el semáforo se pone en <strong style="color:#fff; font-weight:700;">VERDE (AUTORIZADO)</strong> y pasa al LLM para que responda citando la página 8.<br>  <em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Ahora hacé clic en el Caso 3 (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Score 0.34</code>):</strong> La pregunta es </em>'¿Cuál es el salario del Director de Finanzas?'*. Cuando la base vectorial busca en los manuales técnicos, lo más parecido que encuentra da un puntaje de apenas <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.34</code>. Como es <strong style="color:#fff; font-weight:700;">menor a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.75</code></strong>, el semáforo se pone en <strong style="color:#fff; font-weight:700;">ROJO (BLOQUEADO)</strong>.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">¿Y qué hace el sistema cuando bloquea?:</strong> Hace un <strong style="color:#fff; font-weight:700;">cortocircuito</strong>: ni siquiera despierta al LLM (así que gastás $0 en tokens de generación) y muestra automáticamente un <strong style="color:#fff; font-weight:700;">No-Answer Fallback</strong> (el mensajito seguro de la izquierda): </em>'No dispongo de información oficial verificada sobre ese punto en la base documental vigente'*. Es la forma más limpia y segura de eliminar alucinaciones.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Confidence Threshold (Umbral de Confianza Semántica, ej. 0.75)</span>
+                <p class="pt-desc">Es la 'nota mínima de aprobación' que le exigimos al buscador vectorial. Si el fragmento más parecido del manual tiene una nota menor a 0.75, asumimos que el manual no habla de ese tema.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Cortocircuito en Backend (Deterministic Guardrail)</span>
+                <p class="pt-desc">Si la nota no llega a 0.75, el servidor frena ahí mismo y ni siquiera le manda la pregunta al LLM. Así es 100% imposible que alucine y además ahorramos plata en tokens.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 No-Answer Fallback (Respuesta de Abstención Segura)</span>
+                <p class="pt-desc">Es el mensaje educado y predefinido que devuelve el sistema cuando se activa el freno (ej. 'No tengo información oficial verificada sobre ese punto, ¿querés que lo derive al equipo?').</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador React de la derecha, hacé clic en los 3 casos preconfigurados ('Caso 1: Score 0.91', 'Caso 2: Score 0.78', 'Caso 3: Score 0.34') y deslizá la barra de Score por encima y por debajo de 0.75 para ver cómo se conmuta en vivo entre 'AUTORIZADO' y 'BLOQUEADO'.</p>
+          <p>En el simulador React de la derecha, hacé clic en el 'Caso 1 (Score 0.91)', luego en el 'Caso 2 (Score 0.78)' y finalmente en el 'Caso 3 (Score 0.34: salario del Director)'. También mové el deslizador manual para que vea cómo en 0.75 exacto cambia de AUTORIZADO (verde) a BLOQUEADO (rojo).</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 13: Evaluación de Calidad: Golden Dataset & Evals en CI/CD</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `¿Y cómo verificamos automáticamente que cada cambio que hacen los programadores no rompa esta precisión antes de subirlo a producción? Pasemos a la Slide 13: Golden Dataset y Evals.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya tenemos el bot construido y con su barrera anti-alucinación en 0.75. Pero antes de sacarlo a producción, ¿cómo le tomamos examen para estar 100% seguros de que responde bien en todos los casos? Pasemos a la Slide 13.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“¿Y cómo verificamos automáticamente que cada cambio que hacen los programadores no rompa esta precisión antes de subirlo a producción? Pasemos a la Slide 13: Golden Dataset y Evals.”</p>
+            <p class="bridge-text">“Ya tenemos el bot construido y con su barrera anti-alucinación en 0.75. Pero antes de sacarlo a producción, ¿cómo le tomamos examen para estar 100% seguros de que responde bien en todos los casos? Pasemos a la Slide 13.”</p>
           </div>
         </div>
       </article>
@@ -1134,30 +1514,63 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `En software probabilístico no alcanza con probar tres preguntas a mano antes de lanzar. Implementamos una arquitectura de Evaluación Continua (Evals) en tres pilares:
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Conectemos esto con lo que aprendiste en la Sesión 1 sobre QA y el Pipeline de CI/CD. En el software tradicional es fácil hacer un test automático: probás si 2 + 2 da 4. Pero en Inteligencia Artificial las respuestas son texto redactado, y pasa algo muy loco: a veces un programador toca una línea de las instrucciones para que el bot sea más amable, ¡y sin darse cuenta arruina cómo el bot respondía las preguntas técnicas! Y obviamente nadie puede sentarse a probar 100 preguntas a mano todos los días.
 
- 1. Golden Dataset (50 a 100 Casos Certificados): Una base curada por expertos del negocio con preguntas reales, casos borde y sus respuestas ideales validadas (Ground Truth*).
-* 2. Evals Automatizadas en CI/CD: Mirá el simulador de abajo. En el PR #42, el pipeline corre los 100 casos, mide un Context Adherence de 96.4% (>= 90%) y aprueba el deploy. En cambio, si un desarrollador sube el PR #43 rompiendo el prompt y la fidelidad cae a 74.0%, GitHub Actions bloquea automáticamente el despliegue.
-* 3. Observabilidad en Producción (Langfuse / Arize): Monitoreamos en vivo latencia P95, costo por conversación y deriva semántica.`)">📋 Copiar Guion</button>
+¿Cómo auditan la calidad los equipos profesionales de IA? Con los 3 pilares que ves en las tarjetas de arriba:
+
+* 1. El Golden Dataset (El Examen Oficial): Antes de lanzar, vos como PM te sentás con los expertos del tema (por ejemplo, las líderes de traducción o de producto) y arman una lista de 50 a 100 preguntas reales bien variadas (fáciles, difíciles y preguntas trampa que no están en el manual) junto con la respuesta correcta esperada. Esa planilla certificada por humanos se llama el Golden Dataset (Dataset de Oro).
+ 2. Evals Automatizadas en CI/CD (Simulador de Abajo): Cada vez que un desarrollador intenta subir un cambio al código (un Pull Request), el pipeline le toma automáticamente esas 100 preguntas al bot y compara sus respuestas contra tu Golden Dataset*.
+  * Mirá el simulador abajo en el PR #42 (botón verde): la fidelidad al manual (Context Adherence) dio 96.4% (supera nuestra meta de >= 90%) y hubo 0% de alucinaciones, así que el sistema dice DEPLOY APPROVED ✅.
+  * Ahora hacé clic en el PR #43 (botón rojo): alguien tocó el prompt sin querer, la fidelidad cayó al 74.0% y alucinó en 18 preguntas. Automáticamente salta DEPLOY BLOCKED 🛑 y ese error nunca llega a los clientes.
+* 3. Observabilidad en Vivo (Langfuse): Y una vez que el bot ya está en la calle, usamos herramientas como Langfuse para ver en un tablero cuánto tarda en responder, cuántos dólares lleva gastados en el mes y qué preguntas nuevas hacen los usuarios.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “En software probabilístico no alcanza con probar tres preguntas a mano antes de lanzar. Implementamos una arquitectura de <strong style="color:#fff; font-weight:700;">Evaluación Continua (Evals)</strong> en tres pilares:<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">1. Golden Dataset (50 a 100 Casos Certificados):</strong> Una base curada por expertos del negocio con preguntas reales, casos borde y sus respuestas ideales validadas (</em>Ground Truth*).<br>* <strong style="color:#fff; font-weight:700;">2. Evals Automatizadas en CI/CD:</strong> Mirá el simulador de abajo. En el <strong style="color:#fff; font-weight:700;">PR #42</strong>, el pipeline corre los 100 casos, mide un <strong style="color:#fff; font-weight:700;">Context Adherence de 96.4%</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">>= 90%</code>) y aprueba el deploy. En cambio, si un desarrollador sube el <strong style="color:#fff; font-weight:700;">PR #43</strong> rompiendo el prompt y la fidelidad cae a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">74.0%</code>, GitHub Actions <strong style="color:#fff; font-weight:700;">bloquea automáticamente el despliegue</strong>.<br>* <strong style="color:#fff; font-weight:700;">3. Observabilidad en Producción (Langfuse / Arize):</strong> Monitoreamos en vivo latencia P95, costo por conversación y deriva semántica.”
+            “Conectemos esto con lo que aprendiste en la <strong style="color:#fff; font-weight:700;">Sesión 1 sobre QA y el Pipeline de CI/CD</strong>. En el software tradicional es fácil hacer un test automático: probás si <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">2 + 2</code> da <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">4</code>. Pero en Inteligencia Artificial las respuestas son texto redactado, y pasa algo muy loco: a veces un programador toca una línea de las instrucciones para que el bot sea más amable, ¡y sin darse cuenta arruina cómo el bot respondía las preguntas técnicas! Y obviamente nadie puede sentarse a probar 100 preguntas a mano todos los días.<br><br>¿Cómo auditan la calidad los equipos profesionales de IA? Con los <strong style="color:#fff; font-weight:700;">3 pilares</strong> que ves en las tarjetas de arriba:<br><br>* <strong style="color:#fff; font-weight:700;">1. El Golden Dataset (El Examen Oficial):</strong> Antes de lanzar, vos como PM te sentás con los expertos del tema (por ejemplo, las líderes de traducción o de producto) y arman una lista de <strong style="color:#fff; font-weight:700;">50 a 100 preguntas reales bien variadas</strong> (fáciles, difíciles y preguntas trampa que no están en el manual) junto con <strong style="color:#fff; font-weight:700;">la respuesta correcta esperada</strong>. Esa planilla certificada por humanos se llama el <strong style="color:#fff; font-weight:700;">Golden Dataset (Dataset de Oro)</strong>.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">2. Evals Automatizadas en CI/CD (Simulador de Abajo):</strong> Cada vez que un desarrollador intenta subir un cambio al código (un </em>Pull Request<em style="color:#fde68a;">), el pipeline le toma automáticamente esas 100 preguntas al bot y compara sus respuestas contra tu </em>Golden Dataset*.<br>  * Mirá el simulador abajo en el <strong style="color:#fff; font-weight:700;">PR #42 (botón verde)</strong>: la fidelidad al manual (<strong style="color:#fff; font-weight:700;">Context Adherence</strong>) dio <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">96.4%</code></strong> (supera nuestra meta de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">>= 90%</code>) y hubo <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0%</code> de alucinaciones</strong>, así que el sistema dice <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">DEPLOY APPROVED ✅</code></strong>.<br>  * Ahora hacé clic en el <strong style="color:#fff; font-weight:700;">PR #43 (botón rojo)</strong>: alguien tocó el prompt sin querer, la fidelidad cayó al <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">74.0%</code></strong> y alucinó en 18 preguntas. Automáticamente salta <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">DEPLOY BLOCKED 🛑</code></strong> y ese error nunca llega a los clientes.<br>* <strong style="color:#fff; font-weight:700;">3. Observabilidad en Vivo (Langfuse):</strong> Y una vez que el bot ya está en la calle, usamos herramientas como <strong style="color:#fff; font-weight:700;">Langfuse</strong> para ver en un tablero cuánto tarda en responder, cuántos dólares lleva gastados en el mes y qué preguntas nuevas hacen los usuarios.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Golden Dataset (Conjunto de Datos de Oro)</span>
+                <p class="pt-desc">Es una planilla con 50 a 100 preguntas reales (incluyendo preguntas trampa) y sus 'respuestas ideales perfectas' redactadas y validadas por los expertos humanos del negocio.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Evals en CI/CD (Evaluación Continua Automatizada)</span>
+                <p class="pt-desc">Cada vez que un programador quiere subir un cambio al sistema, un robot le toma automáticamente las 100 preguntas del Golden Dataset al chatbot. Si saca menos de 90%, el sistema bloquea la subida a producción.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Context Adherence / Faithfulness (Fidelidad al Contexto)</span>
+                <p class="pt-desc">Métrica que mide qué porcentaje de la respuesta del bot salió fielmente de los manuales provistos sin agregar ni inventar nada por su cuenta.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Observabilidad LLMOps (Langfuse / Arize)</span>
+                <p class="pt-desc">Es el panel de control en vivo (como el tablero de un auto) que muestra cuánto tarda el bot, cuánto gasta en dólares por día y qué preguntas están fallando en producción.</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Repasá las 3 tarjetas superiores y luego hacé clic en los dos escenarios del Simulador de Pipeline CI/CD inferior ('PR #42: Chunking 1000ch + 15% Overlap -> DEPLOY APPROVED' vs. 'PR #43: Prompt sin Guardrail -> DEPLOY BLOCKED').</p>
+          <p>Repasá las 3 tarjetas de arriba (1. Golden Dataset, 2. Evals en CI/CD, 3. Observabilidad) y abajo hacé clic en los dos botones del simulador ('✅ PR #42: Chunking 1000ch + 15% Overlap' vs. '❌ PR #43: Prompt sin Guardrail') para que vea cómo cambia el cartel de DEPLOY APPROVED a DEPLOY BLOCKED.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 14: Roleplay: Defensa Técnica en Entrevistas IT</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con todo este vocabulario y criterio arquitectónico listo, entrenemos cómo defender estas decisiones frente a un CTO o VP of Product en una entrevista real. Vamos a la Slide 14.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Con esto ya tenés el vocabulario completo de principio a fin! Ahora pongamos todo esto en práctica para vos: ¿cómo suena Anabela respondiendo como una líder de producto en una entrevista real? Vamos a la Slide 14.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Con todo este vocabulario y criterio arquitectónico listo, entrenemos cómo defender estas decisiones frente a un CTO o VP of Product en una entrevista real. Vamos a la Slide 14.”</p>
+            <p class="bridge-text">“¡Con esto ya tenés el vocabulario completo de principio a fin! Ahora pongamos todo esto en práctica para vos: ¿cómo suena Anabela respondiendo como una líder de producto en una entrevista real? Vamos a la Slide 14.”</p>
           </div>
         </div>
       </article>
@@ -1180,29 +1593,59 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `En una entrevista para IT Product Manager o AI Project Manager te van a hacer estas dos preguntas clásicas para medir tu senioridad técnica:
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `Vamos a entrenar con las dos preguntas favoritas que hacen los directores de tecnología (CTOs) o líderes de Producto en entrevistas cuando quieren saber si realmente entendés cómo llevar IA a una empresa o si solo repetís palabras de moda.
 
- Pregunta 1 (CTO) — ¿Por qué usar RAG y no Fine-Tuning para glosarios semanales?: Respondés con tres pilares contundentes: 1) El Fine-Tuning enseña forma, tono o formato (JSON), pero congela los hechos y sigue alucinando; 2) Re-entrenar cada semana es lento, caro e inauditable; 3) RAG + Base Vectorial* actualiza el conocimiento en segundos, filtra por metadatos y exige cita documental con umbral >= 0.75.
- Pregunta 2 (Head of Product) — ¿Cómo evitamos que el costo de API escale linealmente con los usuarios?: Respondés con tu estrategia FinOps en tres capas: 1) Prompt Caching en el System Prompt para ahorrar 50%–75% en tokens de entrada; 2) Caché Semántica + Cortocircuito (< 0.75) para no invocar al LLM en preguntas repetidas o fuera de dominio; y 3) Top-3 Chunks pre-filtrados junto con Rate Limits* por rol.`)">📋 Copiar Guion</button>
+ Escenario 1 — La trampa del Fine-Tuning: Te preguntan: '¿Por qué no hacemos un Fine-Tuning del modelo para cargarle nuestros glosarios y manuales que actualizamos todas las semanas?'*.
+  * Cómo lo pensás y lo respondés en 3 pasos súper claros:
+    1. Diferenciás qué hace cada cosa: 'El Fine-Tuning sirve para enseñarle al modelo un estilo, tono o formato de salida (como responder en JSON), pero no sirve para cargarle datos que cambian cada semana porque su memoria queda estática y sigue alucinando'.
+    2. Mostrás visión de costos y negocio: 'Además, re-entrenar un modelo todas las semanas es lento, carísimo y no te permite saber de qué página sacó la respuesta'.
+    3. Das la solución ganadora: 'Para datos vivos usamos una arquitectura RAG conectada a una Base de Datos Vectorial: actualizamos los fragmentos en segundos, filtramos por metadatos vigentes, exigimos un umbral de confianza de 0.75 y obligamos al bot a citar el documento fuente'.
+
+ Escenario 2 — El miedo a la factura de tokens (FinOps): Te preguntan: 'Si el chatbot pasa de 100 usuarios a 50.000 usuarios por mes, ¿cómo evitás que la factura de la API nos funda?'*.
+  * Tu respuesta en 3 capas de ahorro:
+    1. Ahorro en instrucciones fijas: 'Activamos Prompt Caching dejando fijo el inicio del System Prompt para ahorrar entre un 50% y 75% en tokens de entrada'.
+    2. Ahorro evitando llamadas inútiles al LLM: 'Usamos Caché Semántica (si 500 personas preguntan lo mismo, se responde desde la memoria sin volver a pagarle al LLM) y el cortocircuito del umbral 0.75 para no llamar al modelo en preguntas fuera de tema'.
+    3. Eficiencia en lo que inyectamos: 'Pre-filtramos por metadatos y enviamos solo el Top-3 de chunks de 1.000 caracteres, en vez de mandar manuales enteros'. 
+
+Fijate cómo usás toda la terminología técnica real, pero explicando el porqué con una claridad que enamora a cualquier entrevistador.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “En una entrevista para IT Product Manager o AI Project Manager te van a hacer estas dos preguntas clásicas para medir tu senioridad técnica:<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Pregunta 1 (CTO) — ¿Por qué usar RAG y no Fine-Tuning para glosarios semanales?:</strong> Respondés con tres pilares contundentes: 1) El </em>Fine-Tuning<em style="color:#fde68a;"> enseña forma, tono o formato (JSON), pero congela los hechos y sigue alucinando; 2) Re-entrenar cada semana es lento, caro e inauditable; 3) </em>RAG + Base Vectorial* actualiza el conocimiento en segundos, filtra por metadatos y exige cita documental con umbral <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">>= 0.75</code>.<br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Pregunta 2 (Head of Product) — ¿Cómo evitamos que el costo de API escale linealmente con los usuarios?:</strong> Respondés con tu estrategia FinOps en tres capas: 1) <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> en el System Prompt para ahorrar 50%–75% en tokens de entrada; 2) <strong style="color:#fff; font-weight:700;">Caché Semántica + Cortocircuito (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">< 0.75</code>)</strong> para no invocar al LLM en preguntas repetidas o fuera de dominio; y 3) <strong style="color:#fff; font-weight:700;">Top-3 Chunks pre-filtrados</strong> junto con </em>Rate Limits* por rol.”
+            “Vamos a entrenar con las <strong style="color:#fff; font-weight:700;">dos preguntas favoritas</strong> que hacen los directores de tecnología (CTOs) o líderes de Producto en entrevistas cuando quieren saber si realmente entendés cómo llevar IA a una empresa o si solo repetís palabras de moda.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Escenario 1 — La trampa del Fine-Tuning:</strong> Te preguntan: </em>'¿Por qué no hacemos un Fine-Tuning del modelo para cargarle nuestros glosarios y manuales que actualizamos todas las semanas?'*.<br>  * <strong style="color:#fff; font-weight:700;">Cómo lo pensás y lo respondés en 3 pasos súper claros:</strong><br>    1. <strong style="color:#fff; font-weight:700;">Diferenciás qué hace cada cosa:</strong> <em style="color:#fde68a;">'El Fine-Tuning sirve para enseñarle al modelo un estilo, tono o formato de salida (como responder en JSON), pero no sirve para cargarle datos que cambian cada semana porque su memoria queda estática y sigue alucinando'</em>.<br>    2. <strong style="color:#fff; font-weight:700;">Mostrás visión de costos y negocio:</strong> <em style="color:#fde68a;">'Además, re-entrenar un modelo todas las semanas es lento, carísimo y no te permite saber de qué página sacó la respuesta'</em>.<br>    3. <strong style="color:#fff; font-weight:700;">Das la solución ganadora:</strong> <em style="color:#fde68a;">'Para datos vivos usamos una arquitectura <strong style="color:#fff; font-weight:700;">RAG</strong> conectada a una <strong style="color:#fff; font-weight:700;">Base de Datos Vectorial</strong>: actualizamos los fragmentos en segundos, filtramos por metadatos vigentes, exigimos un umbral de confianza de 0.75 y obligamos al bot a citar el documento fuente'</em>.<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Escenario 2 — El miedo a la factura de tokens (FinOps):</strong> Te preguntan: </em>'Si el chatbot pasa de 100 usuarios a 50.000 usuarios por mes, ¿cómo evitás que la factura de la API nos funda?'*.<br>  * <strong style="color:#fff; font-weight:700;">Tu respuesta en 3 capas de ahorro:</strong><br>    1. <strong style="color:#fff; font-weight:700;">Ahorro en instrucciones fijas:</strong> <em style="color:#fde68a;">'Activamos <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> dejando fijo el inicio del System Prompt para ahorrar entre un 50% y 75% en tokens de entrada'</em>.<br>    2. <strong style="color:#fff; font-weight:700;">Ahorro evitando llamadas inútiles al LLM:</strong> <em style="color:#fde68a;">'Usamos <strong style="color:#fff; font-weight:700;">Caché Semántica</strong> (si 500 personas preguntan lo mismo, se responde desde la memoria sin volver a pagarle al LLM) y el <strong style="color:#fff; font-weight:700;">cortocircuito del umbral 0.75</strong> para no llamar al modelo en preguntas fuera de tema'</em>.<br>    3. <strong style="color:#fff; font-weight:700;">Eficiencia en lo que inyectamos:</strong> <em style="color:#fde68a;">'Pre-filtramos por metadatos y enviamos solo el <strong style="color:#fff; font-weight:700;">Top-3 de chunks</strong> de 1.000 caracteres, en vez de mandar manuales enteros'</em>. <br><br>Fijate cómo usás toda la terminología técnica real, pero explicando el <strong style="color:#fff; font-weight:700;">porqué</strong> con una claridad que enamora a cualquier entrevistador.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Qué evalúan en la Pregunta 1 (RAG vs. Fine-Tuning)</span>
+                <p class="pt-desc">Quieren ver si caés en la trampa de principiante de pedir 're-entrenar el modelo' cada semana (carísimo y propenso a alucinar) o si sabés proponer una arquitectura RAG con Base Vectorial.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Qué evalúan en la Pregunta 2 (Escalabilidad FinOps)</span>
+                <p class="pt-desc">Quieren ver si cuidás la rentabilidad del negocio combinando ahorro en tokens fijos (Prompt Caching), ahorro en preguntas repetidas (Caché Semántica) y filtro previo de llamadas inútiles (Umbral 0.75 + Metadata Filtering).</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en las dos tarjetas interactivas del Roleplay React para mostrar u ocultar los 3 pilares ganadores y el pitch ejecutivo de cada pregunta de entrevista.</p>
+          <p>Leé con Anabela cada una de las dos preguntas de entrevista. Podés hacer clic en el botón '👁️ Ocultar / ✨ Revelar' de cada tarjeta para practicar primero qué respondería ella con sus palabras y luego comparar con los 3 pilares ganadores y el Pitch Ejecutivo.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 Puente de Conexión → Slide 15: Cierre Sesión 2: Tu Ruta y Valor como IT Product/Project Manager</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Responder con esa claridad ejecutiva te posiciona inmediatamente por encima del promedio del mercado. Pasemos a la Slide 15 para sintetizar tu valor como PM y conectar con la Sesión 3.`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Pasemos a nuestra última diapositiva, la Slide 15, para resumir todo lo que construiste hoy y ver cómo se conecta con la Sesión 3.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Responder con esa claridad ejecutiva te posiciona inmediatamente por encima del promedio del mercado. Pasemos a la Slide 15 para sintetizar tu valor como PM y conectar con la Sesión 3.”</p>
+            <p class="bridge-text">“Pasemos a nuestra última diapositiva, la Slide 15, para resumir todo lo que construiste hoy y ver cómo se conecta con la Sesión 3.”</p>
           </div>
         </div>
       </article>
@@ -1225,29 +1668,50 @@
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR)</span>
-            <button class="copy-btn" onclick="copyText(this, `¡Felicitaciones, Anabela! Mirá el salto gigantesco que diste hoy en la Sesión 2:
+            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <button class="copy-btn" onclick="copyText(this, `¡Felicitaciones, Anabela! Mirá todo lo que dominaste en esta segunda sesión. Al principio podían sonar intimidantes palabras como BPE, Prompt Caching, Lost in the Middle, Embeddings de 1536 dimensiones, Similitud por Coseno, Metadata Pre-Filtering, Chunking con Overlap, Umbral 0.75 o Golden Dataset, y ahora no solo sabés qué significa cada una en criollo, sino para qué la usás vos al tomar decisiones de producto.
 
- Dominio Técnico-Comercial: Ya sabés cómo funciona un Transformer por dentro, cómo calcular presupuestos de Tokens y Prompt Caching, cómo evitar el sesgo Lost in the Middle*, y cómo diseñar un pipeline RAG completo con Embeddings, Metadata Filtering, Chunking con 15% de Overlap, umbral de 0.75, Enterprise SLA y Golden Datasets en CI/CD.
-* Práctica Disponible en el Portal: Tenés listos el Simulador Práctico S2 (4 Misiones), la App Interactiva del Mock PRD y el Glosario Completo S2 con tablas comparativas.`)">📋 Copiar Guion</button>
+* Tus 3 herramientas prácticas en el Portal (Banner Inferior):
+  1. ⚡ Actividad Práctica S2: Un simulador interactivo con 4 misiones cortitas para jugar y afianzar todo lo que vimos hoy.
+  2. 🛠️ App Mock PRD: El generador interactivo donde podés armar paso a paso el PRD del chatbot corporativo y descargarlo.
+  3. 📖 Glosario S2: El diccionario completo con los 22 términos técnicos explicados con su metáfora cotidiana y tablas comparativas.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “¡Felicitaciones, Anabela! Mirá el salto gigantesco que diste hoy en la Sesión 2:<br><br><em style="color:#fde68a;"> <strong style="color:#fff; font-weight:700;">Dominio Técnico-Comercial:</strong> Ya sabés cómo funciona un Transformer por dentro, cómo calcular presupuestos de Tokens y Prompt Caching, cómo evitar el sesgo </em>Lost in the Middle*, y cómo diseñar un pipeline RAG completo con Embeddings, Metadata Filtering, Chunking con 15% de Overlap, umbral de 0.75, Enterprise SLA y Golden Datasets en CI/CD.<br>* <strong style="color:#fff; font-weight:700;">Práctica Disponible en el Portal:</strong> Tenés listos el <strong style="color:#fff; font-weight:700;">Simulador Práctico S2 (4 Misiones)</strong>, la <strong style="color:#fff; font-weight:700;">App Interactiva del Mock PRD</strong> y el <strong style="color:#fff; font-weight:700;">Glosario Completo S2</strong> con tablas comparativas.”
+            “¡Felicitaciones, Anabela! Mirá todo lo que dominaste en esta segunda sesión. Al principio podían sonar intimidantes palabras como <em style="color:#fde68a;">BPE, Prompt Caching, Lost in the Middle, Embeddings de 1536 dimensiones, Similitud por Coseno, Metadata Pre-Filtering, Chunking con Overlap, Umbral 0.75 o Golden Dataset</em>, y ahora no solo sabés qué significa cada una en criollo, sino <strong style="color:#fff; font-weight:700;">para qué la usás vos al tomar decisiones de producto</strong>.<br><br>* <strong style="color:#fff; font-weight:700;">Tus 3 herramientas prácticas en el Portal (Banner Inferior):</strong><br>  1. <strong style="color:#fff; font-weight:700;">⚡ Actividad Práctica S2:</strong> Un simulador interactivo con 4 misiones cortitas para jugar y afianzar todo lo que vimos hoy.<br>  2. <strong style="color:#fff; font-weight:700;">🛠️ App Mock PRD:</strong> El generador interactivo donde podés armar paso a paso el PRD del chatbot corporativo y descargarlo.<br>  3. <strong style="color:#fff; font-weight:700;">📖 Glosario S2:</strong> El diccionario completo con los 22 términos técnicos explicados con su metáfora cotidiana y tablas comparativas.”
           </blockquote>
         </div>
 
+        
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 IA Consultiva (RAG Pasivo — Sesión 2)</span>
+                <p class="pt-desc">Es el 'Cerebro que lee': busca en los manuales privados y responde dudas con total precisión y cita, pero no ejecuta acciones en otros sistemas.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 IA Agéntica (Agentes con ReAct y Tool Calling — Sesión 3)</span>
+                <p class="pt-desc">Son las 'Manos que actúan': además de leer el manual, el agente puede tomar decisiones paso a paso y conectarse por API a otros programas (ej. crear un ticket en Jira, procesar un reembolso o enviar un mail con permiso humano).</p>
+              </div>
+            
+          </div>
+        </div>
+    
+
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Destacá el cuadro comparativo de las Sesiones 2, 3 y 4 y señalá los 3 botones de acceso directo en el banner inferior: Actividad Práctica S2, App Mock PRD y Glosario S2.</p>
+          <p>Repasá las dos tarjetas de síntesis (El Súper-Poder del IT PM en IA a la izquierda y la evolución de Sesión 2 → Sesión 3 → Sesión 4 a la derecha) y señalá los 3 botones verdes/azules/violetas del banner inferior.</p>
         </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🏁 Cierre de Sesión 2 y Puente a la Siguiente Clase</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `🔗 Conexión con la Sesión 3: Hoy construimos el 'Cerebro consultivo' (IA Pasiva con RAG: lee manuales y responde con precisión, pero no ejecuta acciones). En la Sesión 3 le vamos a dar 'Manos y Autonomía': vamos a diseñar Sistemas Agénticos con arquitectura ReAct (Reason + Act) que invocan herramientas externas por API (Tool Calling), validan estructuras con Pydantic y operan con compuertas Human-in-the-Loop (HITL).`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `🔗 Conexión con la Sesión 3: Hoy construimos el 'Cerebro consultivo' de la IA (un sistema RAG que lee manuales privados y responde sin alucinar, pero que todavía tiene 'las manos atadas': no puede tocar botones ni ejecutar tareas en otros sistemas). En la Sesión 3 le vamos a dar 'Manos y Autonomía': vamos a ver cómo funcionan los Agentes de IA (arquitectura ReAct) que razonan paso a paso, usan herramientas externas por API (Tool Calling) y piden autorización humana antes de hacer una acción crítica (Human-in-the-Loop).`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“🔗 Conexión con la Sesión 3: Hoy construimos el 'Cerebro consultivo' (IA Pasiva con RAG: lee manuales y responde con precisión, pero no ejecuta acciones). En la <strong style="color:#fff; font-weight:700;">Sesión 3</strong> le vamos a dar 'Manos y Autonomía': vamos a diseñar <strong style="color:#fff; font-weight:700;">Sistemas Agénticos con arquitectura ReAct (Reason + Act)</strong> que invocan herramientas externas por API (<em style="color:#fde68a;">Tool Calling</em>), validan estructuras con <em style="color:#fde68a;">Pydantic</em> y operan con compuertas <em style="color:#fde68a;">Human-in-the-Loop (HITL)</em>.”</p>
+            <p class="bridge-text">“🔗 Conexión con la Sesión 3: Hoy construimos el <strong style="color:#fff; font-weight:700;">'Cerebro consultivo'</strong> de la IA (un sistema RAG que lee manuales privados y responde sin alucinar, pero que todavía tiene 'las manos atadas': no puede tocar botones ni ejecutar tareas en otros sistemas). En la <strong style="color:#fff; font-weight:700;">Sesión 3</strong> le vamos a dar <strong style="color:#fff; font-weight:700;">'Manos y Autonomía'</strong>: vamos a ver cómo funcionan los <strong style="color:#fff; font-weight:700;">Agentes de IA (arquitectura ReAct)</strong> que razonan paso a paso, usan herramientas externas por API (<strong style="color:#fff; font-weight:700;">Tool Calling</strong>) y piden autorización humana antes de hacer una acción crítica (<strong style="color:#fff; font-weight:700;">Human-in-the-Loop</strong>).”</p>
           </div>
         </div>
       </article>
