@@ -14,6 +14,7 @@ function normalizeSession(raw) {
     accent: raw.accentHex,
     accentRgb: raw.accentRgb,
     goal: raw.goal,
+    mentalMap60s: raw.mentalMap60s || [],
     agenda: raw.agenda || [],
     slidesFile: `slides_sesion_${raw.sessionNum}.html`,
     slides: raw.slides.map(sl => ({
@@ -23,6 +24,7 @@ function normalizeSession(raw) {
       time: sl.duration,
       badge: (sl.tags || []).join(' · '),
       tags: sl.tags || [],
+      cheatSheet: sl.cheatSheet || null,
       plainTerms: sl.plainTerms || [],
       interaction: sl.interaction,
       script: sl.script,
@@ -52,6 +54,14 @@ function generateSessionMarkdown(s) {
   md += `- **Objetivo del Mentor:** ${s.goal}\n`;
   md += `- **Total de Diapositivas:** ${s.slides.length} slides (con guion verbatim + acción en pantalla + puente exacto de transición a la siguiente diapositiva)\n\n`;
 
+  if (s.mentalMap60s && s.mentalMap60s.length > 0) {
+    md += `## ⚡ Machete General de 60 Segundos (Leé esto 1 minuto antes de arrancar la llamada)\n\n`;
+    for (const m of s.mentalMap60s) {
+      md += `- **${m.step}:** ${m.text}\n`;
+    }
+    md += `\n`;
+  }
+
   if (s.agenda.length > 0) {
     md += `## 🧭 Cronograma y Bloques de la Sesión\n\n`;
     md += `| Bloque Horario | Módulo | Diapositivas | Foco Pedagógico |\n`;
@@ -69,8 +79,14 @@ function generateSessionMarkdown(s) {
     const nextSl = i < s.slides.length - 1 ? s.slides[i + 1] : null;
     md += `## Slide ${sl.num}: ${sl.title}\n`;
     md += `- **⏱️ Tiempo estimado:** ${sl.time} | **🏷️ Etiquetas:** ${sl.badge}\n\n`;
-    md += `### 🗣️ Guion Literal (Qué decir)\n`;
-    md += `> "${sl.script}"\n\n`;
+    if (sl.cheatSheet) {
+      md += `### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)\n`;
+      md += `- **🎯 Qué explicás acá (En 1 frase):** ${sl.cheatSheet.idea}\n`;
+      md += `- **👆 Qué tocar en la Slide:** ${sl.cheatSheet.clicks}\n`;
+      md += `- **💬 La analogía ganadora:** ${sl.cheatSheet.analogy}\n\n`;
+    }
+    md += `### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)\n`;
+    md += `${sl.script}\n\n`;
     if (sl.plainTerms && sl.plainTerms.length > 0) {
       md += `### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)\n`;
       for (const pt of sl.plainTerms) {
@@ -117,6 +133,22 @@ function generateSingleSessionHTML(s) {
     return `<a href="guia_sesion_${other.id}_pm.html" class="nav-pill ${active}">Sesión ${other.id} (${other.slides.length} slides)</a>`;
   }).join('\n          ');
 
+  const mentalMapHTML = (s.mentalMap60s && s.mentalMap60s.length > 0) ? `
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(59, 130, 246, 0.12)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1.15rem 1.35rem; margin-bottom: 1.25rem;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+        ⚡ MACHETE GENERAL DE 60 SEGUNDOS (LEÉ ESTOS 4 PUNTOS 1 MINUTO ANTES DE EMPEZAR LA LLAMADA)
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.7rem;">
+        ${s.mentalMap60s.map(m => `
+          <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">${m.step}</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">${mdToHtml(m.text)}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
   const agendaRows = s.agenda.map(a => `
     <div class="agenda-item">
       <span class="agenda-time">${a.time}</span>
@@ -132,6 +164,28 @@ function generateSingleSessionHTML(s) {
     const bridgeLabel = nextSl
       ? `🔗 Puente de Conexión → Slide ${nextSl.num}: ${nextSl.title}`
       : `🏁 Cierre de Sesión ${s.id} y Puente a la Siguiente Clase`;
+
+    const cheatSheetHTML = sl.cheatSheet ? `
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.idea)}</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.clicks)}</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.analogy)}</p>
+            </div>
+          </div>
+        </div>
+    ` : '';
 
     const plainTermsHTML = (sl.plainTerms && sl.plainTerms.length > 0) ? `
         <div class="plain-terms-box">
@@ -163,13 +217,15 @@ function generateSingleSessionHTML(s) {
           </div>
         </div>
 
+        ${cheatSheetHTML}
+
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION LITERAL DEL ORADOR (QUÉ DECIR CON ANALOGÍAS SIMPLES)</span>
+            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
             <button class="copy-btn" onclick="copyText(this, \`${stripMd(sl.script)}\`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            “${mdToHtml(sl.script)}”
+            ${mdToHtml(sl.script)}
           </blockquote>
         </div>
 
@@ -715,6 +771,10 @@ function generateSingleSessionHTML(s) {
       margin-bottom: 1rem;
     }
 
+    body.cheat-mode-only .script-section {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .top-copilot-bar { padding: 0.65rem 1rem; }
       .hero-box { padding: 1.35rem; }
@@ -744,12 +804,15 @@ function generateSingleSessionHTML(s) {
       <h1>${s.title}: ${s.subtitle}</h1>
       <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> ${s.goal}</p>
 
+      ${mentalMapHTML}
+
       <div class="agenda-grid">
         ${agendaRows}
       </div>
 
       <div class="controls-row">
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
+        <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
         <div class="progress-stat" id="progressStat">0 / ${s.slides.length} dictadas</div>
       </div>
@@ -788,7 +851,15 @@ function generateSingleSessionHTML(s) {
       updateProgress();
     }
 
+    function toggleCheatMode(btn) {
+      document.body.classList.remove('bridges-only');
+      document.body.classList.toggle('cheat-mode-only');
+      const active = document.body.classList.contains('cheat-mode-only');
+      btn.textContent = active ? '📖 Mostrar Guion Completo + Machete' : '⚡ Modo Machete Rápido (Ocultar texto largo)';
+    }
+
     function toggleBridgesMode(btn) {
+      document.body.classList.remove('cheat-mode-only');
       document.body.classList.toggle('bridges-only');
       const active = document.body.classList.contains('bridges-only');
       btn.textContent = active ? '🎙️ Mostrar Guion Completo + Puentes' : '🔗 Ver Solo Puentes entre Slides';
@@ -843,9 +914,29 @@ function generateMasterHubHTML() {
             <button class="hub-copy" onclick="copyHubText(this, \`${stripMd(sl.script)} \\n\\n[PUENTE]: ${stripMd(sl.bridge)}\`)">📋 Copiar Guion + Puente</button>
           </div>
 
+          ${sl.cheatSheet ? `
+          <div style="background:linear-gradient(135deg, rgba(16,185,129,0.12), rgba(245,158,11,0.08)); border:1px solid rgba(16,185,129,0.4); border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.9rem;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.74rem; font-weight:800; color:#6ee7b7; margin-bottom:0.5rem;">⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE)</div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.55rem;">
+              <div style="background:rgba(7,11,20,0.75); border-left:3px solid #10b981; border-radius:8px; padding:0.55rem 0.75rem;">
+                <strong style="display:block; color:#6ee7b7; font-size:0.74rem; font-family:monospace;">🎯 1. IDEA CENTRAL</strong>
+                <span style="color:#fff; font-size:0.84rem;">${mdToHtml(sl.cheatSheet.idea)}</span>
+              </div>
+              <div style="background:rgba(7,11,20,0.75); border-left:3px solid #38bdf8; border-radius:8px; padding:0.55rem 0.75rem;">
+                <strong style="display:block; color:#7dd3fc; font-size:0.74rem; font-family:monospace;">👆 2. QUÉ TOCAR</strong>
+                <span style="color:#e2e8f0; font-size:0.82rem;">${mdToHtml(sl.cheatSheet.clicks)}</span>
+              </div>
+              <div style="background:rgba(7,11,20,0.75); border-left:3px solid #f59e0b; border-radius:8px; padding:0.55rem 0.75rem;">
+                <strong style="display:block; color:#fcd34d; font-size:0.74rem; font-family:monospace;">💬 3. ANALOGÍA GANADORA</strong>
+                <span style="color:#fef3c7; font-size:0.82rem;">${mdToHtml(sl.cheatSheet.analogy)}</span>
+              </div>
+            </div>
+          </div>
+          ` : ''}
+
           <div class="hub-script">
-            <div class="hub-label">🗣️ GUION DEL ORADOR</div>
-            <p>“${mdToHtml(sl.script)}”</p>
+            <div class="hub-label">🗣️ GUION PASO A PASO (3 BLOQUES CORTOS)</div>
+            <p>${mdToHtml(sl.script)}</p>
           </div>
 
           ${(sl.plainTerms && sl.plainTerms.length > 0) ? `
