@@ -617,12 +617,80 @@
         }
 
         /* RESPONSIVE DESIGN */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        main {
+            min-width: 0;
+            overflow: hidden;
+        }
         @media (max-width: 1024px) {
             .main-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+                padding: 0 1.25rem;
+                margin: 1.25rem auto;
+                gap: 1.25rem;
             }
-            aside {
-                display: none; /* simple hidden for screen size in desktop presentation */
+            aside, .nav-card {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .nav-list {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 0.35rem;
+                max-width: 100%;
+            }
+            .nav-item {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .instructor-card {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 0.85rem 1rem;
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.65rem;
+            }
+            .progress-widget {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .main-container {
+                padding: 0 0.85rem;
+                margin: 1rem auto;
+            }
+            main {
+                padding: 1.25rem 1rem;
+                border-radius: 14px;
+            }
+            .form-row,
+            .export-actions-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.85rem !important;
+            }
+            .dataset-table {
+                display: block;
+                overflow-x: auto;
+            }
+            .footer-actions {
+                flex-wrap: wrap;
+                gap: 0.65rem;
+            }
+            .footer-actions button {
+                flex: 1;
+                justify-content: center;
+                padding: 0.65rem 1rem;
+                font-size: 0.82rem;
             }
         }
 

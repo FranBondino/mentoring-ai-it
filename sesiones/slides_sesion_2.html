@@ -1569,18 +1569,18 @@
                 </div>
 
                 <!-- REACT INTERACTIVE VECTOR MAP -->
-                <div class="vector-visualization glass-card" id="react-vector-explorer" style="grid-column: span 2; padding: 1rem;">
-                    <span class="vector-axis-label" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%) rotate(-90deg);">Dimensión Lingüística &amp; Contenido (Y)</span>
+                <div class="vector-visualization glass-card" id="react-vector-explorer" style="grid-column: span 2; padding: 1rem 1.2rem;">
+                    <span class="vector-axis-label vector-axis-y" style="position: absolute; left: -38px; top: 50%; transform: translateY(-50%) rotate(-90deg);">Dimensión Lingüística (Y)</span>
                     <div class="vector-space">
-                        <div class="vector-dot" style="left: 15%; bottom: 75%; background: var(--color-blue);" data-label="Localización Software"></div>
-                        <div class="vector-dot" style="left: 20%; bottom: 70%; background: var(--color-blue);" data-label="Memoria de Traducción"></div>
-                        <div class="vector-dot" style="left: 12%; bottom: 65%; background: var(--color-blue);" data-label="Glosario Técnico"></div>
-                        <div class="vector-dot" style="left: 75%; bottom: 20%; background: var(--color-green);" data-label="Deploy en Cloud"></div>
-                        <div class="vector-dot" style="left: 80%; bottom: 25%; background: var(--color-green);" data-label="Pipeline CI/CD"></div>
-                        <div class="vector-dot" style="left: 72%; bottom: 15%; background: var(--color-green);" data-label="Microservicios API"></div>
-                        <div class="vector-dot" style="left: 45%; bottom: 50%; background: var(--color-red);" data-label="Automóvil Deportivo"></div>
+                        <div class="vector-dot" style="left: 22%; bottom: 78%; background: var(--color-blue);" data-label="Localización Software"></div>
+                        <div class="vector-dot" style="left: 36%; bottom: 56%; background: var(--color-blue);" data-label="Glosario Técnico"></div>
+                        <div class="vector-dot" style="left: 20%; bottom: 34%; background: var(--color-blue);" data-label="Memoria de Traducción"></div>
+                        <div class="vector-dot" style="left: 52%; bottom: 48%; background: var(--color-red);" data-label="Automóvil Deportivo"></div>
+                        <div class="vector-dot" style="left: 78%; bottom: 74%; background: var(--color-green);" data-label="Pipeline CI/CD"></div>
+                        <div class="vector-dot" style="left: 82%; bottom: 46%; background: var(--color-green);" data-label="Deploy en Cloud"></div>
+                        <div class="vector-dot" style="left: 74%; bottom: 18%; background: var(--color-green);" data-label="Microservicios API"></div>
                     </div>
-                    <span class="vector-axis-label" style="display: block; margin-top: 0.5rem;">Dimensión Ingeniería &amp; Cloud (X)</span>
+                    <span class="vector-axis-label" style="display: block; margin-top: 0.45rem;">Dimensión Ingeniería &amp; Cloud (X)</span>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; padding: 1rem; grid-column: span 1;">
@@ -1615,7 +1615,7 @@
                             Las bases de datos relacionales (SQL) buscan coincidencias exactas de letras (<code>LIKE '%checkout%'</code>). En cambio, las <strong>Bases de Datos Vectoriales</strong> (Pinecone, Qdrant, Weaviate, pgvector) indexan millones de embeddings y encuentran el fragmento conceptualmente correcto en milisegundos.
                         </p>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 0.8rem;">
+                        <div class="react-grid-2" style="margin-bottom: 0.8rem;">
                             <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.22); border-radius: 8px; padding: 0.65rem 0.75rem;">
                                 <strong style="color: #fca5a5; font-size: 0.76rem; display: block; margin-bottom: 0.2rem;">❌ Búsqueda Vectorial Pura (Sin Filtro)</strong>
                                 <span style="font-size: 0.71rem; color: var(--text-secondary); line-height: 1.35; display: block;">Compara contra 1.000.000 de vectores históricos: puede recuperar un manual de 2021 obsoleto o de otro país.</span>
@@ -2489,6 +2489,39 @@
             50% { transform: scale(1.4); opacity: 1; }
         }
 
+        /* Responsive React Inner Grid Helpers */
+        .react-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.55rem;
+        }
+        .react-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.55rem;
+        }
+        .react-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        .cover-container {
+            max-width: 1120px !important;
+            margin-bottom: 0 !important;
+            gap: 0.55rem !important;
+        }
+
+        .interview-container {
+            max-width: 1100px !important;
+            gap: 0.75rem !important;
+        }
+
+        .vector-space {
+            margin: 0.6rem auto 0.35rem !important;
+            max-width: 560px !important;
+        }
+
         .slides-wrapper {
             height: calc(100vh - 56px) !important;
         }
@@ -2503,26 +2536,49 @@
             display: none !important;
         }
         .slide {
-            padding-top: 3.7rem !important;
-            padding-bottom: 1.1rem !important;
+            padding-top: 4.1rem !important;
+            padding-bottom: 1.25rem !important;
+            gap: 0.75rem !important;
+        }
+        .slide > .slide-title {
+            padding-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .slide > .slide-subtitle {
+            margin-top: -0.2rem !important;
+            margin-bottom: 0.3rem !important;
         }
         @media (min-width: 769px) {
+            .slide > *:not(.slide-title):not(.slide-subtitle):not(.cover-container) {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
             .slide > *:last-child {
-                margin-bottom: 0.35rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+        }
+        @media (min-height: 900px) and (min-width: 1025px) {
+            .slide {
+                gap: 1.05rem !important;
+            }
+            .slide > .slide-subtitle {
+                margin-bottom: 0.45rem !important;
             }
         }
         @media (max-height: 820px) and (min-width: 769px) {
             .slide {
-                padding-top: 3.5rem !important;
-                padding-bottom: 0.75rem !important;
+                padding-top: 3.85rem !important;
+                padding-bottom: 0.85rem !important;
+                gap: 0.55rem !important;
             }
             .slide-title {
-                font-size: 1.7rem !important;
-                margin-bottom: 0.2rem !important;
+                font-size: 1.68rem !important;
+                margin-bottom: 0 !important;
             }
             .slide-subtitle {
-                font-size: 0.85rem !important;
-                margin-bottom: 0.65rem !important;
+                font-size: 0.84rem !important;
+                margin-top: -0.15rem !important;
+                margin-bottom: 0.2rem !important;
             }
         }
 
@@ -2718,7 +2774,8 @@
         ============================================================================ */
         @media (max-width: 1024px) {
             .slide {
-                padding: 4.1rem 1.4rem 4.8rem !important;
+                padding: 4.3rem 1.4rem 3.5rem !important;
+                gap: 0.8rem !important;
             }
             .slide-title {
                 font-size: clamp(1.45rem, 3.4vw, 2.1rem) !important;
@@ -2753,44 +2810,75 @@
                 height: calc(100dvh - 58px) !important;
             }
             .slide {
-                padding: 3.6rem 0.9rem 4.2rem !important;
+                padding: 4.35rem 1rem 3.2rem !important;
                 justify-content: flex-start !important;
+                gap: 0.75rem !important;
+            }
+            .slide > *:not(.slide-title):not(.slide-subtitle):not(.cover-container) {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            .slide > *:last-child {
+                margin-bottom: 1.4rem !important;
             }
             .slide::before, .slide::after {
                 display: none !important;
             }
             .slide-title {
                 font-size: 1.35rem !important;
-                line-height: 1.22 !important;
-                margin-bottom: 0.35rem !important;
+                line-height: 1.24 !important;
+                margin-bottom: 0.1rem !important;
             }
             .slide-subtitle {
-                font-size: 0.8rem !important;
-                line-height: 1.38 !important;
-                margin-bottom: 0.85rem !important;
+                font-size: 0.81rem !important;
+                line-height: 1.4 !important;
+                margin-top: -0.15rem !important;
+                margin-bottom: 0.35rem !important;
             }
             .cover-h1 {
                 font-size: 1.75rem !important;
                 line-height: 1.18 !important;
             }
             .glass-card {
-                padding: 0.95rem !important;
+                padding: 1rem !important;
                 max-width: 100% !important;
             }
-            /* Collapse all grids & multi-column layouts to 1 column on mobile */
+            .react-sim-box {
+                padding: 0.9rem !important;
+            }
+            /* Collapse main layout grids to 1 column on mobile */
             .grid-2, .grid-3, .grid-4,
             .roadmap-session-grid,
             .contrast-container,
             .prd-grid,
             .governance-container,
-            [style*="grid-template-columns: repeat("],
-            [style*="grid-template-columns: 1fr 1fr"] {
+            .react-grid-3,
+            .react-grid-2 {
                 grid-template-columns: 1fr !important;
                 gap: 0.75rem !important;
             }
+            /* Keep 4-item metric/token grids as a clean 2x2 on mobile */
+            .react-grid-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.5rem !important;
+            }
             .vector-visualization {
                 grid-column: span 1 !important;
-                height: 230px !important;
+                height: auto !important;
+                min-height: 225px !important;
+                padding: 1rem 0.75rem 0.85rem !important;
+            }
+            .vector-axis-y {
+                display: none !important;
+            }
+            .vector-space {
+                height: 165px !important;
+                margin: 0.4rem auto !important;
+                max-width: 100% !important;
+            }
+            .vector-dot::after {
+                font-size: 0.58rem !important;
+                padding: 0.12rem 0.32rem !important;
             }
             .gov-card {
                 grid-column: span 1 !important;
@@ -2810,7 +2898,12 @@
             .rag-steps-flow {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.65rem !important;
+                height: auto !important;
+                gap: 0.75rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .rag-flow-node {
+                width: 100% !important;
             }
             .rag-flow-line {
                 display: none !important;
@@ -3287,7 +3380,7 @@
                         }, '🎲 Temp = 0.9 (Creativa / Riesgo)')
                     )
                 ),
-                h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' } },
+                h('div', { className: 'react-grid-4' },
                     candidates.map((c, idx) =>
                         h('div', {
                             key: c.token,
@@ -3380,7 +3473,7 @@
                         )
                         : h('span', { style: { fontSize: '0.9rem', color: '#f8fafc' } }, current.raw)
                 ),
-                h('div', { style: { display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'monospace' } },
+                h('div', { style: { display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#94a3b8', fontFamily: 'monospace', flexWrap: 'wrap', gap: '0.35rem' } },
                     h('span', null, 'Ratio Español/Código: ', h('strong', { style: { color: '#f8fafc' } }, (current.tokens.length / current.words).toFixed(2) + ' tokens/palabra')),
                     h('span', { style: { color: '#6ee7b7' } }, 'Costo estimado (10k llamadas): $' + (current.tokens.length * 0.0025).toFixed(3) + ' USD')
                 )
@@ -3413,7 +3506,7 @@
                     onChange: (e) => setDailyQueries(Number(e.target.value)),
                     style: { marginBottom: '0.7rem' }
                 }),
-                h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' } },
+                h('div', { className: 'react-grid-2' },
                     h('div', { style: { background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.28)', borderRadius: '8px', padding: '0.55rem 0.75rem' } },
                         h('div', { style: { fontSize: '0.68rem', color: '#94a3b8' } }, 'Facturación Mensual Estimada'),
                         h('div', { style: { fontSize: '1.1rem', fontWeight: 800, color: cachingOn ? '#6ee7b7' : '#fca5a5', fontFamily: 'monospace' } }, '$' + finalCost + ' USD/mes'),
@@ -3545,7 +3638,7 @@
                         onClick: () => setFilterDoc(!filterDoc)
                     }, '📘 Doc: Guía de Estilo')
                 ),
-                h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.45rem', marginBottom: '0.6rem' } },
+                h('div', { className: 'react-grid-2', style: { marginBottom: '0.6rem' } },
                     DB_RECORDS.map(r => {
                         const isMatch = filtered.some(f => f.id === r.id);
                         return h('div', {
@@ -3578,7 +3671,7 @@
                         );
                     })
                 ),
-                h('div', { style: { fontSize: '0.72rem', fontFamily: 'monospace', color: '#93c5fd', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' } },
+                h('div', { style: { fontSize: '0.72rem', fontFamily: 'monospace', color: '#93c5fd', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.35rem' } },
                     h('span', null, 'Vectores candidatos: ' + filtered.length + ' de ' + DB_RECORDS.length + ' (' + Math.round((1 - filtered.length / DB_RECORDS.length) * 100) + '% ruido descartado)'),
                     h('span', { style: { color: '#6ee7b7' } }, 'Latencia Query: ' + (12 + filtered.length * 4) + ' ms')
                 )
@@ -3624,7 +3717,7 @@
                     onChange: (e) => setOverlap(Number(e.target.value)),
                     style: { marginBottom: '0.65rem' }
                 }),
-                h('div', { className: 'chunking-container', style: { marginTop: 0 } },
+                h('div', { className: 'chunking-container', style: { marginTop: 0, padding: '1rem' } },
                     h('div', { className: 'chunk-block', style: { marginBottom: '0.45rem', fontSize: '0.76rem', borderColor: overlap === 0 ? 'rgba(239,68,68,0.4)' : 'rgba(59,130,246,0.4)' } },
                         h('strong', { style: { color: '#93c5fd' } }, 'Fragmento A (Chars 1–1000): '),
                         '"Regla de Release: Se requiere validar el glosario técnico y congelar variables de localización ',
@@ -3658,7 +3751,7 @@
                     h('span', { style: { fontSize: '0.76rem', fontWeight: 700, color: '#ffffff' } },
                         '🔒 Simulador de Tráfico de Prompt Confidencial (Contrato NDA + Glosario No Publicado):'
                     ),
-                    h('div', { style: { display: 'flex', gap: '0.4rem' } },
+                    h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
                         h('button', {
                             type: 'button',
                             className: 'react-pill-btn' + (mode === 'public' ? ' active' : ''),
@@ -3730,7 +3823,7 @@
                     onChange: (e) => setScore(Number(e.target.value)),
                     style: { marginBottom: '0.65rem' }
                 }),
-                h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.55rem' } },
+                h('div', { className: 'react-grid-2' },
                     h('div', {
                         style: {
                             padding: '0.55rem 0.7rem',
@@ -3770,7 +3863,7 @@
                     h('span', { style: { fontSize: '0.76rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' } },
                         '⚙️ Pipeline CI/CD — Ejecución Automática de Golden Dataset (100 Casos Certificados):'
                     ),
-                    h('div', { style: { display: 'flex', gap: '0.4rem' } },
+                    h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
                         h('button', {
                             type: 'button',
                             className: 'react-pill-btn' + (status === 'passed' ? ' active' : ''),
@@ -3783,7 +3876,7 @@
                         }, '❌ PR #43: Prompt sin Guardrail (Regresión)')
                     )
                 ),
-                h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.55rem' } },
+                h('div', { className: 'react-grid-4' },
                     h('div', { style: { background: 'rgba(15,23,42,0.75)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' } },
                         h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Context Adherence'),
                         h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? '96.4% (Meta >=90%)' : '74.0% (< 90%)')
@@ -3840,20 +3933,20 @@
                     h('div', {
                         key: sc.id,
                         className: 'interview-qa-card',
-                        style: { padding: '1rem 1.25rem', cursor: 'pointer', transition: 'all 0.25s ease' },
+                        style: { padding: '0.82rem 1.15rem', cursor: 'pointer', transition: 'all 0.25s ease' },
                         onClick: () => toggle(sc.id)
                     },
-                        h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', marginBottom: '0.45rem', flexWrap: 'wrap' } },
-                            h('span', { style: { fontSize: '0.7rem', fontFamily: 'monospace', color: '#c4b5fd', fontWeight: 700, textTransform: 'uppercase' } }, sc.role),
-                            h('span', { className: 'react-pill-btn active', style: { fontSize: '0.68rem', padding: '2px 9px' } },
+                        h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', marginBottom: '0.32rem', flexWrap: 'wrap' } },
+                            h('span', { style: { fontSize: '0.68rem', fontFamily: 'monospace', color: '#c4b5fd', fontWeight: 700, textTransform: 'uppercase' } }, sc.role),
+                            h('span', { className: 'react-pill-btn active', style: { fontSize: '0.66rem', padding: '2px 9px' } },
                                 revealed[sc.id] ? '👁️ Ocultar Respuesta Ganadora' : '✨ Revelar 3 Pilares Ganadores'
                             )
                         ),
-                        h('h3', { className: 'interview-q', style: { fontSize: '0.95rem', marginBottom: revealed[sc.id] ? '0.65rem' : 0 } },
+                        h('h3', { className: 'interview-q', style: { fontSize: '0.9rem', marginBottom: revealed[sc.id] ? '0.5rem' : 0 } },
                             h('span', null, '❓ ' + sc.question)
                         ),
                         revealed[sc.id] && h('div', null,
-                            h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', marginBottom: '0.6rem' } },
+                            h('div', { className: 'react-grid-3', style: { marginBottom: '0.45rem' } },
                                 sc.pillars.map((p, idx) =>
                                     h('div', {
                                         key: idx,
@@ -3861,15 +3954,15 @@
                                             background: 'rgba(16, 185, 129, 0.08)',
                                             border: '1px solid rgba(16, 185, 129, 0.28)',
                                             borderRadius: '8px',
-                                            padding: '0.45rem 0.6rem',
-                                            fontSize: '0.71rem',
+                                            padding: '0.38rem 0.55rem',
+                                            fontSize: '0.69rem',
                                             color: '#e2e8f0',
-                                            lineHeight: 1.35
+                                            lineHeight: 1.32
                                         }
                                     }, p)
                                 )
                             ),
-                            h('p', { className: 'interview-a', style: { fontSize: '0.8rem', paddingTop: '0.55rem', margin: 0, color: '#6ee7b7' } },
+                            h('p', { className: 'interview-a', style: { fontSize: '0.76rem', lineHeight: 1.38, paddingTop: '0.35rem', margin: 0, color: '#6ee7b7' } },
                                 h('strong', { style: { color: '#ffffff' } }, 'Pitch Ejecutivo: '),
                                 sc.fullAnswer
                             )
