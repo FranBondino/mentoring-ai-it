@@ -1279,61 +1279,68 @@
 
         <!-- SLIDE 1: PORTADA -->
         <div class="slide active" id="slide-1">
-            <div class="cover-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.45rem; width: 100%;">
-                <span class="global-title">De la Gestión Tradicional a la Era de la IA</span>
+            <div class="cover-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.4rem; width: 100%;">
+                <span class="global-title">De la Gestión Tradicional a la Era de la IA · Sesión 2 de 4</span>
                 <h1 class="cover-h1">IA Generativa &amp; Arquitectura RAG</h1>
-                <p class="cover-subtitle" style="margin-bottom: 0.6rem;">Sesión 2: Cómo estructurar propuestas estratégicas de Inteligencia Artificial Generativa y dominar la arquitectura RAG basada en conocimiento privado.</p>
-                <div class="badge-session" style="margin-bottom: 0.6rem;">
-                    <i data-lucide="brain" class="icon-sm"></i>
-                    <span>15 Slides Interactivos con Simuladores React en Vivo</span>
+                <p class="cover-subtitle" style="margin-bottom: 0.35rem;">Cómo funcionan por dentro los Grandes Modelos de Lenguaje (LLMs) y cómo conectarlos con los manuales, glosarios y bases de datos privadas de tu empresa sin que inventen respuestas.</p>
+
+                <!-- HILO CONDUCTOR / CASO DE ESTUDIO UNIFICADO -->
+                <div class="glass-card" style="width: 100%; max-width: 1100px; padding: 0.7rem 1.1rem; border-left: 4px solid var(--color-green); background: rgba(16, 185, 129, 0.06) !important; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.25rem;">
+                    <div style="font-size: 0.78rem; color: #e2e8f0; line-height: 1.4;">
+                        <strong style="color: #6ee7b7;">🧭 Hilo Conductor de la Clase (Caso Real):</strong> Hoy vamos a diseñar paso a paso el <strong>"Enterprise Knowledge &amp; Localization Bot"</strong> — un asistente interno que consulta manuales de producto y glosarios de localización vigentes sin alucinar, cuidando el presupuesto y protegiendo la confidencialidad.
+                    </div>
+                    <span class="badge-session" style="margin: 0; font-size: 0.75rem; padding: 0.32rem 0.85rem; flex-shrink: 0;">
+                        <i data-lucide="brain" class="icon-sm"></i>
+                        <span>15 Slides + Simuladores React</span>
+                    </span>
                 </div>
 
                 <!-- ROADMAP BENTO GRID FOR SESSION 2 (CLICKABLE) -->
-                <div class="roadmap-session-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; width: 100%; max-width: 1100px; text-align: left; margin-top: 0.5rem;">
-                    <div class="glass-card s2-module-card" onclick="goToSlide(2)" style="padding: 1.1rem; border-left: 3px solid var(--color-orange); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+                <div class="roadmap-session-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; width: 100%; max-width: 1100px; text-align: left; margin-top: 0.25rem;">
+                    <div class="glass-card s2-module-card" onclick="goToSlide(2)" style="padding: 1rem; border-left: 3px solid var(--color-orange); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
                         <div>
-                            <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-orange); font-weight: 700; text-transform: uppercase;">01. Límites Físicos</span>
-                            <h4 style="font-size: 0.92rem; font-weight: 700; color: #ffffff; margin: 0.35rem 0;">Next-Token &amp; Tokens</h4>
-                            <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4;">Desmitificamos el 'hype', simulamos Temperatura, BPE Tokens, Prompt Caching y Lost in the Middle.</p>
+                            <span style="font-family: monospace; font-size: 0.7rem; color: var(--color-orange); font-weight: 700; text-transform: uppercase;">01. El Motor y sus Límites</span>
+                            <h4 style="font-size: 0.9rem; font-weight: 700; color: #ffffff; margin: 0.3rem 0;">¿Por qué alucina y cuánto cuesta?</h4>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38;">Origen en traducción (Transformer 2017), predicción Next-Token, Temperatura, Tokens BPE, Prompt Caching y por qué una ventana gigante olvida el medio.</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                            <span style="font-size: 0.68rem; color: var(--color-orange); font-weight: 700;">Duración: 10 min</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.65rem;">
+                            <span style="font-size: 0.68rem; color: var(--color-orange); font-weight: 700;">15 min</span>
                             <span class="module-jump-pill" style="color: var(--color-orange);">Slides 2–4 →</span>
                         </div>
                     </div>
 
-                    <div class="glass-card s2-module-card" onclick="goToSlide(5)" style="padding: 1.1rem; border-left: 3px solid var(--color-blue); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+                    <div class="glass-card s2-module-card" onclick="goToSlide(5)" style="padding: 1rem; border-left: 3px solid var(--color-blue); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
                         <div>
-                            <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-blue); font-weight: 700; text-transform: uppercase;">02. Bloques de RAG</span>
-                            <h4 style="font-size: 0.92rem; font-weight: 700; color: #ffffff; margin: 0.35rem 0;">Embeddings &amp; Vectores</h4>
-                            <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4;">El GPS matemático de las ideas, similitud por coseno, Metadata Filtering y Chunking con Overlap.</p>
+                            <span style="font-family: monospace; font-size: 0.7rem; color: var(--color-blue); font-weight: 700; text-transform: uppercase;">02. El Buscador por Significado</span>
+                            <h4 style="font-size: 0.9rem; font-weight: 700; color: #ffffff; margin: 0.3rem 0;">Los 3 Ladrillos de RAG</h4>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38;">Cómo buscar ideas sin coincidencia exacta de palabras: Embeddings (GPS semántico), Bases Vectoriales con filtros y corte de PDFs (Chunking + Overlap).</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                            <span style="font-size: 0.68rem; color: var(--color-blue); font-weight: 700;">Duración: 15 min</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.65rem;">
+                            <span style="font-size: 0.68rem; color: var(--color-blue); font-weight: 700;">15 min</span>
                             <span class="module-jump-pill" style="color: var(--color-blue);">Slides 5–7 →</span>
                         </div>
                     </div>
 
-                    <div class="glass-card s2-module-card" onclick="goToSlide(8)" style="padding: 1.1rem; border-left: 3px solid var(--color-purple); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+                    <div class="glass-card s2-module-card" onclick="goToSlide(8)" style="padding: 1rem; border-left: 3px solid var(--color-purple); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
                         <div>
-                            <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-purple); font-weight: 700; text-transform: uppercase;">03. Taller Práctico</span>
-                            <h4 style="font-size: 0.92rem; font-weight: 700; color: #ffffff; margin: 0.35rem 0;">Pipeline RAG &amp; Mock PRD</h4>
-                            <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4;">Orquestación en 2 fases (Ingestión Batch vs Consulta Live) y especificación formal de un Chatbot IA.</p>
+                            <span style="font-family: monospace; font-size: 0.7rem; color: var(--color-purple); font-weight: 700; text-transform: uppercase;">03. Arquitectura &amp; Especificación</span>
+                            <h4 style="font-size: 0.9rem; font-weight: 700; color: #ffffff; margin: 0.3rem 0;">Flujo RAG &amp; El Mock PRD</h4>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38;">Unimos todas las piezas en las 2 fases de RAG (Preparación Offline vs. Respuesta en 1.2s con cita) y las volcamos en un documento PRD de Producto.</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                            <span style="font-size: 0.68rem; color: var(--color-purple); font-weight: 700;">Duración: 15 min</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.65rem;">
+                            <span style="font-size: 0.68rem; color: var(--color-purple); font-weight: 700;">15 min</span>
                             <span class="module-jump-pill" style="color: var(--color-purple);">Slides 8–10 →</span>
                         </div>
                     </div>
 
-                    <div class="glass-card s2-module-card" onclick="goToSlide(11)" style="padding: 1.1rem; border-left: 3px solid var(--color-green); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+                    <div class="glass-card s2-module-card" onclick="goToSlide(11)" style="padding: 1rem; border-left: 3px solid var(--color-green); margin: 0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
                         <div>
-                            <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">04. Gobernanza</span>
-                            <h4 style="font-size: 0.92rem; font-weight: 700; color: #ffffff; margin: 0.35rem 0;">Enterprise SLA &amp; Evals</h4>
-                            <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4;">Zero-Retention, umbrales anti-alucinación (0.75), Golden Datasets en CI/CD y defensa ejecutiva.</p>
+                            <span style="font-family: monospace; font-size: 0.7rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">04. Blindaje Corporativo</span>
+                            <h4 style="font-size: 0.9rem; font-weight: 700; color: #ffffff; margin: 0.3rem 0;">Seguridad, Calidad &amp; Entrevista</h4>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38;">Evitar fugas de datos (Enterprise SLA), frenar respuestas dudosas (Umbral 0.75), evaluar calidad con 100 casos (Golden Dataset) y defender el diseño.</p>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                            <span style="font-size: 0.68rem; color: var(--color-green); font-weight: 700;">Duración: 20 min</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.65rem;">
+                            <span style="font-size: 0.68rem; color: var(--color-green); font-weight: 700;">15 min</span>
                             <span class="module-jump-pill" style="color: var(--color-green);">Slides 11–15 →</span>
                         </div>
                     </div>
@@ -1343,82 +1350,83 @@
 
         <!-- SLIDE 2: DESMITIFICANDO LLMs + REACT NEXT-TOKEN SIMULATOR -->
         <div class="slide" id="slide-2">
+            <span class="slide-context-pill">MÓDULO 1 · PASO 1 DE 14 · ¿CÓMO FUNCIONA EL MOTOR DE LA IA Y POR QUÉ INVENTA DATOS?</span>
             <h2 class="slide-title">El Origen y Motor de los LLMs</h2>
-            <p class="slide-subtitle">Del paper fundacional <em>"Attention Is All You Need"</em> (2017) al motor probabilístico de predicción del siguiente token.</p>
+            <p class="slide-subtitle">Nacidos en 2017 para resolver la traducción de idiomas, los LLMs no "saben" hechos: calculan estadísticamente qué palabra sigue. Por eso inventan lo que no conocen.</p>
 
-            <div class="contrast-container" style="margin-bottom: 0.75rem;">
-                <div class="glass-card contrast-card contrast-card-left" style="padding: 1rem 1.25rem;">
-                    <h3 class="contrast-header" style="color: var(--color-red); margin-bottom: 0.6rem; font-size: 1.02rem;">
+            <div class="contrast-container" style="margin-bottom: 0.6rem;">
+                <div class="glass-card contrast-card contrast-card-left" style="padding: 0.9rem 1.15rem;">
+                    <h3 class="contrast-header" style="color: var(--color-red); margin-bottom: 0.45rem; font-size: 0.98rem;">
                         <i data-lucide="x-circle"></i>
-                        <span>El Mito: "Cerebro Mágico"</span>
+                        <span>El Error Común: Creer que es un "Oráculo"</span>
                     </h3>
-                    <div class="contrast-item" style="margin-bottom: 0.45rem;">
+                    <div class="contrast-item" style="margin-bottom: 0.35rem;">
                         <i data-lucide="alert-triangle" class="contrast-item-icon" style="color: var(--color-red);"></i>
                         <div class="contrast-item-text">
-                            <strong>Razonamiento consciente:</strong>
-                            <span>Creer que la IA entiende, deduce y razona de forma consciente y humana.</span>
+                            <strong>No razona ni chequea verdades:</strong>
+                            <span>No tiene conciencia de qué es real y qué es inventado; solo busca que la frase suene coherente y fluida.</span>
                         </div>
                     </div>
                     <div class="contrast-item" style="margin-bottom: 0;">
                         <i data-lucide="alert-triangle" class="contrast-item-icon" style="color: var(--color-red);"></i>
                         <div class="contrast-item-text">
-                            <strong>Base de datos omnisciente:</strong>
-                            <span>Asumir que conoce las normativas privadas, glosarios y contratos de tu compañía por defecto.</span>
+                            <strong>No conoce tus documentos privados:</strong>
+                            <span>GPT o Claude fueron entrenados con internet público; desconocen tus glosarios internos o reglas vigentes de este mes.</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card contrast-card contrast-card-right" style="padding: 1rem 1.25rem;">
-                    <h3 class="contrast-header" style="color: var(--color-green); margin-bottom: 0.6rem; font-size: 1.02rem;">
+                <div class="glass-card contrast-card contrast-card-right" style="padding: 0.9rem 1.15rem;">
+                    <h3 class="contrast-header" style="color: var(--color-green); margin-bottom: 0.45rem; font-size: 0.98rem;">
                         <i data-lucide="check-circle"></i>
-                        <span>La Realidad: Transformers &amp; Next-Token</span>
+                        <span>La Realidad Técnica: Autocompletado Estadístico</span>
                     </h3>
-                    <div class="contrast-item" style="margin-bottom: 0.45rem;">
+                    <div class="contrast-item" style="margin-bottom: 0.35rem;">
                         <i data-lucide="activity" class="contrast-item-icon" style="color: var(--color-green);"></i>
                         <div class="contrast-item-text">
-                            <strong>Motor probabilístico:</strong>
-                            <span>Calcula matemáticamente cuál es el sub-carácter o token estadísticamente más probable que debe seguir al texto.</span>
+                            <strong>Predicción del Siguiente Token (Next-Token):</strong>
+                            <span>Funciona como el texto predictivo de WhatsApp multiplicado por un billón: asigna porcentajes a la próxima palabra.</span>
                         </div>
                     </div>
                     <div class="contrast-item" style="margin-bottom: 0;">
                         <i data-lucide="database" class="contrast-item-icon" style="color: var(--color-green);"></i>
                         <div class="contrast-item-text">
-                            <strong>Alucinación factual:</strong>
-                            <span>Ante un vacío de datos privados, el LLM inventará una respuesta elocuente para completar el patrón estadístico.</span>
+                            <strong>Por qué ocurre la Alucinación:</strong>
+                            <span>Si preguntás algo privado y no le das el documento de referencia, rellena el vacío inventando un dato muy convincente.</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- REACT WIDGET: SIMULADOR DE NEXT-TOKEN & TEMPERATURA -->
-            <div id="react-next-token-widget" style="width: 100%; max-width: 1100px; margin-bottom: 0.75rem;"></div>
+            <div id="react-next-token-widget" style="width: 100%; max-width: 1100px; margin-bottom: 0.6rem;"></div>
 
             <!-- HITOS FUNDACIONALES: PAPER 2017 + FINE-TUNING VS RAG -->
-            <div class="grid-2" style="width: 100%; max-width: 1100px; gap: 0.9rem;">
-                <div class="glass-card" style="border-left: 4px solid var(--color-orange); background: rgba(249, 115, 22, 0.03); padding: 0.9rem 1.15rem; text-align: left; display: flex; align-items: flex-start; gap: 0.8rem; margin: 0;">
-                    <div style="background: rgba(249, 115, 22, 0.12); color: var(--color-orange); padding: 0.5rem; border-radius: 10px; flex-shrink: 0;">
+            <div class="grid-2" style="width: 100%; max-width: 1100px; gap: 0.85rem;">
+                <div class="glass-card" style="border-left: 4px solid var(--color-orange); background: rgba(249, 115, 22, 0.03); padding: 0.8rem 1.05rem; text-align: left; display: flex; align-items: flex-start; gap: 0.75rem; margin: 0;">
+                    <div style="background: rgba(249, 115, 22, 0.12); color: var(--color-orange); padding: 0.45rem; border-radius: 10px; flex-shrink: 0;">
                         <i data-lucide="book-open" class="icon-sm"></i>
                     </div>
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 0.92rem; font-weight: 700; color: #ffffff; margin-bottom: 0.25rem;">
-                            El Paper Base: <em>"Attention Is All You Need"</em> (2017)
+                        <h3 style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">
+                            1. El Hito Lingüístico: <em>"Attention Is All You Need"</em> (Google, 2017)
                         </h3>
-                        <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4; margin: 0;">
-                            Publicado por investigadores de <strong>Google en 2017</strong> para resolver la <strong>Traducción Automática</strong>. Creó la arquitectura <strong>Transformer</strong> (la <strong>"T"</strong> de <strong>GPT</strong>) y el mecanismo de <strong>Self-Attention</strong>: procesa toda la oración en paralelo y pondera cómo cada palabra modifica el significado de las demás según el contexto.
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38; margin: 0;">
+                            Nació para mejorar la <strong>Traducción Automática</strong>. Creó la arquitectura <strong>Transformer</strong> (la "T" de GPT) y el mecanismo de <strong>Self-Attention</strong>: en vez de leer palabra por palabra olvidando el inicio, mira toda la oración junta para entender si <em>"bank"</em> es banco de dinero o la orilla de un río.
                         </p>
                     </div>
                 </div>
 
-                <div class="glass-card" style="border-left: 4px solid var(--color-purple); background: rgba(139, 92, 246, 0.03); padding: 0.9rem 1.15rem; text-align: left; display: flex; align-items: flex-start; gap: 0.8rem; margin: 0;">
-                    <div style="background: rgba(139, 92, 246, 0.12); color: var(--color-purple); padding: 0.5rem; border-radius: 10px; flex-shrink: 0;">
+                <div class="glass-card" style="border-left: 4px solid var(--color-purple); background: rgba(139, 92, 246, 0.03); padding: 0.8rem 1.05rem; text-align: left; display: flex; align-items: flex-start; gap: 0.75rem; margin: 0;">
+                    <div style="background: rgba(139, 92, 246, 0.12); color: var(--color-purple); padding: 0.45rem; border-radius: 10px; flex-shrink: 0;">
                         <i data-lucide="sparkles" class="icon-sm"></i>
                     </div>
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 0.92rem; font-weight: 700; color: #ffffff; margin-bottom: 0.25rem;">
-                            Fine-Tuning (Estilo) vs. RAG (Conocimiento)
+                        <h3 style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">
+                            2. Decisión Clave PM: ¿Cómo sumamos datos privados? (Fine-Tuning vs. RAG)
                         </h3>
-                        <p style="font-size: 0.76rem; color: var(--text-secondary); line-height: 1.4; margin: 0;">
-                            El <strong>Fine-Tuning</strong> re-entrena un modelo para enseñarle un <strong>tono, estilo o formato</strong> (ej. responder en JSON). <strong style="color: var(--color-orange);">Regla de Oro:</strong> No sirve para cargar datos que cambian cada semana. Para conectar el modelo con tus manuales y glosarios privados sin alucinar, usamos <strong>RAG (Retrieval-Augmented Generation)</strong>.
+                        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38; margin: 0;">
+                            <strong>Fine-Tuning (Examen de Memoria):</strong> Re-entrena al modelo para cambiar su <em>tono o formato</em>, pero es lento, caro y sigue inventando si el glosario cambia mañana. <strong>RAG (Examen a Libro Abierto):</strong> Le pasa el párrafo exacto del manual vigente antes de responder.
                         </p>
                     </div>
                 </div>
@@ -1427,62 +1435,63 @@
 
         <!-- SLIDE 3: LA ECONOMÍA DE LA IA: TOKENS -->
         <div class="slide" id="slide-3">
-            <h2 class="slide-title">Tokens: La Economía de la IA</h2>
-            <p class="slide-subtitle">Los modelos de lenguaje no procesan palabras completas. Experimentá en vivo cómo impacta la tokenización BPE y el Prompt Caching en tu presupuesto.</p>
+            <span class="slide-context-pill">MÓDULO 1 · PASO 2 DE 14 · SI LE PASAMOS MANUALES AL MODELO, ¿CÓMO NOS COBRA EL PROVEEDOR?</span>
+            <h2 class="slide-title">Tokens: La Economía y Costos de la IA</h2>
+            <p class="slide-subtitle">Para armar el presupuesto de nuestro Bot RAG debemos entender la unidad de cobro (Tokens BPE), por qué redactar cuesta más que leer y cómo ahorrar hasta un 75% con Prompt Caching.</p>
 
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap;">
-                            <h3 class="bento-card-title" style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                            <h3 class="bento-card-title" style="margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                                 <i data-lucide="coins" style="color: var(--color-orange);"></i>
-                                <span>Tokenizador BPE en Vivo</span>
+                                <span>1. Qué es un Token y cómo corta las palabras (BPE)</span>
                             </h3>
-                            <span id="token-stats" style="font-size: 0.72rem; font-family: monospace; color: var(--color-blue); background: rgba(59,130,246,0.12); padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(59,130,246,0.3); font-weight: 700;">
-                                Estado: Texto Crudo (9 Palabras)
+                            <span id="token-stats" style="font-size: 0.7rem; font-family: monospace; color: var(--color-blue); background: rgba(59,130,246,0.12); padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(59,130,246,0.3); font-weight: 700;">
+                                Estado: Texto Tokenizado
                             </span>
                         </div>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.75rem;">
-                            Aproximadamente <strong>1.000 tokens equivalen a 750 palabras</strong> en inglés (~650 en español por tildes y morfología). Las APIs cobran tarifas asimétricas: el <strong>Output</strong> cuesta de 3x a 5x más que el <strong>Input</strong>.
+                        <p style="font-size: 0.79rem; color: var(--text-secondary); line-height: 1.42; margin-bottom: 0.65rem;">
+                            Así como en traducción se cobra por palabra fuente, la IA cobra por <strong>Tokens</strong> (sílabas o raíces lingüísticas). En inglés <strong>1.000 tokens ≈ 750 palabras</strong>; en español <strong>≈ 650 palabras</strong> (por tildes y sufijos). Además, el <strong>Output (lo que la IA escribe) cuesta de 3x a 5x más</strong> que el <strong>Input (lo que lee)</strong>.
                         </p>
 
                         <!-- REACT BPE TOKENIZER MOUNT (WITH GLOBAL FALLBACK) -->
                         <div id="react-bpe-tokenizer">
-                            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.7rem; flex-wrap: wrap;">
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap;">
                                 <button class="btn-action-sm" id="btn-tokenize" onclick="toggleTokenizeDemo()">
                                     <i data-lucide="scissors" class="icon-sm"></i> Tokenizar Texto (BPE)
                                 </button>
                             </div>
-                            <div class="token-visual-box" id="tokenize-demo-box" style="margin-bottom: 0.9rem; min-height: 76px;">
+                            <div class="token-visual-box" id="tokenize-demo-box" style="margin-bottom: 0.75rem; min-height: 70px;">
                                 La localización automática con IA optimiza glosarios técnicos globales.
                             </div>
                         </div>
                     </div>
 
-                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem; display: flex; gap: 0.85rem; align-items: center;">
-                        <img src="../bpe_vs_word_comparison.png" alt="BPE vs Word Comparison (Mecánica de Tokens)" onclick="openLightbox(this)" style="width: 125px; height: 92px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;" />
-                        <div style="font-size: 0.72rem; color: var(--text-secondary); line-height: 1.38;">
-                            <strong style="color: #ffffff; display: block; margin-bottom: 0.2rem;">Mecánica del BPE (Byte Pair Encoding) — Clic para ampliar 🔍</strong>
-                            Divide palabras como <em>"localización"</em> en raíces conceptuales (<code>locali</code>) y sufijos (<code>zación</code>). Reduce el vocabulario a ~100k tokens reutilizables y procesa neologismos sin errores.
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.75rem; display: flex; gap: 0.8rem; align-items: center;">
+                        <img src="../bpe_vs_word_comparison.png" alt="BPE vs Word Comparison (Mecánica de Tokens)" onclick="openLightbox(this)" style="width: 118px; height: 84px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;" />
+                        <div style="font-size: 0.71rem; color: var(--text-secondary); line-height: 1.36;">
+                            <strong style="color: #ffffff; display: block; margin-bottom: 0.15rem;">Morfología BPE (Byte Pair Encoding) — Clic para ampliar 🔍</strong>
+                            En vez de memorizar millones de palabras conjugadas, el modelo separa raíces (<code>locali</code>) y sufijos (<code>zación</code>). Así entiende términos nuevos o técnicos sin fallar.
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="zap" style="color: var(--color-blue);"></i>
-                            <span>Calculadora FinOps &amp; Prompt Caching</span>
+                            <span>2. Cómo Reducir la Factura a la Mitad: Prompt Caching</span>
                         </h3>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.75rem;">
-                            Almacena en caché de servidor los prefijos estáticos del prompt (System Prompt, instrucciones de marca y glosarios fijos), reduciendo el costo de tokens de entrada entre un <strong>50% y 75%</strong> y mejorando el TTFT (Time To First Token).
+                        <p style="font-size: 0.79rem; color: var(--text-secondary); line-height: 1.42; margin-bottom: 0.65rem;">
+                            En cada consulta al Bot enviamos las mismas <strong>instrucciones de marca y reglas base (~1.500 tokens fijos)</strong> seguidas de la pregunta del usuario. Con <strong>Prompt Caching</strong>, el proveedor guarda esa primera parte fija en memoria: nos cobra <strong>50% a 75% menos</strong> y responde en la mitad del tiempo (menor <strong>TTFT</strong>).
                         </p>
                         <!-- REACT FINOPS CALCULATOR -->
                         <div id="react-finops-caching"></div>
                     </div>
 
-                    <div style="background: rgba(59, 130, 246, 0.06); border-left: 3px solid var(--color-blue); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 0.78rem; margin-top: 0.75rem;">
-                        <strong style="color: #93c5fd;">Regla de Arquitectura PM:</strong> Poné siempre las instrucciones y ejemplos fijos al <strong>inicio exacto</strong> del System Prompt y las variables dinámicas del usuario al final para activar el hit de <strong>Prompt Caching</strong>.
+                    <div style="background: rgba(59, 130, 246, 0.06); border-left: 3px solid var(--color-blue); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.75rem; margin-top: 0.65rem;">
+                        <strong style="color: #93c5fd;">Regla de Oro para el PM:</strong> Para que el caché funcione, las instrucciones fijas deben ir siempre <strong>al principio exacto del prompt</strong>, y el texto cambiante (la pregunta de cada usuario) siempre <strong>al final</strong>.
                     </div>
                 </div>
             </div>
@@ -1490,42 +1499,51 @@
 
         <!-- SLIDE 4: VENTANAS DE CONTEXTO & LOST IN THE MIDDLE -->
         <div class="slide" id="slide-4">
-            <h2 class="slide-title">Ventanas de Contexto &amp; Sesgo de Atención</h2>
-            <p class="slide-subtitle">Las limitaciones de memoria en prompts masivos y cómo los LLMs pierden hasta un 40% de retención en el centro geométrico del contexto.</p>
+            <span class="slide-context-pill">MÓDULO 1 · PASO 3 DE 14 · ¿POR QUÉ NO PEGAMOS LOS 50 MANUALES ENTEROS EN EL PROMPT Y LISTO?</span>
+            <h2 class="slide-title">Ventana de Contexto &amp; El Problema del Medio</h2>
+            <p class="slide-subtitle">Aunque hoy existan modelos donde caben libros enteros en un solo envío, mandar todos los manuales juntos encarece cada pregunta y hace que la IA ignore lo que queda en la mitad.</p>
 
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="layout" style="color: var(--color-purple);"></i>
-                            <span>Ventana de Contexto (Memoria RAM del LLM)</span>
+                            <span>¿Qué es la Ventana de Contexto y por qué no reemplaza a RAG?</span>
                         </h3>
-                        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.85rem;">
-                            Define el límite físico de tokens (texto de entrada + historial + fragmentos recuperados + respuesta generada) que el modelo puede procesar en una sola llamada de API. Aunque hoy existan ventanas de 128k a 1M de tokens, <strong>inyectar manuales enteros degrada la precisión, dispara la latencia y multiplica el costo por consulta</strong>.
+                        <p style="font-size: 0.79rem; color: var(--text-secondary); line-height: 1.42; margin-bottom: 0.65rem;">
+                            La <strong>Ventana de Contexto</strong> es la memoria de corto plazo del modelo: la suma máxima de tokens (instrucciones + documentos + historial de charla + respuesta) que entran en un turno. Si intentás pegar 50 manuales enteros en cada consulta, chocás contra <strong>3 límites críticos</strong>:
                         </p>
-                    </div>
-
-                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem; display: flex; gap: 0.9rem; align-items: center; margin-bottom: 0.85rem;">
-                        <img src="../lost_in_the_middle_heatmap.png" alt="Fenómeno Lost in the Middle (Curva U de Atención)" onclick="openLightbox(this)" style="width: 135px; height: 100px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;" />
-                        <div style="font-size: 0.73rem; color: var(--text-secondary); line-height: 1.38;">
-                            <strong style="color: #ffffff; display: block; margin-bottom: 0.2rem;">Pérdida de Atención Central (clic para ampliar 🔍)</strong>
-                            Estudios de Stanford demostraron la curva en "U": los LLMs recuerdan con ~99% de precisión el inicio (Primacy Bias) y el final (Recency Bias), pero caen al ~40% en el medio.
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.65rem; font-size: 0.74rem;">
+                            <div style="background: rgba(239,68,68,0.06); border-left: 3px solid var(--color-red); padding: 0.4rem 0.65rem; border-radius: 4px;">
+                                <strong style="color: #fca5a5;">1. Costo y Lentitud:</strong> Pagarías y procesarías cientos de miles de tokens en cada pregunta simple.
+                            </div>
+                            <div style="background: rgba(249,115,22,0.06); border-left: 3px solid var(--color-orange); padding: 0.4rem 0.65rem; border-radius: 4px;">
+                                <strong style="color: #fdba74;">2. Sesgo "Lost in the Middle":</strong> La IA presta atención al principio y al final, pero "se distrae" en el medio.
+                            </div>
                         </div>
                     </div>
 
-                    <div style="background: rgba(139, 92, 246, 0.06); border-left: 3px solid var(--color-purple); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 0.78rem;">
-                        <strong style="color: #c4b5fd;">Analogía del Escritorio:</strong> Que tu escritorio aguante 50 manuales abiertos a la vez no significa que leer los 50 en cada pregunta sea eficiente. <strong>RAG selecciona solo las 3 páginas exactas</strong>.
+                    <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.7rem; display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.65rem;">
+                        <img src="../lost_in_the_middle_heatmap.png" alt="Fenómeno Lost in the Middle (Curva U de Atención)" onclick="openLightbox(this)" style="width: 120px; height: 84px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;" />
+                        <div style="font-size: 0.71rem; color: var(--text-secondary); line-height: 1.35;">
+                            <strong style="color: #ffffff; display: block; margin-bottom: 0.15rem;">La Curva en "U" de Stanford (Clic para ampliar 🔍)</strong>
+                            Como cuando leés una lista de supermercado de 40 ítems: recordás los primeros (<em>Primacy Bias</em>) y los últimos (<em>Recency Bias</em>), pero olvidás los del medio (~38% de retención).
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(16, 185, 129, 0.07); border-left: 3px solid var(--color-green); padding: 0.6rem 0.85rem; border-radius: 6px; font-size: 0.75rem;">
+                        <strong style="color: #6ee7b7;">Conclusión que justifica RAG:</strong> En vez de mandar 50 manuales enteros, buscamos primero los <strong>3 párrafos exactos</strong> y se los damos limpios al modelo.
                     </div>
                 </div>
 
-                <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="padding: 1.15rem; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="trending-down" style="color: var(--color-red);"></i>
-                            <span>Simulador Interactivo: Curva "Lost in the Middle"</span>
+                            <span>Simulador en Vivo: ¿Dónde ponemos la Regla de Negocio?</span>
                         </h3>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.42; margin-bottom: 0.75rem;">
-                            Mové el cursor o hacé clic en las zonas de la ventana de contexto para ver cómo varía la tasa de retención (Recall) del modelo según dónde inyectes la regla de negocio:
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.6rem;">
+                            Simulá qué pasa con la retención del LLM cuando la regla que necesita Anabela queda al inicio, enterrada en la página 25 de 50, o al final del prompt:
                         </p>
                     </div>
 
@@ -1548,31 +1566,36 @@
 
         <!-- SLIDE 5: EMBEDDINGS -->
         <div class="slide" id="slide-5">
-            <h2 class="slide-title">Embeddings: Traducción Semántica</h2>
-            <p class="slide-subtitle">El GPS matemático de las ideas: cómo transformamos conceptos de negocio en vectores de 1536 dimensiones para medir cercanía de significado.</p>
+            <span class="slide-context-pill">MÓDULO 2 · PASO 4 DE 14 · ¿CÓMO BUSCA EL BOT LOS 3 PÁRRAFOS EXACTOS SI EL USUARIO USA SINÓNIMOS?</span>
+            <h2 class="slide-title">Embeddings: El GPS del Significado</h2>
+            <p class="slide-subtitle">Un buscador clásico (Ctrl+F) falla si el usuario pregunta por "cobro rechazado" y el manual dice "fallo de tarjeta". Los Embeddings convierten ideas en coordenadas para buscar por significado.</p>
 
-            <div class="grid-3" style="gap: 0.85rem;">
-                <div class="glass-card text-center" style="padding: 0.9rem 1rem;">
-                    <div class="vector-step-number" style="font-size: 1.35rem; margin-bottom: 0.2rem;">01</div>
-                    <h3 class="vector-step-title" style="font-size: 0.92rem;">Text Input</h3>
-                    <p class="vector-step-desc" style="font-size: 0.76rem;">Se ingresa una frase o consulta: <em>"Validar glosario técnico para lanzamiento global"</em>.</p>
+            <div class="grid-3" style="gap: 0.75rem;">
+                <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
+                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">01. Frase o Consulta</div>
+                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Texto en Cualquier Idioma</h3>
+                    <p class="vector-step-desc" style="font-size: 0.73rem;">El usuario o el manual dice: <em>"Validar glosario técnico para lanzamiento global"</em>.</p>
                 </div>
-                <div class="glass-card text-center" style="padding: 0.9rem 1rem;">
-                    <div class="vector-step-number" style="font-size: 1.35rem; margin-bottom: 0.2rem;">02</div>
-                    <h3 class="vector-step-title" style="font-size: 0.92rem;">Embedding Model</h3>
-                    <p class="vector-step-desc" style="font-size: 0.76rem;">El modelo traduce el sentido semántico en un vector de coordenadas (ej. 1536 números flotantes).</p>
+                <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
+                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">02. Vector (1536d)</div>
+                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Coordenadas de Significado</h3>
+                    <p class="vector-step-desc" style="font-size: 0.73rem;">El modelo de Embeddings traduce esa idea en una lista de 1536 números (su "latitud y longitud" conceptual).</p>
                 </div>
-                <div class="glass-card text-center" style="padding: 0.9rem 1rem;">
-                    <div class="vector-step-number" style="font-size: 1.35rem; margin-bottom: 0.2rem;">03</div>
-                    <h3 class="vector-step-title" style="font-size: 0.92rem;">Similitud por Coseno</h3>
-                    <p class="vector-step-desc" style="font-size: 0.76rem;">Conceptos afines quedan con ángulo cercano (Score → 1.0) aunque no compartan palabras exactas.</p>
+                <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
+                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">03. Similitud Coseno</div>
+                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Puntaje de Cercanía (0 a 1)</h3>
+                    <p class="vector-step-desc" style="font-size: 0.73rem;">Mide la distancia en el mapa: sinónimos o traducciones dan cerca de <strong>1.0</strong>; temas ajenos dan cerca de <strong>0.0</strong>.</p>
                 </div>
 
                 <!-- REACT INTERACTIVE VECTOR MAP -->
-                <div class="vector-visualization glass-card" id="react-vector-explorer" style="grid-column: span 2; padding: 1rem 1.2rem;">
-                    <span class="vector-axis-label vector-axis-y" style="position: absolute; left: -38px; top: 50%; transform: translateY(-50%) rotate(-90deg);">Dimensión Lingüística (Y)</span>
+                <div class="vector-visualization glass-card" id="react-vector-explorer" style="grid-column: span 2; padding: 0.9rem 1.15rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.25rem; width: 100%;">
+                        <span style="font-size: 0.74rem; font-weight: 700; color: #93c5fd; font-family: monospace;">🗺️ MAPA VECTORIAL: Hacé clic en cualquier punto para medir su cercanía con la consulta</span>
+                        <span style="font-size: 0.68rem; background: rgba(59,130,246,0.18); border: 1px solid rgba(59,130,246,0.4); color: #ffffff; padding: 2px 8px; border-radius: 999px;">🎯 Consulta: "Validar glosario para lanzamiento"</span>
+                    </div>
+                    <span class="vector-axis-label vector-axis-y" style="position: absolute; left: -38px; top: 55%; transform: translateY(-50%) rotate(-90deg);">Afinidad Lingüística (Y)</span>
                     <div class="vector-space">
-                        <div class="vector-dot" style="left: 22%; bottom: 78%; background: var(--color-blue);" data-label="Localización Software"></div>
+                        <div class="vector-dot selected-dot" style="left: 22%; bottom: 78%; background: var(--color-blue);" data-label="Localización Software"></div>
                         <div class="vector-dot" style="left: 36%; bottom: 56%; background: var(--color-blue);" data-label="Glosario Técnico"></div>
                         <div class="vector-dot" style="left: 20%; bottom: 34%; background: var(--color-blue);" data-label="Memoria de Traducción"></div>
                         <div class="vector-dot" style="left: 52%; bottom: 48%; background: var(--color-red);" data-label="Automóvil Deportivo"></div>
@@ -1580,20 +1603,24 @@
                         <div class="vector-dot" style="left: 82%; bottom: 46%; background: var(--color-green);" data-label="Deploy en Cloud"></div>
                         <div class="vector-dot" style="left: 74%; bottom: 18%; background: var(--color-green);" data-label="Microservicios API"></div>
                     </div>
-                    <span class="vector-axis-label" style="display: block; margin-top: 0.45rem;">Dimensión Ingeniería &amp; Cloud (X)</span>
+                    <span class="vector-axis-label" style="display: block; margin-top: 0.35rem;">Afinidad Ingeniería &amp; Cloud (X)</span>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; padding: 1rem; grid-column: span 1;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; padding: 0.9rem; grid-column: span 1;">
                     <div style="width: 100%;">
-                        <h3 class="bento-card-title" style="margin-bottom: 0.6rem; font-size: 0.92rem; display: flex; align-items: center; gap: 0.4rem; justify-content: center;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.45rem; font-size: 0.88rem; display: flex; align-items: center; gap: 0.4rem; justify-content: center;">
                             <i data-lucide="sparkles" style="color: var(--color-purple);"></i>
-                            <span>Radar Semántico 3D</span>
+                            <span>Radar Semántico 3D (Ampliar 🔍)</span>
                         </h3>
-                        <img src="../embeddings_semantic_radar.png" alt="Radar Semántico 3D (Similitud por Coseno)" onclick="openLightbox(this)" style="width: 100%; max-height: 115px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+                        <img src="../embeddings_semantic_radar.png" alt="Radar Semántico 3D (Similitud por Coseno)" onclick="openLightbox(this)" style="width: 100%; max-height: 102px; object-fit: contain; background: rgba(2, 6, 23, 0.5); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
                     </div>
-                    <div id="vector-inspector-panel" style="font-size: 0.73rem; color: var(--text-secondary); line-height: 1.38; margin-top: 0.65rem; text-align: left; width: 100%; background: rgba(2, 6, 23, 0.55); padding: 0.65rem 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07);">
-                        <strong style="color: #ffffff; display: block; margin-bottom: 0.2rem;">Hacé clic en cualquier nodo del mapa 👈</strong>
-                        Términos afines ("Localización", "Memoria de Traducción") arrojan similitud de <strong>0.89</strong>, mientras "Automóvil Deportivo" queda aislado en <strong>0.12</strong>.
+                    <div id="vector-inspector-panel" style="font-size: 0.72rem; color: var(--text-secondary); line-height: 1.36; margin-top: 0.5rem; text-align: left; width: 100%; background: rgba(2, 6, 23, 0.55); padding: 0.6rem 0.7rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07);">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.2rem;gap:0.4rem;flex-wrap:wrap;">
+                            <strong style="color:#ffffff;font-size:0.76rem;">📍 Localización Software</strong>
+                            <span style="font-family:monospace;font-size:0.68rem;color:#60a5fa;font-weight:700;">Cosine: 0.92 (Match Alto ✅)</span>
+                        </div>
+                        <div style="font-family:monospace;font-size:0.64rem;color:#93c5fd;margin-bottom:0.2rem;">Vector: [0.842, 0.791, -0.114, ... 1536d]</div>
+                        <div style="font-size:0.7rem;color:var(--text-secondary);line-height:1.34;">Vive en el mismo "barrio semántico" que la consulta del usuario aunque no use las mismas palabras exactas.</div>
                     </div>
                 </div>
             </div>
@@ -1601,45 +1628,46 @@
 
         <!-- SLIDE 6: BASES VECTORIALES & METADATA FILTERING -->
         <div class="slide" id="slide-6">
-            <h2 class="slide-title">Bases Vectoriales &amp; Metadata Filtering</h2>
-            <p class="slide-subtitle">La memoria a largo plazo persistente de la IA y cómo acelerar búsquedas reduciendo ruido mediante filtros estructurados previos.</p>
+            <span class="slide-context-pill">MÓDULO 2 · PASO 5 DE 14 · ¿DÓNDE GUARDAMOS MILLONES DE VECTORES SIN MEZCLAR DOCUMENTOS VENCIDOS?</span>
+            <h2 class="slide-title">Bases Vectoriales &amp; Filtros de Metadatos</h2>
+            <p class="slide-subtitle">Buscar solo por similitud de significado es peligroso: puede traer un manual de 2021 muy parecido pero ya vencido. Por eso combinamos Bases Vectoriales con Pre-Filtros.</p>
 
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="database" style="color: var(--color-purple);"></i>
-                            <span>Persistencia Semántica (Pinecone / pgvector)</span>
+                            <span>De la Memoria de Traducción a la Base Vectorial</span>
                         </h3>
-                        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.85rem;">
-                            Las bases de datos relacionales (SQL) buscan coincidencias exactas de letras (<code>LIKE '%checkout%'</code>). En cambio, las <strong>Bases de Datos Vectoriales</strong> (Pinecone, Qdrant, Weaviate, pgvector) indexan millones de embeddings y encuentran el fragmento conceptualmente correcto en milisegundos.
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44; margin-bottom: 0.75rem;">
+                            Mientras una base de datos tradicional (SQL) busca letras exactas, una <strong>Base de Datos Vectorial</strong> (como <em>Pinecone, Qdrant o pgvector</em>) guarda los millones de Embeddings que vimos en la Slide 5. Pero en un entorno corporativo necesitamos combinar <strong>dos filtros en simultáneo</strong>:
                         </p>
 
-                        <div class="react-grid-2" style="margin-bottom: 0.8rem;">
-                            <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.22); border-radius: 8px; padding: 0.65rem 0.75rem;">
-                                <strong style="color: #fca5a5; font-size: 0.76rem; display: block; margin-bottom: 0.2rem;">❌ Búsqueda Vectorial Pura (Sin Filtro)</strong>
-                                <span style="font-size: 0.71rem; color: var(--text-secondary); line-height: 1.35; display: block;">Compara contra 1.000.000 de vectores históricos: puede recuperar un manual de 2021 obsoleto o de otro país.</span>
+                        <div class="react-grid-2" style="margin-bottom: 0.7rem;">
+                            <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.22); border-radius: 8px; padding: 0.6rem 0.7rem;">
+                                <strong style="color: #fca5a5; font-size: 0.75rem; display: block; margin-bottom: 0.18rem;">❌ Peligro: Solo Similitud Vectorial</strong>
+                                <span style="font-size: 0.7rem; color: var(--text-secondary); line-height: 1.34; display: block;">Un manual obsoleto de 2021 habla del mismo tema (Score 0.86) y contamina la respuesta del bot con reglas viejas.</span>
                             </div>
-                            <div style="background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.65rem 0.75rem;">
-                                <strong style="color: #6ee7b7; font-size: 0.76rem; display: block; margin-bottom: 0.2rem;">✅ Híbrida + Metadata Filtering</strong>
-                                <span style="font-size: 0.71rem; color: var(--text-secondary); line-height: 1.35; display: block;">Aplica primero un filtro duro (SQL-like) por etiquetas y ejecuta el coseno solo en el subconjunto vigente.</span>
+                            <div style="background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.6rem 0.7rem;">
+                                <strong style="color: #6ee7b7; font-size: 0.75rem; display: block; margin-bottom: 0.18rem;">✅ Solución: Metadata Pre-Filtering</strong>
+                                <span style="font-size: 0.7rem; color: var(--text-secondary); line-height: 1.34; display: block;">Como en MercadoLibre: primero filtramos por etiquetas duras (<code>año=2026</code>, <code>idioma=ES-LATAM</code>) y luego medimos vectores.</span>
                             </div>
                         </div>
                     </div>
 
-                    <div style="background: rgba(139, 92, 246, 0.07); border-left: 3px solid var(--color-purple); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 0.79rem;">
-                        <strong style="color: #c4b5fd;">Perspectiva PM:</strong> Diseñar el esquema de metadatos (<code>idioma</code>, <code>vigencia</code>, <code>módulo</code>, <code>rol_acceso</code>) es responsabilidad directa del PM junto al Tech Lead.
+                    <div style="background: rgba(139, 92, 246, 0.07); border-left: 3px solid var(--color-purple); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.76rem;">
+                        <strong style="color: #c4b5fd;">Responsabilidad directa de Anabela como PM:</strong> Definir qué etiquetas (metadatos) debe llevar cada documento al subirse (<code>cliente</code>, <code>idioma</code>, <code>estado_vigente</code>, <code>módulo</code>).
                     </div>
                 </div>
 
-                <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="padding: 1.15rem; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="filter" style="color: var(--color-blue);"></i>
-                            <span>Simulador en Vivo: Metadata Pre-Filtering</span>
+                            <span>Simulador: Filtrando Manuales Vencidos antes de Buscar</span>
                         </h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.65rem;">
-                            Activá o desactivá las etiquetas de metadatos para ver cómo se descartan los vectores obsoletos antes de calcular la similitud semántica:
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.38; margin-bottom: 0.55rem;">
+                            Desactivá el filtro <strong>Año: 2026</strong> o <strong>Idioma: ES-LATAM</strong> para ver cómo se cuelan documentos obsoletos o en inglés por tener alto puntaje semántico:
                         </p>
                     </div>
 
@@ -1662,43 +1690,44 @@
 
         <!-- SLIDE 7: CHUNKING & OVERLAP -->
         <div class="slide" id="slide-7">
-            <h2 class="slide-title">Chunking: Estrategias de Fragmentación</h2>
-            <p class="slide-subtitle">Cómo cortar documentos extensos sin quebrar el sentido gramatical y calibrar el porcentaje de solapamiento (Overlap).</p>
+            <span class="slide-context-pill">MÓDULO 2 · PASO 6 DE 14 · ¿CÓMO CORTAMOS UN PDF DE 300 PÁGINAS ANTES DE CONVERTIRLO EN VECTORES?</span>
+            <h2 class="slide-title">Chunking &amp; Overlap: Fragmentar sin Romper</h2>
+            <p class="slide-subtitle">No podemos convertir un libro entero en un solo vector. Debemos dividirlo en fragmentos (Chunks) de ~1000 caracteres dejando un solapamiento (Overlap) para no cortar ideas por la mitad.</p>
 
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="scissors" style="color: var(--color-orange);"></i>
-                            <span>Estrategias de Segmentación Documental</span>
+                            <span>¿Cómo elegir dónde cortar el documento?</span>
                         </h3>
-                        <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
-                            No podemos vectorizar un PDF de 300 páginas como un único bloque. El proceso de <strong>Chunking</strong> lo divide en fragmentos discretos (ej. 500 a 1.000 caracteres). Si cortamos a ciegas en medio de una condición o tabla de tarifas, el modelo recuperará una regla truncada y alucinará.
+                        <p style="font-size: 0.79rem; color: var(--text-secondary); line-height: 1.44; margin-bottom: 0.7rem;">
+                            Antes de guardar los documentos en la Base Vectorial (Slide 6), el proceso de <strong>Chunking</strong> los divide en bloques pequeños (ej. 1000 caracteres ≈ 1 párrafo largo). Si el corte cae justo en medio de una excepción legal o regla de traducción, el bot leerá la mitad de la oración y dará una respuesta falsa.
                         </p>
 
-                        <div style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 0.75rem;">
-                            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--color-red); padding: 0.55rem 0.75rem; border-radius: 4px; font-size: 0.76rem;">
-                                <strong style="color: #fca5a5;">Fixed-Size Split (Corte Fijo Ciego):</strong> Corta cada N caracteres exactos sin respetar puntos ni párrafos. Alto riesgo de mutilar ideas.
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.7rem;">
+                            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--color-red); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.74rem;">
+                                <strong style="color: #fca5a5;">❌ Corte Fijo a Ciegas (Fixed-Size Split):</strong> Corta cada 1000 letras exactas sin importar si dejó una frase o tabla partida al medio.
                             </div>
-                            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 4px; font-size: 0.76rem;">
-                                <strong style="color: #6ee7b7;">Recursive Character / Semantic Split:</strong> Respeta encabezados Markdown (<code>##</code>), párrafos y signos de puntuación antes de dividir.
+                            <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--color-green); padding: 0.5rem 0.7rem; border-radius: 4px; font-size: 0.74rem;">
+                                <strong style="color: #6ee7b7;">✅ Corte Semántico + Overlap 15% (Estándar):</strong> Respeta títulos y puntos aparte, y repite el último 15% del párrafo al inicio del siguiente como una "foto panorámica".
                             </div>
                         </div>
                     </div>
 
-                    <div style="background: rgba(249, 115, 22, 0.07); border-left: 3px solid var(--color-orange); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 0.78rem;">
-                        <strong style="color: #fdba74;">Balance Crítico PM:</strong> Chunks muy chicos pierden contexto; chunks gigantes saturan la ventana y encarecen el consumo de tokens.
+                    <div style="background: rgba(249, 115, 22, 0.07); border-left: 3px solid var(--color-orange); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.75rem;">
+                        <strong style="color: #fdba74;">Parámetro para tu PRD:</strong> Especificar <strong>Recursive Chunking de 1000 caracteres con 15% de Overlap</strong> asegura contexto completo sin inflar el consumo de tokens.
                     </div>
                 </div>
 
-                <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="padding: 1.15rem; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="layers" style="color: var(--color-blue);"></i>
-                            <span>Simulador Interactivo de Overlap (%)</span>
+                            <span>Simulador: Efecto del Overlap (0% vs 15%) en una Regla</span>
                         </h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.65rem;">
-                            Mové el slider de <strong>Overlap (Solapamiento)</strong> entre <code>0%</code> y <code>25%</code> para observar cómo el puente semántico evita perder condiciones entre fragmentos contiguos:
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.38; margin-bottom: 0.55rem;">
+                            Compará cómo se parte una regla de lanzamiento cuando el Overlap está en <code>0%</code> (se pierde la condición) versus cuando activamos el puente del <code>15%</code>:
                         </p>
                     </div>
 
@@ -1719,17 +1748,18 @@
 
         <!-- SLIDE 8: RAG FASE 1 - INGESTION -->
         <div class="slide" id="slide-8">
-            <h2 class="slide-title">Anatomía de RAG: Fase 1 (Ingestión)</h2>
-            <p class="slide-subtitle">La etapa Batch asincrónica de procesamiento, fragmentación y vectorización del conocimiento privado del negocio.</p>
+            <span class="slide-context-pill">MÓDULO 3 · PASO 7 DE 14 · UNIENDO CHUNKING + EMBEDDINGS + VECTOR DB EN LA BIBLIOTECA DEL BOT</span>
+            <h2 class="slide-title">Arquitectura RAG — Fase 1: Preparación (Offline)</h2>
+            <p class="slide-subtitle">Antes de que los usuarios hagan preguntas, el sistema prepara y guarda los manuales en segundo plano cada vez que publicás una nueva versión.</p>
 
             <div class="rag-interactive-container" id="rag-container-ingestion">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.8rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.7rem;">
                     <div class="rag-tabs" style="margin-bottom: 0;">
-                        <div class="rag-tab active" onclick="switchRagSlide(8)">Fase 1: Ingestión del Dato (Batch Offline)</div>
-                        <div class="rag-tab" onclick="switchRagSlide(9)">Fase 2: Consulta de Usuario (Tiempo Real)</div>
+                        <div class="rag-tab active" onclick="switchRagSlide(8)">Fase 1: Preparar la Biblioteca (Batch Offline)</div>
+                        <div class="rag-tab" onclick="switchRagSlide(9)">Fase 2: Responder al Usuario (En Vivo 1.2s)</div>
                     </div>
                     <button type="button" class="btn-action-sm" onclick="window.playRagSimulation('ingestion')" style="margin: 0;">
-                        ▶ Simular Pipeline Batch
+                        ▶ Simular los 4 Pasos en Orden
                     </button>
                 </div>
 
@@ -1739,7 +1769,7 @@
                     <div class="rag-flow-node active" onclick="highlightRagStep(0, 'ingestion')">
                         <div class="rag-node-circle">📄</div>
                         <span class="rag-node-title">1. Documentos</span>
-                        <span class="rag-node-desc">Docs &amp; Glosarios</span>
+                        <span class="rag-node-desc">Manuales &amp; Glosarios</span>
                     </div>
                     <div class="rag-flow-node" onclick="highlightRagStep(1, 'ingestion')">
                         <div class="rag-node-circle">✂️</div>
@@ -1749,29 +1779,32 @@
                     <div class="rag-flow-node" onclick="highlightRagStep(2, 'ingestion')">
                         <div class="rag-node-circle">🧬</div>
                         <span class="rag-node-title">3. Embedding</span>
-                        <span class="rag-node-desc">Vectorización 1536d</span>
+                        <span class="rag-node-desc">Vector 1536d (Slide 5)</span>
                     </div>
                     <div class="rag-flow-node" onclick="highlightRagStep(3, 'ingestion')">
                         <div class="rag-node-circle">💾</div>
                         <span class="rag-node-title">4. Vector DB</span>
-                        <span class="rag-node-desc">Upsert + Metadatos</span>
+                        <span class="rag-node-desc">Guardado + Metadatos</span>
                     </div>
                 </div>
 
-                <div style="margin-top: 0.9rem; width: 100%;">
-                    <div class="rag-step-explanation-box" style="margin-top: 0; width: 100%; padding: 1.15rem 1.4rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;">
+                <div style="margin-top: 0.75rem; width: 100%;">
+                    <div class="rag-step-explanation-box" style="margin-top: 0; width: 100%; padding: 1rem 1.25rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem;">
                             <div class="rag-explanation-title" id="rag-exp-title-ingestion" style="margin-bottom: 0;">
                                 <i data-lucide="info" class="icon-sm"></i>
                                 <span>Paso 1: Extracción y Limpieza de Documentación Oficial (Ground Truth)</span>
                             </div>
-                            <span id="rag-exp-badge-ingestion" style="font-family: monospace; font-size: 0.72rem; background: rgba(59,130,246,0.15); color: #93c5fd; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(59,130,246,0.35);">
-                                Input: PDF / Markdown / Confluence / TMX
+                            <span id="rag-exp-badge-ingestion" style="font-family: monospace; font-size: 0.7rem; background: rgba(59,130,246,0.15); color: #93c5fd; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(59,130,246,0.35);">
+                                Cuándo corre: Al subir o actualizar un documento
                             </span>
                         </div>
-                        <p class="rag-explanation-text" id="rag-exp-text-ingestion">
-                            Se recopilan y sanean los documentos oficiales que regulan el negocio (manuales de producto, guías de estilo, glosarios aprobados y wikis internas). Esta etapa corre en segundo plano (Batch) cada vez que se publica o actualiza un documento, sin afectar la velocidad de los usuarios finales.
+                        <p class="rag-explanation-text" id="rag-exp-text-ingestion" style="margin-bottom: 0.55rem;">
+                            Se toman los documentos oficiales aprobados (manuales de producto, guías de estilo y glosarios validados) y se les limpia el formato basura. Como corre en segundo plano (Batch Offline), no demora al usuario final.
                         </p>
+                        <div id="rag-exp-example-ingestion" style="background: rgba(15, 23, 42, 0.85); border-left: 3px solid var(--color-blue); border-radius: 6px; padding: 0.5rem 0.75rem; font-family: monospace; font-size: 0.72rem; color: #e2e8f0;">
+                            <strong style="color: #93c5fd;">🔎 Ejemplo Real en este paso:</strong> Se sube <code>Guia_Estilo_Pagos_LATAM_2026.pdf</code> (42 páginas aprobadas por el equipo de Localización).
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1779,21 +1812,22 @@
 
         <!-- SLIDE 9: RAG FASE 2 - CONSULTA -->
         <div class="slide" id="slide-9">
-            <h2 class="slide-title">Anatomía de RAG: Fase 2 (Consulta en Vivo)</h2>
-            <p class="slide-subtitle">Cómo el sistema orquesta en milisegundos la búsqueda semántica para alimentar al LLM con evidencia física ("Examen a Libro Abierto").</p>
+            <span class="slide-context-pill">MÓDULO 3 · PASO 8 DE 14 · YA TENEMOS LA BIBLIOTECA LISTA: ¿QUÉ PASA CUANDO ALGUIEN PREGUNTA EN EL CHAT?</span>
+            <h2 class="slide-title">Arquitectura RAG — Fase 2: Consulta en Vivo</h2>
+            <p class="slide-subtitle">En solo 1.2 segundos el sistema busca los 3 párrafos exactos en la Base Vectorial y se los entrega al LLM como un "Examen a Libro Abierto" con cita obligatoria.</p>
 
             <div class="rag-interactive-container" id="rag-container-query">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.8rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.7rem;">
                     <div class="rag-tabs" style="margin-bottom: 0;">
-                        <div class="rag-tab" onclick="switchRagSlide(8)">Fase 1: Ingestión del Dato (Batch Offline)</div>
-                        <div class="rag-tab active" onclick="switchRagSlide(9)">Fase 2: Consulta de Usuario (Tiempo Real)</div>
+                        <div class="rag-tab" onclick="switchRagSlide(8)">Fase 1: Preparar la Biblioteca (Batch Offline)</div>
+                        <div class="rag-tab active" onclick="switchRagSlide(9)">Fase 2: Responder al Usuario (En Vivo 1.2s)</div>
                     </div>
                     <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
                         <button type="button" class="btn-action-sm" onclick="window.playRagSimulation('query')" style="margin: 0;">
-                            ▶ Simular Consulta Live
+                            ▶ Simular Consulta en Vivo
                         </button>
                         <button type="button" class="btn-action-sm" onclick="openLightbox({src: '../rag_architecture_diagram.png', alt: 'Arquitectura Completa RAG: Fase 1 (Ingestión Batch) y Fase 2 (Recuperación y Generación en Tiempo Real)'})" style="margin: 0; background: rgba(139, 92, 246, 0.18); border-color: rgba(139, 92, 246, 0.45); color: #ddd6fe;">
-                            🔍 Ver Diagrama Completo RAG
+                            🔍 Ver Diagrama Completo
                         </button>
                     </div>
                 </div>
@@ -1804,39 +1838,42 @@
                     <div class="rag-flow-node active" onclick="highlightRagStep(0, 'query')">
                         <div class="rag-node-circle">❓</div>
                         <span class="rag-node-title">1. Pregunta</span>
-                        <span class="rag-node-desc">Query + Vectorización</span>
+                        <span class="rag-node-desc">Usuario → Vector</span>
                     </div>
                     <div class="rag-flow-node" onclick="highlightRagStep(1, 'query')">
                         <div class="rag-node-circle">🔍</div>
-                        <span class="rag-node-title">2. Recuperación</span>
-                        <span class="rag-node-desc">Top-K + Metadata Filter</span>
+                        <span class="rag-node-title">2. Rescate Top-3</span>
+                        <span class="rag-node-desc">Filtro + Coseno &ge; 0.75</span>
                     </div>
                     <div class="rag-flow-node" onclick="highlightRagStep(2, 'query')">
                         <div class="rag-node-circle">📝</div>
                         <span class="rag-node-title">3. Prompt Aumentado</span>
-                        <span class="rag-node-desc">Regla + Evidencia</span>
+                        <span class="rag-node-desc">Regla + 3 Párrafos</span>
                     </div>
                     <div class="rag-flow-node" onclick="highlightRagStep(3, 'query')">
                         <div class="rag-node-circle">🤖</div>
-                        <span class="rag-node-title">4. LLM &amp; Cita</span>
-                        <span class="rag-node-desc">Respuesta Verificable</span>
+                        <span class="rag-node-title">4. Respuesta + Cita</span>
+                        <span class="rag-node-desc">Temp 0.0 + Fuente</span>
                     </div>
                 </div>
 
-                <div style="margin-top: 0.9rem; width: 100%;">
-                    <div class="rag-step-explanation-box" style="margin-top: 0; width: 100%; padding: 1.15rem 1.4rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;">
+                <div style="margin-top: 0.75rem; width: 100%;">
+                    <div class="rag-step-explanation-box" style="margin-top: 0; width: 100%; padding: 1rem 1.25rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem;">
                             <div class="rag-explanation-title" id="rag-exp-title-query" style="margin-bottom: 0;">
                                 <i data-lucide="info" class="icon-sm"></i>
-                                <span>Paso 1: Pregunta del Usuario y Vectorización en Tiempo Real</span>
+                                <span>Paso 1: El Usuario Pregunta y su Consulta se Convierte en Vector</span>
                             </div>
-                            <span id="rag-exp-badge-query" style="font-family: monospace; font-size: 0.72rem; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(16,185,129,0.35);">
-                                Latencia: ~35ms | Modelo: Embedding API
+                            <span id="rag-exp-badge-query" style="font-family: monospace; font-size: 0.7rem; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(16,185,129,0.35);">
+                                Tiempo: ~35 milisegundos
                             </span>
                         </div>
-                        <p class="rag-explanation-text" id="rag-exp-text-query">
-                            El usuario realiza una consulta en lenguaje natural: "¿Qué criterios de estilo y terminología se aplican al módulo de pagos para usuarios de Latinoamérica?". El backend convierte esa pregunta en un vector de 1536 dimensiones en milisegundos.
+                        <p class="rag-explanation-text" id="rag-exp-text-query" style="margin-bottom: 0.55rem;">
+                            Un integrante del equipo escribe su duda en el chat. El sistema toma esa pregunta y la pasa por el mismo modelo de Embeddings para obtener sus coordenadas de significado.
                         </p>
+                        <div id="rag-exp-example-query" style="background: rgba(15, 23, 42, 0.85); border-left: 3px solid var(--color-green); border-radius: 6px; padding: 0.5rem 0.75rem; font-family: monospace; font-size: 0.72rem; color: #e2e8f0;">
+                            <strong style="color: #6ee7b7;">💬 Ejemplo en Vivo:</strong> Usuario pregunta: <em>"¿Cómo debemos traducir 'Chargeback' en la pantalla de pagos de Argentina y México?"</em> → Vector <code>[0.88, 0.79, ... 1536d]</code>.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1844,76 +1881,77 @@
 
         <!-- SLIDE 10: EL MOCK PRD -->
         <div class="slide" id="slide-10">
-            <h2 class="slide-title">Taller: El Mock PRD (Enterprise Knowledge Bot)</h2>
-            <p class="slide-subtitle">Cómo traducimos las decisiones de arquitectura RAG en requisitos técnicos y criterios de aceptación (Definition of Done) de un PRD real.</p>
+            <span class="slide-context-pill">MÓDULO 3 · PASO 9 DE 14 · BAJANDO TODO LO APRENDIDO AL DOCUMENTO DE REQUISITOS DEL PM (PRD)</span>
+            <h2 class="slide-title">Taller: El Mock PRD de Nuestro Bot RAG</h2>
+            <p class="slide-subtitle">Como IT Product Manager no programás el código, pero sí escribís este PRD donde cada concepto de las Slides 2 a 13 se transforma en una regla clara para Ingeniería.</p>
 
-            <div class="prd-grid" style="margin-bottom: 0.85rem;">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem;">
+            <div class="prd-grid" style="margin-bottom: 0.75rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem;">
                     <div>
                         <div class="prd-card-title">
                             <i data-lucide="file-text" style="color: var(--color-blue);"></i>
-                            <span>Especificación Funcional &amp; Fuentes de Datos</span>
+                            <span>1. Alcance Funcional &amp; Datos (Lo que pide Negocio)</span>
                         </div>
-                        <p class="prd-card-desc" style="margin-bottom: 0.75rem;">
-                            Asistente corporativo basado en RAG para que equipos de Producto, Ingeniería y Localización consulten manuales técnicos, guías de estilo y reglas de negocio con cita obligatoria a la fuente.
+                        <p class="prd-card-desc" style="margin-bottom: 0.65rem; font-size: 0.78rem;">
+                            Especificación del <strong>Enterprise Knowledge Bot</strong> para consultar guías de estilo, glosarios y manuales de producto sin alucinar:
                         </p>
                     </div>
 
                     <div class="prd-item-list">
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Core Feature</span>
-                            <span class="prd-item-val">Consulta semántica verificada con citas clicables</span>
+                            <span class="prd-item-label">Objetivo (Slide 2)</span>
+                            <span class="prd-item-val">Respuestas con Temp = 0.0 y cita obligatoria a la página</span>
                         </div>
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Fuentes Ground Truth</span>
-                            <span class="prd-item-val">Manuales de producto, guías de estilo y glosarios (.md/.pdf)</span>
+                            <span class="prd-item-label">Fuentes (Slide 8)</span>
+                            <span class="prd-item-val">Glosarios aprobados (.tmx/.csv) y Guías de Estilo (.pdf/.md)</span>
                         </div>
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Metadata Schema</span>
-                            <span class="prd-item-val"><code>idioma</code>, <code>año_vigencia</code>, <code>modulo</code>, <code>tipo_doc</code></span>
+                            <span class="prd-item-label">Metadatos (Slide 6)</span>
+                            <span class="prd-item-val">Pre-filtro por <code>idioma</code>, <code>año=2026</code> y <code>módulo</code></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem;">
                     <div>
                         <div class="prd-card-title">
                             <i data-lucide="activity" style="color: var(--color-purple);"></i>
-                            <span>Definition of Done (DoD) de IA</span>
+                            <span>2. Criterios de Aceptación / DoD (Lo que valida QA)</span>
                         </div>
-                        <p class="prd-card-desc" style="margin-bottom: 0.75rem;">
-                            Parámetros medibles que Ingeniería y QA deben cumplir antes de habilitar el despliegue a producción:
+                        <p class="prd-card-desc" style="margin-bottom: 0.65rem; font-size: 0.78rem;">
+                            Condiciones técnicas medibles para aprobar el paso a producción (que profundizamos en las Slides 11, 12 y 13):
                         </p>
                     </div>
 
                     <div class="prd-item-list">
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Chunking &amp; Overlap</span>
-                            <span class="prd-badge prd-badge-blue">1000 chars / 15% overlap</span>
+                            <span class="prd-item-label">Corte y Caché (Slides 3 y 7)</span>
+                            <span class="prd-badge prd-badge-blue">Chunks 1000ch + 15% Overlap | Prompt Caching</span>
                         </div>
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Vector DB &amp; Umbral</span>
-                            <span class="prd-badge prd-badge-purple">Pinecone (1536d) | Score &ge; 0.75</span>
+                            <span class="prd-item-label">Freno Anti-Invento (Slide 12)</span>
+                            <span class="prd-badge prd-badge-purple">Top-3 en Pinecone | Umbral Score &ge; 0.75</span>
                         </div>
                         <div class="prd-item-row">
-                            <span class="prd-item-label">Seguridad &amp; QA Gate</span>
-                            <span class="prd-badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.35);">Zero-Retention SLA | Evals &ge; 90%</span>
+                            <span class="prd-item-label">Seguridad y Calidad (Slides 11 y 13)</span>
+                            <span class="prd-badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.35);">Enterprise SLA Zero-Retention | Evals &ge; 90%</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- ACTION BAR TO OPEN INTERACTIVE MOCK PRD & PRACTICAL ACTIVITY -->
-            <div class="glass-card" style="width: 100%; max-width: 1100px; padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; border-left: 4px solid var(--color-green);">
+            <div class="glass-card" style="width: 100%; max-width: 1100px; padding: 0.8rem 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; border-left: 4px solid var(--color-green);">
                 <div style="text-align: left;">
-                    <strong style="color: #ffffff; font-size: 0.88rem; display: block;">🛠️ Herramientas Interactivas de la Sesión 2 Listas para Usar</strong>
-                    <span style="font-size: 0.76rem; color: var(--text-secondary);">Podés abrir el generador interactivo del Mock PRD (con exportación a Markdown) o el Simulador Práctico de 4 Misiones.</span>
+                    <strong style="color: #ffffff; font-size: 0.85rem; display: block;">🛠️ Práctica Interactiva de la Sesión 2</strong>
+                    <span style="font-size: 0.74rem; color: var(--text-secondary);">Abrí la plantilla interactiva para completar tu propio PRD exportable o resolvé los 6 casos prácticos del simulador.</span>
                 </div>
                 <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-                    <a href="./mock_prd_tarea_sesion_2.html" target="_blank" class="btn-action-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.2); border-color: var(--color-blue); color: #ffffff;">
+                    <a href="./mock_prd_tarea_sesion_2.html" target="_blank" class="btn-action-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.2); border-color: var(--color-blue); color: #ffffff; margin: 0;">
                         🛠️ Abrir App Mock PRD S2 ↗
                     </a>
-                    <a href="./actividad_practica_sesion_2.html" target="_blank" class="btn-action-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.2); border-color: var(--color-green); color: #ffffff;">
+                    <a href="./actividad_practica_sesion_2.html" target="_blank" class="btn-action-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.2); border-color: var(--color-green); color: #ffffff; margin: 0;">
                         ⚡ Abrir Simulador Práctico S2 ↗
                     </a>
                 </div>
@@ -1922,50 +1960,51 @@
 
         <!-- SLIDE 11: GOBERNANZA & PRIVACIDAD (RED VS GREEN CONTRAST + REACT SIMULATOR) -->
         <div class="slide" id="slide-11">
-            <h2 class="slide-title">Gobernanza de IA &amp; Data Leakage</h2>
-            <p class="slide-subtitle">Cómo proteger la propiedad intelectual y los datos confidenciales exigiendo contratos Enterprise SLA con Zero-Data Retention.</p>
+            <span class="slide-context-pill">MÓDULO 4 · PASO 10 DE 14 · ¿CÓMO EVITAMOS QUE NUESTROS GLOSARIOS PRIVADOS ENTRENEN MODELOS PÚBLICOS?</span>
+            <h2 class="slide-title">Seguridad y Privacidad: Enterprise SLA</h2>
+            <p class="slide-subtitle">Si pegás documentos confidenciales en un chat gratuito, el proveedor los usa para entrenar su modelo público. En empresas exigimos contratos con Retención Cero.</p>
 
-            <div class="contrast-container" style="margin-bottom: 0.8rem;">
+            <div class="contrast-container" style="margin-bottom: 0.65rem;">
                 <!-- RED CARD: PUBLIC API / FREE CHAT -->
-                <div class="glass-card contrast-card contrast-card-left" style="padding: 1.05rem 1.25rem; border-top: 3px solid var(--color-red);">
-                    <h3 class="contrast-header" style="color: var(--color-red); font-size: 1rem; margin-bottom: 0.55rem;">
+                <div class="glass-card contrast-card contrast-card-left" style="padding: 0.95rem 1.15rem; border-top: 3px solid var(--color-red);">
+                    <h3 class="contrast-header" style="color: var(--color-red); font-size: 0.96rem; margin-bottom: 0.45rem;">
                         <i data-lucide="unlock"></i>
-                        <span>Peligro: Chat Público / Licencias Consumer</span>
+                        <span>❌ Peligro: Chat Gratuito / Licencias Personales</span>
                     </h3>
-                    <div class="contrast-item" style="margin-bottom: 0.45rem;">
+                    <div class="contrast-item" style="margin-bottom: 0.35rem;">
                         <i data-lucide="alert-octagon" class="contrast-item-icon" style="color: var(--color-red);"></i>
                         <div class="contrast-item-text">
-                            <strong>Entrenamiento con tus datos (Data Leakage):</strong>
-                            <span>Los prompts, manuales y código pegados en versiones gratuitas o públicas pueden ser retenidos y usados para entrenar futuros modelos públicos.</span>
+                            <strong>Fuga de Datos (Data Leakage):</strong>
+                            <span>Lo que subís queda guardado en los servidores del proveedor para mejorar sus próximos modelos públicos.</span>
                         </div>
                     </div>
                     <div class="contrast-item" style="margin-bottom: 0;">
                         <i data-lucide="eye-off" class="contrast-item-icon" style="color: var(--color-red);"></i>
                         <div class="contrast-item-text">
-                            <strong>Incumplimiento de NDA &amp; GDPR:</strong>
-                            <span>Subir contratos de clientes o PII sin acuerdo corporativo viola cláusulas de confidencialidad y auditorías ISO 27001 / SOC2.</span>
+                            <strong>Ruptura de Contratos NDA y GDPR:</strong>
+                            <span>Exponer lanzamientos no anunciados o datos personales (PII) de clientes infringe normas legales y de auditoría.</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- GREEN CARD: ENTERPRISE SLA ZERO-RETENTION -->
-                <div class="glass-card contrast-card contrast-card-right" style="padding: 1.05rem 1.25rem; border-top: 3px solid var(--color-green);">
-                    <h3 class="contrast-header" style="color: var(--color-green); font-size: 1rem; margin-bottom: 0.55rem;">
+                <div class="glass-card contrast-card contrast-card-right" style="padding: 0.95rem 1.15rem; border-top: 3px solid var(--color-green);">
+                    <h3 class="contrast-header" style="color: var(--color-green); font-size: 0.96rem; margin-bottom: 0.45rem;">
                         <i data-lucide="shield-check"></i>
-                        <span>Estándar Corporativo: API bajo Enterprise SLA</span>
+                        <span>✅ Solución PM: API Corporativa + Enterprise SLA</span>
                     </h3>
-                    <div class="contrast-item" style="margin-bottom: 0.45rem;">
+                    <div class="contrast-item" style="margin-bottom: 0.35rem;">
                         <i data-lucide="lock" class="contrast-item-icon" style="color: var(--color-green);"></i>
                         <div class="contrast-item-text">
                             <strong>Zero-Data Retention (Retención Cero):</strong>
-                            <span>Acuerdo legal y técnico (Azure OpenAI / Anthropic Enterprise / AWS Bedrock) donde el proveedor procesa el prompt en memoria volátil y lo borra de inmediato.</span>
+                            <span>Por contrato legal y técnico, el proveedor procesa la consulta en memoria temporal y la borra en el acto sin guardarla.</span>
                         </div>
                     </div>
                     <div class="contrast-item" style="margin-bottom: 0;">
                         <i data-lucide="check-circle-2" class="contrast-item-icon" style="color: var(--color-green);"></i>
                         <div class="contrast-item-text">
-                            <strong>Prohibición de Re-entrenamiento + PII Masking:</strong>
-                            <span>Garantía contractual de que ningún peso del modelo base aprende de tus datos privados, sumado a anonimización previa.</span>
+                            <strong>Enmascarado Previo (PII Masking):</strong>
+                            <span>Antes de salir de tu empresa, un filtro oculta nombres, mails y teléfonos (<code>[EMAIL_OCULTO]</code>) automáticamente.</span>
                         </div>
                     </div>
                 </div>
@@ -1977,37 +2016,38 @@
 
         <!-- SLIDE 12: MITIGACIÓN DE ALUCINACIONES: UMBRALES -->
         <div class="slide" id="slide-12">
-            <h2 class="slide-title">Mitigación de Alucinaciones: Umbrales</h2>
-            <p class="slide-subtitle">El control lógico de confianza semántica (Confidence Threshold) para obligar al bot a abstenerse cuando no existe respaldo documental.</p>
+            <span class="slide-context-pill">MÓDULO 4 · PASO 11 DE 14 · ¿QUÉ HACE EL BOT SI LE PREGUNTAN ALGO QUE NO ESTÁ EN NINGÚN MANUAL?</span>
+            <h2 class="slide-title">Freno Anti-Alucinación: Umbral de Confianza</h2>
+            <p class="slide-subtitle">Para que el bot nunca adivine cuando no encuentra un dato en la Base Vectorial, ponemos un "peaje" matemático: si la similitud no llega a 0.75, tiene prohibido inventar.</p>
 
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="shield-alert" style="color: var(--color-red);"></i>
-                            <span>Confidence Thresholds (Compuerta Anti-Alucinación)</span>
+                            <span>¿Cómo funciona el Umbral de Confianza (0.75)?</span>
                         </h3>
-                        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
-                            Un LLM por sí solo es complaciente: si el usuario pregunta algo que no está en los manuales, intentará adivinar. En una arquitectura RAG profesional, la base vectorial devuelve un <strong>Score de Similitud Semántica (0.00 a 1.00)</strong> antes de llamar al LLM.
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44; margin-bottom: 0.65rem;">
+                            Recordá que en el Paso 2 de la consulta (Slide 9), la Base Vectorial devuelve qué tan parecido es el párrafo encontrado a la pregunta del usuario, con un puntaje de <strong>0.00 a 1.00</strong>.
                         </p>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-                            Como PMs, definimos en el PRD una regla determinista: si el mejor fragmento recuperado tiene un score menor a <strong>0.75</strong>, el backend <strong>cortocircuita la llamada al LLM</strong> y devuelve un fallback controlado.
+                        <p style="font-size: 0.79rem; color: var(--text-secondary); line-height: 1.42;">
+                            Si un usuario pregunta algo que no figura en ningún manual (ej. <em>"¿Cuál es el sueldo del gerente?"</em>), el mejor párrafo tendrá un puntaje bajísimo (ej. <strong>0.34</strong>). Como está por debajo de nuestro umbral de <strong>0.75</strong>, el sistema <strong>ni siquiera llama al LLM</strong> y muestra una respuesta honesta predefinida.
                         </p>
                     </div>
 
-                    <div style="background: rgba(239, 68, 68, 0.07); border-left: 3px solid var(--color-red); padding: 0.75rem 0.9rem; border-radius: 6px; font-size: 0.79rem; margin-top: 0.75rem;">
-                        <strong style="color: #fca5a5;">Fallback "No-Answer" Seguro:</strong> <em>"No dispongo de información oficial verificada sobre ese punto en la base documental vigente. ¿Deseás escalar la consulta al equipo responsable?"</em>
+                    <div style="background: rgba(239, 68, 68, 0.07); border-left: 3px solid var(--color-red); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.76rem; margin-top: 0.65rem;">
+                        <strong style="color: #fca5a5;">Mensaje "No-Answer Fallback" (Respuesta Segura):</strong> <em>"No encontré información oficial sobre ese punto en los manuales vigentes. ¿Querés derivar la consulta al responsable del área?"</em>
                     </div>
                 </div>
 
-                <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="padding: 1.15rem; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 class="bento-card-title" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 class="bento-card-title" style="margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.96rem;">
                             <i data-lucide="git-branch" style="color: var(--color-blue);"></i>
-                            <span>Simulador en Vivo: Umbral de Confianza (0.75)</span>
+                            <span>Simulador: Probá Consultas Reales contra el Peaje 0.75</span>
                         </h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.65rem;">
-                            Deslizá el Score de Similitud o probá consultas reales para ver cómo actúa la compuerta lógica:
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.55rem;">
+                            Hacé clic en los 3 casos o mové la barra para ver cuándo el bot responde con cita y cuándo se frena a tiempo:
                         </p>
                     </div>
 
@@ -2028,37 +2068,38 @@
 
         <!-- SLIDE 13: EVALUACIÓN DE CALIDAD: GOLDEN DATASET -->
         <div class="slide" id="slide-13">
-            <h2 class="slide-title">Evaluación de Calidad: Golden Dataset &amp; Evals</h2>
-            <p class="slide-subtitle">Cómo auditar sistemáticamente software probabilístico en el pipeline de CI/CD antes de cada lanzamiento.</p>
+            <span class="slide-context-pill">MÓDULO 4 · PASO 12 DE 14 · ¿CÓMO VERIFICAMOS QUE UN CAMBIO TÉCNICO NO EMPEORE LAS RESPUESTAS DEL BOT?</span>
+            <h2 class="slide-title">Control de Calidad: Golden Dataset &amp; Evals</h2>
+            <p class="slide-subtitle">Así como en traducción tenés una planilla de control de calidad (QA), en IA armamos un examen automático de 100 preguntas reales que el bot debe aprobar antes de actualizarse.</p>
 
-            <div class="governance-container" style="margin-bottom: 0.8rem;">
-                <div class="glass-card gov-card gov-card-evals" style="padding: 1.05rem;">
-                    <div class="gov-icon" style="margin-bottom: 0.55rem;">
+            <div class="governance-container" style="margin-bottom: 0.65rem;">
+                <div class="glass-card gov-card gov-card-evals" style="padding: 0.95rem;">
+                    <div class="gov-icon" style="margin-bottom: 0.4rem;">
                         <i data-lucide="target" class="icon-sm"></i>
                     </div>
-                    <h3 class="gov-title" style="font-size: 0.98rem;">1. Golden Dataset</h3>
-                    <p class="gov-desc" style="font-size: 0.77rem;">
-                        Conjunto curado de <strong>50 a 100 preguntas reales y casos borde</strong> asociados a sus respuestas ideales certificadas por expertos del dominio (Ground Truth).
+                    <h3 class="gov-title" style="font-size: 0.92rem;">1. Golden Dataset (El Examen)</h3>
+                    <p class="gov-desc" style="font-size: 0.74rem; line-height: 1.38;">
+                        Planilla curada por vos y expertos del área con <strong>50 a 100 preguntas reales y tramposas</strong> junto a la respuesta exacta que debería dar el bot (<em>Ground Truth</em>).
                     </p>
                 </div>
 
-                <div class="glass-card gov-card gov-card-accuracy" style="padding: 1.05rem;">
-                    <div class="gov-icon" style="margin-bottom: 0.55rem;">
+                <div class="glass-card gov-card gov-card-accuracy" style="padding: 0.95rem;">
+                    <div class="gov-icon" style="margin-bottom: 0.4rem;">
                         <i data-lucide="activity" class="icon-sm"></i>
                     </div>
-                    <h3 class="gov-title" style="font-size: 0.98rem;">2. Evals en CI/CD</h3>
-                    <p class="gov-desc" style="font-size: 0.77rem;">
-                        Ante cada Pull Request que cambie el prompt o el chunking, se ejecuta el Golden Dataset midiendo <strong>Context Adherence (&ge; 90%)</strong> y bloqueando el deploy si hay regresión.
+                    <h3 class="gov-title" style="font-size: 0.92rem;">2. Evals en CI/CD (El Filtro)</h3>
+                    <p class="gov-desc" style="font-size: 0.74rem; line-height: 1.38;">
+                        Cada vez que Ingeniería toca el sistema, corre las 100 preguntas automáticamente. Si la fidelidad al manual (<strong>Context Adherence</strong>) baja del <strong>90%</strong>, se frena la actualización.
                     </p>
                 </div>
 
-                <div class="glass-card gov-card gov-card-security" style="padding: 1.05rem;">
-                    <div class="gov-icon" style="margin-bottom: 0.55rem;">
+                <div class="glass-card gov-card gov-card-security" style="padding: 0.95rem;">
+                    <div class="gov-icon" style="margin-bottom: 0.4rem;">
                         <i data-lucide="eye" class="icon-sm"></i>
                     </div>
-                    <h3 class="gov-title" style="font-size: 0.98rem;">3. Observabilidad (LLMOps)</h3>
-                    <p class="gov-desc" style="font-size: 0.77rem;">
-                        Monitoreo en producción de latencia, costo en dólares por sesión, tasa de fallback y deriva semántica con plataformas como <strong>Langfuse</strong> o <strong>Arize Phoenix</strong>.
+                    <h3 class="gov-title" style="font-size: 0.92rem;">3. Observabilidad (El Tablero)</h3>
+                    <p class="gov-desc" style="font-size: 0.74rem; line-height: 1.38;">
+                        Con el bot ya en vivo, herramientas como <strong>Langfuse</strong> te muestran un panel con cuánto tarda cada respuesta, cuánto cuesta y qué preguntas no encontraron manual.
                     </p>
                 </div>
             </div>
@@ -2069,8 +2110,9 @@
 
         <!-- SLIDE 14: ROLEPLAY DE ENTREVISTA -->
         <div class="slide" id="slide-14">
-            <h2 class="slide-title">Roleplay: Defensa Técnica en Entrevistas IT</h2>
-            <p class="slide-subtitle">Entrená tus respuestas ejecutivas frente a un CTO o VP of Product. Hacé clic en cada escenario para revelar los 3 pilares ganadores.</p>
+            <span class="slide-context-pill">MÓDULO 4 · PASO 13 DE 14 · PONIENDO EN PALABRAS EJECUTIVAS TODO EL RECORRIDO DE LA SESIÓN</span>
+            <h2 class="slide-title">Roleplay: Defendiendo tu Arquitectura como PM</h2>
+            <p class="slide-subtitle">En una entrevista laboral o reunión de directorio te van a hacer estas 2 preguntas clave. Mirá cómo se responden uniendo las piezas que vimos hoy.</p>
 
             <!-- REACT INTERACTIVE INTERVIEW FLIP/REVEAL CARDS -->
             <div id="react-interview-roleplay-widget" style="width: 100%; max-width: 1100px;">
@@ -2100,19 +2142,20 @@
 
         <!-- SLIDE 15: PROXIMOS PASOS & RUTA DE APRENDIZAJE -->
         <div class="slide" id="slide-15">
-            <h2 class="slide-title">Tu Ruta y Valor como IT Product/Project Manager</h2>
-            <p class="slide-subtitle">Consolidá tu perfil técnico diferenciando tu alcance de RAG actual y el puente hacia los Agentes Autónomos de la Sesión 3.</p>
+            <span class="slide-context-pill">CIERRE DE SESIÓN 2 · PASO 14 DE 14 · RESUMEN DE TU ROL COMO PM Y PUENTE A LA SESIÓN 3</span>
+            <h2 class="slide-title">Tu Valor como IT PM &amp; Puente a la Sesión 3</h2>
+            <p class="slide-subtitle">Hoy dominaste cómo hacer que la IA consulte documentos sin inventar (RAG). En la próxima sesión le daremos "manos" para ejecutar tareas (Agentes).</p>
 
             <div class="grid-2">
                 <!-- PM VALUE CARD -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem;">
                     <div>
                         <h3 class="prd-card-title">
                             <i data-lucide="award" style="color: var(--color-green);"></i>
-                            <span>El Súper-Poder del IT PM en IA</span>
+                            <span>Lo que te llevamos hoy a tu trabajo diario</span>
                         </h3>
-                        <p class="prd-card-desc" style="margin-bottom: 0.75rem;">
-                            Comprender RAG, embeddings y tokens no es para programar; es para liderar equipos de ingeniería con criterio de negocio y viabilidad técnica:
+                        <p class="prd-card-desc" style="margin-bottom: 0.65rem; font-size: 0.78rem;">
+                            Tu diferencial como PM con base lingüística es saber estructurar el conocimiento y fijar reglas de calidad que Ingeniería pueda construir:
                         </p>
                     </div>
 
@@ -2120,80 +2163,80 @@
                         <div class="prd-item-row" style="align-items: flex-start; gap: 0.5rem;">
                             <i data-lucide="check-circle" class="icon-sm" style="color: var(--color-green); margin-top: 2px; flex-shrink: 0;"></i>
                             <div>
-                                <strong style="color: #ffffff; display: block; font-size: 0.8rem;">Dominar Unit Economics de API (FinOps):</strong>
-                                <span style="font-size: 0.74rem; color: var(--text-secondary);">Prevenir desvíos de presupuesto calculando asimetría Input/Output, Prompt Caching y tamaño de chunks.</span>
+                                <strong style="color: #ffffff; display: block; font-size: 0.78rem;">Control de Costos y Presupuesto (Slides 3 y 4):</strong>
+                                <span style="font-size: 0.72rem; color: var(--text-secondary);">Calcular consumo de Tokens BPE, aprovechar Prompt Caching y enviar solo el Top-3 de fragmentos.</span>
                             </div>
                         </div>
                         <div class="prd-item-row" style="align-items: flex-start; gap: 0.5rem;">
                             <i data-lucide="check-circle" class="icon-sm" style="color: var(--color-green); margin-top: 2px; flex-shrink: 0;"></i>
                             <div>
-                                <strong style="color: #ffffff; display: block; font-size: 0.8rem;">Definir Criterios de Aceptación (DoD) Probabilísticos:</strong>
-                                <span style="font-size: 0.74rem; color: var(--text-secondary);">Establecer umbrales anti-alucinación (&ge; 0.75) y Golden Datasets automatizados en CI/CD (&ge; 90%).</span>
+                                <strong style="color: #ffffff; display: block; font-size: 0.78rem;">Diseño de Búsqueda Semántica (Slides 5 a 9):</strong>
+                                <span style="font-size: 0.72rem; color: var(--text-secondary);">Especificar Chunking con 15% de Overlap, metadatos obligatorios y respuestas con cita verificable.</span>
                             </div>
                         </div>
                         <div class="prd-item-row" style="align-items: flex-start; gap: 0.5rem;">
                             <i data-lucide="check-circle" class="icon-sm" style="color: var(--color-green); margin-top: 2px; flex-shrink: 0;"></i>
                             <div>
-                                <strong style="color: #ffffff; display: block; font-size: 0.8rem;">Gobernanza y Privacidad Corporativa:</strong>
-                                <span style="font-size: 0.74rem; color: var(--text-secondary);">Exigir contratos Enterprise SLA con Zero-Data Retention para blindar la propiedad intelectual.</span>
+                                <strong style="color: #ffffff; display: block; font-size: 0.78rem;">Blindaje de Seguridad y Calidad (Slides 10 a 13):</strong>
+                                <span style="font-size: 0.72rem; color: var(--text-secondary);">Exigir Enterprise SLA (Zero-Retention), umbral &ge; 0.75 anti-alucinación y Golden Dataset (&ge; 90%).</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ROADMAP DIFFERENCES CARD -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem;">
                     <div>
                         <h3 class="prd-card-title">
                             <i data-lucide="milestone" style="color: var(--color-purple);"></i>
-                            <span>Evolución del Programa: De Leer a Ejecutar</span>
+                            <span>El Mapa Completo de la Mentoría (Sesiones 1 a 4)</span>
                         </h3>
-                        <p class="prd-card-desc" style="margin-bottom: 0.65rem;">
-                            Cómo se conecta lo que dominaste hoy con las próximas sesiones de la mentoría:
+                        <p class="prd-card-desc" style="margin-bottom: 0.6rem; font-size: 0.78rem;">
+                            Mirá cómo encaja la pieza que armamos hoy con lo que viene en la Sesión 3:
                         </p>
                     </div>
 
                     <div class="prd-item-list">
                         <div class="prd-item-row" style="border-left: 3px solid var(--color-purple); background: rgba(139, 92, 246, 0.05);">
                             <div>
-                                <strong style="color: #ffffff; font-size: 0.8rem;">Sesión 2: IA Consultiva con RAG (Hoy — El "Cerebro")</strong>
-                                <span style="display: block; font-size: 0.72rem; color: var(--text-secondary);">El sistema lee manuales y glosarios privados en una base vectorial para responder sin alucinar (Libro Abierto).</span>
+                                <strong style="color: #ffffff; font-size: 0.78rem;">✅ Sesión 2 (Hoy): RAG — La IA que "Lee y Consulta"</strong>
+                                <span style="display: block; font-size: 0.71rem; color: var(--text-secondary);">Conectamos el LLM a tu biblioteca privada para responder dudas con precisión total y sin inventar.</span>
                             </div>
                         </div>
                         <div class="prd-item-row" style="border-left: 3px solid var(--color-blue);">
                             <div>
-                                <strong style="color: #ffffff; font-size: 0.8rem;">Sesión 3: Sistemas Agénticos y ReAct (Siguiente — Las "Manos")</strong>
-                                <span style="display: block; font-size: 0.72rem; color: var(--text-secondary);">Agentes que razonan en bucle (<em>Thought → Action → Observation</em>), llaman a APIs externas (Tool Calling) y operan con <em>Human-in-the-Loop</em>.</span>
+                                <strong style="color: #ffffff; font-size: 0.78rem;">⏭️ Sesión 3 (Próxima): Agentes — La IA que "Toma Acciones"</strong>
+                                <span style="display: block; font-size: 0.71rem; color: var(--text-secondary);">Pasamos de responder preguntas a ejecutar tareas: crear tickets en Jira, actualizar glosarios vía API (<em>Tool Calling</em>) y pedir aprobación humana (<em>Human-in-the-Loop</em>).</span>
                             </div>
                         </div>
                         <div class="prd-item-row" style="border-left: 3px solid var(--color-orange);">
                             <div>
-                                <strong style="color: #ffffff; font-size: 0.8rem;">Sesión 4: Estrategia Ejecutiva, Cloud &amp; Simulacro Final</strong>
-                                <span style="display: block; font-size: 0.72rem; color: var(--text-secondary);">Despliegue Cloud, observabilidad LLMOps en vivo, CV de alto impacto y defensa ejecutiva de producto.</span>
+                                <strong style="color: #ffffff; font-size: 0.78rem;">🏁 Sesión 4: Estrategia Cloud, Métricas de Negocio &amp; Entrevista Final</strong>
+                                <span style="display: block; font-size: 0.71rem; color: var(--text-secondary);">Cálculo de ROI, despliegue en la nube y simulacro integrador de Product/Project Manager IT.</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="consigna-banner" style="margin-top: 0.8rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;">
+            <div class="consigna-banner" style="margin-top: 0.65rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; padding: 0.8rem 1.15rem;">
                 <div style="flex: 1; min-width: 260px;">
-                    <h4 style="margin-bottom: 0.25rem;">
+                    <h4 style="margin-bottom: 0.2rem; font-size: 0.88rem;">
                         <i data-lucide="edit-3" class="icon-sm"></i>
-                        <span>Entregables y Práctica de la Sesión 2</span>
+                        <span>Actividades Prácticas para Fijar la Sesión 2</span>
                     </h4>
-                    <p style="font-size: 0.79rem; line-height: 1.4; margin: 0;">
-                        Poné a prueba tus decisiones en el <strong>Simulador Práctico S2</strong> y completá el <strong>Mock PRD del "Enterprise Knowledge Bot"</strong> (Chunking, Overlap, Umbral 0.75 y Enterprise SLA).
+                    <p style="font-size: 0.76rem; line-height: 1.38; margin: 0;">
+                        1) Jugá los <strong>6 desafíos del Simulador Práctico S2</strong> y 2) Completá tu propio <strong>Mock PRD interactivo</strong> eligiendo los parámetros correctos.
                     </p>
                 </div>
                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
-                    <a href="./actividad_practica_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(16, 185, 129, 0.22); border-color: var(--color-green); color: #ffffff;">
+                    <a href="./actividad_practica_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(16, 185, 129, 0.22); border-color: var(--color-green); color: #ffffff; margin: 0;">
                         ⚡ Ir a Actividad Práctica S2
                     </a>
-                    <a href="./mock_prd_tarea_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(59, 130, 246, 0.22); border-color: var(--color-blue); color: #ffffff;">
+                    <a href="./mock_prd_tarea_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(59, 130, 246, 0.22); border-color: var(--color-blue); color: #ffffff; margin: 0;">
                         🛠️ Abrir App Mock PRD
                     </a>
-                    <a href="./glosario_completo_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(139, 92, 246, 0.22); border-color: var(--color-purple); color: #ffffff;">
+                    <a href="./glosario_completo_sesion_2.html" class="btn-action-sm" style="text-decoration: none; background: rgba(139, 92, 246, 0.22); border-color: var(--color-purple); color: #ffffff; margin: 0;">
                         📖 Glosario S2
                     </a>
                 </div>
@@ -2302,6 +2345,26 @@
         .s2-module-card:hover .module-jump-pill {
             background: rgba(255, 255, 255, 0.14);
             transform: translateX(3px);
+        }
+
+        /* Cohesive Narrative Context Pill on Slides 2-15 */
+        .slide-context-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            padding: 0.22rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: -0.25rem;
+            text-align: center;
+            max-width: 95%;
         }
 
         /* Token spans for BPE Demo */
@@ -3142,45 +3205,53 @@
             ingestion: [
                 {
                     title: 'Paso 1: Extracción y Limpieza de Documentación Oficial (Ground Truth)',
-                    badge: 'Input: PDF / Markdown / Confluence / TMX',
-                    text: 'Se recopilan y sanean los documentos oficiales que regulan el negocio (manuales de producto, guías de estilo, glosarios aprobados y wikis internas). Esta etapa corre en segundo plano (Batch) cada vez que se publica o actualiza un documento, sin afectar la velocidad de los usuarios finales.'
+                    badge: 'Cuándo corre: Al subir o actualizar un documento',
+                    text: 'Se toman los documentos oficiales aprobados (manuales de producto, guías de estilo y glosarios validados) y se les limpia el formato basura. Como corre en segundo plano (Batch Offline), no demora al usuario final.',
+                    example: '<strong style="color: #93c5fd;">🔎 Ejemplo Real en Paso 1:</strong> Se sube <code>Guia_Estilo_Pagos_LATAM_2026.pdf</code> (42 páginas aprobadas por el equipo de Localización).'
                 },
                 {
-                    title: 'Paso 2: Fragmentación Inteligente (Recursive Chunking + 15% Overlap)',
-                    badge: 'Chunk Size: 1000 chars | Overlap: 150 chars (15%)',
-                    text: 'El motor divide los documentos largos en bloques coherentes de ~1000 caracteres (~200-250 palabras) respetando títulos y párrafos, e inyecta un 15% de solapamiento (Overlap) entre fragmentos contiguos para que ninguna regla o condición quede cortada por la mitad.'
+                    title: 'Paso 2: Fragmentación con Puente (Recursive Chunking + 15% Overlap)',
+                    badge: 'Tamaño: 1000 caracteres | Solapamiento: 150 caracteres (15%)',
+                    text: 'Aplicando lo que vimos en la Slide 7: el sistema divide el PDF en bloques de ~1000 caracteres respetando títulos y puntos aparte, y repite el último 15% de cada bloque al inicio del siguiente para no cortar ninguna regla por la mitad.',
+                    example: '<strong style="color: #93c5fd;">🔎 Ejemplo Real en Paso 2:</strong> La página 8 se convierte en el <code>Chunk #14</code>: <em>"...En el módulo de Pagos LATAM, el término \'Chargeback\' se traduce obligatoriamente como \'Contracargo\'..."</em>'
                 },
                 {
-                    title: 'Paso 3: Vectorización Semántica (Embedding Model API)',
+                    title: 'Paso 3: Traducción a Coordenadas de Significado (Embedding 1536d)',
                     badge: 'Modelo: text-embedding-3-small | 1536 Dimensiones',
-                    text: 'Cada fragmento de texto se envía al modelo de Embeddings, que traduce su significado conceptual en un vector matemático de 1536 coordenadas flotantes. Así, frases con vocabulario distinto pero igual sentido quedan listas para ser encontradas.'
+                    text: 'Aplicando lo que vimos en la Slide 5: cada Chunk pasa por el modelo de Embeddings, que transforma su significado en una lista de 1536 coordenadas matemáticas para que pueda encontrarse aunque el usuario use sinónimos.',
+                    example: '<strong style="color: #93c5fd;">🔎 Ejemplo Real en Paso 3:</strong> El <code>Chunk #14</code> se convierte en el vector <code>[0.889, 0.812, -0.105, 0.655, ... 1536 números]</code>.'
                 },
                 {
-                    title: 'Paso 4: Indexación en Base Vectorial + Etiquetas de Metadatos',
-                    badge: 'Storage: Pinecone / pgvector + JSON Metadata',
-                    text: 'Los vectores se guardan en la Base de Datos Vectorial junto al texto original y sus metadatos estructurados (idioma: ES-LATAM, año: 2026, módulo: Pagos, autor). El índice queda listo para responder consultas en menos de 25 milisegundos.'
+                    title: 'Paso 4: Guardado en Base Vectorial con Etiquetas (Metadatos)',
+                    badge: 'Base Vectorial: Pinecone / pgvector + Etiquetas JSON',
+                    text: 'Aplicando lo que vimos en la Slide 6: se guarda en la Base Vectorial tanto el vector matemático como el texto original y sus etiquetas duras (idioma, año, módulo) para poder pre-filtrar antes de buscar.',
+                    example: '<strong style="color: #93c5fd;">🔎 Ejemplo Real en Paso 4:</strong> Guardado en Pinecone con etiquetas: <code>{ "idioma": "ES-LATAM", "año": 2026, "doc": "Guia_Pagos", "pag": 8 }</code>.'
                 }
             ],
             query: [
                 {
-                    title: 'Paso 1: Pregunta del Usuario y Vectorización en Tiempo Real',
-                    badge: 'Latencia: ~35ms | Query Embedding (1536d)',
-                    text: 'El usuario realiza una consulta en lenguaje natural: "¿Qué criterios de estilo y terminología se aplican al módulo de pagos para usuarios de Latinoamérica?". El backend convierte esa pregunta en un vector de 1536 dimensiones en el acto.'
+                    title: 'Paso 1: El Usuario Pregunta y su Consulta se Convierte en Vector',
+                    badge: 'Tiempo: ~35 milisegundos | En Vivo',
+                    text: 'Un integrante del equipo escribe su duda en el chat. El sistema toma esa pregunta y la pasa por el mismo modelo de Embeddings para obtener sus coordenadas de significado.',
+                    example: '<strong style="color: #6ee7b7;">💬 Ejemplo en Vivo (Paso 1):</strong> Usuario pregunta: <em>"¿Cómo debemos traducir \'Chargeback\' en la pantalla de pagos de Argentina y México?"</em> → Vector <code>[0.881, 0.795, ... 1536d]</code>.'
                 },
                 {
-                    title: 'Paso 2: Metadata Pre-Filtering + Búsqueda de Similitud (Top-K = 3)',
-                    badge: 'Filtro: idioma=ES-LATAM & año=2026 | Score Cosine >= 0.75',
-                    text: 'La base vectorial filtra primero por metadatos vigentes y calcula la Similitud por Coseno, recuperando los 3 fragmentos (Top-K) más cercanos semánticamente. Si el score supera el umbral de 0.75, pasan a la siguiente etapa.'
+                    title: 'Paso 2: Pre-Filtro de Metadatos + Rescate de los 3 Mejores Párrafos (Top-3)',
+                    badge: 'Filtro: idioma=ES-LATAM & año=2026 | Umbral >= 0.75',
+                    text: 'La Base Vectorial descarta primero manuales viejos (2021) o de otros idiomas, y mide la Similitud por Coseno. Rescata los 3 fragmentos más parecidos (Top-3) siempre que superen el puntaje mínimo de 0.75.',
+                    example: '<strong style="color: #6ee7b7;">💬 Ejemplo en Vivo (Paso 2):</strong> Rescata el <code>Chunk #14</code> con <strong>Score = 0.91</strong> (supera el peaje de 0.75 ✅).'
                 },
                 {
-                    title: 'Paso 3: Construcción del Prompt Aumentado (Context Injection)',
-                    badge: 'Examen a Libro Abierto | Ubicación: Inicio y Final del Prompt',
-                    text: 'El backend ensambla de forma transparente un System Prompt estricto: "Respondé ÚNICAMENTE usando los siguientes 3 fragmentos oficiales y citá el documento fuente". Los fragmentos se ubican estratégicamente para evitar el sesgo Lost in the Middle.'
+                    title: 'Paso 3: Armado del "Prompt Aumentado" (El Examen a Libro Abierto)',
+                    badge: 'Regla Fija al Inicio (Caché) + Evidencia + Pregunta al Final',
+                    text: 'El sistema arma internamente una orden estricta para el LLM combinando las instrucciones fijas al principio, los 3 párrafos oficiales encontrados y la pregunta del usuario al final (evitando el sesgo Lost in the Middle de la Slide 4).',
+                    example: '<strong style="color: #6ee7b7;">💬 Ejemplo en Vivo (Paso 3):</strong> Prompt enviado al LLM: <code>"Respondé SOLO usando este fragmento oficial: [Chunk #14, pág. 8]. Si no está ahí, decí que no sabés. Pregunta: ¿Cómo traducir Chargeback?"</code>'
                 },
                 {
-                    title: 'Paso 4: Generación con Temperatura 0.0 y Cita Verificable',
-                    badge: 'LLM: T=0.0 | Hallucination Rate: 0% | Cita Documental',
-                    text: 'El LLM sintetiza la respuesta exacta basándose exclusivamente en la evidencia inyectada y adjunta la cita clicable (ej. "Fuente: Guía de Estilo Pagos LATAM 2026, pág. 14"). El usuario obtiene precisión total sin alucinaciones.'
+                    title: 'Paso 4: Respuesta Precisa con Temperatura 0.0 y Cita Verificable',
+                    badge: 'Temperatura = 0.0 | Cero Alucinación | Cita Clicable',
+                    text: 'Con Temperatura 0.0 (Slide 2), el LLM redacta la respuesta basándose únicamente en los 3 párrafos entregados e incluye el enlace al documento y página exacta para que cualquiera pueda verificarlo.',
+                    example: '<strong style="color: #6ee7b7;">💬 Ejemplo en Vivo (Paso 4):</strong> Bot responde: <em>"En Pagos LATAM, \'Chargeback\' debe traducirse como \'Contracargo\'. 📄 Fuente: Guía Estilo Pagos LATAM 2026, pág. 8."</em>'
                 }
             ]
         };
@@ -3199,11 +3270,13 @@
             const titleEl = document.getElementById('rag-exp-title-' + mode);
             const textEl = document.getElementById('rag-exp-text-' + mode);
             const badgeEl = document.getElementById('rag-exp-badge-' + mode);
+            const exampleEl = document.getElementById('rag-exp-example-' + mode);
             if (titleEl) {
                 titleEl.innerHTML = '<i data-lucide="info" class="icon-sm"></i><span>' + info.title + '</span>';
             }
             if (textEl) textEl.textContent = info.text;
             if (badgeEl) badgeEl.textContent = info.badge;
+            if (exampleEl && info.example) exampleEl.innerHTML = info.example;
             if (window.lucide) lucide.createIcons();
         };
 
@@ -3621,7 +3694,13 @@
             });
 
             return h('div', { className: 'react-sim-box' },
-                h('div', { style: { display: 'flex', gap: '0.45rem', flexWrap: 'wrap', marginBottom: '0.65rem' } },
+                h('div', { style: { fontSize: '0.72rem', color: '#e2e8f0', marginBottom: '0.45rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.35rem' } },
+                    h('span', null, h('strong', { style: { color: '#93c5fd' } }, '💬 Consulta al Bot: '), '"¿Cómo se traduce \'Checkout\' y \'Chargeback\' en nuestra app de Pagos?"'),
+                    h('span', { style: { color: (filterLang && filterYear) ? '#6ee7b7' : '#fca5a5', fontFamily: 'monospace', fontWeight: 700 } },
+                        (filterLang && filterYear) ? '✅ Filtros activos: Solo reglas vigentes ES-LATAM 2026' : '⚠️ Peligro: Se cuelan manuales de 2021 o de EE. UU. con Score > 0.84'
+                    )
+                ),
+                h('div', { style: { display: 'flex', gap: '0.45rem', flexWrap: 'wrap', marginBottom: '0.55rem' } },
                     h('button', {
                         type: 'button',
                         className: 'react-pill-btn' + (filterLang ? ' active' : ''),
@@ -3737,8 +3816,8 @@
                 ),
                 h('div', { style: { marginTop: '0.5rem', fontSize: '0.72rem', color: overlap === 0 ? '#fca5a5' : '#6ee7b7' } },
                     overlap === 0
-                        ? '❌ Con 0% Overlap: Si se recupera solo el Fragmento B, el LLM no sabe QUÉ acción bloquea el lanzamiento y alucina.'
-                        : '✅ Con ' + overlap + '% Overlap: El puente semántico garantiza que ambos fragmentos conserven la condición completa.'
+                        ? '❌ Con 0% Overlap: Si un usuario pregunta "¿Qué bloquea el lanzamiento global?" y RAG recupera el Fragmento B, el bot no ve la causa ("errores P1") y alucina.'
+                        : '✅ Con ' + overlap + '% Overlap: El puente amarillo repite el sujeto y la condición ("errores P1") en ambos fragmentos para que ninguno pierda sentido.'
                 )
             );
         }
@@ -3749,7 +3828,7 @@
             return h('div', { className: 'react-sim-box' },
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.55rem' } },
                     h('span', { style: { fontSize: '0.76rem', fontWeight: 700, color: '#ffffff' } },
-                        '🔒 Simulador de Tráfico de Prompt Confidencial (Contrato NDA + Glosario No Publicado):'
+                        '🔒 Simulador de Envío de Prompt Confidencial ("Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com"):'
                     ),
                     h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
                         h('button', {
@@ -3770,33 +3849,49 @@
                         borderRadius: '8px',
                         background: mode === 'enterprise' ? 'rgba(16, 185, 129, 0.09)' : 'rgba(239, 68, 68, 0.1)',
                         border: '1px solid ' + (mode === 'enterprise' ? 'rgba(16, 185, 129, 0.35)' : 'rgba(239, 68, 68, 0.4)'),
-                        fontSize: '0.76rem',
+                        fontSize: '0.75rem',
                         lineHeight: 1.45,
                         color: '#f8fafc'
                     }
                 },
                     mode === 'enterprise'
-                        ? '✅ AUDITORÍA APROBADA (ISO 27001 / SOC2): El prompt viaja cifrado (TLS 1.3), pasa por PII Masking, se procesa en memoria efímera bajo Zero-Data Retention y ningún peso del modelo público es entrenado con tu propiedad intelectual.'
-                        : '🚨 ALERTA DE DATA LEAKAGE: El proveedor almacena el historial en servidores de entrenamiento humano/RLHF. Los términos confidenciales del cliente quedan expuestos fuera del perímetro corporativo.'
+                        ? '🛡️ Payload enmascarado: "Lanzamiento [CLIENT_ORG] Q4 — contacto: [EMAIL_REDACTED]" → ✅ AUDITORÍA APROBADA (ISO 27001 / SOC2): Viaja cifrado (TLS 1.3), se procesa en memoria efímera bajo Zero-Data Retention y 0% de tus datos entrenan modelos externos.'
+                        : '🚨 Payload expuesto en crudo: "Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com" → ALERTA DE DATA LEAKAGE: El proveedor guarda el prompt en servidores de entrenamiento humano/RLHF, violando el NDA del cliente.'
                 )
             );
         }
 
         // 7. SLIDE 12: Confidence Threshold (0.75) Simulator
         const PRESET_QUERIES = [
-            { q: '¿Cómo se traduce "Chargeback" en el módulo de Pagos LATAM?', score: 0.91, doc: 'Glosario Pagos LATAM 2026 (pág. 8)' },
-            { q: '¿Qué tono exige la guía para mensajes de error de tarjeta?', score: 0.78, doc: 'Guía de Estilo UX Copy 2026 (pág. 19)' },
-            { q: '¿Cuál es el salario confidencial del Director de Finanzas?', score: 0.34, doc: 'Ningún documento coincide en Vector DB' }
+            {
+                q: '¿Cómo se traduce "Chargeback" en el módulo de Pagos LATAM?',
+                score: 0.91,
+                doc: 'Glosario Pagos LATAM 2026 (pág. 8)',
+                botReply: 'Según el Glosario Pagos LATAM 2026 (pág. 8), "Chargeback" se traduce oficialmente como "Contracargo".'
+            },
+            {
+                q: '¿Qué tono exige la guía para mensajes de error de tarjeta?',
+                score: 0.78,
+                doc: 'Guía de Estilo UX Copy 2026 (pág. 19)',
+                botReply: 'Según la Guía UX Copy 2026 (pág. 19), debe usarse un tono empático y neutro sin responsabilizar al usuario.'
+            },
+            {
+                q: '¿Cuál es el salario confidencial del Director de Finanzas?',
+                score: 0.34,
+                doc: 'Ningún documento coincide en Vector DB',
+                botReply: 'Respuesta autorizada citando el fragmento recuperado.'
+            }
         ];
 
         function ConfidenceThresholdWidget() {
-            const [score, setScore] = useState(0.89);
+            const [score, setScore] = useState(0.91);
             const [selectedQuery, setSelectedQuery] = useState(PRESET_QUERIES[0].q);
             const threshold = 0.75;
             const passed = score >= threshold;
+            const currentPreset = PRESET_QUERIES.find(p => p.q === selectedQuery) || PRESET_QUERIES[0];
 
             return h('div', { className: 'react-sim-box' },
-                h('div', { style: { display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '0.55rem' } },
+                h('div', { style: { display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '0.5rem' } },
                     PRESET_QUERIES.map((item, idx) =>
                         h('button', {
                             key: idx,
@@ -3806,12 +3901,12 @@
                         }, 'Caso ' + (idx + 1) + ' (Score ' + item.score + ')')
                     )
                 ),
-                h('div', { style: { fontSize: '0.75rem', color: '#e2e8f0', marginBottom: '0.45rem', fontStyle: 'italic' } },
-                    'Consulta: "' + selectedQuery + '"'
+                h('div', { style: { fontSize: '0.75rem', color: '#e2e8f0', marginBottom: '0.4rem', fontStyle: 'italic' } },
+                    'Consulta del usuario: "' + selectedQuery + '" · Mejor coincidencia en Pinecone: ' + currentPreset.doc
                 ),
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', marginBottom: '0.3rem', fontFamily: 'monospace' } },
                     h('span', null, 'Score Similitud Vectorial: ', h('strong', { style: { color: passed ? '#6ee7b7' : '#fca5a5' } }, score.toFixed(2))),
-                    h('span', { style: { color: '#c4b5fd' } }, 'Umbral PRD: >= 0.75')
+                    h('span', { style: { color: '#c4b5fd' } }, 'Umbral Mínimo PRD: >= 0.75')
                 ),
                 h('input', {
                     type: 'range',
@@ -3821,7 +3916,7 @@
                     step: 0.01,
                     value: score,
                     onChange: (e) => setScore(Number(e.target.value)),
-                    style: { marginBottom: '0.65rem' }
+                    style: { marginBottom: '0.6rem' }
                 }),
                 h('div', { className: 'react-grid-2' },
                     h('div', {
@@ -3834,8 +3929,8 @@
                             transition: 'all 0.25s ease'
                         }
                     },
-                        h('strong', { style: { color: '#6ee7b7', fontSize: '0.76rem', display: 'block' } }, '✅ Score >= 0.75: AUTORIZADO'),
-                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Inyecta el fragmento al LLM y responde citando el documento fuente oficial.')
+                        h('strong', { style: { color: '#6ee7b7', fontSize: '0.75rem', display: 'block' } }, '✅ Score >= 0.75: AUTORIZADO (Invoca al LLM)'),
+                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Bot: "' + currentPreset.botReply + '"')
                     ),
                     h('div', {
                         style: {
@@ -3847,8 +3942,8 @@
                             transition: 'all 0.25s ease'
                         }
                     },
-                        h('strong', { style: { color: '#fca5a5', fontSize: '0.76rem', display: 'block' } }, '🛑 Score < 0.75: BLOQUEADO'),
-                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'No invoca al LLM (ahorra tokens) y devuelve Fallback seguro sin alucinar.')
+                        h('strong', { style: { color: '#fca5a5', fontSize: '0.75rem', display: 'block' } }, '🛑 Score < 0.75: BLOQUEADO (0 Tokens LLM)'),
+                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Bot (Fallback Seguro): "No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes."')
                     )
                 )
             );
@@ -3859,8 +3954,8 @@
             const [status, setStatus] = useState('passed'); // 'passed' | 'regression'
 
             return h('div', { className: 'react-sim-box' },
-                h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' } },
-                    h('span', { style: { fontSize: '0.76rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' } },
+                h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.45rem' } },
+                    h('span', { style: { fontSize: '0.75rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' } },
                         '⚙️ Pipeline CI/CD — Ejecución Automática de Golden Dataset (100 Casos Certificados):'
                     ),
                     h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
@@ -3874,6 +3969,12 @@
                             className: 'react-pill-btn' + (status === 'regression' ? ' active' : ''),
                             onClick: () => setStatus('regression')
                         }, '❌ PR #43: Prompt sin Guardrail (Regresión)')
+                    )
+                ),
+                h('div', { style: { fontSize: '0.7rem', fontFamily: 'monospace', color: '#cbd5e1', marginBottom: '0.5rem', padding: '0.35rem 0.6rem', background: 'rgba(15,23,42,0.6)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.06)' } },
+                    '🧪 Muestra Caso #14/100 ("¿Traducción de Chargeback?") → Esperado: "Contracargo [Cita pág. 8]" | Output PR: ',
+                    h('strong', { style: { color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } },
+                        status === 'passed' ? '✅ "Contracargo (Glosario 2026, pág. 8)" [PASS]' : '❌ "Reverso bancario (sin cita)" [FAIL: Alucinación]'
                     )
                 ),
                 h('div', { className: 'react-grid-4' },
