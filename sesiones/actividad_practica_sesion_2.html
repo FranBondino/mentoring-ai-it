@@ -421,63 +421,67 @@
 
         <!-- ==================== MISIÓN 1: TOKENS, TEMPERATURA & CURVA U ==================== -->
         <section class="mission-panel active" id="panel-m1">
+            <div style="background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--accent-green); border-radius: 0 12px 12px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.1rem; font-size: 0.86rem; line-height: 1.5; color: #e2e8f0;">
+                <strong style="color: #6ee7b7; display: block; margin-bottom: 0.2rem;">💡 En palabras simples: ¿Qué vas a probar en esta Misión 1?</strong>
+                Vas a ver cómo la IA parte las palabras en pedacitos (<strong>Tokens</strong>) para cobrarte, cómo ahorrar más de la mitad de la factura guardando las instrucciones fijas en memoria (<strong>Prompt Caching</strong>) y por qué en un bot de empresa siempre ponemos la creatividad en cero (<strong>Temperatura = 0.0</strong>).
+            </div>
             <div class="card-grid-2">
                 <!-- Card 1A: BPE Tokenizer & Prompt Caching Calculator -->
                 <div class="sim-card">
-                    <h3>✂️ 1A. Laboratorio de Tokenización BPE y FinOps</h3>
+                    <h3>✂️ 1A. Simulador de Tokens (Cómo lee y cobra la IA)</h3>
                     <p class="desc">
-                        Escribí o seleccioná un texto de producto para ver cómo el algoritmo BPE lo divide en sub-palabras y calculá el ahorro mensual activando <strong>Prompt Caching</strong>.
+                        Elegí una frase o escribí la tuya para ver cómo la IA la separa en sílabas/raíces (<strong>Tokens BPE</strong>) y cuánto ahorrás por mes activando <strong>Prompt Caching</strong> (descuento por no releer instrucciones repetidas).
                     </p>
                     <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.7rem;">
                         <button type="button" class="btn-sim active" onclick="setSampleText(0)">Ejemplo Localización</button>
                         <button type="button" class="btn-sim" onclick="setSampleText(1)">Ejemplo Regla Pagos</button>
-                        <button type="button" class="btn-sim" onclick="setSampleText(2)">Ejemplo Payload JSON</button>
+                        <button type="button" class="btn-sim" onclick="setSampleText(2)">Ejemplo Formato JSON</button>
                     </div>
                     <textarea id="bpe-input" rows="2" oninput="updateBpeTokens()" style="width: 100%; background: rgba(2,6,23,0.7); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; color: #ffffff; padding: 0.65rem; font-family: var(--font-sans); font-size: 0.85rem; margin-bottom: 0.7rem;">La localización automática con IA optimiza glosarios técnicos globales.</textarea>
 
                     <div id="bpe-output" style="background: rgba(2,6,23,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.75rem; min-height: 68px; margin-bottom: 0.75rem;"></div>
 
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.76rem; color: #93c5fd;">
-                        <span id="bpe-metrics">9 palabras → 15 tokens BPE (Ratio: 1.67x)</span>
+                        <span id="bpe-metrics">9 palabras → 15 tokens (En español ~1.5 tokens por palabra)</span>
                         <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: #6ee7b7;">
                             <input type="checkbox" id="cache-toggle" checked onchange="updateBpeTokens()">
-                            <span>Activar Prompt Caching (-55% costo Input)</span>
+                            <span>Activar Prompt Caching (-55% en factura)</span>
                         </label>
                     </div>
                     <div class="feedback-banner ok" id="bpe-cost-banner">
-                        💰 Costo proyectado (20.000 consultas/mes con System Prompt de 1.500 tokens): <strong>$33.75 USD/mes</strong> (Ahorrás $41.25 USD/mes gracias a Prompt Caching).
+                        💰 Costo proyectado (20.000 consultas/mes con instrucciones fijas de 1.500 tokens): <strong>$33.75 USD/mes</strong> (Ahorrás $41.25 USD/mes porque no te cobran las instrucciones repetidas).
                     </div>
                 </div>
 
                 <!-- Card 1B: Temperature & Lost in the Middle Calibrator -->
                 <div class="sim-card">
-                    <h3>🌡️ 1B. Calibrador de Temperatura y Ventana de Contexto</h3>
+                    <h3>🌡️ 1B. Perilla de Creatividad (Temperatura) y Ubicación</h3>
                     <p class="desc">
-                        Elegí el parámetro de <strong>Temperatura</strong> y la <strong>Ubicación en el Prompt</strong> adecuados para un <em>Bot Corporativo de Reglas de Negocio y Glosarios</em>:
+                        Configurá el bot para que responda <strong>sin inventar</strong> y sin olvidarse de leer las reglas importantes:
                     </p>
                     <div style="margin-bottom: 0.9rem;">
                         <label style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">
-                            <span>Temperatura del LLM:</span>
-                            <strong id="temp-val-label" style="color: var(--accent-green); font-family: var(--font-mono);">T = 0.0 (Determinista / RAG)</strong>
+                            <span>Temperatura (Nivel de creatividad):</span>
+                            <strong id="temp-val-label" style="color: var(--accent-green); font-family: var(--font-mono);">T = 0.0 (Modo Manual / Cero Invento)</strong>
                         </label>
                         <input type="range" id="temp-slider" min="0" max="1" step="0.1" value="0" oninput="evaluateMission1()">
                     </div>
 
                     <div style="margin-bottom: 0.9rem;">
                         <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.4rem;">
-                            ¿Dónde inyectás los fragmentos recuperados por RAG y las reglas críticas?
+                            ¿Dónde ubicamos los 3 párrafos del manual dentro del mensaje?
                         </label>
                         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <button type="button" class="btn-sim active" id="pos-btn-edges" onclick="selectPromptPos('edges')">🟢 Al Inicio y Final del Prompt (Extremos)</button>
-                            <button type="button" class="btn-sim" id="pos-btn-middle" onclick="selectPromptPos('middle')">🔴 En el Medio de 50 páginas de historial</button>
+                            <button type="button" class="btn-sim active" id="pos-btn-edges" onclick="selectPromptPos('edges')">🟢 Al Principio y al Final (Donde más presta atención)</button>
+                            <button type="button" class="btn-sim" id="pos-btn-middle" onclick="selectPromptPos('middle')">🔴 Escondidos en la mitad de 50 páginas</button>
                         </div>
                     </div>
 
                     <div class="feedback-banner ok" id="m1-feedback">
-                        ✅ <strong>Configuración Óptima de PM:</strong> Con <code>T = 0.0</code> asegurás respuestas deterministas pegadas al documento, y al ubicar la evidencia en los extremos evitás el sesgo <em>Lost in the Middle</em> (99% de retención).
+                        ✅ <strong>Configuración Ideal:</strong> Con <code>Temperatura = 0.0</code> la IA no improvisa (elige siempre la palabra fiel al manual), y poniendo los datos al principio/final evitás que se distraiga en el medio (<em>Lost in the Middle</em>).
                     </div>
                     <button type="button" class="btn-sim active" style="margin-top: 0.9rem; width: 100%;" onclick="completeMission(1)">
-                        ✓ Validar Misión 1 y Sumar Progreso
+                        ✓ Validar Misión 1 y Pasar a la Misión 2
                     </button>
                 </div>
             </div>
@@ -485,50 +489,54 @@
 
         <!-- ==================== MISIÓN 2: EMBEDDINGS & METADATA FILTERING ==================== -->
         <section class="mission-panel" id="panel-m2">
+            <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent-blue); border-radius: 0 12px 12px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.1rem; font-size: 0.86rem; line-height: 1.5; color: #e2e8f0;">
+                <strong style="color: #93c5fd; display: block; margin-bottom: 0.2rem;">💡 En palabras simples: ¿Qué vas a probar en esta Misión 2?</strong>
+                Vas a ver cómo el buscador por significado (<strong>Embeddings + Similitud Coseno</strong>) encuentra la idea correcta aunque el usuario use sinónimos, y por qué hay que poner <strong>filtros tipo MercadoLibre (Idioma + Año 2026)</strong> antes de buscar para que no se cuele un manual viejo de 2021.
+            </div>
             <div class="card-grid-2">
                 <div class="sim-card">
-                    <h3>🧭 2A. Simulador de Similitud por Coseno (1536d)</h3>
+                    <h3>🧭 2A. Buscador por Significado (Puntaje de 0.00 a 1.00)</h3>
                     <p class="desc">
-                        Consulta del usuario: <em>"¿Cómo debemos traducir 'Chargeback' y 'Checkout' en la app para clientes de Argentina y México?"</em>. Hacé clic en los vectores candidatos para inspeccionar su distancia semántica:
+                        Un usuario pregunta: <em>"¿Cómo debemos traducir 'Chargeback' y 'Checkout' en la app para Argentina y México?"</em>. Hacé clic en cada documento para ver qué puntaje de cercanía le da el buscador:
                     </p>
                     <div id="vector-candidates-list" style="display: flex; flex-direction: column; gap: 0.55rem;">
                         <button type="button" class="quiz-option correct" onclick="inspectCandidate(0)">
-                            <strong>Vector #104 — Glosario Oficial Fintech ES-LATAM (2026)</strong>
-                            <span style="float: right; font-family: var(--font-mono); color: #6ee7b7;">Cosine: 0.93 ✅</span>
+                            <strong>Documento #1 — Glosario Oficial Fintech ES-LATAM (Año 2026)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #6ee7b7;">Puntaje: 0.93 ✅</span>
                         </button>
                         <button type="button" class="quiz-option" onclick="inspectCandidate(1)">
-                            <strong>Vector #209 — Guía de Estilo UX Pagos LATAM (2026)</strong>
-                            <span style="float: right; font-family: var(--font-mono); color: #93c5fd;">Cosine: 0.87 ✅</span>
+                            <strong>Documento #2 — Guía de Estilo UX Pagos LATAM (Año 2026)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #93c5fd;">Puntaje: 0.87 ✅</span>
                         </button>
                         <button type="button" class="quiz-option" onclick="inspectCandidate(2)">
-                            <strong>Vector #512 — Manual de Pagos España ES-ES (2021 Obsoleto)</strong>
-                            <span style="float: right; font-family: var(--font-mono); color: #fdba74;">Cosine: 0.81 ⚠️</span>
+                            <strong>Documento #3 — Manual de Pagos España ES-ES (Año 2021 Vencido)</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #fdba74;">Puntaje: 0.81 ⚠️</span>
                         </button>
                         <button type="button" class="quiz-option" onclick="inspectCandidate(3)">
-                            <strong>Vector #899 — Política de Vacaciones Recursos Humanos</strong>
-                            <span style="float: right; font-family: var(--font-mono); color: #fca5a5;">Cosine: 0.14 🚫</span>
+                            <strong>Documento #4 — Política de Vacaciones de Recursos Humanos</strong>
+                            <span style="float: right; font-family: var(--font-mono); color: #fca5a5;">Puntaje: 0.14 🚫</span>
                         </button>
                     </div>
                     <div class="feedback-banner ok" id="candidate-inspector">
-                        🔍 <strong>Vector #104:</strong> Coordenadas <code>[0.881, 0.742, -0.119, ... 1536d]</code>. Aunque el documento dice "Contracargo" y "Finalizar compra", el modelo de Embeddings entiende que equivale semánticamente a la consulta del usuario.
+                        🔍 <strong>Documento #1 (Puntaje 0.93 — Casi idéntico):</strong> Aunque el manual dice "Contracargo" y "Finalizar compra", el GPS de significado (Embedding) sabe que habla exactamente de lo mismo que "Chargeback" y "Checkout".
                     </div>
                 </div>
 
                 <div class="sim-card">
-                    <h3>🏷️ 2B. Pre-Filtrado por Metadatos (Metadata Filtering)</h3>
+                    <h3>🏷️ 2B. Filtros Previos por Etiqueta (Metadata Filtering)</h3>
                     <p class="desc">
-                        Observá el <strong>Vector #512</strong>: tiene un score alto (<code>0.81</code>) porque habla de pagos en español, ¡pero es de <strong>España (ES-ES) y del año 2021</strong>! Activá los filtros de metadatos correctos para eliminarlo antes de la búsqueda vectorial:
+                        ¡Cuidado con el <strong>Documento #3</strong>! Como habla de pagos en español tiene un puntaje alto (<code>0.81</code>), pero es de <strong>España y del año 2021</strong>. Mantené encendidas las etiquetas para filtrarlo antes de buscar:
                     </p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.9rem;">
-                        <button type="button" class="btn-sim active" id="mf-lang" onclick="toggleMetaSim('lang')">🏷️ region = "ES-LATAM"</button>
-                        <button type="button" class="btn-sim active" id="mf-year" onclick="toggleMetaSim('year')">📅 status = "vigente_2026"</button>
-                        <button type="button" class="btn-sim" id="mf-dept" onclick="toggleMetaSim('dept')">🏢 domain = "fintech_localization"</button>
+                        <button type="button" class="btn-sim active" id="mf-lang" onclick="toggleMetaSim('lang')">🏷️ Idioma = "ES-LATAM"</button>
+                        <button type="button" class="btn-sim active" id="mf-year" onclick="toggleMetaSim('year')">📅 Estado = "Vigente 2026"</button>
+                        <button type="button" class="btn-sim" id="mf-dept" onclick="toggleMetaSim('dept')">🏢 Área = "Fintech Pagos"</button>
                     </div>
                     <div class="feedback-banner ok" id="mf-feedback">
-                        ✅ <strong>Pre-Filtro Activo:</strong> El Vector #512 (España 2021) fue descartado en 2ms por metadatos. El LLM solo recibe los fragmentos vigentes de LATAM 2026.
+                        ✅ <strong>Filtro Activo:</strong> El manual viejo de España 2021 quedó bloqueado en la entrada. El Bot solo lee documentos vigentes de LATAM 2026.
                     </div>
                     <button type="button" class="btn-sim active" style="margin-top: 0.9rem; width: 100%;" onclick="completeMission(2)">
-                        ✓ Validar Misión 2 y Sumar Progreso
+                        ✓ Validar Misión 2 y Pasar a la Misión 3
                     </button>
                 </div>
             </div>
@@ -536,60 +544,64 @@
 
         <!-- ==================== MISIÓN 3: CHUNKING, OVERLAP & PIPELINE RAG ==================== -->
         <section class="mission-panel" id="panel-m3">
+            <div style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid var(--accent-purple); border-radius: 0 12px 12px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.1rem; font-size: 0.86rem; line-height: 1.5; color: #e2e8f0;">
+                <strong style="color: #c4b5fd; display: block; margin-bottom: 0.2rem;">💡 En palabras simples: ¿Qué vas a probar en esta Misión 3?</strong>
+                Vas a elegir cómo cortar un PDF largo en fichas manejables (~1 párrafo / 1000 letras) dejando un <strong>15% de solapamiento (Overlap)</strong> como en una foto panorámica para que ninguna oración quede cortada por la mitad.
+            </div>
             <div class="card-grid-2">
                 <div class="sim-card">
-                    <h3>🧩 3A. Calibrador de Chunk Size &amp; Overlap</h3>
+                    <h3>🧩 3A. Cómo Cortar los Manuales (Chunking + Overlap)</h3>
                     <p class="desc">
-                        Configurá la estrategia de fragmentación para ingestar manuales técnicos y guías de localización sin cortar reglas condicionales por la mitad:
+                        Probá qué pasa si cortás los documentos en pedazos demasiado chicos, demasiado grandes o sin repetir el borde (0% Overlap):
                     </p>
                     <div style="margin-bottom: 0.85rem;">
-                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">Tamaño de Fragmento (Chunk Size):</label>
+                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">1. Tamaño de cada fragmento (Chunk Size):</label>
                         <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
-                            <button type="button" class="btn-sim" id="cs-100" onclick="setChunkConfig(100, currentOverlap)">100 chars (Micro)</button>
-                            <button type="button" class="btn-sim active" id="cs-1000" onclick="setChunkConfig(1000, currentOverlap)">1000 chars (~220 palabras)</button>
-                            <button type="button" class="btn-sim" id="cs-8000" onclick="setChunkConfig(8000, currentOverlap)">8000 chars (Bloque Masivo)</button>
+                            <button type="button" class="btn-sim" id="cs-100" onclick="setChunkConfig(100, currentOverlap)">100 letras (Muy cortito)</button>
+                            <button type="button" class="btn-sim active" id="cs-1000" onclick="setChunkConfig(1000, currentOverlap)">1000 letras (~1 párrafo ideal)</button>
+                            <button type="button" class="btn-sim" id="cs-8000" onclick="setChunkConfig(8000, currentOverlap)">8000 letras (Demasiado largo)</button>
                         </div>
                     </div>
                     <div style="margin-bottom: 0.85rem;">
-                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">Solapamiento (Overlap %):</label>
+                        <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem;">2. Puente entre fragmentos (Overlap %):</label>
                         <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
-                            <button type="button" class="btn-sim" id="ov-0" onclick="setChunkConfig(currentChunkSize, 0)">0% (Sin Puente)</button>
-                            <button type="button" class="btn-sim active" id="ov-15" onclick="setChunkConfig(currentChunkSize, 15)">15% (Puente Semántico Ideal)</button>
-                            <button type="button" class="btn-sim" id="ov-50" onclick="setChunkConfig(currentChunkSize, 50)">50% (Duplicación Excesiva)</button>
+                            <button type="button" class="btn-sim" id="ov-0" onclick="setChunkConfig(currentChunkSize, 0)">0% (Sin puente: corta frases)</button>
+                            <button type="button" class="btn-sim active" id="ov-15" onclick="setChunkConfig(currentChunkSize, 15)">15% (Puente Ideal)</button>
+                            <button type="button" class="btn-sim" id="ov-50" onclick="setChunkConfig(currentChunkSize, 50)">50% (Repite la mitad: caro)</button>
                         </div>
                     </div>
                     <div class="feedback-banner ok" id="chunk-sim-feedback">
-                        ✅ <strong>Sweet Spot de Arquitectura (1000 chars + 15% Overlap):</strong> Cada fragmento retiene contexto completo y comparte 150 caracteres de puente con el siguiente sin inflar la factura de tokens.
+                        ✅ <strong>Punto Justo (1000 letras + 15% de puente):</strong> Cada ficha tiene una idea completa y repite el último 15% al inicio de la siguiente para que ninguna regla se corte al medio.
                     </div>
                 </div>
 
                 <div class="sim-card">
-                    <h3>⚙️ 3B. Ordená las 2 Fases de la Arquitectura RAG</h3>
+                    <h3>⚙️ 3B. Resumen: Las 2 Etapas de nuestro Bot RAG</h3>
                     <p class="desc">
-                        Hacé clic en cada etapa para verificar cómo se separan los procesos de <strong>Fase 1 (Batch Offline)</strong> y <strong>Fase 2 (Consulta en Tiempo Real)</strong>:
+                        Así se conectan todas las piezas en dos momentos bien separados:
                     </p>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
                         <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); border-radius: 10px; padding: 0.75rem;">
-                            <strong style="color: #93c5fd; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">📦 Fase 1: Ingestión (Offline)</strong>
+                            <strong style="color: #93c5fd; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">📦 Fase 1: Preparar la Biblioteca (1 vez)</strong>
                             <ol style="padding-left: 1.1rem; font-size: 0.78rem; color: #e2e8f0; line-height: 1.55;">
-                                <li>Extracción de PDFs / Glosarios</li>
-                                <li>Recursive Chunking (1000ch / 15%)</li>
-                                <li>Generación de Embeddings (1536d)</li>
-                                <li>Guardado en Vector DB + Metadatos</li>
+                                <li>Subir PDFs y Glosarios limpios</li>
+                                <li>Cortar en fichas (1000 letras + 15%)</li>
+                                <li>Crear coordenadas GPS (Embeddings)</li>
+                                <li>Guardar con etiquetas (Idioma/Año)</li>
                             </ol>
                         </div>
                         <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); border-radius: 10px; padding: 0.75rem;">
-                            <strong style="color: #6ee7b7; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">⚡ Fase 2: Consulta (Live)</strong>
+                            <strong style="color: #6ee7b7; font-size: 0.8rem; display: block; margin-bottom: 0.4rem;">⚡ Fase 2: Responder en el Chat (1.2 seg)</strong>
                             <ol style="padding-left: 1.1rem; font-size: 0.78rem; color: #e2e8f0; line-height: 1.55;">
-                                <li>Vectorización de la Pregunta</li>
-                                <li>Metadata Filter + Top-K Cosine</li>
-                                <li>Validación de Umbral (&ge; 0.75)</li>
-                                <li>Inyección al Prompt + Respuesta Citada</li>
+                                <li>Pasar la pregunta a coordenadas</li>
+                                <li>Filtrar Año 2026 + Buscar los 3 mejores</li>
+                                <li>Chequear que superen el peaje (&ge; 0.75)</li>
+                                <li>Responder con Temp 0.0 y Cita de pág.</li>
                             </ol>
                         </div>
                     </div>
                     <button type="button" class="btn-sim active" style="margin-top: 0.95rem; width: 100%;" onclick="completeMission(3)">
-                        ✓ Validar Misión 3 y Sumar Progreso
+                        ✓ Validar Misión 3 y Pasar a la Misión 4
                     </button>
                 </div>
             </div>
@@ -597,42 +609,46 @@
 
         <!-- ==================== MISIÓN 4: GOBERNANZA, UMBRAL 0.75 & QUIZ EJECUTIVO ==================== -->
         <section class="mission-panel" id="panel-m4">
+            <div style="background: rgba(249, 115, 22, 0.1); border-left: 4px solid var(--accent-orange); border-radius: 0 12px 12px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.1rem; font-size: 0.86rem; line-height: 1.5; color: #e2e8f0;">
+                <strong style="color: #fdba74; display: block; margin-bottom: 0.2rem;">💡 En palabras simples: ¿Qué vas a probar en esta Misión 4?</strong>
+                Vas a ver cómo funciona el <strong>"peaje anti-invento" (Umbral 0.75)</strong> cuando alguien pregunta algo que no está en los manuales, y vas a elegir cómo explicarle a un Director por qué usamos <strong>RAG (libro abierto)</strong> en vez de <strong>Fine-Tuning (memoria)</strong>.
+            </div>
             <div class="card-grid-2">
                 <div class="sim-card">
-                    <h3>🛡️ 4A. Simulador de Compuerta Anti-Alucinación (0.75)</h3>
+                    <h3>🛡️ 4A. El Peaje Anti-Invento (Umbral Mínimo = 0.75)</h3>
                     <p class="desc">
-                        Probá cómo responde tu arquitectura ante 3 consultas reales cuando aplicamos un <strong>Confidence Threshold = 0.75</strong> y <strong>Enterprise SLA (Zero-Retention)</strong>:
+                        Hacé clic en estas 3 preguntas para ver cuándo el Bot tiene permiso para responder y cuándo se frena a tiempo para no inventar:
                     </p>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem;">
                         <button type="button" class="quiz-option correct" onclick="testThresholdCase(0)">
-                            <strong>Caso A:</strong> "¿Qué término oficial usamos para 'Split Payment' en México?" (Score: 0.91)
+                            <strong>Pregunta A (Está en el manual):</strong> "¿Qué término oficial usamos para 'Split Payment' en México?" (Puntaje: 0.91)
                         </button>
                         <button type="button" class="quiz-option" onclick="testThresholdCase(1)">
-                            <strong>Caso B:</strong> "¿Cuál va a ser la cotización del dólar en diciembre de 2028?" (Score: 0.29)
+                            <strong>Pregunta B (Fuera de tema):</strong> "¿Cuál va a ser el valor del dólar en diciembre de 2028?" (Puntaje: 0.29)
                         </button>
                         <button type="button" class="quiz-option" onclick="testThresholdCase(2)">
-                            <strong>Caso C:</strong> "¿Qué acuerdos privados firmó el directorio ayer sin publicar?" (Score: 0.42)
+                            <strong>Pregunta C (Dato no publicado):</strong> "¿Qué sueldos confidenciales aprobó ayer RRHH?" (Puntaje: 0.42)
                         </button>
                     </div>
                     <div class="feedback-banner ok" id="threshold-case-output">
-                        ✅ <strong>Score 0.91 &ge; 0.75 (AUTORIZADO):</strong> El backend inyecta el fragmento al LLM con Temperatura 0.0 y responde: <em>"En México se utiliza 'Pago dividido' (Fuente: Glosario LATAM 2026, pág. 12)."</em>
+                        ✅ <strong>Puntaje 0.91 &ge; 0.75 (PASA EL PEAJE):</strong> Como encontró el párrafo oficial, el Bot responde con Temperatura 0.0: <em>"En México se utiliza 'Pago dividido' (Fuente: Glosario LATAM 2026, pág. 12)."</em>
                     </div>
                 </div>
 
                 <div class="sim-card">
-                    <h3>🎙️ 4B. Desafío de Entrevista Técnica (CTO Roleplay)</h3>
+                    <h3>🎙️ 4B. Pregunta Típica de Entrevista o Directorio</h3>
                     <p class="desc">
-                        El CTO te pregunta: <em>"Anabela, ¿por qué no hacemos Fine-Tuning del modelo cada viernes con los nuevos manuales en vez de armar una base de datos vectorial con RAG?"</em> Elegí la mejor defensa ejecutiva:
+                        Un gerente te pregunta: <em>"Anabela, ¿por qué no re-entrenamos el modelo (Fine-Tuning) todos los viernes con los manuales nuevos en vez de usar RAG?"</em> Elegí la respuesta correcta:
                     </p>
                     <div id="cto-quiz-options">
                         <button type="button" class="quiz-option" onclick="checkCtoAnswer(0, this)">
-                            A) Porque el Fine-Tuning solo funciona en modelos open-source y no existe en las APIs de OpenAI o Google.
+                            A) Porque el Fine-Tuning no existe en modelos comerciales como OpenAI o Claude.
                         </button>
                         <button type="button" class="quiz-option" onclick="checkCtoAnswer(1, this)">
-                            B) Porque el Fine-Tuning sirve para enseñar estilo, tono o formato (como JSON), pero no para actualizar hechos cambiantes: es lento, caro, sigue alucinando y no permite citar la fuente exacta ni filtrar permisos en tiempo real como lo hace RAG.
+                            B) Porque el Fine-Tuning sirve para enseñar un tono o estilo fijo, pero no para datos que cambian cada semana: es caro, lento, responde de memoria sin poder citar la página y queda viejo enseguida. En cambio, RAG consulta el manual vigente en vivo como un examen a libro abierto.
                         </button>
                         <button type="button" class="quiz-option" onclick="checkCtoAnswer(2, this)">
-                            C) Porque con ventanas de contexto de 1 millón de tokens conviene pegar los 500 manuales crudos en cada llamada de usuario sin usar ni Fine-Tuning ni RAG.
+                            C) Porque conviene más copiar y pegar los 500 manuales enteros dentro del chat en cada pregunta del usuario.
                         </button>
                     </div>
                     <div class="feedback-banner" id="cto-quiz-feedback" style="display: none;"></div>
@@ -727,24 +743,24 @@
         function evaluateMission1() {
             const temp = parseFloat(document.getElementById('temp-slider').value);
             const label = document.getElementById('temp-val-label');
-            label.textContent = 'T = ' + temp.toFixed(1) + (temp <= 0.2 ? ' (Determinista / RAG)' : temp <= 0.5 ? ' (Moderada)' : ' (Alta Creatividad / Riesgo)');
+            label.textContent = 'T = ' + temp.toFixed(1) + (temp <= 0.2 ? ' (Modo Manual / Cero Invento)' : temp <= 0.5 ? ' (Intermedia)' : ' (Creativa / Riesgo de Inventar)');
             label.style.color = temp <= 0.2 ? 'var(--accent-green)' : 'var(--accent-orange)';
 
             const fb = document.getElementById('m1-feedback');
             if (temp <= 0.2 && currentPromptPos === 'edges') {
                 fb.className = 'feedback-banner ok';
-                fb.innerHTML = '✅ <strong>Configuración Óptima de PM:</strong> Con <code>T = ' + temp.toFixed(1) + '</code> asegurás respuestas fieles al documento y ubicando la evidencia al inicio/final evitás el sesgo <em>Lost in the Middle</em> (99% Recall).';
+                fb.innerHTML = '✅ <strong>Configuración Ideal:</strong> Con <code>Temperatura = ' + temp.toFixed(1) + '</code> el Bot no improvisa y poniendo los párrafos al principio/final evitás que se distraiga en la mitad (<em>Lost in the Middle</em>).';
             } else {
                 fb.className = 'feedback-banner warn';
-                fb.innerHTML = '⚠️ <strong>Riesgo de Alucinación o Olvido:</strong> Para un bot corporativo RAG necesitás <code>T &le; 0.2</code> y colocar los fragmentos críticos en los extremos del prompt, nunca enterrados en el medio.';
+                fb.innerHTML = '⚠️ <strong>Cuidado:</strong> Para que el Bot no invente ni olvide reglas, bajá la Temperatura a <code>0.0</code> y ubicá los párrafos importantes al principio y al final (nunca escondidos en el medio).';
             }
         }
 
         const CANDIDATE_DETAILS = [
-            '🔍 <strong>Vector #104 (Cosine 0.93 ✅):</strong> Coordenadas <code>[0.881, 0.742, -0.119, ... 1536d]</code>. Match semántico directo con terminología aprobada para Argentina y México.',
-            '🔍 <strong>Vector #209 (Cosine 0.87 ✅):</strong> Coordenadas <code>[0.845, 0.710, -0.095, ... 1536d]</code>. Complementa las reglas de microcopy en pantallas de pago LATAM.',
-            '⚠️ <strong>Vector #512 (Cosine 0.81 — RUIDO PELIGROSO):</strong> Habla de pagos en español pero corresponde a <strong>España 2021</strong>. Sin Metadata Filtering, contaminaría el prompt con términos incorrectos.',
-            '🚫 <strong>Vector #899 (Cosine 0.14 — DESCARTADO):</strong> Ángulo ortogonal en el espacio vectorial. Totalmente por debajo del umbral 0.75.'
+            '🔍 <strong>Documento #1 (Puntaje 0.93 ✅):</strong> Aunque el manual usa las palabras "Contracargo" y "Finalizar compra", el buscador por significado (Embedding) entiende que es exactamente lo que preguntó el usuario.',
+            '🔍 <strong>Documento #2 (Puntaje 0.87 ✅):</strong> Muy cercano en significado: explica las reglas de estilo para pantallas de pago en Latinoamérica.',
+            '⚠️ <strong>Documento #3 (Puntaje 0.81 — PELIGRO DE MANUAL VIEJO):</strong> Habla de pagos en español pero es de <strong>España y del año 2021</strong>. Si no filtramos antes por etiqueta (Año 2026 + LATAM), el Bot leería reglas vencidas.',
+            '🚫 <strong>Documento #4 (Puntaje 0.14 — DESCARTADO):</strong> Habla de vacaciones de RRHH; no tiene relación con pagos y queda muy por debajo del peaje mínimo de 0.75.'
         ];
 
         function inspectCandidate(idx) {
@@ -761,10 +777,10 @@
             const fb = document.getElementById('mf-feedback');
             if (metaState.lang && metaState.year) {
                 fb.className = 'feedback-banner ok';
-                fb.innerHTML = '✅ <strong>Pre-Filtro Activo (ES-LATAM + Vigente 2026):</strong> El Vector #512 (España 2021) fue eliminado antes del cálculo vectorial. Precisión del 98% y menor latencia.';
+                fb.innerHTML = '✅ <strong>Filtro Activo (ES-LATAM + Vigente 2026):</strong> El manual viejo de España 2021 queda bloqueado antes de buscar. El Bot solo consulta reglas actuales.';
             } else {
                 fb.className = 'feedback-banner warn';
-                fb.innerHTML = '⚠️ <strong>Filtro Incompleto:</strong> Al desactivar <code>region="ES-LATAM"</code> o <code>status="vigente_2026"</code>, el Vector #512 obsoleto se cuela en el Top-3 por tener score 0.81.';
+                fb.innerHTML = '⚠️ <strong>¡Atención! Filtro Apagado:</strong> Al desactivar el filtro de Idioma o Año 2026, el manual viejo de España 2021 se cuela en la respuesta porque su puntaje de tema es alto (0.81).';
             }
         }
 
@@ -776,13 +792,13 @@
             const fb = document.getElementById('chunk-sim-feedback');
             if (size === 1000 && overlap === 15) {
                 fb.className = 'feedback-banner ok';
-                fb.innerHTML = '✅ <strong>Sweet Spot de Arquitectura (1000 chars + 15% Overlap):</strong> Cada fragmento retiene contexto completo y comparte 150 caracteres de puente con el siguiente sin inflar la factura de tokens.';
+                fb.innerHTML = '✅ <strong>Punto Justo (1000 letras + 15% de puente):</strong> Cada ficha guarda un párrafo completo y repite el último 15% en la ficha siguiente para que ninguna regla quede cortada por la mitad.';
             } else if (overlap === 0) {
                 fb.className = 'feedback-banner warn';
-                fb.innerHTML = '⚠️ <strong>Peligro sin Overlap (0%):</strong> Las oraciones y tablas que caigan justo en el corte de caracteres quedarán mutiladas entre dos fragmentos.';
+                fb.innerHTML = '⚠️ <strong>Peligro sin Puente (0% Overlap):</strong> Las frases o tablas que caigan justo donde termina el corte de 1000 letras van a quedar partidas por la mitad.';
             } else {
                 fb.className = 'feedback-banner warn';
-                fb.innerHTML = '⚠️ <strong>Desbalance Costo/Precisión:</strong> Chunks de ' + size + ' chars con ' + overlap + '% overlap generan fragmentos demasiado ' + (size === 100 ? 'pequeños y sin contexto' : 'pesados y costosos para el prompt') + '.';
+                fb.innerHTML = '⚠️ <strong>Desbalance:</strong> Cortar cada ' + size + ' letras con ' + overlap + '% de repetición genera fichas demasiado ' + (size === 100 ? 'chicas que pierden el hilo de la oración' : 'grandes y caras de procesar en cada pregunta') + '.';
             }
         }
 
@@ -790,13 +806,13 @@
             const out = document.getElementById('threshold-case-output');
             if (idx === 0) {
                 out.className = 'feedback-banner ok';
-                out.innerHTML = '✅ <strong>Score 0.91 &ge; 0.75 (AUTORIZADO):</strong> El backend inyecta el fragmento al LLM con Temperatura 0.0 y responde: <em>"En México se utiliza \'Pago dividido\' (Fuente: Glosario LATAM 2026, pág. 12)."</em>';
+                out.innerHTML = '✅ <strong>Puntaje 0.91 &ge; 0.75 (PASA EL PEAJE):</strong> El Bot recibe el párrafo oficial con Temperatura 0.0 y responde: <em>"En México se utiliza \'Pago dividido\' (Fuente: Glosario LATAM 2026, pág. 12)."</em>';
             } else if (idx === 1) {
                 out.className = 'feedback-banner warn';
-                out.innerHTML = '🛑 <strong>Score 0.29 &lt; 0.75 (BLOQUEADO POR GUARDRAIL):</strong> No se llama al LLM (ahorro de tokens). El bot responde el Fallback seguro: <em>"No dispongo de información oficial verificada sobre ese punto en la base documental."</em>';
+                out.innerHTML = '🛑 <strong>Puntaje 0.29 &lt; 0.75 (SE FRENA EN EL PEAJE):</strong> Como no llega a 0.75, ni siquiera gastamos en llamar al modelo caro y el Bot responde sin inventar: <em>"No encontré información oficial sobre ese tema en los manuales vigentes."</em>';
             } else {
                 out.className = 'feedback-banner warn';
-                out.innerHTML = '🛑 <strong>Score 0.42 &lt; 0.75 (BLOQUEADO POR GUARDRAIL):</strong> Previene alucinación sobre documentos no publicados y protege la gobernanza.';
+                out.innerHTML = '🛑 <strong>Puntaje 0.42 &lt; 0.75 (SE FRENA EN EL PEAJE):</strong> Evita que el Bot adivine o invente sobre temas confidenciales que no están en su biblioteca.';
             }
         }
 

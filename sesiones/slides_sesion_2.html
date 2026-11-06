@@ -1409,10 +1409,10 @@
                     </div>
                     <div>
                         <h3 style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">
-                            1. El Hito Lingüístico: <em>"Attention Is All You Need"</em> (Google, 2017)
+                            1. El Origen en Traducción: <em>"Attention Is All You Need"</em> (Google, 2017)
                         </h3>
                         <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38; margin: 0;">
-                            Nació para mejorar la <strong>Traducción Automática</strong>. Creó la arquitectura <strong>Transformer</strong> (la "T" de GPT) y el mecanismo de <strong>Self-Attention</strong>: en vez de leer palabra por palabra olvidando el inicio, mira toda la oración junta para entender si <em>"bank"</em> es banco de dinero o la orilla de un río.
+                            Nació para mejorar la <strong>Traducción Automática</strong>. Creó el <strong>Transformer</strong> (la "T" de GPT) y la <strong>Atención (Self-Attention)</strong>: en vez de leer palabra por palabra olvidando el inicio, mira toda la oración junta para saber si <em>"bank"</em> es banco de plata o la orilla de un río.
                         </p>
                     </div>
                 </div>
@@ -1423,10 +1423,10 @@
                     </div>
                     <div>
                         <h3 style="font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">
-                            2. Decisión Clave PM: ¿Cómo sumamos datos privados? (Fine-Tuning vs. RAG)
+                            2. Decisión Clave PM: ¿Memoria (Fine-Tuning) o Libro Abierto (RAG)?
                         </h3>
                         <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.38; margin: 0;">
-                            <strong>Fine-Tuning (Examen de Memoria):</strong> Re-entrena al modelo para cambiar su <em>tono o formato</em>, pero es lento, caro y sigue inventando si el glosario cambia mañana. <strong>RAG (Examen a Libro Abierto):</strong> Le pasa el párrafo exacto del manual vigente antes de responder.
+                            <strong>Fine-Tuning (Estudiar de memoria):</strong> Sirve para enseñar un <em>tono o formato fijo</em>, pero es caro y queda viejo si el glosario cambia mañana. <strong>RAG (Examen a Libro Abierto):</strong> Busca el párrafo vigente en tu biblioteca y se lo muestra antes de responder.
                         </p>
                     </div>
                 </div>
@@ -1572,19 +1572,19 @@
 
             <div class="grid-3" style="gap: 0.75rem;">
                 <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
-                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">01. Frase o Consulta</div>
-                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Texto en Cualquier Idioma</h3>
-                    <p class="vector-step-desc" style="font-size: 0.73rem;">El usuario o el manual dice: <em>"Validar glosario técnico para lanzamiento global"</em>.</p>
+                    <div class="vector-step-number" style="font-size: 1.15rem; margin-bottom: 0.15rem;">01. Frase (Idea)</div>
+                    <h3 class="vector-step-title" style="font-size: 0.85rem;">Lo que escribe la persona</h3>
+                    <p class="vector-step-desc" style="font-size: 0.72rem;">El usuario pregunta con sus palabras: <em>"Validar glosario técnico para lanzamiento global"</em>.</p>
                 </div>
                 <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
-                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">02. Vector (1536d)</div>
-                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Coordenadas de Significado</h3>
-                    <p class="vector-step-desc" style="font-size: 0.73rem;">El modelo de Embeddings traduce esa idea en una lista de 1536 números (su "latitud y longitud" conceptual).</p>
+                    <div class="vector-step-number" style="font-size: 1.15rem; margin-bottom: 0.15rem;">02. Embedding (GPS)</div>
+                    <h3 class="vector-step-title" style="font-size: 0.85rem;">Coordenadas de Significado</h3>
+                    <p class="vector-step-desc" style="font-size: 0.72rem;">Convierte esa idea en coordenadas numéricas (1536 números) para ubicarla en un mapa de temas.</p>
                 </div>
                 <div class="glass-card text-center" style="padding: 0.75rem 0.9rem;">
-                    <div class="vector-step-number" style="font-size: 1.2rem; margin-bottom: 0.15rem;">03. Similitud Coseno</div>
-                    <h3 class="vector-step-title" style="font-size: 0.86rem;">Puntaje de Cercanía (0 a 1)</h3>
-                    <p class="vector-step-desc" style="font-size: 0.73rem;">Mide la distancia en el mapa: sinónimos o traducciones dan cerca de <strong>1.0</strong>; temas ajenos dan cerca de <strong>0.0</strong>.</p>
+                    <div class="vector-step-number" style="font-size: 1.15rem; margin-bottom: 0.15rem;">03. Similitud Coseno</div>
+                    <h3 class="vector-step-title" style="font-size: 0.85rem;">Termómetro de Cercanía (0 a 1)</h3>
+                    <p class="vector-step-desc" style="font-size: 0.72rem;">Mide qué tan cerca están dos ideas: sinónimos dan cerca de <strong>1.0</strong>; temas sin relación dan cerca de <strong>0.0</strong>.</p>
                 </div>
 
                 <!-- REACT INTERACTIVE VECTOR MAP -->
@@ -3021,6 +3021,9 @@
             <a href="./glosario_completo_sesion_2.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 2">
                 📖 <span class="hud-label-hide-sm">Glosario S2</span>
             </a>
+            <a href="./guia_antigravity_aws_mcp.html" class="anabela-hud-btn" title="Abrir Guía Básica de Antigravity + AWS MCP" style="border-color: rgba(255, 153, 0, 0.45); color: #ffb84d;">
+                ☁️ <span class="hud-label-hide-sm">Guía Antigravity + AWS</span>
+            </a>
             <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaFullscreen()" title="Pantalla Completa">
                 ⛶ <span class="hud-label-hide-sm">Expandir</span>
             </button>
@@ -3303,53 +3306,53 @@
         // --- INTERACTIVE: VECTOR SPACE NODES (Slide 5) ---
         const VECTOR_NODES_INFO = {
             'Localización Software': {
-                cluster: 'Cluster Lingüístico & Producto',
+                cluster: 'Barrio Lingüístico & Producto',
                 coords: '[0.842, 0.791, -0.114, 0.628, ... 1536d]',
-                similarity: '0.92 (Match Muy Alto ✅)',
+                similarity: '0.92 (Muy Cercano ✅)',
                 color: '#60a5fa',
-                desc: 'Alta cercanía conceptual con "Validar glosario técnico para lanzamiento global" aunque no comparta exactamente las mismas palabras.'
+                desc: 'Habla de la misma idea que "Validar glosario técnico para lanzamiento global" aunque no use exactamente las mismas palabras.'
             },
             'Memoria de Traducción': {
-                cluster: 'Cluster Lingüístico & Producto',
+                cluster: 'Barrio Lingüístico & Producto',
                 coords: '[0.815, 0.764, -0.098, 0.601, ... 1536d]',
-                similarity: '0.89 (Match Alto ✅)',
+                similarity: '0.89 (Cercano ✅)',
                 color: '#60a5fa',
-                desc: 'Ubicado en el mismo vecindario semántico que Localización y Glosarios. El motor vectorial lo recupera inmediatamente.'
+                desc: 'Vive en el mismo "barrio de significado" que Localización y Glosarios. El buscador por significado lo encuentra enseguida.'
             },
             'Glosario Técnico': {
-                cluster: 'Cluster Lingüístico & Producto',
+                cluster: 'Barrio Lingüístico & Producto',
                 coords: '[0.889, 0.812, -0.105, 0.655, ... 1536d]',
-                similarity: '0.96 (Match Directo 🎯)',
+                similarity: '0.96 (Casi Idéntico 🎯)',
                 color: '#60a5fa',
-                desc: 'Ángulo de coseno casi idéntico a la consulta del usuario. Máxima prioridad en el ranking Top-K.'
+                desc: 'Coincidencia directa con lo que busca el usuario. Queda #1 en la lista de párrafos rescatados.'
             },
             'Deploy en Cloud': {
-                cluster: 'Cluster Ingeniería & DevOps',
+                cluster: 'Barrio Ingeniería & Servidores',
                 coords: '[-0.312, 0.641, 0.884, -0.205, ... 1536d]',
-                similarity: '0.54 (Relación Parcial ⚠️)',
+                similarity: '0.54 (Relación Lejana ⚠️)',
                 color: '#34d399',
-                desc: 'Relacionado con "lanzamiento global" en infraestructura, pero distante del eje lingüístico. Queda debajo del umbral 0.75.'
+                desc: 'Se relaciona con "lanzamiento", pero habla de servidores y no de idiomas. Como da menos de 0.75, se descarta.'
             },
             'Pipeline CI/CD': {
-                cluster: 'Cluster Ingeniería & DevOps',
+                cluster: 'Barrio Ingeniería & Servidores',
                 coords: '[-0.355, 0.618, 0.902, -0.241, ... 1536d]',
-                similarity: '0.48 (Baja Similitud)',
+                similarity: '0.48 (Baja Relación)',
                 color: '#34d399',
-                desc: 'Concepto de automatización de despliegues; cercano a "Deploy en Cloud" (0.91 entre sí), pero lejano a glosarios.'
+                desc: 'Habla de automatización de código; está cerca de "Deploy en Cloud", pero lejos de glosarios.'
             },
             'Microservicios API': {
-                cluster: 'Cluster Ingeniería & DevOps',
+                cluster: 'Barrio Ingeniería & Servidores',
                 coords: '[-0.401, 0.589, 0.875, -0.290, ... 1536d]',
-                similarity: '0.42 (Baja Similitud)',
+                similarity: '0.42 (Baja Relación)',
                 color: '#34d399',
-                desc: 'Agrupado en el cuadrante de arquitectura backend.'
+                desc: 'Ubicado en la zona de programación pura; no sirve para responder dudas de traducción.'
             },
             'Automóvil Deportivo': {
-                cluster: 'Concepto Fuera de Dominio (Ruido)',
+                cluster: 'Tema Fuera de Lugar (Ruido)',
                 coords: '[-0.912, -0.844, 0.012, 0.045, ... 1536d]',
-                similarity: '0.12 (Ortogonal / Descartado 🚫)',
+                similarity: '0.12 (Sin Relación / Descartado 🚫)',
                 color: '#f87171',
-                desc: 'Totalmente alejado en las 1536 dimensiones. La búsqueda por coseno lo ignora por completo.'
+                desc: 'En la otra punta del mapa. El buscador ve que el puntaje es 0.12 y lo ignora por completo.'
             }
         };
 
@@ -3416,16 +3419,16 @@
 
             const candidates = temp === 0.0
                 ? [
-                    { token: 'glosario_aprobado', prob: 88, color: '#10b981', tag: 'Determinista / Factual (Elegido)' },
-                    { token: 'manual_corporativo', prob: 9, color: '#3b82f6', tag: 'Alternativa válida' },
-                    { token: 'criterio_creativo', prob: 2, color: '#f59e0b', tag: 'Descartado' },
-                    { token: 'invento_alucinado', prob: 1, color: '#ef4444', tag: 'Bloqueado' }
+                    { token: 'glosario_aprobado', prob: 88, color: '#10b981', tag: '✅ Elegida siempre (Fiel al manual)' },
+                    { token: 'manual_corporativo', prob: 9, color: '#3b82f6', tag: 'Opción válida pero 2ª' },
+                    { token: 'criterio_creativo', prob: 2, color: '#f59e0b', tag: 'Descartada' },
+                    { token: 'invento_alucinado', prob: 1, color: '#ef4444', tag: '🚫 Bloqueada (No inventa)' }
                 ]
                 : [
-                    { token: 'glosario_aprobado', prob: 38, color: '#10b981', tag: 'Probabilidad aplanada' },
-                    { token: 'manual_corporativo', prob: 27, color: '#3b82f6', tag: 'Candidato frecuente' },
-                    { token: 'criterio_creativo', prob: 21, color: '#f59e0b', tag: 'Alta variabilidad' },
-                    { token: 'invento_alucinado', prob: 14, color: '#ef4444', tag: '⚠️ Riesgo de Alucinación (Elegido al azar)' }
+                    { token: 'glosario_aprobado', prob: 38, color: '#10b981', tag: 'Pierde prioridad' },
+                    { token: 'manual_corporativo', prob: 27, color: '#3b82f6', tag: 'Puede salir al azar' },
+                    { token: 'criterio_creativo', prob: 21, color: '#f59e0b', tag: 'Improvisación alta' },
+                    { token: 'invento_alucinado', prob: 14, color: '#ef4444', tag: '⚠️ ¡Peligro! Sale sorteada e inventa' }
                 ];
 
             const activeToken = candidates[temp === 0.0 ? 0 : selectedIdx];
@@ -3433,7 +3436,7 @@
             return h('div', { className: 'react-sim-box' },
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.55rem' } },
                     h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' } },
-                        h('span', { style: { fontSize: '0.74rem', fontWeight: 700, color: '#6ee7b7', fontFamily: 'monospace', textTransform: 'uppercase' } }, '⚛️ React Simulador Next-Token:'),
+                        h('span', { style: { fontSize: '0.74rem', fontWeight: 700, color: '#6ee7b7', fontFamily: 'monospace', textTransform: 'uppercase' } }, '⚛️ Simulador: ¿Qué palabra elige la IA?'),
                         h('span', { style: { fontSize: '0.8rem', color: '#e2e8f0', fontFamily: 'monospace', background: 'rgba(255,255,255,0.05)', padding: '3px 8px', borderRadius: '6px' } },
                             '"Para traducir Checkout en LATAM debemos consultar el ',
                             h('strong', { style: { color: activeToken.color, textDecoration: 'underline' } }, activeToken.token),
@@ -3445,12 +3448,12 @@
                             type: 'button',
                             className: 'react-pill-btn' + (temp === 0.0 ? ' active' : ''),
                             onClick: () => { setTemp(0.0); setSelectedIdx(0); }
-                        }, '🎯 Temp = 0.0 (RAG / Precisión)'),
+                        }, '🎯 Temp = 0.0 (Modo Manual / Cero Invento)'),
                         h('button', {
                             type: 'button',
                             className: 'react-pill-btn' + (temp === 0.9 ? ' active' : ''),
                             onClick: () => { setTemp(0.9); setSelectedIdx(3); }
-                        }, '🎲 Temp = 0.9 (Creativa / Riesgo)')
+                        }, '🎲 Temp = 0.9 (Modo Creativo / Riesgo Alucinar)')
                     )
                 ),
                 h('div', { className: 'react-grid-4' },
@@ -3567,7 +3570,7 @@
                         type: 'button',
                         className: 'react-pill-btn' + (cachingOn ? ' active' : ''),
                         onClick: () => setCachingOn(!cachingOn)
-                    }, cachingOn ? '✅ Prompt Caching ACTIVO (-55% Costo)' : '❌ Sin Prompt Caching (100% Tarifa)')
+                    }, cachingOn ? '✅ Prompt Caching ACTIVO (-55% Costo)' : '❌ Sin Prompt Caching (Paga todo de nuevo)')
                 ),
                 h('input', {
                     type: 'range',
@@ -3581,14 +3584,14 @@
                 }),
                 h('div', { className: 'react-grid-2' },
                     h('div', { style: { background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.28)', borderRadius: '8px', padding: '0.55rem 0.75rem' } },
-                        h('div', { style: { fontSize: '0.68rem', color: '#94a3b8' } }, 'Facturación Mensual Estimada'),
+                        h('div', { style: { fontSize: '0.68rem', color: '#94a3b8' } }, 'Factura Mensual Estimada'),
                         h('div', { style: { fontSize: '1.1rem', fontWeight: 800, color: cachingOn ? '#6ee7b7' : '#fca5a5', fontFamily: 'monospace' } }, '$' + finalCost + ' USD/mes'),
-                        h('div', { style: { fontSize: '0.66rem', color: '#6ee7b7' } }, cachingOn ? 'Ahorro: $' + (baseMonthlyCost - finalCost) + ' USD/mes' : 'Pagando System Prompt repetido')
+                        h('div', { style: { fontSize: '0.66rem', color: '#6ee7b7' } }, cachingOn ? 'Ahorro: $' + (baseMonthlyCost - finalCost) + ' USD/mes (no recobra reglas fijas)' : 'Pagando las instrucciones fijas en cada pregunta')
                     ),
                     h('div', { style: { background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.28)', borderRadius: '8px', padding: '0.55rem 0.75rem' } },
-                        h('div', { style: { fontSize: '0.68rem', color: '#94a3b8' } }, 'Latencia al Primer Token (TTFT)'),
+                        h('div', { style: { fontSize: '0.68rem', color: '#94a3b8' } }, 'Velocidad de Respuesta (TTFT)'),
                         h('div', { style: { fontSize: '1.1rem', fontWeight: 800, color: '#93c5fd', fontFamily: 'monospace' } }, latencyMs + ' ms'),
-                        h('div', { style: { fontSize: '0.66rem', color: '#93c5fd' } }, cachingOn ? 'Prefijo de 1.500 tokens pre-calculado' : 'Re-procesa los 1.500 tokens en cada turno')
+                        h('div', { style: { fontSize: '0.66rem', color: '#93c5fd' } }, cachingOn ? 'Instrucciones fijas ya guardadas en memoria rápida' : 'Vuelve a leer las 1.500 palabras fijas desde cero')
                     )
                 )
             );
@@ -3609,17 +3612,17 @@
                         type: 'button',
                         className: 'react-pill-btn' + (pos <= 15 ? ' active' : ''),
                         onClick: () => setPos(8)
-                    }, '🟢 Inicio del Prompt (Posición 8% → 95% Recall)'),
+                    }, '🟢 Al Principio (Pág. 2 de 50 → 95% Atención)'),
                     h('button', {
                         type: 'button',
                         className: 'react-pill-btn' + (pos > 30 && pos < 70 ? ' active' : ''),
                         onClick: () => setPos(50)
-                    }, '🔴 Centro Geométrico (Posición 50% → 38% Recall)'),
+                    }, '🔴 En la Mitad (Pág. 25 de 50 → 38% Atención)'),
                     h('button', {
                         type: 'button',
                         className: 'react-pill-btn' + (pos >= 85 ? ' active' : ''),
                         onClick: () => setPos(94)
-                    }, '🟢 Final del Prompt (Posición 94% → 94% Recall)')
+                    }, '🟢 Al Final (Pág. 49 de 50 → 94% Atención)')
                 ),
                 h('div', { className: 'heatmap-container', style: { margin: '0.4rem 0 0.7rem' } },
                     h('div', { className: 'heatmap-bar', style: { position: 'relative', cursor: 'pointer' } },
@@ -3635,9 +3638,9 @@
                         style: { marginTop: '0.5rem' }
                     }),
                     h('div', { className: 'heatmap-label-box', style: { marginTop: '0.35rem' } },
-                        h('span', { style: { color: 'var(--color-green)', fontWeight: 700 } }, 'Inicio: Primacy Bias (99%)'),
-                        h('span', { style: { color: 'var(--color-red)', fontWeight: 700 } }, 'Medio: Lost in the Middle (~38%)'),
-                        h('span', { style: { color: 'var(--color-green)', fontWeight: 700 } }, 'Final: Recency Bias (96%)')
+                        h('span', { style: { color: 'var(--color-green)', fontWeight: 700 } }, 'Inicio: Recuerda muy bien (99%)'),
+                        h('span', { style: { color: 'var(--color-red)', fontWeight: 700 } }, 'Medio: "Se distrae / Olvida" (~38%)'),
+                        h('span', { style: { color: 'var(--color-green)', fontWeight: 700 } }, 'Final: Recuerda muy bien (96%)')
                     )
                 ),
                 h('div', {
@@ -3656,8 +3659,8 @@
                 },
                     h('span', { style: { color: '#f8fafc' } },
                         isDanger
-                            ? '⚠️ PELIGRO: Si la cláusula crítica cae en la mitad de un prompt gigante (pág. 25 de 50), el LLM suele ignorarla o alucinar.'
-                            : '✅ ZONA ÓPTIMA: El mecanismo de Self-Attention retiene con máxima fidelidad las reglas ubicadas en los extremos.'
+                            ? '⚠️ PELIGRO (Lost in the Middle): Si la regla importante queda en la mitad de 50 páginas, la IA suele ignorarla. Por eso con RAG enviamos solo 3 párrafos.'
+                            : '✅ ZONA SEGURA: La IA presta máxima atención a lo que ponemos al principio y al final del mensaje.'
                     ),
                     h('span', {
                         style: {
@@ -3666,7 +3669,7 @@
                             fontSize: '0.86rem',
                             color: isDanger ? '#fca5a5' : '#6ee7b7'
                         }
-                    }, 'Atención Estimada: ' + recall + '%')
+                    }, 'Atención de la IA: ' + recall + '%')
                 )
             );
         }
@@ -3828,7 +3831,7 @@
             return h('div', { className: 'react-sim-box' },
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.55rem' } },
                     h('span', { style: { fontSize: '0.76rem', fontWeight: 700, color: '#ffffff' } },
-                        '🔒 Simulador de Envío de Prompt Confidencial ("Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com"):'
+                        '🔒 Simulador de Envío de Consulta Confidencial ("Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com"):'
                     ),
                     h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
                         h('button', {
@@ -3840,7 +3843,7 @@
                             type: 'button',
                             className: 'react-pill-btn' + (mode === 'enterprise' ? ' active' : ''),
                             onClick: () => setMode('enterprise')
-                        }, '🛡️ Enviar por API Enterprise SLA (Zero-Retention)')
+                        }, '🛡️ Enviar por API Enterprise SLA (Retención Cero)')
                     )
                 ),
                 h('div', {
@@ -3855,8 +3858,8 @@
                     }
                 },
                     mode === 'enterprise'
-                        ? '🛡️ Payload enmascarado: "Lanzamiento [CLIENT_ORG] Q4 — contacto: [EMAIL_REDACTED]" → ✅ AUDITORÍA APROBADA (ISO 27001 / SOC2): Viaja cifrado (TLS 1.3), se procesa en memoria efímera bajo Zero-Data Retention y 0% de tus datos entrenan modelos externos.'
-                        : '🚨 Payload expuesto en crudo: "Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com" → ALERTA DE DATA LEAKAGE: El proveedor guarda el prompt en servidores de entrenamiento humano/RLHF, violando el NDA del cliente.'
+                        ? '🛡️ Texto protegido antes de salir: "Lanzamiento [CLIENTE_CONFIDENCIAL] Q4 — contacto: [EMAIL_OCULTO]" → ✅ APROBADO POR SEGURIDAD: Se procesa en memoria temporal y por contrato (Zero-Data Retention) se borra al instante sin entrenar modelos ajenos.'
+                        : '🚨 Texto enviado sin protección: "Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com" → ❌ FUGA DE DATOS (Data Leakage): El proveedor guarda tu texto en sus servidores para entrenar futuros modelos públicos, rompiendo el NDA con tu cliente.'
                 )
             );
         }
@@ -3878,7 +3881,7 @@
             {
                 q: '¿Cuál es el salario confidencial del Director de Finanzas?',
                 score: 0.34,
-                doc: 'Ningún documento coincide en Vector DB',
+                doc: 'Ningún manual tiene este dato',
                 botReply: 'Respuesta autorizada citando el fragmento recuperado.'
             }
         ];
@@ -3898,15 +3901,15 @@
                             type: 'button',
                             className: 'react-pill-btn' + (selectedQuery === item.q ? ' active' : ''),
                             onClick: () => { setSelectedQuery(item.q); setScore(item.score); }
-                        }, 'Caso ' + (idx + 1) + ' (Score ' + item.score + ')')
+                        }, 'Caso ' + (idx + 1) + ' (Puntaje ' + item.score + ')')
                     )
                 ),
                 h('div', { style: { fontSize: '0.75rem', color: '#e2e8f0', marginBottom: '0.4rem', fontStyle: 'italic' } },
-                    'Consulta del usuario: "' + selectedQuery + '" · Mejor coincidencia en Pinecone: ' + currentPreset.doc
+                    'Pregunta: "' + selectedQuery + '" · Mejor párrafo encontrado: ' + currentPreset.doc
                 ),
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', marginBottom: '0.3rem', fontFamily: 'monospace' } },
-                    h('span', null, 'Score Similitud Vectorial: ', h('strong', { style: { color: passed ? '#6ee7b7' : '#fca5a5' } }, score.toFixed(2))),
-                    h('span', { style: { color: '#c4b5fd' } }, 'Umbral Mínimo PRD: >= 0.75')
+                    h('span', null, 'Puntaje de Similitud (Score): ', h('strong', { style: { color: passed ? '#6ee7b7' : '#fca5a5' } }, score.toFixed(2))),
+                    h('span', { style: { color: '#c4b5fd' } }, 'Peaje Mínimo Exigido: >= 0.75')
                 ),
                 h('input', {
                     type: 'range',
@@ -3929,7 +3932,7 @@
                             transition: 'all 0.25s ease'
                         }
                     },
-                        h('strong', { style: { color: '#6ee7b7', fontSize: '0.75rem', display: 'block' } }, '✅ Score >= 0.75: AUTORIZADO (Invoca al LLM)'),
+                        h('strong', { style: { color: '#6ee7b7', fontSize: '0.75rem', display: 'block' } }, '✅ Puntaje >= 0.75: PASA EL PEAJE (Responde con Cita)'),
                         h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Bot: "' + currentPreset.botReply + '"')
                     ),
                     h('div', {
@@ -3942,8 +3945,8 @@
                             transition: 'all 0.25s ease'
                         }
                     },
-                        h('strong', { style: { color: '#fca5a5', fontSize: '0.75rem', display: 'block' } }, '🛑 Score < 0.75: BLOQUEADO (0 Tokens LLM)'),
-                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Bot (Fallback Seguro): "No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes."')
+                        h('strong', { style: { color: '#fca5a5', fontSize: '0.75rem', display: 'block' } }, '🛑 Puntaje < 0.75: SE FRENA A TIEMPO (No Inventa)'),
+                        h('span', { style: { fontSize: '0.69rem', color: '#e2e8f0' } }, 'Bot (Respuesta Segura): "No encontré ese dato en los manuales oficiales vigentes. ¿Querés consultar al área responsable?"')
                     )
                 )
             );
@@ -3956,43 +3959,43 @@
             return h('div', { className: 'react-sim-box' },
                 h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.45rem' } },
                     h('span', { style: { fontSize: '0.75rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' } },
-                        '⚙️ Pipeline CI/CD — Ejecución Automática de Golden Dataset (100 Casos Certificados):'
+                        '⚙️ Examen Automático antes de Publicar (Golden Dataset de 100 Preguntas):'
                     ),
                     h('div', { style: { display: 'flex', gap: '0.4rem', flexWrap: 'wrap' } },
                         h('button', {
                             type: 'button',
                             className: 'react-pill-btn' + (status === 'passed' ? ' active' : ''),
                             onClick: () => setStatus('passed')
-                        }, '✅ PR #42: Chunking 1000ch + 15% Overlap'),
+                        }, '✅ Versión A: Con Puente Overlap 15% (Aprueba)'),
                         h('button', {
                             type: 'button',
                             className: 'react-pill-btn' + (status === 'regression' ? ' active' : ''),
                             onClick: () => setStatus('regression')
-                        }, '❌ PR #43: Prompt sin Guardrail (Regresión)')
+                        }, '❌ Versión B: Cambio que rompe reglas (Se Bloquea)')
                     )
                 ),
                 h('div', { style: { fontSize: '0.7rem', fontFamily: 'monospace', color: '#cbd5e1', marginBottom: '0.5rem', padding: '0.35rem 0.6rem', background: 'rgba(15,23,42,0.6)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.06)' } },
-                    '🧪 Muestra Caso #14/100 ("¿Traducción de Chargeback?") → Esperado: "Contracargo [Cita pág. 8]" | Output PR: ',
+                    '🧪 Pregunta #14/100 ("¿Traducción de Chargeback?") → Respuesta Correcta: "Contracargo [Cita pág. 8]" | Lo que respondió el Bot: ',
                     h('strong', { style: { color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } },
-                        status === 'passed' ? '✅ "Contracargo (Glosario 2026, pág. 8)" [PASS]' : '❌ "Reverso bancario (sin cita)" [FAIL: Alucinación]'
+                        status === 'passed' ? '✅ "Contracargo (Glosario 2026, pág. 8)" [OK]' : '❌ "Reverso bancario (sin cita)" [ERROR: Inventó]'
                     )
                 ),
                 h('div', { className: 'react-grid-4' },
                     h('div', { style: { background: 'rgba(15,23,42,0.75)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' } },
-                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Context Adherence'),
+                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Fidelidad al Manual (Adherence)'),
                         h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? '96.4% (Meta >=90%)' : '74.0% (< 90%)')
                     ),
                     h('div', { style: { background: 'rgba(15,23,42,0.75)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' } },
-                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Tasa de Alucinación'),
-                        h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? '0.0% (0/100)' : '18.0% (18/100)')
+                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Respuestas Inventadas'),
+                        h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? '0.0% (0 de 100)' : '18.0% (18 de 100)')
                     ),
                     h('div', { style: { background: 'rgba(15,23,42,0.75)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' } },
-                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Latencia P95 / Costo'),
-                        h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: '#93c5fd' } }, status === 'passed' ? '1.3s | $0.002/q' : '2.8s | $0.009/q')
+                        h('div', { style: { fontSize: '0.66rem', color: '#94a3b8' } }, 'Tiempo y Costo por Pregunta'),
+                        h('div', { style: { fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: '#93c5fd' } }, status === 'passed' ? '1.3s | $0.002' : '2.8s | $0.009')
                     ),
                     h('div', { style: { background: status === 'passed' ? 'rgba(16,185,129,0.14)' : 'rgba(239,68,68,0.15)', padding: '0.5rem 0.7rem', borderRadius: '8px', border: '1px solid ' + (status === 'passed' ? '#10b981' : '#ef4444') } },
-                        h('div', { style: { fontSize: '0.66rem', color: '#e2e8f0' } }, 'Decisión CI/CD Gate'),
-                        h('div', { style: { fontSize: '0.92rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? 'DEPLOY APPROVED ✅' : 'DEPLOY BLOCKED 🛑')
+                        h('div', { style: { fontSize: '0.66rem', color: '#e2e8f0' } }, '¿Sale a Producción? (CI/CD)'),
+                        h('div', { style: { fontSize: '0.92rem', fontWeight: 800, fontFamily: 'monospace', color: status === 'passed' ? '#6ee7b7' : '#fca5a5' } }, status === 'passed' ? 'APROBADO ✅' : 'BLOQUEADO 🛑')
                     )
                 )
             );
@@ -4002,25 +4005,25 @@
         const INTERVIEW_SCENARIOS = [
             {
                 id: 'q1',
-                role: 'Pregunta 1 — CTO / VP of Engineering',
-                question: '¿Por qué no hacemos un Fine-Tuning del modelo para cargarle nuestros glosarios y manuales de producto que actualizamos todas las semanas?',
+                role: 'Pregunta 1 — Director de Tecnología (CTO)',
+                question: '¿Por qué no re-entrenamos el modelo (Fine-Tuning) con nuestros glosarios y manuales que actualizamos todas las semanas?',
                 pillars: [
-                    '1. Fine-Tuning = Forma, no Hechos: Ajusta el tono, estilo o formato (ej. JSON), pero congela el conocimiento y sigue alucinando ante datos cambiantes.',
-                    '2. Costo y Mantenimiento Inviable: Re-entrenar cada semana por cambios de glosario es lento, costoso y no permite auditar qué documento usó.',
-                    '3. RAG + Vector DB = Libro Abierto en Vivo: Actualizamos fragmentos en segundos en Pinecone con Metadata Filtering, umbral >= 0.75 y cita verificable.'
+                    '1. Fine-Tuning = Forma, no Datos: Sirve para enseñar tono o estilo fijo, pero "congela" los datos y queda viejo si el glosario cambia mañana.',
+                    '2. Muy Caro y Lento de Actualizar: Re-entrenar todas las semanas cuesta miles de dólares y la IA sigue sin poder citar la página exacta.',
+                    '3. RAG = Examen a Libro Abierto: Subimos el manual nuevo a la Base Vectorial en segundos, filtramos por Año 2026 y responde con cita verificable.'
                 ],
-                fullAnswer: '"El Fine-Tuning no es la arquitectura correcta para inyectar conocimiento fáctico que cambia semanalmente, porque el modelo memoriza pesos estáticos y sigue alucinando. El Fine-Tuning se usa para enseñar estilo, tono o formatos estructurados. Para garantizar precisión factual, trazabilidad y actualización inmediata sin re-entrenar, diseñamos una arquitectura RAG sobre una base de datos vectorial con pre-filtrado de metadatos y citas obligatorias al documento fuente."'
+                fullAnswer: '"El Fine-Tuning sirve para enseñar un tono de voz o formato fijo, pero no para datos que cambian cada semana, porque el modelo responde de memoria y puede inventar. En cambio, con RAG (Examen a Libro Abierto) guardamos los glosarios vigentes en una Base Vectorial: si mañana cambia un término, actualizamos ese fragmento en segundos y el bot responde con Temperatura 0.0 citando la página exacta."'
             },
             {
                 id: 'q2',
-                role: 'Pregunta 2 — Head of Product / FinOps',
-                question: 'Si el chatbot RAG pasa de 100 a 50.000 usuarios activos, ¿cómo evitás que la factura de tokens de la API destruya el margen del producto?',
+                role: 'Pregunta 2 — Director de Producto / Finanzas',
+                question: 'Si el bot pasa de 100 a 50.000 usuarios por mes, ¿cómo evitás que la factura de tokens se dispare?',
                 pillars: [
-                    '1. Prompt Caching (50%–75% ahorro): Dejamos estático el System Prompt al inicio para que el proveedor cobre tarifa reducida en cada llamada.',
-                    '2. Caché Semántica & Cortocircuito (< 0.75): Las preguntas repetidas se responden desde caché vectorial y las fuera de dominio se bloquean antes de invocar al LLM.',
-                    '3. Chunking Óptimo + Modelos Tiered: Inyectamos solo el Top-3 de fragmentos (1000 chars) y ruteamos consultas simples a modelos rápidos/económicos.'
+                    '1. Prompt Caching (55% a 75% de ahorro): Guardamos las instrucciones fijas en memoria rápida para no pagarlas de nuevo en cada pregunta.',
+                    '2. Peaje Anti-Invento (< 0.75): Si preguntan algo fuera de manual, el filtro frena la consulta antes de gastar tokens en el modelo caro.',
+                    '3. Enviar solo los 3 mejores párrafos (Top-3): En vez de mandar el PDF entero, enviamos solo los 3 fragmentos exactos pre-filtrados.'
                 ],
-                fullAnswer: '"Controlamos los Unit Economics con tres capas FinOps: primero, activamos Prompt Caching estructurando los prefijos fijos del System Prompt para ahorrar hasta un 75% en tokens de entrada; segundo, implementamos Caché Semántica y un umbral de confianza de 0.75 que cortocircuita llamadas innecesarias al LLM; y tercero, limitamos la inyección al Top-3 de chunks pre-filtrados por metadatos junto con Rate Limits por perfil."'
+                fullAnswer: '"Cuidamos el presupuesto con tres reglas simples: primero, activamos Prompt Caching poniendo las instrucciones fijas al principio para ahorrar hasta un 75% en lectura; segundo, ponemos un umbral de confianza de 0.75 que frena consultas fuera de tema sin gastar en el modelo; y tercero, en vez de mandar manuales enteros, enviamos solo los 3 párrafos más relevantes."'
             }
         ];
 

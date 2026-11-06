@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Ejecutivo: Arquitectura IT, Agile & IA Aplicada | Ing. Francisco Bondino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #060911;
+            --bg-card: rgba(15, 23, 42, 0.72);
+            --bg-elevated: rgba(30, 41, 59, 0.55);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(59, 130, 246, 0.45);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-violet: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 12% 10%, rgba(59, 130, 246, 0.16) 0%, transparent 40%),
+                radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.15) 0%, transparent 42%),
+                radial-gradient(circle at 50% 60%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 9, 17, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.9rem 1.5rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            box-shadow: 0 0 12px #3b82f6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #ffffff !important;
+            padding: 0.55rem 1.15rem;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-weight: 700 !important;
+            font-size: 0.84rem !important;
+            box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(59, 130, 246, 0.55);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4.5rem 0 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #93c5fd;
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.4rem;
+        }
+
+        .eyebrow-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.8vw, 3.75rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            max-width: 960px;
+            margin: 0 auto 1.3rem;
+            background: linear-gradient(135deg, #ffffff 35%, #93c5fd 75%, #c4b5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.lead {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #ffffff;
+            padding: 1rem 1.85rem;
+            border-radius: 14px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.98rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 38px rgba(37, 99, 235, 0.55);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #f8fafc;
+            padding: 1rem 1.7rem;
+            border-radius: 14px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.96rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 1.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+        }
+
+        .metric-item strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .metric-item span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Section Headings */
+        section {
+            padding: 4.5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #60a5fa;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Pain vs Gain Grid */
+        .pain-gain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+        }
+
+        .pg-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 22px;
+            padding: 2rem;
+        }
+
+        .pg-card.pain {
+            border-top: 3px solid var(--accent-rose);
+        }
+
+        .pg-card.gain {
+            border-top: 3px solid var(--accent-emerald);
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, rgba(15, 23, 42, 0.75) 100%);
+        }
+
+        .pg-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pg-list {
+            list-style: none;
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .pg-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.93rem;
+            color: #cbd5e1;
+        }
+
+        /* Interactive Playground Demo */
+        .playground-box {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(10, 15, 29, 0.96));
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(59, 130, 246, 0.12);
+        }
+
+        .playground-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1rem;
+        }
+
+        .pg-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.65rem 1.2rem;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pg-tab.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #60a5fa;
+            color: #ffffff;
+        }
+
+        .pg-panel {
+            display: none;
+        }
+
+        .pg-panel.active {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .sim-card {
+            background: rgba(6, 9, 17, 0.75);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.4rem;
+        }
+
+        .sim-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .token-pill {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            margin: 3px;
+            font-weight: 600;
+        }
+
+        .t-c0 { background: rgba(59, 130, 246, 0.22); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .t-c1 { background: rgba(16, 185, 129, 0.22); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+        .t-c2 { background: rgba(139, 92, 246, 0.22); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
+        .t-c3 { background: rgba(245, 158, 11, 0.22); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+        .quiz-option {
+            width: 100%;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 0.65rem;
+            cursor: pointer;
+            font-size: 0.88rem;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:hover {
+            border-color: #60a5fa;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* 4 Sessions Curriculum */
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .curr-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 1.8rem;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .curr-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .curr-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 0.9rem;
+        }
+
+        .curr-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
+            color: #ffffff;
+        }
+
+        .curr-card ul {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+            margin-top: 1rem;
+        }
+
+        .curr-card ul li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .curr-card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        /* Case Studies / Social Proof */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4rem;
+        }
+
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 1.7rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-industry {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #34d399;
+            margin-bottom: 0.6rem;
+        }
+
+        .case-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: #ffffff;
+        }
+
+        .case-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .case-meta {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        /* Pricing Section */
+        .currency-toggle {
+            display: inline-flex;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-subtle);
+            border-radius: 999px;
+            padding: 4px;
+            margin-top: 1.2rem;
+        }
+
+        .curr-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 7px 18px;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .curr-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 2.1rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .price-card.featured {
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.16) 0%, rgba(15, 23, 42, 0.92) 100%);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
+            transform: scale(1.03);
+        }
+
+        .popular-ribbon {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #ffffff;
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .plan-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .plan-tagline {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.3rem;
+        }
+
+        .plan-price {
+            font-family: var(--font-display);
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .plan-subprice {
+            font-size: 0.8rem;
+            color: #60a5fa;
+            margin-top: 0.35rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .plan-features {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .plan-features li {
+            font-size: 0.87rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        .plan-features li span.check {
+            color: #10b981;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .btn-plan {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.95rem 1.2rem;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-plan-outline {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #ffffff;
+        }
+
+        .btn-plan-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #60a5fa;
+        }
+
+        .btn-plan-solid {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-plan-solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.6);
+        }
+
+        /* B2B Banner */
+        .b2b-banner {
+            margin-top: 2.5rem;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.75));
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 20px;
+            padding: 1.8rem 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 840px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.3rem 1.5rem;
+        }
+
+        .faq-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.02rem;
+            color: #ffffff;
+            margin-bottom: 0.45rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+        }
+
+        @media (max-width: 960px) {
+            .hero-metrics, .pain-gain-grid, .pg-panel.active, .curriculum-grid, .cases-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .price-card.featured {
+                transform: none;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <span class="brand-dot"></span>
+                <span>Ing. Francisco Bondino · AI &amp; Tech Academy</span>
+            </a>
+            <div class="nav-links">
+                <a href="#demo-interactiva">Simulador en Vivo</a>
+                <a href="#programa">Temario (4 Semanas)</a>
+                <a href="#casos">Casos de Éxito</a>
+                <a href="#planes">Planes y Precios</a>
+                <a href="./portal-estandar/index.html">Ver Campus Demo →</a>
+                <a href="#planes" class="btn-nav">Reservar Lugar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <div class="eyebrow">
+                <span class="eyebrow-pulse"></span>
+                <span>Programa Ejecutivo para PMs, Analistas, Operaciones &amp; Líderes IT</span>
+            </div>
+            <h1>Hablá de igual a igual con Developers y Liderá Proyectos de IA sin Programar</h1>
+            <p class="lead">
+                En <strong>4 semanas intensivas</strong> vas a dominar cómo funciona la arquitectura de software moderna (APIs, Git, CI/CD, Cloud), cómo operan los LLMs por dentro y cómo especificar y auditar <strong>Chatbots RAG y Agentes Autónomos de IA</strong> con simuladores interactivos reales.
+            </p>
+            <div class="hero-ctas">
+                <a href="#planes" class="btn-primary">Ver Modalidades y Precios →</a>
+                <a href="#demo-interactiva" class="btn-secondary">⚡ Probar Simulador en Vivo</a>
+                <a href="./portal-estandar/index.html" class="btn-secondary">🌐 Explorar el Portal de Alumnos</a>
+            </div>
+
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <strong>4 Semanas</strong>
+                    <span>De Cero Técnico a especificar PRDs de IA</span>
+                </div>
+                <div class="metric-item">
+                    <strong>+60 Slides Web</strong>
+                    <span>Con Simuladores Interactivos en Vivo</span>
+                </div>
+                <div class="metric-item">
+                    <strong>4 Glosarios IT/IA</strong>
+                    <span>Con metáforas de negocio y visión PM</span>
+                </div>
+                <div class="metric-item">
+                    <strong>100% Aplicable</strong>
+                    <span>En Dailies, Refinamientos y Entrevistas</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAIN VS GAIN -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">El Problema Real en Tecnología</span>
+                <h2>¿Por qué los perfiles de Producto y Negocio quedan en desventaja técnica?</h2>
+                <p>La mayoría de los cursos o son demasiado superficiales ("prompts para ChatGPT") o te obligan a programar en Python. Este programa construye el puente exacto que necesita un líder.</p>
+            </div>
+
+            <div class="pain-gain-grid">
+                <div class="pg-card pain">
+                    <h3 style="color: #fda4af;">❌ Antes del Programa (Cajas Negras)</h3>
+                    <ul class="pg-list">
+                        <li><span>•</span> Te sentís inseguro cuando Ingeniería habla de <em>Pull Requests, Webhooks, Microservicios, Latencia o Rollbacks</em> en una Daily.</li>
+                        <li><span>•</span> Te piden "sumar IA o un Chatbot al producto" y no sabés diferenciar cuándo usar un Prompt, cuándo armar un <strong>Pipeline RAG</strong> o un <strong>Agente ReAct</strong>.</li>
+                        <li><span>•</span> No sabés cómo estimar cuánto va a costar en dólares la API de OpenAI/Anthropic ni cómo evitar que el bot alucine con clientes reales.</li>
+                        <li><span>•</span> En entrevistas para roles Senior o internacionales te trabás ante preguntas de arquitectura o diseño de sistemas.</li>
+                    </ul>
+                </div>
+
+                <div class="pg-card gain">
+                    <h3 style="color: #6ee7b7;">✅ Después de las 4 Semanas (Solvencia Total)</h3>
+                    <ul class="pg-list">
+                        <li><span>•</span> Entendés el viaje completo del código de Jira a Producción y defendés prioridades técnicas frente a cualquier Tech Lead.</li>
+                        <li><span>•</span> Diseñás especificaciones completas (PRDs) de <strong>Chatbots con datos propios (RAG)</strong> definiendo Chunking, Embeddings y Umbrales de Confianza.</li>
+                        <li><span>•</span> Estructurás <strong>Agentes Autónomos</strong> conectados por API con validaciones JSON/Pydantic y compuertas <em>Human-in-the-Loop</em>.</li>
+                        <li><span>•</span> Calculás el ROI financiero de proyectos de IA, aplicás <em>Prompt Caching</em> (-75% costos) y auditás calidad con <em>LLM-as-a-Judge</em> y Langfuse.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE DEMO PLAYGROUND -->
+    <section id="demo-interactiva">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Diferencial Único · Aprendizaje Activo</span>
+                <h2>No mirás diapositivas estáticas: entrenás con Simuladores Reales</h2>
+                <p>Probá ahora mismo 3 micro-simuladores extraídos directamente de nuestro Portal Interactivo de Alumnos.</p>
+            </div>
+
+            <div class="playground-box">
+                <div class="playground-tabs">
+                    <button class="pg-tab active" onclick="switchDemoTab('tab-tokens', this)">🧮 1. Simulador de Tokens &amp; Costos IA</button>
+                    <button class="pg-tab" onclick="switchDemoTab('tab-rag', this)">🧠 2. Simulador RAG vs. Alucinación</button>
+                    <button class="pg-tab" onclick="switchDemoTab('tab-crisis', this)">🚨 3. Desafío PM: Crisis en Producción</button>
+                </div>
+
+                <!-- TAB 1: TOKENS & COSTOS -->
+                <div class="pg-panel active" id="tab-tokens">
+                    <div class="sim-card">
+                        <h4 style="font-family: var(--font-display); margin-bottom: 0.4rem;">Probá cómo lee y cobra un LLM (Sesión 2 &amp; 4)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary);">Escribí una consulta o prompt de sistema y mirá cómo se fragmenta en sub-palabras (BPE) y su impacto financiero en producción:</p>
+                        <input type="text" id="demo-prompt-input" class="sim-input" value="El agente debe consultar la API de stock y validar el glosario corporativo antes de responder." oninput="updateTokenDemo()">
+                        <div id="token-pills-box" style="min-height: 68px; padding: 0.7rem; background: rgba(0,0,0,0.4); border-radius: 10px; margin-bottom: 1rem;"></div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.84rem; color: #cbd5e1;">
+                            <span>Volumen simulado: <strong>50.000 consultas / mes</strong></span>
+                            <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; color: #34d399; font-weight: 600;">
+                                <input type="checkbox" id="cache-check" onchange="updateTokenDemo()" checked> Activar Prompt Caching (-75%)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sim-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #60a5fa; font-weight: 700;">Métricas de Ingeniería en Tiempo Real</span>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1rem;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 0.9rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                                    <div style="font-size: 0.76rem; color: var(--text-secondary);">Tokens Detectados</div>
+                                    <div id="demo-token-count" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: #ffffff;">18</div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 0.9rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                                    <div style="font-size: 0.76rem; color: var(--text-secondary);">Costo Mensual API Est.</div>
+                                    <div id="demo-cost-val" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: #34d399;">$42 USD</div>
+                                </div>
+                            </div>
+                            <p id="demo-cache-msg" style="font-size: 0.83rem; color: #94a3b8; margin-top: 1rem; line-height: 1.45;">
+                                💡 <strong>Insight de PM:</strong> Con <em>Prompt Caching</em> activo en el contexto estático, ahorrás un 75% en tokens de entrada repetidos y bajás la latencia del primer token (TTFT).
+                            </p>
+                        </div>
+                        <a href="./portal-estandar/sesiones/slides_sesion_2.html" style="color: #60a5fa; font-size: 0.85rem; font-weight: 700; text-decoration: none; margin-top: 1rem;">Ir a la Presentación Completa de la Sesión 2 →</a>
+                    </div>
+                </div>
+
+                <!-- TAB 2: RAG VS ALUCINACION -->
+                <div class="pg-panel" id="tab-rag">
+                    <div class="sim-card">
+                        <h4 style="font-family: var(--font-display); margin-bottom: 0.4rem;">¿Por qué un Chatbot Corporativo necesita RAG? (Sesión 2)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Pregunta del cliente: <em>"¿Cuál es el SLA de reembolso para cuentas Enterprise según la política interna 2026?"</em></p>
+                        <div style="display: flex; gap: 0.7rem; margin-bottom: 1rem;">
+                            <button class="pg-tab" id="btn-rag-off" onclick="setRagMode(false)" style="flex:1;">❌ Consultar LLM Suelto (Sin RAG)</button>
+                            <button class="pg-tab active" id="btn-rag-on" onclick="setRagMode(true)" style="flex:1;">✅ Consultar con Pipeline RAG</button>
+                        </div>
+                        <div id="rag-pipeline-steps" style="font-family: var(--font-mono); font-size: 0.79rem; background: rgba(0,0,0,0.45); padding: 0.9rem; border-radius: 10px; color: #6ee7b7; line-height: 1.55;">
+                            [1] Embedding Query (1536 dim) → OK<br>
+                            [2] Metadata Filter: {plan: "Enterprise", year: 2026}<br>
+                            [3] Cosine Similarity Score: 0.89 (Umbral mín: 0.75) → PASS<br>
+                            [4] Chunk #14 inyectado al System Prompt con cita obligatoria.
+                        </div>
+                    </div>
+                    <div class="sim-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #c4b5fd; font-weight: 700;">Respuesta Generada por el Bot</span>
+                            <div id="rag-bot-answer" style="margin-top: 0.9rem; padding: 1rem; border-radius: 12px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); font-size: 0.88rem; color: #f8fafc;">
+                                <strong>Respuesta Anclada (Fidelidad 1.0):</strong> "Según el Manual Comercial 2026 (Sección 4.2), las cuentas Enterprise cuentan con reembolso prioritario acreditado en 24 hs hábiles vía API."
+                            </div>
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 1rem;">
+                            En la Sesión 2 aprendés a especificar exactamente este flujo en un <strong>Product Requirements Document (PRD)</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TAB 3: CRISIS PRODUCCIÓN -->
+                <div class="pg-panel" id="tab-crisis">
+                    <div class="sim-card">
+                        <h4 style="font-family: var(--font-display); margin-bottom: 0.4rem;">Escenario Real: Viernes 17:45 hs en Producción (Sesión 1)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Se acaba de desplegar la versión <code>v2.8</code> y el checkout de pagos empieza a devolver error <code>HTTP 500</code> al 40% de los usuarios. ¿Qué directiva tomás como PM junto al Tech Lead?
+                        </p>
+                        <button class="quiz-option" onclick="answerCrisis(1)">A) Pedirle a los Devs que programen y suban un parche rápido directo en Producción.</button>
+                        <button class="quiz-option" onclick="answerCrisis(2)">B) Ejecutar un Rollback inmediato en el pipeline CI/CD a la versión estable v2.7 y analizar logs en Staging.</button>
+                        <button class="quiz-option" onclick="answerCrisis(3)">C) Esperar al Daily Scrum del lunes para sumarlo como historia al próximo Sprint.</button>
+                    </div>
+                    <div class="sim-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #fcd34d; font-weight: 700;">Diagnóstico del Simulador</span>
+                            <div id="crisis-feedback" style="margin-top: 0.9rem; padding: 1.1rem; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); font-size: 0.88rem; color: #cbd5e1;">
+                                👈 Seleccioná una opción a la izquierda para ver cómo impacta tu decisión en la operación y en el equipo de ingeniería.
+                            </div>
+                        </div>
+                        <a href="./portal-estandar/sesiones/actividad_practica_sesion_1.html" style="color: #60a5fa; font-size: 0.85rem; font-weight: 700; text-decoration: none; margin-top: 1rem;">Probar el Simulador Completo de 19 Desafíos (Sesión 1) →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 WEEKS CURRICULUM -->
+    <section id="programa">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Programa Académico Estructurado</span>
+                <h2>4 Módulos Intensivos + Portal Web de Consulta Permanente</h2>
+                <p>Cada sesión combina marcos conceptuales claros, arquitectura real sin código y talleres prácticos con entregables para tu porfolio o trabajo actual.</p>
+            </div>
+
+            <div class="curriculum-grid">
+                <div class="curr-card">
+                    <span class="curr-badge" style="background: rgba(59,130,246,0.15); color: #93c5fd; border: 1px solid rgba(59,130,246,0.35);">Semana 1 · Ecosistema IT &amp; Agile</span>
+                    <h3>Arquitectura de Software, Rol del Developer, Git, CI/CD &amp; Scrum</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Qué pasa detrás de escena desde que se escribe una historia en Jira hasta que llega a manos del usuario en la nube.</p>
+                    <ul>
+                        <li>Frontend, Backend, Fullstack, QA y DevOps: cómo piensa cada rol.</li>
+                        <li>Monolitos vs. Microservicios, Cloud y anatomía de una API REST (JSON, códigos HTTP, Webhooks).</li>
+                        <li>El flujo en Git/GitHub: Ramas, Pull Requests, Code Review y ambientes (Dev, Staging, Prod).</li>
+                        <li>Simulador práctico de 19 desafíos de decisiones técnicas y traducción de CV a lenguaje IT.</li>
+                    </ul>
+                </div>
+
+                <div class="curr-card">
+                    <span class="curr-badge" style="background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.35);">Semana 2 · LLMs &amp; Chatbots RAG</span>
+                    <h3>Mecánica Interna de LLMs, Embeddings &amp; Arquitectura RAG</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Cómo funcionan los modelos generativos y cómo conectarlos a documentos privados sin que inventen respuestas.</p>
+                    <ul>
+                        <li>Software determinista vs. IA probabilística: Tokens BPE, Ventana de Contexto y Temperatura.</li>
+                        <li>Búsqueda semántica por significado: Embeddings y Bases de Datos Vectoriales.</li>
+                        <li>Pipeline RAG de punta a punta: Ingesta, Chunking, Overlap, Metadata Filtering y Umbrales.</li>
+                        <li>RAG vs. Fine-Tuning y taller de construcción del PRD de un Chatbot Corporativo.</li>
+                    </ul>
+                </div>
+
+                <div class="curr-card">
+                    <span class="curr-badge" style="background: rgba(139,92,246,0.15); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">Semana 3 · Agentes Autónomos</span>
+                    <h3>Agentes ReAct, Tool Calling, Orquestación &amp; Human-in-the-Loop</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Cómo pasar de un chatbot que solo contesta preguntas a un agente capaz de consultar sistemas y ejecutar acciones.</p>
+                    <ul>
+                        <li>El ciclo de razonamiento ReAct: Pensamiento → Acción → Observación.</li>
+                        <li>Conexión a herramientas externas mediante APIs y validación estricta JSON con Pydantic.</li>
+                        <li>Arquitecturas Multi-Agente (Orquestador + Agentes Especialistas).</li>
+                        <li>Control de riesgos: Circuit Breakers, Fallbacks y frenos Human-in-the-Loop (HITL).</li>
+                    </ul>
+                </div>
+
+                <div class="curr-card">
+                    <span class="curr-badge" style="background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.35);">Semana 4 · Finanzas, Evals &amp; Liderazgo</span>
+                    <h3>ROI de Proyectos de IA, Evaluación (Evals), Seguridad &amp; Entrevistas</h3>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Cómo presupuestar, medir calidad en producción, proteger datos confidenciales y brillar ante Hiring Managers.</p>
+                    <ul>
+                        <li>Economía de Tokens (Input vs. Output), calculadora de ROI y ahorro del 75% con Prompt Caching.</li>
+                        <li>Cómo testear IA probabilística: Golden Datasets, tríada RAG y LLM-as-a-Judge.</li>
+                        <li>Observabilidad y trazabilidad con Langfuse + Seguridad (Data Leakage, PII y Prompt Injection).</li>
+                        <li>Simulador interactivo de entrevistas técnicas con Hiring Manager.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES / SOCIAL PROOF -->
+    <section id="casos" style="background: rgba(15, 23, 42, 0.35); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Resultados Validados en el Mercado</span>
+                <h2>Profesionales que ya transformaron su perfil con esta metodología</h2>
+                <p>El programa nació entrenando 1 a 1 a líderes y gestores de proyectos en corporaciones globales, adaptando cada simulación a su vertical de negocio.</p>
+            </div>
+
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div>
+                        <div class="case-industry">🌾 Agro-Exportación &amp; Logística Corporativa</div>
+                        <h4>De Gestión Tradicional a Especificar Agentes de Auditoría Portuaria</h4>
+                        <p>
+                            Adaptación completa del programa a flujos de logística fluvial, aduanas y gestión de silos. Se diseñó el PRD técnico de un asistente RAG para normativas aduaneras y un agente multi-herramienta con aprobación HITL.
+                        </p>
+                    </div>
+                    <div class="case-meta">
+                        <strong>Caso Claudio V.</strong> · Product / Project Manager en Multinacional Agroindustrial
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div>
+                        <div class="case-industry">🌐 Localización Global &amp; Enterprise IT</div>
+                        <h4>Dominio de Arquitectura Cloud, APIs y Automatización con IA</h4>
+                        <p>
+                            Entrenamiento enfocado en flujos de desarrollo ágil, integración vía APIs con plataformas TMS, memorias de traducción vectoriales y evaluación automatizada de calidad lingüística con LLMs.
+                        </p>
+                    </div>
+                    <div class="case-meta">
+                        <strong>Caso Anabela H.</strong> · Project &amp; Operations Leader en Industria de Localización
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div>
+                        <div class="case-industry">💳 Fintech, SaaS &amp; E-Commerce</div>
+                        <h4>Puente Técnico para PMs, Analistas Funcionales y Scrum Masters</h4>
+                        <p>
+                            Dominio del ciclo completo de ingeniería (Git, CI/CD, Microservicios) y diseño de agentes de atención y operaciones con control de costos de API, prevención de fuga de datos PII y observabilidad.
+                        </p>
+                    </div>
+                    <div class="case-meta">
+                        <strong>Edición Ejecutiva</strong> · Aplicable a Banca, Software Factory, Retail y Consultoría
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION (3 TIERS) -->
+    <section id="planes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Inversión y Formatos de Cursada</span>
+                <h2>Elegí la modalidad que mejor se adapte a tu agenda y objetivo</h2>
+                <p>Todas las opciones incluyen acceso completo al Portal Interactivo Web, Simuladores, Glosarios y Plantillas de PRD.</p>
+
+                <div class="currency-toggle">
+                    <button class="curr-btn active" id="btn-ars" onclick="setCurrency('ARS')">🇦🇷 Pesos Argentinos (ARS)</button>
+                    <button class="curr-btn" id="btn-usd" onclick="setCurrency('USD')">🌎 Dólares (USD / Exterior)</button>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- TIER 1: ON-DEMAND -->
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">1. Edición Self-Paced</div>
+                        <div class="plan-tagline">100% Asincrónico · Estudiá a tu propio ritmo con el Portal Interactivo</div>
+                        <div class="plan-price" id="price-t1">$85.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span></div>
+                        <div class="plan-subprice" id="sub-t1">Pago único · Acceso inmediato 24/7</div>
+
+                        <ul class="plan-features">
+                            <li><span class="check">✓</span> <span>Acceso ilimitado al <strong>Portal Web Estándar</strong> (+60 slides interactivas).</span></li>
+                            <li><span class="check">✓</span> <span><strong>Guías de Lectura Paso a Paso</strong> y explicaciones detalladas de las 4 sesiones.</span></li>
+                            <li><span class="check">✓</span> <span><strong>4 Glosarios Técnicos</strong> con buscador en tiempo real.</span></li>
+                            <li><span class="check">✓</span> <span><strong>Simulador S1 (19 desafíos)</strong> + Generador interactivo de PRD + Simulador de Entrevistas.</span></li>
+                            <li><span class="check">✓</span> <span>Pack de fuentes listo para estudiar con audio/chat en <strong>Google NotebookLM</strong>.</span></li>
+                        </ul>
+                    </div>
+                    <a id="cta-t1" href="https://wa.me/?text=Hola%20Francisco!%20Quiero%20inscribirme%20al%20Plan%201%20(Self-Paced%20On-Demand)%20del%20Programa%20IT,%20Agile%20%26%20IA." target="_blank" class="btn-plan btn-plan-outline">Acceder al Portal On-Demand →</a>
+                </div>
+
+                <!-- TIER 2: COHORTE GRUPAL (FEATURED) -->
+                <div class="price-card featured">
+                    <div class="popular-ribbon">⭐ Más Elegido · Cupos Limitados (Máx. 8)</div>
+                    <div>
+                        <div class="plan-name">2. Bootcamp en Cohorte</div>
+                        <div class="plan-tagline">4 Sesiones Semanales en Vivo en Grupo Reducido + Portal Completo</div>
+                        <div class="plan-price" id="price-t2">$195.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span></div>
+                        <div class="plan-subprice" id="sub-t2">O 2 pagos de $105.000 ARS por adelantado</div>
+
+                        <ul class="plan-features">
+                            <li><span class="check">✓</span> <span><strong>Todo lo incluido en el Plan Self-Paced</strong> desde el día 1.</span></li>
+                            <li><span class="check">✓</span> <span><strong>4 Clases en Vivo de 75 min</strong> (1 por semana por Google Meet) con el Ing. Francisco Bondino.</span></li>
+                            <li><span class="check">✓</span> <span><strong>Grupo reducido (6 a 8 profesionales)</strong> para garantizar práctica real y preguntas en vivo.</span></li>
+                            <li><span class="check">✓</span> <span><strong>Feedback en vivo</strong> sobre el PRD de tu propio Chatbot o Agente de IA.</span></li>
+                            <li><span class="check">✓</span> <span>Práctica grupal de entrevistas técnicas y resolución de casos reales de negocio.</span></li>
+                        </ul>
+                    </div>
+                    <a id="cta-t2" href="https://wa.me/?text=Hola%20Francisco!%20Me%20interesa%20sumarme%20a%20la%20pr%C3%B3xima%20Cohorte%20Grupal%20en%20Vivo%20del%20Programa%20IT,%20Agile%20%26%20IA." target="_blank" class="btn-plan btn-plan-solid">Reservar Cupo en la Cohorte →</a>
+                </div>
+
+                <!-- TIER 3: 1 A 1 VIP CUSTOM -->
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">3. Mentoría 1 a 1 VIP</div>
+                        <div class="plan-tagline">100% Personalizado a tu Empresa, Industria y Desafío Laboral</div>
+                        <div class="plan-price" id="price-t3">$380.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span></div>
+                        <div class="plan-subprice" id="sub-t3">O 2 tramos de $195.000 ARS (Solo 3 cupos/mes)</div>
+
+                        <ul class="plan-features">
+                            <li><span class="check">✓</span> <span><strong>4 Sesiones 1 a 1 Exclusivas</strong> en día y horario 100% flexibles a tu agenda.</span></li>
+                            <li><span class="check">✓</span> <span><strong>Portal Web Propio Hiper-Personalizado:</strong> adaptamos todos los ejemplos, glosarios y simuladores a tu industria (Fintech, Agro, SaaS, Salud, E-commerce).</span></li>
+                            <li><span class="check">✓</span> <span><strong>Co-diseño de un Proyecto Real:</strong> armamos juntos la arquitectura y el PRD de una iniciativa de IA para tu trabajo actual.</span></li>
+                            <li><span class="check">✓</span> <span><strong>Preparación intensiva de entrevistas</strong> o defensa de caso técnico ante directivos.</span></li>
+                        </ul>
+                    </div>
+                    <a id="cta-t3" href="https://wa.me/?text=Hola%20Francisco!%20Quiero%20consultar%20disponibilidad%20para%20la%20Mentor%C3%ADa%201%20a%201%20VIP%20Personalizada%20a%20mi%20industria." target="_blank" class="btn-plan btn-plan-outline">Postular a Mentoría 1 a 1 VIP →</a>
+                </div>
+            </div>
+
+            <!-- B2B IN-COMPANY BANNER -->
+            <div class="b2b-banner">
+                <div style="max-width: 720px;">
+                    <span style="font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #c4b5fd;">🏢 Capacitación Corporativa In-Company (B2B)</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: #ffffff; margin: 0.3rem 0;">¿Querés entrenar a todo tu equipo de PMs, Analistas Funcionales u Operaciones?</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        Diseñamos una edición cerrada con un Portal Interactivo exclusivo para tu empresa, utilizando los sistemas, APIs y casos de negocio reales de tu organización.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <a href="./portal-estandar/propuesta_ejecutiva_estandar.html" class="btn-secondary" style="padding: 0.8rem 1.3rem; font-size: 0.86rem;">📄 Descargar Propuesta PDF</a>
+                    <a href="https://wa.me/?text=Hola%20Francisco!%20Me%20interesa%20cotizar%20una%20capacitaci%C3%B3n%20In-Company%20para%20nuestro%20equipo." target="_blank" class="btn-primary" style="padding: 0.8rem 1.4rem; font-size: 0.86rem;">Solicitar Propuesta Corporativa →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2>Todo lo que necesitás saber antes de sumarte</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>¿Necesito saber programar o tener base técnica previa?</h4>
+                    <p>No. El programa está diseñado específicamente para que entiendas cómo funciona la ingeniería de software y la IA desde la arquitectura, el flujo de datos y la toma de decisiones de producto/negocio, sin escribir código.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Si empiezo con el Plan Self-Paced ($85.000 ARS) puedo pasar después al Grupal o al 1 a 1 VIP?</h4>
+                    <p>¡Sí! Tenés Garantía de Upgrade: si comprás el acceso On-Demand y luego decidís sumarte a la Cohorte en Vivo o a la Mentoría 1 a 1 VIP, se te descuenta el 100% de lo que abonaste.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Por cuánto tiempo tengo acceso al Portal Web, los Simuladores y los Glosarios?</h4>
+                    <p>El acceso al Portal Interactivo es permanente. Además, podés usarlo como diccionario de cabecera antes de una reunión técnica, un refinamiento de backlog o una entrevista laboral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Ing. Francisco Bondino</strong> · Consultoría en Arquitectura de Software, Producto &amp; Inteligencia Artificial Aplicada</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+                <a href="./portal-estandar/index.html" style="color: #60a5fa; text-decoration: none;">Abrir Portal Estándar</a> ·
+                <a href="./portal-estandar/propuesta_ejecutiva_estandar.html" style="color: #60a5fa; text-decoration: none;">Ver Propuesta Imprimible</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Demo Tab Switcher
+        function switchDemoTab(tabId, btn) {
+            document.querySelectorAll('.pg-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.playground-tabs .pg-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // Token Simulator
+        function updateTokenDemo() {
+            const text = document.getElementById('demo-prompt-input').value || '';
+            const words = text.trim().split(/\s+/).filter(Boolean);
+            const pillsBox = document.getElementById('token-pills-box');
+            pillsBox.innerHTML = '';
+            let tokenCount = 0;
+
+            words.forEach((w, idx) => {
+                if (w.length > 7) {
+                    const p1 = w.slice(0, Math.ceil(w.length * 0.55));
+                    const p2 = w.slice(Math.ceil(w.length * 0.55));
+                    [p1, p2].forEach((sub, sIdx) => {
+                        const span = document.createElement('span');
+                        span.className = 'token-pill t-c' + ((idx + sIdx) % 4);
+                        span.textContent = sub;
+                        pillsBox.appendChild(span);
+                        tokenCount++;
+                    });
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'token-pill t-c' + (idx % 4);
+                    span.textContent = w;
+                    pillsBox.appendChild(span);
+                    tokenCount++;
+                }
+            });
+
+            document.getElementById('demo-token-count').textContent = tokenCount;
+            const cacheOn = document.getElementById('cache-check').checked;
+            // Base calculation including system context + 50k monthly queries
+            const rawCost = Math.max(12, Math.round((tokenCount + 450) * 0.36));
+            const finalCost = cacheOn ? Math.round(rawCost * 0.25) : rawCost;
+            const costEl = document.getElementById('demo-cost-val');
+            costEl.textContent = '$' + finalCost + ' USD';
+            costEl.style.color = cacheOn ? '#34d399' : '#f43f5e';
+        }
+        updateTokenDemo();
+
+        // RAG Simulator
+        function setRagMode(enabled) {
+            const btnOff = document.getElementById('btn-rag-off');
+            const btnOn = document.getElementById('btn-rag-on');
+            const steps = document.getElementById('rag-pipeline-steps');
+            const answer = document.getElementById('rag-bot-answer');
+
+            if (enabled) {
+                btnOn.classList.add('active');
+                btnOff.classList.remove('active');
+                steps.style.color = '#6ee7b7';
+                steps.innerHTML = '[1] Embedding Query (1536 dim) → OK<br>[2] Metadata Filter: {plan: "Enterprise", year: 2026}<br>[3] Cosine Similarity Score: 0.89 (Umbral mín: 0.75) → PASS<br>[4] Chunk #14 inyectado al System Prompt con cita obligatoria.';
+                answer.style.background = 'rgba(16, 185, 129, 0.12)';
+                answer.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+                answer.innerHTML = '<strong>Respuesta Anclada (Fidelidad 1.0):</strong> "Según el Manual Comercial 2026 (Sección 4.2), las cuentas Enterprise cuentan con reembolso prioritario acreditado en 24 hs hábiles vía API."';
+            } else {
+                btnOff.classList.add('active');
+                btnOn.classList.remove('active');
+                steps.style.color = '#fda4af';
+                steps.innerHTML = '[!] Sin conexión a Base Vectorial (Zero Context)<br>[!] El LLM responde únicamente por probabilidad estadística general<br>[!] RIESGO ALTO DE ALUCINACIÓN CORPORATIVA';
+                answer.style.background = 'rgba(244, 63, 94, 0.12)';
+                answer.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+                answer.innerHTML = '<strong>⚠️ Alucinación Detectada:</strong> "¡Por supuesto! Todos los reembolsos corporativos se procesan en 15 minutos con un bono de compensación del 10%." <em>(Falso: promesa comercial inexistente que genera reclamos legales).</em>';
+            }
+        }
+
+        // Crisis Quiz Simulator
+        function answerCrisis(choice) {
+            const box = document.getElementById('crisis-feedback');
+            if (choice === 2) {
+                box.style.background = 'rgba(16, 185, 129, 0.12)';
+                box.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                box.innerHTML = '✅ <strong>¡Decisión Exacta de PM Senior!</strong> Ante un incidente crítico en Producción un viernes, la prioridad #1 es restaurar la operación del negocio en minutos mediante un <strong>Rollback</strong> a la versión anterior estable (<code>v2.7</code>), y luego investigar la causa raíz en <em>Staging</em> sin presión.';
+            } else if (choice === 1) {
+                box.style.background = 'rgba(244, 63, 94, 0.12)';
+                box.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+                box.innerHTML = '❌ <strong>Peligro Operativo:</strong> Pedir un parche apresurado directo en Producción sin pasar por QA ni CI/CD suele introducir errores peores. Primero hacés <strong>Rollback</strong> para frenar la pérdida de ventas y después iterás.';
+            } else {
+                box.style.background = 'rgba(245, 158, 11, 0.12)';
+                box.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+                box.innerHTML = '⚠️ <strong>Inacción Crítica:</strong> Un error <code>HTTP 500</code> en el checkout un viernes implica pérdida directa de facturación todo el fin de semana. Requiere activar el protocolo de incidente y <strong>Rollback inmediato</strong>.';
+            }
+        }
+
+        // Currency Switcher (ARS / USD)
+        function setCurrency(curr) {
+            const btnArs = document.getElementById('btn-ars');
+            const btnUsd = document.getElementById('btn-usd');
+            const p1 = document.getElementById('price-t1');
+            const s1 = document.getElementById('sub-t1');
+            const p2 = document.getElementById('price-t2');
+            const s2 = document.getElementById('sub-t2');
+            const p3 = document.getElementById('price-t3');
+            const s3 = document.getElementById('sub-t3');
+
+            if (curr === 'USD') {
+                btnUsd.classList.add('active');
+                btnArs.classList.remove('active');
+                p1.innerHTML = '$79 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">USD</span>';
+                s1.textContent = 'Pago único internacional · Acceso 24/7';
+                p2.innerHTML = '$175 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">USD</span>';
+                s2.textContent = 'O 2 pagos de $95 USD por adelantado';
+                p3.innerHTML = '$350 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">USD</span>';
+                s3.textContent = 'O 2 tramos de $180 USD (Solo 3 cupos/mes)';
+            } else {
+                btnArs.classList.add('active');
+                btnUsd.classList.remove('active');
+                p1.innerHTML = '$85.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span>';
+                s1.textContent = 'Pago único · Acceso inmediato 24/7';
+                p2.innerHTML = '$195.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span>';
+                s2.textContent = 'O 2 pagos de $105.000 ARS por adelantado';
+                p3.innerHTML = '$380.000 <span style="font-size:1rem; font-weight:600; color:#94a3b8;">ARS</span>';
+                s3.textContent = 'O 2 tramos de $195.000 ARS (Solo 3 cupos/mes)';
+            }
+        }
+    </script>
+</body>
+</html>

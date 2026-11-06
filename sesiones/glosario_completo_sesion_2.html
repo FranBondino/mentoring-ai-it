@@ -497,6 +497,35 @@
                 font-size: 0.76rem;
             }
         }
+    
+        .plain-summary-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.09), rgba(59, 130, 246, 0.06));
+            border-left: 4px solid var(--color-green);
+            border-radius: 0 12px 12px 0;
+            padding: 0.85rem 1.1rem;
+            margin-bottom: 0.95rem;
+            font-size: 0.96rem;
+            line-height: 1.55;
+            color: #0f172a;
+        }
+        .plain-summary-box strong.plain-label {
+            display: inline-block;
+            color: #047857;
+            font-family: var(--font-display);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.76rem;
+            letter-spacing: 0.04em;
+            background: rgba(16, 185, 129, 0.16);
+            padding: 2px 8px;
+            border-radius: 999px;
+            margin-right: 0.45rem;
+            margin-bottom: 0.2rem;
+        }
+        body.simple-mode .section-definition {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -556,8 +585,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> La IA no "sabe" cosas ni busca verdades como una enciclopedia: funciona como el texto predictivo de WhatsApp multiplicado por mil millones, calculando qué palabra tiene más probabilidad de seguir a la anterior.
+            </div>
+
             <p class="section-definition">
-                Una red neuronal de aprendizaje profundo basada en la arquitectura <strong>Transformer</strong> (la <strong>"T"</strong> de <strong>GPT</strong>: <em>Generative Pre-trained Transformer</em>), nacida en el histórico paper científico <strong><em>"Attention Is All You Need"</em> (Vaswani et al., Google Brain, 2017)</strong>. Originalmente creada para resolver los cuellos de botella de la <strong>Traducción Automática Neuronal</strong>, su núcleo técnico se apoya en mecanismos de <strong>Self-Attention</strong> (Auto-atención Multi-Cabeza) que procesan toda la oración en paralelo y calculan matemáticamente la relevancia relativa de cada palabra o fragmento con respecto a todas las demás en una secuencia. Entrenado sobre corpus masivos de texto, el modelo realiza predicciones probabilísticas de la siguiente unidad lingüística más coherente dado un contexto previo (<strong>Next-Token Prediction</strong>).
+                Un <strong>Gran Modelo de Lenguaje (LLM)</strong> (como GPT-4o o Claude 3.5) es un motor estadístico entrenado con millones de textos para hacer una sola tarea: <strong>predecir la siguiente palabra (Next-Token Prediction)</strong> según el contexto previo. Como su objetivo es armar oraciones que suenen fluidas y coherentes —y no chequear si un dato es verdadero—, cuando le preguntás algo privado que no conoce, tiende a "rellenar el vacío" inventando una respuesta muy convincente.
             </p>
 
             <div class="section-metaphor">
@@ -589,8 +622,12 @@
                 <span class="badge-category badge-economics">Economía</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es el invento de Google (2017) que nació para mejorar la traducción de idiomas y dio origen a toda la IA actual. Su truco ("Atención") es mirar toda la oración junta al mismo tiempo para entender el sentido real de cada palabra.
+            </div>
+
             <p class="section-definition">
-                La unidad fundamental y mínima de procesamiento computacional, lingüístico y matemático utilizada por un modelo de lenguaje de gran escala. Los LLMs no procesan texto crudo carácter por carácter ni palabra por palabra de forma directa. En su lugar, el texto de entrada es convertido en tokens mediante algoritmos de tokenización de sub-palabras como <strong>Byte Pair Encoding (BPE)</strong>, <strong>WordPiece</strong> o <strong>SentencePiece</strong>. Este proceso divide palabras complejas en raíces semánticas y afijos gramaticales discretos, permitiendo al modelo procesar términos desconocidos sin desbordar su vocabulario. Como regla métrica de negocio estándar en la industria de la IA: <strong>1000 tokens equivalen aproximadamente a 750 palabras en inglés</strong>, mientras que en español suele requerir una proporción ligeramente mayor de tokens por palabra (aproximadamente un 20% a 30% más).
+                Presentado por investigadores de Google en el famoso artículo <em>"Attention Is All You Need"</em> (2017) para resolver la <strong>Traducción Automática</strong>. Antes, las máquinas leían palabra por palabra y al llegar al final de un párrafo largo ya habían olvidado el principio. El <strong>Transformer</strong> introdujo el mecanismo de <strong>Atención (Self-Attention)</strong>: evalúa todas las palabras de una oración en simultáneo para entender su relación (por ejemplo, saber si la palabra <em>"banco"</em> se refiere a dinero o a una plaza según las palabras que la rodean).
             </p>
 
             <div class="glossary-img-container">
@@ -627,8 +664,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es la "perilla de creatividad" de la IA (va de 0.0 a 1.0). En 0.0 la IA es 100% estricta y elige siempre la palabra más segura (ideal para manuales y RAG); si la subís a 0.8 o 1.0 se vuelve creativa pero empieza a inventar.
+            </div>
+
             <p class="section-definition">
-                El límite de memoria volátil y de corto plazo (asociado a la capacidad de la caché clave-valor o <strong>KV Cache</strong> de la arquitectura Transformer) que un modelo de lenguaje puede retener, procesar y direccionar en una única llamada de API. Este límite físico se mide estrictamente en tokens e incluye de forma sumada tanto los tokens inyectados en la consulta por el usuario (Contexto de Entrada) como los tokens generados por el modelo en su respuesta (Output de Salida). Si una consulta excede este límite físico (ej. 128k tokens en GPT-4o, 2M en Gemini 1.5 Pro), el sistema sufrirá truncamiento de datos, perdiendo la capacidad de correlacionar la información inicial con la final.
+                Parámetro que controla qué tan predecible o creativa es la IA al elegir cada palabra. Con <strong>Temperatura = 0.0</strong>, el modelo actúa en modo estricto (determinista): elige siempre la palabra número 1 más probable, logrando respuestas estables, repetibles y fieles al manual. En cambio, al subir la <strong>Temperatura (0.7 a 1.0)</strong>, se le permite elegir palabras menos obvias al azar: esto sirve para lluvias de ideas o publicidad, pero en sistemas corporativos aumenta drásticamente el riesgo de alucinaciones.
             </p>
 
             <div class="glossary-img-container">
@@ -665,8 +706,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Así como en traducción cobrás por palabra, los proveedores de IA cobran por "Tokens" (pedacitos de palabras o sílabas). Además, lo que la IA escribe (Output) cuesta entre 3 y 5 veces más caro que lo que la IA lee (Input).
+            </div>
+
             <p class="section-definition">
-                La disciplina sistemática de estructurar, diseñar y refinar las instrucciones, delimitadores, variables dinámicas y restricciones de entrada que se inyectan en un modelo de lenguaje para condicionar su salida probabilística hacia un comportamiento determinista de negocio. Involucra técnicas avanzadas como <strong>Few-Shot Prompting</strong> (proveer ejemplos estructurados de entrada-salida), <strong>Chain-of-Thought (CoT)</strong> (forzar al modelo a generar y exponer una secuencia de pasos lógicos intermedios antes de emitir la respuesta final para reducir errores de cálculo), delimitadores de protección (ej. etiquetas XML) para prevenir inyecciones maliciosas del usuario, y la definición estricta del perfil de comportamiento del sistema (System Prompt).
+                Unidad mínima en la que el modelo divide el texto para leerlo, procesarlo y facturarlo. Usando un método llamado <strong>BPE (Byte Pair Encoding)</strong>, la IA separa las palabras en raíces y sufijos frecuentes (por ejemplo: <code>locali</code> + <code>zación</code>). En inglés, <strong>1.000 tokens equivalen a unas 750 palabras</strong>; en español equivalen a unas <strong>650 palabras</strong> (porque los acentos y conjugaciones usan más fragmentos). Para el presupuesto de un proyecto (FinOps), siempre hay que distinguir entre <strong>Tokens de Entrada (lo que lee)</strong> y <strong>Tokens de Salida (lo que redacta, que es más lento y caro)</strong>.
             </p>
 
             <div class="section-metaphor">
@@ -698,8 +743,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es un descuento del 50% al 75% en la factura de la IA: si dejás las instrucciones fijas siempre al principio del mensaje, el proveedor las guarda en memoria rápida para no cobrártelas ni leerlas desde cero en cada pregunta.
+            </div>
+
             <p class="section-definition">
-                El proceso matemático y el modelo especializado (ej. `text-embedding-3-small` de OpenAI) utilizado para proyectar y mapear conceptos de lenguaje natural (palabras, oraciones, párrafos o documentos enteros) en vectores numéricos continuos de alta dimensión y densidad (usualmente vectores de 1536 o 3072 dimensiones decimales). La magia técnica de los embeddings radica en que <strong>capturan el significado conceptual y semántico del texto</strong> y lo posicionan geométricamente en un hiperespacio multidimensional. La cercanía semántica entre dos conceptos traducidos a embeddings se calcula mediante funciones matemáticas de distancia vectorial, siendo la <strong>Similitud de Coseno</strong> la métrica estándar de la industria (midiendo el coseno del ángulo formado por dos vectores: $\cos(\theta) = \frac{A \cdot B}{\|A\| \|B\|}$).
+                Técnica de ahorro de costos y velocidad en llamadas a la API. En un bot corporativo, todas las consultas llevan las mismas instrucciones de marca, reglas de formato y ejemplos fijos al comienzo del mensaje (System Prompt). Con <strong>Prompt Caching</strong>, el proveedor guarda esa primera parte fija en una memoria rápida: así, en las siguientes consultas de los usuarios, <strong>no vuelve a procesar todo desde cero</strong>, reduciendo el tiempo de espera (TTFT) a la mitad y ahorrando entre un <strong>50% y 75%</strong> del costo de lectura.
             </p>
 
             <div class="glossary-img-container">
@@ -736,8 +785,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es el "escritorio de trabajo" o memoria de corto plazo de la IA: todo lo que entra y sale en una conversación (tus instrucciones, los fragmentos del manual, la charla previa y la respuesta) tiene que caber ahí dentro.
+            </div>
+
             <p class="section-definition">
-                Un motor de base de datos especializado y optimizado arquitectónicamente para el almacenamiento persistente, indexación y consulta ultrarrápida de vectores numéricos de alta dimensión (embeddings). A diferencia de las bases de datos relacionales tradicionales (SQL) que indexan y buscan coincidencias por columnas lógicas o índices B-Tree, las bases vectoriales (como Pinecone, Chroma, Qdrant o Milvus) utilizan algoritmos de <strong>Búsqueda del Vecino Más Cercano Aproximado (ANN - Approximate Nearest Neighbor)</strong> como <strong>HNSW (Hierarchical Navigable Small World)</strong> para rastrear y recuperar los vectores con mayor similitud semántica sobre colecciones de millones de documentos en milisegundos.
+                Límite máximo de tokens que un modelo puede recordar y procesar dentro de una misma consulta (por ejemplo, 128.000 tokens en GPT-4o o 200.000 en Claude 3.5). Funciona como la memoria de corto plazo del sistema: dentro de esa capacidad deben entrar las instrucciones del sistema, los documentos de referencia recuperados, el historial de la conversación y la respuesta generada. Aunque hoy existen ventanas gigantes, llenarlas con manuales enteros en cada pregunta dispara el costo por consulta y vuelve lenta la respuesta.
             </p>
 
             <div class="glossary-img-container">
@@ -774,8 +827,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Cuando le mandás un texto larguísimo de 50 páginas de golpe, a la IA le pasa lo mismo que a una persona: recuerda perfecto el primer párrafo y el último, pero se "distrae" y olvida los datos que quedaron enterrados en la mitad.
+            </div>
+
             <p class="section-definition">
-                El algoritmo de preprocesamiento de datos offline mediante el cual documentos extensos de texto sin estructura clara (PDFs de normativas, manuales técnicos de 300 páginas, logs corporativos) son segmentados y divididos en fragmentos o bloques discretos de menor tamaño (ej. bloques de 500 tokens). La técnica líder en la industria es el <strong>Recursive Character Chunking</strong>, que evalúa jerárquicamente un arreglo de delimitadores de texto `["\n\n", "\n", " ", ""]` (párrafos, oraciones, palabras, caracteres) para realizar los cortes semánticos de forma limpia, evitando cortar oraciones a la mitad y preservando la integridad del mensaje lógico en cada bloque.
+                Fenómeno demostrado por la Universidad de Stanford sobre cómo prestan atención los modelos de lenguaje cuando reciben demasiado texto junto. Los LLMs recuerdan con altísima precisión la información ubicada al <strong>inicio del mensaje (Primacy Bias)</strong> y al <strong>final (Recency Bias)</strong>, pero su capacidad de atención cae drásticamente (a veces por debajo del 40%) para los datos que quedan en el medio. Este límite explica por qué necesitamos <strong>RAG</strong>: en vez de pegar 50 manuales enteros, buscamos solo los 3 párrafos exactos y se los entregamos limpios.
             </p>
 
             <div class="section-metaphor">
@@ -806,8 +863,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es cuando la IA no sabe un dato privado o no lo encuentra en el texto, y en lugar de decir "No sé", te inventa una respuesta falsa pero redactada con tanta seguridad y formato profesional que parece verdadera.
+            </div>
+
             <p class="section-definition">
-                La técnica de ingeniería de datos consistente en configurar un volumen de redundancia de texto predefinido (usualmente medido en tokens o en porcentaje, típicamente del 10% al 20% del tamaño total del chunk) entre fragmentos contiguos durante el proceso de segmentación de un documento. Implica programar al fragmentador para que repita el bloque final de tokens del Chunk A al inicio del Chunk B (por ejemplo, si el tamaño del chunk es de 500 tokens y el overlap es de 75 tokens, los últimos 75 tokens del Fragmento 1 se duplicarán de forma idéntica al inicio del Fragmento 2).
+                Ocurre cuando un modelo genera datos falsos, reglas inexistentes o citas inventadas presentándolos con un tono totalmente convincente y profesional. No es una "falla de software" tradicional, sino la consecuencia natural de cómo funciona un LLM: como fue diseñado para predecir palabras probables sin distinguir verdad de ficción, si no le damos el documento oficial ni le ponemos un freno estricto, inventa la respuesta que suena más lógica.
             </p>
 
             <div class="section-metaphor">
@@ -839,8 +900,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Re-entrenar el modelo para que estudie de memoria (como ir a un taller de escritura). Sirve para enseñarle un tono de voz o estilo fijo, pero NO sirve para cargar manuales o glosarios que cambian todas las semanas.
+            </div>
+
             <p class="section-definition">
-                Una arquitectura de software empresarial de vanguardia diseñada para enriquecer dinámicamente el prompt inyectado en un LLM con información factual privada, dinámica y autorizada extraída de fuentes de datos corporativas externas en tiempo real. Su ciclo de vida técnico consta de dos grandes pipelines: <strong>1) Indexación Offline</strong>: Curaduría de PDFs -> Chunking con Overlap -> Conversión a Embeddings -> Carga en Vector DB. <strong>2) Consulta Online</strong>: El usuario pregunta -> El backend calcula el embedding de la pregunta -> Busca similitud de coseno en la Vector DB -> Recupera los $k$ chunks de mayor score -> Inyecta estos chunks en un Prompt Template estricto -> Envía el Prompt Enriquecido al LLM -> El LLM genera una respuesta sustentada exclusivamente en la evidencia provista.
+                Proceso técnico que consiste en tomar un modelo base y re-entrenarlo con miles de ejemplos propios para modificar su comportamiento interno. El <strong>Fine-Tuning</strong> es ideal cuando querés enseñar una <strong>forma de hablar, un tono de marca o un formato técnico específico</strong>. Sin embargo, <strong>es un error usarlo para cargar hechos, tarifas o glosarios que se actualizan seguido</strong>: cada vez que cambie una regla el modelo quedará desactualizado, seguirá inventando de memoria y no podrá citar la página exacta.
             </p>
 
             <div class="glossary-img-container">
@@ -877,8 +942,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Hacer que la IA rinda un "Examen a Libro Abierto": antes de que responda una pregunta, un buscador interno saca los 3 párrafos exactos de tu manual vigente y se los pega en la pantalla diciendo "Respondé solo con esto y citá la página".
+            </div>
+
             <p class="section-definition">
-                El comportamiento anómalo inherente a la naturaleza probabilística de la arquitectura de decodificación auto-regresiva de los modelos de lenguaje, en el cual el LLM genera una salida lingüística gramaticalmente fluida, coherente y sumamente elocuente, pero que contiene datos fácticos, leyes, regulaciones, números de artículos o tarifas que son completamente inventados, inexistentes o incorrectos. Ocurre porque el modelo optimiza la verosimilitud de la secuencia de palabras de acuerdo con su entrenamiento de lenguaje natural, y no la verdad fáctica subyacente.
+                <strong>RAG (Generación Aumentada por Recuperación)</strong> es la arquitectura estándar en empresas para conectar un LLM con documentos privados (manuales, glosarios, políticas) sin necesidad de re-entrenarlo. Cuando un usuario hace una pregunta, el sistema primero <strong>busca los fragmentos oficiales más relevantes</strong> en tu biblioteca autorizada y luego se los entrega al modelo dentro del mensaje para que redacte la respuesta basándose únicamente en esa evidencia verificable.
             </p>
 
             <div class="section-metaphor">
@@ -910,8 +979,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Un "GPS del significado": convierte cualquier frase o párrafo en una lista de coordenadas numéricas para que el buscador encuentre la misma idea aunque el usuario use sinónimos o pregunte en otro idioma.
+            </div>
+
             <p class="section-definition">
-                Un conjunto de pruebas estático, curado meticulosamente y consensuado formalmente por expertos de negocio y desarrolladores, que contiene un volumen significativo (generalmente entre 50 y 200 casos de uso) de preguntas típicas e interacciones complejas de usuarios asociadas a sus correspondientes respuestas perfectas validadas por humanos (<strong>Ground Truth</strong>). Se utiliza como el benchmark ineludible de control de calidad semántico para evaluar de forma cuantitativa, reproducible y científica el desempeño del bot mediante suites de pruebas automatizadas ante cualquier cambio en el software.
+                Representación numérica (una lista de números o coordenadas, por ejemplo de 1536 dimensiones) que captura el <strong>significado e intención</strong> de una frase más allá de las palabras exactas que use. Gracias a los <strong>Embeddings</strong>, el sistema ubica las ideas en un "mapa conceptual": así descubre que <em>"solicitar reembolso"</em>, <em>"pedir devolución de dinero"</em> y <em>"request a refund"</em> significan casi lo mismo y viven en el mismo barrio del mapa, superando las limitaciones del buscador clásico (Ctrl+F).
             </p>
 
             <div class="section-metaphor">
@@ -943,8 +1016,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Es la regla o termómetro (de 0.00 a 1.00) que mide qué tan cerca están dos ideas en el mapa de significado: si da cerca de 1.00 hablan de lo mismo; si da cerca de 0.00 no tienen nada que ver.
+            </div>
+
             <p class="section-definition">
-                El proceso de entrenamiento supervisado adicional (Transfer Learning) aplicado sobre un modelo de lenguaje fundacional previamente pre-entrenado. Consiste en exponer al LLM a un conjunto de datos altamente estructurado y específico (típicamente compuesto por miles de ejemplos estructurados de entrada-salida) para ajustar una fracción controlada de sus parámetros y pesos neuronales internos (comúnmente utilizando técnicas de eficiencia de parámetros como <strong>LoRA - Low-Rank Adaptation</strong>). El fine-tuning no está diseñado para inyectar conocimientos dinámicos factuales, sino para <strong>modificar el estilo gramatical del modelo, adaptar su tono, dominar una jerga técnica específica o entrenarlo para generar respuestas estructuradas rígidas</strong> (ej. responder estrictamente en formato estructurado JSON sin errores sintácticos).
+                Cálculo matemático que compara las coordenadas (Embeddings) de la pregunta del usuario contra las coordenadas de los párrafos guardados en tu biblioteca, devolviendo un puntaje de cercanía entre <strong>0.00 y 1.00</strong>. Si la pregunta y el párrafo tratan exactamente del mismo tema (aunque usen sinónimos), el puntaje será muy alto (ej. <strong>0.92</strong>); si tratan de temas sin relación, el puntaje será bajo (ej. <strong>0.18</strong>). Con este puntaje el sistema ordena los mejores párrafos (Top-3) y frena respuestas dudosas.
             </p>
 
             <div class="section-metaphor">
@@ -991,8 +1068,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> La biblioteca especial donde guardamos los párrafos de nuestros manuales junto con sus coordenadas GPS (Embeddings) para poder encontrar los 3 párrafos más parecidos a una pregunta en milisegundos.
+            </div>
+
             <p class="section-definition">
-                El nivel de estandarización, consistencia lógica y predictibilidad operativa que posee un flujo de trabajo de negocio antes de ser intervenido por un sistema de IA. Exige que el proceso operativo de la empresa cuente con manuales de procedimientos claros, flujos de decisión explícitos y SLAs humanos estables. Automatizar un proceso operativo que hoy depende del humor, del criterio ad-hoc o de la interpretación discrecional de cada empleado humano es inviable: <strong>"No se puede automatizar el caos"</strong>. Si intentas automatizar un proceso caótico y desestructurado mediante IA, lo único que lograrás será escalar ese desorden operativo a velocidades y volúmenes algorítmicos catastróficos.
+                Base de datos especializada (como <em>Pinecone, Qdrant, Weaviate o pgvector</em>) diseñada para guardar y buscar millones de fragmentos de texto a través de sus coordenadas de significado (Embeddings). A diferencia de una base de datos tradicional que solo busca palabras exactas, la <strong>Base Vectorial</strong> recibe la pregunta del usuario y en pocos milisegundos devuelve los fragmentos más relevantes de los manuales corporativos junto con su puntaje de similitud.
             </p>
 
             <div class="section-metaphor">
@@ -1024,8 +1105,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Como los filtros de MercadoLibre (filtrar por "Talle M" y "Envío Gratis" antes de mirar zapatillas): primero filtramos por etiquetas exactas (Idioma = Español, Año = 2026) para que el bot nunca lea un manual vencido de 2021.
+            </div>
+
             <p class="section-definition">
-                La disponibilidad técnica, digitalización, estructura y accesibilidad programática que posee la información propietaria de la empresa requerida para alimentar el sistema de IA. Exige que los documentos no solo existan físicamente, sino que estén digitalizados en formatos legibles por máquina (ej. archivos PDF de texto nativo y no imágenes borrosas escaneadas torcidamente), libres de codificaciones de caracteres corruptas (UTF-8 normalizado), limpios de duplicados históricos contradictorios y almacenados en sistemas corporativos seguros expuestos a través de APIs corporativas internas (como SharePoint, ERPs, bases de datos SQL o data lakes corporativos).
+                Etiquetas de información exacta (como <code>idioma: ES-LATAM</code>, <code>año: 2026</code>, <code>cliente: Enterprise</code>, <code>estado: vigente</code>) que le pegamos a cada fragmento de documento cuando lo guardamos en la Base Vectorial. El <strong>Pre-filtrado de Metadatos</strong> es vital en empresas: antes de buscar por similitud de significado, el sistema bloquea cualquier documento de otro cliente o de años anteriores, evitando que un manual viejo pero "muy parecido" contamine la respuesta.
             </p>
 
             <div class="section-metaphor">
@@ -1056,8 +1141,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Cortar un PDF largo de 300 páginas en "fichas" cortas (de ~1 párrafo cada una) antes de guardarlo en la biblioteca, respetando los títulos y puntos aparte para que cada ficha tenga sentido propio.
+            </div>
+
             <p class="section-definition">
-                El marco metodológico adaptativo de gestión de proyectos que rige el ciclo de vida del software probabilístico, descartando las metodologías rígidas de cascada (Waterfall). Al ser la IA un software basado en distribuciones estadísticas donde pequeñas fluctuaciones en las variables de entrada, cambios mínimos en los prompts o actualizaciones menores del modelo pueden alterar sustancialmente el output, es técnicamente inviable definir especificaciones técnicas cerradas e inmutables al inicio del proyecto. Exige sprints cortos de experimentación semántica, monitoreo continuo de telemetría, recalibración de umbrales y despliegues incrementales ágiles.
+                Proceso de dividir documentos largos (manuales PDF, wikis, reglamentos) en fragmentos más pequeños llamados <strong>Chunks</strong> (normalmente de unos 500 a 1.000 caracteres, equivalentes a un párrafo grande) antes de calcular sus Embeddings. La mejor práctica para un PM es exigir <strong>Corte Semántico o Recursivo (Recursive Character Splitting)</strong>, que corta respetando títulos, saltos de párrafo y signos de puntuación en vez de partir oraciones o tablas por la mitad.
             </p>
 
             <div class="section-metaphor">
@@ -1089,8 +1178,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Como cuando sacás una foto panorámica y superponés el borde de una foto con la siguiente: repetimos el último 15% de un párrafo al comienzo del siguiente para que ninguna regla o condición quede cortada por la mitad.
+            </div>
+
             <p class="section-definition">
-                La etapa fundacional y offline del pipeline técnico en la cual los ingenieros de datos extraen la información corporativa propietaria de los repositorios de la empresa, limpian el "ruido documental" redundante —diseñando scripts que remueven metadatos inútiles de PDFs, encabezados corporativos repetitivos, pies de página, firmas digitales o páginas en blanco que consumirían tokens de contexto inútilmente—, normalizan el encoding lingüístico a UTF-8 y estandarizan los documentos para garantizar una ingesta limpia.
+                Porcentaje de texto (el estándar ideal es <strong>15% a 20%</strong>) que se repite entre el final de un fragmento (Chunk A) y el comienzo del fragmento siguiente (Chunk B). Si una regla dice en el borde del corte <em>"Se prohíbe publicar la versión..."</em> y en el renglón siguiente continúa <em>"...si existen errores graves de traducción"</em>, el <strong>Overlap del 15%</strong> hace de puente para que ambos fragmentos conserven la oración completa y la IA nunca lea una regla a medias.
             </p>
 
             <div class="section-metaphor">
@@ -1122,8 +1215,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> La primera mitad de RAG (que ocurre tras bambalinas cuando subís o actualizás un manual): limpiar el PDF, cortarlo con puente del 15%, calcular sus coordenadas GPS y guardarlo etiquetado en la Base Vectorial.
+            </div>
+
             <p class="section-definition">
-                La segunda etapa del ciclo técnico en la cual los textos ya curados y limpios son fragmentados algorítmicamente mediante técnicas de <strong>Recursive Character Chunking</strong> en bloques homogéneos y manejables de tamaño óptimo (ej. 500 tokens) encabalgados mediante un solapamiento semántico calibrado (<strong>Overlap del 15%</strong>). Inmediatamente, cada chunk individual es procesado por un modelo de embeddings de alta fidelidad para calcular su representación geométrica vectorial de 1536 dimensiones, cargando y clasificando dichos vectores en la base vectorial (Pinecone) asociada a metadatos estructurados discretos.
+                Etapa de preparación de la biblioteca que corre en segundo plano cada vez que el equipo sube un documento nuevo o actualiza un glosario. Consta de 4 pasos: <strong>1) Limpiar el documento</strong> quitando encabezados o basura visual; <strong>2) Cortarlo en fragmentos (Chunking)</strong> con 15% de solapamiento; <strong>3) Calcular sus coordenadas (Embeddings)</strong>; y <strong>4) Guardarlo en la Base Vectorial</strong> con sus etiquetas de fecha e idioma.
             </p>
 
             <div class="section-metaphor">
@@ -1155,8 +1252,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> La segunda mitad de RAG (que ocurre en 1.2 segundos cuando alguien pregunta en el chat): buscar los 3 mejores párrafos vigentes, pegárselos a la IA con Temperatura 0.0 y devolver la respuesta con cita a la página.
+            </div>
+
             <p class="section-definition">
-                La tercera etapa de desarrollo en la cual los programadores construyen el flujo lógico de la aplicación utilizando orquestadores (como LangChain o LlamaIndex) y codifican las plantillas fijas de prompts en el backend (<strong>Prompt Templates</strong>), aislando las instrucciones lógicas fijas de los ojos del usuario final. Asimismo, en esta fase se implementan políticas estrictas de <strong>Prompt Caching</strong> (almacenamiento en caché de prompts en la RAM de la API del LLM) para congelar el sistema estático de instrucciones masivas corporativas, reduciendo drásticamente la latencia física de respuesta y los costos de input.
+                Flujo en tiempo real que se dispara cuando un usuario envía una pregunta en el chat. Consta de 4 pasos rápidos: <strong>1) Convertir la pregunta en coordenadas</strong>; <strong>2) Pre-filtrar por metadatos vigentes y rescatar los 3 párrafos más parecidos (Top-3)</strong> que superen el puntaje mínimo de 0.75; <strong>3) Armar el mensaje interno (Prompt Aumentado)</strong> uniendo las reglas y esos 3 párrafos; y <strong>4) Generar la respuesta con Temperatura 0.0</strong> incluyendo la cita al documento original.
             </p>
 
             <div class="section-metaphor">
@@ -1188,8 +1289,12 @@
                 <span class="badge-category badge-architecture">Arquitectura</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> El "peaje anti-invento" (ej. nota mínima 0.75 sobre 1.00): si el usuario pregunta algo que no está en ningún manual y el puntaje da 0.35, la barrera no se levanta y el bot responde honestamente "No tengo ese dato" sin adivinar.
+            </div>
+
             <p class="section-definition">
-                La cuarta etapa técnica que opera en tiempo real (fase online) cuando el usuario lanza una pregunta en el chat. El pipeline calcula en milisegundos el embedding de la consulta, aplica un filtro estructurado duro (<strong>Metadata Filtering</strong> por ej. Idioma, Cliente, Módulo) sobre la base vectorial para reducir instantáneamente el espacio de búsqueda, calcula las distancias de coseno recuperando los chunks de mayor relevancia semántica, y evalúa dichos scores contra un <strong>Confidence Threshold</strong> (Umbral de Confianza) estrictamente calibrado (ej. 0.75). Si el score es inferior, el pipeline bloquea la inferencia del LLM y activa de inmediato la lógica segura de "No-Answer".
+                Regla de seguridad que define el puntaje mínimo de similitud (generalmente <strong>0.75 sobre 1.00</strong>) que debe alcanzar un párrafo de la Base Vectorial para ser considerado válido. Si un usuario pregunta por un tema que no figura en los manuales (y el mejor párrafo apenas llega a 0.40), el sistema <strong>frena el proceso antes de llamar al LLM</strong> y devuelve un mensaje seguro predefinido (<em>No-Answer Fallback</em>), reduciendo a cero las alucinaciones por falta de datos y ahorrando tokens.
             </p>
 
             <div class="section-metaphor">
@@ -1221,8 +1326,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> El peligro de pegar secretos de clientes en chats gratuitos (porque el proveedor los guarda para entrenar su IA pública) y la solución profesional: contratar una API Corporativa con "Retención Cero" (borrado inmediato por contrato).
+            </div>
+
             <p class="section-definition">
-                La quinta etapa del ciclo de vida técnico en la cual los desarrolladores programan suites de pruebas semánticas automatizadas (<strong>Evals</strong>) mediante herramientas especializadas de observabilidad (como <strong>Langfuse</strong> o Arize Phoenix). Estas suites corren de forma automatizada un lote representativo de 50 a 150 consultas reales y críticas del negocio extraídas de tu <strong>Golden Dataset</strong>, evaluando matemáticamente métricas probabilísticas clave: fidelidad al contexto (Context Adherence), relevancia del output con respecto a la query del usuario y cobertura de recuperación semántica.
+                <strong>Data Leakage (Fuga de Datos)</strong> ocurre cuando empleados suben documentos confidenciales, glosarios de clientes o datos personales a chats públicos gratuitos, cuyos términos permiten guardar ese texto para entrenar futuros modelos comerciales. Para evitarlo, en entornos corporativos se exige una <strong>API bajo Enterprise SLA con Zero-Data Retention (Retención Cero)</strong>: un contrato legal y técnico que garantiza que los datos se procesan en memoria temporal y se borran en el acto sin guardarse ni entrenar modelos externos.
             </p>
 
             <div class="section-metaphor">
@@ -1254,8 +1363,12 @@
                 <span class="badge-category badge-engineering">Ingeniería</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> Tu "examen automático de 100 preguntas reales": una planilla con preguntas fáciles, difíciles y tramposas junto a sus respuestas oficiales correctas, que el sistema corre solo antes de cada actualización para verificar que no empeoró.
+            </div>
+
             <p class="section-definition">
-                La sexta y última etapa del ciclo técnico de desarrollo de IA empresarial, en la cual la suite de evaluaciones semánticas automatizadas (Evals) se acopla e integra físicamente dentro de los pipelines de integración y despliegue continuos de la compañía (ej. <strong>GitHub Actions</strong>). Cada vez que un desarrollador de software abre una *Pull Request* para alterar un prompt template de Langfuse, actualizar un embedding o re-estructurar la base de datos vectorial, el pipeline corre el crash-test completo del Golden Dataset de forma automática en los servidores de GitHub. Si el promedio matemático de Context Adherence decae del estándar estipulado por el PM (ej. 90%), el pipeline de CI/CD falla de inmediato en rojo y bloquea el despliegue automático a Staging/Producción.
+                Conjunto de entre <strong>50 y 100 casos de prueba reales</strong> (creados por el Product Manager y los expertos del área) donde cada pregunta tiene escrita cuál es la respuesta oficial exacta que debería dar el bot (<em>Ground Truth</em>). Este examen se conecta al sistema de entregas del equipo técnico (CI/CD) para evaluar automáticamente cada cambio: si la fidelidad al manual (<em>Context Adherence</em>) cae por debajo del 90%, la actualización se frena antes de llegar a los usuarios.
             </p>
 
             <div class="section-metaphor">
@@ -1287,8 +1400,12 @@
                 <span class="badge-category badge-strategy">Estrategia</span>
             </div>
             
+            <div class="plain-summary-box">
+                <strong class="plain-label">💡 En palabras simples:</strong> El adelanto de la Sesión 3: mientras el Bot RAG que armamos hoy "lee y responde dudas" cuando le preguntás, un Agente Autónomo además tiene "manos" para hacer tareas (crear tickets en Jira, mandar mails o agendar reuniones).
+            </div>
+
             <p class="section-definition">
-                Un sistema de Inteligencia Artificial Generativa de tipo activo y agéntico estructurado mediante loops de toma de decisiones autónomos (comúnmente implementando la arquitectura <strong>ReAct - Reason + Act</strong>). A diferencia de los sistemas RAG tradicionales, que actúan de manera pasiva como "sistemas de libro abierto" (respondiendo consultas únicamente cuando el usuario las formula y limitándose a resumir textos), los agentes de ventas autónomos (AI SDR) son capaces de <strong>definir planes de ejecución independientes, invocar APIs externas de forma dinámica (Tool Calling), actualizar registros en bases de datos relacionales o CRMs (ej. Salesforce), procesar correos electrónicos entrantes y agendar reuniones comerciales de forma autónoma en el calendario del usuario mediante un loop de feedback dinámico</strong>.
+                Sistema de IA que da un paso más allá de RAG (que veremos en detalle en la Sesión 3). Mientras un sistema RAG funciona como un asesor que consulta manuales y responde preguntas en el chat, un <strong>Sistema Agéntico (Agentic AI)</strong> puede <strong>planificar pasos y usar herramientas externas (Tool Calling)</strong>: por ejemplo, consultar el glosario con RAG, detectar un término faltante, abrir un ticket en Jira y avisar por Slack pidiendo confirmación humana antes de ejecutar acciones críticas.
             </p>
 
             <div class="section-metaphor">
@@ -1417,6 +1534,13 @@
         lucide.createIcons();
 
         let currentCatFilter = 'all';
+        function toggleSimpleGlossaryMode(btnEl) {
+            document.body.classList.toggle('simple-mode');
+            const isSimple = document.body.classList.contains('simple-mode');
+            btnEl.classList.toggle('active', isSimple);
+            btnEl.textContent = isSimple ? '📖 Ver también Definición Técnica Completa' : '💡 Modo Lectura Rápida (Solo Simple + Metáfora)';
+        }
+
         function setCategoryFilter(cat, btnEl) {
             currentCatFilter = cat;
             document.querySelectorAll('.glossary-filter-pill').forEach(b => b.classList.remove('active'));

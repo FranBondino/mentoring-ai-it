@@ -804,9 +804,12 @@
             <div class="instructor-card">
                 <h3>
                     <i class="icon-sm" data-lucide="terminal"></i>
-                    Co-Mentoring Tip
+                    Guía Rápida en Simple
                 </h3>
-                <p>Completá esta planilla pensando como un Product Manager senior que negocia con ingenieros y defiende la calidad técnica y la gobernanza del producto.</p>
+                <p style="margin-bottom: 0.75rem;">Como PM no programás el bot, sino que dejás por escrito las reglas para que no invente respuestas ni filtre datos privados. ¿Querés ver cómo queda terminado?</p>
+                <button type="button" class="btn-primary" onclick="fillIdealPrdExample()" style="width: 100%; justify-content: center; font-size: 0.78rem; padding: 0.55rem 0.75rem;">
+                    ✨ Cargar Ejemplo Completo
+                </button>
             </div>
         </aside>
 
@@ -818,7 +821,14 @@
             <div class="section-panel active" id="sec-0">
                 <div class="section-header">
                     <h2><i data-lucide="compass" style="color: var(--color-blue);"></i> 1. Visión del Producto & Fuentes de Datos</h2>
-                    <p>Definí cuál es el problema que viene a resolver el asistente corporativo y con qué documentos indexados operará en su base de conocimiento.</p>
+                    <p>Definí qué problema real resuelve el Bot y qué documentos oficiales (PDFs, glosarios, manuales) va a poder consultar.</p>
+                </div>
+
+                <div class="info-box" style="margin-bottom: 1.2rem; border-left: 4px solid var(--color-blue);">
+                    <i data-lucide="lightbulb" style="color: var(--color-blue);"></i>
+                    <div>
+                        <strong>💡 En palabras simples:</strong> Acá le explicamos al equipo técnico <strong>para qué hacemos el Bot</strong> (ahorrar horas buscando reglas dispersas) y <strong>cuál es su única fuente de verdad (Ground Truth)</strong> para que no use datos de internet.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -859,8 +869,15 @@
             <!-- SECTION 2: INGESTION & CHUNKS -->
             <div class="section-panel" id="sec-1">
                 <div class="section-header">
-                    <h2><i data-lucide="database" style="color: var(--color-purple);"></i> 2. Estrategia de Ingestión y Chunking</h2>
-                    <p>Determiná cómo segmentará el sistema los manuales para guardarlos en la base de datos vectorial sin perder contexto.</p>
+                    <h2><i data-lucide="database" style="color: var(--color-purple);"></i> 2. Cómo Cortar y Guardar los Manuales (Chunking &amp; Overlap)</h2>
+                    <p>Definí cómo vamos a dividir los PDFs largos en fichas pequeñas antes de guardarlos en la biblioteca (Base Vectorial).</p>
+                </div>
+
+                <div class="info-box" style="margin-bottom: 1.2rem; border-left: 4px solid var(--color-purple);">
+                    <i data-lucide="lightbulb" style="color: var(--color-purple);"></i>
+                    <div>
+                        <strong>💡 En palabras simples:</strong> No podemos meter un libro de 300 páginas entero en cada pregunta. Lo cortamos en fichas de ~1 párrafo (<strong>Chunk Size</strong>) respetando los puntos aparte (<strong>Recursive Chunking</strong>) y repetimos el último <strong>15% (Overlap)</strong> en la ficha siguiente como un puente para no partir ninguna regla por la mitad.
+                    </div>
                 </div>
 
                 <div class="form-row">
@@ -921,8 +938,18 @@
             <!-- SECTION 3: INFERENCIA & SLA -->
             <div class="section-panel" id="sec-2">
                 <div class="section-header">
-                    <h2><i data-lucide="sliders" style="color: var(--color-orange);"></i> 3. Inferencia, Umbrales y Enterprise SLA</h2>
-                    <p>Calibrá las variables de seguridad de la API de IA para evitar alucinaciones graves y fugas de datos confidenciales.</p>
+                    <h2><i data-lucide="sliders" style="color: var(--color-orange);"></i> 3. Freno Anti-Invento (0.75) y Privacidad de Datos (SLA)</h2>
+                    <p>Configurá el "peaje" para que el Bot diga "No sé" cuando no encuentre un dato, y el contrato de privacidad para proteger documentos confidenciales.</p>
+                </div>
+
+                <div class="info-box" style="margin-bottom: 1.2rem; border-left: 4px solid var(--color-orange);">
+                    <i data-lucide="lightbulb" style="color: var(--color-orange);"></i>
+                    <div>
+                        <strong>💡 En palabras simples:</strong>
+                        1) <strong>Umbral 0.75:</strong> Es la nota mínima (de 0 a 1) que debe tener el párrafo encontrado; si da menos, el Bot no inventa.<br>
+                        2) <strong>Enterprise SLA (Zero-Retention):</strong> Contrato privado que prohíbe al proveedor guardar tus documentos o usarlos para entrenar su IA pública.<br>
+                        3) <strong>Filtros de Metadatos:</strong> Etiquetas (Idioma, Año 2026) para no mezclar manuales vencidos.
+                    </div>
                 </div>
 
                 <div class="form-row">
@@ -975,8 +1002,15 @@
             <!-- SECTION 4: QA & DOD -->
             <div class="section-panel" id="sec-3">
                 <div class="section-header">
-                    <h2><i data-lucide="check-square" style="color: var(--color-green);"></i> 4. Calidad, DoD & Criterios de Aceptación</h2>
-                    <p>Definí la definición de terminado (Definition of Done) para exigirle al equipo de desarrollo antes de desplegar el bot a producción.</p>
+                    <h2><i data-lucide="check-square" style="color: var(--color-green);"></i> 4. Checklist de Calidad antes de Salir en Vivo (DoD)</h2>
+                    <p>Marcá los requisitos mínimos (Definition of Done) que el equipo técnico debe cumplir para que apruebes el lanzamiento del Bot.</p>
+                </div>
+
+                <div class="info-box" style="margin-bottom: 1.2rem; border-left: 4px solid var(--color-green);">
+                    <i data-lucide="lightbulb" style="color: var(--color-green);"></i>
+                    <div>
+                        <strong>💡 En palabras simples:</strong> Así como en traducción no entregás un proyecto sin pasar el control de calidad (QA), en tecnología el <strong>DoD (Definition of Done)</strong> es tu lista de chequeo para dar el "Aprobado" antes de que los usuarios usen el Bot.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -1041,8 +1075,15 @@
             <!-- SECTION 5: GOLDEN DATASET -->
             <div class="section-panel" id="sec-4">
                 <div class="section-header">
-                    <h2><i data-lucide="award" style="color: var(--color-blue);"></i> 5. Golden Dataset de Pruebas Iniciales</h2>
-                    <p>Redactá preguntas difíciles de pruebas unitarias y de integración que los ingenieros correrán para auditar la precisión del bot.</p>
+                    <h2><i data-lucide="award" style="color: var(--color-blue);"></i> 5. Examen de Prueba: Tu Golden Dataset (5 Casos)</h2>
+                    <p>Escribí 5 preguntas reales y cuál es la respuesta exacta que debería dar el Bot según tus manuales oficiales.</p>
+                </div>
+
+                <div class="info-box" style="margin-bottom: 1.2rem; border-left: 4px solid var(--color-blue);">
+                    <i data-lucide="lightbulb" style="color: var(--color-blue);"></i>
+                    <div>
+                        <strong>💡 En palabras simples:</strong> El <strong>Golden Dataset</strong> es el "examen con las respuestas correctas" que armás vos como experta. Cada vez que los programadores toquen el Bot, el sistema va a correr estas preguntas automáticamente para comprobar que sigue respondiendo bien y que no inventa.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -1501,6 +1542,34 @@ ${datasetRows}
             setTimeout(() => {
                 toast.classList.remove('active');
             }, 3000);
+        }
+
+        function fillIdealPrdExample() {
+            document.getElementById('input-problema').value = "Los Project Managers, lingüistas y analistas de producto pierden entre 2 y 3 horas diarias buscando reglas de estilo, glosarios aprobados por cliente y criterios de aceptación dispersos en decenas de PDFs y carpetas. Esto ocasiona inconsistencias en entregas y retrabajo en QA.";
+            document.getElementById('input-solucion').value = "Implementar el 'Enterprise Knowledge & Localization Bot' con arquitectura RAG (Examen a Libro Abierto): un asistente interno que busca en milisegundos los 3 párrafos exactos de los manuales vigentes (Año 2026) y responde con Temperatura 0.0 citando siempre el documento y la página exacta.";
+            document.getElementById('input-datos').value = "1. Glosarios Terminológicos Oficiales por Cliente (.csv / .tmx) — Edición 2026.\n2. Guías de Estilo de Localización y UX Copy por región (ES-LATAM, PT-BR, EN-US).\n3. Manuales Operativos de QA, SLAs de entrega y procesos de lanzamiento.";
+            document.getElementById('select-chunking').value = "recursive";
+            document.getElementById('select-size').value = "500";
+            document.getElementById('select-overlap').value = "15";
+            document.getElementById('input-chunk-just').value = "Usamos corte por párrafos (Recursive) de 500 tokens con un puente (Overlap) del 15% para que ninguna regla de traducción o condición de negocio quede cortada por la mitad entre dos fragmentos.";
+            document.getElementById('select-threshold').value = "0.75";
+            document.getElementById('select-sla').value = "enterprise";
+            document.getElementById('input-metadata').value = "idioma (ES-LATAM, PT-BR, EN-US), año_vigencia (2026), cliente, modulo_producto (Pagos, Onboarding, Checkout)";
+            document.getElementById('input-leakage').value = "Uso exclusivo de API Corporativa bajo Enterprise SLA con Zero-Data Retention (borrado inmediato sin entrenar modelos públicos) y ocultamiento automático de datos personales (PII Masking) antes de enviar cada consulta.";
+            document.getElementById('input-adicionales-dod').value = "Toda respuesta debe incluir obligatoriamente la cita al documento y página fuente, y responder en menos de 2 segundos.";
+            for (let i = 1; i <= 6; i++) {
+                const chk = document.getElementById('chk-dod-' + i);
+                if (chk) chk.checked = true;
+            }
+            document.getElementById('ds-a-2').value = "Según el Manual de Operaciones Agile (pág. 12), todo hotfix crítico requiere validación de QA funcional y lingüística en un plazo máximo de 2 horas hábiles.";
+            document.getElementById('ds-a-3').value = "Según el Protocolo de Calidad LQA 2026 (pág. 5), si el puntaje cae debajo del 95% se frena el pase a producción y se abre un ticket prioritario de corrección.";
+            document.getElementById('ds-a-4').value = "Se debe aplicar el pre-filtro obligatorio de etiquetas: idioma = ES-LATAM, año = 2026 y módulo = Pagos antes de buscar por similitud.";
+            document.getElementById('ds-a-5').value = "Como el puntaje de similitud será menor al peaje de 0.75, el Bot no inventa y responde: 'No encontré información autorizada sobre políticas salariales en los manuales técnicos vigentes.'";
+            updateChunkingPanel();
+            updateInferencePanel();
+            updateProgress();
+            compileMarkdown();
+            showToast("✨ Ejemplo ideal cargado en las 6 secciones (100% completado)");
         }
 
         window.onload = init;
