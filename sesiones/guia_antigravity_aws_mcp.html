@@ -1,965 +1,997 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Completo: Google Antigravity + Conexión con AWS vía MCP | Mentoría Anabela Hotian</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #060911;
-            --bg-card: rgba(15, 23, 42, 0.82);
-            --border-subtle: rgba(255, 255, 255, 0.1);
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --accent-green: #10b981;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --accent-orange: #f97316;
-            --accent-aws: #ff9900;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --font-display: 'Outfit', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            background-image:
-                radial-gradient(circle at 10% 10%, rgba(255, 153, 0, 0.11), transparent 35%),
-                radial-gradient(circle at 90% 18%, rgba(59, 130, 246, 0.13), transparent 40%),
-                radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.1), transparent 45%);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            line-height: 1.65;
-            min-height: 100vh;
-            padding-bottom: 5rem;
-        }
-
-        /* Sticky Top Nav */
-        .top-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(6, 9, 17, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 0.75rem 1.5rem;
-        }
-
-        .top-nav-inner {
-            max-width: 1220px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-pill {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.42rem 0.85rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            transition: all 0.2s ease;
-        }
-
-        .nav-pill:hover {
-            color: #ffffff;
-            background: rgba(59, 130, 246, 0.18);
-            border-color: rgba(59, 130, 246, 0.45);
-        }
-
-        .aws-badge {
-            font-family: var(--font-display);
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 0.4rem 0.95rem;
-            border-radius: 999px;
-            background: rgba(255, 153, 0, 0.15);
-            border: 1px solid rgba(255, 153, 0, 0.45);
-            color: #ffb84d;
-        }
-
-        .container {
-            max-width: 1220px;
-            margin: 0 auto;
-            padding: 2rem 1.25rem;
-        }
-
-        /* Quick Index Jump Bar */
-        .toc-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-            margin-top: 1.25rem;
-            padding-top: 1.1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .toc-chip {
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #e2e8f0;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 0.4rem 0.85rem;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .toc-chip:hover {
-            background: rgba(255, 153, 0, 0.16);
-            border-color: var(--accent-aws);
-            color: #ffffff;
-        }
-
-        /* Hero */
-        .hero-box {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.78));
-            border: 1px solid rgba(255, 153, 0, 0.35);
-            border-radius: 24px;
-            padding: 2.2rem;
-            margin-bottom: 2.4rem;
-            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-eyebrow {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #ffb84d;
-            background: rgba(255, 153, 0, 0.14);
-            padding: 0.3rem 0.8rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 153, 0, 0.35);
-            margin-bottom: 0.8rem;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.75rem, 3.2vw, 2.5rem);
-            font-weight: 800;
-            line-height: 1.18;
-            margin-bottom: 0.75rem;
-        }
-
-        .hero-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            max-width: 980px;
-        }
-
-        /* Plain explanation banner */
-        .plain-callout {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(59, 130, 246, 0.09));
-            border-left: 4px solid var(--accent-green);
-            border-radius: 0 14px 14px 0;
-            padding: 1.1rem 1.35rem;
-            margin: 1.2rem 0;
-            font-size: 0.94rem;
-            color: #f8fafc;
-        }
-
-        .plain-callout strong {
-            color: #6ee7b7;
-        }
-
-        /* Section Titles */
-        .section-block {
-            margin-bottom: 3rem;
-            scroll-margin-top: 80px;
-        }
-
-        .section-heading {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 0.45rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: #ffffff;
-        }
-
-        .section-sub {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-        }
-
-        /* Grids & Cards */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.15rem;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 18px;
-            padding: 1.4rem;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-        }
-
-        .card h3 {
-            font-family: var(--font-display);
-            font-size: 1.08rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        .card p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.58;
-        }
-
-        .step-badge {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0.22rem 0.65rem;
-            border-radius: 6px;
-            margin-bottom: 0.6rem;
-            text-transform: uppercase;
-        }
-
-        .badge-blue { background: rgba(59, 130, 246, 0.18); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
-        .badge-green { background: rgba(16, 185, 129, 0.18); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
-        .badge-purple { background: rgba(139, 92, 246, 0.18); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
-        .badge-aws { background: rgba(255, 153, 0, 0.18); color: #ffb84d; border: 1px solid rgba(255, 153, 0, 0.45); }
-        .badge-orange { background: rgba(249, 115, 22, 0.18); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.45); }
-
-        /* Screenshot Showcase Container */
-        .screenshot-showcase {
-            background: rgba(9, 13, 22, 0.9);
-            border: 1px solid rgba(59, 130, 246, 0.35);
-            border-radius: 20px;
-            padding: 1.35rem;
-            margin: 1.35rem 0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-        }
-
-        .screenshot-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 0.95rem;
-        }
-
-        .screenshot-title {
-            font-family: var(--font-display);
-            font-size: 1.08rem;
-            font-weight: 700;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .zoom-hint {
-            font-family: var(--font-mono);
-            font-size: 0.74rem;
-            color: #93c5fd;
-            background: rgba(59, 130, 246, 0.14);
-            border: 1px solid rgba(59, 130, 246, 0.35);
-            padding: 0.28rem 0.75rem;
-            border-radius: 999px;
-        }
-
-        .screenshot-img-wrap {
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            cursor: zoom-in;
-            transition: transform 0.25s ease, border-color 0.25s ease;
-            background: #050811;
-        }
-
-        .screenshot-img-wrap:hover {
-            transform: scale(1.008);
-            border-color: var(--accent-aws);
-        }
-
-        .screenshot-img-wrap img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .screenshot-legend {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .legend-item {
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 0.8rem 0.95rem;
-            font-size: 0.82rem;
-            line-height: 1.45;
-            color: var(--text-secondary);
-        }
-
-        .legend-item strong {
-            display: block;
-            color: #ffffff;
-            font-family: var(--font-display);
-            font-size: 0.88rem;
-            margin-bottom: 0.2rem;
-        }
-
-        /* Lightbox Modal */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(3, 6, 12, 0.92);
-            backdrop-filter: blur(12px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-        }
-
-        .lightbox-overlay.open {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 95vw;
-            max-height: 92vh;
-            position: relative;
-            text-align: center;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 84vh;
-            border-radius: 14px;
-            border: 2px solid rgba(255, 153, 0, 0.5);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -16px;
-            right: -16px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #ef4444;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            font-size: 1.3rem;
-            font-weight: 800;
-            cursor: pointer;
-        }
-
-        /* Visual USB Flow Diagram */
-        .mcp-flow {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        .mcp-node {
-            background: rgba(15, 23, 42, 0.92);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 1.1rem;
-            text-align: center;
-        }
-
-        .mcp-node-icon {
-            font-size: 1.7rem;
-            margin-bottom: 0.4rem;
-            display: block;
-        }
-
-        .mcp-node-title {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-
-        .mcp-node-desc {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.42;
-        }
-
-        /* Code Block */
-        .code-wrap {
-            background: #020617;
-            border: 1px solid rgba(255, 153, 0, 0.4);
-            border-radius: 14px;
-            padding: 1.15rem;
-            margin-top: 0.85rem;
-        }
-
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            padding-bottom: 0.7rem;
-            margin-bottom: 0.8rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-family: var(--font-mono);
-            font-size: 0.76rem;
-            color: #ffb84d;
-        }
-
-        pre {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: #e2e8f0;
-            overflow-x: auto;
-            line-height: 1.58;
-        }
-
-        .btn-copy {
-            background: rgba(255, 153, 0, 0.2);
-            border: 1px solid rgba(255, 153, 0, 0.55);
-            color: #ffffff;
-            font-family: var(--font-sans);
-            font-size: 0.76rem;
-            font-weight: 600;
-            padding: 0.4rem 0.9rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn-copy:hover {
-            background: rgba(255, 153, 0, 0.35);
-        }
-
-        /* Interactive Simulator Tabs */
-        .sim-tabs {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.65rem;
-            margin-bottom: 1rem;
-        }
-
-        .sim-tab-btn {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 0.8rem 0.9rem;
-            color: var(--text-primary);
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .sim-tab-btn:hover {
-            border-color: rgba(255, 153, 0, 0.45);
-        }
-
-        .sim-tab-btn.active {
-            background: rgba(255, 153, 0, 0.15);
-            border-color: var(--accent-aws);
-            box-shadow: 0 0 22px rgba(255, 153, 0, 0.18);
-        }
-
-        .sim-tab-num {
-            display: block;
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            color: #ffb84d;
-            text-transform: uppercase;
-            margin-bottom: 0.18rem;
-        }
-
-        .sim-tab-label {
-            font-family: var(--font-display);
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .sim-console {
-            background: rgba(2, 6, 23, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 16px;
-            padding: 1.35rem;
-        }
-
-        .prompt-bubble {
-            background: rgba(59, 130, 246, 0.14);
-            border-left: 4px solid var(--accent-blue);
-            padding: 0.9rem 1.05rem;
-            border-radius: 0 10px 10px 0;
-            margin-bottom: 0.9rem;
-            font-size: 0.9rem;
-        }
-
-        .mcp-call-pill {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.76rem;
-            background: rgba(255, 153, 0, 0.16);
-            border: 1px solid rgba(255, 153, 0, 0.45);
-            color: #ffb84d;
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            margin-bottom: 0.9rem;
-        }
-
-        .agent-response-bubble {
-            background: rgba(16, 185, 129, 0.1);
-            border-left: 4px solid var(--accent-green);
-            padding: 1rem 1.15rem;
-            border-radius: 0 10px 10px 0;
-            font-size: 0.88rem;
-            color: #f1f5f9;
-        }
-
-        /* Mapping Table */
-        .table-wrap {
-            overflow-x: auto;
-            border-radius: 14px;
-            border: 1px solid var(--border-subtle);
-            margin-top: 0.8rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-card);
-            font-size: 0.86rem;
-        }
-
-        th, td {
-            padding: 0.9rem 1.05rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        th {
-            background: rgba(15, 23, 42, 0.96);
-            font-family: var(--font-display);
-            color: #ffb84d;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        @media (max-width: 960px) {
-            .grid-2, .grid-3, .grid-4, .mcp-flow, .sim-tabs, .screenshot-legend {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual Visual Completo: Google Antigravity + AWS MCP — Anabela Hotian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #090d16;
+      --bg-card: #111827;
+      --bg-card-alt: #172033;
+      --border: rgba(148, 163, 184, 0.22);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --accent-orange: #ff9900;
+      --accent-indigo: #6366f1;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(255, 153, 0, 0.12), transparent 32%),
+        radial-gradient(circle at 88% 15%, rgba(99, 102, 241, 0.14), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.08), transparent 40%);
+      color: var(--text-primary);
+      line-height: 1.65;
+      padding-bottom: 5rem;
+    }
+
+    /* Sticky Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    .badge-aws {
+      background: rgba(255, 153, 0, 0.16);
+      color: var(--accent-orange);
+      border: 1px solid rgba(255, 153, 0, 0.45);
+      padding: 0.22rem 0.65rem;
+      border-radius: 99px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .topbar-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.42rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      transition: all 0.2s;
+    }
+    .nav-btn:hover {
+      color: #fff;
+      border-color: var(--accent-orange);
+      background: rgba(255, 153, 0, 0.12);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 0;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.96), rgba(23, 32, 51, 0.92));
+      border: 1px solid rgba(255, 153, 0, 0.35);
+      border-radius: 22px;
+      padding: 2.4rem 2.2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 3.3vw, 2.55rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0.7rem 0 1rem;
+      background: linear-gradient(90deg, #ffffff, #fed7aa, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.06rem;
+      color: var(--text-secondary);
+      max-width: 880px;
+    }
+
+    /* Quick Index Bar */
+    .toc-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 2.2rem;
+    }
+    .toc-item {
+      text-decoration: none;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      transition: all 0.2s;
+    }
+    .toc-item:hover {
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      background: rgba(255, 153, 0, 0.08);
+    }
+    .toc-item span.step-num {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-orange);
+      letter-spacing: 0.05em;
+    }
+    .toc-item strong {
+      font-size: 0.86rem;
+      color: var(--text-primary);
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 3rem 0 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      background: linear-gradient(135deg, var(--accent-orange), #ea580c);
+      color: #090d16;
+      font-weight: 900;
+      font-size: 0.95rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.4rem;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.4rem;
+    }
+    .card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card p, .card li {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+    .card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .card li { margin-bottom: 0.4rem; }
+
+    /* Plain Language Callout */
+    .plain-box {
+      background: rgba(16, 185, 129, 0.09);
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.94rem;
+      color: #d1fae5;
+    }
+    .plain-box strong { color: #34d399; }
+
+    .warn-box {
+      background: rgba(255, 153, 0, 0.09);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.94rem;
+      color: #ffedd5;
+    }
+    .warn-box strong { color: #fb923c; }
+
+    /* Comparison Table */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.95rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* Real Screenshot Showcase */
+    .screenshot-showcase {
+      background: #0b111e;
+      border: 1px solid rgba(99, 102, 241, 0.38);
+      border-radius: 18px;
+      padding: 1.35rem;
+      margin: 1.5rem 0 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .screenshot-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.95rem;
+    }
+    .screenshot-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .real-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 0.22rem 0.65rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .screenshot-hint {
+      font-size: 0.78rem;
+      color: #a5b4fc;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      padding: 0.25rem 0.7rem;
+      border-radius: 99px;
+    }
+    .screenshot-img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      cursor: zoom-in;
+      transition: transform 0.2s, border-color 0.2s;
+      background: #000;
+    }
+    .screenshot-img-wrap:hover {
+      border-color: var(--accent-orange);
+    }
+    .screenshot-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+    .legend-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem 0.95rem;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+    .legend-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    /* Step-by-step Cards */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin: 1.2rem 0;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.35rem 1.5rem;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 1.1rem;
+      align-items: start;
+    }
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 153, 0, 0.15);
+      border: 1px solid rgba(255, 153, 0, 0.45);
+      color: var(--accent-orange);
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .step-content p {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.7rem;
+    }
+
+    /* Code Blocks */
+    .code-wrap {
+      background: #070a12;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 0.65rem;
+    }
+    .code-bar {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.45rem 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'Fira Code', monospace;
+    }
+    .copy-btn {
+      background: rgba(99, 102, 241, 0.2);
+      color: #c7d2fe;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      border-radius: 6px;
+      padding: 0.22rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .copy-btn:hover {
+      background: var(--accent-indigo);
+      color: #fff;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.83rem;
+      line-height: 1.55;
+      color: #e2e8f0;
+    }
+
+    /* Interactive Simulator */
+    .sim-box {
+      background: linear-gradient(145deg, #111827, #0f172a);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .sim-tabs {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+    }
+    .sim-tab {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.55rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sim-tab.active, .sim-tab:hover {
+      background: rgba(255, 153, 0, 0.16);
+      border-color: var(--accent-orange);
+      color: #fff;
+    }
+    .sim-screen {
+      background: #070a12;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .sim-prompt {
+      background: rgba(99, 102, 241, 0.14);
+      border-left: 4px solid var(--accent-indigo);
+      padding: 0.85rem 1rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 0.9rem;
+      font-size: 0.92rem;
+      color: #e0e7ff;
+    }
+    .sim-mcp-call {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px dashed rgba(16, 185, 129, 0.35);
+      padding: 0.55rem 0.85rem;
+      border-radius: 8px;
+      margin-bottom: 0.9rem;
+    }
+    .sim-response {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    /* Lightbox Modal for Screenshots */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 8, 15, 0.92);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 92vh;
+      border-radius: 12px;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.85);
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 1.5rem 1.2rem; }
+      .step-card { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <!-- TOP NAVIGATION -->
-    <nav class="top-nav" aria-label="Navegación Manual Antigravity + AWS MCP">
-        <div class="top-nav-inner">
-            <div class="nav-links">
-                <a href="../index.html" class="nav-pill">⬅ Portal Principal</a>
-                <a href="./slides_sesion_2.html" class="nav-pill">🖥️ Slides S2</a>
-                <a href="./actividad_practica_sesion_2.html" class="nav-pill">⚡ Simulador S2</a>
-                <a href="./mock_prd_tarea_sesion_2.html" class="nav-pill">🛠️ App Mock PRD</a>
-                <a href="./glosario_completo_sesion_2.html" class="nav-pill">📖 Glosario S2</a>
-            </div>
-            <div class="aws-badge">☁️ Manual Visual Paso a Paso: Antigravity + AWS (vía MCP)</div>
+
+  <!-- TOPBAR -->
+  <nav class="topbar">
+    <div class="topbar-left">
+      <span>🚀 Manual Visual: Google Antigravity + AWS MCP</span>
+      <span class="badge-aws">Capturas Reales Oficiales</span>
+    </div>
+    <div class="topbar-links">
+      <a href="../index.html" class="nav-btn">🏠 Hub Principal</a>
+      <a href="slides_sesion_2.html" class="nav-btn">📊 Slides Sesión 2</a>
+      <a href="glosario_completo_sesion_2.html" class="nav-btn">📖 Glosario S2</a>
+      <a href="actividad_practica_sesion_2.html" class="nav-btn">🧪 Simulador S2</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <header class="hero">
+      <span class="badge-aws">Guía Práctica con Capturas Reales de la App — Para Anabela Hotian</span>
+      <h1>¿Qué es Google Antigravity, Cómo Usar su Interfaz Real y Cómo Conectarlo con AWS vía MCP?</h1>
+      <p>
+        Esta guía está diseñada paso a paso y con <strong>capturas reales de la aplicación Google Antigravity</strong> para que entiendas desde cero qué es, qué hace cada botón de la pantalla, cómo pedirle que arme tus documentos de producto (PRDs, tablas de evaluación, prototipos) y cómo conectarlo con tu cuenta y documentación de <strong>Amazon Web Services (AWS)</strong> mediante <strong>MCP</strong> para acelerar tu curso.
+      </p>
+    </header>
+
+    <!-- INDICE RAPIDO -->
+    <div class="toc-bar">
+      <a href="#sec-1" class="toc-item">
+        <span class="step-num">Paso 1</span>
+        <strong>¿Qué es Antigravity? (App vs IDE)</strong>
+      </a>
+      <a href="#sec-2" class="toc-item">
+        <span class="step-num">Paso 2</span>
+        <strong>Pantalla Principal y Panel Overview</strong>
+      </a>
+      <a href="#sec-3" class="toc-item">
+        <span class="step-num">Paso 3</span>
+        <strong>Barra de Mensajes: @, / y Permisos</strong>
+      </a>
+      <a href="#sec-4" class="toc-item">
+        <span class="step-num">Paso 4</span>
+        <strong>Revisión de Cambios, PDFs y Browser</strong>
+      </a>
+      <a href="#sec-5" class="toc-item">
+        <span class="step-num">Paso 5</span>
+        <strong>Conectar AWS vía MCP (Paso a Paso)</strong>
+      </a>
+      <a href="#sec-6" class="toc-item">
+        <span class="step-num">Paso 6</span>
+        <strong>Simulador AWS + Tabla Sesión 2</strong>
+      </a>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 1: QUÉ ES GOOGLE ANTIGRAVITY                              -->
+    <!-- ================================================================= -->
+    <div id="sec-1" class="section-header">
+      <span class="section-num">1</span>
+      <h2>¿Qué es exactamente Google Antigravity y cómo se descarga?</h2>
+    </div>
+
+    <div class="plain-box">
+      <strong>💡 En palabras simples:</strong> Cuando usás ChatGPT o Claude en el navegador web, la IA está "encerrada en una pestaña": vos tenés que copiar y pegar tus documentos uno por uno. <strong>Google Antigravity</strong> es un centro de comando de escritorio donde el agente de IA trabaja directamente sobre tu carpeta de proyecto: lee tus PDFs y glosarios, propone un plan de trabajo (<code>Implementation Plan</code>), crea o edita archivos por vos, abre un navegador integrado para mostrarte prototipos y se conecta a servicios externos como <strong>AWS, Google Docs, Notion o Canva</strong>.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>🖥️ 1. Antigravity App (Aplicación de Escritorio)</h3>
+        <p>Es la interfaz principal recomendada para Product Managers (se descarga desde <code>antigravity.google/download</code> para Windows o Mac). La pantalla está centrada en tu conversación con el Agente a la izquierda y un <strong>Side Panel / Overview Panel</strong> a la derecha donde se abren tus planes, archivos, PDFs y vistas previas web.</p>
+      </div>
+      <div class="card">
+        <h3>💻 2. Antigravity IDE (Editor de Código + Agente)</h3>
+        <p>Es la versión integrada en un editor estilo Visual Studio Code. Tiene el código a la izquierda y el panel lateral del Agente a la derecha (se abre con <code>Ctrl + L</code>). Ambas versiones comparten exactamente los mismos plugins, reglas y servidores MCP.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>ChatGPT / Claude Web</th>
+            <th>Google Antigravity (App / IDE)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lectura de tus archivos</strong></td>
+            <td>Tenés que subir o copiar/pegar cada archivo manualmente en el chat.</td>
+            <td>Escribís <code>@nombre-archivo</code> en el chat y Antigravity lee tus glosarios, PRDs, PDFs o carpetas directamente.</td>
+          </tr>
+          <tr>
+            <td><strong>Planificación antes de actuar</strong></td>
+            <td>Te tira una respuesta larga de texto de una sola vez.</td>
+            <td>Genera un <strong>Artifact <code>Implementation Plan</code></strong> interactivo para que lo revises y apruebes antes de modificar archivos.</td>
+          </tr>
+          <tr>
+            <td><strong>Revisión de cambios</strong></td>
+            <td>No edita tus archivos locales.</td>
+            <td>Tiene un panel <strong><code>Review</code></strong> que te muestra en color verde cada línea agregada antes de guardar o confirmar.</td>
+          </tr>
+          <tr>
+            <td><strong>Conexión con AWS y herramientas</strong></td>
+            <td>No puede ver tu cuenta de AWS ni leer tus recursos reales.</td>
+            <td>Se conecta por <strong>MCP (Model Context Protocol)</strong> a la documentación oficial de AWS, a tu Cost Explorer y a Bedrock.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 2: RECORRIDO POR LA INTERFAZ REAL                         -->
+    <!-- ================================================================= -->
+    <div id="sec-2" class="section-header">
+      <span class="section-num">2</span>
+      <h2>Recorrido Visual por la Pantalla Real de Antigravity App</h2>
+    </div>
+
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      Mirá esta captura real de una conversación de trabajo en <strong>Google Antigravity App</strong> (podés hacer clic sobre cualquier imagen para ampliarla en pantalla completa):
+    </p>
+
+    <!-- REAL SCREENSHOT 1: OVERVIEW PANEL & CONVERSATION -->
+    <div class="screenshot-showcase">
+      <div class="screenshot-header">
+        <div class="screenshot-title">
+          <span>📸 Captura Real 1: Conversación con Planificación (Artifacts) y Panel Overview</span>
+          <span class="real-badge">App Real Antigravity</span>
         </div>
-    </nav>
+        <span class="screenshot-hint">🔍 Hacé clic en la imagen para hacer zoom</span>
+      </div>
+      <div class="screenshot-img-wrap" onclick="openLightbox('img/real/overview-panel.png')">
+        <img src="img/real/overview-panel.png" alt="Captura real de Google Antigravity App mostrando conversación, Implementation Plan, Walkthrough y Overview Panel" />
+      </div>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <strong>1. Tu Pedido con Modo <code>plan</code> (Arriba al centro)</strong>
+          Le pedís al agente lo que necesitás. El agente analiza los archivos de tu carpeta y las reglas de estilo antes de tocar nada.
+        </div>
+        <div class="legend-item">
+          <strong>2. Artifact: <code>Implementation Plan</code> (Centro)</strong>
+          El agente te entrega una tarjeta con el plan de implementación y te dice: <em>"Please review the plan and let me know if you'd like to proceed"</em>. Cuando lo aprobás, aparece <code>✓ Proceeded with Implementation Plan</code>.
+        </div>
+        <div class="legend-item">
+          <strong>3. Artifact: <code>Walkthrough</code> y Resumen de Cambios (Abajo)</strong>
+          Al terminar, genera un documento <code>Walkthrough</code> explicando todo lo que hizo y muestra <code>2 files changed +24 -0</code> con el botón <strong><code>Review</code></strong>.
+        </div>
+        <div class="legend-item">
+          <strong>4. Panel <code>Overview</code> (Arriba a la derecha)</strong>
+          Se abre con el botón de arriba a la derecha (o <code>Ctrl + Alt + O</code>). Te da acceso en 1 clic a <strong><code>Review</code></strong>, <strong><code>Files</code></strong>, <strong><code>Terminal</code></strong>, <strong><code>Extensions</code></strong> y a todos los <strong><code>Artifacts</code></strong> creados.
+        </div>
+      </div>
+    </div>
 
-    <div class="container">
-        <!-- HERO -->
-        <header class="hero-box">
-            <span class="hero-eyebrow">Manual Visual Paso a Paso · Creado para Anabela Hotian</span>
-            <h1 class="hero-title">Qué es Google Antigravity, Cómo Usarlo desde Cero y Cómo Conectarlo con tu Curso de AWS vía MCP</h1>
-            <p class="hero-subtitle">
-                En esta guía completa vas a entender con <strong>contexto real y capturas de pantalla</strong> qué es <strong>Google Antigravity</strong>, cómo es cada parte de su pantalla, cómo te permite trabajar 10 veces más rápido como IT Product/Project Manager sin saber programar, y cómo enchufarlo a <strong>Amazon Web Services (AWS)</strong> para potenciar tu curso.
-            </p>
+    <!-- REAL SCREENSHOT 2: SIDE PANEL SPLIT VIEW -->
+    <div class="screenshot-showcase">
+      <div class="screenshot-header">
+        <div class="screenshot-title">
+          <span>📸 Captura Real 2: Vista Dividida con el Panel Lateral (Side Panel)</span>
+          <span class="real-badge">App Real Antigravity</span>
+        </div>
+        <span class="screenshot-hint">🔍 Hacé clic en la imagen para hacer zoom</span>
+      </div>
+      <div class="screenshot-img-wrap" onclick="openLightbox('img/real/side-panel-new-tab.png')">
+        <img src="img/real/side-panel-new-tab.png" alt="Captura real de Google Antigravity App con el Side Panel abierto a la derecha" />
+      </div>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <strong>Izquierda: Tu Conversación con el Agente</strong>
+          Seguís chateando normalmente con el agente sin perder el hilo de lo que le pediste.
+        </div>
+        <div class="legend-item">
+          <strong>Derecha: Pestañas del Side Panel (<code>Walkthrough</code>, archivos, <code>+</code>)</strong>
+          Al hacer clic en el botón <code>+</code> del panel derecho, podés abrir en paralelo tus documentos (<code>Open File</code>), la revisión de cambios (<code>Review</code>), el navegador integrado (<code>Browser</code>) o los <code>Artifacts</code>.
+        </div>
+      </div>
+    </div>
 
-            <div class="plain-callout">
-                <strong>💡 Resumen en palabras simples antes de empezar:</strong><br>
-                • Cuando usás <strong>ChatGPT o Claude en la web</strong>, estás chateando con alguien "afuera" de tu computadora: tenés que copiar y pegar textos a mano, y la IA no puede crear archivos en tu carpeta ni ver tus proyectos.<br>
-                • <strong>Google Antigravity</strong> (creado por el equipo de Google DeepMind) es un <strong>Espacio de Trabajo con IA Agéntica (Agent-First IDE)</strong>: vos abrís una carpeta de tu computadora, le hablás en español en el panel derecho, y el agente <strong>crea documentos (PRDs, glosarios, planillas), arma páginas web interactivas, revisa archivos técnicos y se conecta con servicios reales como AWS</strong>.
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 3: BARRA DE MENSAJES, @ MENTIONS Y PERMISOS               -->
+    <!-- ================================================================= -->
+    <div id="sec-3" class="section-header">
+      <span class="section-num">3</span>
+      <h2>Cómo Usar la Barra de Mensajes: Menciones (<code>@</code>), Acciones (<code>/</code>) y Permisos</h2>
+    </div>
+
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      En la parte inferior de Antigravity siempre vas a ver la caja que dice <strong><code>Ask anything, @ to mention, / for actions</code></strong>. Estas dos capturas reales muestran todo lo que podés controlar desde ahí:
+    </p>
+
+    <div class="grid-2">
+      <!-- REAL SCREENSHOT 3A: @ MENTION MENU -->
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title">
+            <span>📸 Captura Real 3: Menú <code>@</code> para mencionar archivos y reglas</span>
+          </div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/app-mention-menu.png')">
+          <img src="img/real/app-mention-menu.png" alt="Menú real de @ mentions en Antigravity App" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.9rem;">
+          <strong>¿Para qué sirve escribir <code>@</code>?</strong>
+          En lugar de copiar y pegar el texto de un documento, escribís <code>@</code> seguido de parte del nombre (por ejemplo, <code>@glosario</code> o <code>@prd</code>). Antigravity te muestra tus <strong>Archivos (<code>Files</code>)</strong>, <strong>Reglas (<code>Rules</code>)</strong> y <strong>Plugins</strong> para que el agente lea el archivo exacto. También ves arriba el selector de carpeta (<code>📁</code>) y abajo a la izquierda el selector de modelo (<code>Gemini Pro</code>, <code>Claude</code>, etc.).
+        </div>
+      </div>
+
+      <!-- REAL SCREENSHOT 3B: PERMISSIONS PICKER -->
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title">
+            <span>📸 Captura Real 4: Selector de Nivel de Permisos y Seguridad</span>
+          </div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/permissions-composer-picker.png')">
+          <img src="img/real/permissions-composer-picker.png" alt="Selector real de permisos en Antigravity App" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.9rem;">
+          <strong>¿Qué modo de permiso elegir abajo a la derecha (🔒 <code>Default</code>)?</strong>
+          <ul style="padding-left: 1.1rem; margin-top: 0.35rem;">
+            <li><strong>👁️ <code>Request Review</code>:</strong> Te pide permiso antes de ejecutar cualquier comando.</li>
+            <li><strong>🔒 <code>Default</code> (Recomendado):</strong> Trabaja fluido con tus documentos pero te pide confirmación antes de cualquier operación sensible o herramienta externa (como MCP).</li>
+            <li><strong>🛡️ <code>Auto</code> / <code>Turbo</code>:</strong> Ejecuta comandos automáticamente sin pausar.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top: 1.4rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Atajo con Barra (<code>/</code>)</th>
+            <th>Cuándo escribirlo en la caja de mensaje</th>
+            <th>Ejemplo real para tu trabajo de PM o tu curso de AWS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/plan</code></td>
+            <td>Cuando querés que arme primero un <strong>plan paso a paso</strong> antes de modificar nada.</td>
+            <td><code>/plan Armame la estructura del PRD para el Bot de Glosarios usando arquitectura RAG en AWS Bedrock.</code></td>
+          </tr>
+          <tr>
+            <td><code>/grill-me</code></td>
+            <td>Cuando tenés una idea a medias y querés que Antigravity te haga preguntas clave de Producto para cerrar huecos.</td>
+            <td><code>/grill-me Quiero presentar este proyecto en mi trabajo pero no sé qué preguntas técnicas me van a hacer los ingenieros.</code></td>
+          </tr>
+          <tr>
+            <td><code>/browser</code></td>
+            <td>Cuando querés que abra el navegador integrado para probar una pantalla web o buscar documentación.</td>
+            <td><code>/browser Abrí el simulador de RAG y verificá cómo queda la pantalla.</code></td>
+          </tr>
+          <tr>
+            <td><code>/plugin</code> o <code>/mcp</code></td>
+            <td>En la versión de terminal (CLI) abre el administrador interactivo de Plugins y servidores MCP.</td>
+            <td><code>/mcp</code> para ver qué servidores están activos o recargarlos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 4: REVISIÓN DE CAMBIOS, LECTOR DE PDF Y BROWSER           -->
+    <!-- ================================================================= -->
+    <div id="sec-4" class="section-header">
+      <span class="section-num">4</span>
+      <h2>Cómo Revisar lo que Hace el Agente: Panel Review, Lector PDF y Navegador Integrado</h2>
+    </div>
+
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      Como Product Manager, no necesitás usar herramientas de programadores para ver qué modificó el agente, leer un PDF de tu curso de AWS o probar un prototipo visual. Todo se abre en pestañas dentro del mismo Antigravity:
+    </p>
+
+    <div class="grid-3">
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 5: Panel <code>Review</code></span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/review-changes-app-pane.png')">
+          <img src="img/real/review-changes-app-pane.png" alt="Panel Review real de Antigravity" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.8rem;">
+          <strong>Control total de cambios</strong>
+          Al hacer clic en <code>Review</code>, ves resaltado en verde todo lo que el agente agregó en tus archivos y podés guardarlo con el botón azul <strong><code>Commit</code></strong>.
+        </div>
+      </div>
+
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 6: Lector de PDFs</span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/pdf-viewer.png')">
+          <img src="img/real/pdf-viewer.png" alt="Lector de PDF real integrado en Antigravity" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.8rem;">
+          <strong>Tus guías de AWS y glosarios adentro</strong>
+          Podés abrir cualquier PDF (apuntes de AWS, manuales o glosarios) en una pestaña al lado del chat y pedirle a Antigravity que lo resuma o lo convierta en un quiz.
+        </div>
+      </div>
+
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 7: Navegador Integrado</span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/built-in-browser.png')">
+          <img src="img/real/built-in-browser.png" alt="Navegador web integrado real en Antigravity" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.8rem;">
+          <strong>Prototipos interactivos en vivo</strong>
+          Si le pedís a Antigravity que arme un prototipo o maqueta funcional para mostrarle a tu equipo, lo abre al instante en el navegador integrado a la derecha.
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 5: QUÉ ES MCP Y CÓMO CONECTAR AWS PASO A PASO             -->
+    <!-- ================================================================= -->
+    <div id="sec-5" class="section-header">
+      <span class="section-num">5</span>
+      <h2>¿Qué es MCP y Cómo Conectar Antigravity con AWS Paso a Paso?</h2>
+    </div>
+
+    <div class="plain-box">
+      <strong>🔌 ¿Qué significa MCP (Model Context Protocol)?</strong> Imaginalo como el <strong>adaptador USB universal de la Inteligencia Artificial</strong>. Sin MCP, Antigravity solo ve los archivos de tu computadora. Cuando le enchufás un <strong>Servidor MCP de AWS</strong>, Antigravity gana acceso directo y seguro para buscar en la documentación oficial de AWS en tiempo real, revisar tu cuenta de práctica para que no te cobren nada fuera del Free Tier, o consultar bases de conocimiento en Amazon Bedrock.
+    </div>
+
+    <h3 style="margin: 1.5rem 0 0.8rem; color: #fff;">Dónde están los Plugins y Servidores MCP en la App Real de Antigravity</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      Mirá estas capturas reales del menú <strong><code>Customizations</code></strong> de Google Antigravity App y del panel lateral de <strong>Antigravity IDE</strong>:
+    </p>
+
+    <div class="grid-2">
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 8: Menú <code>Customizations</code> y Marketplace</span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/marketplace-plugins.png')">
+          <img src="img/real/marketplace-plugins.png" alt="Menú Customizations y Marketplace real en Antigravity App" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.85rem;">
+          <strong>En la barra izquierda hacés clic en <code>Customizations</code></strong>
+          En la pestaña <strong><code>Marketplace</code></strong> podés instalar con un clic (botón <code>+ Add</code>) integraciones listas para usar como Google Docs, Google Sheets, Google Drive, Notion, Canva o Firebase.
+        </div>
+      </div>
+
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 9: Pestaña <code>Installed</code> y Sección <code>MCP Servers</code></span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/installed-plugins.png')">
+          <img src="img/real/installed-plugins.png" alt="Pestaña Installed en Customizations de Antigravity App" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.85rem;">
+          <strong>Pestaña <code>Installed</code> (Arriba a la derecha de Customizations)</strong>
+          Aquí ves tus Plugins instalados, tus <code>Skills &amp; Rules</code> y, al bajar por la página, la sección <strong><code>MCP Servers</code></strong> donde agregás o configurás tus servidores de AWS.
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL SCREENSHOT 10: MCP SERVERS HEADER + IDE VIEW -->
+    <div class="grid-2" style="margin-top: 1.2rem;">
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 10: Sección <code>MCP Servers</code> en Antigravity App</span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/mcp-oauth-authenticated.png')">
+          <img src="img/real/mcp-oauth-authenticated.png" alt="Sección real MCP Servers con punto verde y botones Copy Config File Path y Add" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.85rem;">
+          <strong>Los 2 botones clave arriba a la derecha de <code>MCP Servers</code>:</strong>
+          <ul style="padding-left: 1.1rem; margin-top: 0.35rem;">
+            <li><strong>Ícono de Copiar (al lado del <code>+</code>):</strong> Es <code>Copy Config File Path</code> (copia la ruta exacta de tu archivo <code>mcp_config.json</code> para que pegues los servidores de AWS).</li>
+            <li><strong>Botón <code>+</code> (Add MCP Server):</strong> Abre el buscador de servidores MCP integrados.</li>
+            <li><strong>Punto Verde (<code>●</code>):</strong> Indica que el servidor MCP ya está conectado y con sus herramientas habilitadas (<code>tools enabled</code>).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="screenshot-showcase" style="margin: 0;">
+        <div class="screenshot-header">
+          <div class="screenshot-title"><span>📸 Captura Real 11: Si usás Antigravity IDE (Menú <code>⋮</code>)</span></div>
+        </div>
+        <div class="screenshot-img-wrap" onclick="openLightbox('img/real/editor-open-agent-manager.png')">
+          <img src="img/real/editor-open-agent-manager.png" alt="Interfaz real de Antigravity IDE mostrando el botón de tres puntos arriba a la derecha del panel del agente" />
+        </div>
+        <div class="legend-item" style="margin-top: 0.85rem;">
+          <strong>¿Dónde está MCP si abrís Antigravity IDE?</strong>
+          Mirando arriba a la derecha del panel del Agente (al lado del símbolo <code>+</code>), hacés clic en los tres puntitos <strong><code>⋮</code> (More actions)</strong> → elegís <strong><code>MCP Servers</code></strong> → <strong><code>Manage MCP Servers</code></strong> → <strong><code>View raw config</code></strong>. Eso te abre el archivo <code>mcp_config.json</code> directamente en el editor.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASO A PASO DE INSTALACIÓN AWS MCP -->
+    <h3 style="margin: 2rem 0 0.9rem; color: #fff;">Tutorial Paso a Paso: Cómo Conectar los Servidores Oficiales de AWS (<code>awslabs</code>)</h3>
+
+    <div class="step-list">
+      <!-- PASO 1 -->
+      <div class="step-card">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h3>Instalar <code>uv</code> (El lanzador oficial que usa AWS para sus servidores MCP)</h3>
+          <p>
+            Los servidores MCP oficiales creados por Amazon (<code>awslabs</code>) se descargan y ejecutan automáticamente mediante una herramienta liviana llamada <code>uv</code>. Solo tenés que instalarla <strong>una única vez</strong> abriendo la Terminal de Antigravity (o PowerShell en Windows) y pegando este comando:
+          </p>
+          <div class="code-wrap">
+            <div class="code-bar">
+              <span>PowerShell (Windows) — Instalar uv</span>
+              <button class="copy-btn" onclick="copyCode(this, 'winget install --id=astral-sh.uv -e')">Copiar comando</button>
             </div>
+            <pre>winget install --id=astral-sh.uv -e</pre>
+          </div>
+        </div>
+      </div>
 
-            <!-- ÍNDICE NAVEGABLE -->
-            <div class="toc-bar">
-                <a href="#sec-que-es" class="toc-chip">1. ¿Qué es Antigravity y en qué se diferencia de ChatGPT?</a>
-                <a href="#sec-interfaz" class="toc-chip">2. Captura 1: Las 4 Zonas de la Pantalla</a>
-                <a href="#sec-flujo" class="toc-chip">3. Captura 2: Cómo pedirle tareas (/plan y Artifacts)</a>
-                <a href="#sec-mcp" class="toc-chip">4. Captura 3: ¿Qué es MCP y cómo enchufar AWS?</a>
-                <a href="#sec-aws-vivo" class="toc-chip">5. Captura 4: Antigravity + Curso de AWS en Vivo</a>
-                <a href="#sec-diccionario" class="toc-chip">6. Tabla Puente: Sesión 2 (RAG) ↔ Servicios AWS</a>
+      <!-- PASO 2 -->
+      <div class="step-card">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h3>(Opcional) Conectar tu cuenta de estudio de AWS en modo 100% Lectura Segura</h3>
+          <p>
+            Si solo querés usar el <strong>MCP de Documentación Oficial de AWS</strong> para estudiar para tu curso, <strong>ni siquiera necesitás conectar tu cuenta de AWS</strong> (podés saltar directo al Paso 3).<br>
+            Si además querés que Antigravity audite tu cuenta de práctica (para revisar tus buckets S3 o vigilar que tu gasto siga en <code>$0.00</code> dentro del Free Tier), creá en la consola de AWS un usuario IAM con el permiso <strong><code>ReadOnlyAccess</code></strong> (así es imposible crear recursos pagos o borrar algo por error) y cargalo en tu terminal con:
+          </p>
+          <div class="code-wrap">
+            <div class="code-bar">
+              <span>Terminal — Configurar credenciales de lectura de AWS</span>
+              <button class="copy-btn" onclick="copyCode(this, 'aws configure')">Copiar comando</button>
             </div>
-        </header>
+            <pre>aws configure
+# AWS Access Key ID: [Pegás tu Access Key de lectura]
+# AWS Secret Access Key: [Pegás tu Secret Key]
+# Default region name: us-east-1
+# Default output format: json</pre>
+          </div>
+        </div>
+      </div>
 
-        <!-- ==================== SECCIÓN 1: QUÉ ES GOOGLE ANTIGRAVITY (CONTEXTO COMPLETO) ==================== -->
-        <section class="section-block" id="sec-que-es">
-            <h2 class="section-heading">🧠 1. ¿Qué es exactamente Google Antigravity y por qué lo usan los equipos de Producto e Ingeniería?</h2>
-            <p class="section-sub">
-                Aunque nació como una evolución de los editores de código, hoy es la herramienta central de Product Managers técnicos, analistas y arquitectos Cloud porque convierte instrucciones en lenguaje natural en entregables terminados.
-            </p>
-
-            <div class="table-wrap" style="margin-bottom: 1.4rem;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>💬 Chat Web Común (ChatGPT / Claude gratis)</th>
-                            <th>💻 Editor de Código Clásico (VS Code solo)</th>
-                            <th>🚀 Google Antigravity (Entorno Agéntico)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>¿Para quién está pensado?</strong></td>
-                            <td>Cualquier usuario haciendo preguntas sueltas.</td>
-                            <td>Programadores que escriben código línea por línea de memoria.</td>
-                            <td><strong>PMs, Analistas, Arquitectos y Devs</strong> que dirigen a la IA en español o inglés para crear proyectos enteros.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>¿Puede leer y crear archivos en tu carpeta?</strong></td>
-                            <td>❌ No. Tenés que copiar, pegar y descargar archivo por archivo.</td>
-                            <td>⚠️ Solo si vos los creás y escribís a mano.</td>
-                            <td>✅ <strong>Sí, automático:</strong> lee tus PDFs/CSVs y crea documentos Markdown, presentaciones HTML y prototipos en tu carpeta.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>¿Planifica antes de hacer cambios?</strong></td>
-                            <td>❌ No, escupe una respuesta larga de una sola vez.</td>
-                            <td>❌ No tiene agente autónomo nativo.</td>
-                            <td>✅ <strong>Sí (Artifacts):</strong> te muestra primero un plan (<code>implementation_plan.md</code>) con un botón <strong>Proceed</strong> para que apruebes.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>¿Se conecta con tu cuenta de AWS, Canva o GitHub?</strong></td>
-                            <td>❌ No puede ver tu infraestructura ni tus herramientas internas.</td>
-                            <td>⚠️ Requiere configurar extensiones manuales complejas.</td>
-                            <td>✅ <strong>Sí, vía MCP (Model Context Protocol):</strong> consulta la documentación y costos de AWS, crea diseños en Canva o sube cambios a GitHub.</td>
-                        </tr>
-                    </tbody>
-                </table>
+      <!-- PASO 3 -->
+      <div class="step-card">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h3>Abrir tu archivo <code>mcp_config.json</code> en Antigravity y pegar el bloque de AWS</h3>
+          <p>
+            Dependiendo de qué pantalla de Antigravity estés usando:
+          </p>
+          <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.7rem;">
+            <li><strong>En Antigravity App:</strong> Ir a <code>Customizations</code> (barra izquierda) → pestaña <code>Installed</code> → sección <code>MCP Servers</code> → clic en <code>Copy Config File Path</code> (el archivo está en <code>~/.gemini/config/mcp_config.json</code> o en <code>.agents/mcp_config.json</code> dentro de tu carpeta) y abrirlo en una pestaña.</li>
+            <li><strong>En Antigravity IDE:</strong> En el panel derecho del Agente, clic en <code>⋮</code> (arriba a la derecha) → <code>MCP Servers</code> → <code>Manage MCP Servers</code> → <code>View raw config</code>.</li>
+          </ul>
+          <p>Pegá esta configuración oficial de AWS y guardá el archivo (<code>Ctrl + S</code>):</p>
+          <div class="code-wrap">
+            <div class="code-bar">
+              <span>Archivo: mcp_config.json</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('mcp-json-code').innerText)">Copiar JSON</button>
             </div>
-
-            <div class="grid-4">
-                <div class="card">
-                    <span class="step-badge badge-blue">Para vos como PM #1</span>
-                    <h3>Crear PRDs, Historias y Golden Datasets</h3>
-                    <p>
-                        En vez de arrancar una hoja en blanco, le ponés las notas de un cliente en una carpeta y le pedís: <em>"Leé estas notas y creame el PRD con criterios de aceptación (DoD) y 20 preguntas de prueba"</em>.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-green">Para vos como PM #2</span>
-                    <h3>Armar Prototipos sin saber Programar</h3>
-                    <p>
-                        ¿Querés mostrarle a un cliente o a tu equipo cómo debería verse un buscador de glosarios o un tablero? Le pedís que arme un prototipo interactivo en HTML/React y lo abrís en el navegador en 2 minutos.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-purple">Para vos como PM #3</span>
-                    <h3>Auditar lo que hizo Ingeniería</h3>
-                    <p>
-                        Cuando los desarrolladores entregan un proyecto, abrís la carpeta en Antigravity y le preguntás: <em>"Explicame en simple cómo funciona este proyecto y verificá si configuraron el umbral de 0.75 que pedí en el PRD"</em>.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-aws">Para tu Curso de AWS #4</span>
-                    <h3>Tu Tutor y Arquitecto Cloud Personal</h3>
-                    <p>
-                        Conectado a los servidores MCP de AWS, le pedís que te explique cualquier servicio de tu curso con analogías simples, que te arme diagramas de arquitectura o que revise que tu cuenta siga en $0 (Free Tier).
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECCIÓN 2: CAPTURA 1 — ANATOMÍA DE LA PANTALLA DE ANTIGRAVITY ==================== -->
-        <section class="section-block" id="sec-interfaz">
-            <h2 class="section-heading">🖥️ 2. Conocé la Pantalla de Antigravity por Dentro (Las 4 Zonas Clave)</h2>
-            <p class="section-sub">
-                La primera vez que abrís Antigravity puede parecer un programa de ingenieros porque tiene fondo oscuro y varias columnas, pero en realidad <strong>solo necesitás ubicarte en estas 4 zonas numeradas</strong>:
-            </p>
-
-            <div class="screenshot-showcase">
-                <div class="screenshot-header">
-                    <div class="screenshot-title">
-                        <span>📸 Captura 1: Anatomía General de Google Antigravity trabajando en nuestro Bot de Glosarios</span>
-                    </div>
-                    <span class="zoom-hint">🔍 Hacé clic en la imagen para ampliarla a pantalla completa</span>
-                </div>
-                <div class="screenshot-img-wrap" onclick="openLightbox('./img/antigravity_01_interfaz_general.png')">
-                    <img src="./img/antigravity_01_interfaz_general.png" alt="Captura 1: Interfaz General de Google Antigravity con sus 4 zonas numeradas">
-                </div>
-                <div class="screenshot-legend">
-                    <div class="legend-item">
-                        <strong style="color: #fdba74;">① Tu Carpeta (Workspace) — Izquierda</strong>
-                        Es igual al explorador de archivos de Windows/Mac. Acá ves los documentos de tu proyecto (PRDs, planillas CSV, páginas HTML) y los <strong>Artifacts</strong> que el agente va creando.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #93c5fd;">② Editor Central — Medio</strong>
-                        Cuando hacés clic en cualquier archivo de la izquierda, se abre acá. Cuando Antigravity redacta o mejora un documento, te marca en <strong>color verde</strong> lo que agregó para que lo veas claro.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #6ee7b7;">③ Panel del Agente (Chat) — Derecha</strong>
-                        Tu centro de mando. Acá le escribís en español normal lo que necesitás. Ves cómo "piensa" (<em>Thought Process</em>) y qué archivos está creando o leyendo por vos.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #c4b5fd;">④ Barra de Comandos (<code>/</code>) — Abajo Derecha</strong>
-                        Donde escribís tu mensaje. Si empezás con la barra <code>/</code>, activás superpoderes como <code>/plan</code> (planificar antes de actuar), <code>/browser</code> (abrir navegador) o <code>/grill-me</code>.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECCIÓN 3: CAPTURA 2 — CÓMO USARLO PASO A PASO (PLAN & ARTIFACTS) ==================== -->
-        <section class="section-block" id="sec-flujo">
-            <h2 class="section-heading">📋 3. Cómo Trabajar con Antigravity Paso a Paso: El Modo Planificación (<code>/plan</code>) y los Artifacts</h2>
-            <p class="section-sub">
-                Lo mejor de Antigravity es que <strong>no hace cambios a ciegas</strong>. Tiene un sistema de documentos de control llamados <strong>Artifacts</strong> para que vos tengas el timón como Product Manager:
-            </p>
-
-            <div class="grid-3" style="margin-bottom: 1.2rem;">
-                <div class="card">
-                    <span class="step-badge badge-green">Artifact 1 · Antes de empezar</span>
-                    <h3><code>implementation_plan.md</code> (El Plan)</h3>
-                    <p>
-                        Cuando le pedís una tarea grande (o usás el comando <code>/plan</code>), Antigravity te escribe primero una propuesta paso a paso en español y te muestra un botón verde <strong>"Proceed" (Avanzar)</strong>. Hasta que vos no le das el OK, no modifica nada.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-blue">Artifact 2 · Mientras trabaja</span>
-                    <h3><code>task.md</code> (Tu Checklist en Vivo)</h3>
-                    <p>
-                        Es una lista de tareas donde vas viendo en tiempo real qué puntos ya terminó (<code>[x]</code>), cuál está haciendo ahora mismo (<code>[/]</code>) y cuáles faltan (<code>[ ]</code>). Ideal para no perder el hilo.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-purple">Artifact 3 · Al terminar</span>
-                    <h3><code>walkthrough.md</code> (El Resumen Final)</h3>
-                    <p>
-                        Cuando termina todas las tareas, te genera un informe ejecutivo explicándote qué archivos creó, qué pruebas hizo y los links para abrir el resultado.
-                    </p>
-                </div>
-            </div>
-
-            <div class="screenshot-showcase">
-                <div class="screenshot-header">
-                    <div class="screenshot-title">
-                        <span>📸 Captura 2: Cómo se ve cuando usás <code>/plan</code> y aprobás el Plan con el botón "Proceed"</span>
-                    </div>
-                    <span class="zoom-hint">🔍 Clic para ampliar imagen</span>
-                </div>
-                <div class="screenshot-img-wrap" onclick="openLightbox('./img/antigravity_02_flujo_plan_artifacts.png')">
-                    <img src="./img/antigravity_02_flujo_plan_artifacts.png" alt="Captura 2: Flujo de Planificación con implementation_plan.md y task.md en Antigravity">
-                </div>
-                <div class="screenshot-legend" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="legend-item">
-                        <strong style="color: #fdba74;">① Escribís <code>/plan</code> + tu objetivo</strong>
-                        Le contás qué entregable querés armar (por ejemplo: el PRD, el Golden Dataset y el diagrama de AWS).
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #6ee7b7;">② Revisás el Plan y tocás "Proceed"</strong>
-                        En el panel central leés los pasos propuestos. Si querés cambiar algo se lo decís en el chat; si te gusta, tocás <strong>Proceed</strong>.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #c4b5fd;">③ Seguís el avance en <code>task.md</code></strong>
-                        Antigravity ejecuta paso por paso y va tildando la lista automáticamente hasta entregarte todo listo.
-                    </div>
-                </div>
-            </div>
-
-            <!-- TABLA DE SLASH COMMANDS -->
-            <div class="card" style="margin-top: 1.2rem;">
-                <h3>⌨️ Los 5 Atajos con Barra (Slash Commands) que más vas a usar como PM</h3>
-                <p style="margin-bottom: 0.85rem;">Escribilos al principio de tu mensaje en el chat de Antigravity:</p>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Comando</th>
-                                <th>¿Para qué sirve en palabras simples?</th>
-                                <th>Ejemplo real para usar vos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code style="color:#6ee7b7;font-weight:700;">/plan</code></td>
-                                <td>Le pide que primero arme un plan ordenado y espere tu confirmación antes de crear o tocar archivos.</td>
-                                <td><em>"/plan Armame un prototipo web y un documento PRD para un bot de soporte en AWS."</em></td>
-                            </tr>
-                            <tr>
-                                <td><code style="color:#93c5fd;font-weight:700;">/grill-me</code></td>
-                                <td>Modo "Entrevistador / Peloteo": Antigravity te hace preguntas clave para ayudarte a detectar huecos en tu idea o practicar para una entrevista IT.</td>
-                                <td><em>"/grill-me Haceme 5 preguntas como si fueras un CTO evaluando mi diseño del Bot RAG de la Sesión 2."</em></td>
-                            </tr>
-                            <tr>
-                                <td><code style="color:#c4b5fd;font-weight:700;">/browser</code></td>
-                                <td>Abre un navegador inteligente integrado que entra a páginas web, prueba botones y verifica que el diseño se vea bien en celular y escritorio.</td>
-                                <td><em>"/browser Abrí el prototipo que acabamos de crear y verificá que no se corte nada en pantalla móvil."</em></td>
-                            </tr>
-                            <tr>
-                                <td><code style="color:#ffb84d;font-weight:700;">/boost</code></td>
-                                <td>Activa el modo de pensamiento profundo y verificación extra para proyectos complejos de investigación o arquitectura.</td>
-                                <td><em>"/boost Comparame los costos mensuales de armar nuestro RAG en AWS Bedrock vs. Azure OpenAI para 10.000 usuarios."</em></td>
-                            </tr>
-                            <tr>
-                                <td><code style="color:#fdba74;font-weight:700;">/compact</code></td>
-                                <td>Cuando venís charlando hace mucho rato, resume y limpia la memoria de la conversación (la Ventana de Contexto que vimos en la Slide 4) para que siga rápido.</td>
-                                <td><em>"/compact Resumí todo lo que avanzamos hoy para seguir con la etapa de pruebas."</em></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECCIÓN 4: CAPTURA 3 — QUÉ ES MCP Y CÓMO CONECTAR AWS PASO A PASO ==================== -->
-        <section class="section-block" id="sec-mcp">
-            <h2 class="section-heading">🔌 4. ¿Qué es MCP y Cómo Conectar Antigravity con AWS Paso a Paso?</h2>
-            <p class="section-sub">
-                Acá es donde unimos Antigravity con el <strong>curso de AWS</strong> que estás haciendo para que puedas aprender y construir el doble de rápido.
-            </p>
-
-            <div class="plain-callout">
-                <strong>💡 ¿Qué significa MCP (Model Context Protocol) en criollo?</strong><br>
-                Por sí sola, la IA no puede entrar a tu cuenta de AWS ni consultar precios actualizados en vivo. <strong>MCP es un "enchufe USB universal"</strong>: cuando conectás el <strong>Servidor MCP de AWS</strong> en Antigravity, le das permiso para buscar en la documentación oficial de Amazon en tiempo real, revisar tu factura de AWS (Cost Explorer) y consultar tus bases de datos de IA (Amazon Bedrock) directamente desde el chat en español.
-            </div>
-
-            <div class="mcp-flow" style="margin-bottom: 1.4rem;">
-                <div class="mcp-node" style="border-color: rgba(59, 130, 246, 0.45);">
-                    <span class="mcp-node-icon">👩‍💼</span>
-                    <div class="mcp-node-title">1. Tu Pedido en Español</div>
-                    <div class="mcp-node-desc">Escribís en el chat: <em>"Explicame cómo configurar S3 + Bedrock y fijate si tengo algún gasto en mi cuenta AWS"</em>.</div>
-                </div>
-                <div class="mcp-node" style="border-color: rgba(139, 92, 246, 0.45);">
-                    <span class="mcp-node-icon">🤖</span>
-                    <div class="mcp-node-title">2. Antigravity</div>
-                    <div class="mcp-node-desc">Detecta que necesita datos de AWS y activa automáticamente el conector MCP correspondiente.</div>
-                </div>
-                <div class="mcp-node" style="border-color: rgba(255, 153, 0, 0.55);">
-                    <span class="mcp-node-icon">🔌</span>
-                    <div class="mcp-node-title">3. Servidor MCP Oficial AWS</div>
-                    <div class="mcp-node-desc">Ejecuta la consulta técnica contra <code>awslabs</code> (Documentación, Cost Explorer o Bedrock) en milisegundos.</div>
-                </div>
-                <div class="mcp-node" style="border-color: rgba(16, 185, 129, 0.45);">
-                    <span class="mcp-node-icon">☁️</span>
-                    <div class="mcp-node-title">4. Respuesta Clara + Archivo</div>
-                    <div class="mcp-node-desc">Te devuelve el resumen explicado en simple, con diagramas y sin que tengas que tocar la consola de AWS.</div>
-                </div>
-            </div>
-
-            <div class="screenshot-showcase">
-                <div class="screenshot-header">
-                    <div class="screenshot-title">
-                        <span>📸 Captura 3: Dónde se configuran los Servidores MCP de AWS dentro de Antigravity</span>
-                    </div>
-                    <span class="zoom-hint">🔍 Clic para ampliar imagen</span>
-                </div>
-                <div class="screenshot-img-wrap" onclick="openLightbox('./img/antigravity_03_mcp_config_marketplace.png')">
-                    <img src="./img/antigravity_03_mcp_config_marketplace.png" alt="Captura 3: Panel de Plugins y archivo mcp_config.json con servidores AWS en Antigravity">
-                </div>
-                <div class="screenshot-legend" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="legend-item">
-                        <strong style="color: #ffb84d;">① Ícono de Enchufe (Plugins / MCP)</strong>
-                        En la barra lateral izquierda de Antigravity hacés clic en el ícono de Plugins/MCP para ver qué conectores tenés encendidos (con luz verde <code>● Activo</code>).
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #93c5fd;">② El archivo <code>mcp_config.json</code></strong>
-                        Haciendo clic en "Edit MCP Config" se abre este archivo de texto. Ahí simplemente pegás el bloque JSON que te dejamos abajo listo para copiar.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #6ee7b7;">③ Tres conectores oficiales de AWS</strong>
-                        Podés usar <code>aws-documentation</code> (100% gratis, sin siquiera poner tarjeta ni cuenta AWS) y sumar <code>aws-cost-explorer</code> y <code>aws-bedrock-rag</code> con tu cuenta de estudio.
-                    </div>
-                </div>
-            </div>
-
-            <!-- INSTRUCCIONES PASO A PASO PARA INSTALARLO -->
-            <div class="grid-3" style="margin-top: 1.3rem; margin-bottom: 1rem;">
-                <div class="card">
-                    <span class="step-badge badge-aws">Paso 1 (Única vez)</span>
-                    <h3>Instalar el lanzador <code>uv</code></h3>
-                    <p>
-                        Los conectores oficiales de AWS usan un pequeño gestor automático llamado <code>uv</code>. Abrís la terminal de Windows (PowerShell) y pegás:<br>
-                        <code style="display:block;background:#020617;padding:6px 8px;border-radius:6px;margin-top:6px;color:#ffb84d;font-size:0.75rem;">winget install --id=astral-sh.uv -e</code>
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-blue">Paso 2 (Opcional para tu cuenta)</span>
-                    <h3>Conectar tu usuario de práctica AWS</h3>
-                    <p>
-                        Para que solo lea tus servicios sin riesgo de crear gastos, en tu curso de AWS creás un usuario IAM con permiso <code>ReadOnlyAccess</code> y en la terminal corrés:<br>
-                        <code style="display:block;background:#020617;padding:6px 8px;border-radius:6px;margin-top:6px;color:#93c5fd;font-size:0.75rem;">aws configure</code>
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="step-badge badge-green">Paso 3 (En Antigravity)</span>
-                    <h3>Pegar el JSON en <code>mcp_config.json</code></h3>
-                    <p>
-                        Tocás el botón <strong>"Copiar Configuración JSON"</strong> de acá abajo, lo pegás en el archivo <code>mcp_config.json</code> de Antigravity, guardás con <code>Ctrl + S</code> ¡y listo!
-                    </p>
-                </div>
-            </div>
-
-            <div class="code-wrap">
-                <div class="code-header">
-                    <span>📄 Archivo mcp_config.json listo para copiar y pegar en Antigravity</span>
-                    <button type="button" class="btn-copy" onclick="copyAwsMcpConfig(this)">📋 Copiar Configuración JSON</button>
-                </div>
-<pre id="aws-mcp-json">{
+            <pre id="mcp-json-code">{
   "mcpServers": {
     "aws-documentation": {
       "command": "uvx",
@@ -973,223 +1005,175 @@
       "args": ["awslabs.cost-explorer-mcp-server@latest"],
       "env": {
         "AWS_PROFILE": "default",
-        "AWS_REGION": "us-east-1"
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
       }
     },
-    "aws-bedrock-rag": {
+    "aws-bedrock-kb": {
       "command": "uvx",
       "args": ["awslabs.bedrock-kb-retrieval-mcp-server@latest"],
       "env": {
         "AWS_PROFILE": "default",
-        "AWS_REGION": "us-east-1"
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
       }
     }
   }
 }</pre>
-            </div>
-        </section>
-
-        <!-- ==================== SECCIÓN 5: CAPTURA 4 + SIMULADOR EN VIVO ==================== -->
-        <section class="section-block" id="sec-aws-vivo">
-            <h2 class="section-heading">☁️ 5. Cómo se ve Antigravity + AWS MCP en Acción (Capturas y Simulador de Casos)</h2>
-            <p class="section-sub">
-                Mirá en esta captura real cómo Anabela le hace una pregunta en español sobre su cuenta de estudio y sobre la arquitectura RAG de la Sesión 2, y cómo Antigravity consulta AWS y le arma el reporte:
-            </p>
-
-            <div class="screenshot-showcase">
-                <div class="screenshot-header">
-                    <div class="screenshot-title">
-                        <span>📸 Captura 4: Antigravity consultando Cost Explorer ($0.00 Free Tier) y Documentación de AWS Bedrock RAG</span>
-                    </div>
-                    <span class="zoom-hint">🔍 Clic para ampliar imagen</span>
-                </div>
-                <div class="screenshot-img-wrap" onclick="openLightbox('./img/antigravity_04_aws_mcp_en_accion.png')">
-                    <img src="./img/antigravity_04_aws_mcp_en_accion.png" alt="Captura 4: Antigravity ejecutando herramientas MCP de AWS en vivo">
-                </div>
-                <div class="screenshot-legend" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="legend-item">
-                        <strong style="color: #93c5fd;">① Preguntás en español sin comandos raros</strong>
-                        Le pedís que chequee si tu cuenta de AWS sigue gratis ($0) y cómo se arma el Bot RAG con 15% de Overlap en AWS.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #6ee7b7;">② Llamadas automáticas a <code>call_mcp_tool</code></strong>
-                        Fijate en las cajitas verdes del chat: Antigravity invoca solo a <code>aws-cost-explorer</code> y <code>aws-documentation</code>.
-                    </div>
-                    <div class="legend-item">
-                        <strong style="color: #ffb84d;">③ Te crea el resumen listo para estudiar</strong>
-                        En el panel central te deja un documento claro con el estado de tus costos y la equivalencia exacta de los servicios de AWS.
-                    </div>
-                </div>
-            </div>
-
-            <!-- SIMULADOR DE PROMPTS PARA COPIAR Y USAR -->
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; margin: 1.6rem 0 0.5rem;">
-                ⚡ Probá estos 4 Prompts listos para usar en tu Antigravity (Hacé clic en cada caso):
-            </h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
-                Podés copiar cualquiera de estos mensajes y pegarlos en Antigravity mientras hacés los módulos de tu curso de AWS:
-            </p>
-
-            <div class="sim-tabs">
-                <button type="button" class="sim-tab-btn active" onclick="selectAwsScenario(0, this)">
-                    <span class="sim-tab-num">Caso 1 · Curso AWS</span>
-                    <span class="sim-tab-label">Entender S3, Lambda e IAM en Simple</span>
-                </button>
-                <button type="button" class="sim-tab-btn" onclick="selectAwsScenario(1, this)">
-                    <span class="sim-tab-num">Caso 2 · Sesión 2 + AWS</span>
-                    <span class="sim-tab-label">Diseñar nuestro Bot RAG en AWS Bedrock</span>
-                </button>
-                <button type="button" class="sim-tab-btn" onclick="selectAwsScenario(2, this)">
-                    <span class="sim-tab-num">Caso 3 · Cuidar tu Bolsillo</span>
-                    <span class="sim-tab-label">Auditar el Free Tier ($0) en tu Cuenta</span>
-                </button>
-                <button type="button" class="sim-tab-btn" onclick="selectAwsScenario(3, this)">
-                    <span class="sim-tab-num">Caso 4 · Portfolio PM</span>
-                    <span class="sim-tab-label">Armar PRD Técnico con Arquitectura AWS</span>
-                </button>
-            </div>
-
-            <div class="sim-console">
-                <div class="prompt-bubble" id="sim-prompt">
-                    <strong>👩‍💼 Lo que vos le escribís a Antigravity:</strong><br>
-                    <em>"Estoy viendo S3, Lambda, IAM y API Gateway en mi curso de AWS. Consultá la documentación oficial vía MCP y explicame en palabras simples cómo trabajan juntos usando una analogía de la vida diaria, y creame un resumen visual en HTML para repasar antes del examen."</em>
-                </div>
-                <div class="mcp-call-pill" id="sim-tool">
-                    🔌 Conector MCP que usa Antigravity: mcp_aws-documentation_search_documentation("S3 Lambda API Gateway IAM")
-                </div>
-                <div class="agent-response-bubble" id="sim-response">
-                    <strong>🤖 Lo que hace Antigravity por vos en segundos:</strong><br>
-                    1. Busca las definiciones oficiales actualizadas en el servidor MCP de AWS.<br>
-                    2. Te lo traduce sin tecnicismos: <strong>IAM</strong> es el guardia de seguridad en la entrada que revisa tu credencial; <strong>API Gateway</strong> es el recepcionista que recibe el pedido; <strong>AWS Lambda</strong> es el especialista que se despierta solo cuando llega una tarea, la resuelve en 1 segundo y se apaga (para no cobrarte mientras no se usa); y <strong>Amazon S3</strong> es el armario blindado donde guardás los archivos PDF.<br>
-                    3. Te guarda en tu carpeta una guía interactiva con preguntas de práctica tipo examen AWS.
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECCIÓN 6: DICCIONARIO PUENTE SESIÓN 2 ↔ CURSO DE AWS ==================== -->
-        <section class="section-block" id="sec-diccionario">
-            <h2 class="section-heading">🧭 6. Mapa Puente: Cómo se llama en AWS cada cosa que vimos en la Sesión 2 (RAG)</h2>
-            <p class="section-sub">
-                Cuando en tu curso de AWS o en una entrevista laboral hablen de Inteligencia Artificial en la nube de Amazon, vas a ver que <strong>es exactamente la misma arquitectura que aprendiste hoy</strong>, solo que con el nombre comercial de cada pieza de AWS:
-            </p>
-
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Lo que vimos hoy en la Sesión 2</th>
-                            <th>¿Qué hace en palabras simples?</th>
-                            <th>¿Cómo se llama este servicio en tu Curso de AWS?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Documentos Oficiales (Ground Truth)</strong></td>
-                            <td>El lugar seguro donde subimos los PDFs limpios, manuales de producto y glosarios 2026.</td>
-                            <td><strong style="color: #ffb84d;">Amazon S3 (Simple Storage Service)</strong> — Guardás los manuales adentro de un "Bucket S3" privado.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>LLM + Contrato Enterprise SLA (Zero-Retention)</strong></td>
-                            <td>El cerebro de IA (Claude 3.5, Llama 3, Titan) con privacidad corporativa para que tus datos nunca entrenen modelos públicos.</td>
-                            <td><strong style="color: #ffb84d;">Amazon Bedrock</strong> — Es el servicio estrella de IA de AWS; ya trae Retención Cero por defecto.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fase 1 RAG: Chunking (1000ch) + 15% Overlap + Embeddings</strong></td>
-                            <td>Cortar los PDFs en fichas con puente del 15% y convertirlos en coordenadas GPS de significado.</td>
-                            <td><strong style="color: #ffb84d;">Amazon Bedrock Knowledge Bases</strong> — Se conecta a tu Bucket S3 y hace el Chunking y los Embeddings automáticamente.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Base de Datos Vectorial + Filtros de Metadatos</strong></td>
-                            <td>La biblioteca que guarda las coordenadas y filtra por etiquetas (<code>idioma=ES-LATAM</code>, <code>año=2026</code>).</td>
-                            <td><strong style="color: #ffb84d;">Amazon OpenSearch Serverless</strong> o <strong style="color: #ffb84d;">Amazon Aurora PostgreSQL (pgvector)</strong>.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Peaje Anti-Alucinación (0.75) y Ocultar Datos (PII Masking)</strong></td>
-                            <td>Frenar respuestas cuando no hay información en el manual y tapar mails o nombres confidenciales.</td>
-                            <td><strong style="color: #ffb84d;">Amazon Bedrock Guardrails</strong> — Panel donde activás con tildes el filtro de datos personales y el bloqueo de temas fuera de manual.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Permisos de Seguridad y Quién Puede Entrar</strong></td>
-                            <td>Controlar qué usuario o sistema tiene permiso de leer los glosarios.</td>
-                            <td><strong style="color: #ffb84d;">AWS IAM (Identity and Access Management)</strong> — El sistema de usuarios, roles y políticas de AWS.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Control de Presupuesto y Facturación (FinOps)</strong></td>
-                            <td>Ver cuánto estamos gastando por día/mes y poner alarmas para no pasarnos del presupuesto.</td>
-                            <td><strong style="color: #ffb84d;">AWS Cost Explorer &amp; AWS Budgets</strong> — Lo consultás desde Antigravity usando el MCP de Cost Explorer.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </div>
-
-    <!-- LIGHTBOX MODAL FOR SCREENSHOTS -->
-    <div class="lightbox-overlay" id="lightbox-modal" onclick="closeLightbox(event)">
-        <div class="lightbox-content">
-            <button type="button" class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar">&times;</button>
-            <img id="lightbox-img" src="" alt="Captura ampliada de Google Antigravity">
+          </div>
         </div>
+      </div>
+
+      <!-- PASO 4 -->
+      <div class="step-card">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <h3>Verificar el punto verde (<code>●</code>) y empezar a preguntar en español</h3>
+          <p>
+            Al guardar el archivo, volvé a la sección <strong><code>MCP Servers</code></strong> (como vimos en la <strong>Captura Real 10</strong>) y vas a ver el punto verde <code>●</code> al lado de <code>aws-documentation</code>, <code>aws-cost-explorer</code> y <code>aws-bedrock-kb</code>. ¡Listo! Ya no tenés que tocar más configuraciones: ahora simplemente le hablás en español en el chat y Antigravity usa las herramientas de AWS cuando las necesita.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <script>
-        const AWS_SCENARIOS = [
-            {
-                prompt: '<strong>👩‍💼 Lo que vos le escribís a Antigravity:</strong><br><em>"Estoy viendo S3, Lambda, IAM y API Gateway en mi curso de AWS. Consultá la documentación oficial vía MCP y explicame en palabras simples cómo trabajan juntos usando una analogía de la vida diaria, y creame un resumen visual en HTML para repasar antes del examen."</em>',
-                tool: '🔌 Conector MCP que usa Antigravity: mcp_aws-documentation_search_documentation("S3 Lambda API Gateway IAM")',
-                response: '<strong>🤖 Lo que hace Antigravity por vos en segundos:</strong><br>1. Busca las definiciones oficiales actualizadas en el servidor MCP de AWS.<br>2. Te lo traduce sin tecnicismos: <strong>IAM</strong> es el guardia de seguridad en la entrada que revisa tu credencial; <strong>API Gateway</strong> es el recepcionista que recibe el pedido; <strong>AWS Lambda</strong> es el especialista que se despierta solo cuando llega una tarea, la resuelve en 1 segundo y se apaga (para no cobrarte mientras no se usa); y <strong>Amazon S3</strong> es el armario blindado donde guardás los archivos PDF.<br>3. Te guarda en tu carpeta una guía interactiva con preguntas de práctica tipo examen AWS.'
-            },
-            {
-                prompt: '<strong>👩‍💼 Lo que vos le escribís a Antigravity:</strong><br><em>"Quiero diseñar en AWS el Enterprise Knowledge Bot con RAG que vimos en la Sesión 2. ¿Cómo configuro en Amazon Bedrock el Chunking de 1000 caracteres con 15% de Overlap y los filtros de metadatos?"</em>',
-                tool: '🔌 Conector MCP que usa Antigravity: mcp_aws-documentation_read_documentation("bedrock/latest/userguide/knowledge-base-chunking.html")',
-                response: '<strong>🤖 Lo que hace Antigravity por vos en segundos:</strong><br>1. Consulta la guía oficial de <strong>Amazon Bedrock Knowledge Bases</strong>.<br>2. Te explica paso a paso dónde subir tus glosarios a un bucket de <strong>Amazon S3</strong> junto con sus etiquetas (<code>idioma: ES-LATAM</code> y <code>año: 2026</code>).<br>3. Te muestra dónde elegir en la pantalla de Bedrock el corte de 1.000 caracteres con <code>15% de Overlap</code> y cómo activar <strong>Bedrock Guardrails</strong> para que el bot nunca invente respuestas.'
-            },
-            {
-                prompt: '<strong>👩‍💼 Lo que vos le escribís a Antigravity:</strong><br><em>"Ayer hice ejercicios prácticos en mi cuenta de AWS para el curso. Revisá con el MCP de Cost Explorer si dejé algún servicio prendido que me pueda cobrar dólares o si sigo 100% dentro del Free Tier."</em>',
-                tool: '🔌 Conector MCP que usa Antigravity: mcp_aws-cost-explorer_get_cost_and_usage(granularity="DAILY")',
-                response: '<strong>🤖 Lo que hace Antigravity por vos en segundos:</strong><br>1. Se conecta vía MCP al Cost Explorer de tu cuenta de AWS.<br>2. Te avisa en lenguaje claro: <em>"Tus buckets S3 y funciones Lambda tienen costo $0.00 USD (cubiertos por el Free Tier), pero cuidado: quedó encendida una instancia EC2 de prueba que cuesta $0.02 por hora"</em>.<br>3. Te guía paso a paso para detenerla y configurar una alerta gratuita en <strong>AWS Budgets</strong>.'
-            },
-            {
-                prompt: '<strong>👩‍💼 Lo que vos le escribís a Antigravity:</strong><br><em>"/plan Armame un PRD técnico completo para mi portfolio profesional donde proponga un asistente RAG de localización montado sobre AWS (S3 + Bedrock Knowledge Bases + Guardrails), con estimación de costos y Golden Dataset."</em>',
-                tool: '🔌 Herramientas usadas: Modo /plan + MCP AWS Docs + Creación de Artifacts y Archivos',
-                response: '<strong>🤖 Lo que hace Antigravity por vos en segundos:</strong><br>1. Te muestra primero el plan en <code>implementation_plan.md</code> para que lo apruebes.<br>2. Redacta el PRD completo uniendo tu experiencia en traducción/gestión con la arquitectura real de AWS.<br>3. Te deja listo un proyecto de portfolio de altísimo nivel para mostrar en entrevistas de IT Product Manager o Technical Project Manager.'
-            }
-        ];
+    <!-- ================================================================= -->
+    <!-- SECCIÓN 6: SIMULADOR INTERACTIVO + MAPA SESIÓN 2 <-> AWS          -->
+    <!-- ================================================================= -->
+    <div id="sec-6" class="section-header">
+      <span class="section-num">6</span>
+      <h2>Probá Cómo Te Ayuda Antigravity + AWS MCP en tu Curso y en tu Trabajo de PM</h2>
+    </div>
 
-        function selectAwsScenario(idx, btnEl) {
-            document.querySelectorAll('.sim-tab-btn').forEach(b => b.classList.remove('active'));
-            btnEl.classList.add('active');
-            const sc = AWS_SCENARIOS[idx];
-            document.getElementById('sim-prompt').innerHTML = sc.prompt;
-            document.getElementById('sim-tool').textContent = sc.tool;
-            document.getElementById('sim-response').innerHTML = sc.response;
-        }
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      Hacé clic en cualquiera de estos 4 escenarios reales para ver exactamente qué le escribirías a Antigravity en español y qué hace el servidor MCP de AWS por detrás:
+    </p>
 
-        function copyAwsMcpConfig(btnEl) {
-            const text = document.getElementById('aws-mcp-json').textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                const orig = btnEl.textContent;
-                btnEl.textContent = '✅ ¡Copiado al portapapeles!';
-                setTimeout(() => { btnEl.textContent = orig; }, 2500);
-            });
-        }
+    <div class="sim-box">
+      <div class="sim-tabs">
+        <button class="sim-tab active" onclick="showScenario(0, this)">🎓 1. Estudiar para el Examen AWS</button>
+        <button class="sim-tab" onclick="showScenario(1, this)">💸 2. Cuidar tu Free Tier ($0)</button>
+        <button class="sim-tab" onclick="showScenario(2, this)">🧠 3. Armar el Bot RAG (Sesión 2) en AWS</button>
+        <button class="sim-tab" onclick="showScenario(3, this)">🔒 4. Auditar Seguridad de Buckets S3</button>
+      </div>
 
-        function openLightbox(src) {
-            const modal = document.getElementById('lightbox-modal');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            modal.classList.add('open');
-        }
+      <div class="sim-screen" id="sim-screen-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
 
-        function closeLightbox(e) {
-            if (!e || e.target.id === 'lightbox-modal' || e.target.classList.contains('lightbox-close')) {
-                document.getElementById('lightbox-modal').classList.remove('open');
-            }
-        }
+    <h3 style="margin: 2.2rem 0 0.9rem; color: #fff;">Mapa de Equivalencias: Lo que Vimos en la Sesión 2 ↔ Servicios de tu Curso de AWS</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+      Esta tabla conecta cada concepto de producto que aprendiste en la <strong>Sesión 2 de la Mentoría (RAG, Chunking, Embeddings y Guardrails)</strong> con el nombre exacto del servicio en <strong>Amazon Web Services (AWS)</strong>:
+    </p>
 
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto de la Sesión 2 (Mentoría)</th>
+            <th>¿Qué función cumple en palabras simples?</th>
+            <th>Servicio Equivalente en tu Curso de AWS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fuente de Verdad (Ground Truth)</strong></td>
+            <td>La carpeta donde guardás los PDFs, manuales y glosarios oficiales verificados.</td>
+            <td><strong>Amazon S3 (Simple Storage Service)</strong> — Tus documentos viven en un <em>Bucket S3</em> privado.</td>
+          </tr>
+          <tr>
+            <td><strong>Pipeline de Ingestión y Chunking (15% Overlap)</strong></td>
+            <td>Cortar los PDFs largos en párrafos de ~1.000 caracteres dejando un 15% repetido entre bloques para no cortar frases al medio.</td>
+            <td><strong>Amazon Bedrock Knowledge Bases</strong> — Tiene una opción nativa donde elegís <em>Max tokens per chunk</em> y <em>Overlap percentage (15%)</em> sin programar.</td>
+          </tr>
+          <tr>
+            <td><strong>Modelo de Embeddings (Coordenadas de significado)</strong></td>
+            <td>Traducir cada párrafo de texto a una lista de números para buscar por significado (ej. conectar "beneficio" con "obra social").</td>
+            <td><strong>Amazon Titan Text Embeddings v2</strong> o <strong>Cohere Embed</strong> (adentro de Amazon Bedrock).</td>
+          </tr>
+          <tr>
+            <td><strong>Base de Datos Vectorial + Filtros de Metadatos</strong></td>
+            <td>Guardar esos vectores con etiquetas (<code>idioma=ES-LATAM</code>, <code>año=2026</code>) para filtrar antes de buscar.</td>
+            <td><strong>Amazon OpenSearch Serverless</strong> o <strong>Amazon Aurora PostgreSQL (pgvector)</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Freno Anti-Alucinación (Umbral 0.75) + PII Masking</strong></td>
+            <td>Bloquear respuestas cuando el sistema no está seguro y ocultar datos privados (DNI, sueldos, tarjetas) antes de enviarlos al modelo.</td>
+            <td><strong>Amazon Bedrock Guardrails</strong> — Permite configurar filtros de datos sensibles (PII) y controles de <em>Contextual Grounding</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>Contrato Enterprise SLA (Zero-Data Retention)</strong></td>
+            <td>Garantía legal y técnica de que los documentos de tu empresa nunca se usan para entrenar modelos públicos.</td>
+            <td><strong>AWS Bedrock Data Privacy + AWS IAM</strong> — Por contrato en AWS Bedrock, tus datos nunca se usan para entrenar modelos base.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vista ampliada de captura real de Antigravity" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function copyCode(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = '✓ ¡Copiado!';
+        setTimeout(() => { btn.innerText = orig; }, 1800);
+      });
+    }
+
+    const scenarios = [
+      {
+        prompt: '👩‍💼 <strong>Tu mensaje en Antigravity:</strong> "Usando la documentación oficial de AWS, explicame como Product Manager la diferencia entre Amazon S3, Amazon EBS y Amazon EFS con una analogía cotidiana, y después haceme 3 preguntas tipo examen AWS Cloud Practitioner para practicar."',
+        mcp: '🔌 call_mcp_tool(ServerName: "aws-documentation", ToolName: "search_documentation", Arguments: { "search_phrase": "Amazon S3 vs EBS vs EFS storage comparison" })',
+        response: '<strong>🤖 Respuesta de Antigravity:</strong><br>• <strong>Amazon S3 (Objeto):</strong> Es como un <em>guardarropas con ticket</em> o Google Drive: ideal para guardar archivos sueltos (PDFs, glosarios, imágenes, backups) desde cualquier lugar.<br>• <strong>Amazon EBS (Bloque):</strong> Es el <em>disco rígido interno</em> enchufado a una sola computadora virtual (EC2): rapidísimo para bases de datos, pero vive pegado a esa máquina.<br>• <strong>Amazon EFS (Archivos compartidos):</strong> Es una <em>carpeta en red compartida</em> que varias computadoras EC2 pueden abrir al mismo tiempo.<br><br>✅ <em>Además, te abrí en el Side Panel un archivo interactivo con las 3 preguntas de práctica estilo certificación AWS.</em>'
+      },
+      {
+        prompt: '👩‍💼 <strong>Tu mensaje en Antigravity:</strong> "Hoy estuve practicando en la consola de AWS para mi curso. ¿Podés revisar con el MCP de costos si tengo algún servicio cobrando o si sigo en $0.00 dentro del Free Tier?"',
+        mcp: '🔌 call_mcp_tool(ServerName: "aws-cost-explorer", ToolName: "get_cost_and_usage", Arguments: { "granularity": "MONTHLY", "group_by": "SERVICE" })',
+        response: '<strong>🤖 Respuesta de Antigravity:</strong><br>Revisé tu cuenta en <code>us-east-1</code>:<br>• <strong>Gasto acumulado del mes:</strong> <code>$0.00 USD</code>.<br>• Tus 2 buckets de <strong>Amazon S3</strong> y tu función <strong>AWS Lambda</strong> de prueba están 100% cubiertos por la capa gratuita (AWS Free Tier). No dejaste ninguna instancia EC2 ni base RDS encendida.'
+      },
+      {
+        prompt: '👩‍💼 <strong>Tu mensaje en Antigravity:</strong> "/plan Quiero armar el PRD de mi Bot de Glosarios de la Sesión 2 (con Chunking de 1000 caracteres, 15% Overlap y umbral 0.75), pero especificando qué servicios reales de AWS usaría el equipo de ingeniería."',
+        mcp: '🔌 call_mcp_tool(ServerName: "aws-documentation", ToolName: "search_documentation", Arguments: { "search_phrase": "Amazon Bedrock Knowledge Bases chunking overlap guardrails" })',
+        response: '<strong>🤖 Respuesta de Antigravity:</strong><br>Te generé el Artifact <strong><code>Implementation Plan</code></strong> y actualicé tu PRD:<br>1. <strong>Repositorio Ground Truth:</strong> Bucket privado en <code>Amazon S3</code>.<br>2. <strong>Ingestión y Chunking (15% Overlap):</strong> Configurado nativamente en <code>Amazon Bedrock Knowledge Bases</code> usando <code>Amazon Titan Text Embeddings v2</code>.<br>3. <strong>Freno Anti-Alucinación y PII Masking:</strong> Implementado con <code>Amazon Bedrock Guardrails</code>.'
+      },
+      {
+        prompt: '👩‍💼 <strong>Tu mensaje en Antigravity:</strong> "En la Sesión 2 vimos que los glosarios confidenciales nunca deben quedar públicos. ¿Cómo verifico en AWS que un Bucket S3 tenga bloqueado el acceso público y cumpla con buenas prácticas de IAM?"',
+        mcp: '🔌 call_mcp_tool(ServerName: "aws-documentation", ToolName: "search_documentation", Arguments: { "search_phrase": "S3 Block Public Access IAM least privilege best practices" })',
+        response: '<strong>🤖 Respuesta de Antigravity:</strong><br>Según la guía oficial de seguridad de AWS que acabo de consultar vía MCP:<br>1. Activá siempre las 4 casillas de <strong>S3 Block Public Access</strong> a nivel de cuenta y de bucket.<br>2. Activá el cifrado por defecto <strong>SSE-S3 o AWS KMS</strong>.<br>3. En <strong>AWS IAM</strong>, aplicá el principio de <em>Mínimo Privilegio (Least Privilege)</em>: el bot solo debe tener permiso <code>s3:GetObject</code> sobre ese bucket específico.'
+      }
+    ];
+
+    function showScenario(idx, btn) {
+      document.querySelectorAll('.sim-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const s = scenarios[idx];
+      document.getElementById('sim-screen-content').innerHTML = `
+        <div class="sim-prompt">${s.prompt}</div>
+        <div class="sim-mcp-call">${s.mcp}</div>
+        <div class="sim-response">${s.response}</div>
+      `;
+    }
+
+    showScenario(0, document.querySelector('.sim-tab'));
+  </script>
 </body>
 </html>
