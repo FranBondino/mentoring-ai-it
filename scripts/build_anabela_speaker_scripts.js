@@ -88,7 +88,7 @@ function generateSessionMarkdown(s) {
     md += `### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)\n`;
     md += `${sl.script}\n\n`;
     if (sl.plainTerms && sl.plainTerms.length > 0) {
-      md += `### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)\n`;
+      md += `### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)\n`;
       for (const pt of sl.plainTerms) {
         md += `- **${pt.term}:** ${pt.simple}\n`;
       }
@@ -189,7 +189,7 @@ function generateSingleSessionHTML(s) {
 
     const plainTermsHTML = (sl.plainTerms && sl.plainTerms.length > 0) ? `
         <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Traducción "En Criollo" de la Terminología Técnica (Cómo explicárselo fácil a Anabela)</div>
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
           <div class="plain-terms-grid">
             ${sl.plainTerms.map(pt => `
               <div class="plain-term-item">
@@ -941,7 +941,7 @@ function generateMasterHubHTML() {
 
           ${(sl.plainTerms && sl.plainTerms.length > 0) ? `
           <div class="hub-plain-terms" style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.9rem;">
-            <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:700; color:#38bdf8; margin-bottom:0.5rem;">💡 TRADUCCIÓN "EN CRIOLLO" DE LA TERMINOLOGÍA TÉCNICA</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:700; color:#38bdf8; margin-bottom:0.5rem;">💡 EXPLICACIÓN EN PALABRAS SIMPLES DE LA TERMINOLOGÍA TÉCNICA</div>
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.55rem;">
               ${sl.plainTerms.map(pt => `
                 <div style="background:rgba(7,11,20,0.65); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:0.6rem 0.8rem;">

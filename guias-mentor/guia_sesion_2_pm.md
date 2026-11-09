@@ -44,10 +44,10 @@ Hoy vas a ver los nombres técnicos en inglés que piden las empresas (**Tokens 
 * **03. Arquitectura RAG y PRD (Slides 8–10):** Enchufamos todo con un ejemplo real de Pagos LATAM y escribimos el documento de requisitos (PRD).
 * **04. Blindaje Corporativo (Slides 11–15):** Privacidad legal, cómo hacer que el Bot sepa decir *'no sé'* y cómo defenderlo en entrevistas.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Hilo Conductor (Enterprise Knowledge & Localization Bot):** En lugar de ver conceptos sueltos, durante las 15 diapositivas vamos a diseñar paso a paso un producto real: un asistente corporativo que responde consultas sobre manuales y glosarios de localización sin inventar respuestas ni filtrar secretos.
 - **LLM (Large Language Model / Gran Modelo de Lenguaje):** Es el 'motor cerebral' detrás de ChatGPT, Claude o Gemini. Se llama 'Grande' porque fue entrenado leyendo casi todo internet para aprender cómo se conectan las palabras.
-- **RAG (Retrieval-Augmented Generation):** En criollo: 'tomarle examen a la IA a libro abierto'. En vez de dejar que responda de memoria (donde puede inventar), primero buscamos el párrafo exacto en los manuales privados de nuestra empresa y se lo damos para que responda solo con esa evidencia.
+- **RAG (Retrieval-Augmented Generation):** En palabras simples: 'tomarle examen a la IA a libro abierto'. En vez de dejar que responda de memoria (donde puede inventar), primero buscamos el párrafo exacto en los manuales privados de nuestra empresa y se lo damos para que responda solo con esa evidencia.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Señalá primero el banner azul del medio ('🧭 Hilo Conductor de la Clase: Enterprise Knowledge & Localization Bot') y luego mostrá las 4 tarjetas numeradas (01 a 04).
@@ -76,7 +76,7 @@ Mirá la frase de nuestro Bot: *'Para traducir Checkout en LATAM debemos consult
 * **Izquierda (Paper de 2017):** Qué lindo dato para vos como traductora: toda esta revolución nació en 2017 porque Google quería mejorar la **traducción automática**. Inventaron el **Transformer** (la 'T' de GPT) y la **Auto-Atención (Self-Attention)**, que mira toda la oración a la vez para entender el contexto.
 * **Derecha (Fine-Tuning vs RAG):** Si alguien te dice *'re-entrenemos el modelo (Fine-Tuning) con nuestros glosarios cada semana'*, le decís que no: **Fine-Tuning** sirve para enseñar *tono o estilo*, pero es carísimo y congela los datos. Para manuales que cambian cada semana usamos **RAG** (conectarlo a una biblioteca viva).
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Next-Token Prediction (Predicción del Siguiente Token):** Es el autocompletado predictivo del teclado de tu celular pero hiper-vitaminado. El modelo no 'sabe' ni 'razona': solo calcula matemáticamente qué palabra o sílaba tiene más probabilidad de seguir a la anterior.
 - **Alucinación Factual (Hallucination):** Cuando la IA no tiene un dato privado de nuestra empresa pero, con tal de completar la oración de forma elocuente y sonar segura, inventa un dato falso muy bien redactado.
 - **Temperatura (0.0 vs 0.9):** Es la 'perilla de creatividad vs. rigor'. En 0.0 la IA elige siempre la palabra #1 más segura (cero inventos, ideal para nuestro Bot). En 0.9 la dejamos arriesgar con palabras menos probables (sirve para lluvia de ideas, pero alucina en datos técnicos).
@@ -109,7 +109,7 @@ Imaginate que nuestro Bot recibe 5.000 consultas por día, y en cada consulta le
 **3️⃣ REGLA DE ORO FINOPS PARA EL PRD:**
 Cuando activás **Prompt Caching** (poniendo todo el texto fijo bien arriba del prompt), el servidor lo guarda en memoria rápida: **la factura cae a la mitad ($101 USD/mes)** y la respuesta arranca en apenas **380 ms**.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Token:** Es la unidad mínima que lee y cobra la IA. No es ni una letra ni una palabra entera: es un 'ladrillito o sílaba' de unas 3 o 4 letras. Regla práctica: 1.000 tokens son unas 750 palabras en inglés (o ~650 en español).
 - **BPE (Byte Pair Encoding):** Es el método que usa la IA para partir palabras en tokens: separa raíces comunes ('locali-') de sufijos ('-zación'). Así con solo ~100.000 ladrillitos puede armar cualquier palabra de cualquier idioma.
 - **Asimetría Input vs. Output:** Leer lo que vos le mandás (Input) es barato; pero generar la respuesta palabra por palabra (Output) le exige mucho más cálculo al servidor y cuesta entre 3 y 5 veces más caro.
@@ -141,7 +141,7 @@ Mirá lo que descubrió la Universidad de Stanford: a la IA le pasa igual que a 
 **3️⃣ CONCLUSIÓN QUE ABRE EL MÓDULO 2:**
 Por eso **no pegamos manuales enteros**. Necesitamos construir un **buscador inteligente** que rescate solo los **3 párrafos exactos** y los ponga en los extremos del prompt, donde la atención supera el 95%.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Ventana de Contexto (Context Window):** Es el tamaño del 'escritorio o memoria de corto plazo' que tiene el modelo en una consulta. Todo lo que le mandás más lo que te responde tiene que caber adentro de esa ventana.
 - **Lost in the Middle (Perdido en el Medio):** Estudio de Stanford que demostró que cuando le metés muchísimo texto de golpe a un LLM (ej. 50 páginas), presta mucha atención al principio y al final, pero se olvida o ignora hasta el 60% de los datos que quedaron en la mitad.
 - **Primacy Bias & Recency Bias:** Son los nombres de ese efecto: Primacy Bias es recordar perfecto lo primero que leíste (~99%), y Recency Bias es recordar perfecto lo último que leíste (~96%).
@@ -174,7 +174,7 @@ Una vez que cada frase tiene su coordenada en el mapa, medimos qué tan cerca qu
 **3️⃣ QUÉ SE LLEVA ANABELA:**
 Gracias a los Embeddings y la Similitud por Coseno, nuestro Bot encuentra la respuesta aunque el usuario use sinónimos o palabras completamente distintas al manual.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Embedding (Vector Semántico):** Es traducir el 'significado' de una frase a una lista de números (como las coordenadas de latitud y longitud de un GPS). Así la computadora puede medir matemáticamente si dos textos hablan de lo mismo aunque no usen ninguna palabra igual.
 - **Espacio Vectorial (1536 Dimensiones):** En un mapa común tenés 2 dimensiones (Norte-Sur y Este-Oeste). La IA usa un mapa de 1536 dimensiones donde cada número mide un matiz distinto del concepto (si es técnico, si habla de pagos, si es de traducción, etc.).
 - **Similitud por Coseno (Cosine Similarity):** Es la 'regla' que mide qué tan cerca quedaron dos frases en ese mapa, dando un puntaje entre 0.00 (nada que ver) y 1.00 (significado idéntico).
@@ -205,7 +205,7 @@ Mirá el simulador: si apagamos los filtros, se cuelan el **Manual Legacy 2021 (
 **3️⃣ POR QUÉ ESTO ES TRABAJO DE LA PM:**
 Los programadores no saben cómo se clasifican los documentos del negocio; **sos vos como PM quien define en el PRD qué etiquetas (metadatos) obligatorias lleva cada archivo**.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Base de Datos Vectorial (Vector DB: Pinecone, Qdrant, pgvector):** Es la 'biblioteca especializada' donde se guardan los Embeddings (las coordenadas numéricas de los textos) para poder buscar por cercanía de significado en milisegundos.
 - **Metadatos (Metadata Schema):** Son las 'etiquetas de clasificación' explícitas que le pegamos a cada documento al guardarlo: Idioma = ES-LATAM, Año = 2026, Tipo = Guía de Estilo, Sector = Pagos.
 - **Metadata Pre-Filtering (Pre-filtrado por Metadatos):** Es aplicar primero un filtro duro por etiquetas (ej. 'quedate solo con manuales en Español del año 2026') ANTES de buscar por significado, para no recuperar documentos vencidos o de otro país.
@@ -236,7 +236,7 @@ Mirá qué pasa en el simulador cuando ponemos **`0% Overlap`**: la regla se cor
 **3️⃣ REGLA DE ORO PARA TU PRD:**
 El estándar de oro que siempre pedís en tus proyectos es **Chunks de ~1.000 caracteres con 10% a 15% de Overlap**.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Chunking (Fragmentación Documental):** Es cortar un documento largo (ej. un PDF de 200 páginas) en 'fichas' o bloques pequeños de texto (llamados Chunks, de unas 200 palabras o 1.000 caracteres) antes de convertirlos en vectores.
 - **Recursive Character Chunking:** En vez de cortar cada 1.000 letras a ciegas partiendo oraciones por la mitad, corta de forma inteligente respetando primero títulos, luego párrafos y luego puntos seguidos.
 - **Chunk Overlap (Solapamiento del 10% al 20%):** Es repetir el final del Fragmento A al comienzo del Fragmento B (como cuando sacás una foto panorámica solapando un borde con el otro) para que ninguna condición o regla quede huérfana.
@@ -267,7 +267,7 @@ Acá armamos la máquina completa de **RAG**, que siempre se divide en dos momen
 * **Paso 3 (Embedding):** Convertimos esa Ficha #14 en su coordenada matemática de 1536 números.
 * **Paso 4 (Vector DB):** La guardamos en **Pinecone** con sus etiquetas (`lang: ES-LATAM`, `year: 2026`, `page: 8`). ¡Nuestra biblioteca ya está lista!
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Fase 1: Ingestión Offline (Batch Pipeline):** Es 'preparar la biblioteca antes de que entren los lectores'. Corre en segundo plano cada vez que subimos o actualizamos manuales, sin ningún usuario esperando en el chat.
 - **Ground Truth (Fuente Única de Verdad):** Son los documentos oficiales validados por humanos (en nuestro ejemplo: 'Guia_Estilo_Pagos_LATAM_2026.pdf') que tomamos como verdad absoluta para alimentar al bot.
 - **Upsert en Vector DB:** Término que combina 'Update' (actualizar) + 'Insert' (insertar): guarda los vectores nuevos en Pinecone y pisa los viejos para que la biblioteca esté siempre al día.
@@ -300,7 +300,7 @@ El usuario no lo ve, pero nuestro servidor arma en secreto un **Prompt Aumentado
 **3️⃣ RESPUESTA SIN ALUCINAR (Paso 4):**
 El LLM lee esa ficha con **Temperatura 0.0** y responde: *'Se traduce oficialmente como **Contracargo** [Fuente: Guía Pagos LATAM 2026, pág. 8]'*.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Fase 2: Consulta en Tiempo Real (Online Inference):** Es lo que ocurre en menos de 2 segundos desde que el usuario aprieta 'Enviar' en el chat hasta que recibe la respuesta con la página exacta del manual.
 - **Top-K Retrieval (ej. Top-K = 3):** Es pedirle a la base vectorial que nos devuelva únicamente los 'K' fragmentos más parecidos a la pregunta (en nuestro Bot, los 3 mejores párrafos).
 - **Prompt Aumentado (Context Injection):** Es el corazón de RAG: antes de mandarle la pregunta del usuario al LLM, el servidor le 'inyecta' en secreto los 3 párrafos oficiales encontrados en Pinecone y le ordena responder solo con esa evidencia.
@@ -334,7 +334,7 @@ Cuando liderás un proyecto de IA no programás el código, pero escribís el do
 * **Chunking:** `1.000 caracteres` con `15% de Overlap` (Slide 7) y `Prompt Caching` (Slide 3).
 * **Los 3 Blindajes que veremos ahora en el Módulo 4:** Contrato privado **Zero-Retention SLA** (Slide 11), freno anti-inventos en **Score >= 0.75** (Slide 12) y aprobar el examen del **Golden Dataset con >= 90%** (Slide 13).
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **PRD (Product Requirements Document):** Es el documento madre que escribe el Product Manager para definir qué producto se va a construir, con qué fuentes de datos, qué filtros y bajo qué reglas de calidad.
 - **Definition of Done (DoD / Definición de Terminado):** Es el contrato de calidad con los programadores y QA: la lista de parámetros exactos (Chunking, Overlap, Score >= 0.75, SLA, Evals >= 90%) que deben cumplirse para aprobar el lanzamiento.
 
@@ -364,7 +364,7 @@ En empresas nos conectamos por **API Corporativa** bajo un contrato llamado **En
 **3️⃣ DEMO EN VIVO: PII MASKING (Tocá los dos botones del simulador de abajo):**
 Mirá la consulta confidencial: *'Lanzamiento Pfizer Q4 — contacto: ana.perez@pfizer.com'*. En el botón rojo viaja desnuda. En el botón verde (**Enterprise SLA**), antes de salir pasa por **PII Masking**, que tapa el cliente y el mail (`[CLIENT_ORG]` y `[EMAIL_REDACTED]`). Doble blindaje legal.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Data Leakage (Fuga de Datos / Propiedad Intelectual):** Es el riesgo de que información confidencial de la empresa o de un cliente bajo NDA termine filtrada afuera por enviarla a cuentas gratuitas o públicas de IA.
 - **Enterprise SLA & Zero-Data Retention (Retención Cero):** Es el contrato corporativo con OpenAI, Anthropic, Microsoft o AWS donde se comprometen legal y técnicamente a procesar tus textos en memoria temporal y borrarlos en el acto, sin usarlos jamás para entrenar sus modelos públicos.
 - **PII Masking (Enmascaramiento de Datos Personales):** PII significa 'Información Personal Identificable' (nombres, DNI, emails). El Masking es un filtro automático que reemplaza esos datos por etiquetas ('[EMAIL_REDACTED]') antes de que salgan hacia la API.
@@ -396,7 +396,7 @@ Mirá la consulta confidencial: *'Lanzamiento Pfizer Q4 — contacto: ana.perez@
 **3️⃣ EL CORTOCIRCUITO Y AHORRO:**
 Cuando bloquea, **ni siquiera despierta al LLM (ahorra 100% de tokens)** y responde con el **Fallback Seguro**: *'No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes'*.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Confidence Threshold (Umbral de Confianza Semántica, ej. 0.75):** Es la 'nota mínima de aprobación' que le exigimos al buscador vectorial (Pinecone). Si el párrafo más parecido del manual tiene una nota menor a 0.75, asumimos que el manual no habla de ese tema.
 - **Cortocircuito en Backend (Deterministic Guardrail):** Si la nota no llega a 0.75, nuestro servidor frena ahí mismo y ni siquiera llama al LLM. Así es 100% imposible que alucine y además ahorramos el 100% de los tokens de generación.
 - **No-Answer Fallback (Respuesta de Abstención Segura):** Es el mensaje educado y fijo que devuelve el sistema cuando se activa el freno ('No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes').
@@ -429,7 +429,7 @@ Cada vez que alguien quiere subir un cambio, el sistema le toma las 100 pregunta
 **3️⃣ MONITOREO EN VIVO (Tarjeta 3):**
 Y una vez en la calle, miramos en **Langfuse** cuánto tarda, cuánto gasta y los votos de los usuarios.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Golden Dataset (Conjunto de Datos de Oro):** Es una planilla con 50 a 100 preguntas reales (incluyendo el Caso #14 de 'Chargeback' y preguntas trampa) con sus 'respuestas ideales certificadas' por los expertos humanos del negocio.
 - **Evals en CI/CD (Evaluación Continua Automatizada):** Cada vez que un programador quiere subir un cambio al código (un Pull Request), el pipeline le toma automáticamente las 100 preguntas del Golden Dataset al Bot. Si saca menos de 90%, bloquea el despliegue.
 - **Context Adherence / Faithfulness (Fidelidad al Contexto):** Métrica que mide qué porcentaje de las respuestas del Bot salieron fielmente de los manuales oficiales sin inventar nada.
@@ -466,7 +466,7 @@ Y una vez en la calle, miramos en **Langfuse** cuánto tarda, cuánto gasta y lo
   2. **Cortocircuito en < 0.75 y Caché Semántica (Slide 12):** No llamamos ni pagamos al LLM en preguntas repetidas o fuera de tema.
   3. **Top-3 Chunks con Metadata Pre-Filtering (Slides 6 y 9):** Inyectamos solo 3 fichas de 1.000 letras en vez de manuales enteros.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Qué evalúan en la Pregunta 1 (RAG vs. Fine-Tuning):** Quieren ver si caés en la trampa de principiante de pedir 're-entrenar el modelo' cada semana (carísimo y propenso a alucinar) o si sabés defender la arquitectura RAG con Base Vectorial que construimos hoy.
 - **Qué evalúan en la Pregunta 2 (Escalabilidad FinOps):** Quieren ver si cuidás el margen económico del producto combinando los 3 ahorros que implementamos en el Bot: Prompt Caching (Slide 3), Metadata Pre-Filtering + Top-3 (Slides 6 y 9) y Cortocircuito en < 0.75 (Slide 12).
 
@@ -497,7 +497,7 @@ Y una vez en la calle, miramos en **Langfuse** cuánto tarda, cuánto gasta y lo
 **2️⃣ TUS 3 HERRAMIENTAS PARA LA SEMANA (Botones de abajo):**
 Tenés la **Actividad Práctica S2** (4 misiones interactivas), la **App Generadora de Mock PRD** y el **Glosario Completo S2**.
 
-### 💡 Traducción "En Criollo" de los Términos Técnicos (Para explicar fácil a Anabela)
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **IA Consultiva (RAG Pasivo — Lo que construimos en la Sesión 2):** Es el 'Cerebro que lee': nuestro Bot busca en los manuales privados de Pinecone y responde dudas con total precisión y cita verificable, pero no ejecuta acciones por su cuenta en otros sistemas.
 - **IA Agéntica (Agentes con ReAct y Tool Calling — Lo que veremos en la Sesión 3):** Son las 'Manos que actúan': además de leer el manual, el agente puede tomar decisiones paso a paso y conectarse por API a otros programas (ej. actualizar el glosario en el sistema, crear un ticket en Jira o enviar un mail con permiso humano).
 

@@ -158,12 +158,30 @@
         }
 
         .slide-subtitle {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.9rem;
             text-align: center;
-            max-width: 850px;
-            line-height: 1.5;
+            max-width: 880px;
+            line-height: 1.45;
+        }
+
+        .simple-banner {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.11), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-left: 4px solid var(--color-green);
+            border-radius: 12px;
+            padding: 0.6rem 1.05rem;
+            margin-bottom: 1rem;
+            max-width: 1080px;
+            width: 100%;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            line-height: 1.45;
+            text-align: left;
+        }
+        .simple-banner strong {
+            color: #34d399;
         }
 
         /* GLASS CARD STYLE */
@@ -1095,6 +1113,9 @@
         <div class="slide" id="slide-2">
             <h2 class="slide-title">IA Pasiva vs. IA Activa</h2>
             <p class="slide-subtitle">La transición desde la recuperación estática de conocimiento (RAG) hacia la toma de decisiones autónoma (Agentes)</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En la Sesión 2 vimos <strong>IA Pasiva (RAG)</strong>: funciona como un <em>bibliotecario que lee manuales y responde dudas</em>, pero no toca nada. Hoy vemos <strong>IA Activa (Agentes)</strong>: un <em>asistente con manos propias</em> que además de leer puede consultar Jira, enviar correos o actualizar sistemas por vos.
+            </div>
             
             <div class="contrast-container">
                 <div class="glass-card contrast-card contrast-card-left">
@@ -1158,7 +1179,10 @@
         <!-- SLIDE 3: LOOP REACT -->
         <div class="slide" id="slide-3">
             <h2 class="slide-title">Loops de Razonamiento: ReAct</h2>
-            <p class="slide-subtitle">La arquitectura cognitiva fundamental para la autonomía (Yao et al., 2022)</p>
+            <p class="slide-subtitle">Cómo piensa un agente antes de actuar: Razonar (Thought) → Usar Herramienta (Action) → Mirar el Resultado (Observation)</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En lugar de responder por impulso en un solo paso, el <strong>Loop ReAct</strong> obliga a la IA a trabajar como una persona ordenada: <strong>1) Piensa</strong> qué dato le falta, <strong>2) Ejecuta una consulta</strong> en el sistema, y <strong>3) Observa el dato real</strong> antes de contestar.
+            </div>
             
             <div class="grid-2">
                 <div class="react-interactive-container" style="max-width: 100%;">
@@ -1197,7 +1221,10 @@
         <!-- SLIDE 4: ORCHESTRATOR-WORKERS -->
         <div class="slide" id="slide-4">
             <h2 class="slide-title">Patrones Agénticos: Orchestrator-Workers</h2>
-            <p class="slide-subtitle">Desacoplamiento de responsabilidades lógicas para escalar la fiabilidad a nivel corporativo</p>
+            <p class="slide-subtitle">Dividir un problema grande entre un Agente Coordinador (Orquestador) y Agentes Especialistas (Workers)</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Si le pedís a un solo agente que lea PDFs, consulte bases de datos y redacte correos todo junto, se confunde. El patrón <strong>Orchestrator-Workers</strong> funciona como un <em>Director de Proyecto</em> que reparte tareas chicas a especialistas (uno lee el PDF, otro revisa Jira y otro redacta el mail).
+            </div>
             
             <div class="orchestrator-layout">
                 <div class="orchestrator-diagram-box">
@@ -1236,7 +1263,10 @@
         <!-- SLIDE 5: TOOL CALLING -->
         <div class="slide" id="slide-5">
             <h2 class="slide-title">Tool Calling: Invocación Dinámica de APIs</h2>
-            <p class="slide-subtitle">La mecánica técnica que conecta el razonamiento probabilístico con el backend determinista</p>
+            <p class="slide-subtitle">Cómo el agente pide usar herramientas externas (APIs y Servidores MCP como AWS, Jira o Slack)</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> <em>Probabilístico</em> = el cerebro de la IA (flexible, redacta e interpreta). <em>Determinista</em> = el sistema tradicional o calculadora (exacto, nunca improvisa). Con <strong>Tool Calling (y MCP en Antigravity)</strong>, la IA no toca la base de datos directo: llena un formulario estructurado (JSON) pidiendo el dato y el sistema se lo devuelve seguro.
+            </div>
             
             <div class="tool-calling-box">
                 <div class="console-container">
@@ -1270,7 +1300,10 @@
         <!-- SLIDE 6: KV CACHE -->
         <div class="slide" id="slide-6">
             <h2 class="slide-title">KV Cache: Optimizando la Latencia</h2>
-            <p class="slide-subtitle">Reducción del Time to First Token (TTFT) en loops sucesivos de ReAct</p>
+            <p class="slide-subtitle">Cómo acelerar las respuestas del agente y ahorrar hasta un 60% de costos en tareas de varios pasos</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Como un agente da varias vueltas (Pensar → Actuar → Observar) llevando siempre las mismas instrucciones base, <strong>KV Cache</strong> guarda esas instrucciones fijas en la memoria rápida para no volver a leerlas ni cobrártelas desde cero en cada vuelta. <em>TTFT</em> es simplemente cuántos segundos tarda en aparecer la primera palabra.
+            </div>
             
             <div class="grid-2" style="max-width: 1000px; margin-top: 1rem;">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
@@ -1311,7 +1344,10 @@
         <!-- SLIDE 7: HUMAN IN THE LOOP -->
         <div class="slide" id="slide-7">
             <h2 class="slide-title">Human-in-the-Loop (HITL)</h2>
-            <p class="slide-subtitle">Establecer límites estrictos de gobernanza funcional para autorizaciones críticas</p>
+            <p class="slide-subtitle">El freno de seguridad donde el agente hace el trabajo previo pero espera tu clic antes de ejecutar algo crítico</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> <strong>Human-in-the-Loop (HITL)</strong> es igual al botón <em>"Proceed / Aprobar"</em> que viste en Google Antigravity: el agente prepara todo el análisis, pero si la acción supera un límite de negocio (ej. más de $10,000 USD o borrar un registro), se pausa y te pide autorización a vos.
+            </div>
             
             <div class="hitl-simulator glass-card">
                 <div class="hitl-steps">
@@ -1348,10 +1384,11 @@
 
         <!-- SLIDE 8: CASO DE ESTUDIO -->
         <div class="slide" id="slide-8">
-            <h2 class="slide-title">Caso de Estudio: Agente de Operaciones & Localización</h2>
-            <p class="slide-subtitle">Coordinación automatizada de entregas técnicas, validación de calidad y asignación de equipos</p>
-            <h2 class="slide-title">Caso de Estudio: Automatización de Proyectos & Localización</h2>
-            <p class="slide-subtitle">Simulación de reasignación inteligente de tareas ante sobrecarga operativa del equipo</p>
+            <h2 class="slide-title">Caso de Estudio: Agente de Proyectos &amp; Localización</h2>
+            <p class="slide-subtitle">Simulación real: cómo el agente detecta un equipo sobrecargado en Jira/TMS y propone reasignar el proyecto</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Mirá cómo se combinan las piezas en tu día a día: el agente lee el pedido, consulta la disponibilidad en Jira (<em>Tool Calling</em>), descubre que el Squad Alpha está al 100%, busca al Squad Beta y te manda un mensaje por Slack (<em>Human-in-the-Loop</em>) para que apruebes el cambio con un clic.
+            </div>
             
             <div class="grid-2" style="grid-template-columns: 1.2fr 1fr; gap: 1.5rem;">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; text-align: left;">
@@ -1384,7 +1421,10 @@
         <!-- SLIDE 9: VALIDACIÓN ESTRECTURADA PYDANTIC -->
         <div class="slide" id="slide-9">
             <h2 class="slide-title">Validación Estructurada (Esquema de Datos)</h2>
-            <p class="slide-subtitle">Definir contratos de datos lógicos para intercomunicación segura entre sistemas (DoD del PM)</p>
+            <p class="slide-subtitle">El "molde" obligatorio para que la IA entregue datos limpios que Jira o tu base de datos puedan procesar</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Si tu sistema espera un número (<code>500</code>) y la IA responde con texto conversacional (<em>"Son unas quinientas palabras aproximadamente"</em>), el sistema se rompe. <strong>Pydantic</strong> funciona como un control de aduana: verifica que cada casillero tenga el formato exacto antes de dejarlo pasar.
+            </div>
             
             <div class="pydantic-box">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: flex-start; padding: 1.2rem 1.5rem; text-align: left;">
@@ -1405,11 +1445,11 @@
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); padding: 0.4rem 0.8rem; border-radius: 6px;">
                             <label style="font-size: 0.85rem; color: #ffffff; font-weight: 500;">status (Categoría):</label>
-                            <select id="input-status" style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.3rem 0.5rem; color: #ffffff; width: 130px; font-size: 0.85rem;" onchange="validatePydanticInputs()">
-                                <option value="AVAILABLE">AVAILABLE</option>
-                                <option value="FULL">FULL</option>
-                                <option value="MAINTENANCE">MAINTENANCE</option>
-                                <option value="INVALID_VALUE">TEXTO_LIBRE</option>
+                            <select id="input-status" style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.3rem 0.5rem; color: #ffffff; width: 155px; font-size: 0.82rem;" onchange="validatePydanticInputs()">
+                                <option value="READY_FOR_QA">READY_FOR_QA</option>
+                                <option value="IN_PROGRESS">IN_PROGRESS</option>
+                                <option value="BLOCKED">BLOCKED</option>
+                                <option value="INVALID_VALUE">TEXTO_LIBRE (Error)</option>
                             </select>
                         </div>
                     </div>
@@ -1437,7 +1477,10 @@
         <!-- SLIDE 10: CONTROL DE COSTOS & LOOPS INFINITOS -->
         <div class="slide" id="slide-10">
             <h2 class="slide-title">Control de Costos: Loops Infinitos</h2>
-            <p class="slide-subtitle">Evitar sobrecostos de facturación mediante cortafuegos lógicos de iteraciones</p>
+            <p class="slide-subtitle">Cómo poner un "disyuntor automático" (Max Iterations) para que un agente no gaste presupuesto si una API falla</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Si el servidor de Jira se cae y el agente intenta reintentar sin límite toda la noche, puede gastar cientos de dólares en llamadas a la IA. Como PM, siempre exigís un tope duro (ej. <strong>Máximo 5 intentos = Max Iterations</strong>) para que el sistema corte solo y avise del error.
+            </div>
             
             <div class="cost-control-panel glass-card">
                 <div>
@@ -1462,7 +1505,10 @@
         <!-- SLIDE 11: RESILIENCIA Y FALLBACKS -->
         <div class="slide" id="slide-11">
             <h2 class="slide-title">Resiliencia y Fallbacks</h2>
-            <p class="slide-subtitle">Diseñar planes de contingencia lógicos ante caídas de servicios externos</p>
+            <p class="slide-subtitle">El "Plan B" automático cuando se cae el proveedor de IA o un servidor externo</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Un <strong>Fallback</strong> es como el generador eléctrico de un hospital: si se corta la ruta principal (<em>Ruta A</em>), el sistema cambia automáticamente a una ruta de respaldo (<em>Ruta B</em>, otro modelo o datos guardados en caché) sin que el usuario vea una pantalla rota.
+            </div>
             
             <div class="fallback-interactive">
                 <div class="fallback-visual">
@@ -1491,7 +1537,10 @@
         <!-- SLIDE 12: MOCK PRD TALLER -->
         <div class="slide" id="slide-12">
             <h2 class="slide-title">Taller: Mock PRD del Workflow Agent</h2>
-            <p class="slide-subtitle">Documentación formal de requerimientos funcionales para sistemas de IA Activa</p>
+            <p class="slide-subtitle">Qué tenés que escribir vos como Product Manager en el documento de requerimientos (PRD) de un Agente</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Para diseñar un agente no necesitás programar: tu trabajo en el PRD es definir <strong>1) Qué rol cumple cada agente</strong>, <strong>2) A qué herramientas tiene permiso de acceder</strong>, y <strong>3) En qué momento exacto debe frenar y pedir aprobación humana (HITL)</strong>.
+            </div>
             
             <div class="prd-grid">
                 <div class="glass-card">
@@ -1509,7 +1558,7 @@
                         </div>
                         <div class="prd-item-row">
                             <span class="prd-item-label">Auditor de Proyecto & QA</span>
-                            <span class="prd-badge prd-badge-purple">Query SQL Stock</span>
+                            <span class="prd-badge prd-badge-purple">Query SQL Capacidad / Jira</span>
                         </div>
                         <div class="prd-item-row">
                             <span class="prd-item-label">Coordinador Orquestador</span>
@@ -1538,7 +1587,10 @@
         <!-- SLIDE 13: ARQUITECTURA DE INTEGRACIÓN -->
         <div class="slide" id="slide-13">
             <h2 class="slide-title">Integración: API Gateways</h2>
-            <p class="slide-subtitle">Evitar el acceso directo del agente a la base de datos de producción corporativa</p>
+            <p class="slide-subtitle">El guardia de seguridad (como Amazon API Gateway + AWS IAM) entre el Agente de IA y tus bases de datos</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples (Conexión con tu curso de AWS):</strong> Nunca le damos al agente la llave maestra de la base de datos. Ponemos un <strong>API Gateway</strong> en el medio (en AWS es <em>Amazon API Gateway</em> combinado con permisos <em>AWS IAM</em>) que revisa cada pedido del agente y bloquea cualquier acción no autorizada.
+            </div>
             
             <div class="integration-box">
                 <div class="integration-nodes">
@@ -1565,7 +1617,10 @@
         <!-- SLIDE 14: ROLEPLAY DE ENTREVISTA -->
         <div class="slide" id="slide-14">
             <h2 class="slide-title">Defensa Técnica ante CTOs</h2>
-            <p class="slide-subtitle">Roleplay de comités de tecnología y respuestas para comités de ciberseguridad corporativos</p>
+            <p class="slide-subtitle">Cómo responder con seguridad en una entrevista o reunión con Ingeniería cuando te preguntan por riesgos de IA</p>
+            <div class="simple-banner">
+                <strong>💡 Tu fórmula de respuesta en 3 pasos ante cualquier líder técnico:</strong> 1) La IA propone los datos en un molde estricto (<strong>Pydantic</strong>), 2) Pasa por un control de reglas del sistema (<strong>API Gateway</strong>), y 3) Si supera el límite permitido, frena y pide autorización de una persona (<strong>Human-in-the-Loop</strong>).
+            </div>
             
             <div class="interview-container">
                 <div class="interview-qa-card glass-card">
@@ -1624,6 +1679,7 @@
             </div>
 
             <div class="consigna-banner">
+                
                 <h4>
                     <i data-lucide="edit-3" class="icon-sm"></i>
                     <span>La Consigna Semanal (PRD &amp; Workflow Diagram)</span>
@@ -1631,6 +1687,15 @@
                 <p style="font-size: 0.82rem; line-height: 1.4;">
                     Estructurar el <strong>PRD del "Enterprise Workflow Agent"</strong> definiendo los roles de sus 3 agentes trabajadores, las APIs e interruptores autorizados, y el diagrama de compuertas HITL y validación estructurada.
                 </p>
+            
+                <div style="margin-top: 0.75rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="./actividad_practica_sesion_3.html" class="btn-action-sm" style="text-decoration: none; background: rgba(139, 92, 246, 0.22); border-color: var(--color-purple); color: #fff;">
+                        🧪 Abrir Laboratorio Práctico S3 (Simulador de Agentes)
+                    </a>
+                    <a href="./guia_antigravity_aws_mcp.html" class="btn-action-sm" style="text-decoration: none; background: rgba(249, 115, 22, 0.18); border-color: var(--color-orange); color: #fff;">
+                        🚀 Abrir Guía Antigravity + AWS MCP
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -2740,11 +2805,17 @@
             <span>Mentoría Anabela Hotian · Sesión 3</span>
         </div>
         <div class="anabela-hud-right">
-            <a href="../guias-mentor/guia_sesion_3_pm.html" target="_blank" class="anabela-hud-btn" title="Abrir Guion de Orador y Conexiones de la Sesión 3">
+            <a href="../guias-mentor/guion_mentor_sesion_3.html" target="_blank" class="anabela-hud-btn" title="Abrir Guion de Orador Completo de la Sesión 3">
                 🎙️ <span class="hud-label-hide-sm">Guion S3</span>
             </a>
             <a href="./glosario_completo_sesion_3.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 3">
                 📖 <span class="hud-label-hide-sm">Glosario S3</span>
+            </a>
+            <a href="./actividad_practica_sesion_3.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 3">
+                🧪 <span class="hud-label-hide-sm">Simulador S3</span>
+            </a>
+            <a href="./guia_antigravity_aws_mcp.html" class="anabela-hud-btn" title="Abrir Guía de Antigravity + AWS MCP">
+                🚀 <span class="hud-label-hide-sm">Antigravity + AWS</span>
             </a>
             <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaFullscreen()" title="Pantalla Completa">
                 ⛶ <span class="hud-label-hide-sm"> Expandir</span>

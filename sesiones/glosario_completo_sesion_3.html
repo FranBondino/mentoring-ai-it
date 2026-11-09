@@ -78,9 +78,102 @@
             .concept-title { font-size: 1.4rem; }
             .diagram-outer { padding: 20px; }
         }
+    
+        body { padding-top: 84px !important; }
+        .s3-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.35);
+            padding: 0.7rem 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            color: #f8fafc;
+        }
+        .s3-topbar-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .s3-nav-btn {
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 0.38rem 0.8rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .s3-nav-btn:hover {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: #8b5cf6;
+            color: #fff;
+        }
+        .s3-quick-btn {
+            background: rgba(16, 185, 129, 0.18);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+        .simple-summary-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%);
+            border: 2px solid #10b981;
+            border-left: 7px solid #059669;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            color: #064e3b;
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+        .simple-summary-box strong {
+            color: #047857;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+        body.quick-read-mode .definition-section,
+        body.quick-read-mode .diagram-outer {
+            display: none !important;
+        }
+
     </style>
 </head>
 <body>
+
+<div class="s3-topbar">
+    <div style="font-weight: 800; font-size: 0.92rem; color: #c4b5fd;">
+        📖 Glosario Interactivo · Sesión 3 (IA Activa &amp; Agentes)
+    </div>
+    <div class="s3-topbar-links">
+        <a href="../index.html" class="s3-nav-btn">🏠 Hub Principal</a>
+        <a href="slides_sesion_3.html" class="s3-nav-btn">📊 Slides S3</a>
+        <a href="actividad_practica_sesion_3.html" class="s3-nav-btn">🧪 Simulador S3</a>
+        <a href="guia_antigravity_aws_mcp.html" class="s3-nav-btn">🚀 Guía Antigravity + AWS</a>
+        <button type="button" class="s3-nav-btn s3-quick-btn" onclick="toggleQuickRead(this)">⚡ Modo Lectura Rápida (Solo explicaciones simples)</button>
+    </div>
+</div>
+<script>
+function toggleQuickRead(btn) {
+    document.body.classList.toggle('quick-read-mode');
+    const active = document.body.classList.contains('quick-read-mode');
+    btn.textContent = active ? '📖 Ver Definiciones Técnicas Completas + Diagramas' : '⚡ Modo Lectura Rápida (Solo explicaciones simples)';
+}
+</script>
+
 
 <div class="document-container">
     
@@ -123,6 +216,10 @@
             <div class="card-header">
                 <div class="concept-title"><span class="concept-index">01</span> IA Activa (Agentes Autónomos)</div>
                 <div class="concept-tag">Paradigma</div>
+            </div>
+            <div class="simple-summary-box" data-simple="01">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Mientras que un chatbot RAG (Sesión 2) es como un <strong>bibliotecario que lee manuales y responde dudas</strong> sin tocar nada, la <strong>IA Activa (Agente)</strong> es un <strong>asistente con manos propias</strong>: vos le das un objetivo y el agente consulta Jira, revisa la capacidad del equipo y ejecuta tareas en tus sistemas.
             </div>
             
             <div class="definition-section">
@@ -184,6 +281,10 @@
                 <div class="concept-title"><span class="concept-index">02</span> Loop ReAct</div>
                 <div class="concept-tag">Arquitectura Cognitiva</div>
             </div>
+            <div class="simple-summary-box" data-simple="02">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                En lugar de responder de forma impulsiva en un solo paso, el <strong>Loop ReAct</strong> obliga al agente a trabajar en 3 pasos ordenados: <strong>1) Pensar (Thought)</strong> qué dato necesita, <strong>2) Actuar (Action)</strong> consultando una herramienta o API, y <strong>3) Observar (Observation)</strong> el dato real antes de contestar.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -238,6 +339,10 @@
                 <div class="concept-title"><span class="concept-index">03</span> Pydantic</div>
                 <div class="concept-tag">Validación Estricta</div>
             </div>
+            <div class="simple-summary-box" data-simple="03">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Los sistemas como Jira o una base de datos no entienden respuestas charladas. <strong>Pydantic</strong> funciona como un <strong>molde o control de aduana</strong>: verifica que la IA entregue cada dato en su casillero exacto (número entero, fecha o categoría válida) antes de guardarlo.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -283,6 +388,10 @@
             <div class="card-header">
                 <div class="concept-title"><span class="concept-index">04</span> Orchestrator-Workers</div>
                 <div class="concept-tag">Patrón Arquitectónico</div>
+            </div>
+            <div class="simple-summary-box" data-simple="04">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Si le pedís a un solo agente que lea PDFs, consulte bases de datos y redacte correos todo junto, se confunde. El patrón <strong>Orchestrator-Workers</strong> pone a un <strong>Agente Coordinador (Director de Proyecto)</strong> que divide el trabajo y se lo reparte a <strong>Agentes Especialistas (Workers)</strong>.
             </div>
             
             <div class="definition-section">
@@ -335,6 +444,10 @@
                 <div class="concept-title"><span class="concept-index">05</span> Langfuse</div>
                 <div class="concept-tag">Gobernanza / Observabilidad</div>
             </div>
+            <div class="simple-summary-box" data-simple="05">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                <strong>Langfuse</strong> es la "caja negra" o tablero de control del Product Manager: te muestra en una pantalla cada paso que pensó el agente, qué herramientas llamó, cuántos segundos tardó y cuántos centavos de dólar costó cada conversación.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -354,6 +467,10 @@
             <div class="card-header">
                 <div class="concept-title"><span class="concept-index">06</span> API Gateway (Security Proxy)</div>
                 <div class="concept-tag">Arquitectura de Seguridad</div>
+            </div>
+            <div class="simple-summary-box" data-simple="06">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Un <strong>API Gateway</strong> (como <em>Amazon API Gateway</em> en tu curso de AWS) es el <strong>guardia de seguridad en la puerta de tus sistemas</strong>: el agente nunca toca la base de datos directo, sino que le hace el pedido al Gateway y este verifica permisos antes de dejarlo pasar.
             </div>
             
             <div class="definition-section">
@@ -397,6 +514,12 @@
                 <div class="concept-title"><span class="concept-index">07</span> Human-in-the-loop (HITL)</div>
                 <div class="concept-tag">Gobernanza</div>
             </div>
+            <div class="simple-summary-box" data-simple="07">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                <strong>Human-in-the-loop (HITL)</strong> es el <strong>freno de mano obligatorio</strong>: el agente hace el 90% del análisis pesado, pero antes de ejecutar una acción cara o irreversible (ej. aprobar más de <span class="concept-index">07</span> Human-in-the-loop (HITL)</div>
+                <div class="concept-tag">Gobernanza</div>
+            </div>0.000 USD), se pausa y espera tu clic de autorización.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -419,6 +542,10 @@
                 <div class="concept-title"><span class="concept-index">08</span> KV Cache</div>
                 <div class="concept-tag">Costos & Rendimiento</div>
             </div>
+            <div class="simple-summary-box" data-simple="08">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Como el agente da varias vueltas leyendo siempre las mismas instrucciones base, <strong>KV Cache</strong> guarda esa parte fija en la memoria rápida de la placa de video (GPU) para no volver a leerla ni cobrártela desde cero en cada vuelta, reduciendo el tiempo de espera a la mitad.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -439,6 +566,10 @@
                 <div class="concept-title"><span class="concept-index">09</span> Reasoning Tokens</div>
                 <div class="concept-tag">IA de Próxima Generación</div>
             </div>
+            <div class="simple-summary-box" data-simple="09">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Los <strong>Reasoning Tokens</strong> son el "borrador mental" que usan los modelos pensadores para analizar problemas difíciles paso a paso antes de darte la respuesta final.
+            </div>
             
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
@@ -452,6 +583,65 @@
                 Como PM, debés decidir **cuándo pagar el "peaje" del razonamiento**. No necesitás razonamiento complejo para resumir un mail, pero sí lo necesitás para analizar una cadena de suministro global y proponer optimizaciones de costos. Tu labor es elegir el modelo correcto para cada tarea: Modelos rápidos para tareas simples y Modelos de Razonamiento para tareas críticas que no permiten errores lógicos.
             </div>
         </div>
+        <!-- 10. Tool Calling & MCP (Model Context Protocol) -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">10</span> Tool Calling &amp; MCP (Model Context Protocol)</div>
+                <div class="concept-tag">Conexión con Herramientas</div>
+            </div>
+            <div class="simple-summary-box" data-simple="10">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                El modelo de IA nunca entra por su cuenta a tus bases de datos ni a tu cuenta de AWS: usa <strong>Tool Calling</strong> para completar un formulario estructurado (JSON) pidiendo qué herramienta necesita ejecutar. Y <strong>MCP</strong> (como viste en la guía de Google Antigravity + AWS) es el <em>enchufe universal</em> que conecta esas herramientas sin tener que programarlas desde cero.
+            </div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    <strong>Tool Calling (o Function Calling)</strong> es el mecanismo mediante el cual un modelo probabilístico solicita al backend determinista la ejecución de una función externa (consultar Jira, leer costos en AWS o enviar un mensaje en Slack). El protocolo <strong>MCP (Model Context Protocol)</strong> estandariza esta comunicación para que cualquier agente (como Google Antigravity) pueda descubrir y utilizar herramientas de terceros de forma segura.
+                </div>
+            </div>
+            <div class="insight-box">
+                <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
+                Como PM, tu responsabilidad en el PRD es definir el catálogo de herramientas autorizadas para el agente y aplicar el <strong>Principio de Mínimo Privilegio (Least Privilege, igual que en AWS IAM)</strong>: si un agente solo necesita consultar estados de proyectos, jamás debe tener habilitada una herramienta de borrado o facturación.
+            </div>
+        </div>
+
+        <!-- 11. Control de Costos & Max Iterations -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">11</span> Max Iterations (Cortafuegos contra Loops Infinitos)</div>
+                <div class="concept-tag">Control Financiero</div>
+            </div>
+            <div class="simple-summary-box" data-simple="11">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Es la <strong>llave térmica (disyuntor) de tu agente</strong>: si una API externa se cae y el agente intenta reintentar una y otra vez toda la noche, puede gastar miles de dólares. Configurar <code>Max Iterations = 5</code> obliga al sistema a cortar automáticamente al quinto intento fallido.
+            </div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    En arquitecturas cíclicas como ReAct, un fallo persistente en un servicio externo (por ejemplo, un Error 502 Bad Gateway) puede inducir al agente a un <strong>Loop Infinito</strong> de auto-corrección. El parámetro <strong>Max Iterations</strong> establece en el backend un límite físico innegociable de vueltas por consulta (típicamente entre 3 y 5 iteraciones) acompañado de un <em>Timeout</em> en segundos.
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. Resiliencia & Fallbacks -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">12</span> Fallback &amp; Resiliencia Operativa</div>
+                <div class="concept-tag">Continuidad de Negocio</div>
+            </div>
+            <div class="simple-summary-box" data-simple="12">
+                <strong>💡 En palabras simples (Para entenderlo al instante)</strong>
+                Es el <strong>Plan B automático</strong> cuando se cae el proveedor principal de IA o una API externa: en lugar de mostrarle un error al usuario, el sistema cambia solo a un proveedor de respaldo o lee los últimos datos guardados en caché.
+            </div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    Un <strong>Fallback</strong> es una ruta de contingencia preconfigurada en el orquestador. Si la Ruta A (por ejemplo, la API en vivo o un proveedor primario de LLM) devuelve error o supera el tiempo máximo de espera, el sistema conmuta automáticamente hacia una Ruta B (otro modelo en Amazon Bedrock, una caché local o la derivación ordenada a un operador humano).
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 
