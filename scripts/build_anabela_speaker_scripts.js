@@ -180,32 +180,35 @@ function generateSingleSessionHTML(s) {
   ` : '';
 
   const antigravityGuideHTML = (s.antigravityGuide && s.antigravityGuide.length > 0) ? `
-    <div style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(139, 92, 246, 0.12)); border: 2px solid rgba(249, 115, 22, 0.45); border-radius: 14px; padding: 1.15rem 1.35rem; margin-bottom: 1.25rem;">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 800; color: #fdba74; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
-        🚀 4 DEMOS EN VIVO CON GOOGLE ANTIGRAVITY (PARA HACER LA SESIÓN SÚPER AMENA Y PRÁCTICA)
-      </div>
-      <p style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 0.8rem;">
-        Además de los botones <strong>"🚀 Ver en Antigravity"</strong> integrados en las diapositivas, podés copiar cualquiera de estos 4 prompts con un clic y pegarlos en tu ventana de Antigravity para que ella vea <strong>IA Activa</strong> funcionando en tiempo real:
-      </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
-        ${s.antigravityGuide.map(ag => `
-          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(249, 115, 22, 0.28); border-radius: 10px; padding: 0.85rem 0.95rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.55rem;">
-            <div>
-              <span style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fb923c; background: rgba(249, 115, 22, 0.14); padding: 2px 8px; border-radius: 99px; margin-bottom: 0.35rem;">${ag.badge}</span>
-              <strong style="display: block; color: #ffffff; font-size: 0.88rem; margin-bottom: 0.25rem;">${ag.title}</strong>
-              <p style="color: #cbd5e1; font-size: 0.8rem; line-height: 1.42; margin: 0;">${mdToHtml(ag.whatToShow)}</p>
-            </div>
-            <div style="background: rgba(15, 23, 42, 0.9); border: 1px dashed rgba(249, 115, 22, 0.4); border-radius: 8px; padding: 0.5rem 0.65rem;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #fdba74; font-weight: 700;">PROMPT PARA PROBAR EN VIVO:</span>
-                <button class="copy-btn" style="padding: 2px 8px; font-size: 0.7rem;" onclick="copyText(this, \`${stripMd(ag.promptToCopy)}\`)">📋 Copiar Prompt</button>
+    <details style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(249, 115, 22, 0.45); border-radius: 12px; padding: 0.85rem 1.15rem; margin-bottom: 1rem;">
+      <summary style="cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 800; color: #fdba74; text-transform: uppercase; letter-spacing: 0.04em; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+        <span>🚀 VER RESUMEN DE LAS 4 DEMOS EN VIVO CON ANTIGRAVITY (CLIC PARA DESPLEGAR)</span>
+        <span style="font-size: 0.75rem; color: #fed7aa;">▼ Desplegar / Ocultar</span>
+      </summary>
+      <div style="margin-top: 0.85rem;">
+        <p style="color: #cbd5e1; font-size: 0.83rem; margin-bottom: 0.7rem;">
+          Además de los botones <strong>"🚀 Ver en Antigravity"</strong> integrados en las diapositivas (Slides 2, 3, 4, 5, 7, 9 y 13), acá tenés los 4 prompts listos para copiar y pegar en tu ventana de Antigravity:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 0.7rem;">
+          ${s.antigravityGuide.map(ag => `
+            <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(249, 115, 22, 0.28); border-radius: 10px; padding: 0.75rem 0.9rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.5rem;">
+              <div>
+                <span style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; color: #fb923c; background: rgba(249, 115, 22, 0.14); padding: 2px 8px; border-radius: 99px; margin-bottom: 0.3rem;">${ag.badge}</span>
+                <strong style="display: block; color: #ffffff; font-size: 0.85rem; margin-bottom: 0.2rem;">${ag.title}</strong>
+                <p style="color: #cbd5e1; font-size: 0.78rem; line-height: 1.4; margin: 0;">${mdToHtml(ag.whatToShow)}</p>
               </div>
-              <code style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #fed7aa; line-height: 1.35;">"${ag.promptToCopy}"</code>
+              <div style="background: rgba(15, 23, 42, 0.9); border: 1px dashed rgba(249, 115, 22, 0.4); border-radius: 8px; padding: 0.45rem 0.6rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: #fdba74; font-weight: 700;">PROMPT EN VIVO:</span>
+                  <button class="copy-btn" style="padding: 2px 8px; font-size: 0.68rem;" onclick="copyText(this, \`${stripMd(ag.promptToCopy)}\`)">📋 Copiar</button>
+                </div>
+                <code style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: #fed7aa; line-height: 1.35;">"${ag.promptToCopy}"</code>
+              </div>
             </div>
-          </div>
-        `).join('')}
+          `).join('')}
+        </div>
       </div>
-    </div>
+    </details>
   ` : '';
 
   const nextSessionPreviewHTML = s.nextSessionPreview ? `
@@ -248,52 +251,65 @@ function generateSingleSessionHTML(s) {
       : `🏁 Cierre de Sesión ${s.id} y Puente a la Siguiente Clase`;
 
     const cheatSheetHTML = sl.cheatSheet ? `
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.idea)}</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">${mdToHtml(sl.cheatSheet.idea)}</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.clicks)}</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">${mdToHtml(sl.cheatSheet.clicks)}</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">${mdToHtml(sl.cheatSheet.analogy)}</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">${mdToHtml(sl.cheatSheet.analogy)}</p>
             </div>
           </div>
         </div>
     ` : '';
 
-    const plainTermsHTML = (sl.plainTerms && sl.plainTerms.length > 0) ? `
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            ${sl.plainTerms.map(pt => `
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 ${mdToHtml(pt.term)}</span>
-                <p class="pt-desc">${mdToHtml(pt.simple)}</p>
+    const hasPlain = sl.plainTerms && sl.plainTerms.length > 0;
+    const hasAg = !!sl.antigravityDemo;
+
+    const supportRowHTML = (hasPlain || hasAg) ? `
+        <div class="support-row" style="display: grid; grid-template-columns: ${hasPlain && hasAg ? 'repeat(auto-fit, minmax(300px, 1fr))' : '1fr'}; gap: 0.85rem; margin-bottom: 1rem;">
+          ${hasPlain ? `
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              ${sl.plainTerms.map(pt => `
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 ${mdToHtml(pt.term)}</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">${mdToHtml(pt.simple)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
+
+          ${hasAg ? `
+          <div class="ag-live-demo-box" style="background: rgba(249, 115, 22, 0.09); border: 1px solid rgba(249, 115, 22, 0.38); border-left: 4px solid #f97316; border-radius: 12px; padding: 0.85rem 1rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.5rem;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; font-weight: 800; color: #fdba74; text-transform: uppercase;">
+                  🚀 DEMO EN ANTIGRAVITY: ${sl.antigravityDemo.title}
+                </span>
               </div>
-            `).join('')}
+              <p style="font-size: 0.82rem; color: #e2e8f0; line-height: 1.44; margin-bottom: 0.35rem;">${mdToHtml(sl.antigravityDemo.explanation)}</p>
+              <p style="font-size: 0.78rem; color: #fdba74; margin: 0;"><strong>👆 En la slide:</strong> ${mdToHtml(sl.antigravityDemo.slideBtnHint)}</p>
+            </div>
+            ${sl.antigravityDemo.livePrompt ? `
+            <div style="background: rgba(7, 11, 20, 0.85); border: 1px dashed rgba(249, 115, 22, 0.4); border-radius: 8px; padding: 0.45rem 0.65rem; display: flex; justify-content: space-between; align-items: center; gap: 0.6rem;">
+              <code style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: #fde68a; line-height: 1.35;">"${sl.antigravityDemo.livePrompt}"</code>
+              <button class="copy-btn" style="white-space: nowrap; border-color: rgba(249,115,22,0.5); color: #fed7aa;" onclick="copyText(this, \`${stripMd(sl.antigravityDemo.livePrompt)}\`)">📋 Copiar Prompt</button>
+            </div>
+            ` : ''}
           </div>
-        </div>
-    ` : '';
-
-    const antigravityDemoHTML = sl.antigravityDemo ? `
-        <div class="ag-live-demo-box" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(249, 115, 22, 0.45); border-left: 4px solid #f97316; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1.1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 800; color: #fdba74; text-transform: uppercase; letter-spacing: 0.04em;">
-              🚀 EJEMPLO DE IA ACTIVA EN VIVO CON GOOGLE ANTIGRAVITY: ${sl.antigravityDemo.title}
-            </span>
-            ${sl.antigravityDemo.livePrompt ? `<button class="copy-btn" style="border-color: rgba(249,115,22,0.5); color: #fed7aa;" onclick="copyText(this, \`${stripMd(sl.antigravityDemo.livePrompt)}\`)">📋 Copiar Prompt para Antigravity</button>` : ''}
-          </div>
-          <p style="font-size: 0.88rem; color: #f8fafc; line-height: 1.48; margin-bottom: 0.45rem;">${mdToHtml(sl.antigravityDemo.explanation)}</p>
-          <p style="font-size: 0.8rem; color: #fdba74; margin: 0;"><strong>👆 En la presentación:</strong> ${mdToHtml(sl.antigravityDemo.slideBtnHint)}</p>
-          ${sl.antigravityDemo.livePrompt ? `<div style="margin-top: 0.5rem; background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(249, 115, 22, 0.35); border-radius: 8px; padding: 0.45rem 0.7rem; font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; color: #fde68a;">💬 Prompt en vivo: "${sl.antigravityDemo.livePrompt}"</div>` : ''}
+          ` : ''}
         </div>
     ` : '';
 
@@ -314,11 +330,10 @@ function generateSingleSessionHTML(s) {
         </div>
 
         ${cheatSheetHTML}
-        ${antigravityDemoHTML}
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, \`${stripMd(sl.script)}\`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
@@ -326,17 +341,12 @@ function generateSingleSessionHTML(s) {
           </blockquote>
         </div>
 
-        ${plainTermsHTML}
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>${mdToHtml(sl.interaction)}</p>
-        </div>
+        ${supportRowHTML}
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">${bridgeLabel}</span>
+              <span class="bridge-badge">🔗 PASO 4 · ${bridgeLabel}</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, \`${stripMd(sl.bridge)}\`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“${mdToHtml(sl.bridge)}”</p>
@@ -905,7 +915,6 @@ function generateSingleSessionHTML(s) {
 
       ${mentalMapHTML}
       ${antigravityGuideHTML}
-      ${nextSessionPreviewHTML}
 
       <div class="agenda-grid">
         ${agendaRows}
@@ -915,6 +924,7 @@ function generateSingleSessionHTML(s) {
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
         <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        ${s.nextSessionPreview ? '<a href="#preview-sesion-4" class="mode-btn" style="text-decoration: none; background: rgba(245, 158, 11, 0.16); color: #fcd34d; border-color: rgba(245, 158, 11, 0.45);">🔭 Ir al Adelanto Sesión 4 ↓</a>' : ''}
         <div class="progress-stat" id="progressStat">0 / ${s.slides.length} dictadas</div>
       </div>
     </section>

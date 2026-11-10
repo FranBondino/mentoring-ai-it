@@ -585,7 +585,6 @@
     </div>
   
       
-      
 
       <div class="agenda-grid">
         
@@ -621,6 +620,7 @@
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
         <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        
         <div class="progress-stat" id="progressStat">0 / 15 dictadas</div>
       </div>
     </section>
@@ -664,66 +664,70 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Presentar la última sesión del programa: pasamos de la arquitectura técnica (RAG y Agentes) al liderazgo ejecutivo (Finanzas/ROI, Calidad con Evals/Langfuse y Entrevistas).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Presentar la última sesión del programa: pasamos de la arquitectura técnica (RAG y Agentes) al liderazgo ejecutivo (Finanzas/ROI, Calidad con Evals/Langfuse y Entrevistas).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Mostrá la portada de la Sesión 4 y repasá el camino completo S1 → S2 → S3 → S4.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá la portada de la Sesión 4 y repasá el camino completo S1 → S2 → S3 → S4.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En las Sesiones 1 a 3 aprendiste cómo se construye y maneja el avión; hoy en la Sesión 4 aprendés a leer el tablero de combustible (costos), la caja negra (Langfuse) y a aprobar el examen de comandante (entrevistas).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En las Sesiones 1 a 3 aprendiste cómo se construye y maneja el avión; hoy en la Sesión 4 aprendés a leer el tablero de combustible (costos), la caja negra (Langfuse) y a aprobar el examen de comandante (entrevistas).</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `¡Bienvenida a nuestra cuarta y última sesión, Anabela! En las tres sesiones anteriores construimos una base técnica enorme: vimos cómo trabaja un equipo de desarrollo ágil y cómo funcionan las APIs y Git (Sesión 1), cómo funciona por dentro un LLM y cómo se diseña una arquitectura RAG (Sesión 2), y cómo construir chatbots y agentes autónomos con ReAct, Tool Calling y guardrails (Sesión 3). Hoy vamos a ponerle el broche de oro a tu perfil: vamos a dominar los números financieros de la IA (AI Economics), cómo medir la calidad y auditar un chatbot en producción (Evals y Langfuse), y vamos a cerrar entrenando casos reales de entrevistas de IT.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ BIENVENIDA A LA SESIÓN FINAL (El recorrido completo):
+• En las Sesiones 1 a 3 construiste toda tu base técnica: desarrollo de software, APIs y Agile (S1), LLMs y arquitectura RAG (S2), y Agentes Autónomos con ReAct, MCP y guardrails (S3).
+
+2️⃣ EL OBJETIVO DE HOY EN LA SESIÓN 4:
+• Hoy le ponemos el broche ejecutivo a tu perfil: vamos a dominar las finanzas de la IA (AI Economics), cómo auditar la calidad de un bot en producción (AI Evals y Langfuse), y vamos a entrenar 3 casos reales de entrevistas de PM.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            ¡Bienvenida a nuestra cuarta y última sesión, Anabela! En las tres sesiones anteriores construimos una base técnica enorme: vimos cómo trabaja un equipo de desarrollo ágil y cómo funcionan las APIs y Git (Sesión 1), cómo funciona por dentro un LLM y cómo se diseña una arquitectura RAG (Sesión 2), y cómo construir chatbots y agentes autónomos con ReAct, Tool Calling y guardrails (Sesión 3). Hoy vamos a ponerle el broche de oro a tu perfil: vamos a dominar <strong style="color:#fff; font-weight:700;">los números financieros de la IA (AI Economics)</strong>, cómo <strong style="color:#fff; font-weight:700;">medir la calidad y auditar un chatbot en producción (Evals y Langfuse)</strong>, y vamos a cerrar entrenando <strong style="color:#fff; font-weight:700;">casos reales de entrevistas de IT</strong>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ BIENVENIDA A LA SESIÓN FINAL (El recorrido completo):</strong><br>• En las <strong style="color:#fff; font-weight:700;">Sesiones 1 a 3</strong> construiste toda tu base técnica: desarrollo de software, APIs y Agile (S1), LLMs y arquitectura RAG (S2), y Agentes Autónomos con ReAct, MCP y guardrails (S3).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ EL OBJETIVO DE HOY EN LA SESIÓN 4:</strong><br>• Hoy le ponemos el broche ejecutivo a tu perfil: vamos a dominar <strong style="color:#fff; font-weight:700;">las finanzas de la IA (AI Economics)</strong>, cómo <strong style="color:#fff; font-weight:700;">auditar la calidad de un bot en producción (AI Evals y Langfuse)</strong>, y vamos a entrenar <strong style="color:#fff; font-weight:700;">3 casos reales de entrevistas de PM</strong>.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 AI Economics (Economía de la IA)</span>
-                <p class="pt-desc">Cómo calcular cuánto cuesta operar un producto de IA por mes y cuánto dinero le ahorra a la empresa (ROI).</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 AI Evals & Observabilidad</span>
-                <p class="pt-desc">Las pruebas automáticas de calidad y el tablero de monitoreo (Langfuse) para vigilar que el bot no mienta ni gaste de más.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 AI Economics (Economía de la IA)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cómo calcular cuánto cuesta operar un producto de IA por mes y cuánto dinero le ahorra a la empresa (ROI).</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 AI Evals & Observabilidad</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Las pruebas automáticas de calidad y el tablero de monitoreo (Langfuse) para vigilar que el bot no mienta ni gaste de más.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Presentá la portada celebrando el recorrido por las 4 sesiones y el enfoque ejecutivo de esta clase de cierre.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 2: Agenda Operativa de la Sesión 4</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 2: Agenda Operativa de la Sesión 4</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Miremos rápidamente en la Slide 2 los tres bloques prácticos que vamos a recorrer hoy.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Miremos rápidamente en la Slide 2 los tres bloques prácticos que vamos a recorrer hoy.”</p>
@@ -748,61 +752,64 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar el mapa de los 3 módulos que vamos a recorrer hoy: 1) Finanzas y Calculadora ROI, 2) Seguridad, Evals y Langfuse, y 3) Simulacro de 3 Casos de Entrevista.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Mostrar el mapa de los 3 módulos que vamos a recorrer hoy: 1) Finanzas y Calculadora ROI, 2) Seguridad, Evals y Langfuse, y 3) Simulacro de 3 Casos de Entrevista.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las 3 tarjetas de colores en pantalla: Ámbar (AI Economics), Azul (Gobernanza y Calidad) y Violeta (Simulación de Rol).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá las 3 tarjetas de colores en pantalla: Ámbar (AI Economics), Azul (Gobernanza y Calidad) y Violeta (Simulación de Rol).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Son las 3 preguntas que siempre te hace un Directorio antes de lanzar un producto: 1) ¿Cuánto cuesta y cuánto ahorra?, 2) ¿Es seguro y confiable?, y 3) ¿Sabés manejar una crisis si algo falla?</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Son las 3 preguntas que siempre te hace un Directorio antes de lanzar un producto: 1) ¿Cuánto cuesta y cuánto ahorra?, 2) ¿Es seguro y confiable?, y 3) ¿Sabés manejar una crisis si algo falla?</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, AI Economics, donde vas a aprender a calcular cuánto cuesta operar un chatbot o flujo de traducción con IA y cómo defender su retorno de inversión (ROI). Segundo, Gobernanza y Calidad, donde vamos a usar herramientas reales como Langfuse para radiografiar qué pasa adentro de cada respuesta del bot. Y tercero, Simulación de Rol, donde vamos a resolver en vivo tres crisis típicas que te plantean en entrevistas para roles de PM.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ NUESTRA HOJA DE RUTA DE HOY EN 3 BLOQUES (Señalá las 3 tarjetas):
+• 1. AI Economics (Tarjeta Ámbar): Cómo calcular cuánto cuesta operar un flujo de IA por mes, cómo ahorrar hasta un 90% con Prompt Caching y cómo demostrar el Retorno de Inversión (ROI) con una calculadora en vivo.
+• 2. Gobernanza y Calidad (Tarjeta Azul): Cómo proteger datos confidenciales (PII/NDA), cómo calificar si el bot miente con la Tríada RAG y cómo radiografiar cada respuesta en Langfuse.
+• 3. Simulación de Rol en Entrevistas (Tarjeta Violeta): Cómo responder preguntas difíciles frente a líderes técnicos resolviendo 3 crisis en vivo.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, <strong style="color:#fff; font-weight:700;">AI Economics</strong>, donde vas a aprender a calcular cuánto cuesta operar un chatbot o flujo de traducción con IA y cómo defender su retorno de inversión (ROI). Segundo, <strong style="color:#fff; font-weight:700;">Gobernanza y Calidad</strong>, donde vamos a usar herramientas reales como Langfuse para radiografiar qué pasa adentro de cada respuesta del bot. Y tercero, <strong style="color:#fff; font-weight:700;">Simulación de Rol</strong>, donde vamos a resolver en vivo tres crisis típicas que te plantean en entrevistas para roles de PM.
+            <strong style="color:#fff; font-weight:700;">1️⃣ NUESTRA HOJA DE RUTA DE HOY EN 3 BLOQUES (Señalá las 3 tarjetas):</strong><br>• <strong style="color:#fff; font-weight:700;">1. AI Economics (Tarjeta Ámbar):</strong> Cómo calcular cuánto cuesta operar un flujo de IA por mes, cómo ahorrar hasta un 90% con Prompt Caching y cómo demostrar el Retorno de Inversión (ROI) con una calculadora en vivo.<br>• <strong style="color:#fff; font-weight:700;">2. Gobernanza y Calidad (Tarjeta Azul):</strong> Cómo proteger datos confidenciales (PII/NDA), cómo calificar si el bot miente con la Tríada RAG y cómo radiografiar cada respuesta en <strong style="color:#fff; font-weight:700;">Langfuse</strong>.<br>• <strong style="color:#fff; font-weight:700;">3. Simulación de Rol en Entrevistas (Tarjeta Violeta):</strong> Cómo responder preguntas difíciles frente a líderes técnicos resolviendo 3 crisis en vivo.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 ROI (Return on Investment)</span>
-                <p class="pt-desc">El retorno de inversión: cuántos dólares recupera o ahorra la empresa por cada dólar invertido en tecnología.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 ROI (Return on Investment)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El retorno de inversión: cuántos dólares recupera o ahorra la empresa por cada dólar invertido en tecnología.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Señalá las 3 tarjetas de la agenda: 1. AI Economics (Ámbar), 2. Gobernanza & Calidad (Azul) y 3. Simulación de Rol (Violeta).</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 3: AI Economics: La Variable GPU (Input vs. Output Tokens)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 3: AI Economics: La Variable GPU (Input vs. Output Tokens)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Arranquemos directo por el bolsillo del proyecto: ¿por qué operar software con IA tiene una estructura de costos totalmente distinta al software clásico? Pasemos a la Slide 3.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Arranquemos directo por el bolsillo del proyecto: ¿por qué operar software con IA tiene una estructura de costos totalmente distinta al software clásico? Pasemos a la Slide 3.”</p>
@@ -827,66 +834,71 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar por qué en IA el costo es variable por uso (tokens en GPU), por qué escribir (Output) cuesta 3 a 4 veces más que leer (Input) y por qué el español consume ~25% más tokens que el inglés.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Explicar por qué en IA el costo es variable por uso (tokens en GPU), por qué escribir (Output) cuesta 3 a 4 veces más que leer (Input) y por qué el español consume ~25% más tokens que el inglés.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las tarjetas de Input Tokens vs. Output Tokens a la izquierda y la regla de conversión ('1k Tokens ≈ 750 palabras' y '+20-30% en español') a la derecha.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá las tarjetas de Input Tokens vs. Output Tokens a la izquierda y la regla de conversión ('1k Tokens ≈ 750 palabras' y '+20-30% en español') a la derecha.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">El software clásico es como alquilar una oficina con tarifa plana de luz; la IA es como un taxi con reloj taxímetro: cada palabra que lee y escribe corre en el reloj, y encima en español las palabras son más largas y ocupan más fichas.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">El software clásico es como alquilar una oficina con tarifa plana de luz; la IA es como un taxi con reloj taxímetro: cada palabra que lee y escribe corre en el reloj, y encima en español las palabras son más largas y ocupan más fichas.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor en la nube por un monto fijo al mes y da casi lo mismo si un usuario hace diez clics o mil clics. En la Inteligencia Artificial eso cambia radicalmente: cada vez que un usuario manda un mensaje, una placa de video gigante (GPU) tiene que hacer miles de millones de cálculos matemáticos en vivo, y el proveedor nos cobra por cada Token procesado. Y mirá dos detalles fundamentales para vos: primero, los Output Tokens (las palabras que el modelo escribe de respuesta) cuestan entre 3 y 4 veces más caros que los Input Tokens (lo que el modelo lee). Segundo —y esto en localización es clave—: el español consume entre un 20% y un 30% más de tokens que el inglés para decir exactamente lo mismo, por cómo el tokenizador parte nuestras conjugaciones y tildes. Saber esto te permite presupuestar un proyecto multilingüe sin llevarte sorpresas.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ SOFTWARE CLÁSICO VS. COSTO POR TOKEN EN IA (Tarjeta izquierda):
+• En el software tradicional alquilás un servidor por un monto fijo al mes. En cambio, en IA cada mensaje hace trabajar placas de video (GPUs) en tiempo real y el proveedor te cobra por cada Token procesado (como un reloj taxímetro).
+
+2️⃣ DOS REGLAS FINANCIERAS CLAVE PARA TU PRESUPUESTO (Tarjeta derecha):
+• Regla 1 — Asimetría Input vs. Output: Los Output Tokens (lo que la IA escribe) cuestan entre 3 y 4 veces más caros que los Input Tokens (lo que la IA lee). Por eso pedimos respuestas concisas.
+• Regla 2 — El 'Impuesto' del Idioma Español: Por cómo se parten las sílabas y tildes, el español consume entre un 20% y un 30% más de tokens que el inglés para decir exactamente lo mismo (1.000 tokens ≈ 750 palabras en inglés, pero ~580 en español).`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor en la nube por un monto fijo al mes y da casi lo mismo si un usuario hace diez clics o mil clics. En la Inteligencia Artificial eso cambia radicalmente: cada vez que un usuario manda un mensaje, una placa de video gigante (<strong style="color:#fff; font-weight:700;">GPU</strong>) tiene que hacer miles de millones de cálculos matemáticos en vivo, y el proveedor nos cobra por cada <strong style="color:#fff; font-weight:700;">Token</strong> procesado. Y mirá dos detalles fundamentales para vos: primero, los <strong style="color:#fff; font-weight:700;">Output Tokens</strong> (las palabras que el modelo escribe de respuesta) cuestan entre <strong style="color:#fff; font-weight:700;">3 y 4 veces más caros</strong> que los <strong style="color:#fff; font-weight:700;">Input Tokens</strong> (lo que el modelo lee). Segundo —y esto en localización es clave—: el <strong style="color:#fff; font-weight:700;">español consume entre un 20% y un 30% más de tokens que el inglés</strong> para decir exactamente lo mismo, por cómo el tokenizador parte nuestras conjugaciones y tildes. Saber esto te permite presupuestar un proyecto multilingüe sin llevarte sorpresas.
+            <strong style="color:#fff; font-weight:700;">1️⃣ SOFTWARE CLÁSICO VS. COSTO POR TOKEN EN IA (Tarjeta izquierda):</strong><br>• En el software tradicional alquilás un servidor por un monto fijo al mes. En cambio, en IA cada mensaje hace trabajar placas de video (<strong style="color:#fff; font-weight:700;">GPUs</strong>) en tiempo real y el proveedor te cobra por cada <strong style="color:#fff; font-weight:700;">Token</strong> procesado (como un reloj taxímetro).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DOS REGLAS FINANCIERAS CLAVE PARA TU PRESUPUESTO (Tarjeta derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Regla 1 — Asimetría Input vs. Output:</strong> Los <strong style="color:#fff; font-weight:700;">Output Tokens</strong> (lo que la IA escribe) cuestan entre <strong style="color:#fff; font-weight:700;">3 y 4 veces más caros</strong> que los <strong style="color:#fff; font-weight:700;">Input Tokens</strong> (lo que la IA lee). Por eso pedimos respuestas concisas.<br>• <strong style="color:#fff; font-weight:700;">Regla 2 — El 'Impuesto' del Idioma Español:</strong> Por cómo se parten las sílabas y tildes, <strong style="color:#fff; font-weight:700;">el español consume entre un 20% y un 30% más de tokens que el inglés</strong> para decir exactamente lo mismo (1.000 tokens ≈ 750 palabras en inglés, pero ~580 en español).
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 COGS (Costo de la Mercadería Vendida / Costo Operativo)</span>
-                <p class="pt-desc">El gasto directo en servidores y APIs de IA que te cuesta atender a cada usuario.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Input Tokens vs. Output Tokens</span>
-                <p class="pt-desc">Input es lo que la IA lee (más barato, procesado en bloque); Output es lo que la IA escribe palabra por palabra (3 a 4 veces más caro).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 COGS (Costo de la Mercadería Vendida / Costo Operativo)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El gasto directo en servidores y APIs de IA que te cuesta atender a cada usuario.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Input Tokens vs. Output Tokens</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Input es lo que la IA lee (más barato, procesado en bloque); Output es lo que la IA escribe palabra por palabra (3 a 4 veces más caro).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Señalá la regla métrica a la derecha ('1k Tokens ≈ 750 Palabras') y el dato clave de que el español consume entre 20% y 30% más de tokens.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 4: Prompt Caching: El Súper Ahorro (Hasta 90% Off)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 4: Prompt Caching: El Súper Ahorro (Hasta 90% Off)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: si en cada consulta tenemos que mandarle al modelo las instrucciones del sistema, la guía de estilo y el glosario, ¿tenemos que pagar el 100% de esos tokens repetidos miles de veces por día? Por suerte no. Vamos a la Slide 4.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ahora bien: si en cada consulta tenemos que mandarle al modelo las instrucciones del sistema, la guía de estilo y el glosario, ¿tenemos que pagar el 100% de esos tokens repetidos miles de veces por día? Por suerte no. Vamos a la Slide 4.”</p>
@@ -911,66 +923,73 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar cómo ahorrar hasta un 90% de plata y acelerar el bot poniendo las instrucciones fijas y glosarios arriba del todo en el prompt (Prompt Caching).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Mostrar cómo ahorrar hasta un 90% de plata y acelerar el bot poniendo las instrucciones fijas y glosarios arriba del todo en el prompt (Prompt Caching).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá la comparativa de barras a la derecha: cómo la parte fija del prompt queda guardada en memoria con hasta 90% de descuento.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá la comparativa de barras a la derecha: cómo la parte fija del prompt queda guardada en memoria con hasta 90% de descuento.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En vez de fotocopiar y pagar de nuevo el manual de 50 páginas en cada consulta, el proveedor lo deja plastificado arriba del escritorio y te cobra una fracción mínima por consultarlo.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En vez de fotocopiar y pagar de nuevo el manual de 50 páginas en cada consulta, el proveedor lo deja plastificado arriba del escritorio y te cobra una fracción mínima por consultarlo.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Si en una entrevista o reunión de presupuesto mencionás Prompt Caching, te ganás automáticamente el respeto del equipo de ingeniería. ¿Qué es el Prompt Caching? Cuando armamos un chatbot o un validador automático de traducciones, el 80% del prompt es siempre idéntico (el rol del sistema, las reglas de formato, el glosario base y los ejemplos) y solo cambia el 20% final (la consulta o el párrafo nuevo del usuario). Si estructuramos el prompt poniendo todo el bloque fijo bien arriba al principio y la parte variable al final, las APIs modernas guardan ese bloque fijo en memoria caché y nos hacen hasta un 75% a 90% de descuento en esos tokens de entrada, además de responder muchísimo más rápido.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL PROBLEMA DE PAGAR SIEMPRE LAS MISMAS INSTRUCCIONES:
+• Cuando armamos un chatbot o un agente de localización, el 80% del prompt es siempre idéntico (instrucciones del rol, reglas de estilo, glosario base) y solo cambia el 20% final (la consulta del usuario).
+
+2️⃣ CÓMO FUNCIONA EL PROMPT CACHING (Señalá las barras a la derecha):
+• Si ordenás el prompt poniendo todo el bloque fijo bien arriba al principio y la pregunta variable al final, proveedores como OpenAI, Anthropic y AWS Bedrock guardan ese bloque fijo en memoria caché.
+
+3️⃣ EL IMPACTO EN PLATA Y VELOCIDAD:
+• Te hacen entre un 75% y un 90% de descuento sobre todos esos tokens repetidos y además la respuesta arranca el doble de rápido.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Si en una entrevista o reunión de presupuesto mencionás <strong style="color:#fff; font-weight:700;">Prompt Caching</strong>, te ganás automáticamente el respeto del equipo de ingeniería. ¿Qué es el Prompt Caching? Cuando armamos un chatbot o un validador automático de traducciones, el 80% del prompt es siempre idéntico (el rol del sistema, las reglas de formato, el glosario base y los ejemplos) y solo cambia el 20% final (la consulta o el párrafo nuevo del usuario). Si estructuramos el prompt poniendo <strong style="color:#fff; font-weight:700;">todo el bloque fijo bien arriba al principio</strong> y la parte variable al final, las APIs modernas guardan ese bloque fijo en memoria caché y nos hacen hasta un <strong style="color:#fff; font-weight:700;">75% a 90% de descuento</strong> en esos tokens de entrada, además de responder muchísimo más rápido.
+            <strong style="color:#fff; font-weight:700;">1️⃣ EL PROBLEMA DE PAGAR SIEMPRE LAS MISMAS INSTRUCCIONES:</strong><br>• Cuando armamos un chatbot o un agente de localización, el <strong style="color:#fff; font-weight:700;">80% del prompt es siempre idéntico</strong> (instrucciones del rol, reglas de estilo, glosario base) y solo cambia el <strong style="color:#fff; font-weight:700;">20% final</strong> (la consulta del usuario).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ CÓMO FUNCIONA EL PROMPT CACHING (Señalá las barras a la derecha):</strong><br>• Si ordenás el prompt poniendo <strong style="color:#fff; font-weight:700;">todo el bloque fijo bien arriba al principio</strong> y la pregunta variable al final, proveedores como OpenAI, Anthropic y AWS Bedrock guardan ese bloque fijo en memoria caché.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ EL IMPACTO EN PLATA Y VELOCIDAD:</strong><br>• Te hacen entre un <strong style="color:#fff; font-weight:700;">75% y un 90% de descuento</strong> sobre todos esos tokens repetidos y además la respuesta arranca el doble de rápido.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Prompt Caching</span>
-                <p class="pt-desc">Descuento de hasta 75%-90% que te dan los proveedores (OpenAI, Anthropic, AWS Bedrock) cuando ponés las instrucciones fijas y glosarios al principio del prompt para no reprocesarlos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Prefijo Estático vs. Sufijo Dinámico</span>
-                <p class="pt-desc">Poner arriba todo lo que nunca cambia (reglas, glosario) y dejar abajo del todo lo único que cambia (la pregunta del usuario).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Prompt Caching</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Descuento de hasta 75%-90% que te dan los proveedores (OpenAI, Anthropic, AWS Bedrock) cuando ponés las instrucciones fijas y glosarios al principio del prompt para no reprocesarlos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Prefijo Estático vs. Sufijo Dinámico</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Poner arriba todo lo que nunca cambia (reglas, glosario) y dejar abajo del todo lo único que cambia (la pregunta del usuario).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Compará las barras de costo y estructura del prompt estático arriba vs. variable abajo en la tarjeta derecha.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 5: RAG vs. Fine-Tuning: La Comparativa Financiera de Negocio</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 5: RAG vs. Fine-Tuning: La Comparativa Financiera de Negocio</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya sabemos optimizar el costo por llamada con Prompt Caching. Veamos ahora en una tabla comparativa cuánto cuesta realmente armar una arquitectura RAG frente a hacer Fine-Tuning. Pasemos a la Slide 5.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya sabemos optimizar el costo por llamada con Prompt Caching. Veamos ahora en una tabla comparativa cuánto cuesta realmente armar una arquitectura RAG frente a hacer Fine-Tuning. Pasemos a la Slide 5.”</p>
@@ -995,61 +1014,67 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Comparar con ojos de negocio y presupuesto por qué en el 95% de los proyectos corporativos conviene usar RAG (barato, actualizable al instante y con citas) en vez de Fine-Tuning.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Comparar con ojos de negocio y presupuesto por qué en el 95% de los proyectos corporativos conviene usar RAG (barato, actualizable al instante y con citas) en vez de Fine-Tuning.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Recorré las filas de la tabla comparativa contrastando la columna verde (RAG) contra la columna roja/naranja (Fine-Tuning).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las filas de la tabla comparativa contrastando la columna verde (RAG) contra la columna roja/naranja (Fine-Tuning).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">RAG es darle al empleado acceso al Google Drive actualizado todos los días (rápido y económico); Fine-Tuning es mandarlo a hacer un posgrado de 6 meses cada vez que cambia una tarifa.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">RAG es darle al empleado acceso al Google Drive actualizado todos los días (rápido y económico); Fine-Tuning es mandarlo a hacer un posgrado de 6 meses cada vez que cambia una tarifa.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `En las Sesiones 2 y 3 vimos la diferencia técnica entre RAG y Fine-Tuning; acá en la Slide 5 tenés la foto financiera completa para defenderla ante un directorio. Fijate en la tabla: con RAG, el costo inicial es bajo, actualizar un dato nuevo cuesta centavos y tarda segundos (solo subís el PDF o glosario nuevo a la Base Vectorial), y podés auditar de qué página salió cada respuesta. En cambio, con Fine-Tuning, tenés un costo altísimo de preparación y entrenamiento en GPUs, cada vez que cambia un manual queda desactualizado y no tenés citas de fuentes. Por eso en el 95% de los casos corporativos arrancamos con RAG + Prompt Engineering, y solo sumamos Fine-Tuning si necesitamos enseñar un formato o estilo lingüístico ultra específico.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ LA FOTO FINANCIERA PARA EL DIRECTORIO (Recorré la tabla comparativa):
+• Cuando un directivo pregunta si conviene hacer RAG o Fine-Tuning, acá tenés la comparativa económica:
+  • Con RAG (Columna Verde): Costo inicial bajo, actualizar un manual o glosario nuevo cuesta centavos y tarda segundos (solo subís el archivo a la Base Vectorial), y tenés citas exactas de la página oficial para auditar.
+  • Con Fine-Tuning (Columna Naranja): Costo alto de entrenamiento en GPUs, cada vez que cambia una regla queda desactualizado y no cita fuentes.
+
+2️⃣ REGLA EJECUTIVA DE PM:
+• El 95% de los proyectos corporativos arrancan con RAG + Prompt Caching, y solo se suma Fine-Tuning cuando necesitás enseñar un estilo de redacción o formato muy específico.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            En las Sesiones 2 y 3 vimos la diferencia técnica entre <strong style="color:#fff; font-weight:700;">RAG</strong> y <strong style="color:#fff; font-weight:700;">Fine-Tuning</strong>; acá en la Slide 5 tenés la foto financiera completa para defenderla ante un directorio. Fijate en la tabla: con <strong style="color:#fff; font-weight:700;">RAG</strong>, el costo inicial es bajo, actualizar un dato nuevo cuesta centavos y tarda segundos (solo subís el PDF o glosario nuevo a la Base Vectorial), y podés auditar de qué página salió cada respuesta. En cambio, con <strong style="color:#fff; font-weight:700;">Fine-Tuning</strong>, tenés un costo altísimo de preparación y entrenamiento en GPUs, cada vez que cambia un manual queda desactualizado y no tenés citas de fuentes. Por eso en el 95% de los casos corporativos arrancamos con RAG + Prompt Engineering, y solo sumamos Fine-Tuning si necesitamos enseñar un formato o estilo lingüístico ultra específico.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA FOTO FINANCIERA PARA EL DIRECTORIO (Recorré la tabla comparativa):</strong><br>• Cuando un directivo pregunta si conviene hacer <strong style="color:#fff; font-weight:700;">RAG</strong> o <strong style="color:#fff; font-weight:700;">Fine-Tuning</strong>, acá tenés la comparativa económica:<br>  • <strong style="color:#fff; font-weight:700;">Con RAG (Columna Verde):</strong> Costo inicial bajo, actualizar un manual o glosario nuevo cuesta centavos y tarda segundos (solo subís el archivo a la Base Vectorial), y tenés citas exactas de la página oficial para auditar.<br>  • <strong style="color:#fff; font-weight:700;">Con Fine-Tuning (Columna Naranja):</strong> Costo alto de entrenamiento en GPUs, cada vez que cambia una regla queda desactualizado y no cita fuentes.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ REGLA EJECUTIVA DE PM:</strong><br>• El <strong style="color:#fff; font-weight:700;">95% de los proyectos corporativos arrancan con RAG + Prompt Caching</strong>, y solo se suma Fine-Tuning cuando necesitás enseñar un estilo de redacción o formato muy específico.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 TCO (Total Cost of Ownership)</span>
-                <p class="pt-desc">El costo total real de un proyecto sumando el desarrollo inicial más lo que cuesta mantenerlo y actualizarlo todos los meses.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 TCO (Total Cost of Ownership)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El costo total real de un proyecto sumando el desarrollo inicial más lo que cuesta mantenerlo y actualizarlo todos los meses.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Recorré las filas de la tabla comparativa contrastando Costo Inicial, Costo de Actualización, Control de Alucinaciones y Caso de Uso Ideal.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 6: Ejercicio 1: Calculadora Interactiva de ROI (Automatización con IA)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 6: Ejercicio 1: Calculadora Interactiva de ROI (Automatización con IA)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Pongamos todos estos números en movimiento con un ejercicio práctico en vivo. Pasemos a la Slide 6 para usar nuestra Calculadora Interactiva de ROI.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Pongamos todos estos números en movimiento con un ejercicio práctico en vivo. Pasemos a la Slide 6 para usar nuestra Calculadora Interactiva de ROI.”</p>
@@ -1074,61 +1099,69 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Usar en vivo la Calculadora de ROI para demostrar cómo una tarea manual de $12.500 USD/mes baja a menos de $100 USD/mes de API combinada con supervisión humana.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Usar en vivo la Calculadora de ROI para demostrar cómo una tarea manual de $12.500 USD/mes baja a menos de $100 USD/mes de API combinada con supervisión humana.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Mové los 3 sliders de la izquierda ('Documentos/mes', 'Minutos por documento', 'Costo Hora USD') y mostrá cómo cambian los números grandes a la derecha.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mové los 3 sliders de la izquierda ('Documentos/mes', 'Minutos por documento', 'Costo Hora USD') y mostrá cómo cambian los números grandes a la derecha.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Esta calculadora es tu arma secreta para reuniones con directores financieros: transforma 'queremos usar IA porque es moderna' en 'este proyecto nos ahorra $10.000 dólares por mes'.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Esta calculadora es tu arma secreta para reuniones con directores financieros: transforma 'queremos usar IA porque es moderna' en 'este proyecto nos ahorra $10.000 dólares por mes'.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `¡Juguemos con esta calculadora en vivo! Imaginá que querés proponer en una empresa automatizar con IA la primera pasada de revisión de calidad (QA), clasificación de tickets o pre-análisis de documentos. Movamos el primer slider: supongamos que procesan 1.500 documentos o tickets al mes. Segundo slider: a una persona le lleva promedio 20 minutos revisar cada uno. Tercer slider: el costo hora profesional es de 25 dólares. Mirá el panel de resultados a la derecha: hacerlo 100% manual cuesta 12.500 dólares por mes. En cambio, procesarlo con un pipeline de IA (consumiendo unos 4.000 tokens por documento) cuesta apenas unos ~90 dólares de API al mes. Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (Human-in-the-Loop), el ahorro neto supera el 80%. Así es como un PM justifica un proyecto de IA con números contundentes.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):
+• Imaginá que querés justificar ante el directorio automatizar el pre-análisis de documentos o clasificación de tickets:
+  • Slider 1: Poné 1.500 documentos/tickets al mes.
+  • Slider 2: Poné 20 minutos humanos por documento.
+  • Slider 3: Poné \$25 USD de costo hora profesional.
+
+2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:
+• Hacer el 100% del trabajo a mano cuesta \$12.500 USD por mes.
+• Procesar la primera pasada con IA cuesta apenas ~\$90 USD de API al mes. Incluso dejando a un especialista humano revisando el 20% del tiempo (Human-in-the-Loop), generás un ahorro neto superior al 80%.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            ¡Juguemos con esta calculadora en vivo! Imaginá que querés proponer en una empresa automatizar con IA la primera pasada de revisión de calidad (QA), clasificación de tickets o pre-análisis de documentos. Movamos el primer slider: supongamos que procesan <strong style="color:#fff; font-weight:700;">1.500 documentos o tickets al mes</strong>. Segundo slider: a una persona le lleva promedio <strong style="color:#fff; font-weight:700;">20 minutos</strong> revisar cada uno. Tercer slider: el costo hora profesional es de <strong style="color:#fff; font-weight:700;">25 dólares</strong>. Mirá el panel de resultados a la derecha: hacerlo 100% manual cuesta <strong style="color:#fff; font-weight:700;">12.500 dólares por mes</strong>. En cambio, procesarlo con un pipeline de IA (consumiendo unos 4.000 tokens por documento) cuesta apenas <strong style="color:#fff; font-weight:700;">unos ~90 dólares de API al mes</strong>. Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (Human-in-the-Loop), el ahorro neto supera el 80%. Así es como un PM justifica un proyecto de IA con números contundentes.
+            <strong style="color:#fff; font-weight:700;">1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):</strong><br>• Imaginá que querés justificar ante el directorio automatizar el pre-análisis de documentos o clasificación de tickets:<br>  • <strong style="color:#fff; font-weight:700;">Slider 1:</strong> Poné <strong style="color:#fff; font-weight:700;">1.500 documentos/tickets al mes</strong>.<br>  • <strong style="color:#fff; font-weight:700;">Slider 2:</strong> Poné <strong style="color:#fff; font-weight:700;">20 minutos humanos</strong> por documento.<br>  • <strong style="color:#fff; font-weight:700;">Slider 3:</strong> Poné <strong style="color:#fff; font-weight:700;">$25 USD</strong> de costo hora profesional.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:</strong><br>• Hacer el 100% del trabajo a mano cuesta <strong style="color:#fff; font-weight:700;">$12.500 USD por mes</strong>.<br>• Procesar la primera pasada con IA cuesta apenas <strong style="color:#fff; font-weight:700;">~$90 USD de API al mes</strong>. Incluso dejando a un especialista humano revisando el 20% del tiempo (<em style="color:#fde68a;">Human-in-the-Loop</em>), generás un <strong style="color:#fff; font-weight:700;">ahorro neto superior al 80%</strong>.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Costo Hora-Hombre vs. Costo de Inferencia</span>
-                <p class="pt-desc">Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Costo Hora-Hombre vs. Costo de Inferencia</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Mové en vivo los 3 sliders ('Documentos / Tickets Procesados al Mes', 'Minutos Humanos por Documento', 'Costo Hora Profesional USD') para ver cómo se actualizan al instante el Costo Humano, el Costo de API de IA y el Ahorro Neto Mensual.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 7: Seguridad Corporativa: Blindaje contra Fuga de Datos (PII & NDA)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 7: Seguridad Corporativa: Blindaje contra Fuga de Datos (PII & NDA)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Cuando presentás un ahorro así de grande, el directorio te aprueba el presupuesto, pero inmediatamente el área de Legales y Seguridad te hace la pregunta clave: '¿Cómo protegemos los datos sensibles?'. Vamos a la Slide 7.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Cuando presentás un ahorro así de grande, el directorio te aprueba el presupuesto, pero inmediatamente el área de Legales y Seguridad te hace la pregunta clave: '¿Cómo protegemos los datos sensibles?'. Vamos a la Slide 7.”</p>
@@ -1153,71 +1186,77 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar las 3 barreras de seguridad para que nunca se filtren datos personales (PII) ni secretos bajo NDA al usar IA.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Explicar las 3 barreras de seguridad para que nunca se filtren datos personales (PII) ni secretos bajo NDA al usar IA.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá los 3 escudos: 1) Sanitización de PII (ocultar nombres/mails), 2) Contrato Enterprise Zero-Retention, y 3) Permisos por rol (RBAC).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá los 3 escudos: 1) Sanitización de PII (ocultar nombres/mails), 2) Contrato Enterprise Zero-Retention, y 3) Permisos por rol (RBAC).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Igual que cuando un médico presenta un caso clínico en un congreso: antes de mostrar la radiografía le tapa el nombre y DNI al paciente ('Paciente X') para proteger su identidad.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Igual que cuando un médico presenta un caso clínico en un congreso: antes de mostrar la radiografía le tapa el nombre y DNI al paciente ('Paciente X') para proteger su identidad.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Para que ningún dato confidencial o personal se filtre, acá resumimos el blindaje de tres capas que exige un PM Senior: 1) Sanitización / Enmascaramiento de PII (Personally Identifiable Information): antes de que el texto viaje a la API del LLM, un filtro local reemplaza nombres propios, mails, teléfonos o montos confidenciales por etiquetas genéricas como [CLIENTE_1] o [EMAIL_OCULTO], y a la vuelta los vuelve a reemplazar. 2) Acuerdo Enterprise SLA con Zero-Retention, como vimos en la Sesión 2. Y 3) Permisos por Rol (RBAC) en la Base Vectorial, para que un usuario junior no pueda preguntarle al bot por documentos confidenciales de directorio.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ LA PREGUNTA OBLIGATORIA DE LEGALES Y SEGURIDAD:
+• Apenas mostrás ese ahorro en la calculadora, el abogado de la empresa pregunta: '¿Cómo evitamos que se filtren datos personales de clientes (PII) o contratos bajo NDA?'.
+
+2️⃣ LAS 3 CAPAS DE BLINDAJE QUE PROPONE UNA PM (Señalá los 3 bloques):
+• 1. Sanitización / Enmascaramiento de PII: Antes de que el texto salga a la API de IA, un filtro automático reemplaza nombres reales, mails y montos por etiquetas como [CLIENTE_1] o [EMAIL_OCULTO].
+• 2. Contrato Enterprise con Zero-Data Retention: Acuerdo legal y técnico donde el proveedor borra el texto apenas responde y tiene prohibido entrenar con tus datos.
+• 3. Permisos por Rol (RBAC) en la Base Vectorial: Un empleado junior solo puede consultar en el RAG documentos autorizados para su nivel.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Para que ningún dato confidencial o personal se filtre, acá resumimos el blindaje de tres capas que exige un PM Senior: 1) <strong style="color:#fff; font-weight:700;">Sanitización / Enmascaramiento de PII (Personally Identifiable Information)</strong>: antes de que el texto viaje a la API del LLM, un filtro local reemplaza nombres propios, mails, teléfonos o montos confidenciales por etiquetas genéricas como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[CLIENTE_1]</code> o <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[EMAIL_OCULTO]</code>, y a la vuelta los vuelve a reemplazar. 2) <strong style="color:#fff; font-weight:700;">Acuerdo Enterprise SLA con Zero-Retention</strong>, como vimos en la Sesión 2. Y 3) <strong style="color:#fff; font-weight:700;">Permisos por Rol (RBAC)</strong> en la Base Vectorial, para que un usuario junior no pueda preguntarle al bot por documentos confidenciales de directorio.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA OBLIGATORIA DE LEGALES Y SEGURIDAD:</strong><br>• Apenas mostrás ese ahorro en la calculadora, el abogado de la empresa pregunta: <em style="color:#fde68a;">'¿Cómo evitamos que se filtren datos personales de clientes (PII) o contratos bajo NDA?'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LAS 3 CAPAS DE BLINDAJE QUE PROPONE UNA PM (Señalá los 3 bloques):</strong><br>• <strong style="color:#fff; font-weight:700;">1. Sanitización / Enmascaramiento de PII:</strong> Antes de que el texto salga a la API de IA, un filtro automático reemplaza nombres reales, mails y montos por etiquetas como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[CLIENTE_1]</code> o <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[EMAIL_OCULTO]</code>.<br>• <strong style="color:#fff; font-weight:700;">2. Contrato Enterprise con Zero-Data Retention:</strong> Acuerdo legal y técnico donde el proveedor borra el texto apenas responde y tiene prohibido entrenar con tus datos.<br>• <strong style="color:#fff; font-weight:700;">3. Permisos por Rol (RBAC) en la Base Vectorial:</strong> Un empleado junior solo puede consultar en el RAG documentos autorizados para su nivel.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 PII (Personally Identifiable Information)</span>
-                <p class="pt-desc">Datos personales sensibles como nombre y apellido, DNI, email, teléfono, dirección o tarjeta de crédito.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Sanitización / Enmascaramiento de PII</span>
-                <p class="pt-desc">Un filtro automático que reemplaza nombres reales por etiquetas como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[CLIENTE_1]</code> antes de mandar el texto a la IA.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 RBAC (Role-Based Access Control)</span>
-                <p class="pt-desc">Control de acceso por rol: que el bot solo busque en los documentos que el cargo de ese empleado tiene permiso de ver.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 PII (Personally Identifiable Information)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Datos personales sensibles como nombre y apellido, DNI, email, teléfono, dirección o tarjeta de crédito.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Sanitización / Enmascaramiento de PII</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un filtro automático que reemplaza nombres reales por etiquetas como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[CLIENTE_1]</code> antes de mandar el texto a la IA.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 RBAC (Role-Based Access Control)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Control de acceso por rol: que el bot solo busque en los documentos que el cargo de ese empleado tiene permiso de ver.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Señalá las capas de protección: 1) Sanitización de PII (Datos Personales) antes de enviar al LLM y 2) Control de acceso por rol en la Base Vectorial.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 8: Suite de Evaluaciones (AI Evals): La Tríada de Calidad RAG</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 8: Suite de Evaluaciones (AI Evals): La Tríada de Calidad RAG</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya tenemos cerrados los costos y la seguridad. Ahora entremos al segundo gran pilar de hoy: ¿cómo medimos científicamente la calidad de las respuestas de un chatbot usando AI Evals? Pasemos a la Slide 8.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya tenemos cerrados los costos y la seguridad. Ahora entremos al segundo gran pilar de hoy: ¿cómo medimos científicamente la calidad de las respuestas de un chatbot usando AI Evals? Pasemos a la Slide 8.”</p>
@@ -1242,71 +1281,77 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar las 3 notas con las que evaluamos científicamente a un chatbot RAG (Fidelidad al manual, Relevancia de la respuesta y Precisión de búsqueda) usando otra IA como juez.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Explicar las 3 notas con las que evaluamos científicamente a un chatbot RAG (Fidelidad al manual, Relevancia de la respuesta y Precisión de búsqueda) usando otra IA como juez.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las 3 tarjetas de la Tríada RAG: 1. Faithfulness (Fidelidad), 2. Answer Relevance (Relevancia) y 3. Context Precision (Recuperación).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá las 3 tarjetas de la Tríada RAG: 1. Faithfulness (Fidelidad), 2. Answer Relevance (Relevancia) y 3. Context Precision (Recuperación).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Igual que cuando corregís un examen a libro abierto: 1) ¿No inventó nada fuera del libro? (Fidelidad), 2) ¿Respondió lo que le preguntaron? (Relevancia), y 3) ¿Abrió el libro en la página correcta? (Context Precision).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Igual que cuando corregís un examen a libro abierto: 1) ¿No inventó nada fuera del libro? (Fidelidad), 2) ¿Respondió lo que le preguntaron? (Relevancia), y 3) ¿Abrió el libro en la página correcta? (Context Precision).</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sistema llamado LLM-as-a-Judge (Un LLM como Juez) que califica cada respuesta del 0 al 1 en tres métricas clave (la famosa Tríada RAG): 1) Faithfulness (Fidelidad): ¿todo lo que dijo el bot sale estrictamente de los fragmentos del manual recuperados, o inventó algo de su cosecha? Si inventó aunque sea un dato menor, reprueba en Fidelidad. 2) Answer Relevance (Relevancia): ¿el bot fue al grano y respondió exactamente lo que preguntó el usuario, o se fue por las ramas? Y 3) Context Recall / Precision: ¿el buscador vectorial trajo el párrafo correcto del manual? Si esta tercera métrica da baja, ya sabés que el problema no es el prompt del LLM, sino que tenés que ajustar el Chunking o los Embeddings en la Base Vectorial.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CÓMO MEDIMOS LA CALIDAD SIN REVISAR A OJO (Concepto de AI Evals):
+• Como no podemos leer a mano 10.000 conversaciones por día, usamos un modelo auditor (LLM-as-a-Judge) que califica cada respuesta del 0 al 100% en tres métricas llamadas la Tríada de Calidad RAG.
+
+2️⃣ LAS 3 NOTAS DE LA TRÍADA RAG (Señalá las 3 tarjetas):
+• 1. Faithfulness (Fidelidad al Manual): ¿Todo lo que dijo el bot sale estrictamente del documento oficial recuperado, o inventó algo de su cosecha?
+• 2. Answer Relevance (Relevancia de Respuesta): ¿Fue al grano y respondió exactamente lo que preguntó el usuario?
+• 3. Context Precision / Recall (Precisión del Buscador): ¿La Base Vectorial trajo el párrafo correcto del manual? Si esta nota da baja, sabés que tenés que ajustar el Chunking o los Embeddings.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sistema llamado <strong style="color:#fff; font-weight:700;">LLM-as-a-Judge (Un LLM como Juez)</strong> que califica cada respuesta del 0 al 1 en tres métricas clave (la famosa <strong style="color:#fff; font-weight:700;">Tríada RAG</strong>): 1) <strong style="color:#fff; font-weight:700;">Faithfulness (Fidelidad)</strong>: ¿todo lo que dijo el bot sale estrictamente de los fragmentos del manual recuperados, o inventó algo de su cosecha? Si inventó aunque sea un dato menor, reprueba en Fidelidad. 2) <strong style="color:#fff; font-weight:700;">Answer Relevance (Relevancia)</strong>: ¿el bot fue al grano y respondió exactamente lo que preguntó el usuario, o se fue por las ramas? Y 3) <strong style="color:#fff; font-weight:700;">Context Recall / Precision</strong>: ¿el buscador vectorial trajo el párrafo correcto del manual? Si esta tercera métrica da baja, ya sabés que el problema no es el prompt del LLM, sino que tenés que ajustar el Chunking o los Embeddings en la Base Vectorial.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CÓMO MEDIMOS LA CALIDAD SIN REVISAR A OJO (Concepto de AI Evals):</strong><br>• Como no podemos leer a mano 10.000 conversaciones por día, usamos un modelo auditor (<strong style="color:#fff; font-weight:700;">LLM-as-a-Judge</strong>) que califica cada respuesta del 0 al 100% en tres métricas llamadas la <strong style="color:#fff; font-weight:700;">Tríada de Calidad RAG</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LAS 3 NOTAS DE LA TRÍADA RAG (Señalá las 3 tarjetas):</strong><br>• <strong style="color:#fff; font-weight:700;">1. Faithfulness (Fidelidad al Manual):</strong> ¿Todo lo que dijo el bot sale estrictamente del documento oficial recuperado, o inventó algo de su cosecha?<br>• <strong style="color:#fff; font-weight:700;">2. Answer Relevance (Relevancia de Respuesta):</strong> ¿Fue al grano y respondió exactamente lo que preguntó el usuario?<br>• <strong style="color:#fff; font-weight:700;">3. Context Precision / Recall (Precisión del Buscador):</strong> ¿La Base Vectorial trajo el párrafo correcto del manual? Si esta nota da baja, sabés que tenés que ajustar el <em style="color:#fde68a;">Chunking</em> o los <em style="color:#fde68a;">Embeddings</em>.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 AI Evals (Evaluaciones de IA)</span>
-                <p class="pt-desc">Batería de pruebas automáticas para medir con puntaje numérico del 0 al 100% la calidad de un chatbot antes de lanzarlo.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 LLM-as-a-Judge (IA como Juez)</span>
-                <p class="pt-desc">Usar un modelo auditor estricto para que corrija las respuestas de nuestro chatbot comparándolas contra el manual oficial.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Faithfulness (Fidelidad)</span>
-                <p class="pt-desc">Mide que el bot no haya inventado absolutamente ningún dato que no figure en los fragmentos recuperados del documento.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 AI Evals (Evaluaciones de IA)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Batería de pruebas automáticas para medir con puntaje numérico del 0 al 100% la calidad de un chatbot antes de lanzarlo.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 LLM-as-a-Judge (IA como Juez)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Usar un modelo auditor estricto para que corrija las respuestas de nuestro chatbot comparándolas contra el manual oficial.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Faithfulness (Fidelidad)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Mide que el bot no haya inventado absolutamente ningún dato que no figure en los fragmentos recuperados del documento.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Recorré las 3 tarjetas de métricas clave: 1. Faithfulness / Fidelidad al Contexto, 2. Answer Relevance / Relevancia de Respuesta y 3. Context Recall / Recuperación.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 9: Ejercicio 2: Simulador de Rúbricas Evals en Acción</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 9: Ejercicio 2: Simulador de Rúbricas Evals en Acción</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Practiquemos ser nosotros los auditores de calidad ahora mismo en un caso concreto. Pasemos a la Slide 9: Ejercicio de Rúbricas Evals en Acción.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Practiquemos ser nosotros los auditores de calidad ahora mismo en un caso concreto. Pasemos a la Slide 9: Ejercicio de Rúbricas Evals en Acción.”</p>
@@ -1331,61 +1376,67 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el soporte estándar responde en 24 horas hábiles y que no cubre fines de semana salvo plan Enterprise. El usuario pregunta si le van a responder un domingo gratis, ¡y mirá lo que contesta el bot abajo!: '¡Por supuesto! Nuestro equipo de guardia 24/7 resolverá tu ticket este mismo domingo sin costo adicional'. ¡Una alucinación hermosa y súper amable que nos mete en un lío comercial bárbaro! Si movemos a la derecha el slider de Fidelidad (Faithfulness) hacia abajo (por ejemplo a 20%), fijate cómo el tablero automáticamente marca RECHAZADO (FAIL) y bloquea este prompt para que no pueda subir a producción.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):
+• El Manual Oficial dice: Soporte responde en 24 hs hábiles de lunes a viernes (no cubre domingos salvo plan Enterprise).
+• El Bot responde: '¡Por supuesto! Nuestro equipo 24/7 resolverá tu ticket este mismo domingo sin costo adicional'. ¡Es un falso positivo amable: suena cordial pero inventó una promesa comercial falsa!
+
+2️⃣ DEMO CON LOS DESLIZADORES DE EVALUACIÓN (Columna derecha):
+• Bajá el primer deslizador (Faithfulness / Fidelidad) al 20%.
+• Mirá cómo el sistema cambia automáticamente el veredicto a RECHAZADO POR ALUCINACIÓN e impide que ese cambio salga a producción.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el soporte estándar responde en <strong style="color:#fff; font-weight:700;">24 horas hábiles</strong> y que no cubre fines de semana salvo plan Enterprise. El usuario pregunta si le van a responder un domingo gratis, ¡y mirá lo que contesta el bot abajo!: <em style="color:#fde68a;">'¡Por supuesto! Nuestro equipo de guardia 24/7 resolverá tu ticket este mismo domingo sin costo adicional'</em>. ¡Una alucinación hermosa y súper amable que nos mete en un lío comercial bárbaro! Si movemos a la derecha el slider de <strong style="color:#fff; font-weight:700;">Fidelidad (Faithfulness)</strong> hacia abajo (por ejemplo a 20%), fijate cómo el tablero automáticamente marca <strong style="color:#fff; font-weight:700;">RECHAZADO (FAIL)</strong> y bloquea este prompt para que no pueda subir a producción.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):</strong><br>• <strong style="color:#fff; font-weight:700;">El Manual Oficial dice:</strong> Soporte responde en 24 hs hábiles de lunes a viernes (no cubre domingos salvo plan Enterprise).<br>• <strong style="color:#fff; font-weight:700;">El Bot responde:</strong> <em style="color:#fde68a;">'¡Por supuesto! Nuestro equipo 24/7 resolverá tu ticket este mismo domingo sin costo adicional'</em>. ¡Es un <strong style="color:#fff; font-weight:700;">falso positivo amable</strong>: suena cordial pero inventó una promesa comercial falsa!<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEMO CON LOS DESLIZADORES DE EVALUACIÓN (Columna derecha):</strong><br>• Bajá el primer deslizador (<strong style="color:#fff; font-weight:700;">Faithfulness / Fidelidad</strong>) al <strong style="color:#fff; font-weight:700;">20%</strong>.<br>• Mirá cómo el sistema cambia automáticamente el veredicto a <strong style="color:#fff; font-weight:700;">RECHAZADO POR ALUCINACIÓN</strong> e impide que ese cambio salga a producción.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Falso Positivo Amable (Alucinación Comercial)</span>
-                <p class="pt-desc">El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Falso Positivo Amable (Alucinación Comercial)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Leé con Anabela el Contexto Oficial vs. la Respuesta Generada por el Bot a la izquierda, y mové los 3 sliders de calificación a la derecha para ver cómo cambia el veredicto ('APROBADO' vs. 'RECHAZADO POR ALUCINACIÓN').</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 10: Observabilidad & Tracing en Producción (Langfuse)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 10: Observabilidad & Tracing en Producción (Langfuse)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Cuando detectamos un fallo así o cuando una consulta tarda demasiado en producción, ¿en qué pantalla mira un PM y su equipo técnico la 'radiografía' de lo que pasó adentro del bot? Pasemos a la Slide 10: Langfuse.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Cuando detectamos un fallo así o cuando una consulta tarda demasiado en producción, ¿en qué pantalla mira un PM y su equipo técnico la 'radiografía' de lo que pasó adentro del bot? Pasemos a la Slide 10: Langfuse.”</p>
@@ -1410,66 +1461,72 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar cómo se usa Langfuse en la vida real: el tablero donde hacés clic en cualquier mensaje y ves cuánto tardó y cuánto costó cada paso interno del bot.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Mostrar cómo se usa Langfuse en la vida real: el tablero donde hacés clic en cualquier mensaje y ves cuánto tardó y cuánto costó cada paso interno del bot.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic en los 3 renglones del árbol de la izquierda ('1. VectorDB Retrieval', '2. Security Guardrail', '3. LLM Generation') para ver cómo cambian los tiempos y costos a la derecha.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic en los 3 renglones del árbol de la izquierda ('1. VectorDB Retrieval', '2. Security Guardrail', '3. LLM Generation') para ver cómo cambian los tiempos y costos a la derecha.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Langfuse es la 'caja negra' y el ticket detallado del supermercado todo en uno: te muestra segundo por segundo qué hizo el bot por dentro y cuántos centavos costó cada renglón.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Langfuse es la 'caja negra' y el ticket detallado del supermercado todo en uno: te muestra segundo por segundo qué hizo el bot por dentro y cuántos centavos costó cada renglón.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Herramientas como Langfuse o LangSmith son el tablero de control (Observabilidad) donde vive un PM de IA. Cada vez que un usuario manda un mensaje al chatbot, Langfuse guarda una Traza (Trace) completa. Hacé clic conmigo en cada renglón del árbol de la izquierda para abrir las cajas negras: en el paso 1 ves que buscar en la Base Vectorial tardó apenas 180 milisegundos y trajo 3 chunks con similitud 0.89; en el paso 2 ves que el filtro de seguridad tardó 90 milisegundos; y en el paso 3 ves que la generación del LLM (GPT-4o) tardó 1.45 segundos y costó exactamente \$0.0042 dólares. Si mañana el bot empieza a tardar 8 segundos o a responder mal, abrís esta traza y en diez segundos sabés exactamente en qué eslabón de la cadena está el problema.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ ES LANGFUSE (El tablero de control del PM de IA):
+• Cuando tu chatbot o agente ya está funcionando en vivo, Langfuse es la pantalla donde ves la 'radiografía' (Traza / Trace) de cada mensaje que envían los usuarios.
+
+2️⃣ DEMO INTERACTIVA EN EL ÁRBOL DE TRAZAS (Hacé clic en los 3 renglones de la izquierda):
+• Clic en 1. VectorDB Retrieval: Ves que buscar en Pinecone tardó 180 ms y trajo 3 fragmentos con similitud 0.89.
+• Clic en 2. Security Guardrail: Ves que el filtro de seguridad tardó 90 ms y ocultó los datos privados.
+• Clic en 3. LLM Generation: Ves que GPT-4o tardó 1.45 segundos y esa respuesta exacta costó \$0.0042 USD. Si mañana algo falla o se vuelve lento, abrís Langfuse y en 10 segundos sabés en qué paso estuvo el problema.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Herramientas como <strong style="color:#fff; font-weight:700;">Langfuse</strong> o <strong style="color:#fff; font-weight:700;">LangSmith</strong> son el tablero de control (Observabilidad) donde vive un PM de IA. Cada vez que un usuario manda un mensaje al chatbot, Langfuse guarda una <strong style="color:#fff; font-weight:700;">Traza (Trace)</strong> completa. Hacé clic conmigo en cada renglón del árbol de la izquierda para abrir las cajas negras: en el paso 1 ves que buscar en la <strong style="color:#fff; font-weight:700;">Base Vectorial</strong> tardó apenas <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">180 milisegundos</code> y trajo 3 chunks con similitud 0.89; en el paso 2 ves que el filtro de seguridad tardó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">90 milisegundos</code>; y en el paso 3 ves que la generación del <strong style="color:#fff; font-weight:700;">LLM (GPT-4o)</strong> tardó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.45 segundos</code> y costó exactamente <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0042 dólares</code>. Si mañana el bot empieza a tardar 8 segundos o a responder mal, abrís esta traza y en diez segundos sabés exactamente en qué eslabón de la cadena está el problema.
+            <strong style="color:#fff; font-weight:700;">1️⃣ QUÉ ES LANGFUSE (El tablero de control del PM de IA):</strong><br>• Cuando tu chatbot o agente ya está funcionando en vivo, <strong style="color:#fff; font-weight:700;">Langfuse</strong> es la pantalla donde ves la 'radiografía' (<strong style="color:#fff; font-weight:700;">Traza / Trace</strong>) de cada mensaje que envían los usuarios.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEMO INTERACTIVA EN EL ÁRBOL DE TRAZAS (Hacé clic en los 3 renglones de la izquierda):</strong><br>• <strong style="color:#fff; font-weight:700;">Clic en 1. VectorDB Retrieval:</strong> Ves que buscar en Pinecone tardó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">180 ms</code> y trajo 3 fragmentos con similitud <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.89</code>.<br>• <strong style="color:#fff; font-weight:700;">Clic en 2. Security Guardrail:</strong> Ves que el filtro de seguridad tardó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">90 ms</code> y ocultó los datos privados.<br>• <strong style="color:#fff; font-weight:700;">Clic en 3. LLM Generation:</strong> Ves que GPT-4o tardó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.45 segundos</code> y esa respuesta exacta costó <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0042 USD</code></strong>. Si mañana algo falla o se vuelve lento, abrís Langfuse y en 10 segundos sabés en qué paso estuvo el problema.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Langfuse / Observabilidad LLMOps</span>
-                <p class="pt-desc">La herramienta visual donde los Product Managers e ingenieros ven el historial interno de cada respuesta del bot, sus tiempos y sus costos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Trace (Traza) y Span (Paso)</span>
-                <p class="pt-desc">La 'Traza' es el recorrido completo de una pregunta de punta a punta; cada 'Span' es uno de los pasos individuales (ej. buscar en la base vectorial o llamar al LLM).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Langfuse / Observabilidad LLMOps</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">La herramienta visual donde los Product Managers e ingenieros ven el historial interno de cada respuesta del bot, sus tiempos y sus costos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Trace (Traza) y Span (Paso)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">La 'Traza' es el recorrido completo de una pregunta de punta a punta; cada 'Span' es uno de los pasos individuales (ej. buscar en la base vectorial o llamar al LLM).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic sobre cada una de las 3 filas del árbol de ejecución ('1. VectorDB Retrieval', '2. Security Guardrail Check', '3. LLM Generation GPT-4o') para desplegar los detalles técnicos ocultos (tiempos en ms y costos en USD).</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 11: Preparación de Entrevistas para Roles de PM IT / IA</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 11: Preparación de Entrevistas para Roles de PM IT / IA</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Impresionante! Con esto ya tenés todas las herramientas estratégicas, técnicas y financieras. Ahora dediquemos el último tramo de la sesión a prepararte para brillar en entrevistas reales. Vamos a la Slide 11.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“¡Impresionante! Con esto ya tenés todas las herramientas estratégicas, técnicas y financieras. Ahora dediquemos el último tramo de la sesión a prepararte para brillar en entrevistas reales. Vamos a la Slide 11.”</p>
@@ -1494,61 +1551,67 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Darle la estructura mental de 3 pasos para lucirse en cualquier entrevista de PM: 1) Nombrar la pieza técnica exacta, 2) Decir qué priorizar en el backlog, y 3) Explicar el impacto en plata o seguridad.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Darle la estructura mental de 3 pasos para lucirse en cualquier entrevista de PM: 1) Nombrar la pieza técnica exacta, 2) Decir qué priorizar en el backlog, y 3) Explicar el impacto en plata o seguridad.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá los 3 escalones de la fórmula ganadora en pantalla.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá los 3 escalones de la fórmula ganadora en pantalla.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En una entrevista de PM no te evalúan como mecánico que desarma el motor con llave inglesa, sino como jefe de equipo de Fórmula 1 que sabe leer la telemetría y pedir el cambio exacto en boxes.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En una entrevista de PM no te evalúan como mecánico que desarma el motor con llave inglesa, sino como jefe de equipo de Fórmula 1 que sabe leer la telemetría y pedir el cambio exacto en boxes.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Cuando vas a una entrevista para un rol de Project Manager o Product Manager en tecnología, nadie espera que te pongas a programar código en vivo. Lo que están evaluando es si tenés criterio de arquitectura, control de riesgos y visión de negocio. La fórmula ganadora para responder cualquier pregunta técnica tiene siempre tres pasos: 1) Diagnóstico Técnico (nombrar con precisión el componente: 'eso es un problema de Chunking en el pipeline RAG' o 'eso requiere un freno Human-in-the-Loop'); 2) Acción en el Backlog (qué le pedís priorizar al equipo de ingeniería); y 3) Impacto de Negocio (cómo eso protege el presupuesto, la velocidad o la seguridad del cliente).`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ BUSCAN EN UNA ENTREVISTA DE PM IT / IA:
+• En una entrevista para liderar proyectos de tecnología o IA, nadie te va a pedir que escribas código en Python. Lo que evalúan es tu criterio para diagnosticar problemas y proteger el negocio.
+
+2️⃣ LA FÓRMULA GANADORA DE 3 PASOS (Señalá los 3 escalones):
+• Paso 1 — Diagnóstico Técnico con Nombre Propio: Identificás la pieza exacta ('eso es un Loop Infinito en ReAct' o 'eso es falta de Chunk Overlap').
+• Paso 2 — Acción Concreta en el Backlog: Qué le pedís priorizar a los desarrolladores en el próximo Sprint.
+• Paso 3 — Impacto en el Negocio: Cómo esa mejora cuida el presupuesto, la velocidad o la seguridad del cliente.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Cuando vas a una entrevista para un rol de Project Manager o Product Manager en tecnología, nadie espera que te pongas a programar código en vivo. Lo que están evaluando es si tenés <strong style="color:#fff; font-weight:700;">criterio de arquitectura, control de riesgos y visión de negocio</strong>. La fórmula ganadora para responder cualquier pregunta técnica tiene siempre tres pasos: <strong style="color:#fff; font-weight:700;">1) Diagnóstico Técnico</strong> (nombrar con precisión el componente: <em style="color:#fde68a;">'eso es un problema de Chunking en el pipeline RAG'</em> o <em style="color:#fde68a;">'eso requiere un freno Human-in-the-Loop'</em>); <strong style="color:#fff; font-weight:700;">2) Acción en el Backlog</strong> (qué le pedís priorizar al equipo de ingeniería); y <strong style="color:#fff; font-weight:700;">3) Impacto de Negocio</strong> (cómo eso protege el presupuesto, la velocidad o la seguridad del cliente).
+            <strong style="color:#fff; font-weight:700;">1️⃣ QUÉ BUSCAN EN UNA ENTREVISTA DE PM IT / IA:</strong><br>• En una entrevista para liderar proyectos de tecnología o IA, nadie te va a pedir que escribas código en Python. Lo que evalúan es tu <strong style="color:#fff; font-weight:700;">criterio para diagnosticar problemas y proteger el negocio</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LA FÓRMULA GANADORA DE 3 PASOS (Señalá los 3 escalones):</strong><br>• <strong style="color:#fff; font-weight:700;">Paso 1 — Diagnóstico Técnico con Nombre Propio:</strong> Identificás la pieza exacta (<em style="color:#fde68a;">'eso es un Loop Infinito en ReAct'</em> o <em style="color:#fde68a;">'eso es falta de Chunk Overlap'</em>).<br>• <strong style="color:#fff; font-weight:700;">Paso 2 — Acción Concreta en el Backlog:</strong> Qué le pedís priorizar a los desarrolladores en el próximo Sprint.<br>• <strong style="color:#fff; font-weight:700;">Paso 3 — Impacto en el Negocio:</strong> Cómo esa mejora cuida el presupuesto, la velocidad o la seguridad del cliente.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Trade-off de Producto</span>
-                <p class="pt-desc">El equilibrio entre tres variables que compiten entre sí: Calidad, Velocidad (Latencia) y Costo.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Trade-off de Producto</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El equilibrio entre tres variables que compiten entre sí: Calidad, Velocidad (Latencia) y Costo.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Repasá la fórmula ganadora de 3 pasos para responder preguntas técnicas en entrevistas sin ser programadora.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 12: Simulación Caso 1: Desvío Inesperado de Presupuesto de API</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 12: Simulación Caso 1: Desvío Inesperado de Presupuesto de API</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Entrenemos esta fórmula ahora mismo con tres simuladores interactivos de entrevistas basados en casos reales. Pasemos a la Slide 12: Caso 1.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Entrenemos esta fórmula ahora mismo con tres simuladores interactivos de entrevistas basados en casos reales. Pasemos a la Slide 12: Caso 1.”</p>
@@ -1573,61 +1636,68 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Mirá el Caso 1 en el simulador de entrevista: el entrevistador te dice: 'Lanzamos nuestro agente a producción hace una semana y la factura de OpenAI vino diez veces más cara de lo estimado. ¿Qué hacés como PM?'. Si elegís la respuesta ingenua (pedir más presupuesto o apagar el bot), perdés puntos. Hagamos clic en la Respuesta Estratégica de PM: 1) Abrís Langfuse para auditar las trazas y ver si hay Loops Infinitos en el ciclo ReAct y fijás un límite duro de Max Iterations = 5; 2) Activás Prompt Caching para ahorrar hasta un 80% en las instrucciones repetidas del sistema; y 3) Implementás Model Routing: usás un modelo rápido y económico (como GPT-4o-mini o Claude Haiku) para las tareas simples del flujo, y reservás el modelo grande solo para el razonamiento complejo.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CRISIS 1 DE ENTREVISTA: LA FACTURA VINO 10 VECES MÁS CARA (Leé la pregunta):
+• El entrevistador te dice: 'Lanzamos nuestro agente hace una semana y la factura de OpenAI vino 10 veces más cara de lo calculado. ¿Qué hacés como PM?'.
+
+2️⃣ DEMO EN EL SIMULADOR (Tocá la opción incorrecta y luego la Respuesta Estratégica de PM):
+• En vez de entrar en pánico o apagar el producto, respondés con 3 acciones técnicas concretas:
+  1. Auditar en Langfuse + Max Iterations = 5: Revisar si hubo agentes trabados en Loops Infinitos reintentando llamadas fallidas y poner un tope de 5 intentos.
+  2. Activar Prompt Caching: Para ahorrar hasta un 80%-90% en las instrucciones repetidas del sistema.
+  3. Model Routing (Enrutamiento de Modelos): Usar un modelo liviano y económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas simples, y dejar el modelo grande solo para los pasos complejos.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Mirá el <strong style="color:#fff; font-weight:700;">Caso 1</strong> en el simulador de entrevista: el entrevistador te dice: <em style="color:#fde68a;">'Lanzamos nuestro agente a producción hace una semana y la factura de OpenAI vino diez veces más cara de lo estimado. ¿Qué hacés como PM?'</em>. Si elegís la respuesta ingenua (pedir más presupuesto o apagar el bot), perdés puntos. Hagamos clic en la <strong style="color:#fff; font-weight:700;">Respuesta Estratégica de PM</strong>: 1) Abrís <strong style="color:#fff; font-weight:700;">Langfuse</strong> para auditar las trazas y ver si hay <strong style="color:#fff; font-weight:700;">Loops Infinitos</strong> en el ciclo ReAct y fijás un límite duro de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Max Iterations = 5</code>; 2) Activás <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> para ahorrar hasta un 80% en las instrucciones repetidas del sistema; y 3) Implementás <strong style="color:#fff; font-weight:700;">Model Routing</strong>: usás un modelo rápido y económico (como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">GPT-4o-mini</code> o <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Claude Haiku</code>) para las tareas simples del flujo, y reservás el modelo grande solo para el razonamiento complejo.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CRISIS 1 DE ENTREVISTA: LA FACTURA VINO 10 VECES MÁS CARA (Leé la pregunta):</strong><br>• El entrevistador te dice: <em style="color:#fde68a;">'Lanzamos nuestro agente hace una semana y la factura de OpenAI vino 10 veces más cara de lo calculado. ¿Qué hacés como PM?'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEMO EN EL SIMULADOR (Tocá la opción incorrecta y luego la Respuesta Estratégica de PM):</strong><br>• En vez de entrar en pánico o apagar el producto, respondés con 3 acciones técnicas concretas:<br>  1. <strong style="color:#fff; font-weight:700;">Auditar en Langfuse + Max Iterations = 5:</strong> Revisar si hubo agentes trabados en <em style="color:#fde68a;">Loops Infinitos</em> reintentando llamadas fallidas y poner un tope de 5 intentos.<br>  2. <strong style="color:#fff; font-weight:700;">Activar Prompt Caching:</strong> Para ahorrar hasta un 80%-90% en las instrucciones repetidas del sistema.<br>  3. <strong style="color:#fff; font-weight:700;">Model Routing (Enrutamiento de Modelos):</strong> Usar un modelo liviano y económico (como <em style="color:#fde68a;">GPT-4o-mini</em> o <em style="color:#fde68a;">Claude Haiku</em>) para el 80% de las consultas simples, y dejar el modelo grande solo para los pasos complejos.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Model Routing (Enrutamiento de Modelos)</span>
-                <p class="pt-desc">Usar un modelo rápido y súper económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas fáciles, y llamar al modelo grande solo para los casos difíciles.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Model Routing (Enrutamiento de Modelos)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Usar un modelo rápido y súper económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas fáciles, y llamar al modelo grande solo para los casos difíciles.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Leé la pregunta del entrevistador en el chat y hacé clic primero en la opción incorrecta ('Pedir más presupuesto / bajar usuarios') y luego en la opción ganadora ('Auditar en Langfuse + Max Iterations + Prompt Caching').</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 13: Simulación Caso 2: Latencia Crítica en Producción (12 Segundos)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 13: Simulación Caso 2: Latencia Crítica en Producción (12 Segundos)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Excelente! Resolvimos la crisis financiera. Vamos a la Slide 13 para enfrentar el segundo desafío clásico de entrevista: una crisis de lentitud en vivo.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“¡Excelente! Resolvimos la crisis financiera. Vamos a la Slide 13 para enfrentar el segundo desafío clásico de entrevista: una crisis de lentitud en vivo.”</p>
@@ -1652,66 +1722,73 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Mirá el Caso 2: el entrevistador te plantea: 'Los usuarios se quejan de que el chatbot tarda 12 segundos con la pantalla en blanco antes de mostrar la respuesta porque tiene que consultar tres APIs distintas. ¿Cómo lo solucionás?'. Hagamos clic en la respuesta experta y mirá qué elegancia: atacás tanto la velocidad real como la velocidad percibida. Primero, en el Frontend pedís activar Token Streaming (que las palabras vayan apareciendo en vivo sílaba por sílaba apenas se generan, reduciendo el Time To First Token a menos de un segundo). Segundo, en el Backend pedís Parallel Tool Calling (que el agente llame a las 3 APIs al mismo tiempo en paralelo en vez de esperar una detrás de la otra). Y tercero, optimizás el KV Cache y achicás el tamaño de los chunks inyectados.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CRISIS 2 DE ENTREVISTA: EL BOT TARDA 12 SEGUNDOS EN RESPONDER (Leé la pregunta):
+• El entrevistador te plantea: 'Los usuarios abandonan el chat porque queda 12 segundos con la pantalla en blanco mientras consulta 3 APIs distintas. ¿Cómo lo resolvés?'.
+
+2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la solución arquitectónica):
+• Atacás tanto la espera percibida como la velocidad real en 3 pasos:
+  1. Token Streaming en la interfaz: Que las palabras vayan apareciendo sílaba por sílaba en vivo en menos de 1 segundo en vez de esperar al párrafo entero.
+  2. Parallel Tool Calling (Llamadas en Paralelo): Que el agente consulte las 3 APIs al mismo tiempo en simultáneo en vez de esperar una detrás de la otra.
+  3. KV Cache + Chunks compactos: Guardar el contexto fijo en memoria rápida para acelerar cada vuelta.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Mirá el <strong style="color:#fff; font-weight:700;">Caso 2</strong>: el entrevistador te plantea: <em style="color:#fde68a;">'Los usuarios se quejan de que el chatbot tarda 12 segundos con la pantalla en blanco antes de mostrar la respuesta porque tiene que consultar tres APIs distintas. ¿Cómo lo solucionás?'</em>. Hagamos clic en la respuesta experta y mirá qué elegancia: atacás tanto la velocidad real como la velocidad percibida. Primero, en el Frontend pedís activar <strong style="color:#fff; font-weight:700;">Token Streaming</strong> (que las palabras vayan apareciendo en vivo sílaba por sílaba apenas se generan, reduciendo el <em style="color:#fde68a;">Time To First Token</em> a menos de un segundo). Segundo, en el Backend pedís <strong style="color:#fff; font-weight:700;">Parallel Tool Calling</strong> (que el agente llame a las 3 APIs al mismo tiempo en paralelo en vez de esperar una detrás de la otra). Y tercero, optimizás el <strong style="color:#fff; font-weight:700;">KV Cache</strong> y achicás el tamaño de los chunks inyectados.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CRISIS 2 DE ENTREVISTA: EL BOT TARDA 12 SEGUNDOS EN RESPONDER (Leé la pregunta):</strong><br>• El entrevistador te plantea: <em style="color:#fde68a;">'Los usuarios abandonan el chat porque queda 12 segundos con la pantalla en blanco mientras consulta 3 APIs distintas. ¿Cómo lo resolvés?'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la solución arquitectónica):</strong><br>• Atacás tanto la espera percibida como la velocidad real en 3 pasos:<br>  1. <strong style="color:#fff; font-weight:700;">Token Streaming en la interfaz:</strong> Que las palabras vayan apareciendo sílaba por sílaba en vivo en menos de 1 segundo en vez de esperar al párrafo entero.<br>  2. <strong style="color:#fff; font-weight:700;">Parallel Tool Calling (Llamadas en Paralelo):</strong> Que el agente consulte las 3 APIs al mismo tiempo en simultáneo en vez de esperar una detrás de la otra.<br>  3. <strong style="color:#fff; font-weight:700;">KV Cache + Chunks compactos:</strong> Guardar el contexto fijo en memoria rápida para acelerar cada vuelta.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Token Streaming</span>
-                <p class="pt-desc">Hacer que la respuesta vaya apareciendo palabra por palabra en la pantalla apenas se genera, en vez de esperar a que termine todo el párrafo.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Parallel Tool Calling</span>
-                <p class="pt-desc">Hacer que el agente consulte las 3 APIs al mismo tiempo en simultáneo en lugar de esperar una detrás de la otra.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Token Streaming</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Hacer que la respuesta vaya apareciendo palabra por palabra en la pantalla apenas se genera, en vez de esperar a que termine todo el párrafo.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Parallel Tool Calling</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Hacer que el agente consulte las 3 APIs al mismo tiempo en simultáneo en lugar de esperar una detrás de la otra.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Interactuá con los botones del simulador de chat del Caso 2 para contrastar la respuesta básica contra la solución arquitectónica de latencia.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 14: Simulación Caso 3: Blindaje contra Fuga de Datos (Data Leakage)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 14: Simulación Caso 3: Blindaje contra Fuga de Datos (Data Leakage)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya salvamos el presupuesto y la velocidad del producto. Pasemos a la Slide 14 para resolver el tercer y último caso de entrevista: el blindaje legal y de ciberseguridad.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya salvamos el presupuesto y la velocidad del producto. Pasemos a la Slide 14 para resolver el tercer y último caso de entrevista: el blindaje legal y de ciberseguridad.”</p>
@@ -1736,61 +1813,68 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `Y en el Caso 3, el comité de seguridad te pregunta: '¿Cómo nos aseguramos de que ningún empleado filtre datos personales de clientes o tarifas bajo NDA al usar el asistente de IA?'. Hacemos clic en la defensa completa: 1) Ponemos un Proxy de Sanitización (PII Masking) en nuestro API Gateway que anonimiza nombres, mails y cifras confidenciales antes de que salgan de nuestro servidor; 2) Operamos exclusivamente bajo contrato Enterprise SLA con Zero-Data Retention; y 3) Aplicamos Metadata Filtering atado a los permisos del usuario para que cada persona solo pueda recuperar en el RAG los documentos que su rol tiene autorizados.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CRISIS 3 DE ENTREVISTA: MIEDO A FUGA DE DATOS BAJO NDA (Leé la pregunta):
+• El comité legal pregunta: '¿Cómo garantizamos que ningún empleado filtre tarifas confidenciales o datos personales de clientes al usar el asistente?'.
+
+2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la defensa de 3 capas):
+• Respondés con los 3 candados corporativos:
+  1. Proxy de Sanitización (PII Masking) en el API Gateway: Un filtro que oculta nombres, mails y cifras antes de que salgan del servidor de la empresa.
+  2. Contrato Enterprise con Zero-Data Retention: Prohibición contractual y técnica de guardar o entrenar con nuestros datos.
+  3. Metadata Pre-Filtering con RBAC: Que el buscador vectorial filtre primero por los permisos del rol del usuario.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            Y en el <strong style="color:#fff; font-weight:700;">Caso 3</strong>, el comité de seguridad te pregunta: <em style="color:#fde68a;">'¿Cómo nos aseguramos de que ningún empleado filtre datos personales de clientes o tarifas bajo NDA al usar el asistente de IA?'</em>. Hacemos clic en la defensa completa: 1) Ponemos un <strong style="color:#fff; font-weight:700;">Proxy de Sanitización (PII Masking)</strong> en nuestro API Gateway que anonimiza nombres, mails y cifras confidenciales antes de que salgan de nuestro servidor; 2) Operamos exclusivamente bajo contrato <strong style="color:#fff; font-weight:700;">Enterprise SLA con Zero-Data Retention</strong>; y 3) Aplicamos <strong style="color:#fff; font-weight:700;">Metadata Filtering atado a los permisos del usuario</strong> para que cada persona solo pueda recuperar en el RAG los documentos que su rol tiene autorizados.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CRISIS 3 DE ENTREVISTA: MIEDO A FUGA DE DATOS BAJO NDA (Leé la pregunta):</strong><br>• El comité legal pregunta: <em style="color:#fde68a;">'¿Cómo garantizamos que ningún empleado filtre tarifas confidenciales o datos personales de clientes al usar el asistente?'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la defensa de 3 capas):</strong><br>• Respondés con los 3 candados corporativos:<br>  1. <strong style="color:#fff; font-weight:700;">Proxy de Sanitización (PII Masking) en el API Gateway:</strong> Un filtro que oculta nombres, mails y cifras antes de que salgan del servidor de la empresa.<br>  2. <strong style="color:#fff; font-weight:700;">Contrato Enterprise con Zero-Data Retention:</strong> Prohibición contractual y técnica de guardar o entrenar con nuestros datos.<br>  3. <strong style="color:#fff; font-weight:700;">Metadata Pre-Filtering con RBAC:</strong> Que el buscador vectorial filtre primero por los permisos del rol del usuario.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 PII Masking Proxy</span>
-                <p class="pt-desc">Un filtro intermedio que reemplaza automáticamente nombres de clientes y cifras secretas por códigos genéricos antes de mandar la consulta al modelo.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 PII Masking Proxy</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un filtro intermedio que reemplaza automáticamente nombres de clientes y cifras secretas por códigos genéricos antes de mandar la consulta al modelo.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en el simulador del Caso 3 para mostrar cómo un proxy sanitizador intercepta datos sensibles antes de salir hacia la nube.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 15: ¡Felicitaciones por Completar el Programa de Mentoría!</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 15: ¡Felicitaciones por Completar el Programa de Mentoría!</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Superaste los tres casos de entrevista con nivel de PM Senior. Pasemos a la última diapositiva del programa, la Slide 15, para celebrar todo lo que construiste.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Superaste los tres casos de entrevista con nivel de PM Senior. Pasemos a la última diapositiva del programa, la Slide 15, para celebrar todo lo que construiste.”</p>
@@ -1815,61 +1899,69 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Celebrar la graduación de Anabela repasando cómo ahora domina los 4 mundos: Desarrollo/Agile (S1), IA Generativa/RAG (S2), Agentes Autónomos (S3) y Finanzas/Evals/Entrevistas (S4).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Celebrar la graduación de Anabela repasando cómo ahora domina los 4 mundos: Desarrollo/Agile (S1), IA Generativa/RAG (S2), Agentes Autónomos (S3) y Finanzas/Evals/Entrevistas (S4).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Repasá las 4 insignias del programa y mostrale que todos los simuladores, glosarios y guías quedan disponibles en su portal web.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Repasá las 4 insignias del programa y mostrale que todos los simuladores, glosarios y guías quedan disponibles en su portal web.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Pasó de ver la tecnología desde afuera como una caja negra a tener el mapa completo de arquitectura, costos, calidad y seguridad para liderar equipos de IA.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Pasó de ver la tecnología desde afuera como una caja negra a tener el mapa completo de arquitectura, costos, calidad y seguridad para liderar equipos de IA.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
-            <button class="copy-btn" onclick="copyText(this, `¡Felicitaciones Anabela, completaste las 4 sesiones del programa! Mirá hacia atrás todo el camino que recorriste en apenas cuatro horas: hoy entendés perfectamente qué hace un developer, cómo se conectan los sistemas por APIs, cómo funciona Git y el pipeline de CI/CD, cómo operan por dentro los LLMs, cómo se diseña una arquitectura RAG con Embeddings y Bases Vectoriales, cómo construir un chatbot agéntico con ReAct, Tool Calling y Pydantic, y cómo presupuestar, auditar con Langfuse y defender un producto de IA en cualquier entrevista o reunión ejecutiva. Tu combinación de experiencia en proyectos y lenguaje sumada a este dominio técnico es un diferencial enorme en el mercado actual.`)">📋 Copiar Guion</button>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ ¡FELICITACIONES POR COMPLETAR LAS 4 SESIONES! (Repaso de logros):
+• En 4 sesiones construiste un dominio integral que une tu experiencia en gestión y lenguaje con la ingeniería moderna:
+  • Sesión 1: Arquitectura web, APIs REST, Git, CI/CD, Cloud/AWS y equipos Agile.
+  • Sesión 2: LLMs por dentro, Tokens, Embeddings, Bases Vectoriales y diseño de RAG.
+  • Sesión 3: Agentes Autónomos (IA Activa), ReAct, Orchestrator-Workers, Tool Calling/MCP, Pydantic, HITL y uso práctico de Google Antigravity.
+  • Sesión 4: Finanzas de IA (ROI y Caching), Privacidad PII, Auditoría con Evals/Langfuse y resolución de entrevistas.
+
+2️⃣ TUS RECURSOS PERMANENTES EN EL PORTAL:
+• Te quedan siempre disponibles las 4 presentaciones interactivas, los 4 glosarios con modo lectura rápida, los simuladores prácticos, la plantilla de PRD y la Guía de Antigravity + AWS MCP para repasar antes de cualquier reunión o entrevista.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            ¡Felicitaciones Anabela, completaste las 4 sesiones del programa! Mirá hacia atrás todo el camino que recorriste en apenas cuatro horas: hoy entendés perfectamente qué hace un developer, cómo se conectan los sistemas por APIs, cómo funciona Git y el pipeline de CI/CD, cómo operan por dentro los LLMs, cómo se diseña una arquitectura RAG con Embeddings y Bases Vectoriales, cómo construir un chatbot agéntico con ReAct, Tool Calling y Pydantic, y cómo presupuestar, auditar con Langfuse y defender un producto de IA en cualquier entrevista o reunión ejecutiva. Tu combinación de experiencia en proyectos y lenguaje sumada a este dominio técnico es un diferencial enorme en el mercado actual.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ¡FELICITACIONES POR COMPLETAR LAS 4 SESIONES! (Repaso de logros):</strong><br>• En 4 sesiones construiste un dominio integral que une tu experiencia en gestión y lenguaje con la ingeniería moderna:<br>  • <strong style="color:#fff; font-weight:700;">Sesión 1:</strong> Arquitectura web, APIs REST, Git, CI/CD, Cloud/AWS y equipos Agile.<br>  • <strong style="color:#fff; font-weight:700;">Sesión 2:</strong> LLMs por dentro, Tokens, Embeddings, Bases Vectoriales y diseño de RAG.<br>  • <strong style="color:#fff; font-weight:700;">Sesión 3:</strong> Agentes Autónomos (IA Activa), ReAct, Orchestrator-Workers, Tool Calling/MCP, Pydantic, HITL y uso práctico de Google Antigravity.<br>  • <strong style="color:#fff; font-weight:700;">Sesión 4:</strong> Finanzas de IA (ROI y Caching), Privacidad PII, Auditoría con Evals/Langfuse y resolución de entrevistas.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ TUS RECURSOS PERMANENTES EN EL PORTAL:</strong><br>• Te quedan siempre disponibles las <strong style="color:#fff; font-weight:700;">4 presentaciones interactivas</strong>, los <strong style="color:#fff; font-weight:700;">4 glosarios con modo lectura rápida</strong>, los <strong style="color:#fff; font-weight:700;">simuladores prácticos</strong>, la <strong style="color:#fff; font-weight:700;">plantilla de PRD</strong> y la <strong style="color:#fff; font-weight:700;">Guía de Antigravity + AWS MCP</strong> para repasar antes de cualquier reunión o entrevista.
           </blockquote>
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Perfil AI Product / Project Manager</span>
-                <p class="pt-desc">El profesional capaz de unir la precisión lingüística y la gestión de proyectos con la arquitectura técnica, los costos y la calidad de los sistemas de IA.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Perfil AI Product / Project Manager</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El profesional capaz de unir la precisión lingüística y la gestión de proyectos con la arquitectura técnica, los costos y la calidad de los sistemas de IA.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Repasá los 4 trofeos / pilares completados por Anabela y recordale que todo el portal interactivo, los 4 glosarios y el generador de PRD quedan 100% a su disposición.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🏁 Cierre de Sesión 4 y Puente a la Siguiente Clase</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🏁 Cierre de Sesión 4 y Puente a la Siguiente Clase</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `🏁 Cierre Final del Programa: Te queda todo el Portal Interactivo con las 4 presentaciones, los 4 Glosarios Completos y el Generador de PRD para consultar y repasar cada vez que tengas una reunión técnica o una entrevista. ¡Muchísimos éxitos en lo que se viene!`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“🏁 Cierre Final del Programa: Te queda todo el Portal Interactivo con las 4 presentaciones, los 4 Glosarios Completos y el Generador de PRD para consultar y repasar cada vez que tengas una reunión técnica o una entrevista. ¡Muchísimos éxitos en lo que se viene!”</p>

@@ -585,7 +585,6 @@
     </div>
   
       
-      
 
       <div class="agenda-grid">
         
@@ -630,6 +629,7 @@
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
         <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        
         <div class="progress-stat" id="progressStat">0 / 15 dictadas</div>
       </div>
     </section>
@@ -673,31 +673,30 @@
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Hoy no vamos a ver teoría suelta: vamos a diseñar paso a paso un Bot real para consultar manuales y glosarios de traducción sin que invente nada.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Hoy no vamos a ver teoría suelta: vamos a diseñar paso a paso un Bot real para consultar manuales y glosarios de traducción sin que invente nada.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá el banner azul del medio ('Hilo Conductor') → 2° Mostrá las 4 tarjetas de abajo (01 a 04) como los 4 capítulos de hoy.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá el banner azul del medio ('Hilo Conductor') → 2° Mostrá las 4 tarjetas de abajo (01 a 04) como los 4 capítulos de hoy.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Un LLM común responde de memoria como en un examen oral y puede chamuyar; con RAG le damos el manual abierto en la página exacta.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Un LLM común responde de memoria como en un examen oral y puede chamuyar; con RAG le damos el manual abierto en la página exacta.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ BIENVENIDA Y EL PROYECTO DE HOY (Señalá el banner azul del centro):
 ¡Bienvenida a la Sesión 2, Anabela! En la Sesión 1 vimos cómo se construye el software (Frontend, Backend, APIs y bases de datos). Hoy nos metemos en tu terreno natural —el lenguaje—, pero desde la Inteligencia Artificial. Para que ningún concepto quede suelto, hoy vamos a construir juntos de principio a fin un producto real: un 'Enterprise Knowledge & Localization Bot' (un asistente interno para consultar manuales y glosarios de traducción con citas reales y cero inventos).
 
@@ -716,38 +715,39 @@ Hoy vas a ver los nombres técnicos en inglés que piden las empresas (Tokens BP
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Hilo Conductor (Enterprise Knowledge & Localization Bot)</span>
-                <p class="pt-desc">En lugar de ver conceptos sueltos, durante las 15 diapositivas vamos a diseñar paso a paso un producto real: un asistente corporativo que responde consultas sobre manuales y glosarios de localización sin inventar respuestas ni filtrar secretos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 LLM (Large Language Model / Gran Modelo de Lenguaje)</span>
-                <p class="pt-desc">Es el 'motor cerebral' detrás de ChatGPT, Claude o Gemini. Se llama 'Grande' porque fue entrenado leyendo casi todo internet para aprender cómo se conectan las palabras.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 RAG (Retrieval-Augmented Generation)</span>
-                <p class="pt-desc">En palabras simples: 'tomarle examen a la IA a libro abierto'. En vez de dejar que responda de memoria (donde puede inventar), primero buscamos el párrafo exacto en los manuales privados de nuestra empresa y se lo damos para que responda solo con esa evidencia.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Hilo Conductor (Enterprise Knowledge & Localization Bot)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">En lugar de ver conceptos sueltos, durante las 15 diapositivas vamos a diseñar paso a paso un producto real: un asistente corporativo que responde consultas sobre manuales y glosarios de localización sin inventar respuestas ni filtrar secretos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 LLM (Large Language Model / Gran Modelo de Lenguaje)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el 'motor cerebral' detrás de ChatGPT, Claude o Gemini. Se llama 'Grande' porque fue entrenado leyendo casi todo internet para aprender cómo se conectan las palabras.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 RAG (Retrieval-Augmented Generation)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">En palabras simples: 'tomarle examen a la IA a libro abierto'. En vez de dejar que responda de memoria (donde puede inventar), primero buscamos el párrafo exacto en los manuales privados de nuestra empresa y se lo damos para que responda solo con esa evidencia.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Señalá primero el banner azul del medio ('🧭 Hilo Conductor de la Clase: Enterprise Knowledge & Localization Bot') y luego mostrá las 4 tarjetas numeradas (01 a 04).</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 2: El Origen y Motor de los LLMs: 'Attention Is All You Need' (2017)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 2: El Origen y Motor de los LLMs: 'Attention Is All You Need' (2017)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Arranquemos por el Paso 1 de nuestra misión: abrir el motor del LLM para entender por qué miente cuando no sabe algo y cómo lo domamos con la Temperatura. Pasemos a la Slide 2.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Arranquemos por el Paso 1 de nuestra misión: abrir el motor del LLM para entender por qué miente cuando no sabe algo y cómo lo domamos con la Temperatura. Pasemos a la Slide 2.”</p>
@@ -772,31 +772,30 @@ Hoy vas a ver los nombres técnicos en inglés que piden las empresas (Tokens BP
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">El LLM no 'sabe' ni razona: es como el autocompletado del celular. Si no sabe algo privado, inventa (alucina). Para nuestro Bot usamos Temperatura 0.0 y RAG.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">El LLM no 'sabe' ni razona: es como el autocompletado del celular. Si no sabe algo privado, inventa (alucina). Para nuestro Bot usamos Temperatura 0.0 y RAG.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Compará caja Roja (Mito) vs Verde (Realidad) → 2° En el simulador del medio alterná entre 'Temp = 0.0' y 'Temp = 0.9' → 3° Señalá las 2 tarjetas de abajo.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Compará caja Roja (Mito) vs Verde (Realidad) → 2° En el simulador del medio alterná entre 'Temp = 0.0' y 'Temp = 0.9' → 3° Señalá las 2 tarjetas de abajo.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Alucinación = el alumno que no estudió pero tiene labia y te chamuya seguro. Temperatura 0.0 = obligarlo a elegir siempre la palabra #1 más segura.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Alucinación = el alumno que no estudió pero tiene labia y te chamuya seguro. Temperatura 0.0 = obligarlo a elegir siempre la palabra #1 más segura.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ EL MITO VS. LA REALIDAD (Señalá las dos tarjetas de arriba):
 Cuando hablás con ChatGPT parece un humano que razona, pero es una ilusión. Un LLM es una calculadora de probabilidades que hace una sola cosa: Next-Token Prediction (predecir la siguiente palabra), igual que el teclado predictivo de WhatsApp cuando escribís 'Buen' y te sugiere 'día' (80%). ¿Y por qué alucina? Porque si le preguntás una regla privada de tu empresa que nunca leyó, su instinto es seguir completando palabras que suenen lindas, como un alumno que no estudió pero te chamuya con total seguridad.
 
@@ -813,48 +812,49 @@ Mirá la frase de nuestro Bot: 'Para traducir Checkout en LATAM debemos consulta
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Next-Token Prediction (Predicción del Siguiente Token)</span>
-                <p class="pt-desc">Es el autocompletado predictivo del teclado de tu celular pero hiper-vitaminado. El modelo no 'sabe' ni 'razona': solo calcula matemáticamente qué palabra o sílaba tiene más probabilidad de seguir a la anterior.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Alucinación Factual (Hallucination)</span>
-                <p class="pt-desc">Cuando la IA no tiene un dato privado de nuestra empresa pero, con tal de completar la oración de forma elocuente y sonar segura, inventa un dato falso muy bien redactado.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Temperatura (0.0 vs 0.9)</span>
-                <p class="pt-desc">Es la 'perilla de creatividad vs. rigor'. En 0.0 la IA elige siempre la palabra #1 más segura (cero inventos, ideal para nuestro Bot). En 0.9 la dejamos arriesgar con palabras menos probables (sirve para lluvia de ideas, pero alucina en datos técnicos).</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Transformer & Self-Attention (Auto-Atención)</span>
-                <p class="pt-desc">Nacieron en Google en 2017 para traducir idiomas. En vez de leer palabra por palabra olvidándose del principio, saca una 'foto panorámica' de toda la oración y entiende que la palabra 'banco' cambia de significado si al lado dice 'plaza' o 'hipoteca'.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Fine-Tuning vs. RAG</span>
-                <p class="pt-desc">Fine-Tuning es mandarlo a un 'curso de modales y estilo' (aprende a hablar formal o en código JSON, pero no sirve para glosarios que cambian cada semana). RAG es darle acceso en vivo a los manuales actualizados de la empresa.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Next-Token Prediction (Predicción del Siguiente Token)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el autocompletado predictivo del teclado de tu celular pero hiper-vitaminado. El modelo no 'sabe' ni 'razona': solo calcula matemáticamente qué palabra o sílaba tiene más probabilidad de seguir a la anterior.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Alucinación Factual (Hallucination)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cuando la IA no tiene un dato privado de nuestra empresa pero, con tal de completar la oración de forma elocuente y sonar segura, inventa un dato falso muy bien redactado.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Temperatura (0.0 vs 0.9)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es la 'perilla de creatividad vs. rigor'. En 0.0 la IA elige siempre la palabra #1 más segura (cero inventos, ideal para nuestro Bot). En 0.9 la dejamos arriesgar con palabras menos probables (sirve para lluvia de ideas, pero alucina en datos técnicos).</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Transformer & Self-Attention (Auto-Atención)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Nacieron en Google en 2017 para traducir idiomas. En vez de leer palabra por palabra olvidándose del principio, saca una 'foto panorámica' de toda la oración y entiende que la palabra 'banco' cambia de significado si al lado dice 'plaza' o 'hipoteca'.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Fine-Tuning vs. RAG</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Fine-Tuning es mandarlo a un 'curso de modales y estilo' (aprende a hablar formal o en código JSON, pero no sirve para glosarios que cambian cada semana). RAG es darle acceso en vivo a los manuales actualizados de la empresa.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Compará las cajas superiores (Mito vs Realidad), hacé clic en 'Temp = 0.0' y 'Temp = 0.9' en el simulador central, y repasá las dos tarjetas inferiores.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 3: Tokens: La Economía y Lingüística de la IA</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 3: Tokens: La Economía y Lingüística de la IA</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Recién viste que el simulador decía 'Siguiente Token' en vez de 'Siguiente Palabra'. ¿Por qué la IA parte las palabras en pedacitos y cómo afecta eso al presupuesto mensual de nuestro Bot? Pasemos al Paso 2 en la Slide 3.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Recién viste que el simulador decía 'Siguiente Token' en vez de 'Siguiente Palabra'. ¿Por qué la IA parte las palabras en pedacitos y cómo afecta eso al presupuesto mensual de nuestro Bot? Pasemos al Paso 2 en la Slide 3.”</p>
@@ -879,31 +879,30 @@ Mirá la frase de nuestro Bot: 'Para traducir Checkout en LATAM debemos consulta
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Las empresas de IA no cobran por palabra sino por 'Tokens' (sílabas/raíces). Y con 'Prompt Caching' ahorramos más del 50% de la factura mensual.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Las empresas de IA no cobran por palabra sino por 'Tokens' (sílabas/raíces). Y con 'Prompt Caching' ahorramos más del 50% de la factura mensual.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Izquierda: clic en Frase 1/2/3 y 'Tokenizar BPE' → 2° Derecha: prendé y apagá el botón 'Prompt Caching ACTIVO' para ver cómo baja de $225 a $101.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Izquierda: clic en Frase 1/2/3 y 'Tokenizar BPE' → 2° Derecha: prendé y apagá el botón 'Prompt Caching ACTIVO' para ver cómo baja de $225 a $101.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Tokenizar es separar raíz ('locali-') y sufijo ('-zación'). Y Prompt Caching es dejar las instrucciones fijas en memoria rápida para no pagarlas de nuevo en cada pregunta.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Tokenizar es separar raíz ('locali-') y sufijo ('-zación'). Y Prompt Caching es dejar las instrucciones fijas en memoria rápida para no pagarlas de nuevo en cada pregunta.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ ES UN TOKEN Y EL SIMULADOR BPE (Tocá las frases en la tarjeta izquierda):
 Así como la luz se cobra por Kilowatt, las APIs de IA cobran por millón de Tokens. Mirá la frase 1 en el simulador: son 9 palabras, pero el tokenizador BPE la parte en 15 bloquecitos de colores (La,  locali, zación...). Como traductora te va a sonar re familiar: separa raíces de sufijos. Dos reglas económicas clave para vos como PM: primero, el español gasta ~15% más de tokens que el inglés (1.000 tokens = 750 palabras en inglés o 650 en español); segundo, lo que el Bot escribe (Output) cuesta de 3 a 5 veces más caro que lo que lee (Input).
 
@@ -919,43 +918,44 @@ Cuando activás Prompt Caching (poniendo todo el texto fijo bien arriba del prom
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Token</span>
-                <p class="pt-desc">Es la unidad mínima que lee y cobra la IA. No es ni una letra ni una palabra entera: es un 'ladrillito o sílaba' de unas 3 o 4 letras. Regla práctica: 1.000 tokens son unas 750 palabras en inglés (o ~650 en español).</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 BPE (Byte Pair Encoding)</span>
-                <p class="pt-desc">Es el método que usa la IA para partir palabras en tokens: separa raíces comunes ('locali-') de sufijos ('-zación'). Así con solo ~100.000 ladrillitos puede armar cualquier palabra de cualquier idioma.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Asimetría Input vs. Output</span>
-                <p class="pt-desc">Leer lo que vos le mandás (Input) es barato; pero generar la respuesta palabra por palabra (Output) le exige mucho más cálculo al servidor y cuesta entre 3 y 5 veces más caro.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Prompt Caching & TTFT (Time To First Token)</span>
-                <p class="pt-desc">Prompt Caching es guardar en la 'memoria rápida' del servidor las instrucciones fijas de nuestro Bot para que te cobren entre 50% y 75% menos. TTFT es cuántos milisegundos tarda en aparecer la primera palabra de la respuesta en pantalla.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Token</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es la unidad mínima que lee y cobra la IA. No es ni una letra ni una palabra entera: es un 'ladrillito o sílaba' de unas 3 o 4 letras. Regla práctica: 1.000 tokens son unas 750 palabras en inglés (o ~650 en español).</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 BPE (Byte Pair Encoding)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el método que usa la IA para partir palabras en tokens: separa raíces comunes ('locali-') de sufijos ('-zación'). Así con solo ~100.000 ladrillitos puede armar cualquier palabra de cualquier idioma.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Asimetría Input vs. Output</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Leer lo que vos le mandás (Input) es barato; pero generar la respuesta palabra por palabra (Output) le exige mucho más cálculo al servidor y cuesta entre 3 y 5 veces más caro.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Prompt Caching & TTFT (Time To First Token)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Prompt Caching es guardar en la 'memoria rápida' del servidor las instrucciones fijas de nuestro Bot para que te cobren entre 50% y 75% menos. TTFT es cuántos milisegundos tarda en aparecer la primera palabra de la respuesta en pantalla.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En la izquierda probá las 3 frases con el tokenizador BPE. En la derecha prendé y apagá 'Prompt Caching' y mové el slider de consultas diarias.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 4: Ventanas de Contexto & El Sesgo 'Lost in the Middle'</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 4: Ventanas de Contexto & El Sesgo 'Lost in the Middle'</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: si hoy existen modelos con ventanas de contexto enormes donde entran 50 manuales enteros, ¿por qué no le pegamos todos los manuales de la empresa en el prompt y nos ahorramos de construir un buscador? Pasemos al Paso 3 en la Slide 4.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ahora bien: si hoy existen modelos con ventanas de contexto enormes donde entran 50 manuales enteros, ¿por qué no le pegamos todos los manuales de la empresa en el prompt y nos ahorramos de construir un buscador? Pasemos al Paso 3 en la Slide 4.”</p>
@@ -980,31 +980,30 @@ Cuando activás Prompt Caching (poniendo todo el texto fijo bien arriba del prom
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Aunque hoy caben 50 libros en la memoria del LLM (Ventana de Contexto), si le mandás todo junto se olvida de lo que está en la mitad ('Lost in the Middle'). Por eso necesitamos RAG.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Aunque hoy caben 50 libros en la memoria del LLM (Ventana de Contexto), si le mandás todo junto se olvida de lo que está en la mitad ('Lost in the Middle'). Por eso necesitamos RAG.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá la analogía del escritorio (izquierda) → 2° En el simulador derecho tocá el botón rojo 'Centro Geométrico (50%)' para mostrar cómo la atención cae a 38%.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá la analogía del escritorio (izquierda) → 2° En el simulador derecho tocá el botón rojo 'Centro Geométrico (50%)' para mostrar cómo la atención cae a 38%.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Es como dictarle a alguien 40 cosas del supermercado sin papel: se acuerda las primeras 3 y las últimas 3, pero se olvida todas las del medio.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es como dictarle a alguien 40 cosas del supermercado sin papel: se acuerda las primeras 3 y las últimas 3, pero se olvida todas las del medio.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ LA DUDA TRAMPA EN LOS EQUIPOS (Señalá la tarjeta izquierda):
 La Ventana de Contexto es el escritorio o memoria de corto plazo del modelo. Hoy hay modelos donde entran 1 millón de tokens (¡50 manuales enteros!). Entonces alguien te puede preguntar: 'Che, ¿por qué no pegamos los 20 manuales de la empresa enteros en cada pregunta y listo?'.
 
@@ -1020,38 +1019,39 @@ Por eso no pegamos manuales enteros. Necesitamos construir un buscador inteligen
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Ventana de Contexto (Context Window)</span>
-                <p class="pt-desc">Es el tamaño del 'escritorio o memoria de corto plazo' que tiene el modelo en una consulta. Todo lo que le mandás más lo que te responde tiene que caber adentro de esa ventana.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Lost in the Middle (Perdido en el Medio)</span>
-                <p class="pt-desc">Estudio de Stanford que demostró que cuando le metés muchísimo texto de golpe a un LLM (ej. 50 páginas), presta mucha atención al principio y al final, pero se olvida o ignora hasta el 60% de los datos que quedaron en la mitad.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Primacy Bias & Recency Bias</span>
-                <p class="pt-desc">Son los nombres de ese efecto: Primacy Bias es recordar perfecto lo primero que leíste (~99%), y Recency Bias es recordar perfecto lo último que leíste (~96%).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Ventana de Contexto (Context Window)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el tamaño del 'escritorio o memoria de corto plazo' que tiene el modelo en una consulta. Todo lo que le mandás más lo que te responde tiene que caber adentro de esa ventana.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Lost in the Middle (Perdido en el Medio)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Estudio de Stanford que demostró que cuando le metés muchísimo texto de golpe a un LLM (ej. 50 páginas), presta mucha atención al principio y al final, pero se olvida o ignora hasta el 60% de los datos que quedaron en la mitad.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Primacy Bias & Recency Bias</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Son los nombres de ese efecto: Primacy Bias es recordar perfecto lo primero que leíste (~99%), y Recency Bias es recordar perfecto lo último que leíste (~96%).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador derecho hacé clic en 'Inicio del Prompt (8%)', luego en 'Centro Geométrico (50%)' y luego en 'Final del Prompt (94%)'.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 5: Embeddings: Traduciendo Significado a Coordenadas</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 5: Embeddings: Traduciendo Significado a Coordenadas</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Así entramos al Módulo 2 de nuestro proyecto: ¿cómo construimos ese buscador inteligente que encuentra los 3 párrafos exactos aunque el usuario escriba con sinónimos? Pasemos al Paso 4 en la Slide 5: Embeddings.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Así entramos al Módulo 2 de nuestro proyecto: ¿cómo construimos ese buscador inteligente que encuentra los 3 párrafos exactos aunque el usuario escriba con sinónimos? Pasemos al Paso 4 en la Slide 5: Embeddings.”</p>
@@ -1076,31 +1076,30 @@ Por eso no pegamos manuales enteros. Necesitamos construir un buscador inteligen
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Para buscar por 'significado' y no por letras exactas (Ctrl+F), convertimos cada frase en coordenadas de un mapa tipo GPS (Embeddings) y medimos la distancia entre ellas (Similitud por Coseno).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Para buscar por 'significado' y no por letras exactas (Ctrl+F), convertimos cada frase en coordenadas de un mapa tipo GPS (Embeddings) y medimos la distancia entre ellas (Similitud por Coseno).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá los pasos 01-02-03 arriba → 2° En el mapa de abajo hacé clic en los puntos azules (0.96), verdes (0.54) y el rojo 'Automóvil Deportivo' (0.12).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá los pasos 01-02-03 arriba → 2° En el mapa de abajo hacé clic en los puntos azules (0.96), verdes (0.54) y el rojo 'Automóvil Deportivo' (0.12).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Un Embedding es darle una dirección de GPS a cada idea. Dos frases que significan lo mismo viven en la misma cuadra aunque usen palabras distintas.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Un Embedding es darle una dirección de GPS a cada idea. Dos frases que significan lo mismo viven en la misma cuadra aunque usen palabras distintas.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ EL PROBLEMA DEL BUSCADOR CLÁSICO (Señalá las 3 tarjetas de arriba):
 El buscador viejo (Ctrl + F) solo busca letras idénticas: si un usuario pregunta '¿Cómo valido términos para otros países?' y el manual dice 'Protocolo de glosarios para localización global', no coinciden en ninguna palabra y da cero resultados. ¿Cómo entiende nuestro Bot que hablan de lo mismo? Con Embeddings: convierte el significado de cada frase en una coordenada matemática de 1536 números, como la latitud y longitud de un GPS.
 
@@ -1118,38 +1117,39 @@ Gracias a los Embeddings y la Similitud por Coseno, nuestro Bot encuentra la res
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Embedding (Vector Semántico)</span>
-                <p class="pt-desc">Es traducir el 'significado' de una frase a una lista de números (como las coordenadas de latitud y longitud de un GPS). Así la computadora puede medir matemáticamente si dos textos hablan de lo mismo aunque no usen ninguna palabra igual.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Espacio Vectorial (1536 Dimensiones)</span>
-                <p class="pt-desc">En un mapa común tenés 2 dimensiones (Norte-Sur y Este-Oeste). La IA usa un mapa de 1536 dimensiones donde cada número mide un matiz distinto del concepto (si es técnico, si habla de pagos, si es de traducción, etc.).</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Similitud por Coseno (Cosine Similarity)</span>
-                <p class="pt-desc">Es la 'regla' que mide qué tan cerca quedaron dos frases en ese mapa, dando un puntaje entre 0.00 (nada que ver) y 1.00 (significado idéntico).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Embedding (Vector Semántico)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es traducir el 'significado' de una frase a una lista de números (como las coordenadas de latitud y longitud de un GPS). Así la computadora puede medir matemáticamente si dos textos hablan de lo mismo aunque no usen ninguna palabra igual.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Espacio Vectorial (1536 Dimensiones)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">En un mapa común tenés 2 dimensiones (Norte-Sur y Este-Oeste). La IA usa un mapa de 1536 dimensiones donde cada número mide un matiz distinto del concepto (si es técnico, si habla de pagos, si es de traducción, etc.).</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Similitud por Coseno (Cosine Similarity)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es la 'regla' que mide qué tan cerca quedaron dos frases en ese mapa, dando un puntaje entre 0.00 (nada que ver) y 1.00 (significado idéntico).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en los puntos del mapa ('Glosario Técnico', 'Memoria de Traducción', 'Deploy en Cloud', 'Automóvil Deportivo') y mostrá el puntaje en la esquina inferior derecha.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 6: Bases Vectoriales & Metadata Filtering</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 6: Bases Vectoriales & Metadata Filtering</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: si guardamos en este mapa todos los manuales de la empresa desde el año 2020 y de todos los países, ¿qué pasa si un manual viejo de 2021 habla del mismo tema que el manual nuevo de 2026? ¡Quedan pegaditos en el mapa! Veamos en el Paso 5 (Slide 6) cómo evitamos esa trampa.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ahora bien: si guardamos en este mapa todos los manuales de la empresa desde el año 2020 y de todos los países, ¿qué pasa si un manual viejo de 2021 habla del mismo tema que el manual nuevo de 2026? ¡Quedan pegaditos en el mapa! Veamos en el Paso 5 (Slide 6) cómo evitamos esa trampa.”</p>
@@ -1174,31 +1174,30 @@ Gracias a los Embeddings y la Similitud por Coseno, nuestro Bot encuentra la res
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Guardamos los vectores en una Base Vectorial (Pinecone), pero ANTES de buscar por significado filtramos por etiquetas duras (Año = 2026, Idioma = ES-LATAM) para que no se cuele un manual vencido.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Guardamos los vectores en una Base Vectorial (Pinecone), pero ANTES de buscar por significado filtramos por etiquetas duras (Año = 2026, Idioma = ES-LATAM) para que no se cuele un manual vencido.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° En el simulador derecho destildá 'Año: 2026' e 'Idioma: ES-LATAM' para mostrar cómo se cuela el Manual 2021 Obsoleto (0.86) → 2° Volvelos a tildar.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° En el simulador derecho destildá 'Año: 2026' e 'Idioma: ES-LATAM' para mostrar cómo se cuela el Manual 2021 Obsoleto (0.86) → 2° Volvelos a tildar.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Igual que en MercadoLibre: antes de mirar zapatillas parecidas, filtrás por tu talle (Metadatos) para no enamorarte de un par que no te entra.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Igual que en MercadoLibre: antes de mirar zapatillas parecidas, filtrás por tu talle (Metadatos) para no enamorarte de un par que no te entra.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ EL PELIGRO DE BUSCAR SOLO POR SIGNIFICADO (Señalá la caja roja izquierda):
 Todos esos vectores los guardamos en una Base de Datos Vectorial (como Pinecone). Pero ojo: si alguien pregunta '¿Cómo se traduce Checkout y Chargeback?' y buscamos solo por parecido de significado, el manual viejo de 2021 habla exactamente de eso y tiene un puntaje altísimo (0.86), ¡así que el Bot respondería con una regla derogada hace 5 años!
 
@@ -1214,38 +1213,39 @@ Los programadores no saben cómo se clasifican los documentos del negocio; sos v
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Base de Datos Vectorial (Vector DB: Pinecone, Qdrant, pgvector)</span>
-                <p class="pt-desc">Es la 'biblioteca especializada' donde se guardan los Embeddings (las coordenadas numéricas de los textos) para poder buscar por cercanía de significado en milisegundos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Metadatos (Metadata Schema)</span>
-                <p class="pt-desc">Son las 'etiquetas de clasificación' explícitas que le pegamos a cada documento al guardarlo: Idioma = ES-LATAM, Año = 2026, Tipo = Guía de Estilo, Sector = Pagos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Metadata Pre-Filtering (Pre-filtrado por Metadatos)</span>
-                <p class="pt-desc">Es aplicar primero un filtro duro por etiquetas (ej. 'quedate solo con manuales en Español del año 2026') ANTES de buscar por significado, para no recuperar documentos vencidos o de otro país.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Base de Datos Vectorial (Vector DB: Pinecone, Qdrant, pgvector)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es la 'biblioteca especializada' donde se guardan los Embeddings (las coordenadas numéricas de los textos) para poder buscar por cercanía de significado en milisegundos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Metadatos (Metadata Schema)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Son las 'etiquetas de clasificación' explícitas que le pegamos a cada documento al guardarlo: Idioma = ES-LATAM, Año = 2026, Tipo = Guía de Estilo, Sector = Pagos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Metadata Pre-Filtering (Pre-filtrado por Metadatos)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es aplicar primero un filtro duro por etiquetas (ej. 'quedate solo con manuales en Español del año 2026') ANTES de buscar por significado, para no recuperar documentos vencidos o de otro país.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador derecho apagá las píldoras 'Idioma: ES-LATAM' y 'Año: 2026' para ver el peligro y volvelas a prender.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 7: Chunking & Overlap: El Arte de Fragmentar Documentos</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 7: Chunking & Overlap: El Arte de Fragmentar Documentos</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya tenemos la Base Vectorial y las etiquetas de filtrado. Nos falta resolver un último detalle antes de cargar los archivos: un manual PDF tiene 200 páginas, ¿cómo lo cortamos en pedacitos sin partir una regla por la mitad? Pasemos al Paso 6 en la Slide 7.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya tenemos la Base Vectorial y las etiquetas de filtrado. Nos falta resolver un último detalle antes de cargar los archivos: un manual PDF tiene 200 páginas, ¿cómo lo cortamos en pedacitos sin partir una regla por la mitad? Pasemos al Paso 6 en la Slide 7.”</p>
@@ -1270,31 +1270,30 @@ Los programadores no saben cómo se clasifican los documentos del negocio; sos v
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Cortamos los PDFs largos en fichas chicas de ~1.000 letras (Chunks), pero repetimos un 15% del texto entre ficha y ficha (Overlap) para que ninguna regla quede cortada por la mitad.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Cortamos los PDFs largos en fichas chicas de ~1.000 letras (Chunks), pero repetimos un 15% del texto entre ficha y ficha (Overlap) para que ninguna regla quede cortada por la mitad.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° En el simulador derecho tocá '0%' (mostrá el cartel rojo de corte abrupto) → 2° Tocá '15%' para mostrar el puente amarillo compartido entre el Fragmento A y B.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° En el simulador derecho tocá '0%' (mostrá el cartel rojo de corte abrupto) → 2° Tocá '15%' para mostrar el puente amarillo compartido entre el Fragmento A y B.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Cuando sacás una foto panorámica o fotocopiás un plano grande en dos hojas A4, dejás un bordecito repetido en las dos hojas para que no se pierda nada en la unión.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Cuando sacás una foto panorámica o fotocopiás un plano grande en dos hojas A4, dejás un bordecito repetido en las dos hojas para que no se pierda nada en la unión.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ ES CHUNKING (Señalá las dos tarjetas de la izquierda):
 No podemos convertir un PDF de 200 páginas en un solo vector porque mezclaría mil temas. Por eso lo cortamos en fichas chicas de unas 200 palabras (~1.000 caracteres) llamadas Chunks. Y para no cortar palabras al medio usamos Recursive Character Chunking, que corta respetando títulos, párrafos y puntos.
 
@@ -1310,38 +1309,39 @@ El estándar de oro que siempre pedís en tus proyectos es Chunks de ~1.000 cara
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Chunking (Fragmentación Documental)</span>
-                <p class="pt-desc">Es cortar un documento largo (ej. un PDF de 200 páginas) en 'fichas' o bloques pequeños de texto (llamados Chunks, de unas 200 palabras o 1.000 caracteres) antes de convertirlos en vectores.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Recursive Character Chunking</span>
-                <p class="pt-desc">En vez de cortar cada 1.000 letras a ciegas partiendo oraciones por la mitad, corta de forma inteligente respetando primero títulos, luego párrafos y luego puntos seguidos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Chunk Overlap (Solapamiento del 10% al 20%)</span>
-                <p class="pt-desc">Es repetir el final del Fragmento A al comienzo del Fragmento B (como cuando sacás una foto panorámica solapando un borde con el otro) para que ninguna condición o regla quede huérfana.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Chunking (Fragmentación Documental)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es cortar un documento largo (ej. un PDF de 200 páginas) en 'fichas' o bloques pequeños de texto (llamados Chunks, de unas 200 palabras o 1.000 caracteres) antes de convertirlos en vectores.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Recursive Character Chunking</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">En vez de cortar cada 1.000 letras a ciegas partiendo oraciones por la mitad, corta de forma inteligente respetando primero títulos, luego párrafos y luego puntos seguidos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Chunk Overlap (Solapamiento del 10% al 20%)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es repetir el final del Fragmento A al comienzo del Fragmento B (como cuando sacás una foto panorámica solapando un borde con el otro) para que ninguna condición o regla quede huérfana.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador derecho alterná entre '0%' (corte roto) y '15%' (puente amarillo).</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 8: Anatomía de RAG — Fase 1: Ingestión Offline (Batch)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 8: Anatomía de RAG — Fase 1: Ingestión Offline (Batch)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Listo! Ya dominás todas las piezas sueltas. Ahora entramos al Módulo 3: vamos a enchufar todas estas piezas juntas para ver funcionar nuestro 'Enterprise Knowledge Bot' con un documento real. Pasemos al Paso 7 en la Slide 8.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“¡Listo! Ya dominás todas las piezas sueltas. Ahora entramos al Módulo 3: vamos a enchufar todas estas piezas juntas para ver funcionar nuestro 'Enterprise Knowledge Bot' con un documento real. Pasemos al Paso 7 en la Slide 8.”</p>
@@ -1366,31 +1366,30 @@ El estándar de oro que siempre pedís en tus proyectos es Chunks de ~1.000 cara
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">RAG tiene 2 momentos. Esta Fase 1 es 'preparar la biblioteca antes de abrir': subimos el PDF de Pagos LATAM, lo cortamos en Chunks, calculamos sus Embeddings y lo guardamos en Pinecone.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">RAG tiene 2 momentos. Esta Fase 1 es 'preparar la biblioteca antes de abrir': subimos el PDF de Pagos LATAM, lo cortamos en Chunks, calculamos sus Embeddings y lo guardamos en Pinecone.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Tocá el botón verde '▶ Simular Pipeline Batch' arriba a la derecha → 2° Señalá cómo cambia el ejemplo real abajo en verde (de PDF a Ficha #14 a Vector a Pinecone).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Tocá el botón verde '▶ Simular Pipeline Batch' arriba a la derecha → 2° Señalá cómo cambia el ejemplo real abajo en verde (de PDF a Ficha #14 a Vector a Pinecone).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Fase 1 es ordenar y etiquetar la despensa del restaurante a la mañana antes de que entren los clientes.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Fase 1 es ordenar y etiquetar la despensa del restaurante a la mañana antes de que entren los clientes.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ LA DIVIDIMOS EN 2 FASES (Concepto general):
 Acá armamos la máquina completa de RAG, que siempre se divide en dos momentos: Fase 1 (esta Slide 8) es preparar y ordenar la biblioteca en segundo plano antes de abrir, y Fase 2 (la Slide 9) es responderle al usuario en vivo.
 
@@ -1406,38 +1405,39 @@ Acá armamos la máquina completa de RAG, que siempre se divide en dos momentos:
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Fase 1: Ingestión Offline (Batch Pipeline)</span>
-                <p class="pt-desc">Es 'preparar la biblioteca antes de que entren los lectores'. Corre en segundo plano cada vez que subimos o actualizamos manuales, sin ningún usuario esperando en el chat.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Ground Truth (Fuente Única de Verdad)</span>
-                <p class="pt-desc">Son los documentos oficiales validados por humanos (en nuestro ejemplo: 'Guia_Estilo_Pagos_LATAM_2026.pdf') que tomamos como verdad absoluta para alimentar al bot.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Upsert en Vector DB</span>
-                <p class="pt-desc">Término que combina 'Update' (actualizar) + 'Insert' (insertar): guarda los vectores nuevos en Pinecone y pisa los viejos para que la biblioteca esté siempre al día.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Fase 1: Ingestión Offline (Batch Pipeline)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es 'preparar la biblioteca antes de que entren los lectores'. Corre en segundo plano cada vez que subimos o actualizamos manuales, sin ningún usuario esperando en el chat.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Ground Truth (Fuente Única de Verdad)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Son los documentos oficiales validados por humanos (en nuestro ejemplo: 'Guia_Estilo_Pagos_LATAM_2026.pdf') que tomamos como verdad absoluta para alimentar al bot.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Upsert en Vector DB</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Término que combina 'Update' (actualizar) + 'Insert' (insertar): guarda los vectores nuevos en Pinecone y pisa los viejos para que la biblioteca esté siempre al día.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Hacé clic en '▶ Simular Pipeline Batch' y leé con ella el recuadro inferior verde que muestra cómo se transforma el PDF en cada uno de los 4 pasos.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 9: Anatomía de RAG — Fase 2: Consulta en Tiempo Real (Live)</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 9: Anatomía de RAG — Fase 2: Consulta en Tiempo Real (Live)</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora que la Ficha #14 ya está guardada con sus coordenadas y etiquetas en Pinecone, abrimos el chat a los empleados: un traductor entra y pregunta '¿Cómo se traduce Chargeback?'. Pasemos al Paso 8 en la Slide 9 para ver qué ocurre en menos de 2 segundos.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ahora que la Ficha #14 ya está guardada con sus coordenadas y etiquetas en Pinecone, abrimos el chat a los empleados: un traductor entra y pregunta '¿Cómo se traduce Chargeback?'. Pasemos al Paso 8 en la Slide 9 para ver qué ocurre en menos de 2 segundos.”</p>
@@ -1462,31 +1462,30 @@ Acá armamos la máquina completa de RAG, que siempre se divide en dos momentos:
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Fase 2 es en vivo (< 2 seg): entra la pregunta por 'Chargeback', buscamos los 3 mejores párrafos en Pinecone, se los pegamos en secreto al LLM (Prompt Aumentado) y responde 'Contracargo (pág. 8)'.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Fase 2 es en vivo (< 2 seg): entra la pregunta por 'Chargeback', buscamos los 3 mejores párrafos en Pinecone, se los pegamos en secreto al LLM (Prompt Aumentado) y responde 'Contracargo (pág. 8)'.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Tocá '▶ Simular Consulta Live' → 2° Señalá la línea azul inferior con el ejemplo de 'Chargeback' → 3° Tocá '🔍 Ver Diagrama Completo RAG' para mostrar el mapa entero.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Tocá '▶ Simular Consulta Live' → 2° Señalá la línea azul inferior con el ejemplo de 'Chargeback' → 3° Tocá '🔍 Ver Diagrama Completo RAG' para mostrar el mapa entero.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">El usuario cree que habló directo con el LLM, pero nuestro servidor le abrió el libro en la página 8 antes de que responda.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">El usuario cree que habló directo con el LLM, pero nuestro servidor le abrió el libro en la página 8 antes de que responda.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ ENTRÓ UNA PREGUNTA EN VIVO (Tocá '▶ Simular Consulta Live' y mirá la línea azul abajo):
 Un traductor abre nuestro Bot y pregunta: '¿Cómo se traduce Chargeback en la app?'. Mirá lo que pasa en menos de 2 segundos:
 * Paso 1 (Pregunta a Vector): Convertimos su pregunta en coordenadas de GPS (1536 números).
@@ -1504,38 +1503,39 @@ El LLM lee esa ficha con Temperatura 0.0 y responde: 'Se traduce oficialmente co
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Fase 2: Consulta en Tiempo Real (Online Inference)</span>
-                <p class="pt-desc">Es lo que ocurre en menos de 2 segundos desde que el usuario aprieta 'Enviar' en el chat hasta que recibe la respuesta con la página exacta del manual.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Top-K Retrieval (ej. Top-K = 3)</span>
-                <p class="pt-desc">Es pedirle a la base vectorial que nos devuelva únicamente los 'K' fragmentos más parecidos a la pregunta (en nuestro Bot, los 3 mejores párrafos).</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Prompt Aumentado (Context Injection)</span>
-                <p class="pt-desc">Es el corazón de RAG: antes de mandarle la pregunta del usuario al LLM, el servidor le 'inyecta' en secreto los 3 párrafos oficiales encontrados en Pinecone y le ordena responder solo con esa evidencia.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Fase 2: Consulta en Tiempo Real (Online Inference)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es lo que ocurre en menos de 2 segundos desde que el usuario aprieta 'Enviar' en el chat hasta que recibe la respuesta con la página exacta del manual.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Top-K Retrieval (ej. Top-K = 3)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es pedirle a la base vectorial que nos devuelva únicamente los 'K' fragmentos más parecidos a la pregunta (en nuestro Bot, los 3 mejores párrafos).</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Prompt Aumentado (Context Injection)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el corazón de RAG: antes de mandarle la pregunta del usuario al LLM, el servidor le 'inyecta' en secreto los 3 párrafos oficiales encontrados en Pinecone y le ordena responder solo con esa evidencia.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Tocá '▶ Simular Consulta Live' siguiendo el ejemplo azul de abajo y luego abrí '🔍 Ver Diagrama Completo RAG'.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 10: Taller Práctico: El Mock PRD de tu Chatbot RAG</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 10: Taller Práctico: El Mock PRD de tu Chatbot RAG</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Acabás de ver el ciclo completo! Ahora, como Product Manager de este proyecto, ¿cómo volcás todas las decisiones que tomamos entre la Slide 2 y la Slide 9 en un documento formal para tu equipo de ingeniería? Pasemos al Paso 9 en la Slide 10: el Mock PRD.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“¡Acabás de ver el ciclo completo! Ahora, como Product Manager de este proyecto, ¿cómo volcás todas las decisiones que tomamos entre la Slide 2 y la Slide 9 en un documento formal para tu equipo de ingeniería? Pasemos al Paso 9 en la Slide 10: el Mock PRD.”</p>
@@ -1560,31 +1560,30 @@ El LLM lee esa ficha con Temperatura 0.0 y responde: 'Se traduce oficialmente co
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Acá juntamos todo lo que vimos en las slides anteriores adentro del entregable real de una PM: el PRD y la lista de criterios de aprobación (Definition of Done).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Acá juntamos todo lo que vimos en las slides anteriores adentro del entregable real de una PM: el PRD y la lista de criterios de aprobación (Definition of Done).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá en la tarjeta izquierda las fuentes y metadatos (cita entre paréntesis la Slide donde se vio) → 2° Señalá la tarjeta derecha (DoD) → 3° Mostrá el botón 'Abrir App Mock PRD'.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá en la tarjeta izquierda las fuentes y metadatos (cita entre paréntesis la Slide donde se vio) → 2° Señalá la tarjeta derecha (DoD) → 3° Mostrá el botón 'Abrir App Mock PRD'.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Un PM sin base técnica escribe 'hacer un chatbot que ande bien'; vos escribís el plano exacto con Chunking 1000/15%, Top-3, Temp 0.0 y Score >= 0.75.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Un PM sin base técnica escribe 'hacer un chatbot que ande bien'; vos escribís el plano exacto con Chunking 1000/15%, Top-3, Temp 0.0 y Score >= 0.75.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ DE LA TEORÍA A TU ENTREGABLE COMO PM:
 Cuando liderás un proyecto de IA no programás el código, pero escribís el documento más importante del equipo: el PRD (Documento de Requisitos de Producto) y su Definition of Done (DoD). Fijate cómo cada renglón de esta slide resume lo que acabamos de aprender.
 
@@ -1603,33 +1602,34 @@ Cuando liderás un proyecto de IA no programás el código, pero escribís el do
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 PRD (Product Requirements Document)</span>
-                <p class="pt-desc">Es el documento madre que escribe el Product Manager para definir qué producto se va a construir, con qué fuentes de datos, qué filtros y bajo qué reglas de calidad.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Definition of Done (DoD / Definición de Terminado)</span>
-                <p class="pt-desc">Es el contrato de calidad con los programadores y QA: la lista de parámetros exactos (Chunking, Overlap, Score >= 0.75, SLA, Evals >= 90%) que deben cumplirse para aprobar el lanzamiento.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 PRD (Product Requirements Document)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el documento madre que escribe el Product Manager para definir qué producto se va a construir, con qué fuentes de datos, qué filtros y bajo qué reglas de calidad.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Definition of Done (DoD / Definición de Terminado)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el contrato de calidad con los programadores y QA: la lista de parámetros exactos (Chunking, Overlap, Score >= 0.75, SLA, Evals >= 90%) que deben cumplirse para aprobar el lanzamiento.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Recorré las dos tarjetas mostrando que cada ítem indica entre paréntesis en qué Slide se aprendió, y señalá los botones de abajo.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 11: Gobernanza de IA, Privacidad & Prevención de Data Leakage</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 11: Gobernanza de IA, Privacidad & Prevención de Data Leakage</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Entremos entonces al Módulo 4 (Blindaje Corporativo) para completar esos 3 requisitos finales de nuestro PRD: empezamos en el Paso 10 (Slide 11) con Privacidad y Gobernanza Legal.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Entremos entonces al Módulo 4 (Blindaje Corporativo) para completar esos 3 requisitos finales de nuestro PRD: empezamos en el Paso 10 (Slide 11) con Privacidad y Gobernanza Legal.”</p>
@@ -1654,31 +1654,30 @@ Cuando liderás un proyecto de IA no programás el código, pero escribís el do
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Nunca usamos chats gratuitos porque guardan tus datos para entrenar modelos públicos (Data Leakage). Usamos API Corporativa con Retención Cero (Zero-Data Retention) y enmascarado de datos personales (PII Masking).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Nunca usamos chats gratuitos porque guardan tus datos para entrenar modelos públicos (Data Leakage). Usamos API Corporativa con Retención Cero (Zero-Data Retention) y enmascarado de datos personales (PII Masking).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Compará caja Roja vs Verde → 2° En el simulador de abajo alterná entre '🚨 Chat Gratuito' (expone Pfizer y el email) y '🛡️ API Enterprise SLA' (oculta [CLIENT_ORG] y [EMAIL_REDACTED]).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Compará caja Roja vs Verde → 2° En el simulador de abajo alterná entre '🚨 Chat Gratuito' (expone Pfizer y el email) y '🛡️ API Enterprise SLA' (oculta [CLIENT_ORG] y [EMAIL_REDACTED]).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">PII Masking es pasarle corrector líquido a los nombres reales y mails antes de mandar la hoja a la API.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">PII Masking es pasarle corrector líquido a los nombres reales y mails antes de mandar la hoja a la API.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ EL RIESGO LEGAL: DATA LEAKAGE (Señalá la tarjeta roja):
 Si un empleado pega un glosario confidencial de un cliente en el ChatGPT gratuito o común, esos textos quedan guardados y se usan para entrenar futuros modelos públicos. Eso se llama Data Leakage (Fuga de Datos) y viola contratos de confidencialidad (NDA) y normas ISO 27001 / GDPR.
 
@@ -1694,38 +1693,39 @@ Mirá la consulta confidencial: 'Lanzamiento Pfizer Q4 — contacto: ana.perez@p
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Data Leakage (Fuga de Datos / Propiedad Intelectual)</span>
-                <p class="pt-desc">Es el riesgo de que información confidencial de la empresa o de un cliente bajo NDA termine filtrada afuera por enviarla a cuentas gratuitas o públicas de IA.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Enterprise SLA & Zero-Data Retention (Retención Cero)</span>
-                <p class="pt-desc">Es el contrato corporativo con OpenAI, Anthropic, Microsoft o AWS donde se comprometen legal y técnicamente a procesar tus textos en memoria temporal y borrarlos en el acto, sin usarlos jamás para entrenar sus modelos públicos.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 PII Masking (Enmascaramiento de Datos Personales)</span>
-                <p class="pt-desc">PII significa 'Información Personal Identificable' (nombres, DNI, emails). El Masking es un filtro automático que reemplaza esos datos por etiquetas ('[EMAIL_REDACTED]') antes de que salgan hacia la API.</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Data Leakage (Fuga de Datos / Propiedad Intelectual)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el riesgo de que información confidencial de la empresa o de un cliente bajo NDA termine filtrada afuera por enviarla a cuentas gratuitas o públicas de IA.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Enterprise SLA & Zero-Data Retention (Retención Cero)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el contrato corporativo con OpenAI, Anthropic, Microsoft o AWS donde se comprometen legal y técnicamente a procesar tus textos en memoria temporal y borrarlos en el acto, sin usarlos jamás para entrenar sus modelos públicos.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 PII Masking (Enmascaramiento de Datos Personales)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">PII significa 'Información Personal Identificable' (nombres, DNI, emails). El Masking es un filtro automático que reemplaza esos datos por etiquetas ('[EMAIL_REDACTED]') antes de que salgan hacia la API.</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador inferior alterná entre '🚨 Enviar por Chat Gratuito' y '🛡️ Enviar por API Enterprise SLA (Zero-Retention)'.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 12: Mitigación de Alucinaciones: Umbral de Confianza y 'No-Answer'</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 12: Mitigación de Alucinaciones: Umbral de Confianza y 'No-Answer'</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya blindamos legalmente los datos que entran. Ahora vamos al Paso 11 (Slide 12): ¿qué pasa si un empleado le hace al Bot una pregunta que NO está en ningún manual? ¿Cómo logramos que el Bot se calle en vez de inventar?`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya blindamos legalmente los datos que entran. Ahora vamos al Paso 11 (Slide 12): ¿qué pasa si un empleado le hace al Bot una pregunta que NO está en ningún manual? ¿Cómo logramos que el Bot se calle en vez de inventar?”</p>
@@ -1750,31 +1750,30 @@ Mirá la consulta confidencial: 'Lanzamiento Pfizer Q4 — contacto: ana.perez@p
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Le ponemos una nota mínima de similitud (0.75) a Pinecone. Si lo que encontró tiene menos de 0.75, el servidor bloquea la llamada al LLM (gasta $0) y devuelve una respuesta fija diciendo 'No tengo información verificada'.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Le ponemos una nota mínima de similitud (0.75) a Pinecone. Si lo que encontró tiene menos de 0.75, el servidor bloquea la llamada al LLM (gasta $0) y devuelve una respuesta fija diciendo 'No tengo información verificada'.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° En el simulador derecho tocá 'Caso 1 (Score 0.91)' → 2° Tocá 'Caso 3 (Score 0.34: salario del Director)' y mostrá cómo se prende la caja roja BLOQUEADO con el Fallback Seguro.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° En el simulador derecho tocá 'Caso 1 (Score 0.91)' → 2° Tocá 'Caso 3 (Score 0.34: salario del Director)' y mostrá cómo se prende la caja roja BLOQUEADO con el Fallback Seguro.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Es un patovica en la puerta del LLM: si el párrafo del manual no tiene al menos 7,50 puntos de parecido con la pregunta, ni siquiera te deja pasar a hablar con el LLM.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es un patovica en la puerta del LLM: si el párrafo del manual no tiene al menos 7,50 puntos de parecido con la pregunta, ni siquiera te deja pasar a hablar con el LLM.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ CÓMO ENSEÑARLE AL BOT A DECIR 'NO SÉ':
 ¿Qué pasa si alguien le pregunta a nuestro Bot de traducción: '¿Cuál es el salario del Director de Finanzas?'? Si dejáramos pasar esa pregunta al LLM, intentaría inventar algo. Por eso ponemos en el servidor una barrera matemática llamada Confidence Threshold (Umbral de Confianza) en 0.75.
 
@@ -1791,38 +1790,39 @@ Cuando bloquea, ni siquiera despierta al LLM (ahorra 100% de tokens) y responde 
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Confidence Threshold (Umbral de Confianza Semántica, ej. 0.75)</span>
-                <p class="pt-desc">Es la 'nota mínima de aprobación' que le exigimos al buscador vectorial (Pinecone). Si el párrafo más parecido del manual tiene una nota menor a 0.75, asumimos que el manual no habla de ese tema.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Cortocircuito en Backend (Deterministic Guardrail)</span>
-                <p class="pt-desc">Si la nota no llega a 0.75, nuestro servidor frena ahí mismo y ni siquiera llama al LLM. Así es 100% imposible que alucine y además ahorramos el 100% de los tokens de generación.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 No-Answer Fallback (Respuesta de Abstención Segura)</span>
-                <p class="pt-desc">Es el mensaje educado y fijo que devuelve el sistema cuando se activa el freno ('No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes').</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Confidence Threshold (Umbral de Confianza Semántica, ej. 0.75)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es la 'nota mínima de aprobación' que le exigimos al buscador vectorial (Pinecone). Si el párrafo más parecido del manual tiene una nota menor a 0.75, asumimos que el manual no habla de ese tema.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Cortocircuito en Backend (Deterministic Guardrail)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Si la nota no llega a 0.75, nuestro servidor frena ahí mismo y ni siquiera llama al LLM. Así es 100% imposible que alucine y además ahorramos el 100% de los tokens de generación.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 No-Answer Fallback (Respuesta de Abstención Segura)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el mensaje educado y fijo que devuelve el sistema cuando se activa el freno ('No dispongo de información oficial verificada sobre esa consulta en los manuales vigentes').</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador derecho hacé clic en el Caso 1 (0.91), Caso 2 (0.78) y Caso 3 (0.34), y mové la barra deslizante alrededor de 0.75.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 13: Evaluación de Calidad: Golden Dataset & Evals en CI/CD</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 13: Evaluación de Calidad: Golden Dataset & Evals en CI/CD</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya tenemos el Bot armado, blindado legalmente y con su freno anti-alucinaciones en 0.75. Nos queda el último requisito del PRD antes de salir a producción: ¿cómo probamos automáticamente que el Bot responde bien 100 preguntas reales? Vamos al Paso 12 en la Slide 13.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Ya tenemos el Bot armado, blindado legalmente y con su freno anti-alucinaciones en 0.75. Nos queda el último requisito del PRD antes de salir a producción: ¿cómo probamos automáticamente que el Bot responde bien 100 preguntas reales? Vamos al Paso 12 en la Slide 13.”</p>
@@ -1847,31 +1847,30 @@ Cuando bloquea, ni siquiera despierta al LLM (ahorra 100% de tokens) y responde 
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Antes de subir cualquier cambio a producción, un robot le toma un examen automático de 100 preguntas reales (Golden Dataset). Si saca menos de 90% de fidelidad, bloquea la subida (CI/CD Gate).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Antes de subir cualquier cambio a producción, un robot le toma un examen automático de 100 preguntas reales (Golden Dataset). Si saca menos de 90% de fidelidad, bloquea la subida (CI/CD Gate).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá las 3 tarjetas de arriba → 2° En el simulador de abajo mirá la 'Muestra Caso #14 (Chargeback)' y alterná entre '✅ PR #42' (PASS) y '❌ PR #43' (FAIL: Alucinación → DEPLOY BLOCKED).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá las 3 tarjetas de arriba → 2° En el simulador de abajo mirá la 'Muestra Caso #14 (Chargeback)' y alterná entre '✅ PR #42' (PASS) y '❌ PR #43' (FAIL: Alucinación → DEPLOY BLOCKED).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">El Golden Dataset es la plantilla de respuestas correctas del examen; el pipeline CI/CD es el profesor automático que corrige las 100 preguntas en 2 minutos antes de dejar salir al Bot.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">El Golden Dataset es la plantilla de respuestas correctas del examen; el pipeline CI/CD es el profesor automático que corrige las 100 preguntas en 2 minutos antes de dejar salir al Bot.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ EL PROBLEMA DE TOCAR EL PROMPT:
 En IA pasa algo loco: un programador toca un renglón para que el Bot sea más simpático, ¡y sin darse cuenta arruina cómo respondía las reglas técnicas! Como nadie puede probar 100 preguntas a mano todos los días, vos como PM armás con las expertas una planilla de 100 preguntas reales con su respuesta ideal certificada: el Golden Dataset (Dataset de Oro).
 
@@ -1889,43 +1888,44 @@ Y una vez en la calle, miramos en Langfuse cuánto tarda, cuánto gasta y los vo
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Golden Dataset (Conjunto de Datos de Oro)</span>
-                <p class="pt-desc">Es una planilla con 50 a 100 preguntas reales (incluyendo el Caso #14 de 'Chargeback' y preguntas trampa) con sus 'respuestas ideales certificadas' por los expertos humanos del negocio.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Evals en CI/CD (Evaluación Continua Automatizada)</span>
-                <p class="pt-desc">Cada vez que un programador quiere subir un cambio al código (un Pull Request), el pipeline le toma automáticamente las 100 preguntas del Golden Dataset al Bot. Si saca menos de 90%, bloquea el despliegue.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Context Adherence / Faithfulness (Fidelidad al Contexto)</span>
-                <p class="pt-desc">Métrica que mide qué porcentaje de las respuestas del Bot salieron fielmente de los manuales oficiales sin inventar nada.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Observabilidad LLMOps (Langfuse / Arize)</span>
-                <p class="pt-desc">Es el tablero de control en vivo que monitorea en producción cuánto tarda cada respuesta, cuántos dólares consume por día y si algún usuario votó con pulgar abajo (👎).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Golden Dataset (Conjunto de Datos de Oro)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es una planilla con 50 a 100 preguntas reales (incluyendo el Caso #14 de 'Chargeback' y preguntas trampa) con sus 'respuestas ideales certificadas' por los expertos humanos del negocio.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Evals en CI/CD (Evaluación Continua Automatizada)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cada vez que un programador quiere subir un cambio al código (un Pull Request), el pipeline le toma automáticamente las 100 preguntas del Golden Dataset al Bot. Si saca menos de 90%, bloquea el despliegue.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Context Adherence / Faithfulness (Fidelidad al Contexto)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Métrica que mide qué porcentaje de las respuestas del Bot salieron fielmente de los manuales oficiales sin inventar nada.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Observabilidad LLMOps (Langfuse / Arize)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el tablero de control en vivo que monitorea en producción cuánto tarda cada respuesta, cuántos dólares consume por día y si algún usuario votó con pulgar abajo (👎).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>En el simulador inferior alterná entre '✅ PR #42' y '❌ PR #43' señalando cómo cambia el Caso #14 y el cartel final (DEPLOY APPROVED vs DEPLOY BLOCKED).</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 14: Roleplay: Defensa Técnica en Entrevistas IT</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 14: Roleplay: Defensa Técnica en Entrevistas IT</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `¡Con esto completamos de punta a punta el diseño y blindaje de nuestro Bot! Ahora pasemos al Paso 13 (Slide 14): ¿cómo defendés estas decisiones técnicas cuando te las preguntan en una entrevista laboral?`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“¡Con esto completamos de punta a punta el diseño y blindaje de nuestro Bot! Ahora pasemos al Paso 13 (Slide 14): ¿cómo defendés estas decisiones técnicas cuando te las preguntan en una entrevista laboral?”</p>
@@ -1950,31 +1950,30 @@ Y una vez en la calle, miramos en Langfuse cuánto tarda, cuánto gasta y los vo
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Practicamos las 2 preguntas clásicas de entrevista usando exactamente nuestro Bot: 1) ¿Por qué RAG y no Fine-Tuning? 2) ¿Cómo cuidás la factura de tokens si escala a 50.000 usuarios?</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Practicamos las 2 preguntas clásicas de entrevista usando exactamente nuestro Bot: 1) ¿Por qué RAG y no Fine-Tuning? 2) ¿Cómo cuidás la factura de tokens si escala a 50.000 usuarios?</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Leé la Pregunta 1 y tocá '👁️ Ocultar / ✨ Revelar' para ver los 3 pilares → 2° Hacé lo mismo con la Pregunta 2.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Leé la Pregunta 1 y tocá '👁️ Ocultar / ✨ Revelar' para ver los 3 pilares → 2° Hacé lo mismo con la Pregunta 2.</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Pregunta 1: Fine-Tuning enseña modales (forma), RAG consulta el libro actualizado (hechos). Pregunta 2: Ahorramos con Prompt Caching, Umbral 0.75 y Top-3 Chunks.</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Pregunta 1: Fine-Tuning enseña modales (forma), RAG consulta el libro actualizado (hechos). Pregunta 2: Ahorramos con Prompt Caching, Umbral 0.75 y Top-3 Chunks.</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ ESCENARIO 1: LA TRAMPA DEL FINE-TUNING (Tarjeta superior):
  Te preguntan: '¿Por qué no hacemos Fine-Tuning del modelo cada semana para cargarle los glosarios nuevos?'*
 * Tus 3 puntos ganadores:
@@ -1995,33 +1994,34 @@ Y una vez en la calle, miramos en Langfuse cuánto tarda, cuánto gasta y los vo
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Qué evalúan en la Pregunta 1 (RAG vs. Fine-Tuning)</span>
-                <p class="pt-desc">Quieren ver si caés en la trampa de principiante de pedir 're-entrenar el modelo' cada semana (carísimo y propenso a alucinar) o si sabés defender la arquitectura RAG con Base Vectorial que construimos hoy.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 Qué evalúan en la Pregunta 2 (Escalabilidad FinOps)</span>
-                <p class="pt-desc">Quieren ver si cuidás el margen económico del producto combinando los 3 ahorros que implementamos en el Bot: Prompt Caching (Slide 3), Metadata Pre-Filtering + Top-3 (Slides 6 y 9) y Cortocircuito en < 0.75 (Slide 12).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Qué evalúan en la Pregunta 1 (RAG vs. Fine-Tuning)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Quieren ver si caés en la trampa de principiante de pedir 're-entrenar el modelo' cada semana (carísimo y propenso a alucinar) o si sabés defender la arquitectura RAG con Base Vectorial que construimos hoy.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Qué evalúan en la Pregunta 2 (Escalabilidad FinOps)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Quieren ver si cuidás el margen económico del producto combinando los 3 ahorros que implementamos en el Bot: Prompt Caching (Slide 3), Metadata Pre-Filtering + Top-3 (Slides 6 y 9) y Cortocircuito en < 0.75 (Slide 12).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Usá el botón '👁️ Ocultar / ✨ Revelar' en ambas preguntas para que Anabela intente responder primero con sus palabras y luego vea la respuesta modelo.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 Puente de Conexión → Slide 15: Cierre Sesión 2: Tu Ruta y Valor como IT Product/Project Manager</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 15: Cierre Sesión 2: Tu Ruta y Valor como IT Product/Project Manager</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `Pasemos a nuestra última diapositiva, el Paso 14 en la Slide 15, para repasar el mapa completo de lo que construiste hoy y cómo se conecta con los Agentes Autónomos de la Sesión 3.`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“Pasemos a nuestra última diapositiva, el Paso 14 en la Slide 15, para repasar el mapa completo de lo que construiste hoy y cómo se conecta con los Agentes Autónomos de la Sesión 3.”</p>
@@ -2046,31 +2046,30 @@ Y una vez en la calle, miramos en Langfuse cuánto tarda, cuánto gasta y los vo
         </div>
 
         
-        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
-            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+        <div class="cheat-sheet-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 0.85rem 1.05rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            ⚡ PASO 1 · VISTAZO RÁPIDO DE 5 SEGUNDOS (QUÉ EXPLICAR, QUÉ TOCAR Y ANALOGÍA)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
-              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Cerramos repasando los 4 módulos del Bot que diseñamos hoy (tarjeta izquierda), las 3 apps prácticas para usar en la semana (abajo) y el salto de la Sesión 3: pasar de un Bot que solo lee (RAG) a un Agente que ejecuta acciones (ReAct).</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Cerramos repasando los 4 módulos del Bot que diseñamos hoy (tarjeta izquierda), las 3 apps prácticas para usar en la semana (abajo) y el salto de la Sesión 3: pasar de un Bot que solo lee (RAG) a un Agente que ejecuta acciones (ReAct).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">1° Señalá el resumen de los 4 módulos (izquierda) → 2° Señalá la evolución hacia Sesión 3 (derecha) → 3° Mostrá los 3 botones de abajo (Actividad Práctica, App Mock PRD y Glosario).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá el resumen de los 4 módulos (izquierda) → 2° Señalá la evolución hacia Sesión 3 (derecha) → 3° Mostrá los 3 botones de abajo (Actividad Práctica, App Mock PRD y Glosario).</p>
             </div>
-            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
-              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Hoy construimos el 'Cerebro que lee y responde' (RAG); en la Sesión 3 le vamos a dar 'Manos para actuar en otros sistemas' (Agentes con Tool Calling).</p>
+            <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Hoy construimos el 'Cerebro que lee y responde' (RAG); en la Sesión 3 le vamos a dar 'Manos para actuar en otros sistemas' (Agentes con Tool Calling).</p>
             </div>
           </div>
         </div>
     
-        
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ GUION PASO A PASO EN 3 BLOQUES CORTOS (SI QUERÉS LEERLO TEXTUAL)</span>
+            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ RESUMEN DE TU LOGRO DE HOY (Tarjeta izquierda):
 ¡Felicitaciones, Anabela! Empezamos con una hoja en blanco y diseñaste completo nuestro Enterprise Knowledge & Localization Bot:
 * Módulo 1: Domaste el motor con Temperatura 0.0, Tokens BPE, Prompt Caching y evitaste el Lost in the Middle.
@@ -2087,33 +2086,34 @@ Tenés la Actividad Práctica S2 (4 misiones interactivas), la App Generadora de
         </div>
 
         
-        <div class="plain-terms-box">
-          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
-          <div class="plain-terms-grid">
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 IA Consultiva (RAG Pasivo — Lo que construimos en la Sesión 2)</span>
-                <p class="pt-desc">Es el 'Cerebro que lee': nuestro Bot busca en los manuales privados de Pinecone y responde dudas con total precisión y cita verificable, pero no ejecuta acciones por su cuenta en otros sistemas.</p>
-              </div>
-            
-              <div class="plain-term-item">
-                <span class="pt-term">🔹 IA Agéntica (Agentes con ReAct y Tool Calling — Lo que veremos en la Sesión 3)</span>
-                <p class="pt-desc">Son las 'Manos que actúan': además de leer el manual, el agente puede tomar decisiones paso a paso y conectarse por API a otros programas (ej. actualizar el glosario en el sistema, crear un ticket en Jira o enviar un mail con permiso humano).</p>
-              </div>
-            
+        <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
+          
+          <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
+            <div class="plain-terms-title" style="margin-bottom: 0.5rem;">💡 PASO 3 · TÉRMINOS EN PALABRAS SIMPLES</div>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 IA Consultiva (RAG Pasivo — Lo que construimos en la Sesión 2)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Es el 'Cerebro que lee': nuestro Bot busca en los manuales privados de Pinecone y responde dudas con total precisión y cita verificable, pero no ejecuta acciones por su cuenta en otros sistemas.</p>
+                </div>
+              
+                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 IA Agéntica (Agentes con ReAct y Tool Calling — Lo que veremos en la Sesión 3)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Son las 'Manos que actúan': además de leer el manual, el agente puede tomar decisiones paso a paso y conectarse por API a otros programas (ej. actualizar el glosario en el sistema, crear un ticket en Jira o enviar un mail con permiso humano).</p>
+                </div>
+              
+            </div>
           </div>
+          
+
+          
         </div>
     
-
-        <div class="interaction-box">
-          <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
-          <p>Repasá las dos tarjetas de síntesis y mostrale los 3 botones inferiores para practicar durante la semana.</p>
-        </div>
 
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🏁 Cierre de Sesión 2 y Puente a la Siguiente Clase</span>
+              <span class="bridge-badge">🔗 PASO 4 · 🏁 Cierre de Sesión 2 y Puente a la Siguiente Clase</span>
               <button class="copy-btn copy-bridge" onclick="copyText(this, `🔗 Conexión con la Sesión 3: Hoy construimos el 'Cerebro consultivo' de la IA (nuestro Bot lee manuales privados y responde sin alucinar, pero todavía tiene 'las manos atadas': no puede tocar botones ni ejecutar tareas en otros programas). En la Sesión 3 le vamos a dar 'Manos y Autonomía': vamos a ver cómo funcionan los Agentes de IA (arquitectura ReAct) que razonan paso a paso, usan herramientas externas por API (Tool Calling) y piden autorización humana antes de ejecutar una acción crítica (Human-in-the-Loop).`)">📋 Copiar Puente</button>
             </div>
             <p class="bridge-text">“🔗 Conexión con la Sesión 3: Hoy construimos el <strong style="color:#fff; font-weight:700;">'Cerebro consultivo'</strong> de la IA (nuestro Bot lee manuales privados y responde sin alucinar, pero todavía tiene 'las manos atadas': no puede tocar botones ni ejecutar tareas en otros programas). En la <strong style="color:#fff; font-weight:700;">Sesión 3</strong> le vamos a dar <strong style="color:#fff; font-weight:700;">'Manos y Autonomía'</strong>: vamos a ver cómo funcionan los <strong style="color:#fff; font-weight:700;">Agentes de IA (arquitectura ReAct)</strong> que razonan paso a paso, usan herramientas externas por API (<strong style="color:#fff; font-weight:700;">Tool Calling</strong>) y piden autorización humana antes de ejecutar una acción crítica (<strong style="color:#fff; font-weight:700;">Human-in-the-Loop</strong>).”</p>

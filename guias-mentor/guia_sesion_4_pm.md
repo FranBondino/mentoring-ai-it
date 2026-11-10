@@ -31,7 +31,11 @@
 - **💬 La analogía ganadora:** En las Sesiones 1 a 3 aprendiste cómo se construye y maneja el avión; hoy en la Sesión 4 aprendés a leer el tablero de combustible (costos), la caja negra (Langfuse) y a aprobar el examen de comandante (entrevistas).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-¡Bienvenida a nuestra cuarta y última sesión, Anabela! En las tres sesiones anteriores construimos una base técnica enorme: vimos cómo trabaja un equipo de desarrollo ágil y cómo funcionan las APIs y Git (Sesión 1), cómo funciona por dentro un LLM y cómo se diseña una arquitectura RAG (Sesión 2), y cómo construir chatbots y agentes autónomos con ReAct, Tool Calling y guardrails (Sesión 3). Hoy vamos a ponerle el broche de oro a tu perfil: vamos a dominar **los números financieros de la IA (AI Economics)**, cómo **medir la calidad y auditar un chatbot en producción (Evals y Langfuse)**, y vamos a cerrar entrenando **casos reales de entrevistas de IT**.
+**1️⃣ BIENVENIDA A LA SESIÓN FINAL (El recorrido completo):**
+• En las **Sesiones 1 a 3** construiste toda tu base técnica: desarrollo de software, APIs y Agile (S1), LLMs y arquitectura RAG (S2), y Agentes Autónomos con ReAct, MCP y guardrails (S3).
+
+**2️⃣ EL OBJETIVO DE HOY EN LA SESIÓN 4:**
+• Hoy le ponemos el broche ejecutivo a tu perfil: vamos a dominar **las finanzas de la IA (AI Economics)**, cómo **auditar la calidad de un bot en producción (AI Evals y Langfuse)**, y vamos a entrenar **3 casos reales de entrevistas de PM**.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **AI Economics (Economía de la IA):** Cómo calcular cuánto cuesta operar un producto de IA por mes y cuánto dinero le ahorra a la empresa (ROI).
@@ -54,7 +58,10 @@
 - **💬 La analogía ganadora:** Son las 3 preguntas que siempre te hace un Directorio antes de lanzar un producto: 1) ¿Cuánto cuesta y cuánto ahorra?, 2) ¿Es seguro y confiable?, y 3) ¿Sabés manejar una crisis si algo falla?
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, **AI Economics**, donde vas a aprender a calcular cuánto cuesta operar un chatbot o flujo de traducción con IA y cómo defender su retorno de inversión (ROI). Segundo, **Gobernanza y Calidad**, donde vamos a usar herramientas reales como Langfuse para radiografiar qué pasa adentro de cada respuesta del bot. Y tercero, **Simulación de Rol**, donde vamos a resolver en vivo tres crisis típicas que te plantean en entrevistas para roles de PM.
+**1️⃣ NUESTRA HOJA DE RUTA DE HOY EN 3 BLOQUES (Señalá las 3 tarjetas):**
+• **1. AI Economics (Tarjeta Ámbar):** Cómo calcular cuánto cuesta operar un flujo de IA por mes, cómo ahorrar hasta un 90% con Prompt Caching y cómo demostrar el Retorno de Inversión (ROI) con una calculadora en vivo.
+• **2. Gobernanza y Calidad (Tarjeta Azul):** Cómo proteger datos confidenciales (PII/NDA), cómo calificar si el bot miente con la Tríada RAG y cómo radiografiar cada respuesta en **Langfuse**.
+• **3. Simulación de Rol en Entrevistas (Tarjeta Violeta):** Cómo responder preguntas difíciles frente a líderes técnicos resolviendo 3 crisis en vivo.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **ROI (Return on Investment):** El retorno de inversión: cuántos dólares recupera o ahorra la empresa por cada dólar invertido en tecnología.
@@ -76,7 +83,12 @@ Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, **AI Eco
 - **💬 La analogía ganadora:** El software clásico es como alquilar una oficina con tarifa plana de luz; la IA es como un taxi con reloj taxímetro: cada palabra que lee y escribe corre en el reloj, y encima en español las palabras son más largas y ocupan más fichas.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor en la nube por un monto fijo al mes y da casi lo mismo si un usuario hace diez clics o mil clics. En la Inteligencia Artificial eso cambia radicalmente: cada vez que un usuario manda un mensaje, una placa de video gigante (**GPU**) tiene que hacer miles de millones de cálculos matemáticos en vivo, y el proveedor nos cobra por cada **Token** procesado. Y mirá dos detalles fundamentales para vos: primero, los **Output Tokens** (las palabras que el modelo escribe de respuesta) cuestan entre **3 y 4 veces más caros** que los **Input Tokens** (lo que el modelo lee). Segundo —y esto en localización es clave—: el **español consume entre un 20% y un 30% más de tokens que el inglés** para decir exactamente lo mismo, por cómo el tokenizador parte nuestras conjugaciones y tildes. Saber esto te permite presupuestar un proyecto multilingüe sin llevarte sorpresas.
+**1️⃣ SOFTWARE CLÁSICO VS. COSTO POR TOKEN EN IA (Tarjeta izquierda):**
+• En el software tradicional alquilás un servidor por un monto fijo al mes. En cambio, en IA cada mensaje hace trabajar placas de video (**GPUs**) en tiempo real y el proveedor te cobra por cada **Token** procesado (como un reloj taxímetro).
+
+**2️⃣ DOS REGLAS FINANCIERAS CLAVE PARA TU PRESUPUESTO (Tarjeta derecha):**
+• **Regla 1 — Asimetría Input vs. Output:** Los **Output Tokens** (lo que la IA escribe) cuestan entre **3 y 4 veces más caros** que los **Input Tokens** (lo que la IA lee). Por eso pedimos respuestas concisas.
+• **Regla 2 — El 'Impuesto' del Idioma Español:** Por cómo se parten las sílabas y tildes, **el español consume entre un 20% y un 30% más de tokens que el inglés** para decir exactamente lo mismo (1.000 tokens ≈ 750 palabras en inglés, pero ~580 en español).
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **COGS (Costo de la Mercadería Vendida / Costo Operativo):** El gasto directo en servidores y APIs de IA que te cuesta atender a cada usuario.
@@ -99,7 +111,14 @@ En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor 
 - **💬 La analogía ganadora:** En vez de fotocopiar y pagar de nuevo el manual de 50 páginas en cada consulta, el proveedor lo deja plastificado arriba del escritorio y te cobra una fracción mínima por consultarlo.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Si en una entrevista o reunión de presupuesto mencionás **Prompt Caching**, te ganás automáticamente el respeto del equipo de ingeniería. ¿Qué es el Prompt Caching? Cuando armamos un chatbot o un validador automático de traducciones, el 80% del prompt es siempre idéntico (el rol del sistema, las reglas de formato, el glosario base y los ejemplos) y solo cambia el 20% final (la consulta o el párrafo nuevo del usuario). Si estructuramos el prompt poniendo **todo el bloque fijo bien arriba al principio** y la parte variable al final, las APIs modernas guardan ese bloque fijo en memoria caché y nos hacen hasta un **75% a 90% de descuento** en esos tokens de entrada, además de responder muchísimo más rápido.
+**1️⃣ EL PROBLEMA DE PAGAR SIEMPRE LAS MISMAS INSTRUCCIONES:**
+• Cuando armamos un chatbot o un agente de localización, el **80% del prompt es siempre idéntico** (instrucciones del rol, reglas de estilo, glosario base) y solo cambia el **20% final** (la consulta del usuario).
+
+**2️⃣ CÓMO FUNCIONA EL PROMPT CACHING (Señalá las barras a la derecha):**
+• Si ordenás el prompt poniendo **todo el bloque fijo bien arriba al principio** y la pregunta variable al final, proveedores como OpenAI, Anthropic y AWS Bedrock guardan ese bloque fijo en memoria caché.
+
+**3️⃣ EL IMPACTO EN PLATA Y VELOCIDAD:**
+• Te hacen entre un **75% y un 90% de descuento** sobre todos esos tokens repetidos y además la respuesta arranca el doble de rápido.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Prompt Caching:** Descuento de hasta 75%-90% que te dan los proveedores (OpenAI, Anthropic, AWS Bedrock) cuando ponés las instrucciones fijas y glosarios al principio del prompt para no reprocesarlos.
@@ -122,7 +141,13 @@ Si en una entrevista o reunión de presupuesto mencionás **Prompt Caching**, te
 - **💬 La analogía ganadora:** RAG es darle al empleado acceso al Google Drive actualizado todos los días (rápido y económico); Fine-Tuning es mandarlo a hacer un posgrado de 6 meses cada vez que cambia una tarifa.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning**; acá en la Slide 5 tenés la foto financiera completa para defenderla ante un directorio. Fijate en la tabla: con **RAG**, el costo inicial es bajo, actualizar un dato nuevo cuesta centavos y tarda segundos (solo subís el PDF o glosario nuevo a la Base Vectorial), y podés auditar de qué página salió cada respuesta. En cambio, con **Fine-Tuning**, tenés un costo altísimo de preparación y entrenamiento en GPUs, cada vez que cambia un manual queda desactualizado y no tenés citas de fuentes. Por eso en el 95% de los casos corporativos arrancamos con RAG + Prompt Engineering, y solo sumamos Fine-Tuning si necesitamos enseñar un formato o estilo lingüístico ultra específico.
+**1️⃣ LA FOTO FINANCIERA PARA EL DIRECTORIO (Recorré la tabla comparativa):**
+• Cuando un directivo pregunta si conviene hacer **RAG** o **Fine-Tuning**, acá tenés la comparativa económica:
+  • **Con RAG (Columna Verde):** Costo inicial bajo, actualizar un manual o glosario nuevo cuesta centavos y tarda segundos (solo subís el archivo a la Base Vectorial), y tenés citas exactas de la página oficial para auditar.
+  • **Con Fine-Tuning (Columna Naranja):** Costo alto de entrenamiento en GPUs, cada vez que cambia una regla queda desactualizado y no cita fuentes.
+
+**2️⃣ REGLA EJECUTIVA DE PM:**
+• El **95% de los proyectos corporativos arrancan con RAG + Prompt Caching**, y solo se suma Fine-Tuning cuando necesitás enseñar un estilo de redacción o formato muy específico.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **TCO (Total Cost of Ownership):** El costo total real de un proyecto sumando el desarrollo inicial más lo que cuesta mantenerlo y actualizarlo todos los meses.
@@ -144,7 +169,15 @@ En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning
 - **💬 La analogía ganadora:** Esta calculadora es tu arma secreta para reuniones con directores financieros: transforma 'queremos usar IA porque es moderna' en 'este proyecto nos ahorra $10.000 dólares por mes'.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-¡Juguemos con esta calculadora en vivo! Imaginá que querés proponer en una empresa automatizar con IA la primera pasada de revisión de calidad (QA), clasificación de tickets o pre-análisis de documentos. Movamos el primer slider: supongamos que procesan **1.500 documentos o tickets al mes**. Segundo slider: a una persona le lleva promedio **20 minutos** revisar cada uno. Tercer slider: el costo hora profesional es de **25 dólares**. Mirá el panel de resultados a la derecha: hacerlo 100% manual cuesta **12.500 dólares por mes**. En cambio, procesarlo con un pipeline de IA (consumiendo unos 4.000 tokens por documento) cuesta apenas **unos ~90 dólares de API al mes**. Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (Human-in-the-Loop), el ahorro neto supera el 80%. Así es como un PM justifica un proyecto de IA con números contundentes.
+**1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):**
+• Imaginá que querés justificar ante el directorio automatizar el pre-análisis de documentos o clasificación de tickets:
+  • **Slider 1:** Poné **1.500 documentos/tickets al mes**.
+  • **Slider 2:** Poné **20 minutos humanos** por documento.
+  • **Slider 3:** Poné **$25 USD** de costo hora profesional.
+
+**2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:**
+• Hacer el 100% del trabajo a mano cuesta **$12.500 USD por mes**.
+• Procesar la primera pasada con IA cuesta apenas **~$90 USD de API al mes**. Incluso dejando a un especialista humano revisando el 20% del tiempo (*Human-in-the-Loop*), generás un **ahorro neto superior al 80%**.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Costo Hora-Hombre vs. Costo de Inferencia:** Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.
@@ -166,7 +199,13 @@ En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning
 - **💬 La analogía ganadora:** Igual que cuando un médico presenta un caso clínico en un congreso: antes de mostrar la radiografía le tapa el nombre y DNI al paciente ('Paciente X') para proteger su identidad.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Para que ningún dato confidencial o personal se filtre, acá resumimos el blindaje de tres capas que exige un PM Senior: 1) **Sanitización / Enmascaramiento de PII (Personally Identifiable Information)**: antes de que el texto viaje a la API del LLM, un filtro local reemplaza nombres propios, mails, teléfonos o montos confidenciales por etiquetas genéricas como `[CLIENTE_1]` o `[EMAIL_OCULTO]`, y a la vuelta los vuelve a reemplazar. 2) **Acuerdo Enterprise SLA con Zero-Retention**, como vimos en la Sesión 2. Y 3) **Permisos por Rol (RBAC)** en la Base Vectorial, para que un usuario junior no pueda preguntarle al bot por documentos confidenciales de directorio.
+**1️⃣ LA PREGUNTA OBLIGATORIA DE LEGALES Y SEGURIDAD:**
+• Apenas mostrás ese ahorro en la calculadora, el abogado de la empresa pregunta: *'¿Cómo evitamos que se filtren datos personales de clientes (PII) o contratos bajo NDA?'*.
+
+**2️⃣ LAS 3 CAPAS DE BLINDAJE QUE PROPONE UNA PM (Señalá los 3 bloques):**
+• **1. Sanitización / Enmascaramiento de PII:** Antes de que el texto salga a la API de IA, un filtro automático reemplaza nombres reales, mails y montos por etiquetas como `[CLIENTE_1]` o `[EMAIL_OCULTO]`.
+• **2. Contrato Enterprise con Zero-Data Retention:** Acuerdo legal y técnico donde el proveedor borra el texto apenas responde y tiene prohibido entrenar con tus datos.
+• **3. Permisos por Rol (RBAC) en la Base Vectorial:** Un empleado junior solo puede consultar en el RAG documentos autorizados para su nivel.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **PII (Personally Identifiable Information):** Datos personales sensibles como nombre y apellido, DNI, email, teléfono, dirección o tarjeta de crédito.
@@ -190,7 +229,13 @@ Para que ningún dato confidencial o personal se filtre, acá resumimos el blind
 - **💬 La analogía ganadora:** Igual que cuando corregís un examen a libro abierto: 1) ¿No inventó nada fuera del libro? (Fidelidad), 2) ¿Respondió lo que le preguntaron? (Relevancia), y 3) ¿Abrió el libro en la página correcta? (Context Precision).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sistema llamado **LLM-as-a-Judge (Un LLM como Juez)** que califica cada respuesta del 0 al 1 en tres métricas clave (la famosa **Tríada RAG**): 1) **Faithfulness (Fidelidad)**: ¿todo lo que dijo el bot sale estrictamente de los fragmentos del manual recuperados, o inventó algo de su cosecha? Si inventó aunque sea un dato menor, reprueba en Fidelidad. 2) **Answer Relevance (Relevancia)**: ¿el bot fue al grano y respondió exactamente lo que preguntó el usuario, o se fue por las ramas? Y 3) **Context Recall / Precision**: ¿el buscador vectorial trajo el párrafo correcto del manual? Si esta tercera métrica da baja, ya sabés que el problema no es el prompt del LLM, sino que tenés que ajustar el Chunking o los Embeddings en la Base Vectorial.
+**1️⃣ CÓMO MEDIMOS LA CALIDAD SIN REVISAR A OJO (Concepto de AI Evals):**
+• Como no podemos leer a mano 10.000 conversaciones por día, usamos un modelo auditor (**LLM-as-a-Judge**) que califica cada respuesta del 0 al 100% en tres métricas llamadas la **Tríada de Calidad RAG**.
+
+**2️⃣ LAS 3 NOTAS DE LA TRÍADA RAG (Señalá las 3 tarjetas):**
+• **1. Faithfulness (Fidelidad al Manual):** ¿Todo lo que dijo el bot sale estrictamente del documento oficial recuperado, o inventó algo de su cosecha?
+• **2. Answer Relevance (Relevancia de Respuesta):** ¿Fue al grano y respondió exactamente lo que preguntó el usuario?
+• **3. Context Precision / Recall (Precisión del Buscador):** ¿La Base Vectorial trajo el párrafo correcto del manual? Si esta nota da baja, sabés que tenés que ajustar el *Chunking* o los *Embeddings*.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **AI Evals (Evaluaciones de IA):** Batería de pruebas automáticas para medir con puntaje numérico del 0 al 100% la calidad de un chatbot antes de lanzarlo.
@@ -214,7 +259,13 @@ Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sis
 - **💬 La analogía ganadora:** Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el soporte estándar responde en **24 horas hábiles** y que no cubre fines de semana salvo plan Enterprise. El usuario pregunta si le van a responder un domingo gratis, ¡y mirá lo que contesta el bot abajo!: *'¡Por supuesto! Nuestro equipo de guardia 24/7 resolverá tu ticket este mismo domingo sin costo adicional'*. ¡Una alucinación hermosa y súper amable que nos mete en un lío comercial bárbaro! Si movemos a la derecha el slider de **Fidelidad (Faithfulness)** hacia abajo (por ejemplo a 20%), fijate cómo el tablero automáticamente marca **RECHAZADO (FAIL)** y bloquea este prompt para que no pueda subir a producción.
+**1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):**
+• **El Manual Oficial dice:** Soporte responde en 24 hs hábiles de lunes a viernes (no cubre domingos salvo plan Enterprise).
+• **El Bot responde:** *'¡Por supuesto! Nuestro equipo 24/7 resolverá tu ticket este mismo domingo sin costo adicional'*. ¡Es un **falso positivo amable**: suena cordial pero inventó una promesa comercial falsa!
+
+**2️⃣ DEMO CON LOS DESLIZADORES DE EVALUACIÓN (Columna derecha):**
+• Bajá el primer deslizador (**Faithfulness / Fidelidad**) al **20%**.
+• Mirá cómo el sistema cambia automáticamente el veredicto a **RECHAZADO POR ALUCINACIÓN** e impide que ese cambio salga a producción.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Falso Positivo Amable (Alucinación Comercial):** El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.
@@ -236,7 +287,13 @@ Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el
 - **💬 La analogía ganadora:** Langfuse es la 'caja negra' y el ticket detallado del supermercado todo en uno: te muestra segundo por segundo qué hizo el bot por dentro y cuántos centavos costó cada renglón.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Herramientas como **Langfuse** o **LangSmith** son el tablero de control (Observabilidad) donde vive un PM de IA. Cada vez que un usuario manda un mensaje al chatbot, Langfuse guarda una **Traza (Trace)** completa. Hacé clic conmigo en cada renglón del árbol de la izquierda para abrir las cajas negras: en el paso 1 ves que buscar en la **Base Vectorial** tardó apenas `180 milisegundos` y trajo 3 chunks con similitud 0.89; en el paso 2 ves que el filtro de seguridad tardó `90 milisegundos`; y en el paso 3 ves que la generación del **LLM (GPT-4o)** tardó `1.45 segundos` y costó exactamente `$0.0042 dólares`. Si mañana el bot empieza a tardar 8 segundos o a responder mal, abrís esta traza y en diez segundos sabés exactamente en qué eslabón de la cadena está el problema.
+**1️⃣ QUÉ ES LANGFUSE (El tablero de control del PM de IA):**
+• Cuando tu chatbot o agente ya está funcionando en vivo, **Langfuse** es la pantalla donde ves la 'radiografía' (**Traza / Trace**) de cada mensaje que envían los usuarios.
+
+**2️⃣ DEMO INTERACTIVA EN EL ÁRBOL DE TRAZAS (Hacé clic en los 3 renglones de la izquierda):**
+• **Clic en 1. VectorDB Retrieval:** Ves que buscar en Pinecone tardó `180 ms` y trajo 3 fragmentos con similitud `0.89`.
+• **Clic en 2. Security Guardrail:** Ves que el filtro de seguridad tardó `90 ms` y ocultó los datos privados.
+• **Clic en 3. LLM Generation:** Ves que GPT-4o tardó `1.45 segundos` y esa respuesta exacta costó **`$0.0042 USD`**. Si mañana algo falla o se vuelve lento, abrís Langfuse y en 10 segundos sabés en qué paso estuvo el problema.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Langfuse / Observabilidad LLMOps:** La herramienta visual donde los Product Managers e ingenieros ven el historial interno de cada respuesta del bot, sus tiempos y sus costos.
@@ -259,7 +316,13 @@ Herramientas como **Langfuse** o **LangSmith** son el tablero de control (Observ
 - **💬 La analogía ganadora:** En una entrevista de PM no te evalúan como mecánico que desarma el motor con llave inglesa, sino como jefe de equipo de Fórmula 1 que sabe leer la telemetría y pedir el cambio exacto en boxes.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Cuando vas a una entrevista para un rol de Project Manager o Product Manager en tecnología, nadie espera que te pongas a programar código en vivo. Lo que están evaluando es si tenés **criterio de arquitectura, control de riesgos y visión de negocio**. La fórmula ganadora para responder cualquier pregunta técnica tiene siempre tres pasos: **1) Diagnóstico Técnico** (nombrar con precisión el componente: *'eso es un problema de Chunking en el pipeline RAG'* o *'eso requiere un freno Human-in-the-Loop'*); **2) Acción en el Backlog** (qué le pedís priorizar al equipo de ingeniería); y **3) Impacto de Negocio** (cómo eso protege el presupuesto, la velocidad o la seguridad del cliente).
+**1️⃣ QUÉ BUSCAN EN UNA ENTREVISTA DE PM IT / IA:**
+• En una entrevista para liderar proyectos de tecnología o IA, nadie te va a pedir que escribas código en Python. Lo que evalúan es tu **criterio para diagnosticar problemas y proteger el negocio**.
+
+**2️⃣ LA FÓRMULA GANADORA DE 3 PASOS (Señalá los 3 escalones):**
+• **Paso 1 — Diagnóstico Técnico con Nombre Propio:** Identificás la pieza exacta (*'eso es un Loop Infinito en ReAct'* o *'eso es falta de Chunk Overlap'*).
+• **Paso 2 — Acción Concreta en el Backlog:** Qué le pedís priorizar a los desarrolladores en el próximo Sprint.
+• **Paso 3 — Impacto en el Negocio:** Cómo esa mejora cuida el presupuesto, la velocidad o la seguridad del cliente.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Trade-off de Producto:** El equilibrio entre tres variables que compiten entre sí: Calidad, Velocidad (Latencia) y Costo.
@@ -281,7 +344,14 @@ Cuando vas a una entrevista para un rol de Project Manager o Product Manager en 
 - **💬 La analogía ganadora:** Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Mirá el **Caso 1** en el simulador de entrevista: el entrevistador te dice: *'Lanzamos nuestro agente a producción hace una semana y la factura de OpenAI vino diez veces más cara de lo estimado. ¿Qué hacés como PM?'*. Si elegís la respuesta ingenua (pedir más presupuesto o apagar el bot), perdés puntos. Hagamos clic en la **Respuesta Estratégica de PM**: 1) Abrís **Langfuse** para auditar las trazas y ver si hay **Loops Infinitos** en el ciclo ReAct y fijás un límite duro de `Max Iterations = 5`; 2) Activás **Prompt Caching** para ahorrar hasta un 80% en las instrucciones repetidas del sistema; y 3) Implementás **Model Routing**: usás un modelo rápido y económico (como `GPT-4o-mini` o `Claude Haiku`) para las tareas simples del flujo, y reservás el modelo grande solo para el razonamiento complejo.
+**1️⃣ CRISIS 1 DE ENTREVISTA: LA FACTURA VINO 10 VECES MÁS CARA (Leé la pregunta):**
+• El entrevistador te dice: *'Lanzamos nuestro agente hace una semana y la factura de OpenAI vino 10 veces más cara de lo calculado. ¿Qué hacés como PM?'*.
+
+**2️⃣ DEMO EN EL SIMULADOR (Tocá la opción incorrecta y luego la Respuesta Estratégica de PM):**
+• En vez de entrar en pánico o apagar el producto, respondés con 3 acciones técnicas concretas:
+  1. **Auditar en Langfuse + Max Iterations = 5:** Revisar si hubo agentes trabados en *Loops Infinitos* reintentando llamadas fallidas y poner un tope de 5 intentos.
+  2. **Activar Prompt Caching:** Para ahorrar hasta un 80%-90% en las instrucciones repetidas del sistema.
+  3. **Model Routing (Enrutamiento de Modelos):** Usar un modelo liviano y económico (como *GPT-4o-mini* o *Claude Haiku*) para el 80% de las consultas simples, y dejar el modelo grande solo para los pasos complejos.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Model Routing (Enrutamiento de Modelos):** Usar un modelo rápido y súper económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas fáciles, y llamar al modelo grande solo para los casos difíciles.
@@ -303,7 +373,14 @@ Mirá el **Caso 1** en el simulador de entrevista: el entrevistador te dice: *'L
 - **💬 La analogía ganadora:** En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Mirá el **Caso 2**: el entrevistador te plantea: *'Los usuarios se quejan de que el chatbot tarda 12 segundos con la pantalla en blanco antes de mostrar la respuesta porque tiene que consultar tres APIs distintas. ¿Cómo lo solucionás?'*. Hagamos clic en la respuesta experta y mirá qué elegancia: atacás tanto la velocidad real como la velocidad percibida. Primero, en el Frontend pedís activar **Token Streaming** (que las palabras vayan apareciendo en vivo sílaba por sílaba apenas se generan, reduciendo el *Time To First Token* a menos de un segundo). Segundo, en el Backend pedís **Parallel Tool Calling** (que el agente llame a las 3 APIs al mismo tiempo en paralelo en vez de esperar una detrás de la otra). Y tercero, optimizás el **KV Cache** y achicás el tamaño de los chunks inyectados.
+**1️⃣ CRISIS 2 DE ENTREVISTA: EL BOT TARDA 12 SEGUNDOS EN RESPONDER (Leé la pregunta):**
+• El entrevistador te plantea: *'Los usuarios abandonan el chat porque queda 12 segundos con la pantalla en blanco mientras consulta 3 APIs distintas. ¿Cómo lo resolvés?'*.
+
+**2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la solución arquitectónica):**
+• Atacás tanto la espera percibida como la velocidad real en 3 pasos:
+  1. **Token Streaming en la interfaz:** Que las palabras vayan apareciendo sílaba por sílaba en vivo en menos de 1 segundo en vez de esperar al párrafo entero.
+  2. **Parallel Tool Calling (Llamadas en Paralelo):** Que el agente consulte las 3 APIs al mismo tiempo en simultáneo en vez de esperar una detrás de la otra.
+  3. **KV Cache + Chunks compactos:** Guardar el contexto fijo en memoria rápida para acelerar cada vuelta.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Token Streaming:** Hacer que la respuesta vaya apareciendo palabra por palabra en la pantalla apenas se genera, en vez de esperar a que termine todo el párrafo.
@@ -326,7 +403,14 @@ Mirá el **Caso 2**: el entrevistador te plantea: *'Los usuarios se quejan de qu
 - **💬 La analogía ganadora:** Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Y en el **Caso 3**, el comité de seguridad te pregunta: *'¿Cómo nos aseguramos de que ningún empleado filtre datos personales de clientes o tarifas bajo NDA al usar el asistente de IA?'*. Hacemos clic en la defensa completa: 1) Ponemos un **Proxy de Sanitización (PII Masking)** en nuestro API Gateway que anonimiza nombres, mails y cifras confidenciales antes de que salgan de nuestro servidor; 2) Operamos exclusivamente bajo contrato **Enterprise SLA con Zero-Data Retention**; y 3) Aplicamos **Metadata Filtering atado a los permisos del usuario** para que cada persona solo pueda recuperar en el RAG los documentos que su rol tiene autorizados.
+**1️⃣ CRISIS 3 DE ENTREVISTA: MIEDO A FUGA DE DATOS BAJO NDA (Leé la pregunta):**
+• El comité legal pregunta: *'¿Cómo garantizamos que ningún empleado filtre tarifas confidenciales o datos personales de clientes al usar el asistente?'*.
+
+**2️⃣ DEMO EN EL SIMULADOR (Hacé clic en la defensa de 3 capas):**
+• Respondés con los 3 candados corporativos:
+  1. **Proxy de Sanitización (PII Masking) en el API Gateway:** Un filtro que oculta nombres, mails y cifras antes de que salgan del servidor de la empresa.
+  2. **Contrato Enterprise con Zero-Data Retention:** Prohibición contractual y técnica de guardar o entrenar con nuestros datos.
+  3. **Metadata Pre-Filtering con RBAC:** Que el buscador vectorial filtre primero por los permisos del rol del usuario.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **PII Masking Proxy:** Un filtro intermedio que reemplaza automáticamente nombres de clientes y cifras secretas por códigos genéricos antes de mandar la consulta al modelo.
@@ -348,7 +432,15 @@ Y en el **Caso 3**, el comité de seguridad te pregunta: *'¿Cómo nos aseguramo
 - **💬 La analogía ganadora:** Pasó de ver la tecnología desde afuera como una caja negra a tener el mapa completo de arquitectura, costos, calidad y seguridad para liderar equipos de IA.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-¡Felicitaciones Anabela, completaste las 4 sesiones del programa! Mirá hacia atrás todo el camino que recorriste en apenas cuatro horas: hoy entendés perfectamente qué hace un developer, cómo se conectan los sistemas por APIs, cómo funciona Git y el pipeline de CI/CD, cómo operan por dentro los LLMs, cómo se diseña una arquitectura RAG con Embeddings y Bases Vectoriales, cómo construir un chatbot agéntico con ReAct, Tool Calling y Pydantic, y cómo presupuestar, auditar con Langfuse y defender un producto de IA en cualquier entrevista o reunión ejecutiva. Tu combinación de experiencia en proyectos y lenguaje sumada a este dominio técnico es un diferencial enorme en el mercado actual.
+**1️⃣ ¡FELICITACIONES POR COMPLETAR LAS 4 SESIONES! (Repaso de logros):**
+• En 4 sesiones construiste un dominio integral que une tu experiencia en gestión y lenguaje con la ingeniería moderna:
+  • **Sesión 1:** Arquitectura web, APIs REST, Git, CI/CD, Cloud/AWS y equipos Agile.
+  • **Sesión 2:** LLMs por dentro, Tokens, Embeddings, Bases Vectoriales y diseño de RAG.
+  • **Sesión 3:** Agentes Autónomos (IA Activa), ReAct, Orchestrator-Workers, Tool Calling/MCP, Pydantic, HITL y uso práctico de Google Antigravity.
+  • **Sesión 4:** Finanzas de IA (ROI y Caching), Privacidad PII, Auditoría con Evals/Langfuse y resolución de entrevistas.
+
+**2️⃣ TUS RECURSOS PERMANENTES EN EL PORTAL:**
+• Te quedan siempre disponibles las **4 presentaciones interactivas**, los **4 glosarios con modo lectura rápida**, los **simuladores prácticos**, la **plantilla de PRD** y la **Guía de Antigravity + AWS MCP** para repasar antes de cualquier reunión o entrevista.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Perfil AI Product / Project Manager:** El profesional capaz de unir la precisión lingüística y la gestión de proyectos con la arquitectura técnica, los costos y la calidad de los sistemas de IA.
