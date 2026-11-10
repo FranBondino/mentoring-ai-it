@@ -15,6 +15,8 @@ function normalizeSession(raw) {
     accentRgb: raw.accentRgb,
     goal: raw.goal,
     mentalMap60s: raw.mentalMap60s || [],
+    antigravityGuide: raw.antigravityGuide || [],
+    nextSessionPreview: raw.nextSessionPreview || null,
     agenda: raw.agenda || [],
     slidesFile: `slides_sesion_${raw.sessionNum}.html`,
     slides: raw.slides.map(sl => ({
@@ -26,6 +28,7 @@ function normalizeSession(raw) {
       tags: sl.tags || [],
       cheatSheet: sl.cheatSheet || null,
       plainTerms: sl.plainTerms || [],
+      antigravityDemo: sl.antigravityDemo || null,
       interaction: sl.interaction,
       script: sl.script,
       bridge: sl.bridge
@@ -62,6 +65,14 @@ function generateSessionMarkdown(s) {
     md += `\n`;
   }
 
+  if (s.antigravityGuide && s.antigravityGuide.length > 0) {
+    md += `## 🚀 Demos en Vivo con Google Antigravity (Para hacer la clase más amena)\n\n`;
+    for (const ag of s.antigravityGuide) {
+      md += `- **[${ag.badge}] ${ag.title}:** ${ag.whatToShow}\n  - *Prompt para probar en vivo:* \`${ag.promptToCopy}\`\n`;
+    }
+    md += `\n`;
+  }
+
   if (s.agenda.length > 0) {
     md += `## 🧭 Cronograma y Bloques de la Sesión\n\n`;
     md += `| Bloque Horario | Módulo | Diapositivas | Foco Pedagógico |\n`;
@@ -85,6 +96,15 @@ function generateSessionMarkdown(s) {
       md += `- **👆 Qué tocar en la Slide:** ${sl.cheatSheet.clicks}\n`;
       md += `- **💬 La analogía ganadora:** ${sl.cheatSheet.analogy}\n\n`;
     }
+    if (sl.antigravityDemo) {
+      md += `### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity\n`;
+      md += `- **🖥️ ${sl.antigravityDemo.title}:** ${sl.antigravityDemo.explanation}\n`;
+      md += `- **👆 Acción rápida:** ${sl.antigravityDemo.slideBtnHint}\n`;
+      if (sl.antigravityDemo.livePrompt) {
+        md += `- **📋 Prompt para pegar en Antigravity:** \`${sl.antigravityDemo.livePrompt}\`\n`;
+      }
+      md += `\n`;
+    }
     md += `### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)\n`;
     md += `${sl.script}\n\n`;
     if (sl.plainTerms && sl.plainTerms.length > 0) {
@@ -104,6 +124,16 @@ function generateSessionMarkdown(s) {
     md += `> **"${sl.bridge}"**\n\n`;
     md += `---\n\n`;
   }
+
+  if (s.nextSessionPreview) {
+    md += `## ${s.nextSessionPreview.title}\n\n`;
+    md += `${s.nextSessionPreview.spokenIntro}\n\n`;
+    for (const p of s.nextSessionPreview.pillars) {
+      md += `- **${p.num} — ${p.title}:** ${p.desc}\n`;
+    }
+    md += `\n`;
+  }
+
   return md;
 }
 
@@ -143,6 +173,58 @@ function generateSingleSessionHTML(s) {
           <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
             <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">${m.step}</strong>
             <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">${mdToHtml(m.text)}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  const antigravityGuideHTML = (s.antigravityGuide && s.antigravityGuide.length > 0) ? `
+    <div style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(139, 92, 246, 0.12)); border: 2px solid rgba(249, 115, 22, 0.45); border-radius: 14px; padding: 1.15rem 1.35rem; margin-bottom: 1.25rem;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 800; color: #fdba74; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+        🚀 4 DEMOS EN VIVO CON GOOGLE ANTIGRAVITY (PARA HACER LA SESIÓN SÚPER AMENA Y PRÁCTICA)
+      </div>
+      <p style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 0.8rem;">
+        Además de los botones <strong>"🚀 Ver en Antigravity"</strong> integrados en las diapositivas, podés copiar cualquiera de estos 4 prompts con un clic y pegarlos en tu ventana de Antigravity para que ella vea <strong>IA Activa</strong> funcionando en tiempo real:
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;">
+        ${s.antigravityGuide.map(ag => `
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(249, 115, 22, 0.28); border-radius: 10px; padding: 0.85rem 0.95rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.55rem;">
+            <div>
+              <span style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fb923c; background: rgba(249, 115, 22, 0.14); padding: 2px 8px; border-radius: 99px; margin-bottom: 0.35rem;">${ag.badge}</span>
+              <strong style="display: block; color: #ffffff; font-size: 0.88rem; margin-bottom: 0.25rem;">${ag.title}</strong>
+              <p style="color: #cbd5e1; font-size: 0.8rem; line-height: 1.42; margin: 0;">${mdToHtml(ag.whatToShow)}</p>
+            </div>
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px dashed rgba(249, 115, 22, 0.4); border-radius: 8px; padding: 0.5rem 0.65rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #fdba74; font-weight: 700;">PROMPT PARA PROBAR EN VIVO:</span>
+                <button class="copy-btn" style="padding: 2px 8px; font-size: 0.7rem;" onclick="copyText(this, \`${stripMd(ag.promptToCopy)}\`)">📋 Copiar Prompt</button>
+              </div>
+              <code style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #fed7aa; line-height: 1.35;">"${ag.promptToCopy}"</code>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  const nextSessionPreviewHTML = s.nextSessionPreview ? `
+    <div id="preview-sesion-4" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(56, 189, 248, 0.12)); border: 2px solid rgba(245, 158, 11, 0.55); border-radius: 16px; padding: 1.25rem 1.45rem; margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.6rem;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.84rem; font-weight: 800; color: #fcd34d; text-transform: uppercase; letter-spacing: 0.04em;">
+          ${s.nextSessionPreview.title}
+        </div>
+        <button class="copy-btn" onclick="copyText(this, \`${stripMd(s.nextSessionPreview.spokenIntro + '\\n' + s.nextSessionPreview.pillars.map(p => p.num + ' - ' + p.title + ': ' + p.desc).join('\\n'))}\`)">📋 Copiar Adelanto Sesión 4</button>
+      </div>
+      <p style="color: #fef3c7; font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.9rem;">
+        “${mdToHtml(s.nextSessionPreview.spokenIntro)}”
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 0.75rem;">
+        ${s.nextSessionPreview.pillars.map(p => `
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(245, 158, 11, 0.32); border-left: 3px solid #f59e0b; border-radius: 10px; padding: 0.8rem 0.95rem;">
+            <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.2rem;">${p.num}</span>
+            <strong style="display: block; color: #ffffff; font-size: 0.88rem; margin-bottom: 0.35rem;">${p.title}</strong>
+            <p style="color: #cbd5e1; font-size: 0.81rem; line-height: 1.45; margin: 0;">${mdToHtml(p.desc)}</p>
           </div>
         `).join('')}
       </div>
@@ -201,6 +283,20 @@ function generateSingleSessionHTML(s) {
         </div>
     ` : '';
 
+    const antigravityDemoHTML = sl.antigravityDemo ? `
+        <div class="ag-live-demo-box" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(139, 92, 246, 0.1)); border: 1px solid rgba(249, 115, 22, 0.45); border-left: 4px solid #f97316; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1.1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 800; color: #fdba74; text-transform: uppercase; letter-spacing: 0.04em;">
+              🚀 EJEMPLO DE IA ACTIVA EN VIVO CON GOOGLE ANTIGRAVITY: ${sl.antigravityDemo.title}
+            </span>
+            ${sl.antigravityDemo.livePrompt ? `<button class="copy-btn" style="border-color: rgba(249,115,22,0.5); color: #fed7aa;" onclick="copyText(this, \`${stripMd(sl.antigravityDemo.livePrompt)}\`)">📋 Copiar Prompt para Antigravity</button>` : ''}
+          </div>
+          <p style="font-size: 0.88rem; color: #f8fafc; line-height: 1.48; margin-bottom: 0.45rem;">${mdToHtml(sl.antigravityDemo.explanation)}</p>
+          <p style="font-size: 0.8rem; color: #fdba74; margin: 0;"><strong>👆 En la presentación:</strong> ${mdToHtml(sl.antigravityDemo.slideBtnHint)}</p>
+          ${sl.antigravityDemo.livePrompt ? `<div style="margin-top: 0.5rem; background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(249, 115, 22, 0.35); border-radius: 8px; padding: 0.45rem 0.7rem; font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; color: #fde68a;">💬 Prompt en vivo: "${sl.antigravityDemo.livePrompt}"</div>` : ''}
+        </div>
+    ` : '';
+
     return `
       <article class="slide-script-card" id="slide-${sl.num}" data-slide="${sl.num}">
         <div class="card-header">
@@ -218,6 +314,7 @@ function generateSingleSessionHTML(s) {
         </div>
 
         ${cheatSheetHTML}
+        ${antigravityDemoHTML}
 
         <div class="script-section">
           <div class="section-head">
@@ -792,6 +889,8 @@ function generateSingleSessionHTML(s) {
       <a href="../sesiones/${s.slidesFile}" target="_blank" class="open-slides-btn">🖥️ Abrir Slides Sesión ${s.id} ↗</a>
       ${s.id === 1 ? '<a href="../sesiones/actividad_practica_sesion_1.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S1 ↗</a>' : ''}
       ${s.id === 2 ? '<a href="../sesiones/actividad_practica_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S2 ↗</a><a href="../sesiones/mock_prd_tarea_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(168,85,247,0.5); color: #d8b4fe;">📝 Plantilla PRD Tarea ↗</a><a href="../sesiones/glosario_completo_sesion_2.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S2 ↗</a>' : ''}
+      ${s.id === 3 ? '<a href="../sesiones/actividad_practica_sesion_3.html" target="_blank" class="portal-btn" style="border-color: rgba(16,185,129,0.5); color: #6ee7b7;">🎯 Simulador Práctico S3 ↗</a><a href="../sesiones/guia_antigravity_aws_mcp.html" target="_blank" class="portal-btn" style="border-color: rgba(249,115,22,0.5); color: #fdba74;">☁️ Guía Antigravity + AWS ↗</a><a href="../sesiones/glosario_completo_sesion_3.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S3 ↗</a>' : ''}
+      ${s.id === 4 ? '<a href="../sesiones/glosario_completo_sesion_4.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S4 ↗</a>' : ''}
     </div>
     <nav class="nav-pills">
       ${otherLinks}
@@ -805,6 +904,8 @@ function generateSingleSessionHTML(s) {
       <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> ${s.goal}</p>
 
       ${mentalMapHTML}
+      ${antigravityGuideHTML}
+      ${nextSessionPreviewHTML}
 
       <div class="agenda-grid">
         ${agendaRows}
@@ -828,6 +929,8 @@ function generateSingleSessionHTML(s) {
     <section id="slidesContainer">
       ${slidesHTML}
     </section>
+
+    ${nextSessionPreviewHTML}
   </main>
 
   <script>
@@ -931,6 +1034,14 @@ function generateMasterHubHTML() {
                 <span style="color:#fef3c7; font-size:0.82rem;">${mdToHtml(sl.cheatSheet.analogy)}</span>
               </div>
             </div>
+          </div>
+          ` : ''}
+
+          ${sl.antigravityDemo ? `
+          <div style="background:linear-gradient(135deg, rgba(249,115,22,0.13), rgba(139,92,246,0.09)); border:1px solid rgba(249,115,22,0.45); border-left:4px solid #f97316; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.9rem;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.74rem; font-weight:800; color:#fdba74; margin-bottom:0.35rem;">🚀 EJEMPLO DE IA ACTIVA EN VIVO CON GOOGLE ANTIGRAVITY: ${sl.antigravityDemo.title}</div>
+            <p style="color:#f8fafc; font-size:0.86rem; line-height:1.45; margin-bottom:0.35rem;">${mdToHtml(sl.antigravityDemo.explanation)}</p>
+            <p style="color:#fdba74; font-size:0.8rem; margin:0;"><strong>👆 En la slide:</strong> ${mdToHtml(sl.antigravityDemo.slideBtnHint)}</p>
           </div>
           ` : ''}
 

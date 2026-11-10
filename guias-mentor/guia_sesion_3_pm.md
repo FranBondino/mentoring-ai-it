@@ -12,6 +12,17 @@
 - **3. Control Humano y Caso Real (Slides 7 a 9):** Las decisiones caras o irreversibles llevan un freno obligatorio (**Human-in-the-Loop / HITL**). Además, para que la IA no rompa Jira ni bases de datos con texto suelto, filtramos su salida con un molde estricto de datos (**Pydantic**).
 - **4. Blindaje de Costos y Seguridad (Slides 10 a 15):** Evitamos facturas gigantes por bucles de error poniendo un tope de intentos (**Max Iterations = 5**), diseñamos un **Plan B (Fallback)** si se cae una API, protegemos la base de datos con un **API Gateway** y practicamos cómo defender esta arquitectura ante un CTO.
 
+## 🚀 Demos en Vivo con Google Antigravity (Para hacer la clase más amena)
+
+- **[DEMO 1 · SLIDES 2 y 3] IA Activa + Loop ReAct en el Panel Lateral (Ctrl+L):** Abrile el panel derecho de Antigravity o mostrá la captura integrada en la Slide 3. Señalale cómo antes de responder aparece 'Thinking...' (Thought), después invoca 'Read file' o 'Search' (Action) y lee el archivo real (Observation).
+  - *Prompt para probar en vivo:* `Buscá en el archivo sesiones/glosario_completo_sesion_3.html qué es el patrón ReAct y resumilo en 3 puntos simples para una PM.`
+- **[DEMO 2 · SLIDE 4] Orchestrator-Workers con el Agent Manager (Ctrl+E):** Mostrale el botón 'Open Agent Manager' arriba a la derecha en Antigravity. Explicale que ahí el agente principal actúa como Orquestador y puede lanzar subagentes especialistas en paralelo (ej. uno que investiga archivos y otro que genera imágenes o código).
+  - *Prompt para probar en vivo:* `Explicame cómo usás subagentes en Antigravity para dividir una tarea compleja en trabajadores especializados.`
+- **[DEMO 3 · SLIDES 5 y 13] Tool Calling y Servidores MCP (AWS / Canva / GitHub):** Mostrale el ícono de Plugins (enchufe/rompecabezas) en Antigravity donde se conectan los servidores MCP (como AWS, Canva o Google Search Console) con autenticación segura OAuth/IAM sin darle contraseñas al chat.
+  - *Prompt para probar en vivo:* `Listá qué servidores MCP tenés conectados actualmente en este entorno y qué herramientas podés invocar con Tool Calling.`
+- **[DEMO 4 · SLIDES 7 y 9] Human-in-the-Loop (Modo 'Request Review' + Botones Accept/Reject):** Abajo de la caja de chat de Antigravity, hacé clic en el selector de permisos ('Always Proceed' / 'Agent Decides' / 'Request Review'). Mostrale cómo en 'Request Review' el agente prepara el cambio pero se frena esperando tu clic en 'Accept' o 'Reject'.
+  - *Prompt para probar en vivo:* `Proponé crear un archivo de prueba llamado nota_demo_s3.md con 3 reglas de gobernanza IA, mostrame los cambios y esperá mi aprobación.`
+
 ## 🧭 Cronograma y Bloques de la Sesión
 
 | Bloque Horario | Módulo | Diapositivas | Foco Pedagógico |
@@ -54,6 +65,11 @@
 - **👆 Qué tocar en la Slide:** Señalá la tarjeta azul a la izquierda (IA Pasiva / RAG) y luego la tarjeta violeta a la derecha (IA Activa / Agentes).
 - **💬 La analogía ganadora:** Es la diferencia entre preguntarle a un colega '¿Cuál es el proceso para cargar un ticket?' (Pasiva) vs. decirle 'Revisá el proyecto y cargá el ticket por mí' (Activa).
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ ChatGPT Web (IA Pasiva) vs. Google Antigravity (IA Activa):** Mostrale que mientras ChatGPT clásico está encerrado en una burbuja de chat (IA Pasiva), **Google Antigravity es un Agente de IA Activa**: lee carpetas enteras de tu computadora, edita documentos, ejecuta comandos en la terminal y abre un navegador real para verificar páginas web.
+- **👆 Acción rápida:** Podés hacer clic en el botón '🚀 Ver en Antigravity' dentro de la Slide 2 para mostrarle las capturas reales del panel general y del navegador integrado.
+- **📋 Prompt para pegar en Antigravity:** `Leé los archivos de este proyecto y armame un resumen ejecutivo de 5 líneas sobre la diferencia entre RAG y Agentes.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Fijate qué clara es esta comparativa para explicarla en cualquier reunión de producto. A la izquierda tenés la **IA Pasiva (RAG)**: funciona como un bibliotecario experto. Vos le preguntás cuál es la regla para un lanzamiento y te resume el manual, pero no puede tocar ningún sistema fuera del chat. A la derecha tenés la **IA Activa (Agente)**: funciona como un coordinador operativo digital. Vos le das un objetivo —por ejemplo: *'Verificá si el Squad Alpha tiene capacidad para tomar el paquete de localización v2.4 y asignalo'*— y el agente arma un plan de pasos, llama a las APIs que vimos en la Sesión 1, lee los datos reales del sistema y ejecuta la tarea.
 
@@ -76,6 +92,11 @@ Fijate qué clara es esta comparativa para explicarla en cualquier reunión de p
 - **🎯 Qué explicás acá (En 1 frase):** Un agente no responde por impulso: sigue un ciclo de 3 pasos llamado ReAct (1. Pensar, 2. Actuar con una herramienta, 3. Observar el dato real).
 - **👆 Qué tocar en la Slide:** Hacé clic en los 3 círculos interactivos: '1. Pensamiento', '2. Acción' y '3. Observación'.
 - **💬 La analogía ganadora:** Igual que cuando cocinás: 1) Pensás '¿Tendré huevos en la heladera?', 2) Actuás (abrís la heladera), 3) Observás que hay 3 huevos y recién ahí decidís la receta.
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Cómo se ve el Loop ReAct en vivo dentro de Antigravity:** Cada vez que le escribís un pedido a Antigravity en el panel derecho (`Ctrl+L`), ella puede ver el ciclo **ReAct** ocurriendo frente a sus ojos: **1) Thought**: aparece el bloque desplegable *'Thinking...'* donde el agente planea qué hacer; **2) Action**: aparece la tarjeta de herramienta (ej. *'Read file'* o *'Search'*); **3) Observation**: el agente lee el contenido real del archivo y recién ahí redacta la respuesta.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 3 para mostrarle la captura real del panel lateral ejecutando pasos.
+- **📋 Prompt para pegar en Antigravity:** `Buscá en sesiones/glosario_completo_sesion_3.html la definición de Pydantic y explicámela en 2 renglones.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Hacé clic conmigo en cada uno de los tres círculos de este diagrama porque así piensa un agente por dentro. El patrón se llama **ReAct (Reason + Act)** y funciona como un bucle de tres pasos: 1) **Thought (Pensamiento)**: El agente recibe tu pedido y razona en voz baja: *'El usuario quiere saber el estado de entrega de los módulos del sprint. Para no inventar, necesito consultar la API de Jira/TMS'*. 2) **Action (Acción)**: El agente elige la herramienta adecuada y prepara el pedido formal para la API (por ejemplo, `get_sprint_module_status(project_id='99')`). 3) **Observation (Observación)**: El servidor ejecuta esa consulta en vivo y le devuelve el dato real al agente (*'8 de 10 módulos listos, 2 bloqueados en QA'*). El agente observa ese resultado y decide si ya puede responderte o si tiene que dar otra vuelta al bucle.
@@ -100,6 +121,11 @@ Hacé clic conmigo en cada uno de los tres círculos de este diagrama porque as�
 - **👆 Qué tocar en la Slide:** Hacé clic en 'Orquestador Central' y después en los 3 botones de abajo: 'Lector de PDFs', 'Auditor QA/TMS' y 'Gestor Email'.
 - **💬 La analogía ganadora:** Como una directora de proyecto (Orquestador) que no traduce ni programa ella misma, sino que le delega el archivo al lingüista, el control al QA y el correo al ejecutivo de cuentas.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ El patrón Orchestrator-Workers en el 'Agent Manager' de Antigravity:** En Antigravity existe literalmente el botón **'Open Agent Manager' (`Ctrl+E`)** y la función `invoke_subagent`. El agente principal con el que hablás actúa como **Orquestador** y, cuando le das una tarea grande, puede lanzar **Subagentes Trabajadores** en segundo plano (por ejemplo, un agente *Research* que investiga código o documentación y un agente *Image Generator* que crea ilustraciones) sin trabar tu pantalla.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 4 para mostrarle la captura real del botón 'Open Agent Manager'.
+- **📋 Prompt para pegar en Antigravity:** `Contame qué tipos de subagentes especializados podés invocar en Antigravity y cómo los coordinás como Orquestador.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Igual que vimos en la Sesión 1 que en una empresa grande no tenés a una sola persona haciendo todo sino especialistas, en Inteligencia Artificial usamos el patrón **Orchestrator-Workers (Orquestador y Trabajadores)**. Hacé clic en los nodos del diagrama para ver qué hace cada uno: arriba tenés al **Agente Orquestador** (que actúa como un Project Manager digital: recibe el objetivo general, arma el plan y reparte las subtareas). Abajo tenés tres agentes chiquitos ultra-especializados: el **Trabajador 1** solo sabe extraer datos y recuento de palabras de briefs y archivos PDF/XLIFF; el **Trabajador 2** solo tiene permiso para consultar por API a Jira/TMS la disponibilidad horaria; y el **Trabajador 3** solo redacta el mail ejecutivo final. Al darle a cada agente un rol acotado y pocas herramientas, bajás los errores casi a cero y gastás muchos menos tokens.
 
@@ -122,6 +148,11 @@ Igual que vimos en la Sesión 1 que en una empresa grande no tenés a una sola p
 - **🎯 Qué explicás acá (En 1 frase):** El modelo de IA nunca entra directo a la base de datos: llena un pedido formal en JSON (Tool Calling / MCP) y el sistema seguro de la empresa ejecuta la consulta.
 - **👆 Qué tocar en la Slide:** Hacé clic 3 veces seguidas en el botón 'Simular Inferencia' en la consola negra de la izquierda.
 - **💬 La analogía ganadora:** La IA no entra a la cocina del restaurante: anota el pedido en una comanda prolija (JSON) y se la pasa por la ventanilla al cocinero (Backend).
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Tool Calling en vivo con los Plugins / Servidores MCP de Antigravity:** En Antigravity, el **Tool Calling** es lo que ocurre cada vez que el agente usa un **Servidor MCP** (como el plugin de AWS, Canva, Figma o Google Search Console). El modelo de IA no se mete por su cuenta a la base de datos: genera un pedido estructurado en JSON (ej. `call_mcp_tool`) y Antigravity ejecuta la consulta oficial y segura.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 5 para mostrarle la galería real de Plugins / MCP en Antigravity.
+- **📋 Prompt para pegar en Antigravity:** `Mostrame un ejemplo del JSON que generás internamente cuando hacés Tool Calling hacia un servidor MCP como AWS o Canva.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Esta diapositiva responde una duda técnica clave: *'¿Le damos permiso a ChatGPT para que entre directo a nuestra base de datos?'*. **¡Jamás!** El LLM nunca toca tu base de datos; lo hace a través de **Tool Calling (Llamada a Herramientas)**. Vamos a probarlo en vivo haciendo clic en el botón de la consola derecha: Fijate que el usuario pregunta por la capacidad del Proyecto #4. En el **primer clic**, el LLM piensa qué función necesita y escupe un texto estructurado en formato **JSON**: `{"function": "get_project_capacity", "arguments": {"project_id": 4}}`. El LLM solo pide apretar ese botón. En el **segundo clic**, es nuestro propio servidor **Backend** (seguro y determinista) el que lee ese JSON, consulta la base de datos real y le devuelve que se usaron `485.5 horas de 500 max`. Y recién ahí el LLM redacta la respuesta amigable para el usuario.
@@ -169,6 +200,11 @@ En producto digital, si un chatbot tarda 10 segundos en contestar, el usuario pi
 - **👆 Qué tocar en la Slide:** Hacé clic en 'Iniciar Despliegue de Proyecto' y, cuando aparezca el cartel naranja, probá los botones 'Aprobar Firmado' o 'Denegar'.
 - **💬 La analogía ganadora:** Funciona igual que cuando un analista prepara una transferencia bancaria en el homebanking empresarial, pero queda pendiente hasta que el gerente entra y pone su token.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Human-in-the-Loop (HITL) en el Selector de Permisos de Antigravity:** ¡Este es el mejor ejemplo práctico de todos! Abajo del cuadro donde escribís en Antigravity hay un selector con 3 modos: *Always Proceed*, *Agent Decides* y **Request Review**. Cuando un PM elige **Request Review**, activa una compuerta **Human-in-the-Loop**: el agente prepara el cambio o el comando, pero se frena y te muestra los botones verdes y rojos **Accept (Aprobar)** y **Reject (Rechazar)**.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 7 para mostrarle la captura real del selector 'Request Review' y los botones 'Accept / Reject'.
+- **📋 Prompt para pegar en Antigravity:** `Explicame cómo funciona el modo 'Request Review' de Antigravity como ejemplo real de Human-in-the-Loop.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 En cualquier sistema de IA empresarial serio existe una regla de oro: la IA prepara el 95% del trabajo pesado, pero las decisiones críticas de negocio o presupuesto llevan firma humana. Eso se llama **Human-in-the-Loop (HITL)**. Probémoslo en el simulador de la diapositiva: hacé clic en **'Iniciar Despliegue de Proyecto'**. El agente está procesando una orden de localización e infraestructura por **12.500 dólares**. Como en nuestras reglas de negocio fijamos que cualquier gasto arriba de 10.000 dólares requiere supervisión, fijate cómo el paso 3 se frena automáticamente y te abre esta ventana de autorización a vos como PM. Si hacés clic en **'Aprobar'**, recién ahí el sistema impacta el registro en Jira y en el ERP. Si hacés clic en **'Rechazar'**, se cancela todo sin riesgos.
 
@@ -213,6 +249,11 @@ Mirá este caso de estudio diseñado especialmente para tu mundo. Entra el paque
 - **🎯 Qué explicás acá (En 1 frase):** Los sistemas como Jira o SQL no entienden respuestas charladas; Pydantic actúa como un molde estricto que rebota cualquier dato que no venga con el formato exacto.
 - **👆 Qué tocar en la Slide:** Cambiá 'word_count' a un número negativo (-10) o elegí 'TEXTO_LIBRE (Error)' en 'status', y probá el botón 'Alternar Entrada Cruda'.
 - **💬 La analogía ganadora:** Como un formulario web donde el campo 'Edad' solo acepta números: si intentás escribir 'treinta años aprox', se pone en rojo y no te deja enviarlo.
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Validación de Esquemas (Pydantic / JSON Schema) en las Herramientas de Antigravity:** En Antigravity, todas las herramientas internas y todos los servidores MCP tienen un archivo de esquema estricto (`<toolName>.json`) que funciona igual que **Pydantic**: exige tipos de datos exactos (`STRING`, `INTEGER`, `BOOLEAN`) y campos obligatorios (`required`). Si el LLM intenta llamar a una herramienta mandando texto donde iba un número, Antigravity bloquea la llamada automáticamente.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 9 para mostrarle cómo Antigravity estructura referencias y esquemas de herramientas.
+- **📋 Prompt para pegar en Antigravity:** `Mostrame cómo es el esquema JSON de validación de una de tus herramientas (por ejemplo read_file) y qué pasa si mandás un texto donde se espera un número entero.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Si vos conectás un modelo de lenguaje directo a un sistema como Jira o SAP y el modelo responde en texto libre *'Asignale unas quinientas palabras al proyecto cuatro'*, el sistema explota porque esperaba un número entero exacto. Para blindar esa conexión usamos un validador de esquemas llamado **Pydantic** (o *Structured Outputs*). Pensalo como esas cajas de juguetes para bebés que tienen agujeritos con forma de estrella, círculo y cuadrado: si el LLM intenta meter un texto donde iba un número, el filtro lo rebota en la puerta. Probá en vivo en el simulador de la izquierda poner un número negativo en `word_count` o elegir `INVALID_VALUE` en `status`: ¡mirá cómo la consola derecha salta inmediatamente en rojo bloqueando el dato y obligando al modelo a corregirlo antes de tocar la base de datos!
@@ -305,6 +346,11 @@ Fijate qué distinto y qué potente es el **PRD de un Agente (Sesión 3)** compa
 - **👆 Qué tocar en la Slide:** Señalá los 3 bloques de arriba: Agente de IA → API Gateway (resaltado en verde) → Base de Datos SQL.
 - **💬 La analogía ganadora:** La ventanilla blindada de un banco: el cliente (Agente) nunca entra al tesoro; le pide lo que necesita al cajero en la ventanilla (API Gateway), quien verifica todo antes de buscar el dinero.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ API Gateway y Autenticación Segura (OAuth / AWS IAM) en Antigravity:** Cuando Anabela conecte su cuenta de AWS o de Canva en Antigravity, nunca va a escribir su contraseña en el chat. Antigravity usa una capa de autorización segura (**OAuth / Perfiles IAM de solo lectura**) que funciona bajo el mismo principio del **API Gateway**: verifica permisos y protege las credenciales fuera del alcance del modelo.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 13 para mostrarle la captura oficial de un servidor MCP autenticado con seguridad.
+- **📋 Prompt para pegar en Antigravity:** `¿Por qué en Antigravity conectamos AWS mediante un perfil IAM en el archivo mcp_config.json en lugar de pegar las claves secretas dentro del chat?`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Mirá el diagrama de esta diapositiva: bajo ningún concepto permitimos que un Agente de IA tenga las contraseñas directas de la base de datos central de producción. Siempre ponemos en el medio un **API Gateway** (una puerta de enlace de seguridad). Pensalo como la ventanilla blindada de un banco: el agente llega hasta la ventanilla con su pedido en JSON; el API Gateway verifica quién es, controla que no esté mandando comandos maliciosos, valida los datos con Pydantic y recién ahí busca el dato adentro de la bóveda y se lo pasa por la ventanilla.
 
@@ -350,7 +396,14 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 - **💬 La analogía ganadora:** Ya sabe cómo se construye el edificio (S1), cómo darle memoria segura (S2) y cómo darle manos con frenos de control (S3).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-¡Felicitaciones Anabela! Completaste la Sesión 3 y ya dominás cómo se construye un chatbot agéntico de punta a punta: el ciclo ReAct, equipos Orchestrator-Workers, Tool Calling en JSON, KV Cache, frenos Human-in-the-Loop, validación Pydantic y cortafuegos contra loops infinitos. Te queda todo documentado también en el Glosario Completo de la Sesión 3.
+¡Felicitaciones Anabela! Completaste la Sesión 3 y ya dominás cómo se construye un chatbot agéntico de punta a punta: el ciclo ReAct, equipos Orchestrator-Workers, Tool Calling en JSON (igual que los servidores MCP en Antigravity), KV Cache, frenos Human-in-the-Loop, validación Pydantic y cortafuegos contra loops infinitos.
+
+**¿Y qué vamos a ver en nuestra Sesión 4 (la última del programa)?**
+Vamos a cerrar poniéndonos el sombrero de Directora de Producto IA en 4 bloques bien concretos:
+1) **Finanzas de la IA y Calculadora de ROI en vivo**: cómo cobran los proveedores por token (Input vs. Output, y por qué el español gasta ~25% más de tokens), cómo ahorrar hasta un 90% con **Prompt Caching**, la comparativa financiera **RAG vs. Fine-Tuning** y una calculadora interactiva para demostrar el ahorro en dólares frente al trabajo manual.
+2) **Privacidad y Blindaje de Datos (PII & NDA)**: cómo ocultar datos sensibles automáticamente antes de que salgan a la nube.
+3) **Calidad (AI Evals) y Observabilidad en Langfuse**: cómo medir con puntaje si el bot alucina o responde fielmente al manual (Tríada RAG) y cómo ver por dentro cuánto tardó y cuánto costó cada paso en **Langfuse**.
+4) **Entrenamiento de Entrevistas IT/IA**: vamos a resolver en vivo 3 simulaciones de crisis reales que toman en entrevistas de PM (presupuesto disparado, lentitud de 12 segundos y riesgo de fuga de datos).
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Entregable de Producto Agéntico:** Un PRD que define roles de agentes, herramientas permitidas (MCP/APIs), molde de datos (Pydantic) y frenos humanos (HITL).
@@ -359,7 +412,16 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 - Repasá el salto de S1 (Software/Agile) -> S2 (LLMs/RAG) -> S3 (Agentes/Chatbots) y anticipá el cierre en la Sesión 4.
 
 ### 🏁 Cierre y Puente hacia la Próxima Sesión
-> **"🔗 Conexión con la Sesión 4 (Final): Ya sabemos diseñar la arquitectura técnica completa de RAG y de Agentes. En nuestra cuarta y última sesión nos vamos a poner el sombrero de Directora de Producto: vamos a usar una **Calculadora en vivo de ROI y Costos de Tokens**, vamos a auditar un chatbot con un tablero de **Evals y Langfuse**, y vamos a hacer **3 simulaciones interactivas de entrevistas** resolviendo crisis reales de presupuesto, latencia y privacidad."**
+> **"🔗 Conexión con la Sesión 4 (Final): Abramos ahora un minuto el Simulador Práctico de la Sesión 3 para poner a prueba los frenos de nuestro agente, y la próxima clase nos metemos de lleno en Finanzas (ROI), Evals con Langfuse y Simulacro de Entrevistas."**
 
 ---
+
+## 🔭 ¿Qué vamos a ver en detalle en la Sesión 4 (Última Sesión)? — Guion para explicarle al cierre
+
+Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura técnica de IA Pasiva (RAG) e IA Activa (Agentes). En la **Sesión 4 (nuestra última sesión)** nos vamos a poner el sombrero de **Directora de Producto IA** y vamos a ver 4 bloques súper prácticos:
+
+- **Bloque 1 (Slides 1 a 6) — 💰 Finanzas de la IA (AI Economics) & Calculadora de ROI en Vivo:** Cómo cobran realmente OpenAI, Anthropic y AWS Bedrock por millón de tokens (por qué las respuestas de salida cuestan 3 a 4 veces más que la lectura y por qué el español consume 25% más de tokens que el inglés). Cómo ahorrar hasta un **90% de presupuesto con Prompt Caching**, la tabla financiera **RAG vs. Fine-Tuning**, y vamos a usar una **Calculadora Interactiva de ROI** moviendo deslizadores en vivo para justificar cuánto ahorra un proyecto de IA frente al trabajo manual.
+- **Bloque 2 (Slide 7) — 🛡️ Privacidad Corporativa y Blindaje de Datos Sensibles (PII & NDA):** Cómo asegurarte de que ningún empleado filtre nombres de clientes, tarifas confidenciales o contratos bajo NDA al usar IA: filtros automáticos que ocultan datos personales (**Sanitización de PII**) antes de salir a la nube, contratos **Enterprise Zero-Retention** y permisos por rol (**RBAC**).
+- **Bloque 3 (Slides 8 a 10) — 📊 Auditoría de Calidad (AI Evals) & Radiografía en Vivo con Langfuse:** Cómo medir científicamente si el chatbot está respondiendo bien antes y después de salir a producción: la **Tríada de Calidad RAG** (*Fidelidad al manual*, *Relevancia de respuesta* y *Precisión de búsqueda*) usando un **LLM como Juez**, más un simulador de **Langfuse** donde vas a ver la radiografía exacta de cada mensaje (cuántos milisegundos tardó cada paso y cuántos centavos de dólar costó).
+- **Bloque 4 (Slides 11 a 15) — 🎯 Simulacro Interactivo de Entrevistas IT / IA (3 Crisis Reales):** Vamos a entrenar la **fórmula de 3 pasos** para responder preguntas difíciles en entrevistas de PM sin ser programadora, resolviendo en vivo 3 casos de crisis reales: **1) La factura de IA vino 10 veces más cara**, **2) El chatbot tarda 12 segundos en responder**, y **3) El comité de seguridad teme una fuga de datos confidenciales**.
 

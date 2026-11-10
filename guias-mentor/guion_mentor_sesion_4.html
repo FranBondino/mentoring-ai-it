@@ -537,6 +537,8 @@
       <a href="../sesiones/slides_sesion_4.html" target="_blank" class="open-slides-btn">🖥️ Abrir Slides Sesión 4 ↗</a>
       
       
+      
+      <a href="../sesiones/glosario_completo_sesion_4.html" target="_blank" class="portal-btn" style="border-color: rgba(56,189,248,0.5); color: #7dd3fc;">📖 Glosario S4 ↗</a>
     </div>
     <nav class="nav-pills">
       <a href="guia_sesion_1_pm.html" class="nav-pill ">Sesión 1 (19 slides)</a>
@@ -552,6 +554,37 @@
       <h1>Sesión 4: Finanzas de la IA, Evaluación (Evals) & Simulación de Entrevistas</h1>
       <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Cerrar el programa integrando la visión financiera y de calidad de producto: estructura de costos de inferencia (Input vs. Output tokens), ahorro con Prompt Caching, cálculo de ROI de negocio, auditoría científica de calidad mediante AI Evals y trazas en Langfuse, y entrenamiento práctico con 3 casos interactivos de entrevista IT/IA.</p>
 
+      
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(59, 130, 246, 0.12)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1.15rem 1.35rem; margin-bottom: 1.25rem;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+        ⚡ MACHETE GENERAL DE 60 SEGUNDOS (LEÉ ESTOS 4 PUNTOS 1 MINUTO ANTES DE EMPEZAR LA LLAMADA)
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.7rem;">
+        
+          <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">1. Finanzas de la IA y Ahorro (Slides 1 a 6)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">A diferencia del software clásico de costo fijo, en IA pagás por cada <strong style="color:#fff; font-weight:700;">Token</strong> procesado en placas de video (GPU). Los tokens de respuesta (<strong style="color:#fff; font-weight:700;">Output</strong>) son 3 a 4 veces más caros que los de lectura (<strong style="color:#fff; font-weight:700;">Input</strong>), y el español consume ~25% más tokens que el inglés. Con <strong style="color:#fff; font-weight:700;">Prompt Caching</strong> ahorrás hasta un 90% en instrucciones fijas y con la <strong style="color:#fff; font-weight:700;">Calculadora de ROI</strong> justificás el proyecto ante el directorio.</p>
+          </div>
+        
+          <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">2. Privacidad y Blindaje Legal (Slide 7)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Para proteger contratos bajo NDA y datos personales (<strong style="color:#fff; font-weight:700;">PII</strong>), aplicamos 3 barreras: 1) <strong style="color:#fff; font-weight:700;">Sanitización/Enmascaramiento de PII</strong> (ocultar nombres y mails antes de salir a la nube), 2) Contrato <strong style="color:#fff; font-weight:700;">Enterprise Zero-Retention</strong> (prohibido entrenar con tus datos), y 3) <strong style="color:#fff; font-weight:700;">Permisos por Rol (RBAC)</strong> en la Base Vectorial.</p>
+          </div>
+        
+          <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">3. Auditoría de Calidad (Evals) y Langfuse (Slides 8 a 10)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">No probamos un bot 'a ojo': usamos <strong style="color:#fff; font-weight:700;">AI Evals (LLM-as-a-Judge)</strong> midiendo la <strong style="color:#fff; font-weight:700;">Tríada RAG</strong> (<em style="color:#fde68a;">Fidelidad al manual</em>, <em style="color:#fde68a;">Relevancia de respuesta</em> y <em style="color:#fde68a;">Precisión de búsqueda</em>). Y en producción usamos <strong style="color:#fff; font-weight:700;">Langfuse</strong> para ver la radiografía (Traza) de cada mensaje: cuántos milisegundos tardó y cuántos centavos costó cada paso.</p>
+          </div>
+        
+          <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">4. Simulacro de Entrevistas IT / IA (Slides 11 a 15)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">En una entrevista de PM no te piden programar, sino aplicar la fórmula: <strong style="color:#fff; font-weight:700;">1) Diagnóstico técnico + 2) Acción en el Backlog + 3) Impacto en el negocio</strong>. Practicamos 3 crisis en vivo: factura 10x más cara, lentitud de 12 segundos y prevención de fuga de datos.</p>
+          </div>
+        
+      </div>
+    </div>
+  
+      
       
 
       <div class="agenda-grid">
@@ -631,6 +664,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Presentar la última sesión del programa: pasamos de la arquitectura técnica (RAG y Agentes) al liderazgo ejecutivo (Finanzas/ROI, Calidad con Evals/Langfuse y Entrevistas).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Mostrá la portada de la Sesión 4 y repasá el camino completo S1 → S2 → S3 → S4.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En las Sesiones 1 a 3 aprendiste cómo se construye y maneja el avión; hoy en la Sesión 4 aprendés a leer el tablero de combustible (costos), la caja negra (Langfuse) y a aprobar el examen de comandante (entrevistas).</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -643,6 +697,23 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 AI Economics (Economía de la IA)</span>
+                <p class="pt-desc">Cómo calcular cuánto cuesta operar un producto de IA por mes y cuánto dinero le ahorra a la empresa (ROI).</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 AI Evals & Observabilidad</span>
+                <p class="pt-desc">Las pruebas automáticas de calidad y el tablero de monitoreo (Langfuse) para vigilar que el bot no mienta ni gaste de más.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -677,6 +748,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar el mapa de los 3 módulos que vamos a recorrer hoy: 1) Finanzas y Calculadora ROI, 2) Seguridad, Evals y Langfuse, y 3) Simulacro de 3 Casos de Entrevista.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las 3 tarjetas de colores en pantalla: Ámbar (AI Economics), Azul (Gobernanza y Calidad) y Violeta (Simulación de Rol).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Son las 3 preguntas que siempre te hace un Directorio antes de lanzar un producto: 1) ¿Cuánto cuesta y cuánto ahorra?, 2) ¿Es seguro y confiable?, y 3) ¿Sabés manejar una crisis si algo falla?</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -689,6 +781,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 ROI (Return on Investment)</span>
+                <p class="pt-desc">El retorno de inversión: cuántos dólares recupera o ahorra la empresa por cada dólar invertido en tecnología.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -723,6 +827,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar por qué en IA el costo es variable por uso (tokens en GPU), por qué escribir (Output) cuesta 3 a 4 veces más que leer (Input) y por qué el español consume ~25% más tokens que el inglés.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las tarjetas de Input Tokens vs. Output Tokens a la izquierda y la regla de conversión ('1k Tokens ≈ 750 palabras' y '+20-30% en español') a la derecha.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">El software clásico es como alquilar una oficina con tarifa plana de luz; la IA es como un taxi con reloj taxímetro: cada palabra que lee y escribe corre en el reloj, y encima en español las palabras son más largas y ocupan más fichas.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -735,6 +860,23 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 COGS (Costo de la Mercadería Vendida / Costo Operativo)</span>
+                <p class="pt-desc">El gasto directo en servidores y APIs de IA que te cuesta atender a cada usuario.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Input Tokens vs. Output Tokens</span>
+                <p class="pt-desc">Input es lo que la IA lee (más barato, procesado en bloque); Output es lo que la IA escribe palabra por palabra (3 a 4 veces más caro).</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -769,6 +911,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar cómo ahorrar hasta un 90% de plata y acelerar el bot poniendo las instrucciones fijas y glosarios arriba del todo en el prompt (Prompt Caching).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá la comparativa de barras a la derecha: cómo la parte fija del prompt queda guardada en memoria con hasta 90% de descuento.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En vez de fotocopiar y pagar de nuevo el manual de 50 páginas en cada consulta, el proveedor lo deja plastificado arriba del escritorio y te cobra una fracción mínima por consultarlo.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -781,6 +944,23 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Prompt Caching</span>
+                <p class="pt-desc">Descuento de hasta 75%-90% que te dan los proveedores (OpenAI, Anthropic, AWS Bedrock) cuando ponés las instrucciones fijas y glosarios al principio del prompt para no reprocesarlos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Prefijo Estático vs. Sufijo Dinámico</span>
+                <p class="pt-desc">Poner arriba todo lo que nunca cambia (reglas, glosario) y dejar abajo del todo lo único que cambia (la pregunta del usuario).</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -815,6 +995,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Comparar con ojos de negocio y presupuesto por qué en el 95% de los proyectos corporativos conviene usar RAG (barato, actualizable al instante y con citas) en vez de Fine-Tuning.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Recorré las filas de la tabla comparativa contrastando la columna verde (RAG) contra la columna roja/naranja (Fine-Tuning).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">RAG es darle al empleado acceso al Google Drive actualizado todos los días (rápido y económico); Fine-Tuning es mandarlo a hacer un posgrado de 6 meses cada vez que cambia una tarifa.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -827,6 +1028,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 TCO (Total Cost of Ownership)</span>
+                <p class="pt-desc">El costo total real de un proyecto sumando el desarrollo inicial más lo que cuesta mantenerlo y actualizarlo todos los meses.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -861,6 +1074,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Usar en vivo la Calculadora de ROI para demostrar cómo una tarea manual de $12.500 USD/mes baja a menos de $100 USD/mes de API combinada con supervisión humana.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Mové los 3 sliders de la izquierda ('Documentos/mes', 'Minutos por documento', 'Costo Hora USD') y mostrá cómo cambian los números grandes a la derecha.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Esta calculadora es tu arma secreta para reuniones con directores financieros: transforma 'queremos usar IA porque es moderna' en 'este proyecto nos ahorra $10.000 dólares por mes'.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -873,6 +1107,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Costo Hora-Hombre vs. Costo de Inferencia</span>
+                <p class="pt-desc">Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -907,6 +1153,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar las 3 barreras de seguridad para que nunca se filtren datos personales (PII) ni secretos bajo NDA al usar IA.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá los 3 escudos: 1) Sanitización de PII (ocultar nombres/mails), 2) Contrato Enterprise Zero-Retention, y 3) Permisos por rol (RBAC).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Igual que cuando un médico presenta un caso clínico en un congreso: antes de mostrar la radiografía le tapa el nombre y DNI al paciente ('Paciente X') para proteger su identidad.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -919,6 +1186,28 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 PII (Personally Identifiable Information)</span>
+                <p class="pt-desc">Datos personales sensibles como nombre y apellido, DNI, email, teléfono, dirección o tarjeta de crédito.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Sanitización / Enmascaramiento de PII</span>
+                <p class="pt-desc">Un filtro automático que reemplaza nombres reales por etiquetas como <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[CLIENTE_1]</code> antes de mandar el texto a la IA.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 RBAC (Role-Based Access Control)</span>
+                <p class="pt-desc">Control de acceso por rol: que el bot solo busque en los documentos que el cargo de ese empleado tiene permiso de ver.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -953,6 +1242,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Explicar las 3 notas con las que evaluamos científicamente a un chatbot RAG (Fidelidad al manual, Relevancia de la respuesta y Precisión de búsqueda) usando otra IA como juez.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá las 3 tarjetas de la Tríada RAG: 1. Faithfulness (Fidelidad), 2. Answer Relevance (Relevancia) y 3. Context Precision (Recuperación).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Igual que cuando corregís un examen a libro abierto: 1) ¿No inventó nada fuera del libro? (Fidelidad), 2) ¿Respondió lo que le preguntaron? (Relevancia), y 3) ¿Abrió el libro en la página correcta? (Context Precision).</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -965,6 +1275,28 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 AI Evals (Evaluaciones de IA)</span>
+                <p class="pt-desc">Batería de pruebas automáticas para medir con puntaje numérico del 0 al 100% la calidad de un chatbot antes de lanzarlo.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 LLM-as-a-Judge (IA como Juez)</span>
+                <p class="pt-desc">Usar un modelo auditor estricto para que corrija las respuestas de nuestro chatbot comparándolas contra el manual oficial.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Faithfulness (Fidelidad)</span>
+                <p class="pt-desc">Mide que el bot no haya inventado absolutamente ningún dato que no figure en los fragmentos recuperados del documento.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -999,6 +1331,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1011,6 +1364,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Falso Positivo Amable (Alucinación Comercial)</span>
+                <p class="pt-desc">El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1045,6 +1410,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Mostrar cómo se usa Langfuse en la vida real: el tablero donde hacés clic en cualquier mensaje y ves cuánto tardó y cuánto costó cada paso interno del bot.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic en los 3 renglones del árbol de la izquierda ('1. VectorDB Retrieval', '2. Security Guardrail', '3. LLM Generation') para ver cómo cambian los tiempos y costos a la derecha.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Langfuse es la 'caja negra' y el ticket detallado del supermercado todo en uno: te muestra segundo por segundo qué hizo el bot por dentro y cuántos centavos costó cada renglón.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1057,6 +1443,23 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Langfuse / Observabilidad LLMOps</span>
+                <p class="pt-desc">La herramienta visual donde los Product Managers e ingenieros ven el historial interno de cada respuesta del bot, sus tiempos y sus costos.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Trace (Traza) y Span (Paso)</span>
+                <p class="pt-desc">La 'Traza' es el recorrido completo de una pregunta de punta a punta; cada 'Span' es uno de los pasos individuales (ej. buscar en la base vectorial o llamar al LLM).</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1091,6 +1494,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Darle la estructura mental de 3 pasos para lucirse en cualquier entrevista de PM: 1) Nombrar la pieza técnica exacta, 2) Decir qué priorizar en el backlog, y 3) Explicar el impacto en plata o seguridad.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Señalá los 3 escalones de la fórmula ganadora en pantalla.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En una entrevista de PM no te evalúan como mecánico que desarma el motor con llave inglesa, sino como jefe de equipo de Fórmula 1 que sabe leer la telemetría y pedir el cambio exacto en boxes.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1103,6 +1527,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Trade-off de Producto</span>
+                <p class="pt-desc">El equilibrio entre tres variables que compiten entre sí: Calidad, Velocidad (Latencia) y Costo.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1137,6 +1573,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1149,6 +1606,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Model Routing (Enrutamiento de Modelos)</span>
+                <p class="pt-desc">Usar un modelo rápido y súper económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas fáciles, y llamar al modelo grande solo para los casos difíciles.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1183,6 +1652,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1195,6 +1685,23 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Token Streaming</span>
+                <p class="pt-desc">Hacer que la respuesta vaya apareciendo palabra por palabra en la pantalla apenas se genera, en vez de esperar a que termine todo el párrafo.</p>
+              </div>
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Parallel Tool Calling</span>
+                <p class="pt-desc">Hacer que el agente consulte las 3 APIs al mismo tiempo en simultáneo en lugar de esperar una detrás de la otra.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1229,6 +1736,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1241,6 +1769,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 PII Masking Proxy</span>
+                <p class="pt-desc">Un filtro intermedio que reemplaza automáticamente nombres de clientes y cifras secretas por códigos genéricos antes de mandar la consulta al modelo.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1275,6 +1815,27 @@
         </div>
 
         
+        <div class="cheat-sheet-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.13), rgba(245, 158, 11, 0.09)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.77rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+            ⚡ MACHETE EXPRESS DE 5 SEGUNDOS (SI NO REPASASTE, MIRÁ SOLO ESTAS 3 CAJAS MIENTRAS COMPARTÍS PANTALLA)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem;">
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.2rem;">🎯 1. IDEA CENTRAL EN 1 FRASE</span>
+              <p style="font-size: 0.88rem; color: #ffffff; font-weight: 600; line-height: 1.42; margin: 0;">Celebrar la graduación de Anabela repasando cómo ahora domina los 4 mundos: Desarrollo/Agile (S1), IA Generativa/RAG (S2), Agentes Autónomos (S3) y Finanzas/Evals/Entrevistas (S4).</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.2rem;">👆 2. QUÉ TOCAR EN LA SLIDE</span>
+              <p style="font-size: 0.86rem; color: #e2e8f0; line-height: 1.42; margin: 0;">Repasá las 4 insignias del programa y mostrale que todos los simuladores, glosarios y guías quedan disponibles en su portal web.</p>
+            </div>
+            <div style="background: rgba(7, 11, 20, 0.78); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.2rem;">💬 3. ANALOGÍA GANADORA</span>
+              <p style="font-size: 0.86rem; color: #fef3c7; line-height: 1.42; margin: 0;">Pasó de ver la tecnología desde afuera como una caja negra a tener el mapa completo de arquitectura, costos, calidad y seguridad para liderar equipos de IA.</p>
+            </div>
+          </div>
+        </div>
+    
+        
 
         <div class="script-section">
           <div class="section-head">
@@ -1287,6 +1848,18 @@
         </div>
 
         
+        <div class="plain-terms-box">
+          <div class="plain-terms-title">💡 Explicación en Palabras Simples (Cómo explicárselo claro a Anabela)</div>
+          <div class="plain-terms-grid">
+            
+              <div class="plain-term-item">
+                <span class="pt-term">🔹 Perfil AI Product / Project Manager</span>
+                <p class="pt-desc">El profesional capaz de unir la precisión lingüística y la gestión de proyectos con la arquitectura técnica, los costos y la calidad de los sistemas de IA.</p>
+              </div>
+            
+          </div>
+        </div>
+    
 
         <div class="interaction-box">
           <div class="interaction-title">⚡ Acción en Pantalla & Dinámica con Anabela</div>
@@ -1305,6 +1878,8 @@
       </article>
     
     </section>
+
+    
   </main>
 
   <script>

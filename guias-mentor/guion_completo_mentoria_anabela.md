@@ -848,6 +848,17 @@ Tenés la **Actividad Práctica S2** (4 misiones interactivas), la **App Generad
 - **3. Control Humano y Caso Real (Slides 7 a 9):** Las decisiones caras o irreversibles llevan un freno obligatorio (**Human-in-the-Loop / HITL**). Además, para que la IA no rompa Jira ni bases de datos con texto suelto, filtramos su salida con un molde estricto de datos (**Pydantic**).
 - **4. Blindaje de Costos y Seguridad (Slides 10 a 15):** Evitamos facturas gigantes por bucles de error poniendo un tope de intentos (**Max Iterations = 5**), diseñamos un **Plan B (Fallback)** si se cae una API, protegemos la base de datos con un **API Gateway** y practicamos cómo defender esta arquitectura ante un CTO.
 
+## 🚀 Demos en Vivo con Google Antigravity (Para hacer la clase más amena)
+
+- **[DEMO 1 · SLIDES 2 y 3] IA Activa + Loop ReAct en el Panel Lateral (Ctrl+L):** Abrile el panel derecho de Antigravity o mostrá la captura integrada en la Slide 3. Señalale cómo antes de responder aparece 'Thinking...' (Thought), después invoca 'Read file' o 'Search' (Action) y lee el archivo real (Observation).
+  - *Prompt para probar en vivo:* `Buscá en el archivo sesiones/glosario_completo_sesion_3.html qué es el patrón ReAct y resumilo en 3 puntos simples para una PM.`
+- **[DEMO 2 · SLIDE 4] Orchestrator-Workers con el Agent Manager (Ctrl+E):** Mostrale el botón 'Open Agent Manager' arriba a la derecha en Antigravity. Explicale que ahí el agente principal actúa como Orquestador y puede lanzar subagentes especialistas en paralelo (ej. uno que investiga archivos y otro que genera imágenes o código).
+  - *Prompt para probar en vivo:* `Explicame cómo usás subagentes en Antigravity para dividir una tarea compleja en trabajadores especializados.`
+- **[DEMO 3 · SLIDES 5 y 13] Tool Calling y Servidores MCP (AWS / Canva / GitHub):** Mostrale el ícono de Plugins (enchufe/rompecabezas) en Antigravity donde se conectan los servidores MCP (como AWS, Canva o Google Search Console) con autenticación segura OAuth/IAM sin darle contraseñas al chat.
+  - *Prompt para probar en vivo:* `Listá qué servidores MCP tenés conectados actualmente en este entorno y qué herramientas podés invocar con Tool Calling.`
+- **[DEMO 4 · SLIDES 7 y 9] Human-in-the-Loop (Modo 'Request Review' + Botones Accept/Reject):** Abajo de la caja de chat de Antigravity, hacé clic en el selector de permisos ('Always Proceed' / 'Agent Decides' / 'Request Review'). Mostrale cómo en 'Request Review' el agente prepara el cambio pero se frena esperando tu clic en 'Accept' o 'Reject'.
+  - *Prompt para probar en vivo:* `Proponé crear un archivo de prueba llamado nota_demo_s3.md con 3 reglas de gobernanza IA, mostrame los cambios y esperá mi aprobación.`
+
 ## 🧭 Cronograma y Bloques de la Sesión
 
 | Bloque Horario | Módulo | Diapositivas | Foco Pedagógico |
@@ -890,6 +901,11 @@ Tenés la **Actividad Práctica S2** (4 misiones interactivas), la **App Generad
 - **👆 Qué tocar en la Slide:** Señalá la tarjeta azul a la izquierda (IA Pasiva / RAG) y luego la tarjeta violeta a la derecha (IA Activa / Agentes).
 - **💬 La analogía ganadora:** Es la diferencia entre preguntarle a un colega '¿Cuál es el proceso para cargar un ticket?' (Pasiva) vs. decirle 'Revisá el proyecto y cargá el ticket por mí' (Activa).
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ ChatGPT Web (IA Pasiva) vs. Google Antigravity (IA Activa):** Mostrale que mientras ChatGPT clásico está encerrado en una burbuja de chat (IA Pasiva), **Google Antigravity es un Agente de IA Activa**: lee carpetas enteras de tu computadora, edita documentos, ejecuta comandos en la terminal y abre un navegador real para verificar páginas web.
+- **👆 Acción rápida:** Podés hacer clic en el botón '🚀 Ver en Antigravity' dentro de la Slide 2 para mostrarle las capturas reales del panel general y del navegador integrado.
+- **📋 Prompt para pegar en Antigravity:** `Leé los archivos de este proyecto y armame un resumen ejecutivo de 5 líneas sobre la diferencia entre RAG y Agentes.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Fijate qué clara es esta comparativa para explicarla en cualquier reunión de producto. A la izquierda tenés la **IA Pasiva (RAG)**: funciona como un bibliotecario experto. Vos le preguntás cuál es la regla para un lanzamiento y te resume el manual, pero no puede tocar ningún sistema fuera del chat. A la derecha tenés la **IA Activa (Agente)**: funciona como un coordinador operativo digital. Vos le das un objetivo —por ejemplo: *'Verificá si el Squad Alpha tiene capacidad para tomar el paquete de localización v2.4 y asignalo'*— y el agente arma un plan de pasos, llama a las APIs que vimos en la Sesión 1, lee los datos reales del sistema y ejecuta la tarea.
 
@@ -912,6 +928,11 @@ Fijate qué clara es esta comparativa para explicarla en cualquier reunión de p
 - **🎯 Qué explicás acá (En 1 frase):** Un agente no responde por impulso: sigue un ciclo de 3 pasos llamado ReAct (1. Pensar, 2. Actuar con una herramienta, 3. Observar el dato real).
 - **👆 Qué tocar en la Slide:** Hacé clic en los 3 círculos interactivos: '1. Pensamiento', '2. Acción' y '3. Observación'.
 - **💬 La analogía ganadora:** Igual que cuando cocinás: 1) Pensás '¿Tendré huevos en la heladera?', 2) Actuás (abrís la heladera), 3) Observás que hay 3 huevos y recién ahí decidís la receta.
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Cómo se ve el Loop ReAct en vivo dentro de Antigravity:** Cada vez que le escribís un pedido a Antigravity en el panel derecho (`Ctrl+L`), ella puede ver el ciclo **ReAct** ocurriendo frente a sus ojos: **1) Thought**: aparece el bloque desplegable *'Thinking...'* donde el agente planea qué hacer; **2) Action**: aparece la tarjeta de herramienta (ej. *'Read file'* o *'Search'*); **3) Observation**: el agente lee el contenido real del archivo y recién ahí redacta la respuesta.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 3 para mostrarle la captura real del panel lateral ejecutando pasos.
+- **📋 Prompt para pegar en Antigravity:** `Buscá en sesiones/glosario_completo_sesion_3.html la definición de Pydantic y explicámela en 2 renglones.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Hacé clic conmigo en cada uno de los tres círculos de este diagrama porque así piensa un agente por dentro. El patrón se llama **ReAct (Reason + Act)** y funciona como un bucle de tres pasos: 1) **Thought (Pensamiento)**: El agente recibe tu pedido y razona en voz baja: *'El usuario quiere saber el estado de entrega de los módulos del sprint. Para no inventar, necesito consultar la API de Jira/TMS'*. 2) **Action (Acción)**: El agente elige la herramienta adecuada y prepara el pedido formal para la API (por ejemplo, `get_sprint_module_status(project_id='99')`). 3) **Observation (Observación)**: El servidor ejecuta esa consulta en vivo y le devuelve el dato real al agente (*'8 de 10 módulos listos, 2 bloqueados en QA'*). El agente observa ese resultado y decide si ya puede responderte o si tiene que dar otra vuelta al bucle.
@@ -936,6 +957,11 @@ Hacé clic conmigo en cada uno de los tres círculos de este diagrama porque as�
 - **👆 Qué tocar en la Slide:** Hacé clic en 'Orquestador Central' y después en los 3 botones de abajo: 'Lector de PDFs', 'Auditor QA/TMS' y 'Gestor Email'.
 - **💬 La analogía ganadora:** Como una directora de proyecto (Orquestador) que no traduce ni programa ella misma, sino que le delega el archivo al lingüista, el control al QA y el correo al ejecutivo de cuentas.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ El patrón Orchestrator-Workers en el 'Agent Manager' de Antigravity:** En Antigravity existe literalmente el botón **'Open Agent Manager' (`Ctrl+E`)** y la función `invoke_subagent`. El agente principal con el que hablás actúa como **Orquestador** y, cuando le das una tarea grande, puede lanzar **Subagentes Trabajadores** en segundo plano (por ejemplo, un agente *Research* que investiga código o documentación y un agente *Image Generator* que crea ilustraciones) sin trabar tu pantalla.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 4 para mostrarle la captura real del botón 'Open Agent Manager'.
+- **📋 Prompt para pegar en Antigravity:** `Contame qué tipos de subagentes especializados podés invocar en Antigravity y cómo los coordinás como Orquestador.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Igual que vimos en la Sesión 1 que en una empresa grande no tenés a una sola persona haciendo todo sino especialistas, en Inteligencia Artificial usamos el patrón **Orchestrator-Workers (Orquestador y Trabajadores)**. Hacé clic en los nodos del diagrama para ver qué hace cada uno: arriba tenés al **Agente Orquestador** (que actúa como un Project Manager digital: recibe el objetivo general, arma el plan y reparte las subtareas). Abajo tenés tres agentes chiquitos ultra-especializados: el **Trabajador 1** solo sabe extraer datos y recuento de palabras de briefs y archivos PDF/XLIFF; el **Trabajador 2** solo tiene permiso para consultar por API a Jira/TMS la disponibilidad horaria; y el **Trabajador 3** solo redacta el mail ejecutivo final. Al darle a cada agente un rol acotado y pocas herramientas, bajás los errores casi a cero y gastás muchos menos tokens.
 
@@ -958,6 +984,11 @@ Igual que vimos en la Sesión 1 que en una empresa grande no tenés a una sola p
 - **🎯 Qué explicás acá (En 1 frase):** El modelo de IA nunca entra directo a la base de datos: llena un pedido formal en JSON (Tool Calling / MCP) y el sistema seguro de la empresa ejecuta la consulta.
 - **👆 Qué tocar en la Slide:** Hacé clic 3 veces seguidas en el botón 'Simular Inferencia' en la consola negra de la izquierda.
 - **💬 La analogía ganadora:** La IA no entra a la cocina del restaurante: anota el pedido en una comanda prolija (JSON) y se la pasa por la ventanilla al cocinero (Backend).
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Tool Calling en vivo con los Plugins / Servidores MCP de Antigravity:** En Antigravity, el **Tool Calling** es lo que ocurre cada vez que el agente usa un **Servidor MCP** (como el plugin de AWS, Canva, Figma o Google Search Console). El modelo de IA no se mete por su cuenta a la base de datos: genera un pedido estructurado en JSON (ej. `call_mcp_tool`) y Antigravity ejecuta la consulta oficial y segura.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 5 para mostrarle la galería real de Plugins / MCP en Antigravity.
+- **📋 Prompt para pegar en Antigravity:** `Mostrame un ejemplo del JSON que generás internamente cuando hacés Tool Calling hacia un servidor MCP como AWS o Canva.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Esta diapositiva responde una duda técnica clave: *'¿Le damos permiso a ChatGPT para que entre directo a nuestra base de datos?'*. **¡Jamás!** El LLM nunca toca tu base de datos; lo hace a través de **Tool Calling (Llamada a Herramientas)**. Vamos a probarlo en vivo haciendo clic en el botón de la consola derecha: Fijate que el usuario pregunta por la capacidad del Proyecto #4. En el **primer clic**, el LLM piensa qué función necesita y escupe un texto estructurado en formato **JSON**: `{"function": "get_project_capacity", "arguments": {"project_id": 4}}`. El LLM solo pide apretar ese botón. En el **segundo clic**, es nuestro propio servidor **Backend** (seguro y determinista) el que lee ese JSON, consulta la base de datos real y le devuelve que se usaron `485.5 horas de 500 max`. Y recién ahí el LLM redacta la respuesta amigable para el usuario.
@@ -1005,6 +1036,11 @@ En producto digital, si un chatbot tarda 10 segundos en contestar, el usuario pi
 - **👆 Qué tocar en la Slide:** Hacé clic en 'Iniciar Despliegue de Proyecto' y, cuando aparezca el cartel naranja, probá los botones 'Aprobar Firmado' o 'Denegar'.
 - **💬 La analogía ganadora:** Funciona igual que cuando un analista prepara una transferencia bancaria en el homebanking empresarial, pero queda pendiente hasta que el gerente entra y pone su token.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Human-in-the-Loop (HITL) en el Selector de Permisos de Antigravity:** ¡Este es el mejor ejemplo práctico de todos! Abajo del cuadro donde escribís en Antigravity hay un selector con 3 modos: *Always Proceed*, *Agent Decides* y **Request Review**. Cuando un PM elige **Request Review**, activa una compuerta **Human-in-the-Loop**: el agente prepara el cambio o el comando, pero se frena y te muestra los botones verdes y rojos **Accept (Aprobar)** y **Reject (Rechazar)**.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 7 para mostrarle la captura real del selector 'Request Review' y los botones 'Accept / Reject'.
+- **📋 Prompt para pegar en Antigravity:** `Explicame cómo funciona el modo 'Request Review' de Antigravity como ejemplo real de Human-in-the-Loop.`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 En cualquier sistema de IA empresarial serio existe una regla de oro: la IA prepara el 95% del trabajo pesado, pero las decisiones críticas de negocio o presupuesto llevan firma humana. Eso se llama **Human-in-the-Loop (HITL)**. Probémoslo en el simulador de la diapositiva: hacé clic en **'Iniciar Despliegue de Proyecto'**. El agente está procesando una orden de localización e infraestructura por **12.500 dólares**. Como en nuestras reglas de negocio fijamos que cualquier gasto arriba de 10.000 dólares requiere supervisión, fijate cómo el paso 3 se frena automáticamente y te abre esta ventana de autorización a vos como PM. Si hacés clic en **'Aprobar'**, recién ahí el sistema impacta el registro en Jira y en el ERP. Si hacés clic en **'Rechazar'**, se cancela todo sin riesgos.
 
@@ -1049,6 +1085,11 @@ Mirá este caso de estudio diseñado especialmente para tu mundo. Entra el paque
 - **🎯 Qué explicás acá (En 1 frase):** Los sistemas como Jira o SQL no entienden respuestas charladas; Pydantic actúa como un molde estricto que rebota cualquier dato que no venga con el formato exacto.
 - **👆 Qué tocar en la Slide:** Cambiá 'word_count' a un número negativo (-10) o elegí 'TEXTO_LIBRE (Error)' en 'status', y probá el botón 'Alternar Entrada Cruda'.
 - **💬 La analogía ganadora:** Como un formulario web donde el campo 'Edad' solo acepta números: si intentás escribir 'treinta años aprox', se pone en rojo y no te deja enviarlo.
+
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ Validación de Esquemas (Pydantic / JSON Schema) en las Herramientas de Antigravity:** En Antigravity, todas las herramientas internas y todos los servidores MCP tienen un archivo de esquema estricto (`<toolName>.json`) que funciona igual que **Pydantic**: exige tipos de datos exactos (`STRING`, `INTEGER`, `BOOLEAN`) y campos obligatorios (`required`). Si el LLM intenta llamar a una herramienta mandando texto donde iba un número, Antigravity bloquea la llamada automáticamente.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 9 para mostrarle cómo Antigravity estructura referencias y esquemas de herramientas.
+- **📋 Prompt para pegar en Antigravity:** `Mostrame cómo es el esquema JSON de validación de una de tus herramientas (por ejemplo read_file) y qué pasa si mandás un texto donde se espera un número entero.`
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Si vos conectás un modelo de lenguaje directo a un sistema como Jira o SAP y el modelo responde en texto libre *'Asignale unas quinientas palabras al proyecto cuatro'*, el sistema explota porque esperaba un número entero exacto. Para blindar esa conexión usamos un validador de esquemas llamado **Pydantic** (o *Structured Outputs*). Pensalo como esas cajas de juguetes para bebés que tienen agujeritos con forma de estrella, círculo y cuadrado: si el LLM intenta meter un texto donde iba un número, el filtro lo rebota en la puerta. Probá en vivo en el simulador de la izquierda poner un número negativo en `word_count` o elegir `INVALID_VALUE` en `status`: ¡mirá cómo la consola derecha salta inmediatamente en rojo bloqueando el dato y obligando al modelo a corregirlo antes de tocar la base de datos!
@@ -1141,6 +1182,11 @@ Fijate qué distinto y qué potente es el **PRD de un Agente (Sesión 3)** compa
 - **👆 Qué tocar en la Slide:** Señalá los 3 bloques de arriba: Agente de IA → API Gateway (resaltado en verde) → Base de Datos SQL.
 - **💬 La analogía ganadora:** La ventanilla blindada de un banco: el cliente (Agente) nunca entra al tesoro; le pide lo que necesita al cajero en la ventanilla (API Gateway), quien verifica todo antes de buscar el dinero.
 
+### 🚀 Ejemplo de IA Activa en Vivo con Google Antigravity
+- **🖥️ API Gateway y Autenticación Segura (OAuth / AWS IAM) en Antigravity:** Cuando Anabela conecte su cuenta de AWS o de Canva en Antigravity, nunca va a escribir su contraseña en el chat. Antigravity usa una capa de autorización segura (**OAuth / Perfiles IAM de solo lectura**) que funciona bajo el mismo principio del **API Gateway**: verifica permisos y protege las credenciales fuera del alcance del modelo.
+- **👆 Acción rápida:** Hacé clic en '🚀 Ver en Antigravity' en la Slide 13 para mostrarle la captura oficial de un servidor MCP autenticado con seguridad.
+- **📋 Prompt para pegar en Antigravity:** `¿Por qué en Antigravity conectamos AWS mediante un perfil IAM en el archivo mcp_config.json en lugar de pegar las claves secretas dentro del chat?`
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Mirá el diagrama de esta diapositiva: bajo ningún concepto permitimos que un Agente de IA tenga las contraseñas directas de la base de datos central de producción. Siempre ponemos en el medio un **API Gateway** (una puerta de enlace de seguridad). Pensalo como la ventanilla blindada de un banco: el agente llega hasta la ventanilla con su pedido en JSON; el API Gateway verifica quién es, controla que no esté mandando comandos maliciosos, valida los datos con Pydantic y recién ahí busca el dato adentro de la bóveda y se lo pasa por la ventanilla.
 
@@ -1186,7 +1232,14 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 - **💬 La analogía ganadora:** Ya sabe cómo se construye el edificio (S1), cómo darle memoria segura (S2) y cómo darle manos con frenos de control (S3).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-¡Felicitaciones Anabela! Completaste la Sesión 3 y ya dominás cómo se construye un chatbot agéntico de punta a punta: el ciclo ReAct, equipos Orchestrator-Workers, Tool Calling en JSON, KV Cache, frenos Human-in-the-Loop, validación Pydantic y cortafuegos contra loops infinitos. Te queda todo documentado también en el Glosario Completo de la Sesión 3.
+¡Felicitaciones Anabela! Completaste la Sesión 3 y ya dominás cómo se construye un chatbot agéntico de punta a punta: el ciclo ReAct, equipos Orchestrator-Workers, Tool Calling en JSON (igual que los servidores MCP en Antigravity), KV Cache, frenos Human-in-the-Loop, validación Pydantic y cortafuegos contra loops infinitos.
+
+**¿Y qué vamos a ver en nuestra Sesión 4 (la última del programa)?**
+Vamos a cerrar poniéndonos el sombrero de Directora de Producto IA en 4 bloques bien concretos:
+1) **Finanzas de la IA y Calculadora de ROI en vivo**: cómo cobran los proveedores por token (Input vs. Output, y por qué el español gasta ~25% más de tokens), cómo ahorrar hasta un 90% con **Prompt Caching**, la comparativa financiera **RAG vs. Fine-Tuning** y una calculadora interactiva para demostrar el ahorro en dólares frente al trabajo manual.
+2) **Privacidad y Blindaje de Datos (PII & NDA)**: cómo ocultar datos sensibles automáticamente antes de que salgan a la nube.
+3) **Calidad (AI Evals) y Observabilidad en Langfuse**: cómo medir con puntaje si el bot alucina o responde fielmente al manual (Tríada RAG) y cómo ver por dentro cuánto tardó y cuánto costó cada paso en **Langfuse**.
+4) **Entrenamiento de Entrevistas IT/IA**: vamos a resolver en vivo 3 simulaciones de crisis reales que toman en entrevistas de PM (presupuesto disparado, lentitud de 12 segundos y riesgo de fuga de datos).
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Entregable de Producto Agéntico:** Un PRD que define roles de agentes, herramientas permitidas (MCP/APIs), molde de datos (Pydantic) y frenos humanos (HITL).
@@ -1195,9 +1248,18 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 - Repasá el salto de S1 (Software/Agile) -> S2 (LLMs/RAG) -> S3 (Agentes/Chatbots) y anticipá el cierre en la Sesión 4.
 
 ### 🏁 Cierre y Puente hacia la Próxima Sesión
-> **"🔗 Conexión con la Sesión 4 (Final): Ya sabemos diseñar la arquitectura técnica completa de RAG y de Agentes. En nuestra cuarta y última sesión nos vamos a poner el sombrero de Directora de Producto: vamos a usar una **Calculadora en vivo de ROI y Costos de Tokens**, vamos a auditar un chatbot con un tablero de **Evals y Langfuse**, y vamos a hacer **3 simulaciones interactivas de entrevistas** resolviendo crisis reales de presupuesto, latencia y privacidad."**
+> **"🔗 Conexión con la Sesión 4 (Final): Abramos ahora un minuto el Simulador Práctico de la Sesión 3 para poner a prueba los frenos de nuestro agente, y la próxima clase nos metemos de lleno en Finanzas (ROI), Evals con Langfuse y Simulacro de Entrevistas."**
 
 ---
+
+## 🔭 ¿Qué vamos a ver en detalle en la Sesión 4 (Última Sesión)? — Guion para explicarle al cierre
+
+Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura técnica de IA Pasiva (RAG) e IA Activa (Agentes). En la **Sesión 4 (nuestra última sesión)** nos vamos a poner el sombrero de **Directora de Producto IA** y vamos a ver 4 bloques súper prácticos:
+
+- **Bloque 1 (Slides 1 a 6) — 💰 Finanzas de la IA (AI Economics) & Calculadora de ROI en Vivo:** Cómo cobran realmente OpenAI, Anthropic y AWS Bedrock por millón de tokens (por qué las respuestas de salida cuestan 3 a 4 veces más que la lectura y por qué el español consume 25% más de tokens que el inglés). Cómo ahorrar hasta un **90% de presupuesto con Prompt Caching**, la tabla financiera **RAG vs. Fine-Tuning**, y vamos a usar una **Calculadora Interactiva de ROI** moviendo deslizadores en vivo para justificar cuánto ahorra un proyecto de IA frente al trabajo manual.
+- **Bloque 2 (Slide 7) — 🛡️ Privacidad Corporativa y Blindaje de Datos Sensibles (PII & NDA):** Cómo asegurarte de que ningún empleado filtre nombres de clientes, tarifas confidenciales o contratos bajo NDA al usar IA: filtros automáticos que ocultan datos personales (**Sanitización de PII**) antes de salir a la nube, contratos **Enterprise Zero-Retention** y permisos por rol (**RBAC**).
+- **Bloque 3 (Slides 8 a 10) — 📊 Auditoría de Calidad (AI Evals) & Radiografía en Vivo con Langfuse:** Cómo medir científicamente si el chatbot está respondiendo bien antes y después de salir a producción: la **Tríada de Calidad RAG** (*Fidelidad al manual*, *Relevancia de respuesta* y *Precisión de búsqueda*) usando un **LLM como Juez**, más un simulador de **Langfuse** donde vas a ver la radiografía exacta de cada mensaje (cuántos milisegundos tardó cada paso y cuántos centavos de dólar costó).
+- **Bloque 4 (Slides 11 a 15) — 🎯 Simulacro Interactivo de Entrevistas IT / IA (3 Crisis Reales):** Vamos a entrenar la **fórmula de 3 pasos** para responder preguntas difíciles en entrevistas de PM sin ser programadora, resolviendo en vivo 3 casos de crisis reales: **1) La factura de IA vino 10 veces más cara**, **2) El chatbot tarda 12 segundos en responder**, y **3) El comité de seguridad teme una fuga de datos confidenciales**.
 
 
 
@@ -1207,6 +1269,13 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 - **Alumna:** Anabela Hotian (Traductora de Inglés · Localization & Project Management)
 - **Objetivo del Mentor:** Cerrar el programa integrando la visión financiera y de calidad de producto: estructura de costos de inferencia (Input vs. Output tokens), ahorro con Prompt Caching, cálculo de ROI de negocio, auditoría científica de calidad mediante AI Evals y trazas en Langfuse, y entrenamiento práctico con 3 casos interactivos de entrevista IT/IA.
 - **Total de Diapositivas:** 15 slides (con guion verbatim + acción en pantalla + puente exacto de transición a la siguiente diapositiva)
+
+## ⚡ Machete General de 60 Segundos (Leé esto 1 minuto antes de arrancar la llamada)
+
+- **1. Finanzas de la IA y Ahorro (Slides 1 a 6):** A diferencia del software clásico de costo fijo, en IA pagás por cada **Token** procesado en placas de video (GPU). Los tokens de respuesta (**Output**) son 3 a 4 veces más caros que los de lectura (**Input**), y el español consume ~25% más tokens que el inglés. Con **Prompt Caching** ahorrás hasta un 90% en instrucciones fijas y con la **Calculadora de ROI** justificás el proyecto ante el directorio.
+- **2. Privacidad y Blindaje Legal (Slide 7):** Para proteger contratos bajo NDA y datos personales (**PII**), aplicamos 3 barreras: 1) **Sanitización/Enmascaramiento de PII** (ocultar nombres y mails antes de salir a la nube), 2) Contrato **Enterprise Zero-Retention** (prohibido entrenar con tus datos), y 3) **Permisos por Rol (RBAC)** en la Base Vectorial.
+- **3. Auditoría de Calidad (Evals) y Langfuse (Slides 8 a 10):** No probamos un bot 'a ojo': usamos **AI Evals (LLM-as-a-Judge)** midiendo la **Tríada RAG** (*Fidelidad al manual*, *Relevancia de respuesta* y *Precisión de búsqueda*). Y en producción usamos **Langfuse** para ver la radiografía (Traza) de cada mensaje: cuántos milisegundos tardó y cuántos centavos costó cada paso.
+- **4. Simulacro de Entrevistas IT / IA (Slides 11 a 15):** En una entrevista de PM no te piden programar, sino aplicar la fórmula: **1) Diagnóstico técnico + 2) Acción en el Backlog + 3) Impacto en el negocio**. Practicamos 3 crisis en vivo: factura 10x más cara, lentitud de 12 segundos y prevención de fuga de datos.
 
 ## 🧭 Cronograma y Bloques de la Sesión
 
@@ -1221,8 +1290,17 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 ## Slide 1: Portada: Finanzas de la IA, Evals & Entrevistas (Sesión Final)
 - **⏱️ Tiempo estimado:** 2 Min | **🏷️ Etiquetas:** Sesión 4 · Final · AI Economics · Evals & Langfuse · Entrevistas IT
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Presentar la última sesión del programa: pasamos de la arquitectura técnica (RAG y Agentes) al liderazgo ejecutivo (Finanzas/ROI, Calidad con Evals/Langfuse y Entrevistas).
+- **👆 Qué tocar en la Slide:** Mostrá la portada de la Sesión 4 y repasá el camino completo S1 → S2 → S3 → S4.
+- **💬 La analogía ganadora:** En las Sesiones 1 a 3 aprendiste cómo se construye y maneja el avión; hoy en la Sesión 4 aprendés a leer el tablero de combustible (costos), la caja negra (Langfuse) y a aprobar el examen de comandante (entrevistas).
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 ¡Bienvenida a nuestra cuarta y última sesión, Anabela! En las tres sesiones anteriores construimos una base técnica enorme: vimos cómo trabaja un equipo de desarrollo ágil y cómo funcionan las APIs y Git (Sesión 1), cómo funciona por dentro un LLM y cómo se diseña una arquitectura RAG (Sesión 2), y cómo construir chatbots y agentes autónomos con ReAct, Tool Calling y guardrails (Sesión 3). Hoy vamos a ponerle el broche de oro a tu perfil: vamos a dominar **los números financieros de la IA (AI Economics)**, cómo **medir la calidad y auditar un chatbot en producción (Evals y Langfuse)**, y vamos a cerrar entrenando **casos reales de entrevistas de IT**.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **AI Economics (Economía de la IA):** Cómo calcular cuánto cuesta operar un producto de IA por mes y cuánto dinero le ahorra a la empresa (ROI).
+- **AI Evals & Observabilidad:** Las pruebas automáticas de calidad y el tablero de monitoreo (Langfuse) para vigilar que el bot no mienta ni gaste de más.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Presentá la portada celebrando el recorrido por las 4 sesiones y el enfoque ejecutivo de esta clase de cierre.
@@ -1235,8 +1313,16 @@ Imaginá que el CTO te plantea este caso real: *'Anabela, queremos poner un agen
 ## Slide 2: Agenda Operativa de la Sesión 4
 - **⏱️ Tiempo estimado:** 2 Min | **🏷️ Etiquetas:** 1. AI Economics · 2. Gobernanza & Calidad · 3. Simulación de Rol
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Mostrar el mapa de los 3 módulos que vamos a recorrer hoy: 1) Finanzas y Calculadora ROI, 2) Seguridad, Evals y Langfuse, y 3) Simulacro de 3 Casos de Entrevista.
+- **👆 Qué tocar en la Slide:** Señalá las 3 tarjetas de colores en pantalla: Ámbar (AI Economics), Azul (Gobernanza y Calidad) y Violeta (Simulación de Rol).
+- **💬 La analogía ganadora:** Son las 3 preguntas que siempre te hace un Directorio antes de lanzar un producto: 1) ¿Cuánto cuesta y cuánto ahorra?, 2) ¿Es seguro y confiable?, y 3) ¿Sabés manejar una crisis si algo falla?
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, **AI Economics**, donde vas a aprender a calcular cuánto cuesta operar un chatbot o flujo de traducción con IA y cómo defender su retorno de inversión (ROI). Segundo, **Gobernanza y Calidad**, donde vamos a usar herramientas reales como Langfuse para radiografiar qué pasa adentro de cada respuesta del bot. Y tercero, **Simulación de Rol**, donde vamos a resolver en vivo tres crisis típicas que te plantean en entrevistas para roles de PM.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **ROI (Return on Investment):** El retorno de inversión: cuántos dólares recupera o ahorra la empresa por cada dólar invertido en tecnología.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Señalá las 3 tarjetas de la agenda: 1. AI Economics (Ámbar), 2. Gobernanza & Calidad (Azul) y 3. Simulación de Rol (Violeta).
@@ -1249,8 +1335,17 @@ Nuestro plan de vuelo de hoy tiene tres paradas muy concretas: primero, **AI Eco
 ## Slide 3: AI Economics: La Variable GPU (Input vs. Output Tokens)
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** COGS (Costo Operativo) · Input vs Output Tokens · Español (+20-30% Tokens)
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Explicar por qué en IA el costo es variable por uso (tokens en GPU), por qué escribir (Output) cuesta 3 a 4 veces más que leer (Input) y por qué el español consume ~25% más tokens que el inglés.
+- **👆 Qué tocar en la Slide:** Señalá las tarjetas de Input Tokens vs. Output Tokens a la izquierda y la regla de conversión ('1k Tokens ≈ 750 palabras' y '+20-30% en español') a la derecha.
+- **💬 La analogía ganadora:** El software clásico es como alquilar una oficina con tarifa plana de luz; la IA es como un taxi con reloj taxímetro: cada palabra que lee y escribe corre en el reloj, y encima en español las palabras son más largas y ocupan más fichas.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor en la nube por un monto fijo al mes y da casi lo mismo si un usuario hace diez clics o mil clics. En la Inteligencia Artificial eso cambia radicalmente: cada vez que un usuario manda un mensaje, una placa de video gigante (**GPU**) tiene que hacer miles de millones de cálculos matemáticos en vivo, y el proveedor nos cobra por cada **Token** procesado. Y mirá dos detalles fundamentales para vos: primero, los **Output Tokens** (las palabras que el modelo escribe de respuesta) cuestan entre **3 y 4 veces más caros** que los **Input Tokens** (lo que el modelo lee). Segundo —y esto en localización es clave—: el **español consume entre un 20% y un 30% más de tokens que el inglés** para decir exactamente lo mismo, por cómo el tokenizador parte nuestras conjugaciones y tildes. Saber esto te permite presupuestar un proyecto multilingüe sin llevarte sorpresas.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **COGS (Costo de la Mercadería Vendida / Costo Operativo):** El gasto directo en servidores y APIs de IA que te cuesta atender a cada usuario.
+- **Input Tokens vs. Output Tokens:** Input es lo que la IA lee (más barato, procesado en bloque); Output es lo que la IA escribe palabra por palabra (3 a 4 veces más caro).
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Señalá la regla métrica a la derecha ('1k Tokens ≈ 750 Palabras') y el dato clave de que el español consume entre 20% y 30% más de tokens.
@@ -1263,8 +1358,17 @@ En el software tradicional que vimos en la Sesión 1, vos alquilás un servidor 
 ## Slide 4: Prompt Caching: El Súper Ahorro (Hasta 90% Off)
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Prompt Caching · Ahorro de Costos · Reducción de Latencia
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Mostrar cómo ahorrar hasta un 90% de plata y acelerar el bot poniendo las instrucciones fijas y glosarios arriba del todo en el prompt (Prompt Caching).
+- **👆 Qué tocar en la Slide:** Señalá la comparativa de barras a la derecha: cómo la parte fija del prompt queda guardada en memoria con hasta 90% de descuento.
+- **💬 La analogía ganadora:** En vez de fotocopiar y pagar de nuevo el manual de 50 páginas en cada consulta, el proveedor lo deja plastificado arriba del escritorio y te cobra una fracción mínima por consultarlo.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Si en una entrevista o reunión de presupuesto mencionás **Prompt Caching**, te ganás automáticamente el respeto del equipo de ingeniería. ¿Qué es el Prompt Caching? Cuando armamos un chatbot o un validador automático de traducciones, el 80% del prompt es siempre idéntico (el rol del sistema, las reglas de formato, el glosario base y los ejemplos) y solo cambia el 20% final (la consulta o el párrafo nuevo del usuario). Si estructuramos el prompt poniendo **todo el bloque fijo bien arriba al principio** y la parte variable al final, las APIs modernas guardan ese bloque fijo en memoria caché y nos hacen hasta un **75% a 90% de descuento** en esos tokens de entrada, además de responder muchísimo más rápido.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Prompt Caching:** Descuento de hasta 75%-90% que te dan los proveedores (OpenAI, Anthropic, AWS Bedrock) cuando ponés las instrucciones fijas y glosarios al principio del prompt para no reprocesarlos.
+- **Prefijo Estático vs. Sufijo Dinámico:** Poner arriba todo lo que nunca cambia (reglas, glosario) y dejar abajo del todo lo único que cambia (la pregunta del usuario).
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Compará las barras de costo y estructura del prompt estático arriba vs. variable abajo en la tarjeta derecha.
@@ -1277,8 +1381,16 @@ Si en una entrevista o reunión de presupuesto mencionás **Prompt Caching**, te
 ## Slide 5: RAG vs. Fine-Tuning: La Comparativa Financiera de Negocio
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** TCO (Costo Total) · Actualización en Tiempo Real · Trazabilidad
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Comparar con ojos de negocio y presupuesto por qué en el 95% de los proyectos corporativos conviene usar RAG (barato, actualizable al instante y con citas) en vez de Fine-Tuning.
+- **👆 Qué tocar en la Slide:** Recorré las filas de la tabla comparativa contrastando la columna verde (RAG) contra la columna roja/naranja (Fine-Tuning).
+- **💬 La analogía ganadora:** RAG es darle al empleado acceso al Google Drive actualizado todos los días (rápido y económico); Fine-Tuning es mandarlo a hacer un posgrado de 6 meses cada vez que cambia una tarifa.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning**; acá en la Slide 5 tenés la foto financiera completa para defenderla ante un directorio. Fijate en la tabla: con **RAG**, el costo inicial es bajo, actualizar un dato nuevo cuesta centavos y tarda segundos (solo subís el PDF o glosario nuevo a la Base Vectorial), y podés auditar de qué página salió cada respuesta. En cambio, con **Fine-Tuning**, tenés un costo altísimo de preparación y entrenamiento en GPUs, cada vez que cambia un manual queda desactualizado y no tenés citas de fuentes. Por eso en el 95% de los casos corporativos arrancamos con RAG + Prompt Engineering, y solo sumamos Fine-Tuning si necesitamos enseñar un formato o estilo lingüístico ultra específico.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **TCO (Total Cost of Ownership):** El costo total real de un proyecto sumando el desarrollo inicial más lo que cuesta mantenerlo y actualizarlo todos los meses.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Recorré las filas de la tabla comparativa contrastando Costo Inicial, Costo de Actualización, Control de Alucinaciones y Caso de Uso Ideal.
@@ -1291,8 +1403,16 @@ En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning
 ## Slide 6: Ejercicio 1: Calculadora Interactiva de ROI (Automatización con IA)
 - **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Calculadora en Vivo · ROI Mensual · Hora-Hombre vs Costo API
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Usar en vivo la Calculadora de ROI para demostrar cómo una tarea manual de $12.500 USD/mes baja a menos de $100 USD/mes de API combinada con supervisión humana.
+- **👆 Qué tocar en la Slide:** Mové los 3 sliders de la izquierda ('Documentos/mes', 'Minutos por documento', 'Costo Hora USD') y mostrá cómo cambian los números grandes a la derecha.
+- **💬 La analogía ganadora:** Esta calculadora es tu arma secreta para reuniones con directores financieros: transforma 'queremos usar IA porque es moderna' en 'este proyecto nos ahorra $10.000 dólares por mes'.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 ¡Juguemos con esta calculadora en vivo! Imaginá que querés proponer en una empresa automatizar con IA la primera pasada de revisión de calidad (QA), clasificación de tickets o pre-análisis de documentos. Movamos el primer slider: supongamos que procesan **1.500 documentos o tickets al mes**. Segundo slider: a una persona le lleva promedio **20 minutos** revisar cada uno. Tercer slider: el costo hora profesional es de **25 dólares**. Mirá el panel de resultados a la derecha: hacerlo 100% manual cuesta **12.500 dólares por mes**. En cambio, procesarlo con un pipeline de IA (consumiendo unos 4.000 tokens por documento) cuesta apenas **unos ~90 dólares de API al mes**. Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (Human-in-the-Loop), el ahorro neto supera el 80%. Así es como un PM justifica un proyecto de IA con números contundentes.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Costo Hora-Hombre vs. Costo de Inferencia:** Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Mové en vivo los 3 sliders ('Documentos / Tickets Procesados al Mes', 'Minutos Humanos por Documento', 'Costo Hora Profesional USD') para ver cómo se actualizan al instante el Costo Humano, el Costo de API de IA y el Ahorro Neto Mensual.
@@ -1305,8 +1425,18 @@ En las Sesiones 2 y 3 vimos la diferencia técnica entre **RAG** y **Fine-Tuning
 ## Slide 7: Seguridad Corporativa: Blindaje contra Fuga de Datos (PII & NDA)
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** PII Sanitization · Anonimización · Zero-Retention SLA · RBAC
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Explicar las 3 barreras de seguridad para que nunca se filtren datos personales (PII) ni secretos bajo NDA al usar IA.
+- **👆 Qué tocar en la Slide:** Señalá los 3 escudos: 1) Sanitización de PII (ocultar nombres/mails), 2) Contrato Enterprise Zero-Retention, y 3) Permisos por rol (RBAC).
+- **💬 La analogía ganadora:** Igual que cuando un médico presenta un caso clínico en un congreso: antes de mostrar la radiografía le tapa el nombre y DNI al paciente ('Paciente X') para proteger su identidad.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Para que ningún dato confidencial o personal se filtre, acá resumimos el blindaje de tres capas que exige un PM Senior: 1) **Sanitización / Enmascaramiento de PII (Personally Identifiable Information)**: antes de que el texto viaje a la API del LLM, un filtro local reemplaza nombres propios, mails, teléfonos o montos confidenciales por etiquetas genéricas como `[CLIENTE_1]` o `[EMAIL_OCULTO]`, y a la vuelta los vuelve a reemplazar. 2) **Acuerdo Enterprise SLA con Zero-Retention**, como vimos en la Sesión 2. Y 3) **Permisos por Rol (RBAC)** en la Base Vectorial, para que un usuario junior no pueda preguntarle al bot por documentos confidenciales de directorio.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **PII (Personally Identifiable Information):** Datos personales sensibles como nombre y apellido, DNI, email, teléfono, dirección o tarjeta de crédito.
+- **Sanitización / Enmascaramiento de PII:** Un filtro automático que reemplaza nombres reales por etiquetas como `[CLIENTE_1]` antes de mandar el texto a la IA.
+- **RBAC (Role-Based Access Control):** Control de acceso por rol: que el bot solo busque en los documentos que el cargo de ese empleado tiene permiso de ver.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Señalá las capas de protección: 1) Sanitización de PII (Datos Personales) antes de enviar al LLM y 2) Control de acceso por rol en la Base Vectorial.
@@ -1319,8 +1449,18 @@ Para que ningún dato confidencial o personal se filtre, acá resumimos el blind
 ## Slide 8: Suite de Evaluaciones (AI Evals): La Tríada de Calidad RAG
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Faithfulness (Fidelidad) · Answer Relevance · Context Precision · LLM-as-a-Judge
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Explicar las 3 notas con las que evaluamos científicamente a un chatbot RAG (Fidelidad al manual, Relevancia de la respuesta y Precisión de búsqueda) usando otra IA como juez.
+- **👆 Qué tocar en la Slide:** Señalá las 3 tarjetas de la Tríada RAG: 1. Faithfulness (Fidelidad), 2. Answer Relevance (Relevancia) y 3. Context Precision (Recuperación).
+- **💬 La analogía ganadora:** Igual que cuando corregís un examen a libro abierto: 1) ¿No inventó nada fuera del libro? (Fidelidad), 2) ¿Respondió lo que le preguntaron? (Relevancia), y 3) ¿Abrió el libro en la página correcta? (Context Precision).
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sistema llamado **LLM-as-a-Judge (Un LLM como Juez)** que califica cada respuesta del 0 al 1 en tres métricas clave (la famosa **Tríada RAG**): 1) **Faithfulness (Fidelidad)**: ¿todo lo que dijo el bot sale estrictamente de los fragmentos del manual recuperados, o inventó algo de su cosecha? Si inventó aunque sea un dato menor, reprueba en Fidelidad. 2) **Answer Relevance (Relevancia)**: ¿el bot fue al grano y respondió exactamente lo que preguntó el usuario, o se fue por las ramas? Y 3) **Context Recall / Precision**: ¿el buscador vectorial trajo el párrafo correcto del manual? Si esta tercera métrica da baja, ya sabés que el problema no es el prompt del LLM, sino que tenés que ajustar el Chunking o los Embeddings en la Base Vectorial.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **AI Evals (Evaluaciones de IA):** Batería de pruebas automáticas para medir con puntaje numérico del 0 al 100% la calidad de un chatbot antes de lanzarlo.
+- **LLM-as-a-Judge (IA como Juez):** Usar un modelo auditor estricto para que corrija las respuestas de nuestro chatbot comparándolas contra el manual oficial.
+- **Faithfulness (Fidelidad):** Mide que el bot no haya inventado absolutamente ningún dato que no figure en los fragmentos recuperados del documento.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Recorré las 3 tarjetas de métricas clave: 1. Faithfulness / Fidelidad al Contexto, 2. Answer Relevance / Relevancia de Respuesta y 3. Context Recall / Recuperación.
@@ -1333,8 +1473,16 @@ Como un chatbot redacta distinto cada vez, para auditar su calidad usamos un sis
 ## Slide 9: Ejercicio 2: Simulador de Rúbricas Evals en Acción
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Auditoría Práctica · Detección de Alucinación · Umbral de Aprobación
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.
+- **👆 Qué tocar en la Slide:** Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.
+- **💬 La analogía ganadora:** Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el soporte estándar responde en **24 horas hábiles** y que no cubre fines de semana salvo plan Enterprise. El usuario pregunta si le van a responder un domingo gratis, ¡y mirá lo que contesta el bot abajo!: *'¡Por supuesto! Nuestro equipo de guardia 24/7 resolverá tu ticket este mismo domingo sin costo adicional'*. ¡Una alucinación hermosa y súper amable que nos mete en un lío comercial bárbaro! Si movemos a la derecha el slider de **Fidelidad (Faithfulness)** hacia abajo (por ejemplo a 20%), fijate cómo el tablero automáticamente marca **RECHAZADO (FAIL)** y bloquea este prompt para que no pueda subir a producción.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Falso Positivo Amable (Alucinación Comercial):** El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Leé con Anabela el Contexto Oficial vs. la Respuesta Generada por el Bot a la izquierda, y mové los 3 sliders de calificación a la derecha para ver cómo cambia el veredicto ('APROBADO' vs. 'RECHAZADO POR ALUCINACIÓN').
@@ -1347,8 +1495,17 @@ Mirá el caso de prueba a la izquierda: el manual oficial dice claramente que el
 ## Slide 10: Observabilidad & Tracing en Producción (Langfuse)
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Observabilidad (LLMOps) · Langfuse · Traces & Spans · Auditoría de Costo y Latencia
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Mostrar cómo se usa Langfuse en la vida real: el tablero donde hacés clic en cualquier mensaje y ves cuánto tardó y cuánto costó cada paso interno del bot.
+- **👆 Qué tocar en la Slide:** Hacé clic en los 3 renglones del árbol de la izquierda ('1. VectorDB Retrieval', '2. Security Guardrail', '3. LLM Generation') para ver cómo cambian los tiempos y costos a la derecha.
+- **💬 La analogía ganadora:** Langfuse es la 'caja negra' y el ticket detallado del supermercado todo en uno: te muestra segundo por segundo qué hizo el bot por dentro y cuántos centavos costó cada renglón.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Herramientas como **Langfuse** o **LangSmith** son el tablero de control (Observabilidad) donde vive un PM de IA. Cada vez que un usuario manda un mensaje al chatbot, Langfuse guarda una **Traza (Trace)** completa. Hacé clic conmigo en cada renglón del árbol de la izquierda para abrir las cajas negras: en el paso 1 ves que buscar en la **Base Vectorial** tardó apenas `180 milisegundos` y trajo 3 chunks con similitud 0.89; en el paso 2 ves que el filtro de seguridad tardó `90 milisegundos`; y en el paso 3 ves que la generación del **LLM (GPT-4o)** tardó `1.45 segundos` y costó exactamente `$0.0042 dólares`. Si mañana el bot empieza a tardar 8 segundos o a responder mal, abrís esta traza y en diez segundos sabés exactamente en qué eslabón de la cadena está el problema.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Langfuse / Observabilidad LLMOps:** La herramienta visual donde los Product Managers e ingenieros ven el historial interno de cada respuesta del bot, sus tiempos y sus costos.
+- **Trace (Traza) y Span (Paso):** La 'Traza' es el recorrido completo de una pregunta de punta a punta; cada 'Span' es uno de los pasos individuales (ej. buscar en la base vectorial o llamar al LLM).
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Hacé clic sobre cada una de las 3 filas del árbol de ejecución ('1. VectorDB Retrieval', '2. Security Guardrail Check', '3. LLM Generation GPT-4o') para desplegar los detalles técnicos ocultos (tiempos en ms y costos en USD).
@@ -1361,8 +1518,16 @@ Herramientas como **Langfuse** o **LangSmith** son el tablero de control (Observ
 ## Slide 11: Preparación de Entrevistas para Roles de PM IT / IA
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Estructura de Respuesta · Mindset de PM Técnico · Negocio + Arquitectura
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Darle la estructura mental de 3 pasos para lucirse en cualquier entrevista de PM: 1) Nombrar la pieza técnica exacta, 2) Decir qué priorizar en el backlog, y 3) Explicar el impacto en plata o seguridad.
+- **👆 Qué tocar en la Slide:** Señalá los 3 escalones de la fórmula ganadora en pantalla.
+- **💬 La analogía ganadora:** En una entrevista de PM no te evalúan como mecánico que desarma el motor con llave inglesa, sino como jefe de equipo de Fórmula 1 que sabe leer la telemetría y pedir el cambio exacto en boxes.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Cuando vas a una entrevista para un rol de Project Manager o Product Manager en tecnología, nadie espera que te pongas a programar código en vivo. Lo que están evaluando es si tenés **criterio de arquitectura, control de riesgos y visión de negocio**. La fórmula ganadora para responder cualquier pregunta técnica tiene siempre tres pasos: **1) Diagnóstico Técnico** (nombrar con precisión el componente: *'eso es un problema de Chunking en el pipeline RAG'* o *'eso requiere un freno Human-in-the-Loop'*); **2) Acción en el Backlog** (qué le pedís priorizar al equipo de ingeniería); y **3) Impacto de Negocio** (cómo eso protege el presupuesto, la velocidad o la seguridad del cliente).
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Trade-off de Producto:** El equilibrio entre tres variables que compiten entre sí: Calidad, Velocidad (Latencia) y Costo.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Repasá la fórmula ganadora de 3 pasos para responder preguntas técnicas en entrevistas sin ser programadora.
@@ -1375,8 +1540,16 @@ Cuando vas a una entrevista para un rol de Project Manager o Product Manager en 
 ## Slide 12: Simulación Caso 1: Desvío Inesperado de Presupuesto de API
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Roleplay Caso 1 · Loop Infinito + Prompt Caching · Model Routing
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.
+- **👆 Qué tocar en la Slide:** Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.
+- **💬 La analogía ganadora:** Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Mirá el **Caso 1** en el simulador de entrevista: el entrevistador te dice: *'Lanzamos nuestro agente a producción hace una semana y la factura de OpenAI vino diez veces más cara de lo estimado. ¿Qué hacés como PM?'*. Si elegís la respuesta ingenua (pedir más presupuesto o apagar el bot), perdés puntos. Hagamos clic en la **Respuesta Estratégica de PM**: 1) Abrís **Langfuse** para auditar las trazas y ver si hay **Loops Infinitos** en el ciclo ReAct y fijás un límite duro de `Max Iterations = 5`; 2) Activás **Prompt Caching** para ahorrar hasta un 80% en las instrucciones repetidas del sistema; y 3) Implementás **Model Routing**: usás un modelo rápido y económico (como `GPT-4o-mini` o `Claude Haiku`) para las tareas simples del flujo, y reservás el modelo grande solo para el razonamiento complejo.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Model Routing (Enrutamiento de Modelos):** Usar un modelo rápido y súper económico (como GPT-4o-mini o Claude Haiku) para el 80% de las consultas fáciles, y llamar al modelo grande solo para los casos difíciles.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Leé la pregunta del entrevistador en el chat y hacé clic primero en la opción incorrecta ('Pedir más presupuesto / bajar usuarios') y luego en la opción ganadora ('Auditar en Langfuse + Max Iterations + Prompt Caching').
@@ -1389,8 +1562,17 @@ Mirá el **Caso 1** en el simulador de entrevista: el entrevistador te dice: *'L
 ## Slide 13: Simulación Caso 2: Latencia Crítica en Producción (12 Segundos)
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Roleplay Caso 2 · Streaming UI · Parallel Tool Calling · KV Cache
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.
+- **👆 Qué tocar en la Slide:** Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.
+- **💬 La analogía ganadora:** En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Mirá el **Caso 2**: el entrevistador te plantea: *'Los usuarios se quejan de que el chatbot tarda 12 segundos con la pantalla en blanco antes de mostrar la respuesta porque tiene que consultar tres APIs distintas. ¿Cómo lo solucionás?'*. Hagamos clic en la respuesta experta y mirá qué elegancia: atacás tanto la velocidad real como la velocidad percibida. Primero, en el Frontend pedís activar **Token Streaming** (que las palabras vayan apareciendo en vivo sílaba por sílaba apenas se generan, reduciendo el *Time To First Token* a menos de un segundo). Segundo, en el Backend pedís **Parallel Tool Calling** (que el agente llame a las 3 APIs al mismo tiempo en paralelo en vez de esperar una detrás de la otra). Y tercero, optimizás el **KV Cache** y achicás el tamaño de los chunks inyectados.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Token Streaming:** Hacer que la respuesta vaya apareciendo palabra por palabra en la pantalla apenas se genera, en vez de esperar a que termine todo el párrafo.
+- **Parallel Tool Calling:** Hacer que el agente consulte las 3 APIs al mismo tiempo en simultáneo en lugar de esperar una detrás de la otra.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Interactuá con los botones del simulador de chat del Caso 2 para contrastar la respuesta básica contra la solución arquitectónica de latencia.
@@ -1403,8 +1585,16 @@ Mirá el **Caso 2**: el entrevistador te plantea: *'Los usuarios se quejan de qu
 ## Slide 14: Simulación Caso 3: Blindaje contra Fuga de Datos (Data Leakage)
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Roleplay Caso 3 · PII Masking Proxy · Enterprise SLA · Metadata RBAC
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.
+- **👆 Qué tocar en la Slide:** Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.
+- **💬 La analogía ganadora:** Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Y en el **Caso 3**, el comité de seguridad te pregunta: *'¿Cómo nos aseguramos de que ningún empleado filtre datos personales de clientes o tarifas bajo NDA al usar el asistente de IA?'*. Hacemos clic en la defensa completa: 1) Ponemos un **Proxy de Sanitización (PII Masking)** en nuestro API Gateway que anonimiza nombres, mails y cifras confidenciales antes de que salgan de nuestro servidor; 2) Operamos exclusivamente bajo contrato **Enterprise SLA con Zero-Data Retention**; y 3) Aplicamos **Metadata Filtering atado a los permisos del usuario** para que cada persona solo pueda recuperar en el RAG los documentos que su rol tiene autorizados.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **PII Masking Proxy:** Un filtro intermedio que reemplaza automáticamente nombres de clientes y cifras secretas por códigos genéricos antes de mandar la consulta al modelo.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Hacé clic en el simulador del Caso 3 para mostrar cómo un proxy sanitizador intercepta datos sensibles antes de salir hacia la nube.
@@ -1417,8 +1607,16 @@ Y en el **Caso 3**, el comité de seguridad te pregunta: *'¿Cómo nos aseguramo
 ## Slide 15: ¡Felicitaciones por Completar el Programa de Mentoría!
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Graduación · Resumen de las 4 Sesiones · Próximos Pasos
 
+### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
+- **🎯 Qué explicás acá (En 1 frase):** Celebrar la graduación de Anabela repasando cómo ahora domina los 4 mundos: Desarrollo/Agile (S1), IA Generativa/RAG (S2), Agentes Autónomos (S3) y Finanzas/Evals/Entrevistas (S4).
+- **👆 Qué tocar en la Slide:** Repasá las 4 insignias del programa y mostrale que todos los simuladores, glosarios y guías quedan disponibles en su portal web.
+- **💬 La analogía ganadora:** Pasó de ver la tecnología desde afuera como una caja negra a tener el mapa completo de arquitectura, costos, calidad y seguridad para liderar equipos de IA.
+
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 ¡Felicitaciones Anabela, completaste las 4 sesiones del programa! Mirá hacia atrás todo el camino que recorriste en apenas cuatro horas: hoy entendés perfectamente qué hace un developer, cómo se conectan los sistemas por APIs, cómo funciona Git y el pipeline de CI/CD, cómo operan por dentro los LLMs, cómo se diseña una arquitectura RAG con Embeddings y Bases Vectoriales, cómo construir un chatbot agéntico con ReAct, Tool Calling y Pydantic, y cómo presupuestar, auditar con Langfuse y defender un producto de IA en cualquier entrevista o reunión ejecutiva. Tu combinación de experiencia en proyectos y lenguaje sumada a este dominio técnico es un diferencial enorme en el mercado actual.
+
+### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Perfil AI Product / Project Manager:** El profesional capaz de unir la precisión lingüística y la gestión de proyectos con la arquitectura técnica, los costos y la calidad de los sistemas de IA.
 
 ### ⚡ Dinámica / Interacción en Pantalla
 - Repasá los 4 trofeos / pilares completados por Anabela y recordale que todo el portal interactivo, los 4 glosarios y el generador de PRD quedan 100% a su disposición.

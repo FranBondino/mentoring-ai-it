@@ -180,6 +180,90 @@
             line-height: 1.45;
             text-align: left;
         }
+        
+        .ag-live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 8px;
+            margin-top: 4px;
+            padding: 4px 11px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.22), rgba(139, 92, 246, 0.22));
+            border: 1px solid rgba(249, 115, 22, 0.55);
+            color: #fed7aa;
+            font-family: var(--font-display);
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            vertical-align: middle;
+        }
+        .ag-live-pill:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.38), rgba(139, 92, 246, 0.35));
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+        }
+        .ag-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 15, 0.88);
+            backdrop-filter: blur(14px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1200;
+            padding: 1.2rem;
+        }
+        .ag-modal-overlay.open {
+            display: flex;
+        }
+        .ag-modal-card {
+            background: #0f172a;
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            border-radius: 18px;
+            width: min(1040px, 96vw);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+            padding: 1.35rem 1.6rem;
+            color: #f8fafc;
+        }
+        .ag-modal-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin: 0.85rem 0 1.1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ag-tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .ag-tab-btn.active, .ag-tab-btn:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.28), rgba(139, 92, 246, 0.25));
+            border-color: #f97316;
+            color: #ffffff;
+        }
+        .ag-demo-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 1.2rem;
+            align-items: start;
+        }
+        @media (max-width: 860px) {
+            .ag-demo-grid { grid-template-columns: 1fr; }
+        }
+
         .simple-banner strong {
             color: #34d399;
         }
@@ -1115,7 +1199,7 @@
             <p class="slide-subtitle">La transición desde la recuperación estática de conocimiento (RAG) hacia la toma de decisiones autónoma (Agentes)</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> En la Sesión 2 vimos <strong>IA Pasiva (RAG)</strong>: funciona como un <em>bibliotecario que lee manuales y responde dudas</em>, pero no toca nada. Hoy vemos <strong>IA Activa (Agentes)</strong>: un <em>asistente con manos propias</em> que además de leer puede consultar Jira, enviar correos o actualizar sistemas por vos.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s2')">🚀 Ver Ejemplo en Antigravity: IA Activa vs. Chat Pasivo</button></div>
             
             <div class="contrast-container">
                 <div class="glass-card contrast-card contrast-card-left">
@@ -1182,7 +1266,7 @@
             <p class="slide-subtitle">Cómo piensa un agente antes de actuar: Razonar (Thought) → Usar Herramienta (Action) → Mirar el Resultado (Observation)</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> En lugar de responder por impulso en un solo paso, el <strong>Loop ReAct</strong> obliga a la IA a trabajar como una persona ordenada: <strong>1) Piensa</strong> qué dato le falta, <strong>2) Ejecuta una consulta</strong> en el sistema, y <strong>3) Observa el dato real</strong> antes de contestar.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s3')">🚀 Ver en Antigravity: Cómo se ve el Loop ReAct en vivo</button></div>
             
             <div class="grid-2">
                 <div class="react-interactive-container" style="max-width: 100%;">
@@ -1224,7 +1308,7 @@
             <p class="slide-subtitle">Dividir un problema grande entre un Agente Coordinador (Orquestador) y Agentes Especialistas (Workers)</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> Si le pedís a un solo agente que lea PDFs, consulte bases de datos y redacte correos todo junto, se confunde. El patrón <strong>Orchestrator-Workers</strong> funciona como un <em>Director de Proyecto</em> que reparte tareas chicas a especialistas (uno lee el PDF, otro revisa Jira y otro redacta el mail).
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s4')">🚀 Ver en Antigravity: Agent Manager (Orquestador + Subagentes)</button></div>
             
             <div class="orchestrator-layout">
                 <div class="orchestrator-diagram-box">
@@ -1266,7 +1350,7 @@
             <p class="slide-subtitle">Cómo el agente pide usar herramientas externas (APIs y Servidores MCP como AWS, Jira o Slack)</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> <em>Probabilístico</em> = el cerebro de la IA (flexible, redacta e interpreta). <em>Determinista</em> = el sistema tradicional o calculadora (exacto, nunca improvisa). Con <strong>Tool Calling (y MCP en Antigravity)</strong>, la IA no toca la base de datos directo: llena un formulario estructurado (JSON) pidiendo el dato y el sistema se lo devuelve seguro.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s5')">🚀 Ver en Antigravity: Tool Calling con Plugins MCP (AWS / Canva)</button></div>
             
             <div class="tool-calling-box">
                 <div class="console-container">
@@ -1347,7 +1431,7 @@
             <p class="slide-subtitle">El freno de seguridad donde el agente hace el trabajo previo pero espera tu clic antes de ejecutar algo crítico</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> <strong>Human-in-the-Loop (HITL)</strong> es igual al botón <em>"Proceed / Aprobar"</em> que viste en Google Antigravity: el agente prepara todo el análisis, pero si la acción supera un límite de negocio (ej. más de $10,000 USD o borrar un registro), se pausa y te pide autorización a vos.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s7')">🚀 Ver en Antigravity: Modo Request Review (Human-in-the-Loop)</button></div>
             
             <div class="hitl-simulator glass-card">
                 <div class="hitl-steps">
@@ -1424,7 +1508,7 @@
             <p class="slide-subtitle">El "molde" obligatorio para que la IA entregue datos limpios que Jira o tu base de datos puedan procesar</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples:</strong> Si tu sistema espera un número (<code>500</code>) y la IA responde con texto conversacional (<em>"Son unas quinientas palabras aproximadamente"</em>), el sistema se rompe. <strong>Pydantic</strong> funciona como un control de aduana: verifica que cada casillero tenga el formato exacto antes de dejarlo pasar.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s9')">🚀 Ver en Antigravity: Esquemas JSON y @Mentions</button></div>
             
             <div class="pydantic-box">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: flex-start; padding: 1.2rem 1.5rem; text-align: left;">
@@ -1590,7 +1674,7 @@
             <p class="slide-subtitle">El guardia de seguridad (como Amazon API Gateway + AWS IAM) entre el Agente de IA y tus bases de datos</p>
             <div class="simple-banner">
                 <strong>💡 En palabras simples (Conexión con tu curso de AWS):</strong> Nunca le damos al agente la llave maestra de la base de datos. Ponemos un <strong>API Gateway</strong> en el medio (en AWS es <em>Amazon API Gateway</em> combinado con permisos <em>AWS IAM</em>) que revisa cada pedido del agente y bloquea cualquier acción no autorizada.
-            </div>
+             <button type="button" class="ag-live-pill" onclick="window.openAgModal('s13')">🚀 Ver en Antigravity: Autenticación OAuth / AWS IAM Segura</button></div>
             
             <div class="integration-box">
                 <div class="integration-nodes">
@@ -1668,16 +1752,25 @@
                     <p class="roadmap-desc">Orquestadores, ReAct loop, tool calling, control de costos, fallbacks y compuertas HITL.</p>
                 </div>
 
-                <div class="roadmap-card glass-card">
-                    <div class="roadmap-step">Sesión 4</div>
+                <div class="roadmap-card glass-card" style="border-color: rgba(245, 158, 11, 0.45); background: rgba(245, 158, 11, 0.07) !important;">
+                    <div class="roadmap-step" style="color: #fbbf24;">Sesión 4 (Próxima · Final)</div>
                     <div class="roadmap-title">
-                        <i data-lucide="shield" class="icon-sm"></i>
-                        <span>IA a Escala</span>
+                        <i data-lucide="shield" class="icon-sm" style="color: #f59e0b;"></i>
+                        <span>Finanzas, Evals &amp; Entrevistas</span>
                     </div>
-                    <p class="roadmap-desc">Evals de calidad, Golden Dataset, Langfuse y pipelines automatizados de CI/CD.</p>
+                    <p class="roadmap-desc">1) Costos por Token, Prompt Caching (-90%) y Calculadora ROI; 2) Privacidad PII/NDA; 3) Calidad (Tríada RAG) y Langfuse; 4) Simulacro de 3 Entrevistas IT.</p>
                 </div>
             </div>
 
+            <div class="simple-banner" style="border-left-color: #f59e0b; border-color: rgba(245, 158, 11, 0.4); background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(59, 130, 246, 0.08)); margin-bottom: 0.7rem;">
+                <strong style="color: #fbbf24;">🔭 ¿Qué vamos a ver en detalle en la Sesión 4 (Última Clase)?</strong>
+                <span style="display: block; margin-top: 0.25rem; font-size: 0.81rem; color: #f8fafc;">
+                    <strong>1. 💰 Finanzas de IA &amp; Calculadora ROI:</strong> Costo Input vs. Output tokens (+25% en español), ahorro del 90% con <em>Prompt Caching</em> y tabla financiera RAG vs. Fine-Tuning. ·
+                    <strong>2. 🛡️ Privacidad &amp; NDA:</strong> Enmascaramiento automático de datos personales (<em>PII Sanitization</em>). ·
+                    <strong>3. 📊 AI Evals &amp; Langfuse:</strong> Cómo medir alucinaciones con puntaje (<em>Tríada RAG</em>) y radiografiar tiempos y costos en vivo con <em>Langfuse</em>. ·
+                    <strong>4. 🎯 Simulacro de Entrevistas:</strong> Resolver en vivo 3 crisis reales de PM (Presupuesto disparado, Latencia de 12s y Fuga de datos).
+                </span>
+            </div>
             <div class="consigna-banner">
                 
                 <h4>
@@ -2814,6 +2907,9 @@
             <a href="./actividad_practica_sesion_3.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 3">
                 🧪 <span class="hud-label-hide-sm">Simulador S3</span>
             </a>
+            <button type="button" class="anabela-hud-btn" style="border-color: rgba(249,115,22,0.55); color: #fed7aa; background: rgba(249,115,22,0.14);" onclick="window.openAgModal('s2')" title="Ver ejemplos en vivo de IA Activa en Google Antigravity">
+                ⚡ <span class="hud-label-hide-sm">Ejemplos en Antigravity</span>
+            </button>
             <a href="./guia_antigravity_aws_mcp.html" class="anabela-hud-btn" title="Abrir Guía de Antigravity + AWS MCP">
                 🚀 <span class="hud-label-hide-sm">Antigravity + AWS</span>
             </a>
@@ -3039,6 +3135,202 @@
     })();
     </script>
     <!-- ================= END ANABELA PREMIUM MOTION ENGINE ================= -->
+
+
+    <!-- Antigravity Live Examples Modal (Session 3 Concepts Mapped to Real Antigravity UI) -->
+    <div class="ag-modal-overlay" id="ag-live-modal" onclick="if(event.target===this) window.closeAgModal()">
+        <div class="ag-modal-card" onclick="event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                <div>
+                    <span style="font-family: monospace; font-size: 0.74rem; font-weight: 700; color: #fb923c; text-transform: uppercase; letter-spacing: 0.06em;">EJEMPLOS REALES DE IA ACTIVA EN VIVO</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: #ffffff; margin-top: 0.15rem;">Cómo se ve cada concepto de la Sesión 3 dentro de Google Antigravity</h3>
+                </div>
+                <button type="button" onclick="window.closeAgModal()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.2rem; cursor: pointer;">&times;</button>
+            </div>
+
+            <div class="ag-modal-tabs" id="ag-modal-tabs">
+                <button type="button" class="ag-tab-btn active" data-key="s2" onclick="window.switchAgTab('s2')">Slide 2 · IA Activa</button>
+                <button type="button" class="ag-tab-btn" data-key="s3" onclick="window.switchAgTab('s3')">Slide 3 · Loop ReAct</button>
+                <button type="button" class="ag-tab-btn" data-key="s4" onclick="window.switchAgTab('s4')">Slide 4 · Multi-Agente</button>
+                <button type="button" class="ag-tab-btn" data-key="s5" onclick="window.switchAgTab('s5')">Slide 5 · Tool Calling &amp; MCP</button>
+                <button type="button" class="ag-tab-btn" data-key="s7" onclick="window.switchAgTab('s7')">Slide 7 · Human-in-the-Loop</button>
+                <button type="button" class="ag-tab-btn" data-key="s9" onclick="window.switchAgTab('s9')">Slide 9 · Esquema JSON (Pydantic)</button>
+                <button type="button" class="ag-tab-btn" data-key="s13" onclick="window.switchAgTab('s13')">Slide 13 · Seguridad OAuth / IAM</button>
+            </div>
+
+            <div id="ag-modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const agExamples = {
+            s2: {
+                badge: "SLIDE 2 · DE IA PASIVA A IA ACTIVA",
+                title: "Por qué Google Antigravity es un Sistema Agéntico (IA Activa)",
+                desc: "Mientras ChatGPT en el navegador es <strong>IA Pasiva</strong> (solo responde texto adentro de la burbuja del chat), <strong>Antigravity es IA Activa</strong>: tiene manos para leer carpetas completas de tu proyecto, crear documentos Markdown/HTML, ejecutar comandos en la terminal y abrir un navegador integrado real para verificar que todo funcione.",
+                points: [
+                    "<strong>Explorador de Archivos (Izquierda):</strong> El agente lee tus documentos locales sin que tengas que copiar y pegar texto.",
+                    "<strong>Editor Central + Navegador Integrado:</strong> El agente redacta código o PRDs y abre el navegador para probar la página.",
+                    "<strong>Panel del Agente (Derecha · Ctrl+L):</strong> Donde le asignás un objetivo de negocio y el agente planifica los pasos."
+                ],
+                prompt: "Leé los archivos de esta carpeta y generame una tabla comparativa en Markdown con los conceptos principales de la Sesión 3.",
+                img1: "./img/real/overview-panel.png",
+                cap1: "Interfaz real de Google Antigravity: Explorador + Editor + Panel Agéntico",
+                img2: "./img/real/built-in-browser.png",
+                cap2: "Agente operando el navegador integrado para validar una aplicación en vivo"
+            },
+            s3: {
+                badge: "SLIDE 3 · LOOP DE RAZONAMIENTO REACT (REASON + ACT)",
+                title: "El Ciclo Thought → Action → Observation en el Panel de Antigravity",
+                desc: "Cuando le hacés un pedido a Antigravity en el panel derecho, no te contesta adivinando a ciegas. Podés ver las <strong>3 etapas del ciclo ReAct</strong> ejecutándose en vivo en la pantalla:",
+                points: [
+                    "<strong>1. Thought (Pensamiento):</strong> Aparece el bloque desplegable <em>'Thinking...'</em> donde el agente razona qué archivo o dato necesita buscar.",
+                    "<strong>2. Action (Acción):</strong> El agente invoca una herramienta real como <code>read_file</code>, <code>run_command</code> o un servidor MCP.",
+                    "<strong>3. Observation (Observación):</strong> El agente lee el resultado devuelto por el archivo o PDF y recién ahí redacta tu respuesta."
+                ],
+                prompt: "Buscá en sesiones/glosario_completo_sesion_3.html qué significa Pydantic y resumilo en 2 renglones para una Product Manager.",
+                img1: "./img/real/side-panel-new-tab.png",
+                cap1: "Panel lateral de Antigravity (Ctrl+L) donde se visualiza el ciclo de razonamiento ReAct",
+                img2: "./img/real/pdf-viewer.png",
+                cap2: "El agente leyendo directamente un documento PDF real del proyecto (Observation)"
+            },
+            s4: {
+                badge: "SLIDE 4 · PATRÓN MULTI-AGENTE (ORCHESTRATOR-WORKERS)",
+                title: "El 'Agent Manager' y los Subagentes Especialistas en Antigravity",
+                desc: "Igual que vimos en el diagrama de la Slide 4, Antigravity aplica el patrón <strong>Orchestrator-Workers</strong>: arriba a la derecha tenés el botón <strong>'Open Agent Manager' (Ctrl+E)</strong>. El agente principal actúa como coordinador y puede lanzar <strong>Subagentes Especialistas</strong> que trabajan en paralelo en segundo plano.",
+                points: [
+                    "<strong>Agente Principal (Orquestador):</strong> Recibe tu objetivo general, divide el trabajo y supervisa los resultados.",
+                    "<strong>Subagente Research (Investigador):</strong> Explora decenas de archivos o documentación sin ensuciar la memoria principal.",
+                    "<strong>Subagente Image Generator / Workers:</strong> Ejecutan tareas específicas en paralelo y avisan al terminar."
+                ],
+                prompt: "Explicame cómo funciona tu herramienta invoke_subagent en Antigravity y cómo dividís una tarea grande entre subagentes especialistas.",
+                img1: "./img/real/editor-open-agent-manager.png",
+                cap1: "Botón 'Open Agent Manager' arriba a la derecha en la barra superior de Antigravity",
+                img2: "./img/real/overview-panel.png",
+                cap2: "Coordinación entre el editor principal y las tareas de agentes en paralelo"
+            },
+            s5: {
+                badge: "SLIDE 5 · TOOL CALLING & SERVIDORES MCP",
+                title: "Cómo Antigravity llama a APIs externas (AWS, Canva, GitHub) con MCP",
+                desc: "El <strong>Tool Calling</strong> que simulamos en la Slide 5 es exactamente lo que hace Antigravity cuando le instalás un plugin desde el botón de <strong>Plugins / Marketplace</strong>. Gracias al estándar <strong>MCP (Model Context Protocol)</strong>, el agente emite un JSON estructurado para consultar AWS, Canva, Figma o Linear en tiempo real.",
+                points: [
+                    "<strong>1. Galería de Plugins / MCP:</strong> Conectás en segundos herramientas oficiales (AWS, Canva, GitHub, Google Workspace).",
+                    "<strong>2. Pedido Estructurado en JSON:</strong> Cuando preguntás algo de AWS, el LLM no adivina: genera el JSON de consulta.",
+                    "<strong>3. Respuesta Determinista:</strong> El servidor MCP consulta la API oficial y le devuelve el dato exacto al agente."
+                ],
+                prompt: "Listá qué servidores MCP tenés conectados en este entorno y mostrame un ejemplo del JSON que usás para llamar a una herramienta.",
+                img1: "./img/real/marketplace-plugins.png",
+                cap1: "Galería real de Plugins y Servidores MCP dentro de Google Antigravity",
+                img2: "./img/real/installed-plugins.png",
+                cap2: "Vista de servidores MCP instalados y listos para ser invocados vía Tool Calling"
+            },
+            s7: {
+                badge: "SLIDE 7 · HUMAN-IN-THE-LOOP (FRENO DE MANO HUMANO)",
+                title: "El modo 'Request Review' y los botones Accept / Reject en Antigravity",
+                desc: "¡Este es el ejemplo más claro de <strong>Human-in-the-Loop (HITL)</strong>! Abajo de la caja donde escribís en Antigravity hay un selector de permisos con 3 niveles. Cuando elegís <strong>'Request Review'</strong>, el agente prepara todo el trabajo pero tiene prohibido impactar cambios sin tu clic humano en <strong>Accept</strong> o <strong>Reject</strong>.",
+                points: [
+                    "<strong>Always Proceed:</strong> Autonomía total (solo para tareas sin riesgo en borradores).",
+                    "<strong>Agent Decides:</strong> El agente avanza en tareas seguras y te pregunta en acciones sensibles.",
+                    "<strong>Request Review (HITL Puro):</strong> Compuerta humana obligatoria con botones <strong>Accept (Aprobar)</strong> y <strong>Reject (Rechazar)</strong>."
+                ],
+                prompt: "Proponé agregar una nota de prueba al final de un archivo borrador, pero frená y mostrame el cambio para que yo lo apruebe o rechace.",
+                img1: "./img/real/permissions-composer-picker.png",
+                cap1: "Selector real de nivel de autonomía (Human-in-the-Loop) en la caja de chat de Antigravity",
+                img2: "./img/real/review-changes-app-pane.png",
+                cap2: "Compuerta de aprobación humana: vista de cambios con botones 'Accept' y 'Reject'"
+            },
+            s9: {
+                badge: "SLIDE 9 · VALIDACIÓN DE ESQUEMAS (PYDANTIC / JSON SCHEMA)",
+                title: "Contratos de Datos Estrictos y @Mentions en Antigravity",
+                desc: "Igual que <strong>Pydantic</strong> en la Slide 9, cada herramienta que usa Antigravity tiene un esquema JSON obligatorio (por ejemplo, exige que <code>StartLine</code> sea un número entero y que <code>Path</code> sea un texto válido). Además, al escribir <strong><code>@</code></strong> en el chat desplegás objetos tipados exactos (archivos, carpetas, terminal o servidores MCP).",
+                points: [
+                    "<strong>Validación en la Puerta:</strong> Si el modelo intenta llamar a una herramienta con un tipo de dato incorrecto, el validador la bloquea.",
+                    "<strong>Menú @Mentions:</strong> Te permite inyectar contexto estructurado y exacto sin ambigüedades."
+                ],
+                prompt: "Mostrame qué campos obligatorios y qué tipos de datos exige el esquema JSON de tu herramienta read_file.",
+                img1: "./img/real/app-mention-menu.png",
+                cap1: "Menú interactivo @mentions en Antigravity para referenciar objetos y herramientas estructuradas",
+                img2: "./img/real/side-panel-new-tab.png",
+                cap2: "Panel del agente validando llamadas estructuradas a herramientas"
+            },
+            s13: {
+                badge: "SLIDE 13 · API GATEWAY & CREDENCIALES SEGURAS (OAUTH / AWS IAM)",
+                title: "Cómo se protege el acceso a bases de datos y nubes en Antigravity",
+                desc: "Tal como vimos con el <strong>API Gateway</strong> en la Slide 13, en Antigravity jamás le escribís tu contraseña de AWS ni de la base de datos al modelo en el chat. La conexión pasa por una compuerta de autenticación segura (<strong>OAuth / Perfiles AWS IAM de mínimo privilegio</strong>) que valida cada permiso por afuera del LLM.",
+                points: [
+                    "<strong>Cero Contraseñas en el Prompt:</strong> El modelo nunca ve ni puede filtrar tus claves secretas.",
+                    "<strong>Principio de Mínimo Privilegio (AWS IAM):</strong> Le asignás un perfil <code>ReadOnlyAccess</code> para que pueda consultar métricas y costos en AWS sin riesgo de borrar servidores."
+                ],
+                prompt: "Explicame en palabras simples por qué es más seguro conectar AWS en Antigravity mediante un perfil IAM en MCP en vez de pegar claves en el chat.",
+                img1: "./img/real/mcp-oauth-authenticated.png",
+                cap1: "Autenticación oficial OAuth / MCP en Antigravity (credenciales aisladas del LLM)",
+                img2: "./img/real/installed-plugins.png",
+                cap2: "Administración segura de integraciones y permisos por servidor MCP"
+            }
+        };
+
+        window.switchAgTab = function(key) {
+            const data = agExamples[key] || agExamples.s2;
+            document.querySelectorAll('#ag-modal-tabs .ag-tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-key') === key);
+            });
+            const body = document.getElementById('ag-modal-body');
+            if (!body) return;
+            body.innerHTML = `
+                <div class="ag-demo-grid">
+                    <div>
+                        <span style="display:inline-block; font-family:monospace; font-size:0.72rem; font-weight:700; color:#6ee7b7; background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.35); padding:3px 10px; border-radius:99px; margin-bottom:0.5rem;">${data.badge}</span>
+                        <h4 style="font-family:var(--font-display); font-size:1.18rem; color:#fff; margin-bottom:0.55rem;">${data.title}</h4>
+                        <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.55; margin-bottom:0.85rem;">${data.desc}</p>
+                        <ul style="list-style:none; padding:0; margin:0 0 1rem 0; display:flex; flex-direction:column; gap:0.45rem;">
+                            ${data.points.map(p => `<li style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-left:3px solid #f97316; border-radius:8px; padding:0.5rem 0.75rem; font-size:0.83rem; color:#e2e8f0; line-height:1.45;">${p}</li>`).join('')}
+                        </ul>
+                        <div style="background:rgba(7,11,20,0.9); border:1px dashed rgba(249,115,22,0.5); border-radius:10px; padding:0.75rem 0.9rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.35rem;">
+                                <span style="font-family:monospace; font-size:0.72rem; font-weight:700; color:#fdba74;">💬 PROMPT LISTO PARA PROBAR EN VIVO EN ANTIGRAVITY:</span>
+                                <button type="button" id="ag-copy-prompt-btn" style="background:rgba(249,115,22,0.2); border:1px solid #f97316; color:#fff; padding:4px 10px; border-radius:6px; font-size:0.74rem; font-weight:700; cursor:pointer;">📋 Copiar Prompt</button>
+                            </div>
+                            <code id="ag-current-prompt" style="display:block; font-family:monospace; font-size:0.8rem; color:#fde68a; line-height:1.4;">"${data.prompt}"</code>
+                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                        <div style="background:#050811; border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:0.55rem; text-align:center;">
+                            <img src="${data.img1}" alt="${data.cap1}" style="width:100%; max-height:210px; object-fit:contain; border-radius:8px; cursor:pointer;" onclick="openLightbox(this)">
+                            <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.35rem;">📸 ${data.cap1} (Clic para ampliar)</div>
+                        </div>
+                        <div style="background:#050811; border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:0.55rem; text-align:center;">
+                            <img src="${data.img2}" alt="${data.cap2}" style="width:100%; max-height:190px; object-fit:contain; border-radius:8px; cursor:pointer;" onclick="openLightbox(this)">
+                            <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.35rem;">📸 ${data.cap2} (Clic para ampliar)</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            const copyBtn = document.getElementById('ag-copy-prompt-btn');
+            if (copyBtn) {
+                copyBtn.onclick = function() {
+                    navigator.clipboard.writeText(data.prompt).then(() => {
+                        const prev = copyBtn.textContent;
+                        copyBtn.textContent = '✅ ¡Prompt Copiado!';
+                        setTimeout(() => { copyBtn.textContent = prev; }, 1600);
+                    });
+                };
+            }
+        };
+
+        window.openAgModal = function(key) {
+            const modal = document.getElementById('ag-live-modal');
+            if (!modal) return;
+            modal.classList.add('open');
+            window.switchAgTab(key || 's2');
+        };
+
+        window.closeAgModal = function() {
+            const modal = document.getElementById('ag-live-modal');
+            if (modal) modal.classList.remove('open');
+        };
+    })();
+    </script>
 
 </body>
 </html>
