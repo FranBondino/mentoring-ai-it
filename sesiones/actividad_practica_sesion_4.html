@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Práctico Sesión 4: FinOps, Evals & Entrevistas | Anabela Hotian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08070d;
+            --card: #12101f;
+            --border: rgba(245, 158, 11, 0.25);
+            --amber: #f59e0b;
+            --green: #10b981;
+            --blue: #3b82f6;
+            --purple: #8b5cf6;
+            --red: #ef4444;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+            background-image: radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.12), transparent 45%),
+                              radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.12), transparent 45%);
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 7, 13, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .topbar a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.2s;
+        }
+        .topbar a:hover {
+            border-color: var(--amber);
+            color: var(--amber);
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.75rem;
+        }
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 0.5rem;
+        }
+        .hero p { color: #cbd5e1; font-size: 0.95rem; }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .card h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.18rem;
+            margin-bottom: 0.4rem;
+            color: var(--amber);
+        }
+        .control-group {
+            margin-bottom: 1rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .control-group label {
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #e2e8f0;
+        }
+        .control-group select {
+            width: 100%;
+            background: #08070d;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 0.55rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--amber), #d97706);
+            color: #08070d;
+            font-weight: 800;
+            border: none;
+            padding: 0.65rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+        .btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
+        .scenario-btn {
+            width: 100%;
+            text-align: left;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 0.6rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+        .scenario-btn:hover { border-color: var(--amber); background: rgba(245, 158, 11, 0.1); }
+        .console-out {
+            background: #050409;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            min-height: 220px;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <a href="../index.html">⬅ Portal Principal</a>
+            <a href="./slides_sesion_4.html">▶ Volver a Slides S4</a>
+            <a href="./glosario_completo_sesion_4.html">📖 Glosario S4</a>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--amber);">SESIÓN 04 · LABORATORIO FINOPS, EVALS & ENTREVISTAS</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>🧪 Simulador Ejecutivo S4: Tablero FinOps, Evals &amp; Defensa de Producto</h1>
+            <p>Configurá los 4 controles ejecutivos de tu producto de IA a la izquierda (o hacé clic en <strong>"✨ Cargar Configuración Ideal PM Senior"</strong>) y ponelos a prueba contra los 3 desafíos de entrevista a la derecha.</p>
+        </section>
+
+        <div class="grid-2">
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+                    <h2>1. Configuración de FinOps, Privacidad y Calidad</h2>
+                    <button type="button" class="btn" onclick="loadIdealS4()">✨ Cargar Configuración Ideal PM Senior</button>
+                </div>
+
+                <div class="control-group">
+                    <label>💰 1. Optimización de Costos de Tokens (FinOps):</label>
+                    <select id="cfg-finops">
+                        <option value="bad">Sin Caché + Modelo Grande para todo ($5.00/M en cada turno)</option>
+                        <option value="good">Prompt Caching Activo (-80% dto) + Model Routing + Max Iterations = 5</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>⚡ 2. Arquitectura de Velocidad y Latencia (UX):</label>
+                    <select id="cfg-latency">
+                        <option value="bad">Sin Streaming + Llamadas a APIs en fila (Espera de 12.0s)</option>
+                        <option value="good">Token Streaming + Parallel Tool Calling + KV Cache (TTFT 0.9s)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>🛡️ 3. Blindaje de Privacidad y Contratos bajo NDA:</label>
+                    <select id="cfg-privacy">
+                        <option value="bad">Envío directo de texto crudo con nombres y tarifas a la API</option>
+                        <option value="good">Proxy Sanitizador de PII en API Gateway + Enterprise Zero-Retention + RBAC</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>📊 4. Auditoría de Calidad (AI Evals &amp; Langfuse):</label>
+                    <select id="cfg-evals">
+                        <option value="bad">Probar 5 preguntas a ojo sin métricas ni trazas</option>
+                        <option value="good">Golden Dataset (100 casos) + Tríada RAG (Fidelidad >= 0.80) + Langfuse</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>2. Probá tu Arquitectura ante 3 Crisis de Entrevista</h2>
+                <p style="font-size:0.84rem; color:var(--muted); margin-bottom:0.85rem;">Hacé clic en cada escenario para simular qué ocurre en producción y qué nota obtenés en la entrevista:</p>
+
+                <button type="button" class="scenario-btn" onclick="runS4Scenario(1)">
+                    <strong>🔥 Crisis 1 (Finanzas):</strong> Pico de 10.000 consultas con glosarios de 8.000 tokens y una API caída.
+                </button>
+                <button type="button" class="scenario-btn" onclick="runS4Scenario(2)">
+                    <strong>⏱️ Crisis 2 (Latencia y Alucinación):</strong> Un PM consulta el estado de 3 sistemas y el bot intenta inventar una fecha de QA.
+                </button>
+                <button type="button" class="scenario-btn" onclick="runS4Scenario(3)">
+                    <strong>🔒 Crisis 3 (Seguridad Legal):</strong> Un empleado pega un contrato con el nombre "Banco Global" y una tarifa secreta de $48.500 USD.
+                </button>
+
+                <div class="console-out" id="s4-console">Seleccioná tu configuración a la izquierda y tocá una de las 3 crisis arriba para ver el resultado...</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function loadIdealS4() {
+            document.getElementById('cfg-finops').value = 'good';
+            document.getElementById('cfg-latency').value = 'good';
+            document.getElementById('cfg-privacy').value = 'good';
+            document.getElementById('cfg-evals').value = 'good';
+            const out = document.getElementById('s4-console');
+            out.style.color = '#6ee7b7';
+            out.textContent = "✅ CONFIGURACIÓN IDEAL DE PM SENIOR CARGADA:\n• FinOps: Prompt Caching (-80%) + Model Routing + Max Iterations = 5\n• Velocidad: Token Streaming + Parallel Tool Calling (TTFT < 1s)\n• Privacidad: Proxy PII Masking + Zero-Data Retention + RBAC\n• Calidad: Tríada RAG (Fidelidad >= 0.80) + Observabilidad en Langfuse\n\n👉 Ahora hacé clic en cualquiera de las 3 crisis arriba para probarla.";
+        }
+
+        function runS4Scenario(num) {
+            const finops = document.getElementById('cfg-finops').value;
+            const latency = document.getElementById('cfg-latency').value;
+            const privacy = document.getElementById('cfg-privacy').value;
+            const evals = document.getElementById('cfg-evals').value;
+            const out = document.getElementById('s4-console');
+
+            if (num === 1) {
+                if (finops === 'good') {
+                    out.style.color = '#a7f3d0';
+                    out.textContent = "✅ CRISIS 1 SUPERADA (CONTROL FINANCIERO):\n1. [Langfuse Trace]: Se detecta caída 502 en API externa; el cortafuegos Max Iterations = 5 frena el bucle al 5to intento.\n2. [Prompt Caching]: Los 8.000 tokens fijos del glosario se leen de memoria caché con 80% de descuento ($1.25/M en vez de $5.00/M).\n3. [Model Routing]: Las consultas simples se resuelven con el modelo liviano.\n💰 RESULTADO: Factura mensual controlada en $137.50 USD (Ahorro > 85%).";
+                } else {
+                    out.style.color = '#fca5a5';
+                    out.textContent = "❌ CRISIS 1 FALLIDA (PRESUPUESTO FUNDIDO):\n• Sin Prompt Caching pagaste el 100% de los 8.000 tokens del glosario en cada turno.\n• Sin Max Iterations, el agente entró en Loop Infinito toda la noche.\n💸 RESULTADO: Factura de $4.800 USD en una semana. (Tocá '✨ Cargar Configuración Ideal PM Senior' y volvé a probar).";
+                }
+            } else if (num === 2) {
+                if (latency === 'good' && evals === 'good') {
+                    out.style.color = '#a7f3d0';
+                    out.textContent = "✅ CRISIS 2 SUPERADA (VELOCIDAD + CALIDAD EVALS):\n1. [Parallel Tool Calling]: El agente consulta Jira, Pinecone y ERP en simultáneo.\n2. [Token Streaming]: El usuario empieza a leer la primera palabra en 0.9 segundos.\n3. [AI Evals · Tríada RAG]: El juez LLM detecta que la frase 'mañana se aprueba sin QA' tiene Fidelidad = 0.20 (< 0.80) y bloquea la alucinación antes de que llegue a producción.";
+                } else {
+                    out.style.color = '#fca5a5';
+                    out.textContent = "❌ CRISIS 2 FALLIDA (LENTITUD Y ALUCINACIÓN):\n• Sin Streaming ni llamadas en paralelo, la pantalla quedó en blanco 12 segundos.\n• Sin AI Evals (Fidelidad >= 0.80), el bot le prometió al usuario una fecha de lanzamiento inventada. (Activá la Configuración Ideal y reintentá).";
+                }
+            } else if (num === 3) {
+                if (privacy === 'good') {
+                    out.style.color = '#a7f3d0';
+                    out.textContent = "✅ CRISIS 3 SUPERADA (BLINDAJE LEGAL & PII):\n1. [API Gateway PII Proxy]: Intercepta el mensaje y reemplaza 'Banco Global' por [CLIENTE_NDA_01] y '$48.500 USD' por [MONTO_PROTEGIDO].\n2. [Enterprise SLA]: Llamada procesada bajo contrato Zero-Data Retention (prohibido entrenar con datos de la empresa).\n3. [RBAC]: Verificado el permiso del rol del usuario en la Base Vectorial.";
+                } else {
+                    out.style.color = '#fca5a5';
+                    out.textContent = "❌ CRISIS 3 FALLIDA (DATA LEAKAGE):\n• El nombre real del cliente bajo NDA y la tarifa confidencial de $48.500 USD viajaron en texto plano a servidores externos sin filtro PII. (Activá la Configuración Ideal y reintentá).";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

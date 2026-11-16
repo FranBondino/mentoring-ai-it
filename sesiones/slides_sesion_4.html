@@ -165,6 +165,59 @@
             font-weight: 400;
         }
 
+        
+        .simple-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(245, 158, 11, 0.38);
+            border-left: 4px solid var(--color-amber);
+            border-radius: 12px;
+            padding: 0.58rem 1.05rem;
+            margin-bottom: 0.95rem;
+            max-width: 1100px;
+            width: 100%;
+            font-size: 0.84rem;
+            color: #e2e8f0;
+            line-height: 1.45;
+            text-align: left;
+        }
+        .simple-banner strong {
+            color: #fbbf24;
+        }
+        .slide-subtitle {
+            margin-bottom: 0.85rem !important;
+        }
+        .roleplay-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.65rem;
+        }
+        .roleplay-opt-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            color: #e2e8f0;
+            font-size: 0.78rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1.35;
+        }
+        .roleplay-opt-btn:hover {
+            background: rgba(245, 158, 11, 0.12);
+            border-color: var(--color-amber);
+            color: #ffffff;
+        }
+        .roleplay-opt-btn.opt-wrong {
+            border-color: var(--color-red);
+            background: rgba(239, 68, 68, 0.12);
+        }
+        .roleplay-opt-btn.opt-right {
+            border-color: var(--color-green);
+            background: rgba(16, 185, 129, 0.14);
+        }
+
         /* GLASS CARD COMMON */
         .glass-card {
             background: var(--bg-card);
@@ -466,13 +519,13 @@
 
         <!-- SLIDE 1: COVER -->
         <div class="slide active" id="slide-1">
-            <div class="glass-card text-center" style="max-width: 800px; padding: 3.5rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 1.5rem;">SESIÓN 4 · FINAL</span>
-                <h1 class="slide-title" style="font-size: 3.5rem; line-height: 1.05; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 40%, var(--color-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Finanzas de la IA,<br>Evals &amp; Entrevistas
+            <div class="glass-card text-center" style="max-width: 860px; padding: 3rem 3.2rem;">
+                <span class="nav-session" style="display: inline-block; margin-bottom: 1.2rem;">SESIÓN 4 · CIERRE EJECUTIVO</span>
+                <h1 class="slide-title" style="font-size: 3.2rem; line-height: 1.08; margin-bottom: 1.2rem; background: linear-gradient(135deg, #ffffff 40%, var(--color-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Finanzas de la IA (FinOps),<br>Auditoría Evals &amp; Entrevistas IT
                 </h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin: 0 auto 2.5rem;">
-                    Dominá los números de infraestructura de LLMs, diseñá suites de evaluación para software probabilístico y preparate para entrevistas clave de IT.
+                <p style="font-size: 1.08rem; color: var(--text-secondary); line-height: 1.6; max-width: 680px; margin: 0 auto 1.8rem;">
+                    Cómo presupuestar proyectos de IA y calcular su ROI, proteger datos confidenciales bajo NDA, medir la calidad con Langfuse y brillar en entrevistas de Product / Project Management.
                 </p>
                 <div class="divider-accent" style="width: 120px; height: 6px; background: var(--color-amber); border-radius: 3px; margin: 0 auto;"></div>
             </div>
@@ -480,57 +533,63 @@
 
         <!-- SLIDE 2: AGENDA -->
         <div class="slide" id="slide-2">
-            <h2 class="slide-title">Agenda Operativa de la Sesión</h2>
-            <p class="slide-subtitle">Un resumen de los hitos y conceptos clave que abordaremos hoy para cerrar tu perfil de PM de IA.</p>
+            <h2 class="slide-title">Agenda Operativa de la Sesión 4</h2>
+            <p class="slide-subtitle">Los 3 pilares ejecutivos para liderar productos de IA y defender tus decisiones en entrevistas técnicas</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En las Sesiones 1 a 3 aprendiste <em>cómo se construye</em> el sistema (APIs, RAG y Agentes). Hoy aprendés las 3 cosas que te pregunta cualquier Directorio o entrevistador: <strong>1) ¿Cuánto cuesta y cuánto ahorra?</strong>, <strong>2) ¿Es seguro y confiable?</strong>, y <strong>3) ¿Cómo resolvés una crisis en vivo?</strong>
+            </div>
             
             <div class="grid-3">
-                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.15);">
-                    <div style="font-size: 1.8rem; margin-bottom: 0.8rem; color: var(--color-amber);"><i data-lucide="line-chart" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">1. AI Economics</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Costos por token, Prompt Caching en interfaces complejas y el balance financiero entre RAG y Fine-Tuning.</p>
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.25);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-amber);"><i data-lucide="line-chart" class="icon-lg"></i></div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">1. Finanzas de la IA (FinOps)</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Costos reales por millón de tokens (Input vs. Output y el impacto del idioma español), ahorro del 90% con <strong>Prompt Caching</strong>, cuadro financiero RAG vs. Fine-Tuning y <strong>Calculadora de ROI</strong>.</p>
                 </div>
                 
-                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.15);">
-                    <div style="font-size: 1.8rem; margin-bottom: 0.8rem; color: var(--color-blue);"><i data-lucide="shield-check" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">2. Gobernanza &amp; Calidad</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Prevención de Data Leakage, suites de evaluación semántica (Evals) y dashboards de observabilidad (Langfuse).</p>
+                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.25);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-blue);"><i data-lucide="shield-check" class="icon-lg"></i></div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">2. Privacidad, Evals &amp; Langfuse</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Protección de datos bajo NDA (<strong>PII Masking</strong>), evaluación automática de calidad con la <strong>Tríada RAG (AI Evals)</strong> y radiografía de tiempos y costos en <strong>Langfuse</strong>.</p>
                 </div>
                 
-                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.15);">
-                    <div style="font-size: 1.8rem; margin-bottom: 0.8rem; color: var(--color-purple);"><i data-lucide="user-check" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem;">3. Simulación de Rol</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Roleplay interactivo para responder y argumentar desvíos de presupuesto, problemas de latencia y protección de PI.</p>
+                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.25);">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-purple);"><i data-lucide="user-check" class="icon-lg"></i></div>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">3. Simulacro de Entrevistas IT</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">La fórmula de 3 pasos para responder preguntas técnicas sin ser programadora, entrenada en vivo con <strong>3 crisis reales</strong> (Presupuesto, Latencia de 12s y Fuga de Datos).</p>
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 3: AI ECONOMICS -->
         <div class="slide" id="slide-3">
-            <h2 class="slide-title">AI Economics: La Variable GPU</h2>
-            <p class="slide-subtitle">Por qué desarrollar software de IA no es gratis y cómo se estructura la facturación de tokens.</p>
+            <h2 class="slide-title">AI Economics: Cómo se Cobra la IA (Tokens &amp; GPU)</h2>
+            <p class="slide-subtitle">Por qué el costo de la IA es variable como un taxímetro y por qué el idioma español influye en el presupuesto</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En el software clásico alquilás un servidor por un monto fijo al mes. En IA pagás por cada <strong>Token</strong> (sílaba) procesado en placas de video (GPU): <strong>lo que la IA escribe (Output) cuesta 3 a 4 veces más caro que lo que lee (Input)</strong>, y el español gasta ~25% más de tokens que el inglés.
+            </div>
             
             <div class="grid-2">
                 <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: var(--color-amber); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="coins"></i> Costo Unitario de Inferencia
+                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-amber); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="coins"></i> Asimetría de Costos: Leer vs. Escribir
                     </h3>
-                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        A diferencia del código clásico ejecutado localmente, cada llamada a la API de OpenAI o Anthropic factura por <strong>tokens</strong> (sub-palabras).
+                    <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
+                        Cada llamada a OpenAI, Anthropic o <strong>AWS Bedrock</strong> se factura por millón de tokens procesados:
                     </p>
-                    <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <li><strong>Input Tokens (Prompt)</strong>: Las instrucciones de sistema, datos recuperados por RAG e inputs del usuario.</li>
-                        <li><strong>Output Tokens (Response)</strong>: Las palabras generadas por el modelo. Suelen costar entre 3 y 4 veces más debido a la memoria de autoregresión de la GPU.</li>
+                    <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.48; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.55rem;">
+                        <li><strong style="color: #60a5fa;">Input Tokens (Lectura · Más barato):</strong> Las instrucciones del sistema, los fragmentos del manual traídos por RAG y la pregunta del usuario. Se procesan todos juntos en paralelo.</li>
+                        <li><strong style="color: #f87171;">Output Tokens (Escritura · 3x a 4x más caro):</strong> La respuesta que redacta el modelo palabra por palabra. Como requiere mucha más memoria de GPU, pedimos siempre respuestas concisas o JSON cortos.</li>
                     </ul>
                 </div>
                 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1.2rem; border-radius: 10px; text-align: center; margin-bottom: 1rem;">
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 1px; margin-bottom: 0.3rem;">REGLA MÉTRICA PM</p>
-                        <p style="font-size: 1.6rem; font-weight: 800; font-family: monospace;">1k Tokens ≈ 750 Palabras</p>
-                        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">En español, requiere un 20% a 30% más de tokens por término debido a raíces gramaticales complejas.</p>
+                    <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); padding: 1.1rem; border-radius: 10px; text-align: center; margin-bottom: 0.9rem;">
+                        <p style="font-size: 0.74rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 1px; margin-bottom: 0.25rem;">REGLA DE PRESUPUESTO EN LOCALIZACIÓN</p>
+                        <p style="font-size: 1.45rem; font-weight: 800; font-family: monospace; color: #ffffff;">1.000 Tokens ≈ 750 Palabras (EN)</p>
+                        <p style="font-size: 0.8rem; color: #fde68a; margin-top: 0.3rem;">⚠️ En <strong>Español o Portugués</strong>, el mismo texto consume entre <strong>20% y 30% más de tokens</strong> (~580 palabras por cada 1.000 tokens) por las conjugaciones y tildes.</p>
                     </div>
-                    <div style="background: rgba(245, 158, 11, 0.05); border-left: 4px solid var(--color-amber); padding: 0.8rem; border-radius: 4px; font-size: 0.82rem; line-height: 1.45;">
-                        <strong>Perspectiva PM:</strong> Un prompt mal optimizado o con datos irrelevantes inyectados duplica directamente el costo operativo unitario (COGS) de tu aplicación de IA.
+                    <div style="background: rgba(245, 158, 11, 0.07); border-left: 4px solid var(--color-amber); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; line-height: 1.42;">
+                        <strong>Tip para entrevistas:</strong> Mencionar esta diferencia de tokens entre inglés y español demuestra que combinás tu experiencia lingüística con visión financiera de IA (FinOps).
                     </div>
                 </div>
             </div>
@@ -538,44 +597,48 @@
 
         <!-- SLIDE 4: PROMPT CACHING -->
         <div class="slide" id="slide-4">
-            <h2 class="slide-title">Prompt Caching: El Súper Ahorro</h2>
-            <p class="slide-subtitle">Cómo evitar calcular tokens repetitivos turno tras turno, bajando costos hasta en un 90%.</p>
+            <h2 class="slide-title">Prompt Caching: Hasta 90% de Ahorro</h2>
+            <p class="slide-subtitle">Cómo dejar guardadas en memoria rápida las instrucciones fijas y glosarios para no pagarlos de nuevo en cada consulta</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En un chatbot o validador de traducciones, el 80% del prompt es siempre igual (las reglas del rol y el glosario oficial). Si ponés <strong>toda esa parte fija bien arriba al principio del prompt</strong>, el proveedor la guarda en memoria caché y te hace entre un <strong>75% y 90% de descuento</strong>.
+            </div>
             
             <div class="grid-2">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: var(--color-blue); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="database"></i> ¿Cómo funciona el Caching?
+                        <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-blue); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="database"></i> ¿Cómo se ordena el Prompt para activar el Caché?
                         </h3>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                            El API de inferencia guarda el estado matemático (KV Cache) de los tokens fijos del System Prompt o de manuales extensos inyectados por RAG en la memoria RAM de la GPU.
+                        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
+                            Para que la memoria caché funcione, el inicio del prompt debe ser 100% idéntico entre consulta y consulta:
                         </p>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-                            En turnos de chat sucesivos, el modelo lee la caché de inmediato sin volver a procesar los tokens fijos, cobrándote solo una fracción mínima de la tarifa normal.
-                        </p>
+                        <div style="font-family: monospace; font-size: 0.76rem; background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.07); line-height: 1.5;">
+                            <div style="color: #34d399;">1. [ARRIBA · FIJO · EN CACHÉ -80% DTO]: Rol del sistema + Guía de Estilo + Glosario corporativo (8.000 tokens).</div>
+                            <div style="color: #fbbf24; margin-top: 0.35rem;">2. [ABAJO · VARIABLE · TARIFA NORMAL]: Pregunta puntual del usuario o párrafo nuevo a revisar (500 tokens).</div>
+                        </div>
                     </div>
                     
-                    <div style="background: rgba(59, 130, 246, 0.05); border-left: 4px solid var(--color-blue); padding: 0.8rem; border-radius: 4px; font-size: 0.82rem; margin-top: 1rem;">
-                        <strong>Aceleración:</strong> Además de ahorrar dinero, baja radicalmente el <strong>Time to First Token (TTFT)</strong>, ya que el modelo empieza a escupir palabras casi al instante.
+                    <div style="background: rgba(59, 130, 246, 0.07); border-left: 4px solid var(--color-blue); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-top: 0.8rem;">
+                        <strong>Doble beneficio (Plata + Velocidad):</strong> Además de reducir la factura mensual, baja a menos de la mitad el tiempo de espera del primer token (<strong>TTFT</strong>).
                     </div>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <div style="text-align: center; width: 100%;">
-                        <span class="nav-session" style="background: rgba(16, 185, 129, 0.15); color: var(--color-green); border-color: rgba(16, 185, 129, 0.3); margin-bottom: 1.2rem; display: inline-block;">CALIBRACIÓN DE CACHÉ</span>
-                        <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 1rem;">
+                        <span class="nav-session" style="background: rgba(16, 185, 129, 0.15); color: var(--color-green); border-color: rgba(16, 185, 129, 0.3); margin-bottom: 1rem; display: inline-block;">IMPACTO EN FACTURA DE ENTRADA</span>
+                        <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 0.6rem;">
                             <div style="text-align: center;">
-                                <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-red); font-family: monospace;">$5.00</div>
-                                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">Por 1M Tokens Entrada<br>(Normal)</div>
+                                <div style="font-size: 1.55rem; font-weight: 800; color: var(--color-red); font-family: monospace;">$5.00 USD</div>
+                                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Por cada 1M de Tokens<br>(Sin Prompt Caching)</div>
                             </div>
-                            <div style="border-right: 1px dashed rgba(255,255,255,0.1); height: 50px;"></div>
+                            <div style="border-right: 1px dashed rgba(255,255,255,0.12); height: 52px;"></div>
                             <div style="text-align: center;">
-                                <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-green); font-family: monospace;">$1.25</div>
-                                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">Por 1M Tokens Entrada<br>(Con Caché)</div>
+                                <div style="font-size: 1.55rem; font-weight: 800; color: var(--color-green); font-family: monospace;">$0.50 – $1.25</div>
+                                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Por cada 1M de Tokens<br>(Con Prompt Caching Activo)</div>
                             </div>
                         </div>
-                        <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 8px; font-size: 0.78rem; text-align: left; line-height: 1.4; margin-top: 1.5rem; color: var(--text-secondary);">
-                            • <strong>Umbral de Activación:</strong> Suele requerir bloques mínimos de 1024 a 2048 tokens estáticos para disparar la activación del caché en el servidor.
+                        <div style="background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.06); padding: 0.85rem; border-radius: 8px; font-size: 0.78rem; text-align: left; line-height: 1.42; margin-top: 1.15rem; color: var(--text-secondary);">
+                            • <strong>Requisito técnico para el PRD:</strong> Se activa automáticamente en bloques fijos mayores a <strong>1.024 tokens</strong> (unas 750 palabras) en OpenAI, Anthropic Claude y AWS Bedrock.
                         </div>
                     </div>
                 </div>
@@ -584,107 +647,116 @@
 
         <!-- SLIDE 5: RAG VS FINE-TUNING -->
         <div class="slide" id="slide-5">
-            <h2 class="slide-title">RAG vs. Fine-Tuning: Costos de Negocio</h2>
-            <p class="slide-subtitle">El balance financiero y de mantenimiento que tenés que justificar al proponer soluciones.</p>
+            <h2 class="slide-title">RAG vs. Fine-Tuning: La Decisión Financiera</h2>
+            <p class="slide-subtitle">Cómo justificar ante dirección por qué el 95% de los productos corporativos empiezan con RAG y no re-entrenando modelos</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> <strong>RAG</strong> es darle al asistente acceso en vivo al Google Drive actualizado todos los días (económico, instantáneo y cita la página exacta). <strong>Fine-Tuning</strong> es mandarlo a hacer un posgrado carísimo de semanas: sirve para enseñarle un *estilo o formato*, pero queda desactualizado apenas cambia un manual.
+            </div>
             
-            <div class="glass-card" style="max-width: 900px; padding: 2rem;">
+            <div class="glass-card" style="max-width: 980px; padding: 1.5rem 2rem;">
                 <table class="comp-table">
                     <thead>
                         <tr>
-                            <th>Dimensión</th>
-                            <th>RAG (Vector Database)</th>
-                            <th>Fine-Tuning (Ajuste Fino)</th>
+                            <th>Criterio de Negocio</th>
+                            <th>RAG (Búsqueda en Base Vectorial)</th>
+                            <th>Fine-Tuning (Re-entrenar el Modelo)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Costo de Configuración</td>
-                            <td>Bajo (Conector de datos, chunker y carga a base vectorial).</td>
-                            <td>Alto (Requiere preparar miles de pares pregunta-respuesta).</td>
+                            <td style="font-weight: 700; color: #ffffff;">Costo Inicial y Tiempo</td>
+                            <td style="color: #a7f3d0;"><strong>Bajo (Días):</strong> Fragmentar documentos (Chunking) y cargarlos en Pinecone.</td>
+                            <td style="color: #fca5a5;"><strong>Alto (Semanas + GPUs caras):</strong> Limpiar y curar miles de ejemplos perfectos.</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Actualización de Datos</td>
-                            <td>Instantáneo y sin costo (Añadir o remover un PDF).</td>
-                            <td>Muy costoso (Requiere volver a entrenar el dataset completo).</td>
+                            <td style="font-weight: 700; color: #ffffff;">Actualizar un Glosario o Regla</td>
+                            <td style="color: #a7f3d0;"><strong>Instantáneo y centavos:</strong> Subís el PDF nuevo y en 5 segundos ya está activo.</td>
+                            <td style="color: #fca5a5;"><strong>Muy costoso:</strong> Hay que volver a entrenar una versión nueva del modelo.</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Alucinaciones</td>
-                            <td>Bajo (Ancla su respuesta a fragmentos reales citables).</td>
-                            <td>Medio-Alto (No previene que invente datos lógicos ausentes).</td>
+                            <td style="font-weight: 700; color: #ffffff;">Control de Alucinaciones y Citas</td>
+                            <td style="color: #a7f3d0;"><strong>Alto:</strong> Podés exigirle citar documento y página oficial; si no está, frena.</td>
+                            <td style="color: #fca5a5;"><strong>Bajo:</strong> No puede citar fuentes ni recordar datos que cambian día a día.</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Foco de Negocio</td>
-                            <td style="color: var(--color-green); font-weight: 600;">Enseñar QUÉ decir (Datos actualizados).</td>
-                            <td style="color: var(--color-purple); font-weight: 600;">Enseñar CÓMO hablar (Tono y formato).</td>
+                            <td style="font-weight: 700; color: #ffffff;">¿Para qué se usa cada uno?</td>
+                            <td style="color: var(--color-green); font-weight: 700;">Enseñar QUÉ responder (Manuales, glosarios, estado de proyectos).</td>
+                            <td style="color: var(--color-purple); font-weight: 700;">Enseñar CÓMO hablar (Tono de marca específico o estructura JSON).</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="background: rgba(255,255,255,0.01); border-left: 4px solid var(--color-amber); padding: 0.8rem; border-radius: 4px; font-size: 0.78rem; line-height: 1.4; margin-top: 1.5rem; color: var(--text-secondary);">
-                    <strong>Regla de Decisión PM:</strong> Casi siempre empezá con RAG. Solo pasá a Fine-Tuning si necesitás obligar al modelo a responder con un formato JSON milimétrico que no tolera fallas sintácticas de API.
+                <div style="background: rgba(245, 158, 11, 0.08); border-left: 4px solid var(--color-amber); padding: 0.7rem 0.9rem; border-radius: 4px; font-size: 0.79rem; line-height: 1.4; margin-top: 1rem; color: #f8fafc;">
+                    <strong>Regla ejecutiva de PM:</strong> Empezá siempre con <strong>RAG + Prompt Caching</strong>. Solo invertí en Fine-Tuning en una etapa madura si necesitás que un modelo pequeño y barato imite un estilo de traducción ultra-específico.
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 6: INTERACTIVE ROI CALCULATOR (EXERCISE 1) -->
         <div class="slide" id="slide-6">
-            <h2 class="slide-title">Ejercicio 1: Calculadora de ROI (Automatización con IA)</h2>
-            <p class="slide-subtitle">Arrastrá los selectores para simular el volumen mensual y costo laboral y calculá el ahorro neto de la IA.</p>
+            <h2 class="slide-title">Ejercicio 1: Calculadora Interactiva de ROI</h2>
+            <p class="slide-subtitle">Mové los 3 deslizadores para calcular cuánto ahorra automatizar la primera revisión de documentos / tickets con IA + supervisión humana</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Así justificás un proyecto ante Finanzas: comparás el <strong>costo de hacer el 100% del trabajo a mano</strong> contra el <strong>costo de que la IA haga la primera pasada por centavos</strong> y un especialista humano revise los casos clave (<em>Human-in-the-Loop</em>).
+            </div>
             
             <div class="grid-2">
-                <!-- Left: Controls -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- Left: 3 Controls -->
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.6rem;">
                     <div>
-                        <div class="calculator-row">
-                            <span class="calculator-label">Documentos / Tickets Procesados al Mes</span>
-                            <span class="calculator-value" id="calc-volume-val">10,000</span>
+                        <div class="calculator-row" style="margin-bottom: 0.35rem;">
+                            <span class="calculator-label">1. Documentos / Tickets al Mes</span>
+                            <span class="calculator-value" id="calc-volume-val">5.000</span>
                         </div>
-                        <input type="range" min="1000" max="30000" step="1000" value="10000" class="calculator-slider" id="calc-volume" oninput="calculateROI()">
-                        
-                        <div class="calculator-row">
-                            <span class="calculator-label">Costo Hora Analista (USD)</span>
-                            <span class="calculator-value" id="calc-hourly-val">$15</span>
-                        </div>
-                        <input type="range" min="8" max="40" step="1" value="15" class="calculator-slider" id="calc-hourly" oninput="calculateROI()">
+                        <input type="range" min="500" max="20000" step="500" value="5000" class="calculator-slider" id="calc-volume" oninput="calculateROI()" style="margin-bottom: 0.85rem;">
 
-                        <div style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04);">
-                            • <strong>Supuestos del Modelo de Costo IA:</strong><br>
-                            10k Tokens Entrada por Contrato (2k completos, 8k cacheados con 80% dto) + 500 Tokens de Salida.
+                        <div class="calculator-row" style="margin-bottom: 0.35rem;">
+                            <span class="calculator-label">2. Minutos Humanos por Documento</span>
+                            <span class="calculator-value" id="calc-mins-val">15 min</span>
+                        </div>
+                        <input type="range" min="5" max="30" step="5" value="15" class="calculator-slider" id="calc-mins" oninput="calculateROI()" style="margin-bottom: 0.85rem;">
+                        
+                        <div class="calculator-row" style="margin-bottom: 0.35rem;">
+                            <span class="calculator-label">3. Costo Hora Profesional (USD)</span>
+                            <span class="calculator-value" id="calc-hourly-val">$20 / h</span>
+                        </div>
+                        <input type="range" min="10" max="45" step="1" value="20" class="calculator-slider" id="calc-hourly" oninput="calculateROI()" style="margin-bottom: 0.85rem;">
+
+                        <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.42; background: rgba(0,0,0,0.28); padding: 0.65rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            • <strong>Consumo de IA por documento:</strong> 8.000 tokens de glosario en caché ($1.25/M) + 2.000 tokens nuevos ($5/M) + 500 tokens de respuesta ($15/M) = <strong>$0.0275 USD por documento</strong>.
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Calculations & Ahorro -->
-                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--color-green); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="activity"></i> Comparativa de Costos Mensuales
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.35); padding: 1.25rem 1.6rem;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-green); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="activity"></i> Caso de Negocio Mensual (FinOps)
                     </h3>
                     
-                    <div class="results-box">
+                    <div class="results-box" style="margin-top: 0.5rem; padding: 1rem;">
                         <div class="results-row">
-                            <span>Factura API IA sin Caching:</span>
+                            <span>Costo 100% Manual Humano:</span>
+                            <span id="cost-human" style="font-weight: 700; color: #ffffff; font-family: monospace;">$0.00</span>
+                        </div>
+                        <div class="results-row" style="font-size: 0.78rem; color: var(--text-secondary);">
+                            <span>Tiempo humano requerido (Sin IA):</span>
+                            <span id="hours-needed" style="font-family: monospace;">0 hs (0.0 personas FTE)</span>
+                        </div>
+                        <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.45rem; margin-top: 0.45rem;">
+                            <span>Factura API IA (Sin Prompt Caching):</span>
                             <span id="cost-no-cache" style="color: var(--color-red); font-family: monospace;">$0.00</span>
                         </div>
                         <div class="results-row">
-                            <span style="font-weight: 600; color: var(--color-green);">Factura API IA con Caching (Factible):</span>
+                            <span style="font-weight: 600; color: var(--color-green);">Factura API IA (Con Prompt Caching):</span>
                             <span id="cost-cache" style="font-weight: 700; color: var(--color-green); font-family: monospace;">$0.00</span>
                         </div>
-                        <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem; margin-top: 0.5rem;">
-                            <span>Costo Auditoría Manual Humana:</span>
-                            <span id="cost-human" style="font-family: monospace;">$0.00</span>
-                        </div>
-                        
-                        <div class="results-row" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem;">
-                            <span>Horas de Analista requeridas:</span>
-                            <span id="hours-needed" style="font-family: monospace;">0 hrs</span>
-                        </div>
-                        
-                        <div class="results-row" style="font-size: 0.8rem; color: var(--text-secondary);">
-                            <span>Personal Equivalente (FTEs):</span>
-                            <span id="ftes-needed" style="font-family: monospace;">0.0</span>
+                        <div class="results-row" style="font-size: 0.78rem; color: #93c5fd;">
+                            <span>Supervisión Humana HITL (20% del tiempo):</span>
+                            <span id="cost-hitl" style="font-family: monospace;">$0.00</span>
                         </div>
 
                         <div class="results-row total">
-                            <span>Ahorro Mensual Neto:</span>
+                            <span>Ahorro Neto Mensual (IA + HITL):</span>
                             <span id="roi-savings" style="font-family: monospace;">$0.00</span>
                         </div>
                     </div>
@@ -694,31 +766,34 @@
 
         <!-- SLIDE 7: SEGURIDAD Y DATA LEAKAGE -->
         <div class="slide" id="slide-7">
-            <h2 class="slide-title">Seguridad Corporativa: Fuga de Datos</h2>
-            <p class="slide-subtitle">Cómo blindar los datos comerciales sensibles de la empresa para evitar filtraciones indeseadas.</p>
+            <h2 class="slide-title">Seguridad Corporativa: Prevención de Fuga de Datos</h2>
+            <p class="slide-subtitle">Las 3 barreras para que ningún empleado ni agente filtre datos personales (PII) o contratos bajo NDA</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Antes de mandar cualquier consulta a OpenAI o Anthropic, ponemos un filtro que reemplaza nombres reales, mails y tarifas secretas por etiquetas como <code>[CLIENTE_CONFIDENCIAL]</code> (<strong>Sanitización de PII</strong>) y exigimos un contrato <strong>Enterprise Zero-Retention</strong> (prohibido guardar o entrenar con nuestros datos).
+            </div>
             
             <div class="grid-2">
                 <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: var(--color-red); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="shield-alert"></i> Riesgo de Data Leakage
+                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-red); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="shield-alert"></i> ¿Qué es el Riesgo de Data Leakage?
                     </h3>
-                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        Si los operarios o el propio agente inyectan información sensible (tarifas confidenciales, contratos de clientes, datos personales PII) en llamadas a APIs de LLM externas.
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem;">
+                        Ocurre cuando un empleado o un agente envía información sensible (nombres de clientes, DNI/emails <strong>PII</strong>, tarifas confidenciales o documentos bajo <strong>NDA</strong>) a una cuenta gratuita o pública de IA.
                     </p>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-                        Los proveedores estándar pueden almacenar y usar esa información para re-entrenar sus modelos públicos, exponiendo tus datos comerciales a competidores.
+                    <p style="font-size: 0.81rem; color: #fca5a5; line-height: 1.45; background: rgba(239,68,68,0.08); padding: 0.7rem; border-radius: 8px; border: 1px solid rgba(239,68,68,0.25);">
+                        ⚠️ En las cuentas gratuitas de consumo masivo, los textos enviados pueden quedar guardados y utilizarse para entrenar futuras versiones públicas del modelo.
                     </p>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="shield"></i> Mitigaciones Corporativas
+                        <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="shield"></i> Las 3 Capas de Blindaje que exige un PM
                         </h3>
-                        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                            <li><strong>Enterprise API Contracts</strong>: Acuerdos legales con políticas de exclusión de entrenamiento (Zero Data Retention).</li>
-                            <li><strong>API Gateway Proxy</strong>: Filtros de seguridad locales que ofuscan o limpian PII (Datos Personales) o PI comercial antes de llamar al LLM externo.</li>
-                            <li><strong>Bases de Datos Vectoriales Propias</strong>: Servidas en tu nube elástica privada y protegidas con controles de acceso por inquilino.</li>
+                        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.48; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong style="color: #ffffff;">1. Proxy de Sanitización (PII Masking):</strong> Filtro en el API Gateway (o <em>AWS Bedrock Guardrails</em>) que oculta nombres, mails y montos antes de que salgan a la nube.</li>
+                            <li><strong style="color: #ffffff;">2. Contrato Enterprise con Zero-Data Retention:</strong> Garantía legal y técnica de que el proveedor borra el prompt en milisegundos y jamás entrena con tus datos.</li>
+                            <li><strong style="color: #ffffff;">3. Control de Acceso por Rol (RBAC) en la Base Vectorial:</strong> Cada usuario solo puede recuperar documentos que su cargo tiene permiso de ver.</li>
                         </ul>
                     </div>
                 </div>
@@ -727,29 +802,32 @@
 
         <!-- SLIDE 8: EVALS DE CALIDAD -->
         <div class="slide" id="slide-8">
-            <h2 class="slide-title">Suite de Evaluaciones (AI Evals)</h2>
-            <p class="slide-subtitle">El desafío de testear software no-determinista y cómo se audita científicamente la precisión semántica.</p>
+            <h2 class="slide-title">Suite de Evaluaciones (AI Evals): La Tríada RAG</h2>
+            <p class="slide-subtitle">Cómo calificar del 0 al 100% si el chatbot responde con la verdad del manual antes de lanzarlo a los usuarios</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> No alcanza con probar el bot 5 minutos a ojo. Usamos otro modelo auditor estricto (<strong>LLM-as-a-Judge</strong>) que le toma examen al bot en 3 notas (la <strong>Tríada RAG</strong>): <strong>1) ¿Inventó algo fuera del manual? (Fidelidad)</strong>, <strong>2) ¿Trajo el párrafo correcto? (Contexto)</strong> y <strong>3) ¿Respondió lo que le preguntaron? (Relevancia)</strong>.
+            </div>
             
             <div class="grid-2">
                 <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-amber); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="check-square"></i> Del Testing Manual a Evals
+                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-amber); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="check-square"></i> ¿Qué es el Golden Dataset y LLM-as-a-Judge?
                     </h3>
-                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        Chatear cinco minutos con el bot no sirve para validar calidad en producción. Al ser probabilístico, un prompt que funcionó hoy puede dar una alucinación mañana.
+                    <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.75rem;">
+                        Como PM, vos armás el <strong>Golden Dataset</strong>: una planilla con <strong>50 a 100 preguntas reales difíciles</strong> y cuál es la respuesta oficial esperada según los manuales.
                     </p>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-                        Se requiere una suite de <strong>Evals automatizadas</strong> que compare la salida del agente contra rúbricas semánticas y retorne scores de exactitud.
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.48;">
+                        Cada vez que los ingenieros cambian el prompt o el modelo, un juez automático (<strong>LLM-as-a-Judge</strong>) corre las 100 preguntas en 2 minutos y verifica que el puntaje no baje de tu umbral mínimo (ej. <strong>&ge; 0.85</strong>).
                     </p>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 0.8rem;">Métricas Semánticas de Calidad</h3>
-                        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li><strong style="color: var(--color-green);">Fidelidad (Faithfulness)</strong>: ¿La respuesta se basa estrictamente en la documentación oficial recuperada (cero alucinación)?</li>
-                            <li><strong style="color: var(--color-blue);">Relevancia de Contexto</strong>: ¿La base de datos vectorial recuperó los fragmentos exactos del módulo o glosario consultado?</li>
-                            <li><strong style="color: var(--color-purple);">Relevancia de Respuesta</strong>: ¿Resuelve directamente la consulta del usuario o analista?</li>
+                        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 0.75rem;">Las 3 Notas de la Tríada de Calidad RAG</h3>
+                        <ul style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong style="color: var(--color-green);">1. Fidelidad al Manual (Faithfulness):</strong> ¿Todo lo que afirmó el bot sale 100% del documento recuperado? Si inventó aunque sea una fecha o promesa, reprueba.</li>
+                            <li><strong style="color: var(--color-blue);">2. Precisión de Contexto (Context Precision):</strong> ¿La Base Vectorial trajo los fragmentos correctos del manual? (Si falla, ajustamos el <em>Chunking</em> o los <em>Metadatos</em>).</li>
+                            <li><strong style="color: var(--color-purple);">3. Relevancia de Respuesta (Answer Relevance):</strong> ¿Fue directo al grano y respondió la duda del usuario sin irse por las ramas?</li>
                         </ul>
                     </div>
                 </div>
@@ -758,52 +836,67 @@
 
         <!-- SLIDE 9: INTERACTIVE EVALS CHECKER (EXERCISE 2) -->
         <div class="slide" id="slide-9">
-            <h2 class="slide-title">Ejercicio 2: Rúbricas Evals en Acción</h2>
-            <p class="slide-subtitle">Audita esta respuesta del bot arrastrando los sliders y determiná si el sistema aprueba el filtro de calidad.</p>
+            <h2 class="slide-title">Ejercicio 2: Simulador de Auditoría Evals en Acción</h2>
+            <p class="slide-subtitle">Leé el documento oficial vs. la respuesta del bot a la izquierda y calificá la Fidelidad a la derecha para frenar la alucinación</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> Mirá a la izquierda la frase subrayada en rojo: el manual dice que <em>Checkout v4 está bloqueado en QA</em>, pero el bot inventó por su cuenta que <em>"mañana se aprobará sin pruebas adicionales"</em>. Bajá el deslizador de <strong>Fidelidad a 0.2</strong> (o tocá el botón de diagnóstico) para ver cómo las Evals bloquean este error.
+            </div>
             
             <div class="grid-2">
                 <!-- Left: Response to Audit -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; max-width: none;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; max-width: none; padding: 1.2rem 1.5rem;">
                     <div>
-                        <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.8rem; display: inline-block;">DATOS DE ENTRADA (Knowledge DB)</span>
-                        <div style="font-size: 0.78rem; font-family: monospace; background: rgba(0,0,0,0.3); padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.04); margin-bottom: 1rem; color: var(--text-secondary); line-height: 1.45;">
-                            [Módulo Pagos v3] Estado: Activo en Producción. Idiomas: EN, ES, PT.<br>
-                            [Módulo Checkout v4] Estado: En QA / Revisión técnica. Bloqueado para deploy.
+                        <div style="font-size: 0.78rem; color: #fde68a; margin-bottom: 0.45rem;">
+                            <strong>❓ Pregunta del Usuario:</strong> "¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?"
+                        </div>
+                        <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block; font-size: 0.72rem;">1. FRAGMENTO OFICIAL RECUPERADO (GROUND TRUTH)</span>
+                        <div style="font-size: 0.78rem; font-family: monospace; background: rgba(0,0,0,0.35); padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 0.75rem; color: #cbd5e1; line-height: 1.45;">
+                            • [Módulo Pagos v3]: Activo en Producción (Idiomas: EN, ES, PT).<br>
+                            • [Módulo Checkout v4]: EN REVISIÓN DE QA LINGÜÍSTICO. Bloqueado para despliegue hasta corregir glosario PT-BR.
                         </div>
                         
-                        <span class="nav-session" style="background: rgba(139,92,246,0.15); color: var(--color-purple); border-color: rgba(139,92,246,0.3); margin-bottom: 0.8rem; display: inline-block;">RESPUESTA DE IA EN EVALUACIÓN</span>
-                        <div style="font-size: 0.82rem; background: rgba(255,255,255,0.02); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); line-height: 1.45; color: #ffffff;">
-                            "El Módulo Pagos v3 está activo en producción (EN, ES, PT). El Módulo Checkout v4 sigue en revisión de QA y aún no debe desplegarse. Además, estimamos que mañana se aprobará sin pruebas adicionales".
+                        <span class="nav-session" style="background: rgba(139,92,246,0.15); color: var(--color-purple); border-color: rgba(139,92,246,0.3); margin-bottom: 0.45rem; display: inline-block; font-size: 0.72rem;">2. RESPUESTA GENERADA POR EL BOT (CON ALUCINACIÓN AL FINAL)</span>
+                        <div style="font-size: 0.81rem; background: rgba(255,255,255,0.03); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.48; color: #ffffff;">
+                            "El Módulo Pagos v3 está activo en producción (EN, ES, PT). El Módulo Checkout v4 sigue en revisión de QA y aún no debe desplegarse. <span style="background: rgba(239,68,68,0.22); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además, te confirmo que mañana al mediodía se aprobará automáticamente sin necesitar más pruebas de QA.</span>"
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Audit Sliders -->
-                <div class="glass-card" style="border-color: rgba(245,158,11,0.25);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--color-amber); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="sliders"></i> Rúbricas de Calidad
-                    </h3>
+                <div class="glass-card" style="border-color: rgba(245,158,11,0.3); padding: 1.2rem 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem;">
+                        <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-amber); display: flex; align-items: center; gap: 0.4rem;">
+                            <i data-lucide="sliders" class="icon-sm"></i> Calificador Tríada RAG
+                        </h3>
+                        <button type="button" class="btn-nav" style="padding: 5px 10px; font-size: 0.72rem; border-color: var(--color-amber); color: #fde68a;" onclick="loadCorrectAuditEval()">🔍 Calificar Alucinación (0.2)</button>
+                    </div>
                     
                     <div>
-                        <div class="calculator-row">
-                            <span class="calculator-label" style="font-size: 0.82rem;">Fidelidad (Sin Alucinaciones)</span>
-                            <span class="score-indicator" id="eval-fidelidad-val">1.0</span>
+                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
+                            <span class="calculator-label" style="font-size: 0.8rem;">1. Fidelidad al Manual (Sin inventos):</span>
+                            <span class="score-indicator" id="eval-fidelidad-val">0.2</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.5" value="0.5" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()">
+                        <input type="range" min="0" max="1" step="0.1" value="0.2" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()" style="margin-bottom: 0.65rem;">
                         
-                        <div class="calculator-row">
-                            <span class="calculator-label" style="font-size: 0.82rem;">Relevancia de la Respuesta</span>
-                            <span class="score-indicator" id="eval-relevancia-val">1.0</span>
+                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
+                            <span class="calculator-label" style="font-size: 0.8rem;">2. Precisión del Contexto Recuperado:</span>
+                            <span class="score-indicator" id="eval-contexto-val">1.0</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.5" value="1.0" class="calculator-slider" id="eval-relevancia" oninput="calculateEval()">
+                        <input type="range" min="0" max="1" step="0.1" value="1.0" class="calculator-slider" id="eval-contexto" oninput="calculateEval()" style="margin-bottom: 0.65rem;">
 
-                        <div class="results-box" style="margin-top: 1rem; padding: 0.8rem 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
+                            <span class="calculator-label" style="font-size: 0.8rem;">3. Relevancia de la Respuesta:</span>
+                            <span class="score-indicator" id="eval-relevancia-val">0.9</span>
+                        </div>
+                        <input type="range" min="0" max="1" step="0.1" value="0.9" class="calculator-slider" id="eval-relevancia" oninput="calculateEval()" style="margin-bottom: 0.65rem;">
+
+                        <div class="results-box" style="margin-top: 0.4rem; padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
                             <div>
-                                <span class="calculator-label" style="font-size: 0.8rem; display: block;">Estado de Calidad:</span>
-                                <span id="eval-status" class="eval-tag success" style="margin-top: 0.3rem; display: inline-block;">APROBADO</span>
+                                <span class="calculator-label" style="font-size: 0.75rem; display: block;">Veredicto CI/CD:</span>
+                                <span id="eval-status" class="eval-tag fail" style="margin-top: 0.25rem; display: inline-block;">RECHAZADO</span>
                             </div>
-                            <div style="font-size: 0.72rem; color: var(--text-secondary); text-align: right; max-width: 140px;" id="eval-critique">
-                                Aprobado para desplegar en staging.
+                            <div style="font-size: 0.75rem; color: var(--color-red); text-align: right; max-width: 240px; line-height: 1.35;" id="eval-critique">
+                                Bloqueado: Fidelidad menor a 0.80 (el bot inventó una fecha de aprobación de QA que no figura en el manual).
                             </div>
                         </div>
                     </div>
@@ -813,51 +906,61 @@
 
         <!-- SLIDE 10: OBSERVABILITY -->
         <div class="slide" id="slide-10">
-            <h2 class="slide-title">Observabilidad &amp; Tracing (Langfuse)</h2>
-            <p class="slide-subtitle">Inspeccioná el flujo de ejecución ("Trace") del agente e identificá costos y latencias de cada micro-paso.</p>
+            <h2 class="slide-title">Observabilidad en Producción: Langfuse</h2>
+            <p class="slide-subtitle">Hacé clic en cada paso del árbol de la izquierda para ver la "radiografía" de tiempos y costos de una respuesta real</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> <strong>Langfuse</strong> es la "caja negra" y el ticket detallado de cada mensaje del chatbot. Si una respuesta sale mal o tarda mucho, abrís su <strong>Traza (Trace)</strong> y ves en segundos qué fragmentos trajo la Base Vectorial, cuánto tardó cada paso (<strong>Span</strong>) y cuántos centavos de dólar costó.
+            </div>
             
             <div class="grid-2">
                 <!-- Left: Mock Trace Tree -->
-                <div class="glass-card" style="max-width: none;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="git-merge"></i> Trace Tree: Chatbot Corporativo (Langfuse)
+                <div class="glass-card" style="max-width: none; padding: 1.2rem 1.5rem;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.02rem; color: var(--color-purple); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="git-merge" class="icon-sm"></i> Árbol de Ejecución en Langfuse (Hacé clic en cada paso)
                     </h3>
                     
-                    <div style="display: flex; flex-direction: column; gap: 0.3rem;">
-                        <div class="trace-item" style="border-color: var(--color-purple);">
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                        <div class="trace-item" style="border-color: var(--color-purple); margin-bottom: 0.55rem;">
                             <div class="trace-header" onclick="toggleTrace('trace-1')">
-                                <span><span>🟢</span> [Trace] Consulta Chatbot IA</span>
-                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-purple);">Total: $0.0275 | 1.8s</span>
+                                <span><span>🟢</span> [Trace Principal] Consulta Release Pagos v3</span>
+                                <span style="font-family: monospace; font-size: 0.74rem; color: var(--color-purple);">Total: $0.0042 USD | 1.82s</span>
                             </div>
                             <div class="trace-body" id="trace-1" style="display: block;">
-                                Iniciado por: franbondino@gmail.com<br>
-                                Fecha: 2026-06-30T19:25:52Z<br>
-                                Modelo: gpt-4o-2024-05-13
+                                Usuario: anabela.hotian@empresa-global.com | Rol: PM Localization<br>
+                                Sesión: #S4-PROD-992 | Estado: 200 OK (Con Cita Verificada)
                             </div>
                         </div>
                         
-                        <div class="trace-item" style="border-color: var(--color-blue); margin-left: 25px;">
+                        <div class="trace-item" style="border-color: var(--color-blue); margin-left: 22px; margin-bottom: 0.55rem;">
                             <div class="trace-header" onclick="toggleTrace('trace-2')">
-                                <span>🔍 [Retrieval] Vector DB Search</span>
-                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-blue);">0.0001 USD | 250ms</span>
+                                <span>🔍 [Span 1 · Retrieval] Búsqueda en Base Vectorial</span>
+                                <span style="font-family: monospace; font-size: 0.74rem; color: var(--color-blue);">$0.0001 USD | 180ms</span>
                             </div>
                             <div class="trace-body" id="trace-2">
-                                Query: "Estado Módulo Pagos v3"<br>
-                                Algoritmo: HNSW Cosine Similarity<br>
-                                Chunks Retornados: 2 chunks
+                                Filtro Metadatos: { lang: "ES-LATAM", year: 2026 }<br>
+                                Chunks Recuperados: 2 fragmentos (Similitud Coseno: 0.91 y 0.87)
                             </div>
                         </div>
 
-                        <div class="trace-item" style="border-color: var(--color-amber); margin-left: 25px;">
+                        <div class="trace-item" style="border-color: var(--color-green); margin-left: 22px; margin-bottom: 0.55rem;">
                             <div class="trace-header" onclick="toggleTrace('trace-3')">
-                                <span>🤖 [LLM Call] Generar Respuesta</span>
-                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-amber);">0.0274 USD | 1.55s</span>
+                                <span>🛡️ [Span 2 · Guardrail] Filtro PII &amp; Seguridad</span>
+                                <span style="font-family: monospace; font-size: 0.74rem; color: var(--color-green);">$0.0000 USD | 90ms</span>
                             </div>
                             <div class="trace-body" id="trace-3">
-                                Input Tokens: 2,000 (Normal) + 8,000 (Cached)<br>
-                                Output Tokens: 500<br>
-                                Cache Hit: TRUE (80%)<br>
-                                TTFT: 180ms
+                                Sanitización PII: 1 email y 1 tarifa bajo NDA enmascarados antes de enviar al LLM.<br>
+                                Prompt Injection Check: PASS (Seguro)
+                            </div>
+                        </div>
+
+                        <div class="trace-item" style="border-color: var(--color-amber); margin-left: 22px; margin-bottom: 0.2rem;">
+                            <div class="trace-header" onclick="toggleTrace('trace-4')">
+                                <span>🤖 [Span 3 · LLM Call] Generación con Prompt Caching</span>
+                                <span style="font-family: monospace; font-size: 0.74rem; color: var(--color-amber);">$0.0041 USD | 1.55s</span>
+                            </div>
+                            <div class="trace-body" id="trace-4">
+                                Tokens Entrada: 8.000 en Caché (-80% dto) + 600 nuevos | Salida: 180 tokens<br>
+                                Temperatura: 0.0 | TTFT (Primer Token): 240ms | Faithfulness Eval: 0.98
                             </div>
                         </div>
                     </div>
@@ -865,12 +968,12 @@
 
                 <!-- Right: Explanatory Card -->
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <div style="background: rgba(139, 92, 246, 0.05); border-left: 4px solid var(--color-purple); padding: 0.8rem; border-radius: 4px; font-size: 0.82rem; line-height: 1.45; margin-bottom: 1rem;">
-                        <strong>Auditoría Semántica:</strong> Si un usuario reporta una mala respuesta, en Langfuse ves la "caja negra" del modelo paso a paso para depurar el prompt inyectado.
+                    <h4 style="font-family: var(--font-display); font-size: 1.05rem; color: #ffffff; margin-bottom: 0.65rem;">¿Para qué usa Langfuse una Product Manager?</h4>
+                    <div style="background: rgba(139, 92, 246, 0.08); border-left: 4px solid var(--color-purple); padding: 0.75rem; border-radius: 4px; font-size: 0.81rem; line-height: 1.45; margin-bottom: 0.85rem;">
+                        <strong>1. Diagnosticar sin adivinar:</strong> Si una respuesta fue incorrecta, mirás el <em>Span 1</em> para saber si falló el buscador vectorial (mal Chunking) o el <em>Span 3</em> si falló el prompt del LLM.
                     </div>
-                    <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 8px; font-size: 0.78rem; text-align: left; line-height: 1.4; color: var(--text-secondary);">
-                        • <strong>Traces (Trazas)</strong>: El mapa completo de la petición.<br>
-                        • <strong>Spans (Lapsos)</strong>: Tiempos y recursos consumidos por cada micro-servicio (ej: base de datos, API externa, modelo).
+                    <div style="background: rgba(245, 158, 11, 0.08); border-left: 4px solid var(--color-amber); padding: 0.75rem; border-radius: 4px; font-size: 0.81rem; line-height: 1.45;">
+                        <strong>2. Vigilar costos y velocidad por departamento:</strong> Sabés al instante qué flujo consume más presupuesto, qué porcentaje de llamadas aprovecha el <strong>Prompt Caching</strong> y qué paso genera demoras.
                     </div>
                 </div>
             </div>
@@ -878,68 +981,83 @@
 
         <!-- SLIDE 11: PREPARACION DE ENTREVISTAS -->
         <div class="slide" id="slide-11">
-            <h2 class="slide-title">Preparación de Entrevistas de PM IT/IA</h2>
-            <p class="slide-subtitle">Cómo plantarse frente a un Hiring Manager técnico y defender tu posicionamiento estratégico.</p>
+            <h2 class="slide-title">La Fórmula de 3 Pasos para Entrevistas de PM IT / IA</h2>
+            <p class="slide-subtitle">Cómo responder cualquier pregunta de resolución de problemas frente a un líder técnico o de producto</p>
+            <div class="simple-banner">
+                <strong>💡 En palabras simples:</strong> En una entrevista de PM nadie te pide que escribas código. Lo que evalúan es si pensás con estructura: <strong>1) Nombrás qué pieza técnica falló</strong>, <strong>2) Decís qué cambio pedís priorizar en el Sprint</strong>, y <strong>3) Explicás cuánto dinero, tiempo o riesgo ahorra ese cambio</strong>.
+            </div>
             
-            <div class="grid-2">
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-amber); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="user-check"></i> El Perfil del PM IA
-                    </h3>
-                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                        Los reclutadores de tecnología no buscan a un programador de modelos. Buscan a un PM que entienda la <strong>gobernanza técnica</strong> y la <strong>viabilidad financiera</strong> del producto.
-                    </p>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">
-                        Debés demostrar que sabés hablar tanto el idioma técnico de los desarrolladores (APIs, latencias, evals) como el de los gerentes de finanzas (COGS, ROI, presupuestos).
+            <div class="grid-3">
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <span class="nav-session" style="margin-bottom: 0.7rem; display: inline-block;">PASO 1 · DIAGNÓSTICO</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.5rem;">Mirar la Radiografía Técnica</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        Nunca respondas a ciegas. Empezá diciendo: <em>"Primero audito las trazas en <strong>Langfuse</strong> para identificar si el problema viene de un <strong>Loop Infinito en ReAct</strong>, falta de <strong>Prompt Caching</strong> o un mal <strong>Chunking</strong> en la Base Vectorial"</em>.
                     </p>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 0.8rem;">Tres Pilares de Defensa del PM</h3>
-                        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                            <li><strong style="color: var(--color-amber);">Gestión Financiera</strong>: Argumentar mitigación de facturas descontroladas de tokens (prompt caching, limits).</li>
-                            <li><strong style="color: var(--color-blue);">Gobernanza de Seguridad</strong>: Evitar fuga de datos del negocio (PII) mediante proxies y gateways de APIs.</li>
-                            <li><strong style="color: var(--color-purple);">Aseguramiento de Calidad</strong>: Explicar suites de pruebas automatizadas (Evals) contra alucinaciones.</li>
-                        </ul>
-                    </div>
+                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.3);">
+                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.7rem; display: inline-block;">PASO 2 · ACCIÓN EN EL BACKLOG</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.5rem;">Priorizar la Solución de Arquitectura</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        Indicá qué regla concreta definís en el PRD para el equipo de ingeniería: por ejemplo, <em>"fijar <strong>Max Iterations = 5</strong>, activar <strong>Token Streaming</strong>, enrutar consultas simples a un modelo liviano o poner un <strong>Proxy de PII Masking</strong>"</em>.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <span class="nav-session" style="background: rgba(16,185,129,0.15); color: var(--color-green); border-color: rgba(16,185,129,0.3); margin-bottom: 0.7rem; display: inline-block;">PASO 3 · IMPACTO DE NEGOCIO</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.5rem;">Conectar con Finanzas, UX o Riesgo</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        Cerrá siempre con el resultado medible para la empresa: <em>"Con esto reducimos un <strong>80% el costo operativo (COGS)</strong>, bajamos la espera del usuario de <strong>12 segundos a 1 segundo</strong> y protegemos los contratos bajo NDA"</em>.
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 12: INTERACTIVE SIMULATOR - CASE 1 (BUDGET BLOWOUT) -->
         <div class="slide" id="slide-12">
-            <h2 class="slide-title">Caso 1: Desvío Inesperado de Presupuesto</h2>
-            <p class="slide-subtitle">Simulación de Roleplay. Click en los botones para ver cómo se descontrola el costo y cómo solucionarlo.</p>
+            <h2 class="slide-title">Entrevista Caso 1: Factura de IA 10x Más Cara</h2>
+            <p class="slide-subtitle">Primero simulá el problema a la izquierda y luego elegí tu respuesta como PM a la derecha</p>
+            <div class="simple-banner">
+                <strong>💡 La pregunta del entrevistador:</strong> <em>"Lanzamos el agente de proyectos hace una semana y ya gastó todo el presupuesto mensual de API. ¿Qué hacés como PM?"</em>. <strong>Clave:</strong> Nunca digas "apago el bot o pido más plata"; diagnosticá en <strong>Langfuse</strong>, cortá <strong>Loops Infinitos (Max Iterations = 5)</strong>, activá <strong>Prompt Caching</strong> y usá <strong>Model Routing</strong>.
+            </div>
             
             <div class="grid-2">
                 <!-- Left: Simulator Console -->
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-red); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="alert-triangle"></i> Monitor de Costos en Vivo
-                    </h3>
+                <div class="glass-card" style="padding: 1.2rem 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                        <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-red); display: flex; align-items: center; gap: 0.45rem;">
+                            <i data-lucide="alert-triangle" class="icon-sm"></i> Monitor FinOps de Consumo API
+                        </h3>
+                        <button class="btn-nav" onclick="resetCostSim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
+                    </div>
                     
-                    <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.06); padding: 1.2rem; border-radius: 10px; text-align: center; margin-bottom: 1rem;">
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.3rem;">FACTURA MENSUAL ACUMULADA</p>
-                        <p style="font-size: 2.2rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-cost-val">$0.00</p>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem;" id="sim-cost-lbl">Simulación detenida.</p>
+                    <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 0.85rem;">
+                        <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.2rem;">GASTO ACUMULADO EN LA SEMANA</p>
+                        <p style="font-size: 2.1rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-cost-val">$0.00</p>
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.25rem;" id="sim-cost-lbl">1° Tocá "Simular Desvío de Costo" para ver el incidente.</p>
                     </div>
 
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button class="btn-nav" id="btn-run-cost-leak" onclick="startCostLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.05);">Simular Desvío Costo</button>
-                        <button class="btn-nav" id="btn-apply-cost-fix" onclick="applyCostFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.05);">Aplicar Caching &amp; Limits</button>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn-nav" id="btn-run-cost-leak" onclick="startCostLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center;">1. Simular Desvío de Costo</button>
+                        <button class="btn-nav" id="btn-apply-cost-fix" onclick="applyCostFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Aplicar Solución PM</button>
                     </div>
                 </div>
 
                 <!-- Right: Script and Roleplay answer -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="chat-container" id="chat-c1">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.5rem;">
+                    <div class="chat-container" id="chat-c1" style="height: 175px; margin-bottom: 0.65rem;">
                         <div class="chat-bubble mentor">
-                            <strong>Hiring Manager:</strong> "Lanzamos el chatbot a producción y en una semana consumimos todo el presupuesto mensual de tokens de la API. ¿Qué pasó y cómo lo optimizás?"
+                            <strong>Hiring Manager:</strong> "Lanzamos nuestro agente corporativo a producción y en 7 días consumió todo el presupuesto mensual de tokens. ¿Qué pasó y cómo lo solucionás sin apagar el producto?"
                         </div>
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.8rem;">
-                        <strong>Causa Técnica:</strong> Loops de reintento infinitos en el agente sin tope máximo de llamadas y carencia de Prompt Caching.
+                    <div class="roleplay-options">
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase1Option('wrong', this)">
+                            <strong>Opción A (Reactiva):</strong> "Pido una ampliación urgente de presupuesto a Finanzas y limito a los empleados a hacer solo 3 consultas por día."
+                        </button>
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase1Option('right', this)">
+                            <strong>Opción B (Estratégica PM):</strong> "1) Audito trazas en Langfuse y corto Loops Infinitos con Max Iterations = 5; 2) Activo Prompt Caching (-80%); 3) Uso Model Routing para consultas simples."
+                        </button>
                     </div>
                 </div>
             </div>
@@ -947,37 +1065,48 @@
 
         <!-- SLIDE 13: INTERACTIVE SIMULATOR - CASE 2 (LATENCY BOTTLENECK) -->
         <div class="slide" id="slide-13">
-            <h2 class="slide-title">Caso 2: Latencia Crítica en Producción</h2>
-            <p class="slide-subtitle">Simulación de Roleplay. Click en los botones para simular la velocidad de respuesta del bot.</p>
+            <h2 class="slide-title">Entrevista Caso 2: El Chatbot Tarda 12 Segundos</h2>
+            <p class="slide-subtitle">Cómo resolver una crisis de lentitud combinando experiencia de usuario (Streaming) y arquitectura (Paralelismo + Caché)</p>
+            <div class="simple-banner">
+                <strong>💡 La pregunta del entrevistador:</strong> <em>"Los usuarios cierran el chat porque queda 12 segundos en blanco mientras el agente consulta Jira, el glosario y el presupuesto. ¿Cómo lo bajás a 1 segundo?"</em>. <strong>Clave:</strong> <strong>1) Token Streaming</strong> (mostrar palabras a medida que salen), <strong>2) Parallel Tool Calling</strong> (consultar las 3 APIs al mismo tiempo) y <strong>3) KV Cache</strong>.
+            </div>
             
             <div class="grid-2">
                 <!-- Left: Simulator Console -->
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-blue); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="hourglass"></i> Consola de Producción (Latencia)
-                    </h3>
+                <div class="glass-card" style="padding: 1.2rem 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                        <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-blue); display: flex; align-items: center; gap: 0.45rem;">
+                            <i data-lucide="hourglass" class="icon-sm"></i> Monitor de Latencia (TTFT)
+                        </h3>
+                        <button class="btn-nav" onclick="resetLatencySim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
+                    </div>
                     
-                    <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.06); padding: 1.2rem; border-radius: 10px; text-align: center; margin-bottom: 1rem;">
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.3rem;">TIEMPO DE ESPERA (TTFT)</p>
-                        <p style="font-size: 2.2rem; font-weight: 800; font-family: monospace; color: var(--color-blue);" id="sim-latency-val">0.0s</p>
-                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; text-align: left; height: 40px; font-family: monospace;" id="sim-latency-log">Esperando consulta...</div>
+                    <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 1rem; border-radius: 10px; text-align: center; margin-bottom: 0.85rem;">
+                        <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.2rem;">TIEMPO HASTA LA PRIMERA PALABRA (TTFT)</p>
+                        <p style="font-size: 2.1rem; font-weight: 800; font-family: monospace; color: var(--color-blue);" id="sim-latency-val">0.0s</p>
+                        <div style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 0.35rem; text-align: left; min-height: 38px; font-family: monospace;" id="sim-latency-log">Esperando consulta del usuario sobre el Release v2.4...</div>
                     </div>
 
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button class="btn-nav" id="btn-run-lat-leak" onclick="startLatencyLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.05);">Llamada Normal (Pesada)</button>
-                        <button class="btn-nav" id="btn-apply-lat-fix" onclick="applyLatencyFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.05);">Habilitar Streaming &amp; Router</button>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn-nav" id="btn-run-lat-leak" onclick="startLatencyLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center;">1. Simular Espera de 12.0s</button>
+                        <button class="btn-nav" id="btn-apply-lat-fix" onclick="applyLatencyFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Activar Streaming + Paralelo</button>
                     </div>
                 </div>
 
                 <!-- Right: Script and Roleplay answer -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="chat-container" id="chat-c2">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.5rem;">
+                    <div class="chat-container" id="chat-c2" style="height: 175px; margin-bottom: 0.65rem;">
                         <div class="chat-bubble mentor">
-                            <strong>Hiring Manager:</strong> "Los usuarios se quejan de que el chatbot tarda 12 segundos en empezar a mostrar la respuesta en pantalla. ¿Cómo bajás ese tiempo percibido?"
+                            <strong>Hiring Manager:</strong> "Los usuarios se quejan de que el asistente tarda 12 segundos con la pantalla en blanco porque consulta 3 sistemas en fila y lee manuales largos. ¿Cómo lo optimizás?"
                         </div>
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.8rem;">
-                        <strong>Causa Técnica:</strong> Inyección inútil de manuales gigantescos (sin chunking calibrado) y falta de habilitación de Token Streaming en el backend.
+                    <div class="roleplay-options">
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase2Option('wrong', this)">
+                            <strong>Opción A (Básica):</strong> "Le pongo un cartel animado que diga 'Por favor espere' y le saco la conexión con Jira para que no consulte tantas APIs."
+                        </button>
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase2Option('right', this)">
+                            <strong>Opción B (Estratégica PM):</strong> "1) Activo Token Streaming en la interfaz; 2) Pido Parallel Tool Calling para consultar las 3 APIs en simultáneo; 3) Aplico KV Cache y Chunks de 1.000 caracteres."
+                        </button>
                     </div>
                 </div>
             </div>
@@ -985,38 +1114,49 @@
 
         <!-- SLIDE 14: INTERACTIVE SIMULATOR - CASE 3 (DATA LEAKAGE PREVENTION) -->
         <div class="slide" id="slide-14">
-            <h2 class="slide-title">Caso 3: Blindaje de Fuga de Datos</h2>
-            <p class="slide-subtitle">Simulación de Roleplay. Click en los botones para simular la fuga y la activación del proxy de seguridad.</p>
+            <h2 class="slide-title">Entrevista Caso 3: Blindaje de Datos bajo NDA</h2>
+            <p class="slide-subtitle">Cómo responderle al comité de Legales y Seguridad cuando temen que se filtren datos confidenciales de clientes</p>
+            <div class="simple-banner">
+                <strong>💡 La pregunta del entrevistador:</strong> <em>"El área legal frena el proyecto porque teme que los empleados peguen contratos bajo NDA o datos personales de clientes en el chatbot. ¿Cómo destrabás el lanzamiento?"</em>. <strong>Clave:</strong> <strong>1) Proxy de Sanitización PII</strong>, <strong>2) Contrato Enterprise Zero-Retention</strong> y <strong>3) Permisos RBAC en el RAG</strong>.
+            </div>
             
             <div class="grid-2">
                 <!-- Left: Simulator Console -->
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-amber); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="shield-check"></i> Gateway de Seguridad (Proxy)
-                    </h3>
+                <div class="glass-card" style="padding: 1.2rem 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                        <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-amber); display: flex; align-items: center; gap: 0.45rem;">
+                            <i data-lucide="shield-check" class="icon-sm"></i> Inspector de Tráfico Saliente (API Gateway)
+                        </h3>
+                        <button class="btn-nav" onclick="resetSecuritySim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
+                    </div>
                     
-                    <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.06); padding: 1.2rem; border-radius: 10px; margin-bottom: 1rem;">
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.5rem; text-align: center;">PETICIÓN SALIENTE DE LA IA</p>
-                        <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; font-family: monospace; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; height: 50px; overflow-y: auto;" id="sim-security-log">
-                            Esperando envío...
+                    <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 0.9rem; border-radius: 10px; margin-bottom: 0.85rem;">
+                        <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.4rem; text-align: center;">PAYLOAD ENVIADO AL PROVEEDOR DE IA</p>
+                        <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; font-family: monospace; background: rgba(0,0,0,0.35); padding: 0.7rem; border-radius: 6px; min-height: 64px;" id="sim-security-log">
+                            Esperando envío de consulta con datos de cliente...
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button class="btn-nav" id="btn-run-sec-leak" onclick="startSecurityLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.05);">Enviar Petición Cruda</button>
-                        <button class="btn-nav" id="btn-apply-sec-fix" onclick="applySecurityFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.05);">Encender API Gateway Proxy</button>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn-nav" id="btn-run-sec-leak" onclick="startSecurityLeak()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center;">1. Simular Envío Crudo (Riesgo)</button>
+                        <button class="btn-nav" id="btn-apply-sec-fix" onclick="applySecurityFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Activar Proxy PII + Zero-Retention</button>
                     </div>
                 </div>
 
                 <!-- Right: Script and Roleplay answer -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="chat-container" id="chat-c3">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.2rem 1.5rem;">
+                    <div class="chat-container" id="chat-c3" style="height: 175px; margin-bottom: 0.65rem;">
                         <div class="chat-bubble mentor">
-                            <strong>Hiring Manager:</strong> "Nos preocupa que el chatbot filtre información confidencial de clientes al enviar prompts a proveedores externos de IA. ¿Cómo lo blindamos?"
+                            <strong>Hiring Manager / Legales:</strong> "Nos preocupa que al usar el asistente se filtren nombres de clientes, mails o tarifas bajo NDA hacia servidores externos de IA. ¿Qué arquitectura proponés?"
                         </div>
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.8rem;">
-                        <strong>Causa Técnica:</strong> El agente posee credenciales y acceso directo de escritura a APIs sin aislamiento lógico de seguridad ni regex de protección (PII).
+                    <div class="roleplay-options">
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase3Option('wrong', this)">
+                            <strong>Opción A (Ingenua):</strong> "Les mandamos un mail a todos los empleados pidiéndoles que por favor tengan cuidado y no escriban nombres de clientes en el chat."
+                        </button>
+                        <button type="button" class="roleplay-opt-btn" onclick="chooseCase3Option('right', this)">
+                            <strong>Opción B (Estratégica PM):</strong> "1) Filtro Proxy de Sanitización PII en nuestro API Gateway; 2) Contrato Enterprise SLA con Zero-Data Retention; 3) Metadata Pre-Filtering con RBAC."
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1024,13 +1164,32 @@
 
         <!-- SLIDE 15: CONCLUSION -->
         <div class="slide" id="slide-15">
-            <div class="glass-card text-center" style="max-width: 800px; padding: 3rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 1.2rem;">programa completado</span>
-                <h2 class="slide-title" style="font-size: 2.8rem; margin-bottom: 1rem;">¡Felicitaciones por Completar el Plan!</h2>
-                <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin: 0 auto 2rem;">
-                    Has recorrido la modernización de DevOps, ideación de IA, diseño de orquestadores agénticos avanzados y los economics/evals corporativos. Estás listo para posicionarte en entrevistas IT.
+            <div class="glass-card text-center" style="max-width: 920px; padding: 2.3rem 2.8rem;">
+                <span class="nav-session" style="display: inline-block; margin-bottom: 0.9rem;">🎓 PROGRAMA DE MENTORÍA COMPLETADO</span>
+                <h2 class="slide-title" style="font-size: 2.5rem; margin-bottom: 0.75rem;">¡Felicitaciones Anabela por Completar las 4 Sesiones!</h2>
+                <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.55; max-width: 720px; margin: 0 auto 1.35rem;">
+                    Hoy unís tu trayectoria en gestión de proyectos y localización con el dominio completo del ciclo de vida del software, arquitecturas RAG, sistemas agénticos autónomos, finanzas de IA y evaluación con Langfuse.
                 </p>
-                <div style="display: inline-flex; gap: 0.8rem;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; text-align: left; margin-bottom: 1.4rem;">
+                    <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 10px; padding: 0.7rem 0.85rem;">
+                        <strong style="color: #60a5fa; font-size: 0.78rem; display: block;">✓ SESIÓN 1</strong>
+                        <span style="font-size: 0.78rem; color: #e2e8f0;">APIs REST, Git, CI/CD, Cloud/AWS &amp; Equipos Agile</span>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 10px; padding: 0.7rem 0.85rem;">
+                        <strong style="color: #34d399; font-size: 0.78rem; display: block;">✓ SESIÓN 2</strong>
+                        <span style="font-size: 0.78rem; color: #e2e8f0;">LLMs, Tokens, Embeddings, Pinecone &amp; RAG</span>
+                    </div>
+                    <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 10px; padding: 0.7rem 0.85rem;">
+                        <strong style="color: #c084fc; font-size: 0.78rem; display: block;">✓ SESIÓN 3</strong>
+                        <span style="font-size: 0.78rem; color: #e2e8f0;">Agentes ReAct, MCP, Pydantic, HITL &amp; Antigravity</span>
+                    </div>
+                    <div style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); border-radius: 10px; padding: 0.7rem 0.85rem;">
+                        <strong style="color: #fbbf24; font-size: 0.78rem; display: block;">✓ SESIÓN 4</strong>
+                        <span style="font-size: 0.78rem; color: #e2e8f0;">FinOps ROI, PII, Tríada Evals, Langfuse &amp; Entrevistas</span>
+                    </div>
+                </div>
+                <div style="display: inline-flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="./actividad_practica_sesion_4.html" class="btn-nav" style="border-color: var(--color-green); color: #6ee7b7; background: rgba(16,185,129,0.12); text-decoration: none;"><i data-lucide="zap"></i> Abrir Simulador Práctico S4</a>
                     <a href="./glosario_completo_sesion_4.html" class="btn-nav" style="border-color: var(--color-amber); color: var(--color-amber); text-decoration: none;"><i data-lucide="book-open"></i> Explorar Glosario S4</a>
                     <a href="../index.html" class="btn-nav" style="text-decoration: none;"><i data-lucide="home"></i> Portal Principal</a>
                 </div>
@@ -1052,12 +1211,10 @@
     </div>
 
     <script>
-        // SLIDESHOW CONTROLLER STATE
         const totalSlides = 15;
         let currentSlide = 1;
 
         function updateNavigation() {
-            // Update slides visibility
             for (let i = 1; i <= totalSlides; i++) {
                 const slide = document.getElementById(`slide-${i}`);
                 if (i === currentSlide) {
@@ -1072,18 +1229,13 @@
                 }
             }
 
-            // Update progress bar
             const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
             document.getElementById('progress-bar').style.width = `${progress}%`;
-
-            // Update badge text
             document.getElementById('slide-num-badge').textContent = `Slide ${currentSlide} / ${totalSlides}`;
 
-            // Enable/disable buttons
             document.getElementById('btn-prev').disabled = (currentSlide === 1);
             document.getElementById('btn-next').disabled = (currentSlide === totalSlides);
             
-            // Run context calculations if slide active
             if (currentSlide === 6) {
                 calculateROI();
             } else if (currentSlide === 9) {
@@ -1105,7 +1257,6 @@
             }
         }
 
-        // KEYBOARD SHORTCUTS
         document.addEventListener('keydown', (e) => {
             if (e.code === 'ArrowRight' || e.code === 'Space') {
                 e.preventDefault();
@@ -1119,65 +1270,79 @@
         // --- INTERACTIVE ENGINE: ROI CALCULATOR (SLIDE 6) ---
         function calculateROI() {
             const volume = parseInt(document.getElementById('calc-volume').value);
+            const minsPerDoc = parseInt(document.getElementById('calc-mins').value);
             const hourlyRate = parseInt(document.getElementById('calc-hourly').value);
             
-            // Update labels
             document.getElementById('calc-volume-val').textContent = volume.toLocaleString('es-AR');
-            document.getElementById('calc-hourly-val').textContent = `$${hourlyRate}`;
+            document.getElementById('calc-mins-val').textContent = `${minsPerDoc} min`;
+            document.getElementById('calc-hourly-val').textContent = `$${hourlyRate} / h`;
             
-            // Calculations
-            // Cost RAG normal (Input: 10,000 tokens @ $5/M, Output: 500 tokens @ $15/M)
-            const inputCostNoCache = (10000 / 1000000) * 5;
-            const outputCost = (500 / 1000000) * 15;
-            const totalUnitCostNoCache = inputCostNoCache + outputCost;
-            const monthlyCostNoCache = totalUnitCostNoCache * volume;
+            // AI Cost without cache: 10,000 input tokens @ $5/M + 500 output tokens @ $15/M = $0.0575/doc
+            const unitCostNoCache = ((10000 / 1000000) * 5) + ((500 / 1000000) * 15);
+            const monthlyCostNoCache = unitCostNoCache * volume;
 
-            // Cost RAG cached (2000 tokens full price @ $5/M, 8000 tokens cached @ $1.25/M, 500 output @ $15/M)
-            const inputCostFull = (2000 / 1000000) * 5;
-            const inputCostCached = (8000 / 1000000) * 1.25;
-            const totalUnitCostCache = inputCostFull + inputCostCached + outputCost;
-            const monthlyCostCache = totalUnitCostCache * volume;
+            // AI Cost with Prompt Caching: 2,000 full @ $5/M + 8,000 cached @ $1.25/M + 500 output @ $15/M = $0.0275/doc
+            const unitCostCache = ((2000 / 1000000) * 5) + ((8000 / 1000000) * 1.25) + ((500 / 1000000) * 15);
+            const monthlyCostCache = unitCostCache * volume;
 
-            // Human costs (5 contracts/hour)
-            const hoursNeeded = volume / 5;
-            const ftesNeeded = hoursNeeded / 160; // 160 hrs/month FTE
+            // Human manual cost
+            const hoursNeeded = (volume * minsPerDoc) / 60;
+            const ftesNeeded = hoursNeeded / 160;
             const monthlyCostHuman = hoursNeeded * hourlyRate;
 
-            const savings = monthlyCostHuman - monthlyCostCache;
+            // Human-in-the-Loop supervision (20% of manual time)
+            const monthlyCostHitl = monthlyCostHuman * 0.20;
+            const netSavings = monthlyCostHuman - (monthlyCostCache + monthlyCostHitl);
 
-            // Render results
             document.getElementById('cost-no-cache').textContent = `$${monthlyCostNoCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
             document.getElementById('cost-cache').textContent = `$${monthlyCostCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
             document.getElementById('cost-human').textContent = `$${monthlyCostHuman.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-            document.getElementById('hours-needed').textContent = `${hoursNeeded.toLocaleString('es-AR')} horas`;
-            document.getElementById('ftes-needed').textContent = ftesNeeded.toFixed(1);
-            document.getElementById('roi-savings').textContent = `$${savings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('hours-needed').textContent = `${Math.round(hoursNeeded).toLocaleString('es-AR')} hs (${ftesNeeded.toFixed(1)} personas FTE)`;
+            document.getElementById('cost-hitl').textContent = `$${monthlyCostHitl.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('roi-savings').textContent = `$${netSavings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
         }
 
         // --- INTERACTIVE ENGINE: EVALS RUBRIC (SLIDE 9) ---
         function calculateEval() {
             const fidelidad = parseFloat(document.getElementById('eval-fidelidad').value);
+            const contextoEl = document.getElementById('eval-contexto');
+            const contexto = contextoEl ? parseFloat(contextoEl.value) : 1.0;
             const relevancia = parseFloat(document.getElementById('eval-relevancia').value);
             
-            // Render indicator text
             document.getElementById('eval-fidelidad-val').textContent = fidelidad.toFixed(1);
+            if (document.getElementById('eval-contexto-val')) {
+                document.getElementById('eval-contexto-val').textContent = contexto.toFixed(1);
+            }
             document.getElementById('eval-relevancia-val').textContent = relevancia.toFixed(1);
             
-            const totalScore = (fidelidad + relevancia) / 2;
+            const avgScore = (fidelidad + contexto + relevancia) / 3;
             const statusTag = document.getElementById('eval-status');
             const critique = document.getElementById('eval-critique');
 
-            if (totalScore >= 0.75 && fidelidad >= 0.8) {
-                statusTag.textContent = "APROBADO";
+            if (fidelidad >= 0.8 && contexto >= 0.8 && relevancia >= 0.8) {
+                statusTag.textContent = "APROBADO (" + Math.round(avgScore * 100) + "%)";
                 statusTag.className = "eval-tag success";
-                critique.textContent = "Excelente veracidad. Aprobado para desplegar en staging.";
+                critique.textContent = "Las 3 métricas superan el umbral mínimo de 0.80. Aprobado para producción.";
                 critique.style.color = "var(--color-green)";
             } else {
-                statusTag.textContent = "RECHAZADO";
+                statusTag.textContent = "RECHAZADO (" + Math.round(avgScore * 100) + "%)";
                 statusTag.className = "eval-tag fail";
-                critique.textContent = fidelidad < 0.8 ? "Falta de fidelidad (el modelo inventó una fecha de aprobación no presente en el contexto)." : "Relevancia semántica insuficiente.";
+                if (fidelidad < 0.8) {
+                    critique.textContent = "Bloqueado por Alucinación: Fidelidad < 0.80 (el bot inventó que mañana se aprueba sin pruebas de QA).";
+                } else if (contexto < 0.8) {
+                    critique.textContent = "Bloqueado: Precisión de Contexto < 0.80 (la Base Vectorial no trajo el fragmento correcto; revisar Chunking/Metadatos).";
+                } else {
+                    critique.textContent = "Bloqueado: Relevancia de Respuesta < 0.80 (no respondió de forma directa la duda del usuario).";
+                }
                 critique.style.color = "var(--color-red)";
             }
+        }
+
+        function loadCorrectAuditEval() {
+            document.getElementById('eval-fidelidad').value = 0.2;
+            if (document.getElementById('eval-contexto')) document.getElementById('eval-contexto').value = 1.0;
+            document.getElementById('eval-relevancia').value = 0.9;
+            calculateEval();
         }
 
         // --- INTERACTIVE ENGINE: TRACE VIEWER (SLIDE 10) ---
@@ -1205,24 +1370,21 @@
 
             btnRun.disabled = true;
             btnFix.disabled = false;
+            costVal.style.color = "var(--color-red)";
 
-            // Add roleplay dialogue
-            chat.innerHTML += `<div class="chat-bubble pm"><strong>PM (Vos):</strong> "Dejame revisar de inmediato la traza de Langfuse..."</div>`;
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico en Langfuse:</strong> Detectando agente atrapado en Loop Infinito reintentando llamada fallida sin Prompt Caching...</div>`;
             chat.scrollTop = chat.scrollHeight;
 
-            let curCost = 0;
+            let curCost = 120;
             costInterval = setInterval(() => {
-                curCost += Math.floor(Math.random() * 40) + 10;
-                costVal.textContent = `$${curCost.toLocaleString('es-AR')}.00`;
-                costLbl.textContent = "Factura de tokens saliéndose de control...";
-                
-                chat.scrollTop = chat.scrollHeight;
-            }, 200);
+                curCost += Math.floor(Math.random() * 85) + 45;
+                costVal.textContent = `$${curCost.toLocaleString('es-AR')}.00 USD`;
+                costLbl.textContent = "⚠️ Loop infinito consumiendo 12.000 tokens/seg...";
+            }, 220);
         }
 
         function applyCostFix() {
-            if (!costSimRunning) return;
-            clearInterval(costInterval);
+            if (costInterval) clearInterval(costInterval);
             costSimRunning = false;
             
             const chat = document.getElementById('chat-c1');
@@ -1232,13 +1394,40 @@
 
             btnFix.disabled = true;
             costVal.style.color = "var(--color-green)";
-            costLbl.textContent = "Presupuesto estabilizado.";
+            costVal.textContent = "$42.00 USD / sem";
+            costLbl.textContent = "✅ Max Iterations = 5 + Prompt Caching (-80%) + Model Routing activos.";
 
-            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.1); border-color: var(--color-green);"><strong>PM (Vos):</strong> "Hiring Manager, detecté el desvío. El orquestador estaba en un loop infinito de reintentos por un error 502 de la API, consumiendo 12.000 tokens por segundo. Apliqué un límite estricto de 5 iteraciones en el orquestador y encendí Prompt Caching para el prompt del sistema estático, lo que estabilizó el consumo y reducirá los costos en un 80%".</div>`;
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Cortafuegos en 5 intentos, Prompt Caching para instrucciones fijas y Model Routing hacia un modelo liviano en consultas simples. Ahorro del 85%.</div>`;
             chat.scrollTop = chat.scrollHeight;
         }
 
+        function chooseCase1Option(type, btn) {
+            const chat = document.getElementById('chat-c1');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si pedís más presupuesto sin diagnosticar la causa raíz técnica o frenás a los usuarios, el loop infinito va a volver a consumir el nuevo presupuesto en horas. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "1) Audito las trazas en <strong>Langfuse</strong> para detectar Loops Infinitos y fijo un tope duro de <strong>Max Iterations = 5</strong>. 2) Activo <strong>Prompt Caching</strong> en el bloque fijo del sistema para ahorrar 80% de tokens de entrada. 3) Implemento <strong>Model Routing</strong> derivando consultas simples a un modelo liviano (GPT-4o-mini / Haiku)."</div>`;
+                if (costSimRunning) applyCostFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetCostSim() {
+            if (costInterval) clearInterval(costInterval);
+            costSimRunning = false;
+            document.getElementById('sim-cost-val').textContent = "$0.00";
+            document.getElementById('sim-cost-val').style.color = "var(--color-red)";
+            document.getElementById('sim-cost-lbl').textContent = "1° Tocá 'Simular Desvío de Costo' para ver el incidente.";
+            document.getElementById('btn-run-cost-leak').disabled = false;
+            document.getElementById('btn-apply-cost-fix').disabled = true;
+            document.getElementById('chat-c1').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Lanzamos nuestro agente corporativo a producción y en 7 días consumió todo el presupuesto mensual de tokens. ¿Qué pasó y cómo lo solucionás sin apagar el producto?"</div>`;
+        }
+
         // --- INTERACTIVE ENGINE: LATENCY LEAK ROLEPLAY (SLIDE 13) ---
+        let latencyInterval = null;
         let latencySimRunning = false;
         function startLatencyLeak() {
             if (latencySimRunning) return;
@@ -1252,26 +1441,25 @@
 
             btnRun.disabled = true;
             btnFix.disabled = false;
+            latVal.style.color = "var(--color-red)";
 
-            chat.innerHTML += `<div class="chat-bubble pm"><strong>PM (Vos):</strong> "Voy a simular la consulta pesada cargando todo el historial..."</div>`;
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico:</strong> El agente está llamando a Jira, Pinecone y ERP en fila india (secuencial) y esperando a tener todo el párrafo antes de mostrar la primera palabra...</div>`;
             chat.scrollTop = chat.scrollHeight;
 
             let curLat = 0;
-            latLog.textContent = "Cargando 40 páginas de manuales en la consulta...";
-            let interval = setInterval(() => {
-                curLat += 0.5;
+            latLog.textContent = "⏳ Llamando API 1 (Jira)... luego API 2 (Glosario)... luego API 3 (ERP)... pantalla congelada...";
+            latencyInterval = setInterval(() => {
+                curLat += 1.0;
                 latVal.textContent = `${curLat.toFixed(1)}s`;
-                
-                if (curLat >= 8.0) {
-                    clearInterval(interval);
-                    latLog.textContent = "IA: 'Los calados admisibles en Rosario hoy son...'";
-                    latVal.style.color = "var(--color-red)";
+                if (curLat >= 12.0) {
+                    clearInterval(latencyInterval);
+                    latLog.textContent = "⚠️ Recién a los 12.0s aparece: 'El Release v2.4 tiene 10 módulos listos y 2 en QA...'";
                 }
-            }, 250);
+            }, 180);
         }
 
         function applyLatencyFix() {
-            if (!latencySimRunning) return;
+            if (latencyInterval) clearInterval(latencyInterval);
             latencySimRunning = false;
 
             const chat = document.getElementById('chat-c2');
@@ -1281,26 +1469,51 @@
 
             btnFix.disabled = true;
             
-            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.1); border-color: var(--color-green);"><strong>PM (Vos):</strong> "Hiring Manager, optimicé la latencia. Primero habilité Token Streaming para que el usuario empiece a leer la respuesta en tiempo real a los milisegundos en lugar de esperar la compilación completa de la API. Segundo, introduje Prompt Caching para el prompt de sistema y glosario base, reduciendo el tiempo de primer token de 8.0s a escasos 1.2s".</div>`;
-            chat.scrollTop = chat.scrollHeight;
-
             let curLat = 0;
-            latLog.textContent = "IA: [Streaming en curso] 'Rosario calados...'";
-            let interval = setInterval(() => {
+            latLog.textContent = "⚡ [Parallel Tool Calling + Streaming]: 'El Release v2.4 tiene 10 módulos listos...'";
+            latencyInterval = setInterval(() => {
                 curLat += 0.2;
                 latVal.textContent = `${curLat.toFixed(1)}s`;
-                if (curLat >= 1.2) {
-                    clearInterval(interval);
+                if (curLat >= 1.0) {
+                    clearInterval(latencyInterval);
+                    latVal.textContent = "0.9s";
                     latVal.style.color = "var(--color-green)";
-                    latLog.textContent = "Flujo completado.";
+                    latLog.textContent = "✅ Primera palabra en 0.9s con Token Streaming + 3 APIs en paralelo + KV Cache.";
                 }
-            }, 100);
+            }, 90);
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Bajamos el TTFT de 12.0s a 0.9s activando Token Streaming, Parallel Tool Calling y KV Cache.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase2Option(type, btn) {
+            const chat = document.getElementById('chat-c2');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si desconectás Jira el agente pierde su valor operativo, y un spinner durante 12 segundos sigue causando abandono. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Ataco la velocidad percibida y la real: 1) Activo <strong>Token Streaming</strong> para que el usuario lea la primera palabra en menos de 1 segundo; 2) Implemento <strong>Parallel Tool Calling</strong> para consultar Jira, Glosario y ERP al mismo tiempo en paralelo; y 3) Uso <strong>KV Cache</strong> y chunks compactos."</div>`;
+                applyLatencyFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetLatencySim() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            latencySimRunning = false;
+            document.getElementById('sim-latency-val').textContent = "0.0s";
+            document.getElementById('sim-latency-val').style.color = "var(--color-blue)";
+            document.getElementById('sim-latency-log').textContent = "Esperando consulta del usuario sobre el Release v2.4...";
+            document.getElementById('btn-run-lat-leak').disabled = false;
+            document.getElementById('btn-apply-lat-fix').disabled = true;
+            document.getElementById('chat-c2').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Los usuarios se quejan de que el asistente tarda 12 segundos con la pantalla en blanco porque consulta 3 sistemas en fila y lee manuales largos. ¿Cómo lo optimizás?"</div>`;
         }
 
         // --- INTERACTIVE ENGINE: SECURITY LEAK ROLEPLAY (SLIDE 14) ---
         let securitySimRunning = false;
         function startSecurityLeak() {
-            if (securitySimRunning) return;
             securitySimRunning = true;
 
             const chat = document.getElementById('chat-c3');
@@ -1311,14 +1524,12 @@
             btnRun.disabled = true;
             btnFix.disabled = false;
 
-            chat.innerHTML += `<div class="chat-bubble pm"><strong>PM (Vos):</strong> "Revisando traza de llamada externa..."</div>`;
+            secLog.innerHTML = `<span style="color: var(--color-red);">❌ RIESGO DE FUGA (SIN FILTRO): {"cliente": "Banco Global S.A.", "email": "director@bancoglobal.com", "tarifa_nda": "$48,500 USD"}</span>`;
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Alerta:</strong> El prompt está saliendo hacia la nube externa con nombres reales, emails y montos bajo NDA...</div>`;
             chat.scrollTop = chat.scrollHeight;
-
-            secLog.innerHTML = `<span style="color: var(--color-red);">ENVIANDO CRUDA: {"project_id": "PRJ-402", "cliente_confidencial": "Enterprise-NDA-Client"}</span>`;
         }
 
         function applySecurityFix() {
-            if (!securitySimRunning) return;
             securitySimRunning = false;
 
             const chat = document.getElementById('chat-c3');
@@ -1327,18 +1538,38 @@
 
             btnFix.disabled = true;
 
-            secLog.innerHTML = `<span style="color: var(--color-green);">OFUSCADO EN PROXY: {"project_id": "PRJ-402", "cliente_confidencial": "[REDACTED_CLIENT_KEY]"}</span>`;
+            secLog.innerHTML = `<span style="color: var(--color-green);">✅ SANITIZADO EN API GATEWAY: {"cliente": "[CLIENTE_NDA_01]", "email": "[EMAIL_OCULTO]", "tarifa_nda": "[MONTO_PROTEGIDO]"} · SLA: Zero-Retention</span>`;
 
-            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.1); border-color: var(--color-green);"><strong>PM (Vos):</strong> "Hiring Manager, blindé la privacidad de la empresa. Implementé un API Gateway Proxy que intercepta todas las llamadas salientes del agente de IA. Este Gateway ejecuta expresiones regulares y modelos locales que filtran y ofuscan cualquier propiedad intelectual (como nombres confidenciales) antes de redirigir los datos a la API pública de OpenAI".</div>`;
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Blindaje Activo:</strong> Datos sensibles enmascarados localmente en el Proxy antes de salir a la nube + acuerdo Enterprise Zero-Data Retention.</div>`;
             chat.scrollTop = chat.scrollHeight;
         }
 
-        // INITIALIZATION
+        function chooseCase3Option(type, btn) {
+            const chat = document.getElementById('chat-c3');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Legales:</strong> La buena voluntad por mail no pasa una auditoría de seguridad ISO/SOC2: un error humano filtraría igual el contrato. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Implemento 3 barreras técnicas: 1) Un <strong>Proxy de Sanitización (PII Masking)</strong> en nuestro API Gateway que oculta nombres, mails y tarifas antes de salir a internet; 2) Contrato <strong>Enterprise con Zero-Data Retention</strong>; y 3) <strong>Permisos por Rol (RBAC)</strong> en los metadatos de la Base Vectorial."</div>`;
+                applySecurityFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetSecuritySim() {
+            securitySimRunning = false;
+            document.getElementById('sim-security-log').innerHTML = "Esperando envío de consulta con datos de cliente...";
+            document.getElementById('btn-run-sec-leak').disabled = false;
+            document.getElementById('btn-apply-sec-fix').disabled = true;
+            document.getElementById('chat-c3').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager / Legales:</strong> "Nos preocupa que al usar el asistente se filtren nombres de clientes, mails o tarifas bajo NDA hacia servidores externos de IA. ¿Qué arquitectura proponés?"</div>`;
+        }
+
         lucide.createIcons();
         updateNavigation();
     </script>
 
-    
     <!-- ================= ANABELA PREMIUM MOTION & RESPONSIVE ENGINE ================= -->
     <style id="anabela-motion-engine-css">
         :root {
@@ -1832,6 +2063,9 @@
             <span>Mentoría Anabela Hotian · Sesión 4</span>
         </div>
         <div class="anabela-hud-right">
+            <a href="./actividad_practica_sesion_4.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 4">
+                🧪 <span class="hud-label-hide-sm">Simulador S4</span>
+            </a>
             <a href="./glosario_completo_sesion_4.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 4">
                 📖 <span class="hud-label-hide-sm">Glosario S4</span>
             </a>

@@ -1547,14 +1547,14 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura té
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):**
-• Imaginá que querés justificar ante el directorio automatizar el pre-análisis de documentos o clasificación de tickets:
-  • **Slider 1:** Poné **1.500 documentos/tickets al mes**.
-  • **Slider 2:** Poné **20 minutos humanos** por documento.
-  • **Slider 3:** Poné **$25 USD** de costo hora profesional.
+• Imaginá que querés justificar ante Finanzas automatizar la primera revisión de documentos de localización o clasificación de tickets:
+  • **Slider 1 (Volumen):** Poné **5.000 documentos/tickets al mes**.
+  • **Slider 2 (Tiempo humano):** Poné **15 minutos** por documento.
+  • **Slider 3 (Costo Hora):** Poné **$20 USD / hora**.
 
 **2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:**
-• Hacer el 100% del trabajo a mano cuesta **$12.500 USD por mes**.
-• Procesar la primera pasada con IA cuesta apenas **~$90 USD de API al mes**. Incluso dejando a un especialista humano revisando el 20% del tiempo (*Human-in-the-Loop*), generás un **ahorro neto superior al 80%**.
+• Hacer el 100% del trabajo a mano cuesta **$25.000 USD por mes** (1.250 horas humanas = casi 8 personas a tiempo completo).
+• En cambio, la factura de API de IA con **Prompt Caching** es de apenas **$137.50 USD al mes** ($0.0275 por documento). Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (*Human-in-the-Loop*), generás un **ahorro neto de casi $20.000 USD por mes**.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Costo Hora-Hombre vs. Costo de Inferencia:** Comparar cuánto cuesta el tiempo de un equipo haciendo trabajo repetitivo manual frente a los centavos que cobra la API por hacer el pre-procesamiento.
@@ -1631,18 +1631,19 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura té
 - **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Auditoría Práctica · Detección de Alucinación · Umbral de Aprobación
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.
-- **👆 Qué tocar en la Slide:** Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.
-- **💬 La analogía ganadora:** Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida.
+- **🎯 Qué explicás acá (En 1 frase):** Probar en vivo cómo la métrica de Fidelidad (Faithfulness) detecta que el bot inventó al final de su respuesta que el módulo Checkout v4 'se aprobará mañana sin pruebas adicionales'.
+- **👆 Qué tocar en la Slide:** Leé el fragmento oficial vs. la frase roja alucinada a la izquierda, y mové el deslizador '1. Fidelidad al Manual' a 0.2 (o tocá '🔍 Calificar Alucinación').
+- **💬 La analogía ganadora:** Es el control de calidad en la fábrica: aunque la primera mitad de la respuesta sea correcta, si al final inventa una fecha de lanzamiento prohibida por QA, el inspector frena la salida.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):**
-• **El Manual Oficial dice:** Soporte responde en 24 hs hábiles de lunes a viernes (no cubre domingos salvo plan Enterprise).
-• **El Bot responde:** *'¡Por supuesto! Nuestro equipo 24/7 resolverá tu ticket este mismo domingo sin costo adicional'*. ¡Es un **falso positivo amable**: suena cordial pero inventó una promesa comercial falsa!
+• **Pregunta:** *'¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?'*.
+• **Lo que dice el Manual Oficial (Ground Truth):** *Pagos v3* está activo, pero *Checkout v4* está **bloqueado en revisión de QA lingüístico**.
+• **Lo que respondió el Bot (Mirá el texto subrayado en rojo):** Dijo bien la primera parte, pero al final inventó de su cosecha: *'Además, te confirmo que mañana al mediodía se aprobará automáticamente sin necesitar más pruebas de QA'*. ¡Una alucinación peligrosa!
 
-**2️⃣ DEMO CON LOS DESLIZADORES DE EVALUACIÓN (Columna derecha):**
-• Bajá el primer deslizador (**Faithfulness / Fidelidad**) al **20%**.
-• Mirá cómo el sistema cambia automáticamente el veredicto a **RECHAZADO POR ALUCINACIÓN** e impide que ese cambio salga a producción.
+**2️⃣ DEMO CON LOS 3 DESLIZADORES DE LA TRÍADA RAG (Columna derecha):**
+• Fijate que **Precisión de Contexto (`1.0`)** y **Relevancia (`0.9`)** están bien porque trajo el párrafo correcto y habló del tema, pero en **Fidelidad al Manual** le ponemos **`0.2`** (porque inventó un dato fuera del documento).
+• Como la Fidelidad cayó por debajo de `0.80`, el sistema marca **RECHAZADO** y bloquea automáticamente ese prompt.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Falso Positivo Amable (Alucinación Comercial):** El error más peligroso de los chatbots: cuando por querer sonar serviciales le prometen al cliente descuentos o coberturas que no existen.
@@ -1717,7 +1718,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura té
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.
-- **👆 Qué tocar en la Slide:** Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.
+- **👆 Qué tocar en la Slide:** 1° Izquierda: tocá '1. Simular Desvío de Costo' → 2° Derecha: probá la Opción A (incorrecta) y luego la Opción B (Estratégica PM) para estabilizar la factura.
 - **💬 La analogía ganadora:** Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
@@ -1746,7 +1747,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura té
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.
-- **👆 Qué tocar en la Slide:** Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.
+- **👆 Qué tocar en la Slide:** 1° Izquierda: tocá '1. Simular Espera de 12.0s' → 2° Derecha: probá la Opción A y luego la Opción B (Streaming + Parallel Tool Calling + KV Cache) para bajar a 0.9s.
 - **💬 La analogía ganadora:** En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
@@ -1776,7 +1777,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura té
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.
-- **👆 Qué tocar en la Slide:** Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.
+- **👆 Qué tocar en la Slide:** 1° Izquierda: tocá '1. Simular Envío Crudo' → 2° Derecha: probá la Opción A y luego la Opción B (Proxy PII + Zero-Retention + RBAC).
 - **💬 La analogía ganadora:** Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)

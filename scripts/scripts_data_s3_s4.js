@@ -746,7 +746,7 @@ const SESSION_4_DATA = {
                 "Hora-Hombre vs Costo API"
             ],
             "interaction": "Mové en vivo los 3 sliders ('Documentos / Tickets Procesados al Mes', 'Minutos Humanos por Documento', 'Costo Hora Profesional USD') para ver cómo se actualizan al instante el Costo Humano, el Costo de API de IA y el Ahorro Neto Mensual.",
-            "script": "**1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):**\n• Imaginá que querés justificar ante el directorio automatizar el pre-análisis de documentos o clasificación de tickets:\n  • **Slider 1:** Poné **1.500 documentos/tickets al mes**.\n  • **Slider 2:** Poné **20 minutos humanos** por documento.\n  • **Slider 3:** Poné **$25 USD** de costo hora profesional.\n\n**2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:**\n• Hacer el 100% del trabajo a mano cuesta **$12.500 USD por mes**.\n• Procesar la primera pasada con IA cuesta apenas **~$90 USD de API al mes**. Incluso dejando a un especialista humano revisando el 20% del tiempo (*Human-in-the-Loop*), generás un **ahorro neto superior al 80%**.",
+            "script": "**1️⃣ DEMO EN VIVO: CALCULADORA DE ROI (Mové los 3 deslizadores de la izquierda):**\n• Imaginá que querés justificar ante Finanzas automatizar la primera revisión de documentos de localización o clasificación de tickets:\n  • **Slider 1 (Volumen):** Poné **5.000 documentos/tickets al mes**.\n  • **Slider 2 (Tiempo humano):** Poné **15 minutos** por documento.\n  • **Slider 3 (Costo Hora):** Poné **$20 USD / hora**.\n\n**2️⃣ MIRÁ EL IMPACTO FINANCIERO A LA DERECHA:**\n• Hacer el 100% del trabajo a mano cuesta **$25.000 USD por mes** (1.250 horas humanas = casi 8 personas a tiempo completo).\n• En cambio, la factura de API de IA con **Prompt Caching** es de apenas **$137.50 USD al mes** ($0.0275 por documento). Incluso manteniendo a un especialista humano supervisando el 20% del tiempo (*Human-in-the-Loop*), generás un **ahorro neto de casi $20.000 USD por mes**.",
             "bridge": "Cuando presentás un ahorro así de grande, el directorio te aprueba el presupuesto, pero inmediatamente el área de Legales y Seguridad te hace la pregunta clave: '¿Cómo protegemos los datos sensibles?'. Vamos a la Slide 7.",
             "cheatSheet": {
                 "idea": "Usar en vivo la Calculadora de ROI para demostrar cómo una tarea manual de $12.500 USD/mes baja a menos de $100 USD/mes de API combinada con supervisión humana.",
@@ -839,12 +839,12 @@ const SESSION_4_DATA = {
                 "Umbral de Aprobación"
             ],
             "interaction": "Leé con Anabela el Contexto Oficial vs. la Respuesta Generada por el Bot a la izquierda, y mové los 3 sliders de calificación a la derecha para ver cómo cambia el veredicto ('APROBADO' vs. 'RECHAZADO POR ALUCINACIÓN').",
-            "script": "**1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):**\n• **El Manual Oficial dice:** Soporte responde en 24 hs hábiles de lunes a viernes (no cubre domingos salvo plan Enterprise).\n• **El Bot responde:** *'¡Por supuesto! Nuestro equipo 24/7 resolverá tu ticket este mismo domingo sin costo adicional'*. ¡Es un **falso positivo amable**: suena cordial pero inventó una promesa comercial falsa!\n\n**2️⃣ DEMO CON LOS DESLIZADORES DE EVALUACIÓN (Columna derecha):**\n• Bajá el primer deslizador (**Faithfulness / Fidelidad**) al **20%**.\n• Mirá cómo el sistema cambia automáticamente el veredicto a **RECHAZADO POR ALUCINACIÓN** e impide que ese cambio salga a producción.",
+            "script": "**1️⃣ CASO DE AUDITORÍA EN VIVO (Leé la columna izquierda con Anabela):**\n• **Pregunta:** *'¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?'*.\n• **Lo que dice el Manual Oficial (Ground Truth):** *Pagos v3* está activo, pero *Checkout v4* está **bloqueado en revisión de QA lingüístico**.\n• **Lo que respondió el Bot (Mirá el texto subrayado en rojo):** Dijo bien la primera parte, pero al final inventó de su cosecha: *'Además, te confirmo que mañana al mediodía se aprobará automáticamente sin necesitar más pruebas de QA'*. ¡Una alucinación peligrosa!\n\n**2️⃣ DEMO CON LOS 3 DESLIZADORES DE LA TRÍADA RAG (Columna derecha):**\n• Fijate que **Precisión de Contexto (`1.0`)** y **Relevancia (`0.9`)** están bien porque trajo el párrafo correcto y habló del tema, pero en **Fidelidad al Manual** le ponemos **`0.2`** (porque inventó un dato fuera del documento).\n• Como la Fidelidad cayó por debajo de `0.80`, el sistema marca **RECHAZADO** y bloquea automáticamente ese prompt.",
             "bridge": "Cuando detectamos un fallo así o cuando una consulta tarda demasiado en producción, ¿en qué pantalla mira un PM y su equipo técnico la 'radiografía' de lo que pasó adentro del bot? Pasemos a la Slide 10: Langfuse.",
             "cheatSheet": {
-                "idea": "Probar en vivo cómo un auditor detecta una alucinación peligrosa (el bot promete soporte gratis un domingo cuando el manual dice lunes a viernes) y le baja la nota de Fidelidad para bloquearlo.",
-                "clicks": "Leé el manual vs. la respuesta del bot a la izquierda, y mové el primer slider ('Faithfulness / Fidelidad') hacia abajo (ej. 20%) para que el cartel cambie a 'RECHAZADO'.",
-                "analogy": "Es el control de calidad en la línea de montaje: aunque el envase se vea lindo (tono amable), si adentro promete algo prohibido por contrato, el inspector frena la partida."
+                "idea": "Probar en vivo cómo la métrica de Fidelidad (Faithfulness) detecta que el bot inventó al final de su respuesta que el módulo Checkout v4 'se aprobará mañana sin pruebas adicionales'.",
+                "clicks": "Leé el fragmento oficial vs. la frase roja alucinada a la izquierda, y mové el deslizador '1. Fidelidad al Manual' a 0.2 (o tocá '🔍 Calificar Alucinación').",
+                "analogy": "Es el control de calidad en la fábrica: aunque la primera mitad de la respuesta sea correcta, si al final inventa una fecha de lanzamiento prohibida por QA, el inspector frena la salida."
             },
             "plainTerms": [
                 {
@@ -923,7 +923,7 @@ const SESSION_4_DATA = {
             "bridge": "¡Excelente! Resolvimos la crisis financiera. Vamos a la Slide 13 para enfrentar el segundo desafío clásico de entrevista: una crisis de lentitud en vivo.",
             "cheatSheet": {
                 "idea": "Resolver en vivo el Caso 1 de entrevista: la factura de IA vino 10 veces más cara → auditamos en Langfuse, cortamos loops con Max Iterations = 5, activamos Prompt Caching y usamos modelos más chicos para tareas simples.",
-                "clicks": "Hacé clic primero en la opción incorrecta y después en la opción ganadora para desplegar la respuesta modelo de PM Senior.",
+                "clicks": "1° Izquierda: tocá '1. Simular Desvío de Costo' → 2° Derecha: probá la Opción A (incorrecta) y luego la Opción B (Estratégica PM) para estabilizar la factura.",
                 "analogy": "Si viene una factura de luz gigante en la empresa, no cerrás la oficina: mirás qué máquina quedó encendida toda la noche (Langfuse + Max Iterations) y ponés lámparas de bajo consumo donde no hace falta un reflector (Model Routing)."
             },
             "plainTerms": [
@@ -949,7 +949,7 @@ const SESSION_4_DATA = {
             "bridge": "Ya salvamos el presupuesto y la velocidad del producto. Pasemos a la Slide 14 para resolver el tercer y último caso de entrevista: el blindaje legal y de ciberseguridad.",
             "cheatSheet": {
                 "idea": "Resolver en vivo el Caso 2 de entrevista: el bot tarda 12 segundos con la pantalla en blanco → activamos Streaming de palabras, llamamos a las APIs en paralelo y usamos KV Cache.",
-                "clicks": "Interactuá con las opciones del simulador del Caso 2 para revelar las 3 mejoras de velocidad.",
+                "clicks": "1° Izquierda: tocá '1. Simular Espera de 12.0s' → 2° Derecha: probá la Opción A y luego la Opción B (Streaming + Parallel Tool Calling + KV Cache) para bajar a 0.9s.",
                 "analogy": "En un restaurante, si tardan 12 minutos en traerte todo junto sin decirte nada te vas; pero si al segundo 1 te traen la panera (Streaming) y en la cocina preparan la entrada y el plato al mismo tiempo (Parallel Tool Calling), la experiencia es excelente."
             },
             "plainTerms": [
@@ -979,7 +979,7 @@ const SESSION_4_DATA = {
             "bridge": "Superaste los tres casos de entrevista con nivel de PM Senior. Pasemos a la última diapositiva del programa, la Slide 15, para celebrar todo lo que construiste.",
             "cheatSheet": {
                 "idea": "Resolver en vivo el Caso 3 de entrevista: miedo a filtrar datos confidenciales bajo NDA → ponemos un filtro de PII antes de salir a la nube, contrato Enterprise Zero-Retention y permisos por rol en el RAG.",
-                "clicks": "Hacé clic en las opciones del Caso 3 para mostrar la defensa completa de 3 capas.",
+                "clicks": "1° Izquierda: tocá '1. Simular Envío Crudo' → 2° Derecha: probá la Opción A y luego la Opción B (Proxy PII + Zero-Retention + RBAC).",
                 "analogy": "Tres candados independientes: ocultás los nombres antes de enviar el archivo (PII Masking), firmás contrato de confidencialidad bancaria con el proveedor (Enterprise SLA) y cada empleado solo abre su propio cajón (RBAC)."
             },
             "plainTerms": [
