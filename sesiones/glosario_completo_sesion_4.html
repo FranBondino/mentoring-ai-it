@@ -446,6 +446,51 @@
             </div>
         </div>
 
+        <!-- 9. Model Routing -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">09</span> Model Routing (Enrutamiento Inteligente de Modelos)</div>
+                <div class="concept-tag">Estrategia FinOps</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> En vez de usar el modelo más caro (<em>Claude Opus / GPT-4o</em>) para el 100% de los mensajes, un clasificador deriva automáticamente el <strong>80% de las consultas fáciles a un modelo rápido y económico (Gemini Flash / Claude Haiku / GPT-4o-mini)</strong> y solo envía el 20% complejo al modelo grande, ahorrando cerca del 75% de la factura.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    Patrón de arquitectura donde una capa intermedia evalúa la complejidad de cada consulta entrante y decide dinámicamente a qué modelo enviarla: modelos livianos de baja latencia (Small / Flash Models) para extracción, clasificación o FAQs, o modelos de frontera (Frontier Models) para razonamiento multi-paso y análisis contractual complejo.
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. Batch API (-50%) -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">10</span> Batch API (-50% Descuento) &amp; Costos Ocultos</div>
+                <div class="concept-tag">Optimización Masiva</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Cuando tenés que procesar miles de textos o módulos de localización que no necesitan respuesta en 1 segundo (pueden estar listos en unas horas o a la mañana siguiente), los enviás por <strong>Batch API (Modo Asíncrono)</strong> y todos los proveedores (OpenAI, Anthropic, AWS Bedrock) te cobran <strong>exactamente la mitad (50% de descuento)</strong>.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    Modalidad de inferencia asíncrona por lotes diseñada para cargas de trabajo masivas sin requerimiento de respuesta inmediata (ej. pre-traducción de releases, auditoría de glosarios o análisis de tickets históricos), ofreciendo un 50% de descuento sobre la tarifa estándar por millón de tokens.
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Shadow Mode, Canary & Data Flywheel -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">11</span> Lanzamiento Seguro: Shadow Mode, Canary &amp; Data Flywheel</div>
+                <div class="concept-tag">Despliegue en Producción</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Cómo lanzar un bot de IA sin riesgo: <strong>1) Shadow Mode (Modo Sombra):</strong> el bot procesa los tickets reales en silencio detrás de escena sin que el cliente lo vea para comparar su acierto contra los humanos; <strong>2) Canary Release:</strong> se activa en vivo solo para el 5% de los usuarios y sube gradualmente a 100%; <strong>3) Data Flywheel:</strong> cada corrección humana (👎) pasa al <em>Golden Dataset</em> para que el sistema mejore cada semana.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">
+                    Metodología de despliegue progresivo para productos probabilísticos que combina validación silenciosa en paralelo (Shadow Mode), exposición gradual controlada por métricas en Langfuse (Canary Rollout) y retroalimentación continua hacia la suite de evaluaciones (Data Flywheel).
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- FOOTER -->

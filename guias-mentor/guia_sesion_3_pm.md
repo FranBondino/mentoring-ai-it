@@ -507,12 +507,12 @@
 • **Sesión 2:** Aprendiste cómo funciona un LLM por dentro y cómo darle memoria segura con **RAG (IA Pasiva)**.
 • **Sesión 3 (Hoy):** Aprendiste a darle manos y herramientas con **Agentes Autónomos (IA Activa)** usando ReAct, Orchestrator-Workers, Tool Calling/MCP, Pydantic y Human-in-the-Loop.
 
-**2️⃣ ¿QUÉ VAMOS A VER EN DETALLE EN LA SESIÓN 4 (Nuestra última clase)? (Señalá la 4ta tarjeta y el recuadro ámbar):**
-• En la **Sesión 4** nos ponemos el sombrero de **Directora de Producto IA** y vamos a ver **4 bloques concretos**:
-  1. **💰 Finanzas de la IA y Calculadora de ROI en vivo:** Cómo cobran por Token (por qué escribir cuesta 3-4 veces más que leer y por qué el español consume ~25% más tokens), cómo ahorrar un **90% con Prompt Caching**, cuadro financiero **RAG vs. Fine-Tuning** y práctica con una **Calculadora de ROI**.
-  2. **🛡️ Privacidad y Datos bajo NDA:** Cómo ocultar nombres de clientes y tarifas confidenciales automáticamente (**Sanitización de PII**) antes de mandar texto a la nube.
-  3. **📊 Calidad (AI Evals) y Observabilidad en Langfuse:** Cómo medir con puntaje del 0 al 100% si el bot alucina (**Tríada RAG**) y cómo ver la radiografía de tiempos y costos de cada mensaje en **Langfuse**.
-  4. **🎯 Simulacro Interactivo de 3 Entrevistas IT/IA:** Vamos a resolver en vivo 3 crisis reales que toman en entrevistas de PM (Factura 10x más cara, Lentitud de 12 segundos y Prevención de fuga de datos).
+**2️⃣ ¿QUÉ VAMOS A VER EN DETALLE EN LA SESIÓN 4 (100% Temas Nuevos)?:**
+• En la **Sesión 4** nos ponemos el sombrero de **Directora de Producto IA** y vamos a ver **4 bloques nuevos**:
+  1. **💰 FinOps Avanzado y Calculadora de ROI:** Cómo usar un **Model Router** (modelos livianos para el 80% fácil y modelos grandes para el 20% complejo), **Batch API (50% de descuento en procesamientos masivos)**, costos ocultos y práctica con la **Calculadora de ROI**.
+  2. **🚀 Lanzamiento Gradual (Shadow Mode & Canary) y Guardrails PII:** Cómo probar un agente en *Modo Sombra* antes de exponerlo al cliente y cómo enmascarar nombres y tarifas bajo NDA automáticamente.
+  3. **📊 Calidad (AI Evals) y Observabilidad en Langfuse:** Cómo medir alucinaciones con puntaje (**Tríada RAG** y **LLM-as-a-Judge**) y ver la radiografía de tiempos y costos en **Langfuse**.
+  4. **🎯 Simulacro Interactivo de 3 Entrevistas IT/IA:** Resolver en vivo 3 crisis reales de PM (Factura 10x más cara, Lentitud de 12 segundos y Prevención de fuga de datos).
 
 **3️⃣ PRÁCTICA FINAL DE HOY (Botones de abajo):**
 • Hagamos clic en **'🧪 Abrir Laboratorio Práctico S3'** para probar en 3 minutos nuestro simulador de gobernanza de agentes.
@@ -528,12 +528,12 @@
 
 ---
 
-## 🔭 ¿Qué vamos a ver en detalle en la Sesión 4 (Última Sesión)? — Guion para explicarle al cierre
+## 🔭 ¿Qué vamos a ver en detalle en la Sesión 4 (Última Sesión · 100% Temas Nuevos)?
 
-Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura técnica de IA Pasiva (RAG) e IA Activa (Agentes). En la **Sesión 4 (nuestra última sesión)** nos vamos a poner el sombrero de **Directora de Producto IA** y vamos a ver 4 bloques súper prácticos:
+Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura de construcción (RAG y Agentes). En la **Sesión 4 (nuestra última clase)** vamos a ver **4 bloques 100% nuevos** de liderazgo ejecutivo de producto IA:
 
-- **Bloque 1 (Slides 1 a 6) — 💰 Finanzas de la IA (AI Economics) & Calculadora de ROI en Vivo:** Cómo cobran realmente OpenAI, Anthropic y AWS Bedrock por millón de tokens (por qué las respuestas de salida cuestan 3 a 4 veces más que la lectura y por qué el español consume 25% más de tokens que el inglés). Cómo ahorrar hasta un **90% de presupuesto con Prompt Caching**, la tabla financiera **RAG vs. Fine-Tuning**, y vamos a usar una **Calculadora Interactiva de ROI** moviendo deslizadores en vivo para justificar cuánto ahorra un proyecto de IA frente al trabajo manual.
-- **Bloque 2 (Slide 7) — 🛡️ Privacidad Corporativa y Blindaje de Datos Sensibles (PII & NDA):** Cómo asegurarte de que ningún empleado filtre nombres de clientes, tarifas confidenciales o contratos bajo NDA al usar IA: filtros automáticos que ocultan datos personales (**Sanitización de PII**) antes de salir a la nube, contratos **Enterprise Zero-Retention** y permisos por rol (**RBAC**).
-- **Bloque 3 (Slides 8 a 10) — 📊 Auditoría de Calidad (AI Evals) & Radiografía en Vivo con Langfuse:** Cómo medir científicamente si el chatbot está respondiendo bien antes y después de salir a producción: la **Tríada de Calidad RAG** (*Fidelidad al manual*, *Relevancia de respuesta* y *Precisión de búsqueda*) usando un **LLM como Juez**, más un simulador de **Langfuse** donde vas a ver la radiografía exacta de cada mensaje (cuántos milisegundos tardó cada paso y cuántos centavos de dólar costó).
-- **Bloque 4 (Slides 11 a 15) — 🎯 Simulacro Interactivo de Entrevistas IT / IA (3 Crisis Reales):** Vamos a entrenar la **fórmula de 3 pasos** para responder preguntas difíciles en entrevistas de PM sin ser programadora, resolviendo en vivo 3 casos de crisis reales: **1) La factura de IA vino 10 veces más cara**, **2) El chatbot tarda 12 segundos en responder**, y **3) El comité de seguridad teme una fuga de datos confidenciales**.
+- **Bloque 1 (Slides 1 a 4 y 6) — 💰 Estrategia FinOps Avanzada: Model Routing, Batch API (-50%) & Calculadora ROI:** Cómo hacen las empresas para reducir un 80% su factura de IA combinando un **Model Router** (que deriva el 80% de las consultas fáciles a modelos rápidos como *Gemini Flash / Haiku* y deja solo el 20% difícil para el modelo grande), el uso de **Batch API (50% de descuento en tareas nocturnas/asíncronas)**, los costos ocultos del presupuesto y práctica con la **Calculadora Interactiva de ROI**.
+- **Bloque 2 (Slides 5 y 7) — 🚀 Lanzamiento Seguro (Shadow Mode & Canary) y Guardrails Activos PII:** Cómo lanzar un agente en producción sin riesgo usando **Shadow Mode (Modo Sombra)** y **Canary Release (5% → 25% → 100%)**, más el funcionamiento en vivo de la doble aduana de **Input/Output Guardrails** (enmascaramiento automático de nombres y tarifas bajo NDA antes de salir a la nube).
+- **Bloque 3 (Slides 8 a 10) — 📊 Auditoría de Calidad (AI Evals · Tríada RAG) & Radiografía en Langfuse:** Cómo armar tu **Golden Dataset** y usar un modelo auditor (**LLM-as-a-Judge**) para calificar del 0 al 100% la **Tríada RAG** (*Fidelidad*, *Precisión de Contexto* y *Relevancia*), y cómo inspeccionar en vivo cada paso (**Span**), tiempo y costo en **Langfuse**.
+- **Bloque 4 (Slides 11 a 15) — 🎯 Simulacro Interactivo de Entrevistas IT / IA (3 Crisis Reales):** La fórmula de 3 pasos (*1. Diagnóstico en Langfuse → 2. Acción en el Backlog → 3. Impacto de Negocio*) practicada en vivo eligiendo opciones ante 3 crisis reales: **1) Factura 10x más cara**, **2) Lentitud de 12 segundos**, y **3) Riesgo de fuga de datos bajo NDA**.
 

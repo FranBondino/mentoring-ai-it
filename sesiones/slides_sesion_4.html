@@ -533,160 +533,163 @@
 
         <!-- SLIDE 2: AGENDA -->
         <div class="slide" id="slide-2">
-            <h2 class="slide-title">Agenda Operativa de la Sesión 4</h2>
-            <p class="slide-subtitle">Los 3 pilares ejecutivos para liderar productos de IA y defender tus decisiones en entrevistas técnicas</p>
+            <h2 class="slide-title">Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)</h2>
+            <p class="slide-subtitle">Pasamos de cómo construir el bot (Sesiones 1 a 3) a cómo operarlo, escalarlo, auditarlo y defenderlo en entrevistas</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En las Sesiones 1 a 3 aprendiste <em>cómo se construye</em> el sistema (APIs, RAG y Agentes). Hoy aprendés las 3 cosas que te pregunta cualquier Directorio o entrevistador: <strong>1) ¿Cuánto cuesta y cuánto ahorra?</strong>, <strong>2) ¿Es seguro y confiable?</strong>, y <strong>3) ¿Cómo resolvés una crisis en vivo?</strong>
+                <strong>💡 En palabras simples:</strong> Ya sabés cómo armar la arquitectura técnica (RAG y Agentes). Hoy sumamos las herramientas de una <strong>Líder de Producto IA</strong> que no vimos antes: <strong>1) Estrategia FinOps (Model Routing, Batch API -50% y Calculadora ROI)</strong>, <strong>2) Lanzamiento Gradual (Shadow Mode), Guardrails PII, AI Evals y Langfuse</strong>, y <strong>3) Simulacro de 3 Entrevistas IT</strong>.
             </div>
             
             <div class="grid-3">
                 <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.25);">
                     <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-amber);"><i data-lucide="line-chart" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">1. Finanzas de la IA (FinOps)</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Costos reales por millón de tokens (Input vs. Output y el impacto del idioma español), ahorro del 90% con <strong>Prompt Caching</strong>, cuadro financiero RAG vs. Fine-Tuning y <strong>Calculadora de ROI</strong>.</p>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">1. Estrategia FinOps &amp; Lanzamiento</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;"><strong>Model Routing</strong> (modelos livianos vs. potentes), procesamiento masivo con <strong>Batch API (-50%)</strong>, lanzamiento seguro en <strong>Shadow Mode / Canary</strong> y <strong>Calculadora de ROI</strong>.</p>
                 </div>
                 
                 <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.25);">
                     <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-blue);"><i data-lucide="shield-check" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">2. Privacidad, Evals &amp; Langfuse</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Protección de datos bajo NDA (<strong>PII Masking</strong>), evaluación automática de calidad con la <strong>Tríada RAG (AI Evals)</strong> y radiografía de tiempos y costos en <strong>Langfuse</strong>.</p>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">2. Guardrails, AI Evals &amp; Langfuse</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Aduanas de entrada/salida (<strong>PII Masking &amp; Topic Filters</strong>), examen automático con la <strong>Tríada RAG (LLM-as-a-Judge)</strong> y radiografía en vivo con <strong>Langfuse</strong>.</p>
                 </div>
                 
                 <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.25);">
                     <div style="font-size: 1.8rem; margin-bottom: 0.7rem; color: var(--color-purple);"><i data-lucide="user-check" class="icon-lg"></i></div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">3. Simulacro de Entrevistas IT</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">La fórmula de 3 pasos para responder preguntas técnicas sin ser programadora, entrenada en vivo con <strong>3 crisis reales</strong> (Presupuesto, Latencia de 12s y Fuga de Datos).</p>
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; margin-bottom: 0.45rem;">3. Entrevistas IT &amp; Posicionamiento</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">La fórmula de 3 pasos para lucirte ante Hiring Managers, entrenada en vivo con <strong>3 simuladores de crisis reales</strong> (Presupuesto, Latencia de 12s y Fuga de Datos).</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 3: AI ECONOMICS -->
+        <!-- SLIDE 3: MODEL ROUTING & SMALL VS FRONTIER MODELS (NEW!) -->
         <div class="slide" id="slide-3">
-            <h2 class="slide-title">AI Economics: Cómo se Cobra la IA (Tokens &amp; GPU)</h2>
-            <p class="slide-subtitle">Por qué el costo de la IA es variable como un taxímetro y por qué el idioma español influye en el presupuesto</p>
+            <h2 class="slide-title">FinOps 1: Model Routing (Enrutamiento de Modelos)</h2>
+            <p class="slide-subtitle">Por qué nunca usamos el modelo más caro para el 100% de las tareas y cómo armamos un "semáforo inteligente"</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En el software clásico alquilás un servidor por un monto fijo al mes. En IA pagás por cada <strong>Token</strong> (sílaba) procesado en placas de video (GPU): <strong>lo que la IA escribe (Output) cuesta 3 a 4 veces más caro que lo que lee (Input)</strong>, y el español gasta ~25% más de tokens que el inglés.
+                <strong>💡 En palabras simples:</strong> Usar el modelo más grande (<em>GPT-4o / Claude Opus</em>) para clasificar un ticket simple es como contratar a un cirujano para poner una curita: cuesta <strong>20 veces más caro</strong> y tarda el triple. Con <strong>Model Routing</strong>, un clasificador deriva el <strong>80% de las consultas fáciles a un Modelo Liviano (Flash / Haiku)</strong> y solo envía el 20% complejo al modelo grande.
             </div>
             
             <div class="grid-2">
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-amber); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="coins"></i> Asimetría de Costos: Leer vs. Escribir
+                <div class="glass-card" style="padding: 1.25rem 1.5rem;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.12rem; color: var(--color-amber); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="git-branch" class="icon-sm"></i> Arquitectura de 2 Niveles (Tiered Routing)
                     </h3>
-                    <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
-                        Cada llamada a OpenAI, Anthropic o <strong>AWS Bedrock</strong> se factura por millón de tokens procesados:
-                    </p>
-                    <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.48; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.55rem;">
-                        <li><strong style="color: #60a5fa;">Input Tokens (Lectura · Más barato):</strong> Las instrucciones del sistema, los fragmentos del manual traídos por RAG y la pregunta del usuario. Se procesan todos juntos en paralelo.</li>
-                        <li><strong style="color: #f87171;">Output Tokens (Escritura · 3x a 4x más caro):</strong> La respuesta que redacta el modelo palabra por palabra. Como requiere mucha más memoria de GPU, pedimos siempre respuestas concisas o JSON cortos.</li>
-                    </ul>
+                    <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.81rem;">
+                        <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-left: 4px solid var(--color-green); padding: 0.7rem 0.85rem; border-radius: 8px;">
+                            <strong style="color: #34d399; display: block; margin-bottom: 0.2rem;">🟢 Ruta Rápida (70% - 85% de consultas) · Modelos Small / Flash</strong>
+                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro.<br><strong>Costo:</strong> ~$0.15 / 1M tokens · <strong>Velocidad:</strong> 0.3 seg. Ideal para extraer datos de PDFs, dudas frecuentes y clasificación.</span>
+                        </div>
+                        <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-left: 4px solid var(--color-purple); padding: 0.7rem 0.85rem; border-radius: 8px;">
+                            <strong style="color: #c084fc; display: block; margin-bottom: 0.2rem;">🟣 Ruta Experta (15% - 30% de consultas) · Modelos Frontier</strong>
+                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Claude Sonnet/Opus, GPT-4o, Gemini Pro.<br><strong>Costo:</strong> ~$3.00 a $15.00 / 1M tokens · <strong>Uso:</strong> Razonamiento multi-paso complejo, contratos ambiguos o traducción creativa difícil.</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); padding: 1.1rem; border-radius: 10px; text-align: center; margin-bottom: 0.9rem;">
-                        <p style="font-size: 0.74rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 1px; margin-bottom: 0.25rem;">REGLA DE PRESUPUESTO EN LOCALIZACIÓN</p>
-                        <p style="font-size: 1.45rem; font-weight: 800; font-family: monospace; color: #ffffff;">1.000 Tokens ≈ 750 Palabras (EN)</p>
-                        <p style="font-size: 0.8rem; color: #fde68a; margin-top: 0.3rem;">⚠️ En <strong>Español o Portugués</strong>, el mismo texto consume entre <strong>20% y 30% más de tokens</strong> (~580 palabras por cada 1.000 tokens) por las conjugaciones y tildes.</p>
-                    </div>
-                    <div style="background: rgba(245, 158, 11, 0.07); border-left: 4px solid var(--color-amber); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; line-height: 1.42;">
-                        <strong>Tip para entrevistas:</strong> Mencionar esta diferencia de tokens entre inglés y español demuestra que combinás tu experiencia lingüística con visión financiera de IA (FinOps).
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 1.02rem; color: #ffffff; margin-bottom: 0.65rem;">🎛️ Simulador en Vivo: Calibrá tu Model Router</h4>
+                        <div class="calculator-row" style="margin-bottom: 0.35rem;">
+                            <span class="calculator-label" style="font-size: 0.82rem;">% de Consultas Simples derivadas al Modelo Liviano:</span>
+                            <span class="calculator-value" id="router-pct-val">80%</span>
+                        </div>
+                        <input type="range" min="0" max="90" step="10" value="80" class="calculator-slider" id="router-pct-slider" oninput="updateRouterSim()" style="margin-bottom: 0.75rem;">
+                        <div class="results-box" style="margin-top: 0.3rem; padding: 0.9rem;">
+                            <div class="results-row">
+                                <span>Si mandás 100% al Modelo Grande:</span>
+                                <span style="color: var(--color-red); font-family: monospace; font-weight: 700;">$1,200.00 / mes</span>
+                            </div>
+                            <div class="results-row">
+                                <span style="color: var(--color-green); font-weight: 600;">Con tu Model Router Activo:</span>
+                                <span id="router-new-cost" style="color: var(--color-green); font-family: monospace; font-weight: 800;">$276.00 / mes</span>
+                            </div>
+                            <div class="results-row total" style="font-size: 0.95rem;">
+                                <span>Ahorro por Enrutamiento Inteligente:</span>
+                                <span id="router-saving-pct" style="font-family: monospace;">77% de ahorro ($924 USD)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: PROMPT CACHING -->
+        <!-- SLIDE 4: BATCH API (-50%) & HIDDEN COSTS OF AI P&L (NEW!) -->
         <div class="slide" id="slide-4">
-            <h2 class="slide-title">Prompt Caching: Hasta 90% de Ahorro</h2>
-            <p class="slide-subtitle">Cómo dejar guardadas en memoria rápida las instrucciones fijas y glosarios para no pagarlos de nuevo en cada consulta</p>
+            <h2 class="slide-title">FinOps 2: Batch API (-50%) &amp; Costos Ocultos</h2>
+            <p class="slide-subtitle">Cómo pagar exactamente la mitad en procesamientos masivos y qué costos ocultos debés incluir en tu presupuesto</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En un chatbot o validador de traducciones, el 80% del prompt es siempre igual (las reglas del rol y el glosario oficial). Si ponés <strong>toda esa parte fija bien arriba al principio del prompt</strong>, el proveedor la guarda en memoria caché y te hace entre un <strong>75% y 90% de descuento</strong>.
+                <strong>💡 En palabras simples:</strong> Además del <em>Prompt Caching</em> que vimos en las sesiones anteriores, tenés un truco financiero clave: si una tarea no necesita respuesta en 1 segundo (por ejemplo, auditar o traducir 2.000 módulos durante la noche), usás la <strong>Batch API (Modo Asíncrono)</strong> y todos los proveedores te cobran <strong>50% menos</strong>.
             </div>
             
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-blue); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="database"></i> ¿Cómo se ordena el Prompt para activar el Caché?
+                        <h3 style="font-family: var(--font-display); font-size: 1.12rem; color: var(--color-green); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="clock" class="icon-sm"></i> API en Tiempo Real vs. Batch API (-50% Dto)
                         </h3>
-                        <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48; margin-bottom: 0.8rem;">
-                            Para que la memoria caché funcione, el inicio del prompt debe ser 100% idéntico entre consulta y consulta:
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.46; margin-bottom: 0.7rem;">
+                            Como PM, separás tus flujos de IA en dos velocidades según la urgencia del usuario:
                         </p>
-                        <div style="font-family: monospace; font-size: 0.76rem; background: rgba(0,0,0,0.35); border-radius: 8px; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.07); line-height: 1.5;">
-                            <div style="color: #34d399;">1. [ARRIBA · FIJO · EN CACHÉ -80% DTO]: Rol del sistema + Guía de Estilo + Glosario corporativo (8.000 tokens).</div>
-                            <div style="color: #fbbf24; margin-top: 0.35rem;">2. [ABAJO · VARIABLE · TARIFA NORMAL]: Pregunta puntual del usuario o párrafo nuevo a revisar (500 tokens).</div>
+                        <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="background: rgba(59,130,246,0.08); border-left: 3px solid var(--color-blue); padding: 0.55rem 0.75rem; border-radius: 6px;">
+                                <strong style="color: #93c5fd;">⚡ Síncrono (Tiempo Real · Tarifa 100%):</strong> Chatbots de atención en vivo donde hay una persona esperando frente a la pantalla (SLA &lt; 2 seg).
+                            </div>
+                            <div style="background: rgba(16,185,129,0.08); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 6px;">
+                                <strong style="color: #6ee7b7;">🌙 Batch API / Asíncrono (Tarifa 50% Off):</strong> Pre-traducción de paquetes de release, control de calidad de glosarios o análisis de encuestas que pueden entregarse en 1 a 12 horas (<em>AWS Bedrock Batch / OpenAI Batch</em>).
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div style="background: rgba(59, 130, 246, 0.07); border-left: 4px solid var(--color-blue); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-top: 0.8rem;">
-                        <strong>Doble beneficio (Plata + Velocidad):</strong> Además de reducir la factura mensual, baja a menos de la mitad el tiempo de espera del primer token (<strong>TTFT</strong>).
                     </div>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="text-align: center; width: 100%;">
-                        <span class="nav-session" style="background: rgba(16, 185, 129, 0.15); color: var(--color-green); border-color: rgba(16, 185, 129, 0.3); margin-bottom: 1rem; display: inline-block;">IMPACTO EN FACTURA DE ENTRADA</span>
-                        <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 0.6rem;">
-                            <div style="text-align: center;">
-                                <div style="font-size: 1.55rem; font-weight: 800; color: var(--color-red); font-family: monospace;">$5.00 USD</div>
-                                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Por cada 1M de Tokens<br>(Sin Prompt Caching)</div>
-                            </div>
-                            <div style="border-right: 1px dashed rgba(255,255,255,0.12); height: 52px;"></div>
-                            <div style="text-align: center;">
-                                <div style="font-size: 1.55rem; font-weight: 800; color: var(--color-green); font-family: monospace;">$0.50 – $1.25</div>
-                                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem;">Por cada 1M de Tokens<br>(Con Prompt Caching Activo)</div>
-                            </div>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.06); padding: 0.85rem; border-radius: 8px; font-size: 0.78rem; text-align: left; line-height: 1.42; margin-top: 1.15rem; color: var(--text-secondary);">
-                            • <strong>Requisito técnico para el PRD:</strong> Se activa automáticamente en bloques fijos mayores a <strong>1.024 tokens</strong> (unas 750 palabras) en OpenAI, Anthropic Claude y AWS Bedrock.
-                        </div>
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.12rem; color: var(--color-amber); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="layers" class="icon-sm"></i> Los 4 Costos Ocultos en el Presupuesto (TCO)
+                        </h3>
+                        <p style="font-size: 0.81rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+                            Un error típico de PM Junior es calcular solo el costo de la respuesta final. El presupuesto real incluye:
+                        </p>
+                        <ul style="font-size: 0.79rem; color: #e2e8f0; line-height: 1.48; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.38rem;">
+                            <li><strong style="color: var(--color-amber);">1. Multiplicador Agéntico (ReAct):</strong> Si un agente da 4 vueltas internas para resolver un pedido, consume 4 veces los tokens de entrada.</li>
+                            <li><strong style="color: var(--color-blue);">2. Base Vectorial Activa:</strong> Alojamiento de índices en Pinecone / AWS OpenSearch (~$70 a $200 USD/mes base).</li>
+                            <li><strong style="color: var(--color-purple);">3. Costo del Juez Auditor (Evals):</strong> Auditar automáticamente el 10% de las charlas suma ~8% al consumo de tokens.</li>
+                            <li><strong style="color: var(--color-green);">4. Idioma del Proyecto:</strong> Español y Portugués requieren ~25% más de presupuesto en tokens que Inglés.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 5: RAG VS FINE-TUNING -->
+        <!-- SLIDE 5: SAFE ROLLOUT IN PRODUCTION: SHADOW MODE, CANARY & DATA FLYWHEEL (NEW!) -->
         <div class="slide" id="slide-5">
-            <h2 class="slide-title">RAG vs. Fine-Tuning: La Decisión Financiera</h2>
-            <p class="slide-subtitle">Cómo justificar ante dirección por qué el 95% de los productos corporativos empiezan con RAG y no re-entrenando modelos</p>
+            <h2 class="slide-title">Lanzamiento Seguro: Shadow Mode &amp; Canary Rollout</h2>
+            <p class="slide-subtitle">Cómo se lanza un producto de IA a producción paso a paso sin arriesgar la operación ni la reputación</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> <strong>RAG</strong> es darle al asistente acceso en vivo al Google Drive actualizado todos los días (económico, instantáneo y cita la página exacta). <strong>Fine-Tuning</strong> es mandarlo a hacer un posgrado carísimo de semanas: sirve para enseñarle un *estilo o formato*, pero queda desactualizado apenas cambia un manual.
+                <strong>💡 En palabras simples:</strong> Nunca encendés un agente nuevo para el 100% de los clientes el primer día. Primero lo ponés en <strong>Modo Sombra (Shadow Mode)</strong>: el agente trabaja en silencio a la par de tu equipo humano sin que el cliente lo vea, hasta comprobar que acierta más del 90% de las veces.
             </div>
             
-            <div class="glass-card" style="max-width: 980px; padding: 1.5rem 2rem;">
-                <table class="comp-table">
-                    <thead>
-                        <tr>
-                            <th>Criterio de Negocio</th>
-                            <th>RAG (Búsqueda en Base Vectorial)</th>
-                            <th>Fine-Tuning (Re-entrenar el Modelo)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Costo Inicial y Tiempo</td>
-                            <td style="color: #a7f3d0;"><strong>Bajo (Días):</strong> Fragmentar documentos (Chunking) y cargarlos en Pinecone.</td>
-                            <td style="color: #fca5a5;"><strong>Alto (Semanas + GPUs caras):</strong> Limpiar y curar miles de ejemplos perfectos.</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Actualizar un Glosario o Regla</td>
-                            <td style="color: #a7f3d0;"><strong>Instantáneo y centavos:</strong> Subís el PDF nuevo y en 5 segundos ya está activo.</td>
-                            <td style="color: #fca5a5;"><strong>Muy costoso:</strong> Hay que volver a entrenar una versión nueva del modelo.</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: #ffffff;">Control de Alucinaciones y Citas</td>
-                            <td style="color: #a7f3d0;"><strong>Alto:</strong> Podés exigirle citar documento y página oficial; si no está, frena.</td>
-                            <td style="color: #fca5a5;"><strong>Bajo:</strong> No puede citar fuentes ni recordar datos que cambian día a día.</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: #ffffff;">¿Para qué se usa cada uno?</td>
-                            <td style="color: var(--color-green); font-weight: 700;">Enseñar QUÉ responder (Manuales, glosarios, estado de proyectos).</td>
-                            <td style="color: var(--color-purple); font-weight: 700;">Enseñar CÓMO hablar (Tono de marca específico o estructura JSON).</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="background: rgba(245, 158, 11, 0.08); border-left: 4px solid var(--color-amber); padding: 0.7rem 0.9rem; border-radius: 4px; font-size: 0.79rem; line-height: 1.4; margin-top: 1rem; color: #f8fafc;">
-                    <strong>Regla ejecutiva de PM:</strong> Empezá siempre con <strong>RAG + Prompt Caching</strong>. Solo invertí en Fine-Tuning en una etapa madura si necesitás que un modelo pequeño y barato imite un estilo de traducción ultra-específico.
+            <div class="grid-3">
+                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.3);">
+                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.65rem; display: inline-block;">FASE 1 · SEMANAS 1-2</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.45rem;">1. Shadow Mode (Modo Sombra)</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        El agente recibe los tickets reales en segundo plano y genera su propuesta en secreto, pero <strong>solo la ve el equipo interno</strong>. Comparamos qué propuso la IA contra lo que hizo el analista humano sin ningún riesgo para el cliente.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <span class="nav-session" style="margin-bottom: 0.65rem; display: inline-block;">FASE 2 · SEMANAS 3-4</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.45rem;">2. Canary Release (5% → 25% → 100%)</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        Activamos el bot en vivo únicamente para el <strong>5% del tráfico</strong> (o para un solo proyecto piloto interno). Si las métricas en Langfuse y el presupuesto dan verde durante 7 días, subimos gradualmente a 25%, 50% y 100%.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <span class="nav-session" style="background: rgba(16,185,129,0.15); color: var(--color-green); border-color: rgba(16,185,129,0.3); margin-bottom: 0.65rem; display: inline-block;">FASE 3 · MEJORA CONTINUA</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: #ffffff; margin-bottom: 0.45rem;">3. Data Flywheel (Rueda de Feedback)</h3>
+                    <p style="font-size: 0.81rem; color: var(--text-secondary); line-height: 1.48;">
+                        Agregamos botones de <strong>👍 / 👎 y corrección rápida</strong> en la interfaz. Cada vez que un PM o lingüista corrige una respuesta del bot, ese ejemplo pasa directo al <strong>Golden Dataset</strong> para que el sistema aprenda cada semana.
+                    </p>
                 </div>
             </div>
         </div>
@@ -764,37 +767,47 @@
             </div>
         </div>
 
-        <!-- SLIDE 7: SEGURIDAD Y DATA LEAKAGE -->
+        <!-- SLIDE 7: SEGURIDAD Y DATA LEAKAGE (ACTIVE GUARDRAILS) -->
         <div class="slide" id="slide-7">
-            <h2 class="slide-title">Seguridad Corporativa: Prevención de Fuga de Datos</h2>
-            <p class="slide-subtitle">Las 3 barreras para que ningún empleado ni agente filtre datos personales (PII) o contratos bajo NDA</p>
+            <h2 class="slide-title">Guardrails Activos: Aduana de Entrada y Salida</h2>
+            <p class="slide-subtitle">Cómo funcionan los filtros automáticos (PII Redaction &amp; Topic Filters) que limpian el mensaje antes y después del LLM</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Antes de mandar cualquier consulta a OpenAI o Anthropic, ponemos un filtro que reemplaza nombres reales, mails y tarifas secretas por etiquetas como <code>[CLIENTE_CONFIDENCIAL]</code> (<strong>Sanitización de PII</strong>) y exigimos un contrato <strong>Enterprise Zero-Retention</strong> (prohibido guardar o entrenar con nuestros datos).
+                <strong>💡 En palabras simples (Conexión con AWS Bedrock Guardrails):</strong> En vez de confiar en que los empleados nunca peguen datos sensibles en el chat, ponemos una <strong>doble aduana automática</strong>: la <strong>Aduana de Entrada</strong> oculta nombres, mails y tarifas secretas antes de salir a la nube, y la <strong>Aduana de Salida</strong> verifica que el bot no mencione competidores ni promesas prohibidas.
             </div>
             
             <div class="grid-2">
-                <div class="glass-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-red); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="shield-alert"></i> ¿Qué es el Riesgo de Data Leakage?
+                <div class="glass-card" style="padding: 1.25rem 1.5rem;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--color-amber); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="shield" class="icon-sm"></i> El Pipeline de Doble Aduana (Input &amp; Output)
                     </h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.8rem;">
-                        Ocurre cuando un empleado o un agente envía información sensible (nombres de clientes, DNI/emails <strong>PII</strong>, tarifas confidenciales o documentos bajo <strong>NDA</strong>) a una cuenta gratuita o pública de IA.
-                    </p>
-                    <p style="font-size: 0.81rem; color: #fca5a5; line-height: 1.45; background: rgba(239,68,68,0.08); padding: 0.7rem; border-radius: 8px; border: 1px solid rgba(239,68,68,0.25);">
-                        ⚠️ En las cuentas gratuitas de consumo masivo, los textos enviados pueden quedar guardados y utilizarse para entrenar futuras versiones públicas del modelo.
-                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.8rem;">
+                        <div style="background: rgba(59,130,246,0.09); border-left: 3px solid var(--color-blue); padding: 0.6rem 0.8rem; border-radius: 6px;">
+                            <strong style="color: #93c5fd;">1. Input Guardrail (Antes de ir al LLM):</strong><br>
+                            • <strong>PII Masking:</strong> Reemplaza nombres, DNI, mails y montos por etiquetas (<code>[CLIENTE_1]</code>, <code>[TARIFA_NDA]</code>).<br>
+                            • <strong>Filtro Anti-Jailbreak:</strong> Bloquea intentos de manipular las reglas del prompt.
+                        </div>
+                        <div style="background: rgba(16,185,129,0.09); border-left: 3px solid var(--color-green); padding: 0.6rem 0.8rem; border-radius: 6px;">
+                            <strong style="color: #6ee7b7;">2. Output Guardrail (Antes de mostrar al usuario):</strong><br>
+                            • <strong>Topic &amp; Competitor Filter:</strong> Impide que el bot hable de empresas competidoras o dé consejos legales/médicos.<br>
+                            • <strong>Re-hidratación Local:</strong> Vuelve a colocar el nombre real del cliente solo adentro de tu pantalla segura.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
                     <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="shield"></i> Las 3 Capas de Blindaje que exige un PM
-                        </h3>
-                        <ul style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.48; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li><strong style="color: #ffffff;">1. Proxy de Sanitización (PII Masking):</strong> Filtro en el API Gateway (o <em>AWS Bedrock Guardrails</em>) que oculta nombres, mails y montos antes de que salgan a la nube.</li>
-                            <li><strong style="color: #ffffff;">2. Contrato Enterprise con Zero-Data Retention:</strong> Garantía legal y técnica de que el proveedor borra el prompt en milisegundos y jamás entrena con tus datos.</li>
-                            <li><strong style="color: #ffffff;">3. Control de Acceso por Rol (RBAC) en la Base Vectorial:</strong> Cada usuario solo puede recuperar documentos que su cargo tiene permiso de ver.</li>
-                        </ul>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                            <h4 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff;">🛡️ Probador de Sanitización PII en Vivo</h4>
+                            <button type="button" class="btn-nav" style="padding: 5px 11px; font-size: 0.74rem; border-color: var(--color-green); color: #6ee7b7;" onclick="togglePiiDemo()" id="btn-pii-demo">🔒 Ver Texto Sanitizado</button>
+                        </div>
+                        <div style="font-size: 0.74rem; color: var(--text-secondary); margin-bottom: 0.35rem;">Lo que escribió el empleado en el chat interno:</div>
+                        <div style="font-family: monospace; font-size: 0.77rem; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); padding: 0.65rem; border-radius: 8px; color: #fecaca; margin-bottom: 0.65rem; line-height: 1.45;">
+                            "Resumí el reclamo de <strong>María Gómez (maria@bancopatagonia.com)</strong> por el contrato bajo NDA de <strong>$85.000 USD</strong>."
+                        </div>
+                        <div style="font-size: 0.74rem; color: var(--text-secondary); margin-bottom: 0.35rem;">Lo que realmente viaja por internet hacia la API del LLM:</div>
+                        <div id="pii-demo-output" style="font-family: monospace; font-size: 0.77rem; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35); padding: 0.65rem; border-radius: 8px; color: #a7f3d0; line-height: 1.45;">
+                            "Resumí el reclamo de <strong>[PERSONA_01] ([EMAIL_OCULTO])</strong> por el contrato bajo NDA de <strong>[MONTO_CONFIDENCIAL]</strong>."
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1266,6 +1279,2096 @@
                 prevSlide();
             }
         });
+
+        
+        function updateRouterSim() {
+            const slider = document.getElementById('router-pct-slider');
+            if (!slider) return;
+            const pctSmall = parseInt(slider.value);
+            document.getElementById('router-pct-val').textContent = pctSmall + '%';
+            const baseCost = 1200; // 100% Frontier model
+            const smallUnitRatio = 0.05; // Small model costs ~5% of Frontier
+            const newCost = baseCost * ((pctSmall / 100) * smallUnitRatio + ((100 - pctSmall) / 100) * 1.0);
+            const saved = baseCost - newCost;
+            const savedPct = Math.round((saved / baseCost) * 100);
+            document.getElementById('router-new-cost').textContent = '
+        function calculateROI() {
+            const volume = parseInt(document.getElementById('calc-volume').value);
+            const minsPerDoc = parseInt(document.getElementById('calc-mins').value);
+            const hourlyRate = parseInt(document.getElementById('calc-hourly').value);
+            
+            document.getElementById('calc-volume-val').textContent = volume.toLocaleString('es-AR');
+            document.getElementById('calc-mins-val').textContent = `${minsPerDoc} min`;
+            document.getElementById('calc-hourly-val').textContent = `$${hourlyRate} / h`;
+            
+            // AI Cost without cache: 10,000 input tokens @ $5/M + 500 output tokens @ $15/M = $0.0575/doc
+            const unitCostNoCache = ((10000 / 1000000) * 5) + ((500 / 1000000) * 15);
+            const monthlyCostNoCache = unitCostNoCache * volume;
+
+            // AI Cost with Prompt Caching: 2,000 full @ $5/M + 8,000 cached @ $1.25/M + 500 output @ $15/M = $0.0275/doc
+            const unitCostCache = ((2000 / 1000000) * 5) + ((8000 / 1000000) * 1.25) + ((500 / 1000000) * 15);
+            const monthlyCostCache = unitCostCache * volume;
+
+            // Human manual cost
+            const hoursNeeded = (volume * minsPerDoc) / 60;
+            const ftesNeeded = hoursNeeded / 160;
+            const monthlyCostHuman = hoursNeeded * hourlyRate;
+
+            // Human-in-the-Loop supervision (20% of manual time)
+            const monthlyCostHitl = monthlyCostHuman * 0.20;
+            const netSavings = monthlyCostHuman - (monthlyCostCache + monthlyCostHitl);
+
+            document.getElementById('cost-no-cache').textContent = `$${monthlyCostNoCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('cost-cache').textContent = `$${monthlyCostCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('cost-human').textContent = `$${monthlyCostHuman.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('hours-needed').textContent = `${Math.round(hoursNeeded).toLocaleString('es-AR')} hs (${ftesNeeded.toFixed(1)} personas FTE)`;
+            document.getElementById('cost-hitl').textContent = `$${monthlyCostHitl.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('roi-savings').textContent = `$${netSavings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        }
+
+        // --- INTERACTIVE ENGINE: EVALS RUBRIC (SLIDE 9) ---
+        function calculateEval() {
+            const fidelidad = parseFloat(document.getElementById('eval-fidelidad').value);
+            const contextoEl = document.getElementById('eval-contexto');
+            const contexto = contextoEl ? parseFloat(contextoEl.value) : 1.0;
+            const relevancia = parseFloat(document.getElementById('eval-relevancia').value);
+            
+            document.getElementById('eval-fidelidad-val').textContent = fidelidad.toFixed(1);
+            if (document.getElementById('eval-contexto-val')) {
+                document.getElementById('eval-contexto-val').textContent = contexto.toFixed(1);
+            }
+            document.getElementById('eval-relevancia-val').textContent = relevancia.toFixed(1);
+            
+            const avgScore = (fidelidad + contexto + relevancia) / 3;
+            const statusTag = document.getElementById('eval-status');
+            const critique = document.getElementById('eval-critique');
+
+            if (fidelidad >= 0.8 && contexto >= 0.8 && relevancia >= 0.8) {
+                statusTag.textContent = "APROBADO (" + Math.round(avgScore * 100) + "%)";
+                statusTag.className = "eval-tag success";
+                critique.textContent = "Las 3 métricas superan el umbral mínimo de 0.80. Aprobado para producción.";
+                critique.style.color = "var(--color-green)";
+            } else {
+                statusTag.textContent = "RECHAZADO (" + Math.round(avgScore * 100) + "%)";
+                statusTag.className = "eval-tag fail";
+                if (fidelidad < 0.8) {
+                    critique.textContent = "Bloqueado por Alucinación: Fidelidad < 0.80 (el bot inventó que mañana se aprueba sin pruebas de QA).";
+                } else if (contexto < 0.8) {
+                    critique.textContent = "Bloqueado: Precisión de Contexto < 0.80 (la Base Vectorial no trajo el fragmento correcto; revisar Chunking/Metadatos).";
+                } else {
+                    critique.textContent = "Bloqueado: Relevancia de Respuesta < 0.80 (no respondió de forma directa la duda del usuario).";
+                }
+                critique.style.color = "var(--color-red)";
+            }
+        }
+
+        function loadCorrectAuditEval() {
+            document.getElementById('eval-fidelidad').value = 0.2;
+            if (document.getElementById('eval-contexto')) document.getElementById('eval-contexto').value = 1.0;
+            document.getElementById('eval-relevancia').value = 0.9;
+            calculateEval();
+        }
+
+        // --- INTERACTIVE ENGINE: TRACE VIEWER (SLIDE 10) ---
+        function toggleTrace(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+            } else {
+                el.style.display = 'block';
+            }
+        }
+
+        // --- INTERACTIVE ENGINE: COST LEAK ROLEPLAY (SLIDE 12) ---
+        let costInterval = null;
+        let costSimRunning = false;
+        function startCostLeak() {
+            if (costSimRunning) return;
+            costSimRunning = true;
+            
+            const chat = document.getElementById('chat-c1');
+            const costVal = document.getElementById('sim-cost-val');
+            const costLbl = document.getElementById('sim-cost-lbl');
+            const btnFix = document.getElementById('btn-apply-cost-fix');
+            const btnRun = document.getElementById('btn-run-cost-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+            costVal.style.color = "var(--color-red)";
+
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico en Langfuse:</strong> Detectando agente atrapado en Loop Infinito reintentando llamada fallida sin Prompt Caching...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+
+            let curCost = 120;
+            costInterval = setInterval(() => {
+                curCost += Math.floor(Math.random() * 85) + 45;
+                costVal.textContent = `$${curCost.toLocaleString('es-AR')}.00 USD`;
+                costLbl.textContent = "⚠️ Loop infinito consumiendo 12.000 tokens/seg...";
+            }, 220);
+        }
+
+        function applyCostFix() {
+            if (costInterval) clearInterval(costInterval);
+            costSimRunning = false;
+            
+            const chat = document.getElementById('chat-c1');
+            const costVal = document.getElementById('sim-cost-val');
+            const costLbl = document.getElementById('sim-cost-lbl');
+            const btnFix = document.getElementById('btn-apply-cost-fix');
+
+            btnFix.disabled = true;
+            costVal.style.color = "var(--color-green)";
+            costVal.textContent = "$42.00 USD / sem";
+            costLbl.textContent = "✅ Max Iterations = 5 + Prompt Caching (-80%) + Model Routing activos.";
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Cortafuegos en 5 intentos, Prompt Caching para instrucciones fijas y Model Routing hacia un modelo liviano en consultas simples. Ahorro del 85%.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase1Option(type, btn) {
+            const chat = document.getElementById('chat-c1');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si pedís más presupuesto sin diagnosticar la causa raíz técnica o frenás a los usuarios, el loop infinito va a volver a consumir el nuevo presupuesto en horas. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "1) Audito las trazas en <strong>Langfuse</strong> para detectar Loops Infinitos y fijo un tope duro de <strong>Max Iterations = 5</strong>. 2) Activo <strong>Prompt Caching</strong> en el bloque fijo del sistema para ahorrar 80% de tokens de entrada. 3) Implemento <strong>Model Routing</strong> derivando consultas simples a un modelo liviano (GPT-4o-mini / Haiku)."</div>`;
+                if (costSimRunning) applyCostFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetCostSim() {
+            if (costInterval) clearInterval(costInterval);
+            costSimRunning = false;
+            document.getElementById('sim-cost-val').textContent = "$0.00";
+            document.getElementById('sim-cost-val').style.color = "var(--color-red)";
+            document.getElementById('sim-cost-lbl').textContent = "1° Tocá 'Simular Desvío de Costo' para ver el incidente.";
+            document.getElementById('btn-run-cost-leak').disabled = false;
+            document.getElementById('btn-apply-cost-fix').disabled = true;
+            document.getElementById('chat-c1').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Lanzamos nuestro agente corporativo a producción y en 7 días consumió todo el presupuesto mensual de tokens. ¿Qué pasó y cómo lo solucionás sin apagar el producto?"</div>`;
+        }
+
+        // --- INTERACTIVE ENGINE: LATENCY LEAK ROLEPLAY (SLIDE 13) ---
+        let latencyInterval = null;
+        let latencySimRunning = false;
+        function startLatencyLeak() {
+            if (latencySimRunning) return;
+            latencySimRunning = true;
+
+            const chat = document.getElementById('chat-c2');
+            const latVal = document.getElementById('sim-latency-val');
+            const latLog = document.getElementById('sim-latency-log');
+            const btnFix = document.getElementById('btn-apply-lat-fix');
+            const btnRun = document.getElementById('btn-run-lat-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+            latVal.style.color = "var(--color-red)";
+
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico:</strong> El agente está llamando a Jira, Pinecone y ERP en fila india (secuencial) y esperando a tener todo el párrafo antes de mostrar la primera palabra...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+
+            let curLat = 0;
+            latLog.textContent = "⏳ Llamando API 1 (Jira)... luego API 2 (Glosario)... luego API 3 (ERP)... pantalla congelada...";
+            latencyInterval = setInterval(() => {
+                curLat += 1.0;
+                latVal.textContent = `${curLat.toFixed(1)}s`;
+                if (curLat >= 12.0) {
+                    clearInterval(latencyInterval);
+                    latLog.textContent = "⚠️ Recién a los 12.0s aparece: 'El Release v2.4 tiene 10 módulos listos y 2 en QA...'";
+                }
+            }, 180);
+        }
+
+        function applyLatencyFix() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            latencySimRunning = false;
+
+            const chat = document.getElementById('chat-c2');
+            const latVal = document.getElementById('sim-latency-val');
+            const latLog = document.getElementById('sim-latency-log');
+            const btnFix = document.getElementById('btn-apply-lat-fix');
+
+            btnFix.disabled = true;
+            
+            let curLat = 0;
+            latLog.textContent = "⚡ [Parallel Tool Calling + Streaming]: 'El Release v2.4 tiene 10 módulos listos...'";
+            latencyInterval = setInterval(() => {
+                curLat += 0.2;
+                latVal.textContent = `${curLat.toFixed(1)}s`;
+                if (curLat >= 1.0) {
+                    clearInterval(latencyInterval);
+                    latVal.textContent = "0.9s";
+                    latVal.style.color = "var(--color-green)";
+                    latLog.textContent = "✅ Primera palabra en 0.9s con Token Streaming + 3 APIs en paralelo + KV Cache.";
+                }
+            }, 90);
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Bajamos el TTFT de 12.0s a 0.9s activando Token Streaming, Parallel Tool Calling y KV Cache.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase2Option(type, btn) {
+            const chat = document.getElementById('chat-c2');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si desconectás Jira el agente pierde su valor operativo, y un spinner durante 12 segundos sigue causando abandono. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Ataco la velocidad percibida y la real: 1) Activo <strong>Token Streaming</strong> para que el usuario lea la primera palabra en menos de 1 segundo; 2) Implemento <strong>Parallel Tool Calling</strong> para consultar Jira, Glosario y ERP al mismo tiempo en paralelo; y 3) Uso <strong>KV Cache</strong> y chunks compactos."</div>`;
+                applyLatencyFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetLatencySim() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            latencySimRunning = false;
+            document.getElementById('sim-latency-val').textContent = "0.0s";
+            document.getElementById('sim-latency-val').style.color = "var(--color-blue)";
+            document.getElementById('sim-latency-log').textContent = "Esperando consulta del usuario sobre el Release v2.4...";
+            document.getElementById('btn-run-lat-leak').disabled = false;
+            document.getElementById('btn-apply-lat-fix').disabled = true;
+            document.getElementById('chat-c2').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Los usuarios se quejan de que el asistente tarda 12 segundos con la pantalla en blanco porque consulta 3 sistemas en fila y lee manuales largos. ¿Cómo lo optimizás?"</div>`;
+        }
+
+        // --- INTERACTIVE ENGINE: SECURITY LEAK ROLEPLAY (SLIDE 14) ---
+        let securitySimRunning = false;
+        function startSecurityLeak() {
+            securitySimRunning = true;
+
+            const chat = document.getElementById('chat-c3');
+            const secLog = document.getElementById('sim-security-log');
+            const btnFix = document.getElementById('btn-apply-sec-fix');
+            const btnRun = document.getElementById('btn-run-sec-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+
+            secLog.innerHTML = `<span style="color: var(--color-red);">❌ RIESGO DE FUGA (SIN FILTRO): {"cliente": "Banco Global S.A.", "email": "director@bancoglobal.com", "tarifa_nda": "$48,500 USD"}</span>`;
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Alerta:</strong> El prompt está saliendo hacia la nube externa con nombres reales, emails y montos bajo NDA...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function applySecurityFix() {
+            securitySimRunning = false;
+
+            const chat = document.getElementById('chat-c3');
+            const secLog = document.getElementById('sim-security-log');
+            const btnFix = document.getElementById('btn-apply-sec-fix');
+
+            btnFix.disabled = true;
+
+            secLog.innerHTML = `<span style="color: var(--color-green);">✅ SANITIZADO EN API GATEWAY: {"cliente": "[CLIENTE_NDA_01]", "email": "[EMAIL_OCULTO]", "tarifa_nda": "[MONTO_PROTEGIDO]"} · SLA: Zero-Retention</span>`;
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Blindaje Activo:</strong> Datos sensibles enmascarados localmente en el Proxy antes de salir a la nube + acuerdo Enterprise Zero-Data Retention.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase3Option(type, btn) {
+            const chat = document.getElementById('chat-c3');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Legales:</strong> La buena voluntad por mail no pasa una auditoría de seguridad ISO/SOC2: un error humano filtraría igual el contrato. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Implemento 3 barreras técnicas: 1) Un <strong>Proxy de Sanitización (PII Masking)</strong> en nuestro API Gateway que oculta nombres, mails y tarifas antes de salir a internet; 2) Contrato <strong>Enterprise con Zero-Data Retention</strong>; y 3) <strong>Permisos por Rol (RBAC)</strong> en los metadatos de la Base Vectorial."</div>`;
+                applySecurityFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetSecuritySim() {
+            securitySimRunning = false;
+            document.getElementById('sim-security-log').innerHTML = "Esperando envío de consulta con datos de cliente...";
+            document.getElementById('btn-run-sec-leak').disabled = false;
+            document.getElementById('btn-apply-sec-fix').disabled = true;
+            document.getElementById('chat-c3').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager / Legales:</strong> "Nos preocupa que al usar el asistente se filtren nombres de clientes, mails o tarifas bajo NDA hacia servidores externos de IA. ¿Qué arquitectura proponés?"</div>`;
+        }
+
+        lucide.createIcons();
+        updateNavigation();
+    </script>
+
+    <!-- ================= ANABELA PREMIUM MOTION & RESPONSIVE ENGINE ================= -->
+    <style id="anabela-motion-engine-css">
+        :root {
+            --anabela-accent: #f59e0b;
+            --anabela-accent-rgb: 245, 158, 11;
+        }
+
+        /* Ambient Interactive Canvas */
+        #anabela-ambient-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.65;
+        }
+
+        /* Floating Top HUD Bar */
+        .anabela-top-hud {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 3rem);
+            max-width: 1280px;
+            height: 46px;
+            background: rgba(10, 14, 26, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 250;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(var(--anabela-accent-rgb), 0.12);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .anabela-hud-left, .anabela-hud-right {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .anabela-hud-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .anabela-hud-btn:hover {
+            background: rgba(var(--anabela-accent-rgb), 0.18);
+            border-color: var(--anabela-accent);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(var(--anabela-accent-rgb), 0.25);
+        }
+
+        .anabela-hud-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(var(--anabela-accent-rgb), 0.25), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(var(--anabela-accent-rgb), 0.4);
+        }
+
+        .anabela-hud-pulse {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--anabela-accent);
+            box-shadow: 0 0 8px var(--anabela-accent);
+            animation: anabelaPulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes anabelaPulseDot {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.4); opacity: 1; }
+        }
+
+        /* Push slide content down cleanly to respect Top HUD and fit 1366x768 without vertical scroll */
+        .anabela-top-hud {
+            height: 42px !important;
+            top: 10px !important;
+        }
+        .slides-wrapper {
+            height: calc(100vh - 56px) !important;
+        }
+        .controls-bar, .nav-bar {
+            height: 56px !important;
+            background: rgba(8, 12, 22, 0.88) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+        /* Hide redundant bottom menu button in S2/S3 since Top HUD has the visual drawer */
+        .slides-menu-btn {
+            display: none !important;
+        }
+        .slide {
+            padding-top: 3.8rem !important;
+            padding-bottom: 1.2rem !important;
+        }
+        @media (min-width: 769px) {
+            .slide > *:last-child {
+                margin-bottom: 0.4rem !important;
+            }
+        }
+        @media (max-height: 820px) and (min-width: 769px) {
+            .slide {
+                padding-top: 3.6rem !important;
+                padding-bottom: 0.8rem !important;
+            }
+            .slide-title {
+                font-size: 1.75rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            .slide-subtitle {
+                font-size: 0.86rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .git-visual-container {
+                padding: 0.85rem 1rem !important;
+                margin: 0.4rem 0 !important;
+            }
+        }
+
+        /* Crisp, Zero-Blur Spring Entrance Animation (Single-layer, no nested double-opacity) */
+        @keyframes anabelaSpringUp {
+            0% {
+                opacity: 0;
+                transform: translateY(14px) scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .slide.active > .slide-title,
+        .slide.active > .cover-container {
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.01s both;
+        }
+
+        .slide.active > .slide-subtitle {
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+        }
+
+        .slide.active > *:not(.slide-title):not(.slide-subtitle):not(.cover-container) {
+            animation: anabelaSpringUp 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both;
+        }
+
+        /* High-Contrast Glass Card Polish */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.72) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
+        }
+
+        /* Interactive Spotlight Glow & 3D Hover Polish on Glass Cards */
+        .glass-card, .status-card, .pm-stage-card, .role-bento-card, .us-pm-action-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.35s ease,
+                        box-shadow 0.35s ease !important;
+        }
+
+        .glass-card::after, .status-card::after, .pm-stage-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                520px circle at var(--mouse-x, 50%) var(--mouse-y, -200%),
+                rgba(var(--anabela-accent-rgb), 0.13),
+                transparent 45%
+            );
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glass-card:hover::after, .status-card:hover::after, .pm-stage-card:hover::after {
+            opacity: 1;
+        }
+
+        .glass-card > *, .status-card > *, .pm-stage-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(var(--anabela-accent-rgb), 0.42) !important;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(var(--anabela-accent-rgb), 0.14) !important;
+        }
+
+        /* Slide Overview Drawer Modal */
+        .anabela-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 15, 0.86);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .anabela-drawer-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .anabela-drawer-modal {
+            width: 100%;
+            max-width: 1050px;
+            max-height: 85vh;
+            background: rgba(15, 21, 38, 0.95);
+            border: 1px solid rgba(var(--anabela-accent-rgb), 0.35);
+            border-radius: 22px;
+            padding: 1.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+            overflow: hidden;
+        }
+
+        .anabela-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .anabela-drawer-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .anabela-drawer-close {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .anabela-drawer-close:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+            color: #fca5a5;
+        }
+
+        .anabela-drawer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 0.85rem;
+            overflow-y: auto;
+            padding-right: 0.4rem;
+        }
+
+        .anabela-drawer-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .anabela-drawer-item:hover {
+            background: rgba(var(--anabela-accent-rgb), 0.14);
+            border-color: rgba(var(--anabela-accent-rgb), 0.5);
+            transform: translateY(-2px);
+        }
+
+        .anabela-drawer-item.current {
+            background: rgba(var(--anabela-accent-rgb), 0.22);
+            border-color: var(--anabela-accent);
+            box-shadow: 0 0 18px rgba(var(--anabela-accent-rgb), 0.28);
+        }
+
+        .anabela-drawer-num {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--anabela-accent);
+        }
+
+        .anabela-drawer-name {
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.35;
+        }
+
+        /* ============================================================================
+           UNIVERSAL RESPONSIVE OVERRIDES (TABLET & MOBILE)
+        ============================================================================ */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 4.3rem 1.6rem 5.5rem !important;
+            }
+            .slide-title {
+                font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
+            }
+            /* Force inline multi-column grids to wrap responsively on tablets */
+            [style*="grid-template-columns: repeat(6"],
+            [style*="grid-template-columns: repeat(5"],
+            [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.85rem !important;
+            }
+            .pm-pipeline-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .orchestrator-layout {
+                flex-direction: column !important;
+                gap: 1.2rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                height: 100dvh !important;
+                overflow: hidden !important;
+            }
+            .anabela-top-hud {
+                top: 8px;
+                width: calc(100% - 1.2rem);
+                height: 42px;
+                padding: 0 0.65rem;
+            }
+            .anabela-hud-badge {
+                display: none !important;
+            }
+            .anabela-hud-btn span.hud-label-hide-sm {
+                display: none !important;
+            }
+            .anabela-hud-btn {
+                padding: 5px 10px;
+                font-size: 0.73rem;
+            }
+            .slides-wrapper {
+                height: calc(100dvh - 64px) !important;
+            }
+            .slide {
+                padding: 3.8rem 1rem 5.2rem !important;
+                justify-content: flex-start !important;
+            }
+            .slide::before, .slide::after {
+                display: none !important;
+            }
+            .slide-title {
+                font-size: 1.45rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.4rem !important;
+            }
+            .slide-subtitle {
+                font-size: 0.84rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 1rem !important;
+            }
+            .glass-card {
+                padding: 1rem !important;
+                max-width: 100% !important;
+            }
+            /* Collapse all grids & inline multi-column layouts to 1 column on mobile */
+            .grid-2, .grid-3, .grid-4,
+            .role-bento-grid, .pm-pipeline-grid,
+            .http-methods-grid, .status-codes-container,
+            .q-card-grid, .us-pm-actions-row,
+            [style*="grid-template-columns: repeat("],
+            [style*="grid-template-columns: 1fr 1fr"],
+            [style*="grid-template-columns: 1.2fr 1fr"],
+            [style*="grid-template-columns: 1fr 1.2fr"],
+            [style*="grid-template-columns: 1.3fr 1fr"],
+            [style*="grid-template-columns: 1fr 1.3fr"],
+            [style*="grid-template-columns: 300px 1fr"],
+            [style*="grid-template-columns: 280px 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.85rem !important;
+            }
+            /* Flex rows that need vertical stacking on mobile */
+            .react-loop-container,
+            .orchestrator-layout,
+            .tool-calling-box,
+            .pydantic-box,
+            .hitl-pipeline,
+            .us-branch-layout,
+            .rag-pipeline {
+                flex-direction: column !important;
+                gap: 0.9rem !important;
+            }
+            .react-arrow, .orch-connector {
+                transform: rotate(90deg) !important;
+                margin: 0.2rem auto !important;
+            }
+            /* Make wide diagrams scroll horizontally with touch momentum */
+            .git-visual-container {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                width: 100% !important;
+                padding: 1rem !important;
+            }
+            .comp-table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                white-space: nowrap !important;
+            }
+            /* Bottom Navigation Bar Responsive */
+            .nav-bar, .controls-bar {
+                height: 64px !important;
+                padding: 0 0.85rem !important;
+            }
+            .nav-logo, .nav-session, .keyboard-hint, .controls-session-label {
+                display: none !important;
+            }
+            .nav-left select {
+                max-width: 145px !important;
+                font-size: 0.75rem !important;
+                padding: 6px 8px !important;
+            }
+            .btn-nav, .btn-ctrl {
+                padding: 8px 12px !important;
+                font-size: 0.78rem !important;
+            }
+        }
+    </style>
+
+    <!-- Ambient Canvas -->
+    <canvas id="anabela-ambient-canvas"></canvas>
+
+    <!-- Floating Top HUD -->
+    <div class="anabela-top-hud" role="navigation" aria-label="Barra superior de sesión">
+        <div class="anabela-hud-left">
+            <a href="../index.html" class="anabela-hud-btn" title="Volver al Portal Principal">
+                ⬅ <span class="hud-label-hide-sm">Portal Principal</span>
+            </a>
+            <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaDrawer()" title="Ver mapa de todas las diapositivas">
+                ☰ <span id="anabela-hud-counter">Slides</span>
+            </button>
+        </div>
+        <div class="anabela-hud-badge">
+            <span class="anabela-hud-pulse"></span>
+            <span>Mentoría Anabela Hotian · Sesión 4</span>
+        </div>
+        <div class="anabela-hud-right">
+            <a href="./actividad_practica_sesion_4.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 4">
+                🧪 <span class="hud-label-hide-sm">Simulador S4</span>
+            </a>
+            <a href="./glosario_completo_sesion_4.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 4">
+                📖 <span class="hud-label-hide-sm">Glosario S4</span>
+            </a>
+            <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaFullscreen()" title="Pantalla Completa">
+                ⛶ <span class="hud-label-hide-sm"> Expandir</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide Overview Drawer Modal -->
+    <div class="anabela-drawer-overlay" id="anabela-drawer-overlay" onclick="if(event.target===this) window.toggleAnabelaDrawer()">
+        <div class="anabela-drawer-modal">
+            <div class="anabela-drawer-header">
+                <div class="anabela-drawer-title">
+                    <span>🗂️ Mapa Interactivo de Diapositivas — Sesión 4</span>
+                </div>
+                <button class="anabela-drawer-close" onclick="window.toggleAnabelaDrawer()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="anabela-drawer-grid" id="anabela-drawer-grid"></div>
+        </div>
+    </div>
+
+    <script id="anabela-motion-engine-js">
+    (function() {
+        // 1. Interactive Ambient Particle & Aurora Network
+        const canvas = document.getElementById('anabela-ambient-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let mouse = { x: -1000, y: -1000 };
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            }, { passive: true });
+
+            const count = window.innerWidth < 768 ? 24 : 48;
+            const particles = Array.from({ length: count }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                r: Math.random() * 1.8 + 0.8
+            }));
+
+            function renderParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    // Subtle interaction with cursor
+                    const dxm = p.x - mouse.x;
+                    const dym = p.y - mouse.y;
+                    const distMouse = Math.sqrt(dxm * dxm + dym * dym);
+                    if (distMouse < 140 && distMouse > 0) {
+                        p.x += (dxm / distMouse) * 0.45;
+                        p.y += (dym / distMouse) * 0.45;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(245, 158, 11, 0.45)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = 'rgba(245, 158, 11, ' + ((1 - dist / 130) * 0.12).toFixed(3) + ')';
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(renderParticles);
+            }
+            renderParticles();
+        }
+
+        // 2. Card Mouse-Tracking Spotlight Glow
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.slide.active .glass-card, .slide.active .status-card, .slide.active .pm-stage-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', x + 'px');
+                card.style.setProperty('--mouse-y', y + 'px');
+            });
+        }, { passive: true });
+
+        // 3. Slide Overview Drawer & HUD Counter Sync
+        const slidesList = Array.from(document.querySelectorAll('.slide'));
+        const hudCounter = document.getElementById('anabela-hud-counter');
+        const drawerOverlay = document.getElementById('anabela-drawer-overlay');
+        const drawerGrid = document.getElementById('anabela-drawer-grid');
+
+        function getActiveSlideIndex() {
+            return slidesList.findIndex(s => s.classList.contains('active'));
+        }
+
+        function goToSlideByIndex(idx) {
+            if (idx < 0 || idx >= slidesList.length) return;
+            if (typeof window.jumpToSlide === 'function') {
+                window.jumpToSlide(idx);
+            } else if (typeof window.currentSlide !== 'undefined' && typeof window.updateSlides === 'function') {
+                window.currentSlide = idx;
+                window.updateSlides();
+            } else {
+                // Fallback direct navigation via next/prev buttons
+                const cur = getActiveSlideIndex();
+                const diff = idx - cur;
+                const btnId = diff > 0 ? (document.getElementById('nextBtn') ? 'nextBtn' : 'btn-next') : (document.getElementById('prevBtn') ? 'prevBtn' : 'btn-prev');
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    for (let i = 0; i < Math.abs(diff); i++) btn.click();
+                }
+            }
+            syncHudCounter();
+        }
+
+        function buildDrawerItems() {
+            if (!drawerGrid) return;
+            drawerGrid.innerHTML = '';
+            const activeIdx = getActiveSlideIndex();
+            slidesList.forEach((slide, idx) => {
+                const heading = slide.querySelector('h1, h2, .slide-title, .cover-h1');
+                const titleText = heading ? heading.textContent.replace(/\s+/g, ' ').trim() : ('Diapositiva ' + (idx + 1));
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'anabela-drawer-item' + (idx === activeIdx ? ' current' : '');
+                btn.innerHTML = '<span class="anabela-drawer-num">Slide ' + String(idx + 1).padStart(2, '0') + ' / ' + String(slidesList.length).padStart(2, '0') + '</span>' +
+                                '<span class="anabela-drawer-name">' + titleText + '</span>';
+                btn.onclick = () => {
+                    goToSlideByIndex(idx);
+                    window.toggleAnabelaDrawer();
+                };
+                drawerGrid.appendChild(btn);
+            });
+        }
+
+        function syncHudCounter() {
+            const idx = getActiveSlideIndex();
+            if (idx !== -1) {
+                if (hudCounter) hudCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const bottomCounter = document.getElementById('slide-counter') || document.getElementById('slideCounter');
+                if (bottomCounter) bottomCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const navSession = document.querySelector('.nav-session');
+                if (navSession) navSession.textContent = 'Slide ' + (idx + 1) + ' / ' + slidesList.length;
+            }
+        }
+
+        // Observe class changes on slides to keep HUD counter in sync
+        const observer = new MutationObserver(syncHudCounter);
+        slidesList.forEach(s => observer.observe(s, { attributes: true, attributeFilter: ['class'] }));
+        setTimeout(syncHudCounter, 100);
+
+        window.toggleAnabelaDrawer = function() {
+            if (!drawerOverlay) return;
+            const isOpen = drawerOverlay.classList.contains('open');
+            if (!isOpen) {
+                buildDrawerItems();
+                drawerOverlay.classList.add('open');
+            } else {
+                drawerOverlay.classList.remove('open');
+            }
+        };
+
+        window.toggleAnabelaFullscreen = function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                document.exitFullscreen().catch(() => {});
+            }
+        };
+
+        // 4. Touch Swipe Gesture Navigation for Mobile & Tablet
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let ignoreSwipe = false;
+
+        document.addEventListener('touchstart', (e) => {
+            if (!e.touches || e.touches.length !== 1) return;
+            const target = e.target;
+            if (target && (target.closest('input, select, textarea, button, .git-visual-container, .comp-table, .anabela-drawer-overlay'))) {
+                ignoreSwipe = true;
+                return;
+            }
+            ignoreSwipe = false;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            if (ignoreSwipe || !e.changedTouches || e.changedTouches.length !== 1) return;
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(dx) > 65 && Math.abs(dx) > Math.abs(dy) * 1.6) {
+                const nextBtn = document.getElementById('nextBtn') || document.getElementById('btn-next');
+                const prevBtn = document.getElementById('prevBtn') || document.getElementById('btn-prev');
+                if (dx < 0 && nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                } else if (dx > 0 && prevBtn && !prevBtn.disabled) {
+                    prevBtn.click();
+                }
+            }
+        }, { passive: true });
+    })();
+    </script>
+    <!-- ================= END ANABELA PREMIUM MOTION ENGINE ================= -->
+
+</body>
+</html>
+ + newCost.toFixed(2) + ' / mes';
+            document.getElementById('router-saving-pct').textContent = savedPct + '% de ahorro (
+        function calculateROI() {
+            const volume = parseInt(document.getElementById('calc-volume').value);
+            const minsPerDoc = parseInt(document.getElementById('calc-mins').value);
+            const hourlyRate = parseInt(document.getElementById('calc-hourly').value);
+            
+            document.getElementById('calc-volume-val').textContent = volume.toLocaleString('es-AR');
+            document.getElementById('calc-mins-val').textContent = `${minsPerDoc} min`;
+            document.getElementById('calc-hourly-val').textContent = `$${hourlyRate} / h`;
+            
+            // AI Cost without cache: 10,000 input tokens @ $5/M + 500 output tokens @ $15/M = $0.0575/doc
+            const unitCostNoCache = ((10000 / 1000000) * 5) + ((500 / 1000000) * 15);
+            const monthlyCostNoCache = unitCostNoCache * volume;
+
+            // AI Cost with Prompt Caching: 2,000 full @ $5/M + 8,000 cached @ $1.25/M + 500 output @ $15/M = $0.0275/doc
+            const unitCostCache = ((2000 / 1000000) * 5) + ((8000 / 1000000) * 1.25) + ((500 / 1000000) * 15);
+            const monthlyCostCache = unitCostCache * volume;
+
+            // Human manual cost
+            const hoursNeeded = (volume * minsPerDoc) / 60;
+            const ftesNeeded = hoursNeeded / 160;
+            const monthlyCostHuman = hoursNeeded * hourlyRate;
+
+            // Human-in-the-Loop supervision (20% of manual time)
+            const monthlyCostHitl = monthlyCostHuman * 0.20;
+            const netSavings = monthlyCostHuman - (monthlyCostCache + monthlyCostHitl);
+
+            document.getElementById('cost-no-cache').textContent = `$${monthlyCostNoCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('cost-cache').textContent = `$${monthlyCostCache.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('cost-human').textContent = `$${monthlyCostHuman.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('hours-needed').textContent = `${Math.round(hoursNeeded).toLocaleString('es-AR')} hs (${ftesNeeded.toFixed(1)} personas FTE)`;
+            document.getElementById('cost-hitl').textContent = `$${monthlyCostHitl.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+            document.getElementById('roi-savings').textContent = `$${netSavings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        }
+
+        // --- INTERACTIVE ENGINE: EVALS RUBRIC (SLIDE 9) ---
+        function calculateEval() {
+            const fidelidad = parseFloat(document.getElementById('eval-fidelidad').value);
+            const contextoEl = document.getElementById('eval-contexto');
+            const contexto = contextoEl ? parseFloat(contextoEl.value) : 1.0;
+            const relevancia = parseFloat(document.getElementById('eval-relevancia').value);
+            
+            document.getElementById('eval-fidelidad-val').textContent = fidelidad.toFixed(1);
+            if (document.getElementById('eval-contexto-val')) {
+                document.getElementById('eval-contexto-val').textContent = contexto.toFixed(1);
+            }
+            document.getElementById('eval-relevancia-val').textContent = relevancia.toFixed(1);
+            
+            const avgScore = (fidelidad + contexto + relevancia) / 3;
+            const statusTag = document.getElementById('eval-status');
+            const critique = document.getElementById('eval-critique');
+
+            if (fidelidad >= 0.8 && contexto >= 0.8 && relevancia >= 0.8) {
+                statusTag.textContent = "APROBADO (" + Math.round(avgScore * 100) + "%)";
+                statusTag.className = "eval-tag success";
+                critique.textContent = "Las 3 métricas superan el umbral mínimo de 0.80. Aprobado para producción.";
+                critique.style.color = "var(--color-green)";
+            } else {
+                statusTag.textContent = "RECHAZADO (" + Math.round(avgScore * 100) + "%)";
+                statusTag.className = "eval-tag fail";
+                if (fidelidad < 0.8) {
+                    critique.textContent = "Bloqueado por Alucinación: Fidelidad < 0.80 (el bot inventó que mañana se aprueba sin pruebas de QA).";
+                } else if (contexto < 0.8) {
+                    critique.textContent = "Bloqueado: Precisión de Contexto < 0.80 (la Base Vectorial no trajo el fragmento correcto; revisar Chunking/Metadatos).";
+                } else {
+                    critique.textContent = "Bloqueado: Relevancia de Respuesta < 0.80 (no respondió de forma directa la duda del usuario).";
+                }
+                critique.style.color = "var(--color-red)";
+            }
+        }
+
+        function loadCorrectAuditEval() {
+            document.getElementById('eval-fidelidad').value = 0.2;
+            if (document.getElementById('eval-contexto')) document.getElementById('eval-contexto').value = 1.0;
+            document.getElementById('eval-relevancia').value = 0.9;
+            calculateEval();
+        }
+
+        // --- INTERACTIVE ENGINE: TRACE VIEWER (SLIDE 10) ---
+        function toggleTrace(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+            } else {
+                el.style.display = 'block';
+            }
+        }
+
+        // --- INTERACTIVE ENGINE: COST LEAK ROLEPLAY (SLIDE 12) ---
+        let costInterval = null;
+        let costSimRunning = false;
+        function startCostLeak() {
+            if (costSimRunning) return;
+            costSimRunning = true;
+            
+            const chat = document.getElementById('chat-c1');
+            const costVal = document.getElementById('sim-cost-val');
+            const costLbl = document.getElementById('sim-cost-lbl');
+            const btnFix = document.getElementById('btn-apply-cost-fix');
+            const btnRun = document.getElementById('btn-run-cost-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+            costVal.style.color = "var(--color-red)";
+
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico en Langfuse:</strong> Detectando agente atrapado en Loop Infinito reintentando llamada fallida sin Prompt Caching...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+
+            let curCost = 120;
+            costInterval = setInterval(() => {
+                curCost += Math.floor(Math.random() * 85) + 45;
+                costVal.textContent = `$${curCost.toLocaleString('es-AR')}.00 USD`;
+                costLbl.textContent = "⚠️ Loop infinito consumiendo 12.000 tokens/seg...";
+            }, 220);
+        }
+
+        function applyCostFix() {
+            if (costInterval) clearInterval(costInterval);
+            costSimRunning = false;
+            
+            const chat = document.getElementById('chat-c1');
+            const costVal = document.getElementById('sim-cost-val');
+            const costLbl = document.getElementById('sim-cost-lbl');
+            const btnFix = document.getElementById('btn-apply-cost-fix');
+
+            btnFix.disabled = true;
+            costVal.style.color = "var(--color-green)";
+            costVal.textContent = "$42.00 USD / sem";
+            costLbl.textContent = "✅ Max Iterations = 5 + Prompt Caching (-80%) + Model Routing activos.";
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Cortafuegos en 5 intentos, Prompt Caching para instrucciones fijas y Model Routing hacia un modelo liviano en consultas simples. Ahorro del 85%.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase1Option(type, btn) {
+            const chat = document.getElementById('chat-c1');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si pedís más presupuesto sin diagnosticar la causa raíz técnica o frenás a los usuarios, el loop infinito va a volver a consumir el nuevo presupuesto en horas. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "1) Audito las trazas en <strong>Langfuse</strong> para detectar Loops Infinitos y fijo un tope duro de <strong>Max Iterations = 5</strong>. 2) Activo <strong>Prompt Caching</strong> en el bloque fijo del sistema para ahorrar 80% de tokens de entrada. 3) Implemento <strong>Model Routing</strong> derivando consultas simples a un modelo liviano (GPT-4o-mini / Haiku)."</div>`;
+                if (costSimRunning) applyCostFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetCostSim() {
+            if (costInterval) clearInterval(costInterval);
+            costSimRunning = false;
+            document.getElementById('sim-cost-val').textContent = "$0.00";
+            document.getElementById('sim-cost-val').style.color = "var(--color-red)";
+            document.getElementById('sim-cost-lbl').textContent = "1° Tocá 'Simular Desvío de Costo' para ver el incidente.";
+            document.getElementById('btn-run-cost-leak').disabled = false;
+            document.getElementById('btn-apply-cost-fix').disabled = true;
+            document.getElementById('chat-c1').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Lanzamos nuestro agente corporativo a producción y en 7 días consumió todo el presupuesto mensual de tokens. ¿Qué pasó y cómo lo solucionás sin apagar el producto?"</div>`;
+        }
+
+        // --- INTERACTIVE ENGINE: LATENCY LEAK ROLEPLAY (SLIDE 13) ---
+        let latencyInterval = null;
+        let latencySimRunning = false;
+        function startLatencyLeak() {
+            if (latencySimRunning) return;
+            latencySimRunning = true;
+
+            const chat = document.getElementById('chat-c2');
+            const latVal = document.getElementById('sim-latency-val');
+            const latLog = document.getElementById('sim-latency-log');
+            const btnFix = document.getElementById('btn-apply-lat-fix');
+            const btnRun = document.getElementById('btn-run-lat-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+            latVal.style.color = "var(--color-red)";
+
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Diagnóstico:</strong> El agente está llamando a Jira, Pinecone y ERP en fila india (secuencial) y esperando a tener todo el párrafo antes de mostrar la primera palabra...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+
+            let curLat = 0;
+            latLog.textContent = "⏳ Llamando API 1 (Jira)... luego API 2 (Glosario)... luego API 3 (ERP)... pantalla congelada...";
+            latencyInterval = setInterval(() => {
+                curLat += 1.0;
+                latVal.textContent = `${curLat.toFixed(1)}s`;
+                if (curLat >= 12.0) {
+                    clearInterval(latencyInterval);
+                    latLog.textContent = "⚠️ Recién a los 12.0s aparece: 'El Release v2.4 tiene 10 módulos listos y 2 en QA...'";
+                }
+            }, 180);
+        }
+
+        function applyLatencyFix() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            latencySimRunning = false;
+
+            const chat = document.getElementById('chat-c2');
+            const latVal = document.getElementById('sim-latency-val');
+            const latLog = document.getElementById('sim-latency-log');
+            const btnFix = document.getElementById('btn-apply-lat-fix');
+
+            btnFix.disabled = true;
+            
+            let curLat = 0;
+            latLog.textContent = "⚡ [Parallel Tool Calling + Streaming]: 'El Release v2.4 tiene 10 módulos listos...'";
+            latencyInterval = setInterval(() => {
+                curLat += 0.2;
+                latVal.textContent = `${curLat.toFixed(1)}s`;
+                if (curLat >= 1.0) {
+                    clearInterval(latencyInterval);
+                    latVal.textContent = "0.9s";
+                    latVal.style.color = "var(--color-green)";
+                    latLog.textContent = "✅ Primera palabra en 0.9s con Token Streaming + 3 APIs en paralelo + KV Cache.";
+                }
+            }, 90);
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Bajamos el TTFT de 12.0s a 0.9s activando Token Streaming, Parallel Tool Calling y KV Cache.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase2Option(type, btn) {
+            const chat = document.getElementById('chat-c2');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Si desconectás Jira el agente pierde su valor operativo, y un spinner durante 12 segundos sigue causando abandono. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Ataco la velocidad percibida y la real: 1) Activo <strong>Token Streaming</strong> para que el usuario lea la primera palabra en menos de 1 segundo; 2) Implemento <strong>Parallel Tool Calling</strong> para consultar Jira, Glosario y ERP al mismo tiempo en paralelo; y 3) Uso <strong>KV Cache</strong> y chunks compactos."</div>`;
+                applyLatencyFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetLatencySim() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            latencySimRunning = false;
+            document.getElementById('sim-latency-val').textContent = "0.0s";
+            document.getElementById('sim-latency-val').style.color = "var(--color-blue)";
+            document.getElementById('sim-latency-log').textContent = "Esperando consulta del usuario sobre el Release v2.4...";
+            document.getElementById('btn-run-lat-leak').disabled = false;
+            document.getElementById('btn-apply-lat-fix').disabled = true;
+            document.getElementById('chat-c2').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Los usuarios se quejan de que el asistente tarda 12 segundos con la pantalla en blanco porque consulta 3 sistemas en fila y lee manuales largos. ¿Cómo lo optimizás?"</div>`;
+        }
+
+        // --- INTERACTIVE ENGINE: SECURITY LEAK ROLEPLAY (SLIDE 14) ---
+        let securitySimRunning = false;
+        function startSecurityLeak() {
+            securitySimRunning = true;
+
+            const chat = document.getElementById('chat-c3');
+            const secLog = document.getElementById('sim-security-log');
+            const btnFix = document.getElementById('btn-apply-sec-fix');
+            const btnRun = document.getElementById('btn-run-sec-leak');
+
+            btnRun.disabled = true;
+            btnFix.disabled = false;
+
+            secLog.innerHTML = `<span style="color: var(--color-red);">❌ RIESGO DE FUGA (SIN FILTRO): {"cliente": "Banco Global S.A.", "email": "director@bancoglobal.com", "tarifa_nda": "$48,500 USD"}</span>`;
+            chat.innerHTML += `<div class="chat-bubble pm"><strong>Alerta:</strong> El prompt está saliendo hacia la nube externa con nombres reales, emails y montos bajo NDA...</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function applySecurityFix() {
+            securitySimRunning = false;
+
+            const chat = document.getElementById('chat-c3');
+            const secLog = document.getElementById('sim-security-log');
+            const btnFix = document.getElementById('btn-apply-sec-fix');
+
+            btnFix.disabled = true;
+
+            secLog.innerHTML = `<span style="color: var(--color-green);">✅ SANITIZADO EN API GATEWAY: {"cliente": "[CLIENTE_NDA_01]", "email": "[EMAIL_OCULTO]", "tarifa_nda": "[MONTO_PROTEGIDO]"} · SLA: Zero-Retention</span>`;
+
+            chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Blindaje Activo:</strong> Datos sensibles enmascarados localmente en el Proxy antes de salir a la nube + acuerdo Enterprise Zero-Data Retention.</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function chooseCase3Option(type, btn) {
+            const chat = document.getElementById('chat-c3');
+            btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            if (type === 'wrong') {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += `<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Legales:</strong> La buena voluntad por mail no pasa una auditoría de seguridad ISO/SOC2: un error humano filtraría igual el contrato. Probá la Opción B.</div>`;
+            } else {
+                btn.classList.add('opt-right');
+                chat.innerHTML += `<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Tu Respuesta Ganadora):</strong> "Implemento 3 barreras técnicas: 1) Un <strong>Proxy de Sanitización (PII Masking)</strong> en nuestro API Gateway que oculta nombres, mails y tarifas antes de salir a internet; 2) Contrato <strong>Enterprise con Zero-Data Retention</strong>; y 3) <strong>Permisos por Rol (RBAC)</strong> en los metadatos de la Base Vectorial."</div>`;
+                applySecurityFix();
+            }
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function resetSecuritySim() {
+            securitySimRunning = false;
+            document.getElementById('sim-security-log').innerHTML = "Esperando envío de consulta con datos de cliente...";
+            document.getElementById('btn-run-sec-leak').disabled = false;
+            document.getElementById('btn-apply-sec-fix').disabled = true;
+            document.getElementById('chat-c3').innerHTML = `<div class="chat-bubble mentor"><strong>Hiring Manager / Legales:</strong> "Nos preocupa que al usar el asistente se filtren nombres de clientes, mails o tarifas bajo NDA hacia servidores externos de IA. ¿Qué arquitectura proponés?"</div>`;
+        }
+
+        lucide.createIcons();
+        updateNavigation();
+    </script>
+
+    <!-- ================= ANABELA PREMIUM MOTION & RESPONSIVE ENGINE ================= -->
+    <style id="anabela-motion-engine-css">
+        :root {
+            --anabela-accent: #f59e0b;
+            --anabela-accent-rgb: 245, 158, 11;
+        }
+
+        /* Ambient Interactive Canvas */
+        #anabela-ambient-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.65;
+        }
+
+        /* Floating Top HUD Bar */
+        .anabela-top-hud {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 3rem);
+            max-width: 1280px;
+            height: 46px;
+            background: rgba(10, 14, 26, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 250;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(var(--anabela-accent-rgb), 0.12);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .anabela-hud-left, .anabela-hud-right {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .anabela-hud-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .anabela-hud-btn:hover {
+            background: rgba(var(--anabela-accent-rgb), 0.18);
+            border-color: var(--anabela-accent);
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(var(--anabela-accent-rgb), 0.25);
+        }
+
+        .anabela-hud-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(var(--anabela-accent-rgb), 0.25), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(var(--anabela-accent-rgb), 0.4);
+        }
+
+        .anabela-hud-pulse {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--anabela-accent);
+            box-shadow: 0 0 8px var(--anabela-accent);
+            animation: anabelaPulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes anabelaPulseDot {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.4); opacity: 1; }
+        }
+
+        /* Push slide content down cleanly to respect Top HUD and fit 1366x768 without vertical scroll */
+        .anabela-top-hud {
+            height: 42px !important;
+            top: 10px !important;
+        }
+        .slides-wrapper {
+            height: calc(100vh - 56px) !important;
+        }
+        .controls-bar, .nav-bar {
+            height: 56px !important;
+            background: rgba(8, 12, 22, 0.88) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+        /* Hide redundant bottom menu button in S2/S3 since Top HUD has the visual drawer */
+        .slides-menu-btn {
+            display: none !important;
+        }
+        .slide {
+            padding-top: 3.8rem !important;
+            padding-bottom: 1.2rem !important;
+        }
+        @media (min-width: 769px) {
+            .slide > *:last-child {
+                margin-bottom: 0.4rem !important;
+            }
+        }
+        @media (max-height: 820px) and (min-width: 769px) {
+            .slide {
+                padding-top: 3.6rem !important;
+                padding-bottom: 0.8rem !important;
+            }
+            .slide-title {
+                font-size: 1.75rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            .slide-subtitle {
+                font-size: 0.86rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .git-visual-container {
+                padding: 0.85rem 1rem !important;
+                margin: 0.4rem 0 !important;
+            }
+        }
+
+        /* Crisp, Zero-Blur Spring Entrance Animation (Single-layer, no nested double-opacity) */
+        @keyframes anabelaSpringUp {
+            0% {
+                opacity: 0;
+                transform: translateY(14px) scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .slide.active > .slide-title,
+        .slide.active > .cover-container {
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.01s both;
+        }
+
+        .slide.active > .slide-subtitle {
+            animation: anabelaSpringUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+        }
+
+        .slide.active > *:not(.slide-title):not(.slide-subtitle):not(.cover-container) {
+            animation: anabelaSpringUp 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both;
+        }
+
+        /* High-Contrast Glass Card Polish */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.72) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
+        }
+
+        /* Interactive Spotlight Glow & 3D Hover Polish on Glass Cards */
+        .glass-card, .status-card, .pm-stage-card, .role-bento-card, .us-pm-action-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.35s ease,
+                        box-shadow 0.35s ease !important;
+        }
+
+        .glass-card::after, .status-card::after, .pm-stage-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                520px circle at var(--mouse-x, 50%) var(--mouse-y, -200%),
+                rgba(var(--anabela-accent-rgb), 0.13),
+                transparent 45%
+            );
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glass-card:hover::after, .status-card:hover::after, .pm-stage-card:hover::after {
+            opacity: 1;
+        }
+
+        .glass-card > *, .status-card > *, .pm-stage-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(var(--anabela-accent-rgb), 0.42) !important;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(var(--anabela-accent-rgb), 0.14) !important;
+        }
+
+        /* Slide Overview Drawer Modal */
+        .anabela-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 7, 15, 0.86);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .anabela-drawer-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .anabela-drawer-modal {
+            width: 100%;
+            max-width: 1050px;
+            max-height: 85vh;
+            background: rgba(15, 21, 38, 0.95);
+            border: 1px solid rgba(var(--anabela-accent-rgb), 0.35);
+            border-radius: 22px;
+            padding: 1.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+            overflow: hidden;
+        }
+
+        .anabela-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .anabela-drawer-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .anabela-drawer-close {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .anabela-drawer-close:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+            color: #fca5a5;
+        }
+
+        .anabela-drawer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 0.85rem;
+            overflow-y: auto;
+            padding-right: 0.4rem;
+        }
+
+        .anabela-drawer-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .anabela-drawer-item:hover {
+            background: rgba(var(--anabela-accent-rgb), 0.14);
+            border-color: rgba(var(--anabela-accent-rgb), 0.5);
+            transform: translateY(-2px);
+        }
+
+        .anabela-drawer-item.current {
+            background: rgba(var(--anabela-accent-rgb), 0.22);
+            border-color: var(--anabela-accent);
+            box-shadow: 0 0 18px rgba(var(--anabela-accent-rgb), 0.28);
+        }
+
+        .anabela-drawer-num {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--anabela-accent);
+        }
+
+        .anabela-drawer-name {
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.35;
+        }
+
+        /* ============================================================================
+           UNIVERSAL RESPONSIVE OVERRIDES (TABLET & MOBILE)
+        ============================================================================ */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 4.3rem 1.6rem 5.5rem !important;
+            }
+            .slide-title {
+                font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
+            }
+            /* Force inline multi-column grids to wrap responsively on tablets */
+            [style*="grid-template-columns: repeat(6"],
+            [style*="grid-template-columns: repeat(5"],
+            [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.85rem !important;
+            }
+            .pm-pipeline-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .orchestrator-layout {
+                flex-direction: column !important;
+                gap: 1.2rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                height: 100dvh !important;
+                overflow: hidden !important;
+            }
+            .anabela-top-hud {
+                top: 8px;
+                width: calc(100% - 1.2rem);
+                height: 42px;
+                padding: 0 0.65rem;
+            }
+            .anabela-hud-badge {
+                display: none !important;
+            }
+            .anabela-hud-btn span.hud-label-hide-sm {
+                display: none !important;
+            }
+            .anabela-hud-btn {
+                padding: 5px 10px;
+                font-size: 0.73rem;
+            }
+            .slides-wrapper {
+                height: calc(100dvh - 64px) !important;
+            }
+            .slide {
+                padding: 3.8rem 1rem 5.2rem !important;
+                justify-content: flex-start !important;
+            }
+            .slide::before, .slide::after {
+                display: none !important;
+            }
+            .slide-title {
+                font-size: 1.45rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.4rem !important;
+            }
+            .slide-subtitle {
+                font-size: 0.84rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 1rem !important;
+            }
+            .glass-card {
+                padding: 1rem !important;
+                max-width: 100% !important;
+            }
+            /* Collapse all grids & inline multi-column layouts to 1 column on mobile */
+            .grid-2, .grid-3, .grid-4,
+            .role-bento-grid, .pm-pipeline-grid,
+            .http-methods-grid, .status-codes-container,
+            .q-card-grid, .us-pm-actions-row,
+            [style*="grid-template-columns: repeat("],
+            [style*="grid-template-columns: 1fr 1fr"],
+            [style*="grid-template-columns: 1.2fr 1fr"],
+            [style*="grid-template-columns: 1fr 1.2fr"],
+            [style*="grid-template-columns: 1.3fr 1fr"],
+            [style*="grid-template-columns: 1fr 1.3fr"],
+            [style*="grid-template-columns: 300px 1fr"],
+            [style*="grid-template-columns: 280px 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.85rem !important;
+            }
+            /* Flex rows that need vertical stacking on mobile */
+            .react-loop-container,
+            .orchestrator-layout,
+            .tool-calling-box,
+            .pydantic-box,
+            .hitl-pipeline,
+            .us-branch-layout,
+            .rag-pipeline {
+                flex-direction: column !important;
+                gap: 0.9rem !important;
+            }
+            .react-arrow, .orch-connector {
+                transform: rotate(90deg) !important;
+                margin: 0.2rem auto !important;
+            }
+            /* Make wide diagrams scroll horizontally with touch momentum */
+            .git-visual-container {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                width: 100% !important;
+                padding: 1rem !important;
+            }
+            .comp-table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                white-space: nowrap !important;
+            }
+            /* Bottom Navigation Bar Responsive */
+            .nav-bar, .controls-bar {
+                height: 64px !important;
+                padding: 0 0.85rem !important;
+            }
+            .nav-logo, .nav-session, .keyboard-hint, .controls-session-label {
+                display: none !important;
+            }
+            .nav-left select {
+                max-width: 145px !important;
+                font-size: 0.75rem !important;
+                padding: 6px 8px !important;
+            }
+            .btn-nav, .btn-ctrl {
+                padding: 8px 12px !important;
+                font-size: 0.78rem !important;
+            }
+        }
+    </style>
+
+    <!-- Ambient Canvas -->
+    <canvas id="anabela-ambient-canvas"></canvas>
+
+    <!-- Floating Top HUD -->
+    <div class="anabela-top-hud" role="navigation" aria-label="Barra superior de sesión">
+        <div class="anabela-hud-left">
+            <a href="../index.html" class="anabela-hud-btn" title="Volver al Portal Principal">
+                ⬅ <span class="hud-label-hide-sm">Portal Principal</span>
+            </a>
+            <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaDrawer()" title="Ver mapa de todas las diapositivas">
+                ☰ <span id="anabela-hud-counter">Slides</span>
+            </button>
+        </div>
+        <div class="anabela-hud-badge">
+            <span class="anabela-hud-pulse"></span>
+            <span>Mentoría Anabela Hotian · Sesión 4</span>
+        </div>
+        <div class="anabela-hud-right">
+            <a href="./actividad_practica_sesion_4.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 4">
+                🧪 <span class="hud-label-hide-sm">Simulador S4</span>
+            </a>
+            <a href="./glosario_completo_sesion_4.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 4">
+                📖 <span class="hud-label-hide-sm">Glosario S4</span>
+            </a>
+            <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaFullscreen()" title="Pantalla Completa">
+                ⛶ <span class="hud-label-hide-sm"> Expandir</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide Overview Drawer Modal -->
+    <div class="anabela-drawer-overlay" id="anabela-drawer-overlay" onclick="if(event.target===this) window.toggleAnabelaDrawer()">
+        <div class="anabela-drawer-modal">
+            <div class="anabela-drawer-header">
+                <div class="anabela-drawer-title">
+                    <span>🗂️ Mapa Interactivo de Diapositivas — Sesión 4</span>
+                </div>
+                <button class="anabela-drawer-close" onclick="window.toggleAnabelaDrawer()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="anabela-drawer-grid" id="anabela-drawer-grid"></div>
+        </div>
+    </div>
+
+    <script id="anabela-motion-engine-js">
+    (function() {
+        // 1. Interactive Ambient Particle & Aurora Network
+        const canvas = document.getElementById('anabela-ambient-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let mouse = { x: -1000, y: -1000 };
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            }, { passive: true });
+
+            const count = window.innerWidth < 768 ? 24 : 48;
+            const particles = Array.from({ length: count }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                r: Math.random() * 1.8 + 0.8
+            }));
+
+            function renderParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    // Subtle interaction with cursor
+                    const dxm = p.x - mouse.x;
+                    const dym = p.y - mouse.y;
+                    const distMouse = Math.sqrt(dxm * dxm + dym * dym);
+                    if (distMouse < 140 && distMouse > 0) {
+                        p.x += (dxm / distMouse) * 0.45;
+                        p.y += (dym / distMouse) * 0.45;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(245, 158, 11, 0.45)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = 'rgba(245, 158, 11, ' + ((1 - dist / 130) * 0.12).toFixed(3) + ')';
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(renderParticles);
+            }
+            renderParticles();
+        }
+
+        // 2. Card Mouse-Tracking Spotlight Glow
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.slide.active .glass-card, .slide.active .status-card, .slide.active .pm-stage-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', x + 'px');
+                card.style.setProperty('--mouse-y', y + 'px');
+            });
+        }, { passive: true });
+
+        // 3. Slide Overview Drawer & HUD Counter Sync
+        const slidesList = Array.from(document.querySelectorAll('.slide'));
+        const hudCounter = document.getElementById('anabela-hud-counter');
+        const drawerOverlay = document.getElementById('anabela-drawer-overlay');
+        const drawerGrid = document.getElementById('anabela-drawer-grid');
+
+        function getActiveSlideIndex() {
+            return slidesList.findIndex(s => s.classList.contains('active'));
+        }
+
+        function goToSlideByIndex(idx) {
+            if (idx < 0 || idx >= slidesList.length) return;
+            if (typeof window.jumpToSlide === 'function') {
+                window.jumpToSlide(idx);
+            } else if (typeof window.currentSlide !== 'undefined' && typeof window.updateSlides === 'function') {
+                window.currentSlide = idx;
+                window.updateSlides();
+            } else {
+                // Fallback direct navigation via next/prev buttons
+                const cur = getActiveSlideIndex();
+                const diff = idx - cur;
+                const btnId = diff > 0 ? (document.getElementById('nextBtn') ? 'nextBtn' : 'btn-next') : (document.getElementById('prevBtn') ? 'prevBtn' : 'btn-prev');
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    for (let i = 0; i < Math.abs(diff); i++) btn.click();
+                }
+            }
+            syncHudCounter();
+        }
+
+        function buildDrawerItems() {
+            if (!drawerGrid) return;
+            drawerGrid.innerHTML = '';
+            const activeIdx = getActiveSlideIndex();
+            slidesList.forEach((slide, idx) => {
+                const heading = slide.querySelector('h1, h2, .slide-title, .cover-h1');
+                const titleText = heading ? heading.textContent.replace(/\s+/g, ' ').trim() : ('Diapositiva ' + (idx + 1));
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'anabela-drawer-item' + (idx === activeIdx ? ' current' : '');
+                btn.innerHTML = '<span class="anabela-drawer-num">Slide ' + String(idx + 1).padStart(2, '0') + ' / ' + String(slidesList.length).padStart(2, '0') + '</span>' +
+                                '<span class="anabela-drawer-name">' + titleText + '</span>';
+                btn.onclick = () => {
+                    goToSlideByIndex(idx);
+                    window.toggleAnabelaDrawer();
+                };
+                drawerGrid.appendChild(btn);
+            });
+        }
+
+        function syncHudCounter() {
+            const idx = getActiveSlideIndex();
+            if (idx !== -1) {
+                if (hudCounter) hudCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const bottomCounter = document.getElementById('slide-counter') || document.getElementById('slideCounter');
+                if (bottomCounter) bottomCounter.textContent = (idx + 1) + ' / ' + slidesList.length;
+                const navSession = document.querySelector('.nav-session');
+                if (navSession) navSession.textContent = 'Slide ' + (idx + 1) + ' / ' + slidesList.length;
+            }
+        }
+
+        // Observe class changes on slides to keep HUD counter in sync
+        const observer = new MutationObserver(syncHudCounter);
+        slidesList.forEach(s => observer.observe(s, { attributes: true, attributeFilter: ['class'] }));
+        setTimeout(syncHudCounter, 100);
+
+        window.toggleAnabelaDrawer = function() {
+            if (!drawerOverlay) return;
+            const isOpen = drawerOverlay.classList.contains('open');
+            if (!isOpen) {
+                buildDrawerItems();
+                drawerOverlay.classList.add('open');
+            } else {
+                drawerOverlay.classList.remove('open');
+            }
+        };
+
+        window.toggleAnabelaFullscreen = function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                document.exitFullscreen().catch(() => {});
+            }
+        };
+
+        // 4. Touch Swipe Gesture Navigation for Mobile & Tablet
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let ignoreSwipe = false;
+
+        document.addEventListener('touchstart', (e) => {
+            if (!e.touches || e.touches.length !== 1) return;
+            const target = e.target;
+            if (target && (target.closest('input, select, textarea, button, .git-visual-container, .comp-table, .anabela-drawer-overlay'))) {
+                ignoreSwipe = true;
+                return;
+            }
+            ignoreSwipe = false;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            if (ignoreSwipe || !e.changedTouches || e.changedTouches.length !== 1) return;
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(dx) > 65 && Math.abs(dx) > Math.abs(dy) * 1.6) {
+                const nextBtn = document.getElementById('nextBtn') || document.getElementById('btn-next');
+                const prevBtn = document.getElementById('prevBtn') || document.getElementById('btn-prev');
+                if (dx < 0 && nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                } else if (dx > 0 && prevBtn && !prevBtn.disabled) {
+                    prevBtn.click();
+                }
+            }
+        }, { passive: true });
+    })();
+    </script>
+    <!-- ================= END ANABELA PREMIUM MOTION ENGINE ================= -->
+
+</body>
+</html>
+ + Math.round(saved) + ' USD)';
+        }
+
+        let piiSanitized = true;
+        function togglePiiDemo() {
+            const out = document.getElementById('pii-demo-output');
+            const btn = document.getElementById('btn-pii-demo');
+            if (!out || !btn) return;
+            piiSanitized = !piiSanitized;
+            if (piiSanitized) {
+                out.style.background = 'rgba(16,185,129,0.12)';
+                out.style.borderColor = 'rgba(16,185,129,0.35)';
+                out.style.color = '#a7f3d0';
+                out.innerHTML = '"Resumí el reclamo de <strong>[PERSONA_01] ([EMAIL_OCULTO])</strong> por el contrato bajo NDA de <strong>[MONTO_CONFIDENCIAL]</strong>."';
+                btn.textContent = '⚠️ Simular Sin Filtro PII';
+            } else {
+                out.style.background = 'rgba(239,68,68,0.15)';
+                out.style.borderColor = 'rgba(239,68,68,0.45)';
+                out.style.color = '#fca5a5';
+                out.innerHTML = '❌ PELIGRO FUGA DE DATOS: "Resumí el reclamo de <strong>María Gómez (maria@bancopatagonia.com)</strong> por el contrato bajo NDA de <strong>$85.000 USD</strong>."';
+                btn.textContent = '🔒 Activar Guardrail PII';
+            }
+        }
 
         // --- INTERACTIVE ENGINE: ROI CALCULATOR (SLIDE 6) ---
         function calculateROI() {
