@@ -17,6 +17,7 @@ function normalizeSession(raw) {
     mentalMap60s: raw.mentalMap60s || [],
     antigravityGuide: raw.antigravityGuide || [],
     nextSessionPreview: raw.nextSessionPreview || null,
+    practicalLabGuide: raw.practicalLabGuide || null,
     agenda: raw.agenda || [],
     slidesFile: `slides_sesion_${raw.sessionNum}.html`,
     slides: raw.slides.map(sl => ({
@@ -29,6 +30,7 @@ function normalizeSession(raw) {
       cheatSheet: sl.cheatSheet || null,
       plainTerms: sl.plainTerms || [],
       antigravityDemo: sl.antigravityDemo || null,
+      simulatorGuide: sl.simulatorGuide || null,
       interaction: sl.interaction,
       script: sl.script,
       bridge: sl.bridge
@@ -107,6 +109,18 @@ function generateSessionMarkdown(s) {
     }
     md += `### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)\n`;
     md += `${sl.script}\n\n`;
+    if (sl.simulatorGuide) {
+      md += `### 🎛️ Cómo usar el simulador / ejemplo práctico: ${sl.simulatorGuide.title}\n`;
+      if (Array.isArray(sl.simulatorGuide.steps)) {
+        sl.simulatorGuide.steps.forEach((stepText, idx) => {
+          md += `${idx + 1}. ${stepText}\n`;
+        });
+      }
+      if (sl.simulatorGuide.example) {
+        md += `- **Ejemplo práctico para contar:** ${sl.simulatorGuide.example}\n`;
+      }
+      md += `\n`;
+    }
     if (sl.plainTerms && sl.plainTerms.length > 0) {
       md += `### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)\n`;
       for (const pt of sl.plainTerms) {
@@ -123,6 +137,26 @@ function generateSessionMarkdown(s) {
     }
     md += `> **"${sl.bridge}"**\n\n`;
     md += `---\n\n`;
+  }
+
+  if (s.practicalLabGuide) {
+    md += `## ${s.practicalLabGuide.title}\n\n`;
+    if (s.practicalLabGuide.intro) {
+      md += `${s.practicalLabGuide.intro}\n\n`;
+    }
+    if (Array.isArray(s.practicalLabGuide.steps)) {
+      s.practicalLabGuide.steps.forEach((st, idx) => {
+        md += `${idx + 1}. ${st}\n`;
+      });
+      md += `\n`;
+    }
+    if (Array.isArray(s.practicalLabGuide.cases)) {
+      md += `### Casos del Simulador Práctico\n\n`;
+      s.practicalLabGuide.cases.forEach(cs => {
+        md += `- **${cs.caseTitle}** *(Requiere: ${cs.requires})*: ${cs.whatToShow}\n`;
+      });
+      md += `\n`;
+    }
   }
 
   if (s.nextSessionPreview) {
@@ -313,6 +347,24 @@ function generateSingleSessionHTML(s) {
         </div>
     ` : '';
 
+    const simulatorGuideHTML = sl.simulatorGuide ? `
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — ${sl.simulatorGuide.title}
+          </div>
+          ${Array.isArray(sl.simulatorGuide.steps) ? `
+          <ol style="margin: 0 0 ${sl.simulatorGuide.example ? '0.65rem' : '0'} 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            ${sl.simulatorGuide.steps.map(st => `<li>${mdToHtml(st)}</li>`).join('')}
+          </ol>
+          ` : ''}
+          ${sl.simulatorGuide.example ? `
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> ${mdToHtml(sl.simulatorGuide.example)}
+          </div>
+          ` : ''}
+        </div>
+    ` : '';
+
     return `
       <article class="slide-script-card" id="slide-${sl.num}" data-slide="${sl.num}">
         <div class="card-header">
@@ -341,6 +393,8 @@ function generateSingleSessionHTML(s) {
           </blockquote>
         </div>
 
+        ${simulatorGuideHTML}
+
         ${supportRowHTML}
 
         <div class="bridge-connector">
@@ -359,6 +413,38 @@ function generateSingleSessionHTML(s) {
   const quickJumpHTML = s.slides.map(sl =>
     `<a href="#slide-${sl.num}" class="jump-chip" id="chip-${sl.num}"><span>#${sl.num}</span> ${sl.title}</a>`
   ).join('\n        ');
+
+  const practicalLabHTML = s.practicalLabGuide ? `
+    <section id="guia-simulador-practico" class="slide-script-card" style="border-color: rgba(16, 185, 129, 0.42); border-left: 5px solid #10b981; margin-top: 2rem;">
+      <div class="card-header" style="align-items: center;">
+        <div>
+          <span class="slide-num" style="background: #10b981; color: #052e16; display: inline-block; margin-bottom: 0.45rem;">GUÍA DEL LABORATORIO PRÁCTICO</span>
+          <h2 class="slide-title">${s.practicalLabGuide.title}</h2>
+        </div>
+        <a href="../sesiones/actividad_practica_sesion_${s.id}.html" target="_blank" class="open-slides-btn" style="background: #10b981; color: #052e16;">Abrir Simulador Práctico S${s.id} ↗</a>
+      </div>
+      ${s.practicalLabGuide.intro ? `<p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.55; margin-bottom: 1rem;">${mdToHtml(s.practicalLabGuide.intro)}</p>` : ''}
+      ${Array.isArray(s.practicalLabGuide.steps) ? `
+      <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.1rem;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">ORDEN RECOMENDADO EN VIVO</div>
+        <ol style="margin-left: 1.25rem; color: #f1f5f9; font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 0.45rem;">
+          ${s.practicalLabGuide.steps.map(st => `<li>${mdToHtml(st)}</li>`).join('')}
+        </ol>
+      </div>
+      ` : ''}
+      ${Array.isArray(s.practicalLabGuide.cases) ? `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem;">
+        ${s.practicalLabGuide.cases.map(cs => `
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #10b981; border-radius: 10px; padding: 0.85rem 1rem;">
+            <strong style="display: block; color: #ffffff; font-size: 0.9rem; margin-bottom: 0.3rem;">${cs.caseTitle}</strong>
+            <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: #6ee7b7; margin-bottom: 0.4rem;">Requiere: ${cs.requires}</span>
+            <p style="color: #cbd5e1; font-size: 0.83rem; line-height: 1.48; margin: 0;">${mdToHtml(cs.whatToShow)}</p>
+          </div>
+        `).join('')}
+      </div>
+      ` : ''}
+    </section>
+  ` : '';
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -869,6 +955,7 @@ function generateSingleSessionHTML(s) {
     }
 
     body.bridges-only .script-section,
+    body.bridges-only .simulator-guide-box,
     body.bridges-only .plain-terms-box,
     body.bridges-only .interaction-box {
       display: none;
@@ -924,6 +1011,7 @@ function generateSingleSessionHTML(s) {
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
         <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        ${s.practicalLabGuide ? '<a href="#guia-simulador-practico" class="mode-btn" style="text-decoration: none; background: rgba(16, 185, 129, 0.14); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);">🧪 Guía Simulador Práctico ↓</a>' : ''}
         ${s.nextSessionPreview ? '<a href="#preview-sesion-4" class="mode-btn" style="text-decoration: none; background: rgba(245, 158, 11, 0.16); color: #fcd34d; border-color: rgba(245, 158, 11, 0.45);">🔭 Ir al Adelanto Sesión 4 ↓</a>' : ''}
         <div class="progress-stat" id="progressStat">0 / ${s.slides.length} dictadas</div>
       </div>
@@ -939,6 +1027,8 @@ function generateSingleSessionHTML(s) {
     <section id="slidesContainer">
       ${slidesHTML}
     </section>
+
+    ${practicalLabHTML}
 
     ${nextSessionPreviewHTML}
   </main>
@@ -1074,6 +1164,22 @@ function generateMasterHubHTML() {
           </div>
           ` : ''}
 
+          ${sl.simulatorGuide ? `
+          <div class="hub-sim-guide" style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.32); border-left:4px solid #10b981; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.9rem;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.74rem; font-weight:800; color:#6ee7b7; margin-bottom:0.45rem;">🎛️ CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — ${sl.simulatorGuide.title}</div>
+            ${Array.isArray(sl.simulatorGuide.steps) ? `
+            <ol style="margin:0 0 ${sl.simulatorGuide.example ? '0.55rem' : '0'} 1.2rem; color:#e2e8f0; font-size:0.84rem; line-height:1.5; display:flex; flex-direction:column; gap:0.32rem;">
+              ${sl.simulatorGuide.steps.map(st => `<li>${mdToHtml(st)}</li>`).join('')}
+            </ol>
+            ` : ''}
+            ${sl.simulatorGuide.example ? `
+            <div style="background:rgba(7,11,20,0.75); border:1px dashed rgba(16,185,129,0.35); border-radius:8px; padding:0.45rem 0.7rem; font-size:0.81rem; color:#d1fae5; line-height:1.45;">
+              <strong style="color:#6ee7b7;">Ejemplo práctico:</strong> ${mdToHtml(sl.simulatorGuide.example)}
+            </div>
+            ` : ''}
+          </div>
+          ` : ''}
+
           <div class="hub-action">
             <strong>⚡ Dinámica en Pantalla:</strong> ${mdToHtml(sl.interaction)}
           </div>
@@ -1085,6 +1191,35 @@ function generateMasterHubHTML() {
         </article>
       `;
     }).join('\n');
+
+    const labPanelHTML = s.practicalLabGuide ? `
+        <article class="hub-card" style="border-color:rgba(16,185,129,0.4); border-left:4px solid #10b981;">
+          <div class="hub-card-top">
+            <div>
+              <span class="hub-slide-badge" style="background:#10b981; color:#052e16;">S${s.id} · LABORATORIO PRÁCTICO</span>
+              <h3>${s.practicalLabGuide.title}</h3>
+            </div>
+            <a href="../sesiones/actividad_practica_sesion_${s.id}.html" target="_blank" class="panel-btn" style="border-color:rgba(16,185,129,0.45); color:#6ee7b7;">Abrir Simulador S${s.id} ↗</a>
+          </div>
+          ${s.practicalLabGuide.intro ? `<p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:0.8rem;">${mdToHtml(s.practicalLabGuide.intro)}</p>` : ''}
+          ${Array.isArray(s.practicalLabGuide.steps) ? `
+          <ol style="margin:0 0 0.9rem 1.25rem; color:#f1f5f9; font-size:0.88rem; line-height:1.55; display:flex; flex-direction:column; gap:0.38rem;">
+            ${s.practicalLabGuide.steps.map(st => `<li>${mdToHtml(st)}</li>`).join('')}
+          </ol>
+          ` : ''}
+          ${Array.isArray(s.practicalLabGuide.cases) ? `
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.75rem;">
+            ${s.practicalLabGuide.cases.map(cs => `
+              <div style="background:rgba(7,11,20,0.75); border:1px solid rgba(255,255,255,0.09); border-top:3px solid #10b981; border-radius:8px; padding:0.7rem 0.85rem;">
+                <strong style="display:block; color:#fff; font-size:0.86rem; margin-bottom:0.2rem;">${cs.caseTitle}</strong>
+                <span style="display:block; font-family:'JetBrains Mono',monospace; font-size:0.71rem; color:#6ee7b7; margin-bottom:0.35rem;">Requiere: ${cs.requires}</span>
+                <p style="color:#cbd5e1; font-size:0.8rem; line-height:1.42; margin:0;">${mdToHtml(cs.whatToShow)}</p>
+              </div>
+            `).join('')}
+          </div>
+          ` : ''}
+        </article>
+    ` : '';
 
     return `
       <section class="session-panel ${idx === 0 ? 'active' : ''}" id="panel-s${s.id}">
@@ -1099,6 +1234,7 @@ function generateMasterHubHTML() {
           </div>
         </div>
         ${cards}
+        ${labPanelHTML}
       </section>
     `;
   }).join('\n');
@@ -1363,6 +1499,7 @@ function generateMasterHubHTML() {
     }
     .hub-bridge p { color: #fef3c7; font-style: italic; font-size: 0.98rem; }
     body.only-bridges .hub-script,
+    body.only-bridges .hub-sim-guide,
     body.only-bridges .hub-plain-terms,
     body.only-bridges .hub-action { display: none; }
   </style>

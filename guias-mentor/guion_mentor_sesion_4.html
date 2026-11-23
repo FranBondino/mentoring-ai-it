@@ -507,6 +507,7 @@
     }
 
     body.bridges-only .script-section,
+    body.bridges-only .simulator-guide-box,
     body.bridges-only .plain-terms-box,
     body.bridges-only .interaction-box {
       display: none;
@@ -629,6 +630,7 @@
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Filtrar por palabra clave, número de slide o puente..." oninput="filterSlides()">
         <button class="mode-btn" style="background: rgba(16, 185, 129, 0.16); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);" onclick="toggleCheatMode(this)">⚡ Modo Machete Rápido (Ocultar texto largo)</button>
         <button class="mode-btn" onclick="toggleBridgesMode(this)">🔗 Ver Solo Puentes entre Slides</button>
+        <a href="#guia-simulador-practico" class="mode-btn" style="text-decoration: none; background: rgba(16, 185, 129, 0.14); color: #6ee7b7; border-color: rgba(16, 185, 129, 0.45);">🧪 Guía Simulador Práctico ↓</a>
         
         <div class="progress-stat" id="progressStat">0 / 15 dictadas</div>
       </div>
@@ -707,6 +709,8 @@
             <strong style="color:#fff; font-weight:700;">1️⃣ ARRANQUE DE LA ÚLTIMA CLASE (Las 4 sesiones en perspectiva):</strong><br>• En las primeras tres clases vimos cómo trabajan los equipos de desarrollo (S1), cómo funciona un LLM y un RAG por dentro (S2), y cómo un agente ejecuta acciones con herramientas y frenos humanos (S3).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ QUÉ NOS FALTA VER HOY:</strong><br>• Hoy no vamos a repetir lo básico de tokens ni de PII que ya tenés claro. Nos enfocamos en lo que te toca resolver cuando el producto ya existe o lo están por aprobar: <strong style="color:#fff; font-weight:700;">cuánto sale de verdad, qué conviene comprar en vez de programar, cómo salir a usuarios reales sin romper nada y cómo responder casos difíciles en entrevistas</strong>.
           </blockquote>
         </div>
+
+        
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -792,6 +796,8 @@
         </div>
 
         
+
+        
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
           
           <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
@@ -866,16 +872,34 @@
             <button class="copy-btn" onclick="copyText(this, `1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):
 • Mandar una duda simple o la clasificación de un ticket a Claude Opus o GPT-4o es pagar alrededor de 20 veces más y esperar el triple de tiempo sin ningún beneficio.
 • Con Model Routing, ponés un filtro rápido en la entrada que separa en dos carriles:
-  • 🟢 Carril rápido (70%-85%): Modelos chicos (Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro) a ~\$0.15/1M tokens en ~0.3 seg.
-  • 🟣 Carril complejo (15%-30%): Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.
+  • Carril rápido (70%-85%): Modelos chicos (Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro) a ~\$0.15/1M tokens en ~0.3 seg.
+  • Carril complejo (15%-30%): Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.
 
 2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):
-• Si todo va al modelo grande gastás \$1,200/mes. Si mandás el 80% de lo simple al modelo chico, la cuenta cae a \$288/mes (76% menos) y encima responde mucho más rápido.`)">📋 Copiar Guion</button>
+• Si todo va al modelo grande gastás \$1,200/mes. Si mandás el 80% de lo simple al modelo chico, la cuenta cae a \$288/mes (76% menos) y el diagrama SVG actualiza al instante el peso de cada rama.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):</strong><br>• Mandar una duda simple o la clasificación de un ticket a <em style="color:#fde68a;">Claude Opus</em> o <em style="color:#fde68a;">GPT-4o</em> es pagar alrededor de <strong style="color:#fff; font-weight:700;">20 veces más</strong> y esperar el triple de tiempo sin ningún beneficio.<br>• Con <strong style="color:#fff; font-weight:700;">Model Routing</strong>, ponés un filtro rápido en la entrada que separa en dos carriles:<br>  • <strong style="color:#fff; font-weight:700;">🟢 Carril rápido (70%-85%):</strong> Modelos chicos (<em style="color:#fde68a;">Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro</em>) a ~$0.15/1M tokens en ~<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3 seg</code>.<br>  • <strong style="color:#fff; font-weight:700;">🟣 Carril complejo (15%-30%):</strong> Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):</strong><br>• Si todo va al modelo grande gastás <strong style="color:#fff; font-weight:700;">$1,200/mes</strong>. Si mandás el <strong style="color:#fff; font-weight:700;">80%</strong> de lo simple al modelo chico, la cuenta cae a <strong style="color:#fff; font-weight:700;">$288/mes</strong> (<strong style="color:#fff; font-weight:700;">76% menos</strong>) y encima responde mucho más rápido.
+            <strong style="color:#fff; font-weight:700;">1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):</strong><br>• Mandar una duda simple o la clasificación de un ticket a <em style="color:#fde68a;">Claude Opus</em> o <em style="color:#fde68a;">GPT-4o</em> es pagar alrededor de <strong style="color:#fff; font-weight:700;">20 veces más</strong> y esperar el triple de tiempo sin ningún beneficio.<br>• Con <strong style="color:#fff; font-weight:700;">Model Routing</strong>, ponés un filtro rápido en la entrada que separa en dos carriles:<br>  • <strong style="color:#fff; font-weight:700;">Carril rápido (70%-85%):</strong> Modelos chicos (<em style="color:#fde68a;">Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro</em>) a ~$0.15/1M tokens en ~<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3 seg</code>.<br>  • <strong style="color:#fff; font-weight:700;">Carril complejo (15%-30%):</strong> Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):</strong><br>• Si todo va al modelo grande gastás <strong style="color:#fff; font-weight:700;">$1,200/mes</strong>. Si mandás el <strong style="color:#fff; font-weight:700;">80%</strong> de lo simple al modelo chico, la cuenta cae a <strong style="color:#fff; font-weight:700;">$288/mes</strong> (<strong style="color:#fff; font-weight:700;">76% menos</strong>) y el diagrama SVG actualiza al instante el peso de cada rama.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Simulador Model Routing + Diagrama SVG
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Señalá primero el diagrama SVG a la izquierda (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Consulta → Router → Modelo Chico / Modelo Grande</code>) para mostrar dónde actúa el filtro.</li><li>Llevá el deslizador derecho a <strong style="color:#fff; font-weight:700;">0%</strong> → la cuenta marca <strong style="color:#fff; font-weight:700;">$1,200.00 / mes</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0% de ahorro</code>) y la rama violeta del diagrama toma el <strong style="color:#fff; font-weight:700;">100%</strong>.</li><li>Volvelo a <strong style="color:#fff; font-weight:700;">80%</strong> (valor recomendado) → baja a <strong style="color:#fff; font-weight:700;">$288.00 / mes</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">76% de ahorro · $912 USD</code>) y se engrosa la rama verde (<strong style="color:#fff; font-weight:700;">80%</strong>) frente a la violeta (<strong style="color:#fff; font-weight:700;">20%</strong>).</li><li>Subí a <strong style="color:#fff; font-weight:700;">90%</strong> → da <strong style="color:#fff; font-weight:700;">$174.00 / mes</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">86% de ahorro · $1,026 USD</code>). Aclará a Anabela que no conviene llevarlo a 95% si hay casos legales o ambiguos que requieren el modelo grande.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Mesa de ayuda con 10.000 tickets/mes: clasificar idioma, prioridad o dudas repetitivas pasa por <em style="color:#fde68a;">Flash/Haiku</em>, y solo reclamos complejos o contratos bajo NDA se derivan a <em style="color:#fde68a;">Sonnet/GPT-4o</em>.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -950,16 +974,34 @@
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):
-• ⚡ Síncrono (100% tarifa): Chat donde la persona está esperando en pantalla en menos de 2 segundos.
-• 🌙 Batch API / Asíncrono (50% tarifa): Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por Batch API (OpenAI, Anthropic, AWS Bedrock) y te cobran la mitad.
+• Síncrono (100% tarifa): Chat donde la persona está esperando en pantalla en menos de 2 segundos.
+• Batch API / Asíncrono (50% tarifa): Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por Batch API (OpenAI, Anthropic, AWS Bedrock) y te cobran la mitad.
 
 2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):
 • Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: 1) las vueltas internas del agente ReAct, 2) infraestructura fija de Vector DB y monitoreo (~\$70–\$250/mes), 3) la diferencia por idioma: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y 4) tokens de evaluaciones automáticas + horas humanas de revisión.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):</strong><br>• <strong style="color:#fff; font-weight:700;">⚡ Síncrono (100% tarifa):</strong> Chat donde la persona está esperando en pantalla en menos de 2 segundos.<br>• <strong style="color:#fff; font-weight:700;">🌙 Batch API / Asíncrono (50% tarifa):</strong> Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por <strong style="color:#fff; font-weight:700;">Batch API</strong> (OpenAI, Anthropic, AWS Bedrock) y te cobran <strong style="color:#fff; font-weight:700;">la mitad</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):</strong><br>• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: <strong style="color:#fff; font-weight:700;">1)</strong> las vueltas internas del agente ReAct, <strong style="color:#fff; font-weight:700;">2)</strong> infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), <strong style="color:#fff; font-weight:700;">3)</strong> la <strong style="color:#fff; font-weight:700;">diferencia por idioma</strong>: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y <strong style="color:#fff; font-weight:700;">4)</strong> tokens de evaluaciones automáticas + horas humanas de revisión.
+            <strong style="color:#fff; font-weight:700;">1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):</strong><br>• <strong style="color:#fff; font-weight:700;">Síncrono (100% tarifa):</strong> Chat donde la persona está esperando en pantalla en menos de 2 segundos.<br>• <strong style="color:#fff; font-weight:700;">Batch API / Asíncrono (50% tarifa):</strong> Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por <strong style="color:#fff; font-weight:700;">Batch API</strong> (OpenAI, Anthropic, AWS Bedrock) y te cobran <strong style="color:#fff; font-weight:700;">la mitad</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):</strong><br>• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: <strong style="color:#fff; font-weight:700;">1)</strong> las vueltas internas del agente ReAct, <strong style="color:#fff; font-weight:700;">2)</strong> infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), <strong style="color:#fff; font-weight:700;">3)</strong> la <strong style="color:#fff; font-weight:700;">diferencia por idioma</strong>: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y <strong style="color:#fff; font-weight:700;">4)</strong> tokens de evaluaciones automáticas + horas humanas de revisión.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Gráfico Batch API (-50%) y Barra de TCO
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>En la tarjeta izquierda, señalá la barra azul completa (<strong style="color:#fff; font-weight:700;">Síncrono · < 2s · 100% tarifa</strong>) frente a la barra verde a mitad de ancho (<strong style="color:#fff; font-weight:700;">Batch API · 1-12h · -50% costo</strong>).</li><li>En la tarjeta derecha, señalá la barra horizontal apilada (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Tokens base</code> / <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Vueltas agente</code> / <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Idioma ES/PT</code> / <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Infra + Evals</code>) para mostrar visualmente que la API pura es solo una fracción del presupuesto mensual.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Cierre de release a las 18:00 hs con 3.000 strings nuevos para revisar glosario antes de las 9:00 hs: entra por <em style="color:#fde68a;">Batch API</em> pagando 50%, y presupuestás ~20-30% extra de tokens por ser español/portugués frente a inglés.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1020,7 +1062,7 @@
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 tarjetas y tocá los 3 casos de abajo.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 tarjetas y tocá '1. Llamadas internas', '2. Piloto QA + Jira' y '3. Motor 500k docs/mes'.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
@@ -1034,17 +1076,35 @@
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):
-• 🛒 BUY (SaaS): Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.
-• 🧩 CONFIGURE (Conectado): Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.
-• 🏗️ BUILD (Propio): Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un Model Gateway (AWS Bedrock / LiteLLM) para cambiar entre Claude, Gemini y GPT sin reescribir código (evitar Vendor Lock-in).
+• BUY (SaaS): Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.
+• CONFIGURE (Conectado): Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.
+• BUILD (Propio): Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un Model Gateway (AWS Bedrock / LiteLLM) para cambiar entre Claude, Gemini y GPT sin reescribir código (evitar Vendor Lock-in).
 
 2️⃣ 3 CASOS CONCRETOS (Botones de abajo):
-• Probalos con Anabela: 1. Resumir reuniones → BUY, 2. Piloto QA en Jira → CONFIGURE, 3. Motor médico 500k docs/mes → BUILD con Gateway.`)">📋 Copiar Guion</button>
+• Probalos con Anabela: 1. Llamadas internas → BUY, 2. Piloto QA + Jira → CONFIGURE, 3. Motor 500k docs/mes → BUILD con Gateway.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):</strong><br>• <strong style="color:#fff; font-weight:700;">🛒 BUY (SaaS):</strong> Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.<br>• <strong style="color:#fff; font-weight:700;">🧩 CONFIGURE (Conectado):</strong> Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.<br>• <strong style="color:#fff; font-weight:700;">🏗️ BUILD (Propio):</strong> Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un <strong style="color:#fff; font-weight:700;">Model Gateway</strong> (<em style="color:#fde68a;">AWS Bedrock / LiteLLM</em>) para cambiar entre Claude, Gemini y GPT sin reescribir código (<strong style="color:#fff; font-weight:700;">evitar Vendor Lock-in</strong>).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ 3 CASOS CONCRETOS (Botones de abajo):</strong><br>• Probalos con Anabela: <em style="color:#fde68a;">1. Resumir reuniones → BUY</em>, <em style="color:#fde68a;">2. Piloto QA en Jira → CONFIGURE</em>, <em style="color:#fde68a;">3. Motor médico 500k docs/mes → BUILD con Gateway</em>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):</strong><br>• <strong style="color:#fff; font-weight:700;">BUY (SaaS):</strong> Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.<br>• <strong style="color:#fff; font-weight:700;">CONFIGURE (Conectado):</strong> Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.<br>• <strong style="color:#fff; font-weight:700;">BUILD (Propio):</strong> Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un <strong style="color:#fff; font-weight:700;">Model Gateway</strong> (<em style="color:#fde68a;">AWS Bedrock / LiteLLM</em>) para cambiar entre Claude, Gemini y GPT sin reescribir código (<strong style="color:#fff; font-weight:700;">evitar Vendor Lock-in</strong>).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ 3 CASOS CONCRETOS (Botones de abajo):</strong><br>• Probalos con Anabela: <em style="color:#fde68a;">1. Llamadas internas → BUY</em>, <em style="color:#fde68a;">2. Piloto QA + Jira → CONFIGURE</em>, <em style="color:#fde68a;">3. Motor 500k docs/mes → BUILD con Gateway</em>.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Diagrama Model Gateway y Casos Build vs. Buy
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Mostrá primero las 3 tarjetas superiores (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">BUY · SAAS</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">CONFIGURE</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">BUILD · GATEWAY</code>) y el diagrama SVG inferior izquierdo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Tu Producto → Model Gateway [Bedrock / LiteLLM] → Claude / GPT-4o / Gemini</code>).</li><li>Antes de tocar cada botón abajo a la derecha, preguntale a Anabela qué elegiría ella.</li><li>Presioná <strong style="color:#fff; font-weight:700;">'1. Llamadas internas'</strong> → sale en azul <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Conviene BUY (SaaS) · ~3 días</code> (no justifica equipo propio).</li><li>Presioná <strong style="color:#fff; font-weight:700;">'2. Piloto QA + Jira'</strong> → sale en ámbar <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Conviene CONFIGURE (Managed + MCP) · ~2 semanas</code>.</li><li>Presioná <strong style="color:#fff; font-weight:700;">'3. Motor 500k docs/mes'</strong> → sale en violeta <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Conviene BUILD vía Model Gateway · 8-12 semanas</code>.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Si dentro de 6 meses sale un modelo más barato o preciso para español/portugués, tener un <em style="color:#fde68a;">Model Gateway</em> en el medio te deja cambiarlo en configuración sin rehacer la aplicación.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1105,7 +1165,7 @@
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y probá 500 docs / 5 min.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
@@ -1129,6 +1189,24 @@
             <strong style="color:#fff; font-weight:700;">1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):</strong><br>• Con <strong style="color:#fff; font-weight:700;">5.000 documentos/mes</strong> de <strong style="color:#fff; font-weight:700;">15 min</strong> a <strong style="color:#fff; font-weight:700;">$20/h</strong>, hoy ese trabajo equivale a <strong style="color:#fff; font-weight:700;">1.250 horas</strong> (7.8 personas FTE), o sea <strong style="color:#fff; font-weight:700;">$25,000 USD/mes</strong> de valor de tiempo.<br>• Activando <strong style="color:#fff; font-weight:700;">Model Routing + Batch</strong>, la API cae de $225 a $27; sumando <strong style="color:#fff; font-weight:700;">$180 fijos de Vector DB/Langfuse + 8% de Evals</strong>, el costo IA total real da <strong style="color:#fff; font-weight:700;">$209.16 USD/mes</strong>. Sumado al <strong style="color:#fff; font-weight:700;">20% de revisión humana ($5,000/mes)</strong>, liberás capacidad equivalente a <strong style="color:#fff; font-weight:700;">$19,790.84 USD/mes</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):</strong><br>• Aclará siempre que esto es <strong style="color:#fff; font-weight:700;">capacidad liberada del equipo</strong> (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de <strong style="color:#fff; font-weight:700;">$15,000</strong>, equivale a unas <strong style="color:#fff; font-weight:700;">3.3 semanas</strong> de horas liberadas.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Calculadora FinOps vs. Tiempo del Equipo (3 pruebas en vivo)
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li><strong style="color:#fff; font-weight:700;">Prueba 1 (Caso base equilibrado):</strong> Dejá los defaults (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">5.000 docs</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">15 min</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$20/h</code>, los 3 checks activos). Señalá las barras superiores (<strong style="color:#fff; font-weight:700;">Manual $25,000 USD</strong> vs <strong style="color:#fff; font-weight:700;">Operación IA + HITL $5,209 (21%)</strong>), el costo IA+TCO (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$209.16 USD</code>), HITL (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$5,000.00 USD</code>), capacidad liberada (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$19,790.84 USD</code>) y repago de piloto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$15.000</code> en <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">~3.3 semanas</code>.</li><li><strong style="color:#fff; font-weight:700;">Prueba 2 (Impacto de FinOps):</strong> Destildá <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Model Routing (80/20)</code> y <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Batch API nocturna</code> → el gasto IA+TCO sube de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$209.16</code> a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$423.00 USD/mes</code> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$225</code> de API × <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.08</code> de Evals + <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$180</code> fijos). Volvé a tildar ambos.</li><li><strong style="color:#fff; font-weight:700;">Prueba 3 (Cuándo NO conviene construir):</strong> Bajá el primer slider a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">500 docs</code> y el segundo a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">5 min</code> → el tiempo manual cae a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$833.33 USD</code>, el costo fijo de infra (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$180</code>) hace que la IA+TCO (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$182.92</code>) empuje la barra al <strong style="color:#fff; font-weight:700;">42%</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$350 USD</code>) y el repago de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$15.000</code> salte a <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">~134.3 semanas</code></strong> (> 2 años).</li><li>Volvé a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">5.000 docs</code> y <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">15 min</code> y cerrá leyendo la nota inferior sobre capacidad liberada frente a nómina.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Propuesta ante Finanzas para asistir en revisión documental de 5.000 archivos/mes: en lugar de prometer bajar sueldos desde el mes 1, mostrás que el equipo existente absorbe más volumen y acorta entregas sin nuevas contrataciones.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1210,12 +1288,30 @@
 • Con Feature Flags, prendés para un 5% o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.
 
 3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):
-• Ponés 👍 / 👎. Cada corrección que carga el especialista suma al Golden Dataset para que el mismo error no vuelva a pasar.`)">📋 Copiar Guion</button>
+• Recogés reportes del especialista y cada corrección entra al Golden Dataset para que el mismo error no vuelva a pasar.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):</strong><br>• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en <strong style="color:#fff; font-weight:700;">Shadow Mode</strong>: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.<br>• Mirá el tablero de abajo: <strong style="color:#fff; font-weight:700;">0% de clientes expuestos</strong> y avanzás recién cuando coincide <strong style="color:#fff; font-weight:700;">≥ 90%</strong> con lo que resolvió el equipo humano.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):</strong><br>• Con <em style="color:#fde68a;">Feature Flags</em>, prendés para un <strong style="color:#fff; font-weight:700;">5%</strong> o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):</strong><br>• Ponés <strong style="color:#fff; font-weight:700;">👍 / 👎</strong>. Cada corrección que carga el especialista suma al <em style="color:#fde68a;">Golden Dataset</em> para que el mismo error no vuelva a pasar.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):</strong><br>• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en <strong style="color:#fff; font-weight:700;">Shadow Mode</strong>: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.<br>• Mirá el tablero de abajo: <strong style="color:#fff; font-weight:700;">0% de clientes expuestos</strong> y avanzás recién cuando coincide <strong style="color:#fff; font-weight:700;">≥ 90%</strong> con lo que resolvió el equipo humano.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):</strong><br>• Con <em style="color:#fde68a;">Feature Flags</em>, prendés para un <strong style="color:#fff; font-weight:700;">5%</strong> o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):</strong><br>• Recogés reportes del especialista y cada corrección entra al <em style="color:#fde68a;">Golden Dataset</em> para que el mismo error no vuelva a pasar.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Pipeline Interactivo de Rollout (SVG + Tarjetas)
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Recorré el diagrama SVG superior (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1. Shadow Mode → 2. Canary Rollout → 3. Producción + Feedback</code>) y señalá la flecha punteada inferior (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Correcciones → Golden Dataset</code>).</li><li>Clic en <strong style="color:#fff; font-weight:700;">1. Shadow Mode</strong> (tarjeta o nodo SVG) → el panel inferior marca <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0% clientes</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Sin impacto en el usuario final</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Acuerdo ≥ 90%</code> y revisar diferencias en Langfuse.</li><li>Clic en <strong style="color:#fff; font-weight:700;">2. Canary Rollout</strong> → cambia a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">5% → 25% → 100% gradual</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Acotado, con rollback en 1 clic</code> y <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Latencia P95 < 1.5s y costo estable 7 días</code>.</li><li>Clic en <strong style="color:#fff; font-weight:700;">3. Circuito de feedback</strong> → pasa a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">100% en vivo con feedback</code> y sumar cada error corregido al <em style="color:#fde68a;">Golden Dataset</em>.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Asistente nuevo de QA lingüístico: corre 2 semanas en <em style="color:#fde68a;">Shadow</em> frente al criterio del equipo; recién al superar 90% de coincidencia se habilita <em style="color:#fde68a;">Canary</em> en un único par de idiomas.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1281,7 +1377,7 @@
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá '🐢 12s congelada' vs '⚡ 0.8s streaming' y repasá los 3 bloques de la derecha.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá '12s congelada' vs '0.8s streaming' y repasá los 3 bloques de la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
@@ -1308,6 +1404,24 @@
             <strong style="color:#fff; font-weight:700;">1️⃣ UX EN IA Y PLANNING REALISTA (Tarjeta izquierda + Demo):</strong><br>• Un modelo bueno fracasa si tarda 12 segundos con la pantalla en blanco: necesitás <strong style="color:#fff; font-weight:700;">Token Streaming</strong> (primeras palabras en &lt; 1s), llamadas en paralelo y avisos de estado (<em style="color:#fde68a;">'Consultando Jira...'</em>).<br>• Y no mandes a todos a un chat vacío: poné botones contextuales dentro de Jira/TMS donde ya trabajan.<br>• En <strong style="color:#fff; font-weight:700;">Agile</strong>, antes de prometer un trimestre cuando no sabés si tus datos alcanzan, corré un <strong style="color:#fff; font-weight:700;">Discovery Spike de 1 semana con ~30 casos reales</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ RIESGOS ACTUALES (Tarjeta derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Shadow AI:</strong> Si solo prohibís usar IA por mail, la gente igual pega textos en cuentas personales; la única forma real de frenarlo es dar una alternativa interna segura.<br>• <strong style="color:#fff; font-weight:700;">EU AI Act:</strong> Si el sistema toca RRHH, evaluaciones o crédito, exige trazas, supervisión humana y avisar al usuario.<br>• Y revisá siempre <strong style="color:#fff; font-weight:700;">Propiedad Intelectual (IP)</strong> y sesgos en idiomas fuera del inglés.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Mini-demo UX de Espera Percibida
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Tocá primero el botón <strong style="color:#fff; font-weight:700;">'12s congelada'</strong> → la consola cambia a rojo mostrando 3 llamadas en fila sin respuesta ni feedback visual (causa directa de abandono).</li><li>Volvé a tocar <strong style="color:#fff; font-weight:700;">'0.8s streaming'</strong> → muestra en verde el aviso temprano a los <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3s</code> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Consultando Jira + glosario en paralelo</code>) y respuesta progresiva desde los <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.8s</code>.</li><li>Conectalo enseguida con la tarjeta derecha (<strong style="color:#fff; font-weight:700;">Shadow AI</strong>): si la herramienta oficial tarda 12s y obliga a salir de Jira, el equipo vuelve a usar cuentas externas personales.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> En vez de mandar un correo prohibiendo chatbots públicos, ponés un botón directo en Jira/TMS con <em style="color:#fde68a;">streaming</em> rápido conectado al modelo corporativo bajo NDA.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1373,7 +1487,7 @@
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré el triángulo a la izquierda y el diagrama de trayectoria a la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
@@ -1400,6 +1514,24 @@
             <strong style="color:#fff; font-weight:700;">1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):</strong><br>• En S2 vimos el <em style="color:#fde68a;">Golden Dataset</em> en CI/CD. En el día a día te sirve para no mandar tickets a ciegas:<br>  • Baja <strong style="color:#fff; font-weight:700;">Fidelidad</strong> → el modelo inventó → ajustar <em style="color:#fde68a;">Prompt / Temperatura 0.0 / Guardrail</em>.<br>  • Baja <strong style="color:#fff; font-weight:700;">Precisión de Contexto</strong> → el buscador trajo mal párrafo → revisar <em style="color:#fde68a;">Chunking / Metadatos / Vector DB</em> (no el prompt).<br>  • Baja <strong style="color:#fff; font-weight:700;">Relevancia</strong> → dio vueltas → ajustar formato e instrucción.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ AGENTES Y MODEL DRIFT (Tarjeta derecha):</strong><br>• En agentes mirás además la trayectoria (<strong style="color:#fff; font-weight:700;">Trajectory Evaluation</strong>): si eligió la herramienta correcta y con JSON válido.<br>• Y ojo con el <strong style="color:#fff; font-weight:700;">Model Drift</strong>: a veces el proveedor cambia el modelo por detrás o el equipo pasa a un modelo más chico y la calidad cae sin que nadie haya tocado el código. Calibrar un <em style="color:#fde68a;">LLM-as-a-Judge</em> pide criterio real del idioma y del negocio (ahí aporta directo tu experiencia en <strong style="color:#fff; font-weight:700;">Traducción y QA</strong>).
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Diagramas SVG de Tríada RAG y Trajectory Evaluation
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>En el diagrama triangular izquierdo, señalá las 3 aristas: <strong style="color:#fff; font-weight:700;">Pregunta ↔ Contexto</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Precisión Contexto</code>), <strong style="color:#fff; font-weight:700;">Contexto ↔ Respuesta</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Fidelidad</code>) y <strong style="color:#fff; font-weight:700;">Pregunta ↔ Respuesta</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Relevancia</code>).</li><li>Usá ese triángulo para remarcar que el PM no pide "mejorar el prompt" para todo: si falla <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Contexto</code>, el ajuste va al buscador/chunking.</li><li>En el diagrama derecho (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Input → Tool 1 → JSON OK → Tool 2 → Salida</code>), señalá el corchete inferior <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Eval de trayectoria (paso a paso)</code></strong>.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Un agente de soporte responde algo prolijo, pero en el camino consultó 4 veces la misma API y mandó mal un campo JSON: en agentes medís toda la secuencia, no solo la frase final.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1465,7 +1597,7 @@
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá 'Alucinación', 'Fallo Retrieval' y 'Sana'.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá 'Alucinación', 'Fallo Retrieval', 'Sana' y mové el slider 3.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
@@ -1490,6 +1622,24 @@
             <strong style="color:#fff; font-weight:700;">1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):</strong><br>• El manual dice que <em style="color:#fde68a;">Checkout v4</em> está <strong style="color:#fff; font-weight:700;">bloqueado en QA lingüístico</strong>, pero al final el bot inventó que <em style="color:#fde68a;">'mañana se aprueba automáticamente sin más pruebas'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ PROBAR LOS 3 PRESETS (Derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Alucinación:</strong> Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.0</code> pero Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.2</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Prompt / Temperatura / Guardrail</strong>.<br>• <strong style="color:#fff; font-weight:700;">Fallo Retrieval:</strong> Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.9</code> pero Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Chunking / Metadatos / Vector DB</strong>.<br>• <strong style="color:#fff; font-weight:700;">Sana:</strong> Todo ≥ <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95</code> → <strong style="color:#fff; font-weight:700;">Pasa a Canary</strong>.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Calificador Interactivo Tríada RAG (Presets + Sliders)
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Leé primero la tarjeta izquierda: el fragmento dice explícitamente que <em style="color:#fde68a;">Checkout v4</em> está bloqueado en QA PT-BR, pero al final del texto del bot aparece la frase marcada en rojo (<em style="color:#fde68a;">"mañana al mediodía se aprobará automáticamente"</em>).</li><li>Con el preset <strong style="color:#fff; font-weight:700;">'Alucinación'</strong> activo (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.2 / 1.0 / 0.9</code>) → marca <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">RECHAZADO (70%)</code> y asigna ticket a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Prompt / Temperatura 0.0 / Guardrail</code>.</li><li>Tocá <strong style="color:#fff; font-weight:700;">'Fallo Retrieval'</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.9 / 0.3 / 0.8</code>) → marca <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">RECHAZADO (67%)</code> y deriva a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Chunking / Metadatos / Vector DB</code> (sin tocar el prompt).</li><li>Tocá <strong style="color:#fff; font-weight:700;">'Sana'</strong> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95 / 0.95 / 0.95</code>) → cambia a verde <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">APROBADO PARA CANARY (95%)</code>.</li><li>Con los otros dos en <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95</code>, bajá manualmente el 3er slider (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">3. Relevancia</code>) a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.5</code> → muestra el 3er veredicto posible: <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Baja Relevancia (< 0.80): Ticket para ajustar formato e instrucción de respuesta</code>.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> En la diaria del equipo, cuando alguien reporta "el bot se equivocó", este criterio te permite abrir el ticket en la fila correcta (base vectorial vs. prompt vs. formato) sin ida y vuelta.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1546,15 +1696,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Leer trazas en Langfuse (Span de Router/Retrieval, Span de LLM, Span de Eval) y revisar cada semana origen de errores, Model Drift y P95.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Leer trazas estilo waterfall en Langfuse (Router/Retrieval, LLM, Eval) y revisar cada semana origen de errores, Model Drift y P95.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Expandí los 4 nodos de la izquierda y tocá el botón de reporte negativo.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Desplegá Span 1 y Span 2 a la izquierda y tocá 'Simular reporte → mandar al Golden Dataset'.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso falló y cuánto costó.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso tardó o falló y cuánto costó.</p>
             </div>
           </div>
         </div>
@@ -1564,16 +1714,34 @@
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):
-• Cada mensaje deja una Traza dividida en pasos (Spans): en Span 1 ves que el router eligió Flash (\$0.0001, 160ms) y qué chunks trajo; en Span 2 ves el streaming (TTFT 220ms); en Span 3 la nota de Eval (0.97).
+• Cada mensaje deja una Traza dividida en pasos (Spans): arriba ves la regla temporal (0ms → 500ms → 1.15s) y la barra proporcional de cuánto demoró cada etapa (160ms Router/Retrieval vs. 900ms LLM).
 • Probá el botón 'Simular reporte → mandar al Golden Dataset' para ver cómo entra una corrección real al set de pruebas.
 
 2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):
 • 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de Faithfulness sin cambios propios, detectás Model Drift; 3) Controlás costo por área y latencia P95.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):</strong><br>• Cada mensaje deja una <strong style="color:#fff; font-weight:700;">Traza</strong> dividida en pasos (<strong style="color:#fff; font-weight:700;">Spans</strong>): en <strong style="color:#fff; font-weight:700;">Span 1</strong> ves que el router eligió <em style="color:#fde68a;">Flash</em> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0001</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">160ms</code>) y qué chunks trajo; en <strong style="color:#fff; font-weight:700;">Span 2</strong> ves el streaming (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">TTFT 220ms</code>); en <strong style="color:#fff; font-weight:700;">Span 3</strong> la nota de Eval (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.97</code>).<br>• Probá el botón <strong style="color:#fff; font-weight:700;">'Simular reporte → mandar al Golden Dataset'</strong> para ver cómo entra una corrección real al set de pruebas.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):</strong><br>• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de <em style="color:#fde68a;">Faithfulness</em> sin cambios propios, detectás <strong style="color:#fff; font-weight:700;">Model Drift</strong>; 3) Controlás costo por área y <strong style="color:#fff; font-weight:700;">latencia P95</strong>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):</strong><br>• Cada mensaje deja una <strong style="color:#fff; font-weight:700;">Traza</strong> dividida en pasos (<strong style="color:#fff; font-weight:700;">Spans</strong>): arriba ves la regla temporal (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0ms → 500ms → 1.15s</code>) y la barra proporcional de cuánto demoró cada etapa (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">160ms</code> Router/Retrieval vs. <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">900ms</code> LLM).<br>• Probá el botón <strong style="color:#fff; font-weight:700;">'Simular reporte → mandar al Golden Dataset'</strong> para ver cómo entra una corrección real al set de pruebas.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):</strong><br>• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de <em style="color:#fde68a;">Faithfulness</em> sin cambios propios, detectás <strong style="color:#fff; font-weight:700;">Model Drift</strong>; 3) Controlás costo por área y <strong style="color:#fff; font-weight:700;">latencia P95</strong>.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Traza Waterfall Interactiva en Langfuse
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Señalá primero la regla temporal (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0ms</code> → <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">500ms</code> → <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.15s</code>) y las 4 barras horizontales: la barra ámbar del <strong style="color:#fff; font-weight:700;">Span 2</strong> muestra a simple vista dónde está el <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">78%</code> de la espera (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">900ms</code> de <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.15s</code>).</li><li>Hacé clic en <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[Span 1] Router y Retrieval</code></strong> para desplegar su detalle: usó <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Gemini Flash</code> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0001</code>), filtró <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">ES-LATAM, 2026</code> con similitud <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.91</code>.</li><li>Hacé clic en <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[Span 2] Generación LLM</code></strong> para desplegar <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">TTFT: 220ms · Streaming</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">180 tokens</code> y la cita al manual.</li><li>En <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">[Span 3] Eval y Feedback</code></strong> (abierto), tocá el botón <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Simular reporte → mandar al Golden Dataset</code></strong> → el estado cambia a verde: <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">PASS: Caso #S4-PROD-992 guardado con la corrección → sumado al Golden Dataset.</code></li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Un lunes reportan que el asistente respondió mal un dato de lanzamiento: en 20 segundos abrís la traza, confirmás si la búsqueda trajo el chunk viejo (<em style="color:#fde68a;">Span 1</em>) o si redactó mal (<em style="color:#fde68a;">Span 2</em>), y guardás el caso para pruebas.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1659,6 +1827,24 @@
         </div>
 
         
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Práctica Oral con Puentes Visuales (Localización → IA)
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Pedile a Anabela que lea la estructura de 3 pasos a la izquierda (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Diagnóstico con datos → Propuesta y trade-off → Métrica de corte</code>) como plantilla mental antes de contestar cualquier caso.</li><li>Usá los 3 conectores visuales de la derecha (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Glosarios y QA → Rúbricas Evals</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Coordinar traductores → Flujos HITL</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Multilingüe ES/PT → FinOps y sesgos</code>) y elegí uno al azar para que lo diga en 30 segundos conectado con un proyecto real suyo.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Si el entrevistador pregunta <em style="color:#fde68a;">"¿Qué experiencia tenés evaluando calidad en IA?"</em>, puede responder: <em style="color:#fde68a;">"Vengo de dirigir glosarios y QA lingüístico multilingüe: definir criterios objetivos de fidelidad, ambigüedad y tono es exactamente la base para armar rúbricas de AI Evals y calibrar revisores humanos."</em>
+          </div>
+          
+        </div>
+    
+
+        
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
           
           <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
@@ -1731,18 +1917,36 @@
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ LA PREGUNTA (Leela tal cual):
-• 'Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'
+• 'Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?'
 
 2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):
 • Preguntale a Anabela cuál elegiría antes de hacer clic.
 • Opción A (Mail de dirección + capacitación): Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.
 • Opción C (Pedir 2 meses y modelo más caro): Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.
-• Opción B (Mejor camino ✅): Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.`)">📋 Copiar Guion</button>
+• Opción B (Mejor camino): Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA (Leela tal cual):</strong><br>• <em style="color:#fde68a;">'Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):</strong><br>• Preguntale a Anabela cuál elegiría antes de hacer clic.<br>• <strong style="color:#fff; font-weight:700;">Opción A (Mail de dirección + capacitación):</strong> Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Pedir 2 meses y modelo más caro):</strong> Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Mejor camino ✅):</strong> Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA (Leela tal cual):</strong><br>• <em style="color:#fde68a;">'Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):</strong><br>• Preguntale a Anabela cuál elegiría antes de hacer clic.<br>• <strong style="color:#fff; font-weight:700;">Opción A (Mail de dirección + capacitación):</strong> Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Pedir 2 meses y modelo más caro):</strong> Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Mejor camino):</strong> Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Simulador de Entrevista 1: Baja Adopción
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Leé el recuadro superior <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Escenario</code> y dejá que Anabela piense qué revisaría primero.</li><li>Tocá <strong style="color:#fff; font-weight:700;">'1. Auditar uso'</strong> en el tablero izquierdo → el <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">12%</code> cambia a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Bajo · En riesgo</code>, muestra los hallazgos (espera sin streaming, salir de Jira, uso personal) y habilita <strong style="color:#fff; font-weight:700;">'2. Aplicar plan'</strong>.</li><li>Antes de tocar nada a la derecha, pedile a Anabela que elija entre <strong style="color:#fff; font-weight:700;">Opción A, B o C</strong>.</li><li>Si menciona A o C, podés cliquearla para mostrar en rojo la devolución del entrevistador; luego tocá <strong style="color:#fff; font-weight:700;">'Opción B'</strong> → se marca en verde, dispara el plan (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Uso sostenido</code>) y deja la respuesta armada en el chat.</li><li>Tocá <strong style="color:#fff; font-weight:700;">'Reiniciar'</strong> si quieren repetir la respuesta oral desde cero.</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Diferenciar frente al entrevistador un problema de precisión del modelo de un problema de fricción en el flujo de trabajo y costo por usuario activo.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1817,18 +2021,36 @@
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
             <button class="copy-btn" onclick="copyText(this, `1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:
-• 'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'
+• 'Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?'
 
 2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:
 • Opción A (Volver todo atrás para siempre): Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.
 • Opción B (Revisión manual al 100%): Arma un cuello de botella más caro que el modelo grande.
-• Opción C (Mejor camino ✅): Revertís con feature flag solo en terminología crítica, corrés el Golden Dataset por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.
-• Si sobra 1 minuto, abrí el bloque 'Extra' abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (Discovery Spike + Shadow Mode).`)">📋 Copiar Guion</button>
+• Opción C (Mejor camino): Revertís con feature flag solo en terminología crítica, corrés el Golden Dataset por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.
+• Si sobra 1 minuto, abrí el botón 'Extra: agente en 30 días sin datos limpios' abajo a la izquierda (Discovery Spike + Shadow Mode).`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:</strong><br>• <em style="color:#fde68a;">'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:</strong><br>• <strong style="color:#fff; font-weight:700;">Opción A (Volver todo atrás para siempre):</strong> Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Revisión manual al 100%):</strong> Arma un cuello de botella más caro que el modelo grande.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Mejor camino ✅):</strong> Revertís con <em style="color:#fde68a;">feature flag</em> solo en terminología crítica, corrés el <em style="color:#fde68a;">Golden Dataset</em> por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.<br>• Si sobra 1 minuto, abrí el bloque <strong style="color:#fff; font-weight:700;">'Extra'</strong> abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (<em style="color:#fde68a;">Discovery Spike</em> + <em style="color:#fde68a;">Shadow Mode</em>).
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:</strong><br>• <em style="color:#fde68a;">'Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:</strong><br>• <strong style="color:#fff; font-weight:700;">Opción A (Volver todo atrás para siempre):</strong> Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Revisión manual al 100%):</strong> Arma un cuello de botella más caro que el modelo grande.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Mejor camino):</strong> Revertís con <em style="color:#fde68a;">feature flag</em> solo en terminología crítica, corrés el <em style="color:#fde68a;">Golden Dataset</em> por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.<br>• Si sobra 1 minuto, abrí el botón <strong style="color:#fff; font-weight:700;">'Extra: agente en 30 días sin datos limpios'</strong> abajo a la izquierda (<em style="color:#fde68a;">Discovery Spike</em> + <em style="color:#fde68a;">Shadow Mode</em>).
           </blockquote>
         </div>
+
+        
+        <div class="simulator-guide-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-left: 4px solid #10b981; border-radius: 12px; padding: 0.95rem 1.15rem; margin-bottom: 1rem;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">
+            🎛️ PASO 2B · CÓMO USAR EL SIMULADOR / EJEMPLO PRÁCTICO — Simulador de Entrevista 2: Model Drift + Bloque Extra
+          </div>
+          
+          <ol style="margin: 0 0 0.65rem 1.25rem; color: #e2e8f0; font-size: 0.87rem; line-height: 1.56; display: flex; flex-direction: column; gap: 0.38rem;">
+            <li>Leé el <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Escenario</code> superior: ahorraron 60% pasando a modelo chico, el código pasa los tests, pero fallan términos legales.</li><li>Tocá <strong style="color:#fff; font-weight:700;">'1. Simular caída'</strong> → <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.64</code> cambia a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.64 (ALERTA)</code>, el chat explica que los tests unitarios solo miran JSON y no glosario ES/PT, y se habilita <strong style="color:#fff; font-weight:700;">'2. Rollback + Routing'</strong>.</li><li>Debatí con Anabela entre <strong style="color:#fff; font-weight:700;">Opción A, B y C</strong> antes de cliquear. Mostrá las objeciones de A o B si hace falta, y tocá <strong style="color:#fff; font-weight:700;">'Opción C'</strong> → se marca en verde y la fidelidad sube a <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95 (OK)</code>.</li><li>Tocá abajo a la izquierda <strong style="color:#fff; font-weight:700;">'Extra: agente en 30 días sin datos limpios'</strong> para desplegar cómo negociar un pedido urgente sin prometer fechas imposibles (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Spike de 5 días + Configure/Buy + Shadow Mode</code>).</li>
+          </ol>
+          
+          
+          <div style="background: rgba(7, 11, 20, 0.78); border: 1px dashed rgba(16, 185, 129, 0.38); border-radius: 8px; padding: 0.58rem 0.8rem; font-size: 0.84rem; color: #d1fae5; line-height: 1.48;">
+            <strong style="color: #6ee7b7;">Ejemplo práctico para contar en vivo:</strong> Cambio de proveedor o modelo económico que rompe terminología de glosario bajo NDA sin disparar errores de código: la salida es segmentar por categoría en Langfuse en vez de revertir todo a ciegas.
+          </div>
+          
+        </div>
+    
 
         
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
@@ -1917,6 +2139,8 @@
         </div>
 
         
+
+        
         <div class="support-row" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1rem;">
           
           <div class="plain-terms-box" style="margin-bottom: 0; padding: 0.85rem 1rem;">
@@ -1948,6 +2172,50 @@
       </article>
     
     </section>
+
+    
+    <section id="guia-simulador-practico" class="slide-script-card" style="border-color: rgba(16, 185, 129, 0.42); border-left: 5px solid #10b981; margin-top: 2rem;">
+      <div class="card-header" style="align-items: center;">
+        <div>
+          <span class="slide-num" style="background: #10b981; color: #052e16; display: inline-block; margin-bottom: 0.45rem;">GUÍA DEL LABORATORIO PRÁCTICO</span>
+          <h2 class="slide-title">Guía paso a paso: Simulador Práctico Independiente (actividad_practica_sesion_4.html)</h2>
+        </div>
+        <a href="../sesiones/actividad_practica_sesion_4.html" target="_blank" class="open-slides-btn" style="background: #10b981; color: #052e16;">Abrir Simulador Práctico S4 ↗</a>
+      </div>
+      <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.55; margin-bottom: 1rem;">Usá este laboratorio en los últimos 5–8 minutos si queda tiempo después de la Slide 15, o dejáselo a Anabela para practicar sola antes de una entrevista. Tiene 4 decisiones a la izquierda y 3 casos de crisis a la derecha.</p>
+      
+      <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.1rem;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 800; color: #6ee7b7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.55rem;">ORDEN RECOMENDADO EN VIVO</div>
+        <ol style="margin-left: 1.25rem; color: #f1f5f9; font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 0.45rem;">
+          <li>Abrí <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Simulador Práctico S4</code></strong> desde la barra superior (o el botón de cierre en la Slide 15). Dejá los 4 selectores de la izquierda en la opción inicial (configuración básica sin controles).</li><li><strong style="color:#fff; font-weight:700;">Paso 1 — Provocar el fallo:</strong> Sin cambiar ningún selector, tocá <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Caso 1 (Baja adopción y presupuesto)</code></strong> a la derecha → la consola sale en rojo mostrando por qué fracasa un bot caro sin streaming ni integración.</li><li><strong style="color:#fff; font-weight:700;">Paso 2 — Arreglar un frente y mostrar qué falta:</strong> Cambiá manualmente <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1. FinOps</code></strong> y <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">2. Salida/UX</code></strong> a la opción recomendada y volvé a tocar <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Caso 1</code> → pasa a verde (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">CASO 1 RESUELTO</code>). Enseguida tocá <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Caso 2 (Model Drift)</code></strong> → sigue en rojo porque falta <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">3. Evaluaciones y monitoreo</code></strong> (demuestra que ahorrar costos sin Evals no protege la calidad).</li><li><strong style="color:#fff; font-weight:700;">Paso 3 — Escenario completo:</strong> Tocá <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Cargar configuración recomendada</code></strong> arriba a la izquierda (ajusta los 4 selectores) y probá <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Caso 2</code></strong> y <strong style="color:#fff; font-weight:700;"><code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">Caso 3</code></strong> repasando cada diagnóstico en consola junto con Anabela.</li>
+        </ol>
+      </div>
+      
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem;">
+        
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #10b981; border-radius: 10px; padding: 0.85rem 1rem;">
+            <strong style="display: block; color: #ffffff; font-size: 0.9rem; margin-bottom: 0.3rem;">Caso 1: Baja adopción y presupuesto en riesgo</strong>
+            <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: #6ee7b7; margin-bottom: 0.4rem;">Requiere: 1. FinOps + 2. Salida/UX</span>
+            <p style="color: #cbd5e1; font-size: 0.83rem; line-height: 1.48; margin: 0;">Conectar trazas + entrevistas para llevar el flujo dentro de Jira/TMS con Token Streaming (< 1s) y bajar factura con Routing/Batch.</p>
+          </div>
+        
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #10b981; border-radius: 10px; padding: 0.85rem 1rem;">
+            <strong style="display: block; color: #ffffff; font-size: 0.9rem; margin-bottom: 0.3rem;">Caso 2: Model Drift en Localización</strong>
+            <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: #6ee7b7; margin-bottom: 0.4rem;">Requiere: 3. Evals + 1. FinOps</span>
+            <p style="color: #cbd5e1; font-size: 0.83rem; line-height: 1.48; margin: 0;">Rollback selectivo con Feature Flag en glosario crítico, Golden Dataset por categoría en Langfuse y alertas de Drift sin perder todo el ahorro.</p>
+          </div>
+        
+          <div style="background: rgba(7, 11, 20, 0.82); border: 1px solid rgba(255, 255, 255, 0.1); border-top: 3px solid #10b981; border-radius: 10px; padding: 0.85rem 1rem;">
+            <strong style="display: block; color: #ffffff; font-size: 0.9rem; margin-bottom: 0.3rem;">Caso 3: Pedido apurado (30 días) y Shadow AI</strong>
+            <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: #6ee7b7; margin-bottom: 0.4rem;">Requiere: 4. Gobernanza + 2. Salida/UX</span>
+            <p style="color: #cbd5e1; font-size: 0.83rem; line-height: 1.48; margin: 0;">Discovery Spike de 1 semana con 30 casos reales + salida Configure/Buy segura contra Shadow AI mientras prueban en Shadow Mode y cuidan trazas EU AI Act.</p>
+          </div>
+        
+      </div>
+      
+    </section>
+  
 
     
   </main>

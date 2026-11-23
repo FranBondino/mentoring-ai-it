@@ -665,8 +665,18 @@ const SESSION_4_DATA = {
                 "Carriles 80/20",
                 "Simulador de ahorro"
             ],
-            "interaction": "Explicá los dos carriles a la izquierda y mové el deslizador de la derecha en vivo para ver cómo baja de $1,200 a $288 USD/mes.",
-            "script": "**1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):**\n• Mandar una duda simple o la clasificación de un ticket a *Claude Opus* o *GPT-4o* es pagar alrededor de **20 veces más** y esperar el triple de tiempo sin ningún beneficio.\n• Con **Model Routing**, ponés un filtro rápido en la entrada que separa en dos carriles:\n  • **🟢 Carril rápido (70%-85%):** Modelos chicos (*Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro*) a ~$0.15/1M tokens en ~`0.3 seg`.\n  • **🟣 Carril complejo (15%-30%):** Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.\n\n**2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):**\n• Si todo va al modelo grande gastás **$1,200/mes**. Si mandás el **80%** de lo simple al modelo chico, la cuenta cae a **$288/mes** (**76% menos**) y encima responde mucho más rápido.",
+            "interaction": "Explicá los dos carriles a la izquierda y mové el deslizador de la derecha en vivo para ver cómo cambia el gráfico SVG y baja el costo de $1,200 a $288 USD/mes.",
+            "script": "**1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):**\n• Mandar una duda simple o la clasificación de un ticket a *Claude Opus* o *GPT-4o* es pagar alrededor de **20 veces más** y esperar el triple de tiempo sin ningún beneficio.\n• Con **Model Routing**, ponés un filtro rápido en la entrada que separa en dos carriles:\n  • **Carril rápido (70%-85%):** Modelos chicos (*Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro*) a ~$0.15/1M tokens en ~`0.3 seg`.\n  • **Carril complejo (15%-30%):** Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.\n\n**2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):**\n• Si todo va al modelo grande gastás **$1,200/mes**. Si mandás el **80%** de lo simple al modelo chico, la cuenta cae a **$288/mes** (**76% menos**) y el diagrama SVG actualiza al instante el peso de cada rama.",
+            "simulatorGuide": {
+                "title": "Simulador Model Routing + Diagrama SVG",
+                "steps": [
+                    "Señalá primero el diagrama SVG a la izquierda (`Consulta → Router → Modelo Chico / Modelo Grande`) para mostrar dónde actúa el filtro.",
+                    "Llevá el deslizador derecho a **0%** → la cuenta marca **$1,200.00 / mes** (`0% de ahorro`) y la rama violeta del diagrama toma el **100%**.",
+                    "Volvelo a **80%** (valor recomendado) → baja a **$288.00 / mes** (`76% de ahorro · $912 USD`) y se engrosa la rama verde (**80%**) frente a la violeta (**20%**).",
+                    "Subí a **90%** → da **$174.00 / mes** (`86% de ahorro · $1,026 USD`). Aclará a Anabela que no conviene llevarlo a 95% si hay casos legales o ambiguos que requieren el modelo grande."
+                ],
+                "example": "Mesa de ayuda con 10.000 tickets/mes: clasificar idioma, prioridad o dudas repetitivas pasa por *Flash/Haiku*, y solo reclamos complejos o contratos bajo NDA se derivan a *Sonnet/GPT-4o*."
+            },
             "bridge": "Eso resuelve el chat en vivo. Pero ¿qué pasa cuando tenés un volumen grande que puede esperar a la noche, y qué gastos extras suelen quedar afuera del primer presupuesto? Pasemos a la Slide 4.",
             "cheatSheet": {
                 "idea": "Usar un clasificador liviano para mandar el 80% de pedidos simples a modelos Flash/Haiku y dejar el modelo caro solo para el 20% difícil.",
@@ -690,8 +700,16 @@ const SESSION_4_DATA = {
                 "TCO real",
                 "Idiomas ES/PT vs EN"
             ],
-            "interaction": "Compará Síncrono vs. Batch API a la izquierda y recorré los 4 puntos del TCO a la derecha marcando la diferencia de tokens por idioma.",
-            "script": "**1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):**\n• **⚡ Síncrono (100% tarifa):** Chat donde la persona está esperando en pantalla en menos de 2 segundos.\n• **🌙 Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.",
+            "interaction": "Compará las barras Síncrono vs. Batch API a la izquierda y recorré la barra apilada con los 4 puntos del TCO a la derecha marcando la diferencia de tokens por idioma.",
+            "script": "**1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):**\n• **Síncrono (100% tarifa):** Chat donde la persona está esperando en pantalla en menos de 2 segundos.\n• **Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.",
+            "simulatorGuide": {
+                "title": "Gráfico Batch API (-50%) y Barra de TCO",
+                "steps": [
+                    "En la tarjeta izquierda, señalá la barra azul completa (**Síncrono · < 2s · 100% tarifa**) frente a la barra verde a mitad de ancho (**Batch API · 1-12h · -50% costo**).",
+                    "En la tarjeta derecha, señalá la barra horizontal apilada (`Tokens base` / `Vueltas agente` / `Idioma ES/PT` / `Infra + Evals`) para mostrar visualmente que la API pura es solo una fracción del presupuesto mensual."
+                ],
+                "example": "Cierre de release a las 18:00 hs con 3.000 strings nuevos para revisar glosario antes de las 9:00 hs: entra por *Batch API* pagando 50%, y presupuestás ~20-30% extra de tokens por ser español/portugués frente a inglés."
+            },
             "bridge": "Igual, antes de calcular servidores y APIs, hay una pregunta previa que ahorra meses de trabajo. Vamos a la Slide 5: Build vs. Buy vs. Configure.",
             "cheatSheet": {
                 "idea": "Usar Batch API (-50%) para tareas que pueden esperar horas y sumar al presupuesto los 4 gastos ocultos del TCO (incluyendo +20-30% de tokens en ES/PT).",
@@ -715,12 +733,23 @@ const SESSION_4_DATA = {
                 "Model Gateway",
                 "Vendor Lock-in"
             ],
-            "interaction": "Recorré las 3 columnas arriba y hacé clic en los 3 botones abajo para debatir qué conviene en cada caso.",
-            "script": "**1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):**\n• **🛒 BUY (SaaS):** Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.\n• **🧩 CONFIGURE (Conectado):** Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.\n• **🏗️ BUILD (Propio):** Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un **Model Gateway** (*AWS Bedrock / LiteLLM*) para cambiar entre Claude, Gemini y GPT sin reescribir código (**evitar Vendor Lock-in**).\n\n**2️⃣ 3 CASOS CONCRETOS (Botones de abajo):**\n• Probalos con Anabela: *1. Resumir reuniones → BUY*, *2. Piloto QA en Jira → CONFIGURE*, *3. Motor médico 500k docs/mes → BUILD con Gateway*.",
+            "interaction": "Recorré las 3 columnas arriba, señalá el esquema de Model Gateway a la izquierda y hacé clic en los 3 botones abajo ('1. Llamadas internas', '2. Piloto QA + Jira', '3. Motor 500k docs/mes').",
+            "script": "**1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):**\n• **BUY (SaaS):** Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.\n• **CONFIGURE (Conectado):** Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.\n• **BUILD (Propio):** Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un **Model Gateway** (*AWS Bedrock / LiteLLM*) para cambiar entre Claude, Gemini y GPT sin reescribir código (**evitar Vendor Lock-in**).\n\n**2️⃣ 3 CASOS CONCRETOS (Botones de abajo):**\n• Probalos con Anabela: *1. Llamadas internas → BUY*, *2. Piloto QA + Jira → CONFIGURE*, *3. Motor 500k docs/mes → BUILD con Gateway*.",
+            "simulatorGuide": {
+                "title": "Diagrama Model Gateway y Casos Build vs. Buy",
+                "steps": [
+                    "Mostrá primero las 3 tarjetas superiores (`BUY · SAAS`, `CONFIGURE`, `BUILD · GATEWAY`) y el diagrama SVG inferior izquierdo (`Tu Producto → Model Gateway [Bedrock / LiteLLM] → Claude / GPT-4o / Gemini`).",
+                    "Antes de tocar cada botón abajo a la derecha, preguntale a Anabela qué elegiría ella.",
+                    "Presioná **'1. Llamadas internas'** → sale en azul `Conviene BUY (SaaS) · ~3 días` (no justifica equipo propio).",
+                    "Presioná **'2. Piloto QA + Jira'** → sale en ámbar `Conviene CONFIGURE (Managed + MCP) · ~2 semanas`.",
+                    "Presioná **'3. Motor 500k docs/mes'** → sale en violeta `Conviene BUILD vía Model Gateway · 8-12 semanas`."
+                ],
+                "example": "Si dentro de 6 meses sale un modelo más barato o preciso para español/portugués, tener un *Model Gateway* en el medio te deja cambiarlo en configuración sin rehacer la aplicación."
+            },
             "bridge": "Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas con criterio realista? Pasemos a la Slide 6.",
             "cheatSheet": {
                 "idea": "Evaluar Buy vs Configure vs Build antes de pedir devs, y usar un Model Gateway si se desarrolla propio para no quedar atado a un proveedor.",
-                "clicks": "Recorré las 3 tarjetas y tocá los 3 casos de abajo.",
+                "clicks": "Recorré las 3 tarjetas y tocá '1. Llamadas internas', '2. Piloto QA + Jira' y '3. Motor 500k docs/mes'.",
                 "analogy": "Para ir al aeropuerto te tomás un taxi (Buy); no te comprás una fábrica de autos."
             },
             "plainTerms": [
@@ -740,12 +769,22 @@ const SESSION_4_DATA = {
                 "TCO real",
                 "Cuenta Finanzas"
             ],
-            "interaction": "Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá y volvé a tildar Routing/Batch/TCO destacando la nota sobre horas liberadas vs. nómina.",
+            "interaction": "Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá Routing/Batch y bajá volumen a 500 docs para mostrar cuándo no se justifica.",
             "script": "**1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):**\n• Con **5.000 documentos/mes** de **15 min** a **$20/h**, hoy ese trabajo equivale a **1.250 horas** (7.8 personas FTE), o sea **$25,000 USD/mes** de valor de tiempo.\n• Activando **Model Routing + Batch**, la API cae de $225 a $27; sumando **$180 fijos de Vector DB/Langfuse + 8% de Evals**, el costo IA total real da **$209.16 USD/mes**. Sumado al **20% de revisión humana ($5,000/mes)**, liberás capacidad equivalente a **$19,790.84 USD/mes**.\n\n**2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):**\n• Aclará siempre que esto es **capacidad liberada del equipo** (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de **$15,000**, equivale a unas **3.3 semanas** de horas liberadas.",
+            "simulatorGuide": {
+                "title": "Calculadora FinOps vs. Tiempo del Equipo (3 pruebas en vivo)",
+                "steps": [
+                    "**Prueba 1 (Caso base equilibrado):** Dejá los defaults (`5.000 docs`, `15 min`, `$20/h`, los 3 checks activos). Señalá las barras superiores (**Manual $25,000 USD** vs **Operación IA + HITL $5,209 (21%)**), el costo IA+TCO (`$209.16 USD`), HITL (`$5,000.00 USD`), capacidad liberada (`$19,790.84 USD`) y repago de piloto `$15.000` en `~3.3 semanas`.",
+                    "**Prueba 2 (Impacto de FinOps):** Destildá `Model Routing (80/20)` y `Batch API nocturna` → el gasto IA+TCO sube de `$209.16` a `$423.00 USD/mes` (`$225` de API × `1.08` de Evals + `$180` fijos). Volvé a tildar ambos.",
+                    "**Prueba 3 (Cuándo NO conviene construir):** Bajá el primer slider a `500 docs` y el segundo a `5 min` → el tiempo manual cae a `$833.33 USD`, el costo fijo de infra (`$180`) hace que la IA+TCO (`$182.92`) empuje la barra al **42%** (`$350 USD`) y el repago de `$15.000` salte a **`~134.3 semanas`** (> 2 años).",
+                    "Volvé a `5.000 docs` y `15 min` y cerrá leyendo la nota inferior sobre capacidad liberada frente a nómina."
+                ],
+                "example": "Propuesta ante Finanzas para asistir en revisión documental de 5.000 archivos/mes: en lugar de prometer bajar sueldos desde el mes 1, mostrás que el equipo existente absorbe más volumen y acorta entregas sin nuevas contrataciones."
+            },
             "bridge": "Con el caso armado y aprobado, viene la parte operativa: ¿cómo salimos a producción sin afectar al negocio ni exponer errores frente a clientes? Vamos a la Slide 7.",
             "cheatSheet": {
                 "idea": "Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.",
-                "clicks": "Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.",
+                "clicks": "Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y probá 500 docs / 5 min.",
                 "analogy": "Si liberás 1.000 horas del equipo no reducís personal al día siguiente: usás esas horas para absorber más volumen o bajar atrasos sin contratar de más."
             },
             "plainTerms": [
@@ -765,8 +804,18 @@ const SESSION_4_DATA = {
                 "Canary Rollout",
                 "Feedback continuo"
             ],
-            "interaction": "Hacé clic en las 3 etapas arriba para mostrar abajo cómo cambian exposición, riesgo, criterio para avanzar y tu tarea como PM.",
-            "script": "**1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):**\n• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en **Shadow Mode**: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.\n• Mirá el tablero de abajo: **0% de clientes expuestos** y avanzás recién cuando coincide **≥ 90%** con lo que resolvió el equipo humano.\n\n**2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):**\n• Con *Feature Flags*, prendés para un **5%** o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.\n\n**3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):**\n• Ponés **👍 / 👎**. Cada corrección que carga el especialista suma al *Golden Dataset* para que el mismo error no vuelva a pasar.",
+            "interaction": "Hacé clic en las 3 etapas (en las tarjetas o en el pipeline SVG superior) para mostrar cómo cambian exposición, riesgo, criterio de avance y tarea del PM.",
+            "script": "**1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):**\n• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en **Shadow Mode**: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.\n• Mirá el tablero de abajo: **0% de clientes expuestos** y avanzás recién cuando coincide **≥ 90%** con lo que resolvió el equipo humano.\n\n**2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):**\n• Con *Feature Flags*, prendés para un **5%** o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.\n\n**3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):**\n• Recogés reportes del especialista y cada corrección entra al *Golden Dataset* para que el mismo error no vuelva a pasar.",
+            "simulatorGuide": {
+                "title": "Pipeline Interactivo de Rollout (SVG + Tarjetas)",
+                "steps": [
+                    "Recorré el diagrama SVG superior (`1. Shadow Mode → 2. Canary Rollout → 3. Producción + Feedback`) y señalá la flecha punteada inferior (`Correcciones → Golden Dataset`).",
+                    "Clic en **1. Shadow Mode** (tarjeta o nodo SVG) → el panel inferior marca `0% clientes`, `Sin impacto en el usuario final`, `Acuerdo ≥ 90%` y revisar diferencias en Langfuse.",
+                    "Clic en **2. Canary Rollout** → cambia a `5% → 25% → 100% gradual`, `Acotado, con rollback en 1 clic` y `Latencia P95 < 1.5s y costo estable 7 días`.",
+                    "Clic en **3. Circuito de feedback** → pasa a `100% en vivo con feedback` y sumar cada error corregido al *Golden Dataset*."
+                ],
+                "example": "Asistente nuevo de QA lingüístico: corre 2 semanas en *Shadow* frente al criterio del equipo; recién al superar 90% de coincidencia se habilita *Canary* en un único par de idiomas."
+            },
             "bridge": "Ahora bien: muchos sistemas funcionan bien en pruebas y aun así nadie los usa, o chocan con reglas nuevas de la empresa. Veamos UX, planificación en Agile y riesgos actuales en la Slide 8.",
             "cheatSheet": {
                 "idea": "Lanzar en 3 etapas: Shadow Mode (silencioso), Canary con Feature Flags (5% → 100%) y circuito de feedback hacia el Golden Dataset.",
@@ -796,10 +845,19 @@ const SESSION_4_DATA = {
             ],
             "interaction": "Alterná los dos botones de la mini-demo ('12s congelada' vs '0.8s streaming') y repasá los 3 riesgos actuales de la derecha.",
             "script": "**1️⃣ UX EN IA Y PLANNING REALISTA (Tarjeta izquierda + Demo):**\n• Un modelo bueno fracasa si tarda 12 segundos con la pantalla en blanco: necesitás **Token Streaming** (primeras palabras en &lt; 1s), llamadas en paralelo y avisos de estado (*'Consultando Jira...'*).\n• Y no mandes a todos a un chat vacío: poné botones contextuales dentro de Jira/TMS donde ya trabajan.\n• En **Agile**, antes de prometer un trimestre cuando no sabés si tus datos alcanzan, corré un **Discovery Spike de 1 semana con ~30 casos reales**.\n\n**2️⃣ RIESGOS ACTUALES (Tarjeta derecha):**\n• **Shadow AI:** Si solo prohibís usar IA por mail, la gente igual pega textos en cuentas personales; la única forma real de frenarlo es dar una alternativa interna segura.\n• **EU AI Act:** Si el sistema toca RRHH, evaluaciones o crédito, exige trazas, supervisión humana y avisar al usuario.\n• Y revisá siempre **Propiedad Intelectual (IP)** y sesgos en idiomas fuera del inglés.",
+            "simulatorGuide": {
+                "title": "Mini-demo UX de Espera Percibida",
+                "steps": [
+                    "Tocá primero el botón **'12s congelada'** → la consola cambia a rojo mostrando 3 llamadas en fila sin respuesta ni feedback visual (causa directa de abandono).",
+                    "Volvé a tocar **'0.8s streaming'** → muestra en verde el aviso temprano a los `0.3s` (`Consultando Jira + glosario en paralelo`) y respuesta progresiva desde los `0.8s`.",
+                    "Conectalo enseguida con la tarjeta derecha (**Shadow AI**): si la herramienta oficial tarda 12s y obliga a salir de Jira, el equipo vuelve a usar cuentas externas personales."
+                ],
+                "example": "En vez de mandar un correo prohibiendo chatbots públicos, ponés un botón directo en Jira/TMS con *streaming* rápido conectado al modelo corporativo bajo NDA."
+            },
             "bridge": "Ya vimos cómo presupuestar y lanzar cuidando la experiencia. Pasemos al bloque 3 (Slides 9 a 11) para bajar a tierra cómo evaluar calidad y usar Langfuse.",
             "cheatSheet": {
                 "idea": "Explicar por qué falla la adopción por mala UX, cómo usar Discovery Spikes de 1 semana antes de comprometer fechas, y los 3 riesgos de 2026 (Shadow AI, EU AI Act, IP).",
-                "clicks": "Tocá '🐢 12s congelada' vs '⚡ 0.8s streaming' y repasá los 3 bloques de la derecha.",
+                "clicks": "Tocá '12s congelada' vs '0.8s streaming' y repasá los 3 bloques de la derecha.",
                 "analogy": "Discovery Spike es probar una tanda chica de 30 casos antes de prometer 3 meses; frenar Shadow AI es ofrecer una vía segura en vez de solo prohibir."
             },
             "plainTerms": [
@@ -823,12 +881,21 @@ const SESSION_4_DATA = {
                 "Trajectory Evals",
                 "Model Drift & SME"
             ],
-            "interaction": "Mostrá la columna izquierda (qué nota baja → qué ticket creás) y la derecha (agentes y Model Drift).",
+            "interaction": "Señalá el triángulo de la Tríada RAG a la izquierda y el flujo de Trajectory Evaluation a la derecha para explicar qué parte arreglás según cada falla.",
             "script": "**1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):**\n• En S2 vimos el *Golden Dataset* en CI/CD. En el día a día te sirve para no mandar tickets a ciegas:\n  • Baja **Fidelidad** → el modelo inventó → ajustar *Prompt / Temperatura 0.0 / Guardrail*.\n  • Baja **Precisión de Contexto** → el buscador trajo mal párrafo → revisar *Chunking / Metadatos / Vector DB* (no el prompt).\n  • Baja **Relevancia** → dio vueltas → ajustar formato e instrucción.\n\n**2️⃣ AGENTES Y MODEL DRIFT (Tarjeta derecha):**\n• En agentes mirás además la trayectoria (**Trajectory Evaluation**): si eligió la herramienta correcta y con JSON válido.\n• Y ojo con el **Model Drift**: a veces el proveedor cambia el modelo por detrás o el equipo pasa a un modelo más chico y la calidad cae sin que nadie haya tocado el código. Calibrar un *LLM-as-a-Judge* pide criterio real del idioma y del negocio (ahí aporta directo tu experiencia en **Traducción y QA**).",
+            "simulatorGuide": {
+                "title": "Diagramas SVG de Tríada RAG y Trajectory Evaluation",
+                "steps": [
+                    "En el diagrama triangular izquierdo, señalá las 3 aristas: **Pregunta ↔ Contexto** (`Precisión Contexto`), **Contexto ↔ Respuesta** (`Fidelidad`) y **Pregunta ↔ Respuesta** (`Relevancia`).",
+                    "Usá ese triángulo para remarcar que el PM no pide \"mejorar el prompt\" para todo: si falla `Contexto`, el ajuste va al buscador/chunking.",
+                    "En el diagrama derecho (`Input → Tool 1 → JSON OK → Tool 2 → Salida`), señalá el corchete inferior **`Eval de trayectoria (paso a paso)`**."
+                ],
+                "example": "Un agente de soporte responde algo prolijo, pero en el camino consultó 4 veces la misma API y mandó mal un campo JSON: en agentes medís toda la secuencia, no solo la frase final."
+            },
             "bridge": "Probémoslo rápido en el simulador de la Slide 10 para ver cómo cambia el ticket según la falla.",
             "cheatSheet": {
                 "idea": "Mapear la Tríada RAG a tickets concretos del sprint, sumar Trajectory Evals para agentes y entender Model Drift + calibración con criterio humano (SME).",
-                "clicks": "Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.",
+                "clicks": "Recorré el triángulo a la izquierda y el diagrama de trayectoria a la derecha.",
                 "analogy": "Si el buscador trajo la página equivocada del manual, el problema no es quien redactó la respuesta: hay que corregir el índice."
             },
             "plainTerms": [
@@ -852,12 +919,23 @@ const SESSION_4_DATA = {
                 "Alucinación vs Retrieval",
                 "Diagnóstico"
             ],
-            "interaction": "Tocá los 3 presets arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') para ver cómo cambia el ticket de respuesta.",
+            "interaction": "Tocá los 3 presets arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') y mové el slider de Relevancia para ver cómo cambia el ticket.",
             "script": "**1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):**\n• El manual dice que *Checkout v4* está **bloqueado en QA lingüístico**, pero al final el bot inventó que *'mañana se aprueba automáticamente sin más pruebas'*.\n\n**2️⃣ PROBAR LOS 3 PRESETS (Derecha):**\n• **Alucinación:** Contexto `1.0` pero Fidelidad `0.2` → **RECHAZADO · Ticket para Prompt / Temperatura / Guardrail**.\n• **Fallo Retrieval:** Fidelidad `0.9` pero Contexto `0.3` → **RECHAZADO · Ticket para Chunking / Metadatos / Vector DB**.\n• **Sana:** Todo ≥ `0.95` → **Pasa a Canary**.",
+            "simulatorGuide": {
+                "title": "Calificador Interactivo Tríada RAG (Presets + Sliders)",
+                "steps": [
+                    "Leé primero la tarjeta izquierda: el fragmento dice explícitamente que *Checkout v4* está bloqueado en QA PT-BR, pero al final del texto del bot aparece la frase marcada en rojo (*\"mañana al mediodía se aprobará automáticamente\"*).",
+                    "Con el preset **'Alucinación'** activo (`0.2 / 1.0 / 0.9`) → marca `RECHAZADO (70%)` y asigna ticket a `Prompt / Temperatura 0.0 / Guardrail`.",
+                    "Tocá **'Fallo Retrieval'** (`0.9 / 0.3 / 0.8`) → marca `RECHAZADO (67%)` y deriva a `Chunking / Metadatos / Vector DB` (sin tocar el prompt).",
+                    "Tocá **'Sana'** (`0.95 / 0.95 / 0.95`) → cambia a verde `APROBADO PARA CANARY (95%)`.",
+                    "Con los otros dos en `0.95`, bajá manualmente el 3er slider (`3. Relevancia`) a `0.5` → muestra el 3er veredicto posible: `Baja Relevancia (< 0.80): Ticket para ajustar formato e instrucción de respuesta`."
+                ],
+                "example": "En la diaria del equipo, cuando alguien reporta \"el bot se equivocó\", este criterio te permite abrir el ticket en la fila correcta (base vectorial vs. prompt vs. formato) sin ida y vuelta."
+            },
             "bridge": "Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse.",
             "cheatSheet": {
                 "idea": "Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).",
-                "clicks": "Tocá 'Alucinación', 'Fallo Retrieval' y 'Sana'.",
+                "clicks": "Tocá 'Alucinación', 'Fallo Retrieval', 'Sana' y mové el slider 3.",
                 "analogy": "Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad)."
             },
             "plainTerms": [
@@ -877,13 +955,23 @@ const SESSION_4_DATA = {
                 "Traces & Spans",
                 "Latencia P95"
             ],
-            "interaction": "Hacé clic en los 4 pasos de la traza a la izquierda, tocá 'Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.",
-            "script": "**1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**\n• Cada mensaje deja una **Traza** dividida en pasos (**Spans**): en **Span 1** ves que el router eligió *Flash* (`$0.0001`, `160ms`) y qué chunks trajo; en **Span 2** ves el streaming (`TTFT 220ms`); en **Span 3** la nota de Eval (`0.97`).\n• Probá el botón **'Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.\n\n**2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**\n• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.",
+            "interaction": "Mostrá las barras de tiempo waterfall, hacé clic para desplegar Span 1 y Span 2, tocá 'Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales.",
+            "script": "**1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**\n• Cada mensaje deja una **Traza** dividida en pasos (**Spans**): arriba ves la regla temporal (`0ms → 500ms → 1.15s`) y la barra proporcional de cuánto demoró cada etapa (`160ms` Router/Retrieval vs. `900ms` LLM).\n• Probá el botón **'Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.\n\n**2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**\n• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.",
+            "simulatorGuide": {
+                "title": "Traza Waterfall Interactiva en Langfuse",
+                "steps": [
+                    "Señalá primero la regla temporal (`0ms` → `500ms` → `1.15s`) y las 4 barras horizontales: la barra ámbar del **Span 2** muestra a simple vista dónde está el `78%` de la espera (`900ms` de `1.15s`).",
+                    "Hacé clic en **`[Span 1] Router y Retrieval`** para desplegar su detalle: usó `Gemini Flash` (`$0.0001`), filtró `ES-LATAM, 2026` con similitud `0.91`.",
+                    "Hacé clic en **`[Span 2] Generación LLM`** para desplegar `TTFT: 220ms · Streaming`, `180 tokens` y la cita al manual.",
+                    "En **`[Span 3] Eval y Feedback`** (abierto), tocá el botón **`Simular reporte → mandar al Golden Dataset`** → el estado cambia a verde: `PASS: Caso #S4-PROD-992 guardado con la corrección → sumado al Golden Dataset.`"
+                ],
+                "example": "Un lunes reportan que el asistente respondió mal un dato de lanzamiento: en 20 segundos abrís la traza, confirmás si la búsqueda trajo el chunk viejo (*Span 1*) o si redactó mal (*Span 2*), y guardás el caso para pruebas."
+            },
             "bridge": "Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12.",
             "cheatSheet": {
-                "idea": "Leer trazas en Langfuse (Span de Router/Retrieval, Span de LLM, Span de Eval) y revisar cada semana origen de errores, Model Drift y P95.",
-                "clicks": "Expandí los 4 nodos de la izquierda y tocá el botón de reporte negativo.",
-                "analogy": "Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso falló y cuánto costó."
+                "idea": "Leer trazas estilo waterfall en Langfuse (Router/Retrieval, LLM, Eval) y revisar cada semana origen de errores, Model Drift y P95.",
+                "clicks": "Desplegá Span 1 y Span 2 a la izquierda y tocá 'Simular reporte → mandar al Golden Dataset'.",
+                "analogy": "Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso tardó o falló y cuánto costó."
             },
             "plainTerms": [
                 {
@@ -902,8 +990,16 @@ const SESSION_4_DATA = {
                 "Trade-offs",
                 "Localización → IA"
             ],
-            "interaction": "Repasá los 3 pasos de la izquierda y cómo se traduce la experiencia de Anabela en la derecha.",
+            "interaction": "Repasá los 3 pasos de la izquierda y usá los 3 puentes visuales de la derecha para practicar respuestas cortas con Anabela.",
             "script": "**1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):**\n• Nadie espera que escribas código. Miran si ordenás la cabeza así: **1)** qué revisás primero con datos (Langfuse + usuarios), **2)** qué cambio proponés y qué **trade-off** aceptás, y **3)** cómo medís si funcionó.\n\n**2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):**\n• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace detectar enseguida el mayor gasto de tokens en ES/PT y los matices culturales.",
+            "simulatorGuide": {
+                "title": "Práctica Oral con Puentes Visuales (Localización → IA)",
+                "steps": [
+                    "Pedile a Anabela que lea la estructura de 3 pasos a la izquierda (`Diagnóstico con datos → Propuesta y trade-off → Métrica de corte`) como plantilla mental antes de contestar cualquier caso.",
+                    "Usá los 3 conectores visuales de la derecha (`Glosarios y QA → Rúbricas Evals`, `Coordinar traductores → Flujos HITL`, `Multilingüe ES/PT → FinOps y sesgos`) y elegí uno al azar para que lo diga en 30 segundos conectado con un proyecto real suyo."
+                ],
+                "example": "Si el entrevistador pregunta *\"¿Qué experiencia tenés evaluando calidad en IA?\"*, puede responder: *\"Vengo de dirigir glosarios y QA lingüístico multilingüe: definir criterios objetivos de fidelidad, ambigüedad y tono es exactamente la base para armar rúbricas de AI Evals y calibrar revisores humanos.\"*"
+            },
             "bridge": "Vamos a probarlo en dos casos reales donde las tres opciones parecen razonables a primera vista. Pasemos a la Slide 13.",
             "cheatSheet": {
                 "idea": "Ordenar respuestas en 3 puntos (qué mirás → qué decidís y qué resignás → cómo medís) y conectar Localización con Evals, HITL y costos multilingües.",
@@ -927,8 +1023,19 @@ const SESSION_4_DATA = {
                 "UX + FinOps",
                 "3 opciones parejas"
             ],
-            "interaction": "Tocá '1. Auditar uso' a la izquierda y dejá que Anabela elija primero entre Opción A, B y C a la derecha antes de probarlas.",
-            "script": "**1️⃣ LA PREGUNTA (Leela tal cual):**\n• *'Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*\n\n**2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**\n• Preguntale a Anabela cuál elegiría antes de hacer clic.\n• **Opción A (Mail de dirección + capacitación):** Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.\n• **Opción C (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.\n• **Opción B (Mejor camino ✅):** Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.",
+            "interaction": "Tocá '1. Auditar uso' a la izquierda, dejá que Anabela elija entre Opción A, B y C a la derecha antes de probarlas, y usá 'Reiniciar' si quieren practicarlo de nuevo.",
+            "script": "**1️⃣ LA PREGUNTA (Leela tal cual):**\n• *'Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?'*\n\n**2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**\n• Preguntale a Anabela cuál elegiría antes de hacer clic.\n• **Opción A (Mail de dirección + capacitación):** Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.\n• **Opción C (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.\n• **Opción B (Mejor camino):** Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.",
+            "simulatorGuide": {
+                "title": "Simulador de Entrevista 1: Baja Adopción",
+                "steps": [
+                    "Leé el recuadro superior `Escenario` y dejá que Anabela piense qué revisaría primero.",
+                    "Tocá **'1. Auditar uso'** en el tablero izquierdo → el `12%` cambia a `Bajo · En riesgo`, muestra los hallazgos (espera sin streaming, salir de Jira, uso personal) y habilita **'2. Aplicar plan'**.",
+                    "Antes de tocar nada a la derecha, pedile a Anabela que elija entre **Opción A, B o C**.",
+                    "Si menciona A o C, podés cliquearla para mostrar en rojo la devolución del entrevistador; luego tocá **'Opción B'** → se marca en verde, dispara el plan (`Uso sostenido`) y deja la respuesta armada en el chat.",
+                    "Tocá **'Reiniciar'** si quieren repetir la respuesta oral desde cero."
+                ],
+                "example": "Diferenciar frente al entrevistador un problema de precisión del modelo de un problema de fricción en el flujo de trabajo y costo por usuario activo."
+            },
             "bridge": "Bien resuelto: entendiste el problema de uso y de presupuesto antes de pedir más desarrollo. Vamos al segundo caso en la Slide 14.",
             "cheatSheet": {
                 "idea": "Caso donde el bot funciona técnicamente pero no se adopta: la mejor opción es la B (auditar datos/entrevistas + llevarlo al flujo real con streaming + bajar costo).",
@@ -952,8 +1059,18 @@ const SESSION_4_DATA = {
                 "Feature Flag + Routing",
                 "Extra Director"
             ],
-            "interaction": "Tocá '1. Simular caída' a la izquierda, debatan A, B y C a la derecha (gana la C), y si da el tiempo abrí el bloque desplegable 'Extra' abajo.",
-            "script": "**1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:**\n• *'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'*\n\n**2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:**\n• **Opción A (Volver todo atrás para siempre):** Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.\n• **Opción B (Revisión manual al 100%):** Arma un cuello de botella más caro que el modelo grande.\n• **Opción C (Mejor camino ✅):** Revertís con *feature flag* solo en terminología crítica, corrés el *Golden Dataset* por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.\n• Si sobra 1 minuto, abrí el bloque **'Extra'** abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (*Discovery Spike* + *Shadow Mode*).",
+            "interaction": "Tocá '1. Simular caída' a la izquierda, debatan A, B y C a la derecha (gana la C), y abrí 'Extra: agente en 30 días sin datos limpios' abajo.",
+            "script": "**1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:**\n• *'Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?'*\n\n**2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:**\n• **Opción A (Volver todo atrás para siempre):** Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.\n• **Opción B (Revisión manual al 100%):** Arma un cuello de botella más caro que el modelo grande.\n• **Opción C (Mejor camino):** Revertís con *feature flag* solo en terminología crítica, corrés el *Golden Dataset* por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.\n• Si sobra 1 minuto, abrí el botón **'Extra: agente en 30 días sin datos limpios'** abajo a la izquierda (*Discovery Spike* + *Shadow Mode*).",
+            "simulatorGuide": {
+                "title": "Simulador de Entrevista 2: Model Drift + Bloque Extra",
+                "steps": [
+                    "Leé el `Escenario` superior: ahorraron 60% pasando a modelo chico, el código pasa los tests, pero fallan términos legales.",
+                    "Tocá **'1. Simular caída'** → `0.64` cambia a `0.64 (ALERTA)`, el chat explica que los tests unitarios solo miran JSON y no glosario ES/PT, y se habilita **'2. Rollback + Routing'**.",
+                    "Debatí con Anabela entre **Opción A, B y C** antes de cliquear. Mostrá las objeciones de A o B si hace falta, y tocá **'Opción C'** → se marca en verde y la fidelidad sube a `0.95 (OK)`.",
+                    "Tocá abajo a la izquierda **'Extra: agente en 30 días sin datos limpios'** para desplegar cómo negociar un pedido urgente sin prometer fechas imposibles (`Spike de 5 días + Configure/Buy + Shadow Mode`)."
+                ],
+                "example": "Cambio de proveedor o modelo económico que rompe terminología de glosario bajo NDA sin disparar errores de código: la salida es segmentar por categoría en Langfuse en vez de revertir todo a ciegas."
+            },
             "bridge": "Con esto cerramos los casos de entrevista. Pasemos a la última slide, la Slide 15, para repasar todo y ver cómo seguir este mes.",
             "cheatSheet": {
                 "idea": "Resolver un Model Drift en terminología sin tirar todo el ahorro ni tapar con revisión manual 100%: gana la C (rollback selectivo + Evals por categoría + Routing).",
@@ -1010,7 +1127,34 @@ const SESSION_4_DATA = {
             "step": "4. Entrevistas reales y cierre (Slides 12 a 15)",
             "text": "Cómo ordenar respuestas y defender su experiencia en Localización, **2 casos con 3 opciones parejas** (Adopción baja → gana B; Model Drift → gana C + Extra Director) y 4 pasos concretos para practicar en el mes."
         }
-    ]
+    ],
+    "practicalLabGuide": {
+        "title": "Guía paso a paso: Simulador Práctico Independiente (actividad_practica_sesion_4.html)",
+        "intro": "Usá este laboratorio en los últimos 5–8 minutos si queda tiempo después de la Slide 15, o dejáselo a Anabela para practicar sola antes de una entrevista. Tiene 4 decisiones a la izquierda y 3 casos de crisis a la derecha.",
+        "steps": [
+            "Abrí **`Simulador Práctico S4`** desde la barra superior (o el botón de cierre en la Slide 15). Dejá los 4 selectores de la izquierda en la opción inicial (configuración básica sin controles).",
+            "**Paso 1 — Provocar el fallo:** Sin cambiar ningún selector, tocá **`Caso 1 (Baja adopción y presupuesto)`** a la derecha → la consola sale en rojo mostrando por qué fracasa un bot caro sin streaming ni integración.",
+            "**Paso 2 — Arreglar un frente y mostrar qué falta:** Cambiá manualmente **`1. FinOps`** y **`2. Salida/UX`** a la opción recomendada y volvé a tocar `Caso 1` → pasa a verde (`CASO 1 RESUELTO`). Enseguida tocá **`Caso 2 (Model Drift)`** → sigue en rojo porque falta **`3. Evaluaciones y monitoreo`** (demuestra que ahorrar costos sin Evals no protege la calidad).",
+            "**Paso 3 — Escenario completo:** Tocá **`Cargar configuración recomendada`** arriba a la izquierda (ajusta los 4 selectores) y probá **`Caso 2`** y **`Caso 3`** repasando cada diagnóstico en consola junto con Anabela."
+        ],
+        "cases": [
+            {
+                "caseTitle": "Caso 1: Baja adopción y presupuesto en riesgo",
+                "requires": "1. FinOps + 2. Salida/UX",
+                "whatToShow": "Conectar trazas + entrevistas para llevar el flujo dentro de Jira/TMS con Token Streaming (< 1s) y bajar factura con Routing/Batch."
+            },
+            {
+                "caseTitle": "Caso 2: Model Drift en Localización",
+                "requires": "3. Evals + 1. FinOps",
+                "whatToShow": "Rollback selectivo con Feature Flag en glosario crítico, Golden Dataset por categoría en Langfuse y alertas de Drift sin perder todo el ahorro."
+            },
+            {
+                "caseTitle": "Caso 3: Pedido apurado (30 días) y Shadow AI",
+                "requires": "4. Gobernanza + 2. Salida/UX",
+                "whatToShow": "Discovery Spike de 1 semana con 30 casos reales + salida Configure/Buy segura contra Shadow AI mientras prueban en Shadow Mode y cuidan trazas EU AI Act."
+            }
+        ]
+    }
 };
 
 if (typeof module !== 'undefined') {
