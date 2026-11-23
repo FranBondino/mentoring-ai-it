@@ -852,12 +852,12 @@ const SESSION_4_DATA = {
                 "Alucinación vs Retrieval",
                 "Diagnóstico"
             ],
-            "interaction": "Tocá los 3 presets arriba a la derecha ('🔍 Alucinación', '📂 Fallo Retrieval', '✅ Sana') para ver cómo cambia el ticket de respuesta.",
+            "interaction": "Tocá los 3 presets arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') para ver cómo cambia el ticket de respuesta.",
             "script": "**1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):**\n• El manual dice que *Checkout v4* está **bloqueado en QA lingüístico**, pero al final el bot inventó que *'mañana se aprueba automáticamente sin más pruebas'*.\n\n**2️⃣ PROBAR LOS 3 PRESETS (Derecha):**\n• **Alucinación:** Contexto `1.0` pero Fidelidad `0.2` → **RECHAZADO · Ticket para Prompt / Temperatura / Guardrail**.\n• **Fallo Retrieval:** Fidelidad `0.9` pero Contexto `0.3` → **RECHAZADO · Ticket para Chunking / Metadatos / Vector DB**.\n• **Sana:** Todo ≥ `0.95` → **Pasa a Canary**.",
             "bridge": "Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse.",
             "cheatSheet": {
                 "idea": "Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).",
-                "clicks": "Tocá '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.",
+                "clicks": "Tocá 'Alucinación', 'Fallo Retrieval' y 'Sana'.",
                 "analogy": "Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad)."
             },
             "plainTerms": [
@@ -877,8 +877,8 @@ const SESSION_4_DATA = {
                 "Traces & Spans",
                 "Latencia P95"
             ],
-            "interaction": "Hacé clic en los 4 pasos de la traza a la izquierda, tocá '👎 Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.",
-            "script": "**1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**\n• Cada mensaje deja una **Traza** dividida en pasos (**Spans**): en **Span 1** ves que el router eligió *Flash* (`$0.0001`, `160ms`) y qué chunks trajo; en **Span 2** ves el streaming (`TTFT 220ms`); en **Span 3** la nota de Eval (`0.97`).\n• Probá el botón **'👎 Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.\n\n**2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**\n• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.",
+            "interaction": "Hacé clic en los 4 pasos de la traza a la izquierda, tocá 'Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.",
+            "script": "**1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**\n• Cada mensaje deja una **Traza** dividida en pasos (**Spans**): en **Span 1** ves que el router eligió *Flash* (`$0.0001`, `160ms`) y qué chunks trajo; en **Span 2** ves el streaming (`TTFT 220ms`); en **Span 3** la nota de Eval (`0.97`).\n• Probá el botón **'Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.\n\n**2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**\n• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.",
             "bridge": "Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12.",
             "cheatSheet": {
                 "idea": "Leer trazas en Langfuse (Span de Router/Retrieval, Span de LLM, Span de Eval) y revisar cada semana origen de errores, Model Drift y P95.",

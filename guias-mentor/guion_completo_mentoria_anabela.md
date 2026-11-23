@@ -1661,7 +1661,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura de 
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).
-- **👆 Qué tocar en la Slide:** Tocá '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.
+- **👆 Qué tocar en la Slide:** Tocá 'Alucinación', 'Fallo Retrieval' y 'Sana'.
 - **💬 La analogía ganadora:** Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad).
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
@@ -1677,7 +1677,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura de 
 - **Diagnóstico de causa raíz:** Identificar si el error salió del buscador vectorial o del modelo antes de abrir una tarea en Jira.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Tocá los 3 presets arriba a la derecha ('🔍 Alucinación', '📂 Fallo Retrieval', '✅ Sana') para ver cómo cambia el ticket de respuesta.
+- Tocá los 3 presets arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') para ver cómo cambia el ticket de respuesta.
 
 ### 🔗 Puente de Conexión → Slide 11 (Monitoreo en producción con Langfuse)
 > **"Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse."**
@@ -1695,7 +1695,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura de 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**
 • Cada mensaje deja una **Traza** dividida en pasos (**Spans**): en **Span 1** ves que el router eligió *Flash* (`$0.0001`, `160ms`) y qué chunks trajo; en **Span 2** ves el streaming (`TTFT 220ms`); en **Span 3** la nota de Eval (`0.97`).
-• Probá el botón **'👎 Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.
+• Probá el botón **'Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.
 
 **2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**
 • 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.
@@ -1704,7 +1704,7 @@ Anabela, con lo que vimos hoy en la Sesión 3 ya tenés toda la arquitectura de 
 - **Latencia P95:** El tiempo máximo que tarda para el 95% de los usuarios; evita que un promedio lindo esconda demoras feas en casos puntuales.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Hacé clic en los 4 pasos de la traza a la izquierda, tocá '👎 Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.
+- Hacé clic en los 4 pasos de la traza a la izquierda, tocá 'Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.
 
 ### 🔗 Puente de Conexión → Slide 12 (Cómo encarar entrevistas técnicas y defender tu perfil)
 > **"Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12."**

@@ -4,48 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Llevar la IA a Producción: Costos, Calidad y Entrevistas - Sesión 4</title>
-    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
-        /* CSS RESET & VARIABLES */
         :root {
             --bg-primary: #08070d;
             --bg-secondary: #0f0d1a;
-            --bg-card: rgba(30, 27, 57, 0.4);
-            --border-card: rgba(245, 158, 11, 0.15);
+            --bg-card: rgba(15, 23, 42, 0.68);
+            --border-card: rgba(255, 255, 255, 0.08);
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --color-amber: #f59e0b;
-            --color-amber-glow: rgba(245, 158, 11, 0.4);
+            --color-amber-glow: rgba(245, 158, 11, 0.35);
             --color-blue: #3b82f6;
-            --color-blue-glow: rgba(59, 130, 246, 0.4);
             --color-green: #10b981;
-            --color-green-glow: rgba(16, 185, 129, 0.4);
             --color-purple: #8b5cf6;
-            --color-purple-glow: rgba(139, 92, 246, 0.4);
             --color-red: #ef4444;
-            --color-red-glow: rgba(239, 68, 68, 0.4);
             --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
         .lucide {
-            width: 24px;
-            height: 24px;
-            stroke-width: 2px;
+            width: 22px;
+            height: 22px;
+            stroke-width: 1.85px;
             color: currentColor;
             display: inline-block;
             vertical-align: middle;
+            flex-shrink: 0;
         }
-        .icon-sm { width: 18px; height: 18px; stroke-width: 2px; }
-        .icon-lg { width: 32px; height: 32px; stroke-width: 1.5px; }
-        .icon-xl { width: 48px; height: 48px; stroke-width: 1.2px; }
+        .icon-xs { width: 14px; height: 14px; stroke-width: 2px; }
+        .icon-sm { width: 18px; height: 18px; stroke-width: 1.9px; }
 
         * {
             box-sizing: border-box;
@@ -65,18 +57,17 @@
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(120, 53, 4, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(30, 27, 75, 0.4) 0%, transparent 50%);
+            background-image:
+                radial-gradient(circle at 12% 20%, rgba(120, 53, 4, 0.2) 0%, transparent 48%),
+                radial-gradient(circle at 88% 82%, rgba(30, 27, 75, 0.32) 0%, transparent 48%);
         }
 
-        /* PROGRESS BAR */
         .progress-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 6px;
+            height: 5px;
             background: rgba(255, 255, 255, 0.03);
             z-index: 100;
         }
@@ -89,12 +80,11 @@
             transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* MAIN SLIDE CONTAINER */
         .slides-wrapper {
             position: relative;
             flex-grow: 1;
             width: 100%;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 56px);
             overflow: hidden;
         }
 
@@ -107,12 +97,12 @@
             opacity: 0;
             display: none;
             pointer-events: none;
-            transform: translateX(50px);
-            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(44px);
+            transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding: 3rem 3.5rem;
+            padding: 4.5rem 3.5rem 2rem;
             box-sizing: border-box;
             overflow-y: auto;
             z-index: 1;
@@ -122,7 +112,7 @@
         .slide::after {
             content: '';
             flex: 1;
-            min-height: 1rem;
+            min-height: 1.2rem;
             flex-shrink: 1;
         }
 
@@ -141,69 +131,184 @@
             z-index: 10;
         }
 
-        .slide.prev { transform: translateX(-50px); }
+        .slide.prev { transform: translateX(-44px); }
 
-        /* COMMON TEXT COMPONENTS */
         .slide-title {
             font-family: var(--font-display);
-            font-size: 2.1rem;
+            font-size: 2.15rem;
             font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #ffffff 50%, var(--color-amber));
+            line-height: 1.18;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff 55%, var(--color-amber));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.55rem;
             text-align: center;
+            text-wrap: balance;
+            max-width: 980px;
         }
 
         .slide-subtitle {
             font-size: 0.98rem;
+            line-height: 1.5;
             color: var(--text-secondary);
-            margin-bottom: 0.85rem !important;
+            margin-bottom: 1.8rem !important;
             text-align: center;
-            max-width: 840px;
+            max-width: 800px;
             font-weight: 400;
+            text-wrap: balance;
         }
 
-        .simple-banner {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(59, 130, 246, 0.08));
-            border: 1px solid rgba(245, 158, 11, 0.38);
-            border-left: 4px solid var(--color-amber);
-            border-radius: 12px;
-            padding: 0.56rem 1.05rem;
-            margin-bottom: 0.9rem;
-            max-width: 1100px;
+        .case-quote {
+            max-width: 1140px;
             width: 100%;
-            font-size: 0.83rem;
+            padding: 0.85rem 1.25rem;
+            margin-bottom: 1.35rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-left: 3px solid var(--color-amber);
+            border-radius: 10px;
+            font-size: 0.88rem;
             color: #e2e8f0;
-            line-height: 1.44;
+            line-height: 1.48;
             text-align: left;
         }
-        .simple-banner strong {
+        .case-quote strong {
             color: #fbbf24;
         }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 1.65rem 1.85rem;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            width: 100%;
+            max-width: 560px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .wide-card {
+            max-width: 1140px !important;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.75rem;
+            width: 100%;
+            max-width: 1140px;
+        }
+        .grid-2 > .glass-card { max-width: none; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.4rem;
+            width: 100%;
+            max-width: 1140px;
+        }
+        .grid-3 > .glass-card { max-width: none; }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .stack-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.95rem;
+        }
+
+        .clean-item {
+            padding-left: 0.95rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.14);
+            font-size: 0.88rem;
+            line-height: 1.52;
+            color: #cbd5e1;
+            text-wrap: pretty;
+        }
+        .clean-item strong {
+            color: #f8fafc;
+            font-weight: 600;
+        }
+        .clean-item.accent-amber { border-left-color: var(--color-amber); }
+        .clean-item.accent-blue { border-left-color: var(--color-blue); }
+        .clean-item.accent-green { border-left-color: var(--color-green); }
+        .clean-item.accent-purple { border-left-color: var(--color-purple); }
+        .clean-item.accent-red { border-left-color: var(--color-red); }
+
+        .item-meta {
+            display: block;
+            font-size: 0.81rem;
+            color: var(--text-secondary);
+            margin-top: 0.22rem;
+            line-height: 1.45;
+        }
+
+        .pill-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 0.65rem;
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--color-amber);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.4rem;
+            flex-shrink: 0;
+        }
+        .dot-green { background: var(--color-green); box-shadow: 0 0 8px rgba(16, 185, 129, 0.45); }
+        .dot-purple { background: var(--color-purple); box-shadow: 0 0 8px rgba(139, 92, 246, 0.45); }
+        .dot-blue { background: var(--color-blue); box-shadow: 0 0 8px rgba(59, 130, 246, 0.45); }
+        .dot-amber { background: var(--color-amber); box-shadow: 0 0 8px rgba(245, 158, 11, 0.45); }
+        .dot-red { background: var(--color-red); box-shadow: 0 0 8px rgba(239, 68, 68, 0.45); }
 
         .roleplay-options {
             display: flex;
             flex-direction: column;
-            gap: 0.42rem;
-            margin-bottom: 0.4rem;
+            gap: 0.55rem;
         }
         .roleplay-opt-btn {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            padding: 0.46rem 0.72rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.62rem 0.88rem;
             color: #e2e8f0;
-            font-size: 0.76rem;
+            font-size: 0.82rem;
             text-align: left;
             cursor: pointer;
             transition: all 0.2s ease;
-            line-height: 1.35;
+            line-height: 1.42;
             font-family: inherit;
         }
         .roleplay-opt-btn:hover {
-            background: rgba(245, 158, 11, 0.12);
+            background: rgba(245, 158, 11, 0.11);
             border-color: var(--color-amber);
             color: #ffffff;
         }
@@ -216,60 +321,12 @@
             background: rgba(16, 185, 129, 0.14);
         }
 
-        /* GLASS CARD COMMON */
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 16px;
-            padding: 1.35rem 1.65rem;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            width: 100%;
-            max-width: 540px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        /* GRID SYSTEM FOR BENTO LAYOUTS */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.3rem;
-            width: 100%;
-            max-width: 1100px;
-        }
-        .grid-2 > .glass-card {
-            max-width: none;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.15rem;
-            width: 100%;
-            max-width: 1100px;
-        }
-        .grid-3 > .glass-card {
-            max-width: none;
-        }
-
-        @media (max-width: 900px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .slide {
-                padding: 1.5rem;
-            }
-            .slide-title { font-size: 1.6rem; }
-        }
-
-        /* NAVIGATION BAR */
         .nav-bar {
-            height: 80px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: var(--bg-secondary);
+            height: 56px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(8, 12, 22, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             padding: 0 3.5rem;
             display: flex;
             justify-content: space-between;
@@ -277,22 +334,18 @@
             z-index: 90;
         }
 
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .nav-left { display: flex; align-items: center; gap: 1rem; }
 
         .nav-logo {
             font-family: var(--font-display);
             font-weight: 800;
             color: var(--color-amber);
             letter-spacing: 2px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .nav-session {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             background: rgba(245, 158, 11, 0.1);
             color: var(--color-amber);
             border: 1px solid rgba(245, 158, 11, 0.25);
@@ -301,64 +354,59 @@
             font-weight: 700;
         }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .nav-right { display: flex; align-items: center; gap: 0.85rem; }
 
         .btn-nav {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: var(--text-primary);
-            padding: 9px 15px;
+            padding: 8px 14px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            font-size: 0.83rem;
+            font-size: 0.82rem;
             font-weight: 600;
             font-family: inherit;
             transition: all 0.2s ease;
         }
-
         .btn-nav:hover:not(:disabled) {
             background: rgba(245, 158, 11, 0.15);
             border-color: var(--color-amber);
             color: var(--color-amber);
         }
-
         .btn-nav:disabled {
             opacity: 0.3;
             cursor: not-allowed;
         }
 
-        /* CUSTOM INTERACTIVE STYLINGS */
         .calculator-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
+            gap: 0.75rem;
         }
 
         .calculator-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            font-size: 0.86rem;
+            color: #cbd5e1;
             font-weight: 500;
         }
 
         .calculator-value {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--color-amber);
             font-family: monospace;
+            white-space: nowrap;
         }
 
         .calculator-slider {
             width: 100%;
             accent-color: var(--color-amber);
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.06);
             height: 6px;
             border-radius: 3px;
             outline: none;
@@ -369,62 +417,61 @@
         .check-pill {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.77rem;
+            gap: 0.6rem;
+            font-size: 0.81rem;
             color: #e2e8f0;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.09);
-            border-radius: 8px;
-            padding: 0.42rem 0.65rem;
+            border-radius: 9px;
+            padding: 0.5rem 0.78rem;
             cursor: pointer;
+            line-height: 1.35;
         }
         .check-pill input {
             accent-color: var(--color-amber);
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .results-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-top: 0.6rem;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 1.05rem 1.15rem;
+            margin-top: 0.4rem;
         }
 
         .results-row {
             display: flex;
             justify-content: space-between;
-            font-size: 0.82rem;
-            margin-bottom: 0.45rem;
-            gap: 0.6rem;
+            align-items: baseline;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            gap: 0.75rem;
         }
 
         .results-row.total {
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 800;
-            border-top: 1px dashed rgba(255,255,255,0.15);
-            padding-top: 0.55rem;
-            margin-top: 0.55rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.16);
+            padding-top: 0.6rem;
+            margin-top: 0.6rem;
             color: var(--color-green);
         }
 
-        /* INTERACTIVE SELECTOR PILLS */
-        .phase-card {
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
+        .phase-card { cursor: pointer; }
         .phase-card.phase-active {
             border-color: var(--color-amber) !important;
-            box-shadow: 0 0 24px rgba(245, 158, 11, 0.22) !important;
+            box-shadow: 0 0 24px rgba(245, 158, 11, 0.2) !important;
         }
 
         .preset-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.13);
             color: #e2e8f0;
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 8px;
-            font-size: 0.72rem;
+            font-size: 0.76rem;
             font-weight: 600;
             cursor: pointer;
             font-family: inherit;
@@ -432,40 +479,46 @@
         }
         .preset-btn:hover, .preset-btn.active {
             border-color: var(--color-amber);
-            background: rgba(245, 158, 11, 0.16);
+            background: rgba(245, 158, 11, 0.15);
             color: #fde68a;
         }
 
-        /* EVAL PLAYGROUND */
         .eval-tag {
-            padding: 3px 8px;
+            padding: 4px 9px;
             border-radius: 8px;
-            font-size: 0.72rem;
+            font-size: 0.74rem;
             font-weight: 700;
         }
-        .eval-tag.success { background: rgba(16, 185, 129, 0.15); color: var(--color-green); border: 1px solid rgba(16, 185, 129, 0.3); }
-        .eval-tag.fail { background: rgba(239, 68, 68, 0.15); color: var(--color-red); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .eval-tag.success {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--color-green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .eval-tag.fail {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--color-red);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
 
         .score-indicator {
-            width: 34px;
+            width: 36px;
             height: 28px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: monospace;
             font-weight: 800;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.86rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* TRACE TREE VIEWER */
         .trace-item {
-            border-left: 2px dashed rgba(255, 255, 255, 0.08);
-            margin-left: 10px;
+            border-left: 2px solid rgba(255, 255, 255, 0.12);
+            margin-left: 8px;
             padding-left: 14px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.65rem;
         }
         .trace-header {
             display: flex;
@@ -473,145 +526,154 @@
             align-items: center;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.82rem;
-            padding: 5px 8px;
-            border-radius: 6px;
-            background: rgba(255,255,255,0.03);
+            font-size: 0.84rem;
+            padding: 7px 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
             gap: 0.5rem;
+            color: #f8fafc;
         }
         .trace-header:hover {
-            background: rgba(255,255,255,0.07);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.07);
         }
         .trace-body {
-            font-size: 0.76rem;
-            color: var(--text-secondary);
-            padding: 7px 9px;
-            background: rgba(0,0,0,0.28);
-            border-radius: 6px;
-            margin-top: 4px;
+            font-size: 0.79rem;
+            color: #cbd5e1;
+            padding: 8px 11px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-top: 5px;
             display: none;
             font-family: monospace;
-            line-height: 1.45;
+            line-height: 1.48;
         }
 
-        /* INTERVIEW CHAT SIMULATOR */
         .chat-container {
-            height: 155px;
+            height: 142px;
             overflow-y: auto;
-            border: 1px solid rgba(255,255,255,0.06);
-            background: rgba(0,0,0,0.34);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(0, 0, 0, 0.34);
             border-radius: 10px;
-            padding: 0.75rem 0.85rem;
-            font-size: 0.8rem;
+            padding: 0.8rem 0.95rem;
+            font-size: 0.82rem;
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.75rem;
         }
         .chat-bubble {
-            padding: 7px 11px;
-            border-radius: 11px;
-            max-width: 88%;
-            line-height: 1.38;
+            padding: 8px 12px;
+            border-radius: 10px;
+            max-width: 90%;
+            line-height: 1.42;
         }
         .chat-bubble.mentor {
             background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            color: #ffffff;
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            color: #f8fafc;
             align-self: flex-start;
         }
         .chat-bubble.pm {
             background: rgba(139, 92, 246, 0.12);
             border: 1px solid rgba(139, 92, 246, 0.25);
-            color: #ffffff;
+            color: #f8fafc;
             align-self: flex-end;
         }
 
         .text-center { text-align: center; }
+
+        @media (max-width: 900px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- PROGRESS BAR -->
     <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- MAIN SLIDES WRAPPER -->
     <div class="slides-wrapper" id="slides-wrapper">
 
         <!-- SLIDE 1: COVER -->
         <div class="slide active" id="slide-1">
-            <div class="glass-card text-center" style="max-width: 900px; padding: 2.5rem 2.8rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 1rem;">SESIÓN 4 · CIERRE DEL PROGRAMA</span>
-                <h1 class="slide-title" style="font-size: 2.85rem; line-height: 1.08; margin-bottom: 1rem; background: linear-gradient(135deg, #ffffff 40%, var(--color-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <div class="glass-card text-center" style="max-width: 920px; padding: 2.75rem 3rem;">
+                <span class="pill-tag" style="margin-bottom: 1.15rem;">SESIÓN 4 · CIERRE DEL PROGRAMA</span>
+                <h1 class="slide-title" style="font-size: 2.75rem; margin-bottom: 0.9rem;">
                     Llevar la IA a Producción: Costos, Calidad y Entrevistas
                 </h1>
-                <p style="font-size: 1.02rem; color: var(--text-secondary); line-height: 1.55; max-width: 720px; margin: 0 auto 1.4rem;">
-                    Cómo decidir si comprar o construir, armar números honestos para Finanzas, lanzar de forma controlada, medir calidad con datos y defender tu perfil en entrevistas.
+                <p style="font-size: 1.04rem; color: var(--text-secondary); line-height: 1.55; max-width: 680px; margin: 0 auto 2rem;">
+                    Decisiones de presupuesto, despliegue controlado, evaluación de calidad y defensa de perfil en entrevistas técnicas.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem; text-align: left; margin-bottom: 1.4rem;">
-                    <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.28); border-radius: 10px; padding: 0.6rem 0.75rem;">
-                        <strong style="color: #60a5fa; font-size: 0.74rem; display: block;">S1 · BASE</strong>
-                        <span style="font-size: 0.76rem; color: #cbd5e1;">Ingeniería, APIs, Git &amp; Agile</span>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; text-align: left; margin-bottom: 1.85rem;">
+                    <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.24); border-radius: 12px; padding: 0.85rem 0.95rem;">
+                        <strong style="color: #60a5fa; font-size: 0.74rem; display: block; margin-bottom: 0.25rem; letter-spacing: 0.04em;">S1 · BASE</strong>
+                        <span style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.4;">APIs, Git, CI/CD y Agile</span>
                     </div>
-                    <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.28); border-radius: 10px; padding: 0.6rem 0.75rem;">
-                        <strong style="color: #34d399; font-size: 0.74rem; display: block;">S2 · MEMORIA</strong>
-                        <span style="font-size: 0.76rem; color: #cbd5e1;">LLMs, Embeddings &amp; RAG</span>
+                    <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.24); border-radius: 12px; padding: 0.85rem 0.95rem;">
+                        <strong style="color: #34d399; font-size: 0.74rem; display: block; margin-bottom: 0.25rem; letter-spacing: 0.04em;">S2 · MEMORIA</strong>
+                        <span style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.4;">LLMs, Embeddings y RAG</span>
                     </div>
-                    <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.28); border-radius: 10px; padding: 0.6rem 0.75rem;">
-                        <strong style="color: #c084fc; font-size: 0.74rem; display: block;">S3 · ACCIÓN</strong>
-                        <span style="font-size: 0.76rem; color: #cbd5e1;">Agentes ReAct, MCP &amp; HITL</span>
+                    <div style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.24); border-radius: 12px; padding: 0.85rem 0.95rem;">
+                        <strong style="color: #c084fc; font-size: 0.74rem; display: block; margin-bottom: 0.25rem; letter-spacing: 0.04em;">S3 · ACCIÓN</strong>
+                        <span style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.4;">Agentes ReAct, MCP y HITL</span>
                     </div>
-                    <div style="background: rgba(245,158,11,0.16); border: 1px solid rgba(245,158,11,0.5); border-radius: 10px; padding: 0.6rem 0.75rem;">
-                        <strong style="color: #fbbf24; font-size: 0.74rem; display: block;">S4 · HOY</strong>
-                        <span style="font-size: 0.76rem; color: #ffffff;">Costos, Rollout, Evals y Entrevistas</span>
+                    <div style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.42); border-radius: 12px; padding: 0.85rem 0.95rem;">
+                        <strong style="color: #fbbf24; font-size: 0.74rem; display: block; margin-bottom: 0.25rem; letter-spacing: 0.04em;">S4 · HOY</strong>
+                        <span style="font-size: 0.82rem; color: #f8fafc; line-height: 1.4;">FinOps, Rollout, Evals y Casos</span>
                     </div>
                 </div>
-                <div style="width: 110px; height: 5px; background: var(--color-amber); border-radius: 3px; margin: 0 auto;"></div>
+                <div style="width: 88px; height: 4px; background: var(--color-amber); border-radius: 2px; margin: 0 auto;"></div>
             </div>
         </div>
 
         <!-- SLIDE 2: AGENDA -->
         <div class="slide" id="slide-2">
             <h2 class="slide-title">Qué vamos a ver hoy (Sesión 4)</h2>
-            <p class="slide-subtitle">Pasamos de cómo funciona la IA por dentro a qué decisiones tomás vos cuando el proyecto pasa a producción</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Ya viste cómo trabaja desarrollo, cómo se arma un RAG y qué hace un agente. Hoy cerramos con lo que te van a pedir como PM en el día a día: <strong>cuidar el presupuesto real</strong>, <strong>lanzar de a poco</strong>, <strong>medir si la calidad cayó</strong> y <strong>responder casos de entrevista con criterio</strong>.
-            </div>
-            
-            <div class="grid-2" style="gap: 1rem;">
-                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.3); padding: 1.1rem 1.35rem;">
-                    <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-amber); margin-bottom: 0.4rem;">
-                        <i data-lucide="line-chart" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">1. Costos reales y Build vs. Buy</h3>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;"><strong>Model Routing</strong> (modelos chicos vs. grandes), <strong>Batch API (-50%)</strong>, los costos fijos que no están en la factura del LLM, cuándo comprar vs. construir y la calculadora de tiempo liberado.</p>
-                </div>
-                
-                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.3); padding: 1.1rem 1.35rem;">
-                    <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-blue); margin-bottom: 0.4rem;">
-                        <i data-lucide="rocket" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">2. Cómo lanzar y diseñar UX para IA</h3>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Despliegue por etapas (<strong>Shadow Mode → Canary → Feedback</strong>), <strong>Token Streaming</strong>, <strong>Spikes</strong> cortos antes de prometer fechas y riesgos actuales (<strong>Shadow AI, EU AI Act e IP</strong>).</p>
-                </div>
-                
-                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3); padding: 1.1rem 1.35rem;">
-                    <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-green); margin-bottom: 0.4rem;">
-                        <i data-lucide="activity" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">3. Evaluar calidad y monitorear en Langfuse</h3>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Qué parte del sistema arreglar cuando baja la <strong>Tríada RAG</strong>, cómo evaluar herramientas en agentes, alertas de <strong>Model Drift</strong> y qué mirar cada semana en <strong>Langfuse</strong>.</p>
+            <p class="slide-subtitle">De cómo funciona la IA por dentro a qué decisiones tomás cuando pasa a producción.</p>
+
+            <div class="grid-2">
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.28);">
+                    <h3 class="card-title">
+                        <i data-lucide="line-chart" class="icon-sm" style="color: var(--color-amber);"></i>
+                        1. Costos reales y Build vs. Buy
+                    </h3>
+                    <p style="font-size: 0.89rem; color: var(--text-secondary); line-height: 1.55;">
+                        Model Routing, Batch API (-50%), gastos fijos de TCO, cuándo comprar o construir y calculadora de tiempo liberado.
+                    </p>
                 </div>
 
-                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.3); padding: 1.1rem 1.35rem;">
-                    <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-purple); margin-bottom: 0.4rem;">
-                        <i data-lucide="user-check" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">4. Entrevistas reales y cierre</h3>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Cómo contar tu experiencia en Localización con ejemplos concretos, <strong>2 casos de entrevista con opciones parejas</strong> (baja adopción y caída de calidad) y plan para el próximo mes.</p>
+                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.28);">
+                    <h3 class="card-title">
+                        <i data-lucide="rocket" class="icon-sm" style="color: var(--color-blue);"></i>
+                        2. Lanzamiento y UX para IA
+                    </h3>
+                    <p style="font-size: 0.89rem; color: var(--text-secondary); line-height: 1.55;">
+                        Despliegue gradual (Shadow Mode y Canary), Token Streaming, Spikes cortos y riesgos actuales (Shadow AI, EU AI Act, IP).
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.28);">
+                    <h3 class="card-title">
+                        <i data-lucide="activity" class="icon-sm" style="color: var(--color-green);"></i>
+                        3. Evals y monitoreo en Langfuse
+                    </h3>
+                    <p style="font-size: 0.89rem; color: var(--text-secondary); line-height: 1.55;">
+                        Qué corregir según la Tríada RAG, evaluación de agentes, alertas de Model Drift y trazas semanales en Langfuse.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.28);">
+                    <h3 class="card-title">
+                        <i data-lucide="user-check" class="icon-sm" style="color: var(--color-purple);"></i>
+                        4. Entrevistas reales y cierre
+                    </h3>
+                    <p style="font-size: 0.89rem; color: var(--text-secondary); line-height: 1.55;">
+                        Cómo traducir tu experiencia en Localización, dos casos con opciones parejas y plan de práctica para el próximo mes.
+                    </p>
                 </div>
             </div>
         </div>
@@ -619,47 +681,52 @@
         <!-- SLIDE 3: MODEL ROUTING -->
         <div class="slide" id="slide-3">
             <h2 class="slide-title">FinOps 1: Model Routing (enrutamiento de modelos)</h2>
-            <p class="slide-subtitle">Por qué no tiene sentido pagar el modelo más caro para el 100% de los mensajes</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Usar un modelo grande (<em>GPT-4o / Claude Opus</em>) para clasificar un ticket o responder una duda frecuente es pagar <strong>20 veces más</strong> y esperar el triple de tiempo sin necesidad. Con <strong>Model Routing</strong>, un filtro rápido manda alrededor del <strong>80% de los pedidos simples a un modelo chico (Flash / Haiku)</strong> y deja el modelo pesado solo para el resto.
-            </div>
-            
+            <p class="slide-subtitle">Un filtro previo deriva ~80% de las consultas simples a un modelo económico y reserva el grande para casos complejos.</p>
+
             <div class="grid-2">
-                <div class="glass-card" style="padding: 1.25rem 1.5rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-amber); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="git-branch" class="icon-sm"></i> Dos carriles según la dificultad
+                <div class="glass-card">
+                    <h3 class="card-title">
+                        <i data-lucide="git-branch" class="icon-sm" style="color: var(--color-amber);"></i>
+                        Dos carriles según complejidad
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.8rem;">
-                        <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-left: 4px solid var(--color-green); padding: 0.7rem 0.85rem; border-radius: 8px;">
-                            <strong style="color: #34d399; display: block; margin-bottom: 0.2rem;">🟢 Carril rápido (70% - 85% del tráfico) · Modelos chicos</strong>
-                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro.<br><strong>Costo ref.:</strong> ~$0.15 / 1M tokens · <strong>Velocidad:</strong> ~0.3 seg. Sirve para extraer campos, clasificar tickets y dudas directas.</span>
+                    <div class="stack-list">
+                        <div class="clean-item accent-green">
+                            <span class="dot dot-green"></span>
+                            <strong>Carril rápido (70% - 85% del tráfico) · Modelos chicos</strong>
+                            <span class="item-meta">Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro.</span>
+                            <span class="item-meta">~$0.15 / 1M tokens · ~0.3s · Clasificación, extracción y dudas directas.</span>
                         </div>
-                        <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-left: 4px solid var(--color-purple); padding: 0.7rem 0.85rem; border-radius: 8px;">
-                            <strong style="color: #c084fc; display: block; margin-bottom: 0.2rem;">🟣 Carril complejo (15% - 30% del tráfico) · Modelos grandes</strong>
-                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Claude Sonnet/Opus, GPT-4o, Gemini Pro.<br><strong>Costo ref.:</strong> ~$3.00 a $15.00 / 1M tokens · <strong>Uso:</strong> Contratos ambiguos, transcreación o decisiones de varios pasos.</span>
+                        <div class="clean-item accent-purple">
+                            <span class="dot dot-purple"></span>
+                            <strong>Carril complejo (15% - 30% del tráfico) · Modelos grandes</strong>
+                            <span class="item-meta">Claude Sonnet/Opus, GPT-4o, Gemini Pro.</span>
+                            <span class="item-meta">$3 a $15 / 1M tokens · Contratos ambiguos, transcreación y varios pasos.</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
+
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h4 style="font-family: var(--font-display); font-size: 1.02rem; color: #ffffff; margin-bottom: 0.65rem;">🎛️ Simulador en vivo: calibrá tu Model Router</h4>
-                        <div class="calculator-row" style="margin-bottom: 0.35rem;">
-                            <span class="calculator-label" style="font-size: 0.82rem;">% de consultas simples enviadas al modelo chico:</span>
+                        <h3 class="card-title">
+                            <i data-lucide="sliders" class="icon-sm" style="color: var(--color-amber);"></i>
+                            Simulador: calibrá el Model Router
+                        </h3>
+                        <div class="calculator-row">
+                            <span class="calculator-label">Consultas simples al modelo chico:</span>
                             <span class="calculator-value" id="router-pct-val">80%</span>
                         </div>
-                        <input type="range" min="0" max="95" step="5" value="80" class="calculator-slider" id="router-pct-slider" oninput="updateRouterSim()" style="margin-bottom: 0.75rem;">
-                        <div class="results-box" style="margin-top: 0.3rem; padding: 0.9rem;">
+                        <input type="range" min="0" max="95" step="5" value="80" class="calculator-slider" id="router-pct-slider" oninput="updateRouterSim()">
+                        <div class="results-box">
                             <div class="results-row">
-                                <span>Si mandás 100% al modelo grande:</span>
+                                <span>100% al modelo grande:</span>
                                 <span style="color: var(--color-red); font-family: monospace; font-weight: 700;">$1,200.00 / mes</span>
                             </div>
                             <div class="results-row">
-                                <span>Con Model Routing activo:</span>
+                                <span>Con Model Routing:</span>
                                 <span id="router-new-cost" style="color: var(--color-green); font-family: monospace; font-weight: 800;">$288.00 / mes</span>
                             </div>
                             <div class="results-row total" style="margin-bottom: 0;">
-                                <span>Ahorro estimado en tokens:</span>
+                                <span>Ahorro mensual en tokens:</span>
                                 <span id="router-saving-pct" style="font-family: monospace;">76% de ahorro ($912 USD)</span>
                             </div>
                         </div>
@@ -671,45 +738,44 @@
         <!-- SLIDE 4: BATCH API (-50%) & TCO -->
         <div class="slide" id="slide-4">
             <h2 class="slide-title">FinOps 2: Batch API (-50%) y costos ocultos (TCO)</h2>
-            <p class="slide-subtitle">Cómo pagar la mitad en tareas sin apuro y qué gastos extras suelen quedar afuera de los primeros presupuestos</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Si un trabajo no necesita respuesta en vivo (por ejemplo, pre-traducir un paquete de release o revisar 5.000 segmentos durante la noche), lo mandás por <strong>Batch API</strong> y los proveedores te cobran la mitad. Además, el costo real (<strong>TCO</strong>) incluye infraestructura fija, idioma y evaluación.
-            </div>
-            
+            <p class="slide-subtitle">Pagá la mitad en tareas sin urgencia y sumá los gastos fijos que quedan fuera del precio por token.</p>
+
             <div class="grid-2">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
-                    <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-green); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="clock" class="icon-sm"></i> Tiempo real vs. Batch API (-50%)
-                        </h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.65rem;">
-                            No todo necesita velocidad de chat. Separás según la urgencia real:
-                        </p>
-                        <div style="font-size: 0.79rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div style="background: rgba(59,130,246,0.08); border-left: 3px solid var(--color-blue); padding: 0.58rem 0.78rem; border-radius: 6px;">
-                                <strong style="color: #93c5fd;">⚡ Síncrono (tarifa 100%):</strong> Chat o asistente donde la persona está esperando en pantalla en menos de 2 segundos.
-                            </div>
-                            <div style="background: rgba(16,185,129,0.08); border-left: 3px solid var(--color-green); padding: 0.58rem 0.78rem; border-radius: 6px;">
-                                <strong style="color: #6ee7b7;">🌙 Batch API / Asíncrono (tarifa 50%):</strong> Pre-traducción nocturna de releases, control de glosarios o análisis de tickets históricos en 1–12 hs (<em>AWS Bedrock Batch / OpenAI Batch</em>).
-                            </div>
+                <div class="glass-card">
+                    <h3 class="card-title">
+                        <i data-lucide="clock" class="icon-sm" style="color: var(--color-green);"></i>
+                        Tiempo real vs. Batch API (-50%)
+                    </h3>
+                    <div class="stack-list">
+                        <div class="clean-item accent-blue">
+                            <strong>Síncrono (tarifa 100%)</strong>
+                            <span class="item-meta">Chat en vivo o asistente en pantalla donde la persona espera respuesta en menos de 2 segundos.</span>
+                        </div>
+                        <div class="clean-item accent-green">
+                            <strong>Batch API / Asíncrono (tarifa 50%)</strong>
+                            <span class="item-meta">Pre-traducción nocturna de releases, control de glosarios o análisis histórico en 1-12 hs (AWS Bedrock Batch / OpenAI Batch).</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
-                    <div>
-                        <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-amber); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="layers" class="icon-sm"></i> Los 4 costos ocultos del TCO
-                        </h3>
-                        <p style="font-size: 0.79rem; color: var(--text-secondary); margin-bottom: 0.55rem;">
-                            Mirar solo el precio por millón de tokens de la respuesta deja afuera gastos reales:
-                        </p>
-                        <ul style="font-size: 0.78rem; color: #e2e8f0; line-height: 1.46; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.36rem;">
-                            <li><strong style="color: var(--color-amber);">1. Vueltas internas del agente:</strong> Si un agente ReAct da 4 pasos, reenvía el contexto acumulado varias veces por consulta.</li>
-                            <li><strong style="color: var(--color-blue);">2. Infraestructura fija:</strong> Alojamiento mensual de Base Vectorial + herramienta de monitoreo (~$70 a $250 USD/mes base).</li>
-                            <li><strong style="color: var(--color-green);">3. Diferencia por idioma (ES/PT vs. EN):</strong> Los tokenizadores están más optimizados para inglés; español y portugués suelen gastar ~20–30% más tokens para la misma idea.</li>
-                            <li><strong style="color: var(--color-purple);">4. Evaluaciones + revisión humana:</strong> Auditar un porcentaje del tráfico con otro LLM suma tokens, y alguien del equipo tiene que revisar casos críticos.</li>
-                        </ul>
+                <div class="glass-card">
+                    <h3 class="card-title">
+                        <i data-lucide="layers" class="icon-sm" style="color: var(--color-amber);"></i>
+                        4 costos ocultos del TCO
+                    </h3>
+                    <div class="stack-list">
+                        <div class="clean-item accent-amber">
+                            <strong>1. Vueltas del agente:</strong> Cada paso ReAct reenvía el contexto acumulado varias veces.
+                        </div>
+                        <div class="clean-item accent-blue">
+                            <strong>2. Infraestructura fija:</strong> Alojamiento de Vector DB + Langfuse (~$70 a $250 USD/mes).
+                        </div>
+                        <div class="clean-item accent-green">
+                            <strong>3. Idioma (ES/PT vs. EN):</strong> Español y portugués consumen ~20-30% más tokens.
+                        </div>
+                        <div class="clean-item accent-purple">
+                            <strong>4. Evals y revisión humana:</strong> Auditorías automáticas + tiempo de validación del equipo.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -718,42 +784,47 @@
         <!-- SLIDE 5: BUILD VS BUY VS CONFIGURE -->
         <div class="slide" id="slide-5">
             <h2 class="slide-title">Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)</h2>
-            <p class="slide-subtitle">La primera decisión antes de pedir desarrolladores o comprometer meses de trabajo</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Muchas veces no hace falta construir nada propio. Primero evaluás si alcanza con <strong>comprar una herramienta armada (Buy)</strong>, <strong>conectar lo que ya tenés (Configure)</strong> o <strong>programar algo a medida (Build)</strong> — y si construís, evitás quedar atada a un solo proveedor.
+            <p class="slide-subtitle">Evaluá si alcanza con una licencia lista o conectar plataformas antes de pedir desarrollo propio.</p>
+
+            <div class="grid-3" style="margin-bottom: 1.35rem;">
+                <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.28);">
+                    <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: #93c5fd; border-color: rgba(59,130,246,0.3);">BUY · SAAS</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">Comprar algo listo</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Plazo: días · Sin equipo dev.<br>Resúmenes de llamadas, DeepL Pro o soporte estándar que no diferencia al negocio.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <span class="pill-tag">CONFIGURE</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">Conectar plataformas</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Plazo: 1-3 semanas · Bajo mantenimiento.<br>Pilotos internos conectando Jira, Slack o repositorios (Bedrock KB, n8n, MCP).
+                    </p>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.28);">
+                    <span class="pill-tag" style="background: rgba(139,92,246,0.12); color: #c4b5fd; border-color: rgba(139,92,246,0.3);">BUILD · GATEWAY</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">Desarrollo a medida</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Plazo: meses · Devs dedicados.<br>Solo si es clave para el producto. Usá un Model Gateway (Bedrock / LiteLLM) para cambiar de modelo.
+                    </p>
+                </div>
             </div>
 
-            <div class="grid-3" style="margin-bottom: 0.85rem;">
-                <div class="glass-card" style="border-color: rgba(59,130,246,0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: #93c5fd; border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">🛒 BUY (SaaS)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Comprar algo listo</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Días · <strong>Equipo dev:</strong> Cero.<br>Sirve para tareas comunes que no diferencian a la empresa (resumir llamadas, DeepL Pro, soporte estándar).</p>
-                </div>
-
-                <div class="glass-card" style="border-color: rgba(245,158,11,0.35); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">🧩 CONFIGURE (Conectado)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Armar sobre plataformas</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> 1–3 semanas · <strong>Mantenimiento:</strong> Bajo.<br>Útil para pilotos y flujos internos conectando Jira, Slack o repositorios (AWS Bedrock KB, n8n, conectores MCP).</p>
-                </div>
-
-                <div class="glass-card" style="border-color: rgba(139,92,246,0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(139,92,246,0.15); color: #c084fc; border-color: rgba(139,92,246,0.3); margin-bottom: 0.45rem; display: inline-block;">🏗️ BUILD (Propio + Gateway)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Desarrollo a medida</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Meses · <strong>Equipo:</strong> Devs dedicados.<br>Solo si es clave para el negocio y hay volumen. Poné un <strong>Model Gateway</strong> (<em>AWS Bedrock / LiteLLM</em>) para cambiar de modelo sin reescribir código.</p>
-                </div>
-            </div>
-
-            <div class="glass-card" style="max-width: 1100px; padding: 0.85rem 1.2rem; border-color: rgba(16,185,129,0.3);">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 0.55rem;">
-                    <span style="font-size: 0.82rem; font-weight: 700; color: #6ee7b7;">🧭 3 casos concretos: ¿qué elegirías?</span>
-                    <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+            <div class="glass-card wide-card" style="padding: 1.15rem 1.5rem; border-color: rgba(16, 185, 129, 0.26);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <span style="font-size: 0.86rem; font-weight: 700; color: #6ee7b7; display: inline-flex; align-items: center; gap: 0.45rem;">
+                        <i data-lucide="compass" class="icon-xs"></i> Casos prácticos: ¿qué elegirías?
+                    </span>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <button type="button" class="preset-btn active" onclick="selectBuildBuyCase(1, this)">1. Resumir llamadas internas</button>
                         <button type="button" class="preset-btn" onclick="selectBuildBuyCase(2, this)">2. Piloto QA conectado a Jira</button>
                         <button type="button" class="preset-btn" onclick="selectBuildBuyCase(3, this)">3. Motor médico 500k docs/mes</button>
                     </div>
                 </div>
-                <div id="bb-result" style="font-size: 0.79rem; color: #e2e8f0; background: rgba(0,0,0,0.32); padding: 0.6rem 0.85rem; border-radius: 8px; line-height: 1.45;">
-                    <strong style="color: #93c5fd;">🛒 Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Poner ingenieros a mantener un transcriptor propio es desperdiciar presupuesto y tiempo de ingeniería; conviene una licencia corporativa.
+                <div id="bb-result" style="font-size: 0.85rem; color: #e2e8f0; background: rgba(0,0,0,0.32); padding: 0.75rem 1rem; border-radius: 10px; line-height: 1.5;">
+                    <strong style="color: #93c5fd;">Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Mantener un transcriptor propio desperdicia tiempo de ingeniería frente a una licencia corporativa.
                 </div>
             </div>
         </div>
@@ -761,128 +832,125 @@
         <!-- SLIDE 6: INTERACTIVE ROI, TCO & TIME CALCULATOR -->
         <div class="slide" id="slide-6">
             <h2 class="slide-title">Ejercicio 1: Costos de IA vs. tiempo del equipo</h2>
-            <p class="slide-subtitle">Cómo armar un cálculo creíble para Finanzas separando gasto real de API/infra y horas liberadas del equipo</p>
-            <div class="simple-banner">
-                <strong>💡 Punto clave ante Finanzas:</strong> Muchas propuestas presentan "$20.000 de ahorro mensual" como si fuera reducción inmediata de caja. Ante Finanzas conviene hablar de <strong>capacidad liberada</strong> y mostrar el costo fijo de infraestructura + revisión humana.
-            </div>
-            
+            <p class="slide-subtitle">Números creíbles para Finanzas: gasto real de operación frente a horas liberadas del equipo.</p>
+
             <div class="grid-2">
-                <!-- Left: 3 Sliders + 3 FinOps Checkboxes -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem 1.45rem;">
-                    <div>
-                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
-                            <span class="calculator-label">1. Documentos / Tickets al Mes</span>
-                            <span class="calculator-value" id="calc-volume-val">5.000</span>
-                        </div>
-                        <input type="range" min="500" max="20000" step="500" value="5000" class="calculator-slider" id="calc-volume" oninput="calculateROI()" style="margin-bottom: 0.65rem;">
+                <div class="glass-card">
+                    <div class="calculator-row">
+                        <span class="calculator-label">1. Documentos / Tickets al Mes</span>
+                        <span class="calculator-value" id="calc-volume-val">5.000</span>
+                    </div>
+                    <input type="range" min="500" max="20000" step="500" value="5000" class="calculator-slider" id="calc-volume" oninput="calculateROI()">
 
-                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
-                            <span class="calculator-label">2. Minutos Humanos por Documento</span>
-                            <span class="calculator-value" id="calc-mins-val">15 min</span>
-                        </div>
-                        <input type="range" min="5" max="45" step="5" value="15" class="calculator-slider" id="calc-mins" oninput="calculateROI()" style="margin-bottom: 0.65rem;">
-                        
-                        <div class="calculator-row" style="margin-bottom: 0.25rem;">
-                            <span class="calculator-label">3. Costo Hora Profesional (USD)</span>
-                            <span class="calculator-value" id="calc-hourly-val">$20 / h</span>
-                        </div>
-                        <input type="range" min="10" max="60" step="1" value="20" class="calculator-slider" id="calc-hourly" oninput="calculateROI()" style="margin-bottom: 0.7rem;">
+                    <div class="calculator-row">
+                        <span class="calculator-label">2. Minutos Humanos por Documento</span>
+                        <span class="calculator-value" id="calc-mins-val">15 min</span>
+                    </div>
+                    <input type="range" min="5" max="45" step="5" value="15" class="calculator-slider" id="calc-mins" oninput="calculateROI()">
 
-                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                            <label class="check-pill">
-                                <input type="checkbox" id="opt-routing" checked onchange="calculateROI()">
-                                <span><strong>Model Routing (80/20):</strong> 80% a modelo Flash/Haiku (-76% API)</span>
-                            </label>
-                            <label class="check-pill">
-                                <input type="checkbox" id="opt-batch" checked onchange="calculateROI()">
-                                <span><strong>Batch API nocturna:</strong> Procesamiento sin urgencia (-50%)</span>
-                            </label>
-                            <label class="check-pill">
-                                <input type="checkbox" id="opt-tco" checked onchange="calculateROI()">
-                                <span><strong>Sumar TCO fijo:</strong> +$180/mes (Vector DB + Langfuse) y +8% Evals</span>
-                            </label>
-                        </div>
+                    <div class="calculator-row">
+                        <span class="calculator-label">3. Costo Hora Profesional (USD)</span>
+                        <span class="calculator-value" id="calc-hourly-val">$20 / h</span>
+                    </div>
+                    <input type="range" min="10" max="60" step="1" value="20" class="calculator-slider" id="calc-hourly" oninput="calculateROI()">
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
+                        <label class="check-pill">
+                            <input type="checkbox" id="opt-routing" checked onchange="calculateROI()">
+                            <span><strong>Model Routing (80/20):</strong> 80% a modelo chico (-76% API)</span>
+                        </label>
+                        <label class="check-pill">
+                            <input type="checkbox" id="opt-batch" checked onchange="calculateROI()">
+                            <span><strong>Batch API nocturna:</strong> Tareas sin urgencia (-50%)</span>
+                        </label>
+                        <label class="check-pill">
+                            <input type="checkbox" id="opt-tco" checked onchange="calculateROI()">
+                            <span><strong>Sumar TCO fijo:</strong> +$180/mes (infra) y +8% Evals</span>
+                        </label>
                     </div>
                 </div>
 
-                <!-- Right: Results -->
-                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.35); padding: 1.1rem 1.4rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.02rem; color: var(--color-green); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="activity" class="icon-sm"></i> Cuenta mensual (FinOps + TCO)
-                    </h3>
-                    
-                    <div class="results-box" style="margin-top: 0.3rem; padding: 0.85rem 0.95rem;">
-                        <div class="results-row">
-                            <span>Valor del tiempo manual actual:</span>
-                            <span id="cost-human" style="font-weight: 700; color: #ffffff; font-family: monospace;">$0.00</span>
-                        </div>
-                        <div class="results-row" style="font-size: 0.76rem; color: var(--text-secondary);">
-                            <span>Horas / personas equivalentes:</span>
-                            <span id="hours-needed" style="font-family: monospace;">0 hs (0.0 personas FTE)</span>
-                        </div>
-                        <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.4rem; margin-top: 0.4rem;">
-                            <span>API Frontier sin optimizar ($0.045/doc):</span>
-                            <span id="cost-base-api" style="color: var(--color-red); font-family: monospace;">$0.00</span>
-                        </div>
-                        <div class="results-row">
-                            <span style="font-weight: 600; color: var(--color-green);">Costo IA optimizado + infra fija + Evals:</span>
-                            <span id="cost-opt-api" style="font-weight: 700; color: var(--color-green); font-family: monospace;">$0.00</span>
-                        </div>
-                        <div class="results-row" style="font-size: 0.77rem; color: #93c5fd;">
-                            <span>Revisión humana (HITL · 20% del tiempo):</span>
-                            <span id="cost-hitl" style="font-family: monospace;">$0.00</span>
-                        </div>
-
-                        <div class="results-row total">
-                            <span>Capacidad liberada (valor equiv./mes):</span>
-                            <span id="roi-savings" style="font-family: monospace;">$0.00</span>
-                        </div>
-                        <div class="results-row" style="margin-bottom: 0; font-size: 0.78rem; color: #fde68a; font-weight: 700;">
-                            <span>Referencia de repago (piloto de $15.000):</span>
-                            <span id="roi-payback" style="font-family: monospace;">-</span>
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 class="card-title" style="color: var(--color-green);">
+                            <i data-lucide="activity" class="icon-sm"></i>
+                            Cuenta mensual (FinOps + TCO)
+                        </h3>
+                        <div class="results-box">
+                            <div class="results-row">
+                                <span>Valor del tiempo manual actual:</span>
+                                <span id="cost-human" style="font-weight: 700; color: #ffffff; font-family: monospace;">$0.00</span>
+                            </div>
+                            <div class="results-row" style="font-size: 0.8rem; color: var(--text-secondary);">
+                                <span>Horas / personas equivalentes:</span>
+                                <span id="hours-needed" style="font-family: monospace;">0 hs (0.0 personas FTE)</span>
+                            </div>
+                            <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem; margin-top: 0.5rem;">
+                                <span>API Frontier sin optimizar ($0.045/doc):</span>
+                                <span id="cost-base-api" style="color: var(--color-red); font-family: monospace;">$0.00</span>
+                            </div>
+                            <div class="results-row">
+                                <span style="font-weight: 600; color: var(--color-green);">Costo IA optimizado + infra + Evals:</span>
+                                <span id="cost-opt-api" style="font-weight: 700; color: var(--color-green); font-family: monospace;">$0.00</span>
+                            </div>
+                            <div class="results-row" style="font-size: 0.81rem; color: #93c5fd;">
+                                <span>Revisión humana (HITL · 20% del tiempo):</span>
+                                <span id="cost-hitl" style="font-family: monospace;">$0.00</span>
+                            </div>
+                            <div class="results-row total">
+                                <span>Capacidad liberada (valor equiv./mes):</span>
+                                <span id="roi-savings" style="font-family: monospace;">$0.00</span>
+                            </div>
+                            <div class="results-row" style="margin-bottom: 0; font-size: 0.82rem; color: #fde68a; font-weight: 700;">
+                                <span>Referencia de repago (piloto de $15.000):</span>
+                                <span id="roi-payback" style="font-family: monospace;">-</span>
+                            </div>
                         </div>
                     </div>
-                    <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.38;">
-                        Dato clave frente a Finanzas: esto es <strong>tiempo liberado del equipo</strong> para absorber más volumen o bajar demoras, no reducción inmediata de nómina el mes 1.
+                    <p style="font-size: 0.79rem; color: var(--text-secondary); margin-top: 0.85rem; line-height: 1.45;">
+                        Ante Finanzas conviene hablar de capacidad liberada para absorber volumen o bajar demoras, no de recorte inmediato de nómina el mes 1.
                     </p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 7: SHADOW MODE, CANARY & DATA FLYWHEEL -->
+        <!-- SLIDE 7: SHADOW MODE, CANARY & FEEDBACK -->
         <div class="slide" id="slide-7">
             <h2 class="slide-title">Lanzamiento gradual: Shadow Mode, Canary y feedback</h2>
-            <p class="slide-subtitle">Hacé clic en cada etapa para ver cómo probás un sistema de IA sin exponer a los clientes desde el día 1</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En software clásico probás en staging y salís para todos. Como la IA puede contestar distinto cada vez, primero corre en silencio (<strong>Shadow Mode</strong>), después la prendés para un grupo chico (<strong>Canary</strong>) y armás un circuito simple para sumar los errores corregidos al dataset.
+            <p class="slide-subtitle">Probá sobre tráfico real sin exponer clientes desde el día 1. Hacé clic en cada etapa.</p>
+
+            <div class="grid-3" style="margin-bottom: 1.35rem;">
+                <div class="glass-card phase-card phase-active" id="phase-card-1" onclick="selectRolloutPhase(1)" style="border-color: rgba(59, 130, 246, 0.35);">
+                    <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: var(--color-blue); border-color: rgba(59,130,246,0.3);">ETAPA 1 · SEMANAS 1-2</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">1. Shadow Mode</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Corre en segundo plano sin mostrarse al usuario y comparás qué respondió frente al criterio del equipo.
+                    </p>
+                </div>
+
+                <div class="glass-card phase-card" id="phase-card-2" onclick="selectRolloutPhase(2)" style="border-color: rgba(245, 158, 11, 0.3);">
+                    <span class="pill-tag">ETAPA 2 · SEMANAS 3-4</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">2. Canary Rollout (5% → 100%)</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Se habilita con Feature Flags para un grupo piloto, con rollback inmediato si sube el costo o cae la calidad.
+                    </p>
+                </div>
+
+                <div class="glass-card phase-card" id="phase-card-3" onclick="selectRolloutPhase(3)" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <span class="pill-tag" style="background: rgba(16,185,129,0.12); color: var(--color-green); border-color: rgba(16,185,129,0.3);">ETAPA 3 · EN MARCHA</span>
+                    <h3 class="card-title" style="margin-bottom: 0.55rem;">3. Circuito de feedback</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
+                        Cada voto negativo y corrección del especialista entra al Golden Dataset para que el error no vuelva a pasar.
+                    </p>
+                </div>
             </div>
-            
-            <div class="grid-3" style="margin-bottom: 0.85rem;">
-                <div class="glass-card phase-card phase-active" id="phase-card-1" onclick="selectRolloutPhase(1)" style="border-color: rgba(59, 130, 246, 0.35); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">ETAPA 1 · SEMANAS 1-2</span>
-                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">1. Shadow Mode (Modo Sombra)</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">El bot procesa casos reales en segundo plano sin mostrarle nada al cliente. Comparamos qué habría respondido contra lo que hizo el equipo.</p>
-                </div>
 
-                <div class="glass-card phase-card" id="phase-card-2" onclick="selectRolloutPhase(2)" style="border-color: rgba(245, 158, 11, 0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">ETAPA 2 · SEMANAS 3-4</span>
-                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">2. Canary Rollout (5% → 100%)</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Se habilita con Feature Flags para el 5% o un proyecto piloto interno, con botón de rollback inmediato si sube el costo o cae la calidad.</p>
-                </div>
-
-                <div class="glass-card phase-card" id="phase-card-3" onclick="selectRolloutPhase(3)" style="border-color: rgba(16, 185, 129, 0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(16,185,129,0.15); color: var(--color-green); border-color: rgba(16,185,129,0.3); margin-bottom: 0.45rem; display: inline-block;">ETAPA 3 · EN MARCHA</span>
-                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">3. Circuito de feedback</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Cada botón 👍/👎 y cada corrección del especialista pasan al Golden Dataset para que no vuelva a fallar el mismo caso.</p>
-                </div>
-            </div>
-
-            <div class="glass-card" id="rollout-detail" style="max-width: 1100px; padding: 0.9rem 1.25rem; border-color: rgba(245,158,11,0.35);">
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; font-size: 0.79rem;">
-                    <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Quién lo ve</strong><span style="color: #f8fafc;">0% clientes (solo equipo interno)</span></div>
-                    <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Exposición</strong><span style="color: #6ee7b7;">Sin impacto en el usuario final</span></div>
-                    <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Criterio para avanzar</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. revisión humana</span></div>
-                    <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Qué hacés vos</strong><span style="color: #cbd5e1;">Revisar diferencias en Langfuse y ajustar prompts antes de exponerlo.</span></div>
+            <div class="glass-card wide-card" id="rollout-detail" style="padding: 1.25rem 1.65rem; border-color: rgba(245, 158, 11, 0.3);">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; font-size: 0.85rem; line-height: 1.48;">
+                    <div><strong style="color: var(--color-amber); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">QUIÉN LO VE</strong><span style="color: #f8fafc;">0% clientes (solo equipo interno)</span></div>
+                    <div><strong style="color: var(--color-blue); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">EXPOSICIÓN</strong><span style="color: #6ee7b7;">Sin impacto en el usuario final</span></div>
+                    <div><strong style="color: var(--color-purple); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">CRITERIO DE AVANCE</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. revisión humana</span></div>
+                    <div><strong style="color: var(--color-green); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">TU TAREA COMO PM</strong><span style="color: #cbd5e1;">Revisar diferencias en Langfuse y ajustar prompts antes de abrirlo.</span></div>
                 </div>
             </div>
         </div>
@@ -890,51 +958,59 @@
         <!-- SLIDE 8: UX, SPIKES IN AGILE & CURRENT RISKS -->
         <div class="slide" id="slide-8">
             <h2 class="slide-title">UX en productos de IA, Spikes en Agile y riesgos actuales</h2>
-            <p class="slide-subtitle">Por qué muchos bots precisos igual se dejan de usar, cómo planificar con incertidumbre en Agile y 3 riesgos reales hoy</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Si la pantalla queda congelada 12 segundos o el usuario tiene que adivinar qué escribir en un chat vacío, abandona la herramienta. Y en 2026 los riesgos ya no son solo PII: aparecen el <strong>Shadow AI</strong>, el <strong>EU AI Act</strong> y los derechos de <strong>Propiedad Intelectual</strong>.
-            </div>
-            
-            <div class="grid-2">
-                <!-- Left: UX + Agile Spikes -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.03rem; color: var(--color-blue); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="sparkles" class="icon-sm"></i> UX y planificación en Agile
-                    </h3>
-                    <ul style="font-size: 0.78rem; color: #e2e8f0; line-height: 1.44; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.65rem;">
-                        <li><strong>Velocidad percibida (TTFT &lt; 1s):</strong> Usar <strong>Token Streaming</strong> + llamadas a APIs en paralelo + avisos claros (<em>"Consultando Jira y glosario..."</em>).</li>
-                        <li><strong>No todo es un chat vacío:</strong> Botones contextuales dentro de Jira/TMS, citas clicables y modo <em>"Sugerir para que apruebes"</em>.</li>
-                        <li><strong>Discovery Spike (1 semana):</strong> En IA los datos mandan; antes de prometer un trimestre en el roadmap, corré un <strong>Spike de 5 días con ~30 casos reales</strong> para ver si la calidad da.</li>
-                    </ul>
+            <p class="slide-subtitle">Evitar abandono por espera, validar con un Spike corto de 5 días y cubrir riesgos actuales.</p>
 
-                    <div style="background: rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.65rem 0.85rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.45rem; flex-wrap: wrap;">
-                            <span style="font-size: 0.74rem; font-weight: 700; color: #93c5fd;">⚡ Mini-demo UX: espera percibida</span>
-                            <div style="display: flex; gap: 0.35rem;">
-                                <button type="button" class="preset-btn" onclick="runUxLatencyDemo('slow')">🐢 12s congelada</button>
-                                <button type="button" class="preset-btn active" onclick="runUxLatencyDemo('fast')">⚡ 0.8s streaming</button>
+            <div class="grid-2">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;">
+                    <div>
+                        <h3 class="card-title" style="color: var(--color-blue);">
+                            <i data-lucide="sparkles" class="icon-sm"></i>
+                            UX y planificación en Agile
+                        </h3>
+                        <div class="stack-list">
+                            <div class="clean-item accent-blue">
+                                <strong>Velocidad percibida (TTFT &lt; 1s):</strong> Token Streaming, llamadas paralelas y estados claros.
+                            </div>
+                            <div class="clean-item accent-blue">
+                                <strong>Fuera del chat vacío:</strong> Botones en Jira/TMS, citas clicables y borrador para aprobar.
+                            </div>
+                            <div class="clean-item accent-blue">
+                                <strong>Discovery Spike (5 días):</strong> Probar ~30 casos reales antes de comprometer el trimestre.
                             </div>
                         </div>
-                        <div id="ux-demo-box" style="font-family: monospace; font-size: 0.74rem; color: #6ee7b7; line-height: 1.4;">
-                            ⚡ [0.3s] Consultando Jira + glosario en paralelo...<br>⚡ [0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.85rem 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.55rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.78rem; font-weight: 700; color: #93c5fd;">Mini-demo UX: espera percibida</span>
+                            <div style="display: flex; gap: 0.4rem;">
+                                <button type="button" class="preset-btn" data-ux="slow" onclick="runUxLatencyDemo('slow')">12s congelada</button>
+                                <button type="button" class="preset-btn active" data-ux="fast" onclick="runUxLatencyDemo('fast')">0.8s streaming</button>
+                            </div>
+                        </div>
+                        <div id="ux-demo-box" style="font-family: monospace; font-size: 0.78rem; color: #6ee7b7; line-height: 1.45;">
+                            [0.3s] Consultando Jira + glosario en paralelo...<br>[0.8s] Token Streaming activo: "Release v2.4: 10 módulos listos..."
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Current Risks -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(245,158,11,0.3);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.03rem; color: var(--color-amber); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="scale" class="icon-sm"></i> Riesgos actuales (más allá de PII)
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.28);">
+                    <h3 class="card-title" style="color: var(--color-amber);">
+                        <i data-lucide="scale" class="icon-sm"></i>
+                        Riesgos actuales (más allá de PII)
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.78rem;">
-                        <div style="background: rgba(239,68,68,0.09); border-left: 3px solid var(--color-red); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fca5a5;">🚫 Shadow AI:</strong> Si la empresa solo manda un mail prohibiendo usar IA, mucha gente pega textos igual en su cuenta personal. Se resuelve dando una alternativa interna cómoda y segura.
+                    <div class="stack-list">
+                        <div class="clean-item accent-red">
+                            <strong>Shadow AI</strong>
+                            <span class="item-meta">Prohibir no alcanza: sin alternativa interna cómoda, pegan datos en cuentas personales.</span>
                         </div>
-                        <div style="background: rgba(245,158,11,0.09); border-left: 3px solid var(--color-amber); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fde68a;">⚖️ EU AI Act y transparencia:</strong> Cuando la IA filtra CVs, performance o crédito (<em>Alto Riesgo</em>), exige registro de trazas, revisión humana y avisarle al usuario que interactúa con IA.
+                        <div class="clean-item accent-amber">
+                            <strong>EU AI Act y transparencia</strong>
+                            <span class="item-meta">Casos sensibles (CVs, crédito) exigen trazas, supervisión humana y aviso de IA.</span>
                         </div>
-                        <div style="background: rgba(139,92,246,0.09); border-left: 3px solid var(--color-purple); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #c4b5fd;">📜 Propiedad Intelectual (IP) y sesgos:</strong> Revisar cláusulas de indemnidad en contratos Enterprise y chequear sesgos culturales o de género en idiomas distintos al inglés.
+                        <div class="clean-item accent-purple">
+                            <strong>Propiedad Intelectual (IP) y sesgos</strong>
+                            <span class="item-meta">Revisar indemnidad Enterprise y sesgos en idiomas distintos al inglés.</span>
                         </div>
                     </div>
                 </div>
@@ -944,46 +1020,43 @@
         <!-- SLIDE 9: PRACTICAL AI EVALS, AGENT TRAJECTORY & MODEL DRIFT -->
         <div class="slide" id="slide-9">
             <h2 class="slide-title">AI Evals en la práctica: Tríada RAG, Agentes y Model Drift</h2>
-            <p class="slide-subtitle">Cómo saber qué parte del sistema arreglar cuando falla una métrica y qué cambia al evaluar agentes</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En la Sesión 2 viste el <em>Golden Dataset</em> en CI/CD. Hoy bajamos a tierra cómo leer la <strong>Tríada RAG</strong> para asignarle el ticket al área correcta, cómo evaluar pasos en un agente y qué hacer ante un <strong>Model Drift</strong>.
-            </div>
-            
+            <p class="slide-subtitle">Qué área del sistema corregir según la métrica que cae y qué suma evaluar agentes.</p>
+
             <div class="grid-2">
-                <!-- Left: Tríada RAG -> Backlog Action -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: var(--color-amber); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="check-square" class="icon-sm"></i> Qué métrica baja → qué tocás en el Sprint
+                <div class="glass-card">
+                    <h3 class="card-title" style="color: var(--color-amber);">
+                        <i data-lucide="check-square" class="icon-sm"></i>
+                        Qué métrica baja → qué tocás en el Sprint
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.52rem; font-size: 0.78rem;">
-                        <div style="background: rgba(16,185,129,0.09); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #6ee7b7;">1. Fidelidad (Faithfulness) baja →</strong> El bot inventó algo que no estaba en el texto.<br>
-                            <span style="color: #cbd5e1;"><em>Backlog:</em> Ajustar <strong>System Prompt, Temperatura 0.0 o Guardrail</strong> de cita obligatoria.</span>
+                    <div class="stack-list">
+                        <div class="clean-item accent-green">
+                            <strong>1. Fidelidad (Faithfulness) baja</strong> — Inventó datos fuera del manual.
+                            <span class="item-meta">Backlog: System Prompt, Temperatura 0.0 o Guardrail de cita obligatoria.</span>
                         </div>
-                        <div style="background: rgba(59,130,246,0.09); border-left: 3px solid var(--color-blue); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #93c5fd;">2. Precisión de Contexto baja →</strong> El buscador trajo fragmentos que no servían.<br>
-                            <span style="color: #cbd5e1;"><em>Backlog:</em> Revisar <strong>Chunking, Metadatos o Top-K</strong> en la Vector DB (no tocar el prompt).</span>
+                        <div class="clean-item accent-blue">
+                            <strong>2. Precisión de Contexto baja</strong> — El buscador trajo fragmentos irrelevantes.
+                            <span class="item-meta">Backlog: Chunking, Metadatos o Top-K en la Vector DB.</span>
                         </div>
-                        <div style="background: rgba(139,92,246,0.09); border-left: 3px solid var(--color-purple); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #c4b5fd;">3. Relevancia de Respuesta baja →</strong> Contestó por las ramas sin resolver la duda.<br>
-                            <span style="color: #cbd5e1;"><em>Backlog:</em> Corregir instrucciones de <strong>formato, largo y estructura</strong>.</span>
+                        <div class="clean-item accent-purple">
+                            <strong>3. Relevancia baja</strong> — Contestó sin resolver la pregunta puntual.
+                            <span class="item-meta">Backlog: Formato, extensión y estructura de respuesta.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Agent Trajectory + Model Drift + SME -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(139,92,246,0.3);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="compass" class="icon-sm"></i> Más allá de RAG: Agentes y Model Drift
+                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.28);">
+                    <h3 class="card-title">
+                        <i data-lucide="compass" class="icon-sm" style="color: var(--color-purple);"></i>
+                        Más allá de RAG: Agentes y Model Drift
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.78rem;">
-                        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.6rem 0.8rem; border-radius: 8px;">
-                            <strong style="color: #fbbf24; display: block; margin-bottom: 0.2rem;">🤖 Trajectory Evaluation (Evals de Agentes)</strong>
-                            <span style="color: #cbd5e1;">En un agente no basta evaluar la respuesta final: medís si eligió la <strong>herramienta correcta</strong> (<em>Tool Accuracy</em>), mandó bien los datos JSON y no dio pasos de más.</span>
+                    <div class="stack-list">
+                        <div class="clean-item accent-amber">
+                            <strong>Trajectory Evaluation (Agentes)</strong>
+                            <span class="item-meta">Medir si eligió la herramienta correcta (Tool Accuracy), armó el JSON y evitó pasos extra.</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.6rem 0.8rem; border-radius: 8px;">
-                            <strong style="color: #c4b5fd; display: block; margin-bottom: 0.2rem;">📉 Model Drift y criterio humano (SME)</strong>
-                            <span style="color: #cbd5e1;">Si el proveedor actualiza el modelo o cambiás a uno más económico, la calidad puede bajar sin que nadie haya tocado tu código. Calibrar un <em>LLM-as-a-Judge</em> necesita alguien que entienda bien el dominio y el idioma (como alguien de Traducción/QA).</span>
+                        <div class="clean-item accent-purple">
+                            <strong>Model Drift y criterio humano (SME)</strong>
+                            <span class="item-meta">El proveedor puede variar calidad sin aviso. Calibrar LLM-as-a-Judge requiere criterio de idioma y dominio (QA/Traducción).</span>
                         </div>
                     </div>
                 </div>
@@ -993,69 +1066,65 @@
         <!-- SLIDE 10: INTERACTIVE EVALS CHECKER (EXERCISE 2) -->
         <div class="slide" id="slide-10">
             <h2 class="slide-title">Ejercicio 2: Simulador de auditoría Evals</h2>
-            <p class="slide-subtitle">Probá los 3 botones arriba a la derecha o mové los sliders para ver qué ticket mandarías al equipo</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> No toda falla se arregla tocando el prompt. Usá los presets de la derecha para distinguir entre una <strong>alucinación (Fidelidad)</strong> y un <strong>error del buscador (Contexto)</strong>.
-            </div>
-            
+            <p class="slide-subtitle">Probá los 3 escenarios o mové los controles para distinguir fallas del modelo frente a fallas del buscador.</p>
+
             <div class="grid-2">
-                <!-- Left: Response to Audit -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem 1.4rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 0.9rem;">
                     <div>
-                        <div style="font-size: 0.77rem; color: #fde68a; margin-bottom: 0.45rem;">
-                            <strong>❓ Pregunta del usuario:</strong> "¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?"
+                        <p style="font-size: 0.85rem; color: #fde68a; margin-bottom: 0.75rem; line-height: 1.45;">
+                            <strong>Pregunta:</strong> "¿Estado de Pagos v3 y Checkout v4 para ES y PT?"
+                        </p>
+                        <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem;">1. FRAGMENTO RECUPERADO</span>
+                        <div style="font-size: 0.8rem; font-family: monospace; background: rgba(0,0,0,0.34); padding: 0.7rem 0.9rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); margin-bottom: 0.9rem; color: #cbd5e1; line-height: 1.48;">
+                            - Pagos v3: Activo en Producción (EN, ES, PT).<br>
+                            - Checkout v4: Bloqueado en QA lingüístico (PT-BR).
                         </div>
-                        <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">1. FRAGMENTO OFICIAL RECUPERADO</span>
-                        <div style="font-size: 0.77rem; font-family: monospace; background: rgba(0,0,0,0.35); padding: 0.55rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 0.65rem; color: #cbd5e1; line-height: 1.42;">
-                            • [Módulo Pagos v3]: Activo en Producción (Idiomas: EN, ES, PT).<br>
-                            • [Módulo Checkout v4]: EN REVISIÓN DE QA LINGÜÍSTICO. Bloqueado para despliegue hasta corregir glosario PT-BR.
-                        </div>
-                        
-                        <span class="nav-session" style="background: rgba(139,92,246,0.15); color: var(--color-purple); border-color: rgba(139,92,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">2. RESPUESTA DEL BOT (CON ALUCINACIÓN AL FINAL)</span>
-                        <div style="font-size: 0.79rem; background: rgba(255,255,255,0.03); padding: 0.68rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.45; color: #ffffff;">
-                            "El Módulo Pagos v3 está activo en producción (EN, ES, PT). El Módulo Checkout v4 sigue en revisión de QA y aún no debe desplegarse. <span style="background: rgba(239,68,68,0.22); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además, te confirmo que mañana al mediodía se aprobará automáticamente sin necesitar más pruebas de QA.</span>"
+
+                        <span class="pill-tag" style="background: rgba(139,92,246,0.12); color: #c4b5fd; border-color: rgba(139,92,246,0.3); margin-bottom: 0.45rem;">2. RESPUESTA DEL BOT</span>
+                        <div style="font-size: 0.85rem; background: rgba(255,255,255,0.03); padding: 0.8rem 0.95rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.5; color: #ffffff;">
+                            "Pagos v3 está activo en producción (EN, ES, PT). Checkout v4 sigue bloqueado en revisión de QA. <span style="background: rgba(239,68,68,0.2); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además, mañana al mediodía se aprobará automáticamente sin más pruebas.</span>"
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Audit Sliders + Presets -->
-                <div class="glass-card" style="border-color: rgba(245,158,11,0.3); padding: 1.15rem 1.4rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
-                        <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-amber); display: flex; align-items: center; gap: 0.4rem;">
-                            <i data-lucide="sliders" class="icon-sm"></i> Calificador Tríada RAG
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.28);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 class="card-title" style="color: var(--color-amber); margin-bottom: 0;">
+                            <i data-lucide="sliders" class="icon-sm"></i>
+                            Calificador Tríada RAG
                         </h3>
-                        <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
-                            <button type="button" class="preset-btn active" onclick="loadEvalPreset('hallucination', this)">🔍 Alucinación</button>
-                            <button type="button" class="preset-btn" onclick="loadEvalPreset('retrieval', this)">📂 Fallo Retrieval</button>
-                            <button type="button" class="preset-btn" onclick="loadEvalPreset('healthy', this)">✅ Sana</button>
+                        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                            <button type="button" class="preset-btn active" onclick="loadEvalPreset('hallucination', this)">Alucinación</button>
+                            <button type="button" class="preset-btn" onclick="loadEvalPreset('retrieval', this)">Fallo Retrieval</button>
+                            <button type="button" class="preset-btn" onclick="loadEvalPreset('healthy', this)">Sana</button>
                         </div>
                     </div>
-                    
+
                     <div>
-                        <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">1. Fidelidad al manual (sin inventos):</span>
+                        <div class="calculator-row">
+                            <span class="calculator-label">1. Fidelidad al manual (sin inventos):</span>
                             <span class="score-indicator" id="eval-fidelidad-val">0.2</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.1" value="0.2" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
-                        
-                        <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">2. Precisión del contexto recuperado:</span>
+                        <input type="range" min="0" max="1" step="0.1" value="0.2" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()">
+
+                        <div class="calculator-row">
+                            <span class="calculator-label">2. Precisión del contexto recuperado:</span>
                             <span class="score-indicator" id="eval-contexto-val">1.0</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.1" value="1.0" class="calculator-slider" id="eval-contexto" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
+                        <input type="range" min="0" max="1" step="0.1" value="1.0" class="calculator-slider" id="eval-contexto" oninput="calculateEval()">
 
-                        <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">3. Relevancia de la respuesta:</span>
+                        <div class="calculator-row">
+                            <span class="calculator-label">3. Relevancia de la respuesta:</span>
                             <span class="score-indicator" id="eval-relevancia-val">0.9</span>
                         </div>
-                        <input type="range" min="0" max="1" step="0.1" value="0.9" class="calculator-slider" id="eval-relevancia" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
+                        <input type="range" min="0" max="1" step="0.1" value="0.9" class="calculator-slider" id="eval-relevancia" oninput="calculateEval()">
 
-                        <div class="results-box" style="margin-top: 0.3rem; padding: 0.7rem 0.9rem; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                        <div class="results-box" style="margin-top: 0.25rem; display: flex; justify-content: space-between; align-items: center; gap: 0.9rem;">
                             <div>
-                                <span class="calculator-label" style="font-size: 0.73rem; display: block;">Veredicto CI/CD:</span>
-                                <span id="eval-status" class="eval-tag fail" style="margin-top: 0.25rem; display: inline-block;">RECHAZADO</span>
+                                <span style="font-size: 0.75rem; color: var(--text-secondary); display: block;">Veredicto CI/CD:</span>
+                                <span id="eval-status" class="eval-tag fail" style="margin-top: 0.3rem; display: inline-block;">RECHAZADO</span>
                             </div>
-                            <div style="font-size: 0.74rem; color: var(--color-red); text-align: right; max-width: 265px; line-height: 1.35;" id="eval-critique">
+                            <div style="font-size: 0.79rem; color: var(--color-red); text-align: right; max-width: 280px; line-height: 1.4;" id="eval-critique">
                                 Alucinación (Fidelidad &lt; 0.80): Ticket para Prompt / Temperatura 0.0 / Guardrail.
                             </div>
                         </div>
@@ -1067,77 +1136,81 @@
         <!-- SLIDE 11: OBSERVABILITY IN LANGFUSE -->
         <div class="slide" id="slide-11">
             <h2 class="slide-title">Monitoreo en producción con Langfuse</h2>
-            <p class="slide-subtitle">Hacé clic en cada paso de la traza y probá cómo un reporte de usuario pasa al dataset de pruebas</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> <strong>Langfuse</strong> te deja ver la radiografía de cada respuesta en producción: qué modelo eligió el router, qué fragmentos trajo la base vectorial, cuánto tardó cada paso y qué nota le puso la evaluación.
-            </div>
-            
+            <p class="slide-subtitle">Radiografía por pasos de cada respuesta: router, búsqueda, generación y evaluación.</p>
+
             <div class="grid-2">
-                <!-- Left: 4 Clickable Trace Nodes -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-purple); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="git-merge" class="icon-sm"></i> Traza en Langfuse (clic en cada paso)
+                <div class="glass-card">
+                    <h3 class="card-title" style="color: var(--color-purple);">
+                        <i data-lucide="git-merge" class="icon-sm"></i>
+                        Traza en Langfuse (clic en cada paso)
                     </h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 0.22rem;">
+
+                    <div>
                         <div class="trace-item" style="border-color: var(--color-purple);">
                             <div class="trace-header" onclick="toggleTrace('trace-1')">
-                                <span>🟢 [Trace] Consulta Release Pagos v3</span>
-                                <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-purple);">$0.0011 USD | 1.15s</span>
+                                <span><span class="dot dot-green"></span>[Trace] Consulta Pagos v3</span>
+                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-purple);">$0.0011 · 1.15s</span>
                             </div>
                             <div class="trace-body" id="trace-1" style="display: block;">
-                                Usuario: anabela.hotian@empresa.com | Rol: Localization PM<br>
-                                Sesión: #S4-PROD-992 | Ruta: Flash (Router) | Estado: 200 OK
+                                Rol: Localization PM · #S4-PROD-992<br>
+                                Ruta: Flash (Router) · 200 OK
                             </div>
                         </div>
-                        
+
                         <div class="trace-item" style="border-color: var(--color-blue); margin-left: 20px;">
                             <div class="trace-header" onclick="toggleTrace('trace-2')">
-                                <span>🔀 [Span 1 · Router y Retrieval]</span>
-                                <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-blue);">$0.0001 USD | 160ms</span>
+                                <span><span class="dot dot-blue"></span>[Span 1] Router y Retrieval</span>
+                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-blue);">$0.0001 · 160ms</span>
                             </div>
                             <div class="trace-body" id="trace-2">
-                                Decisión Router: Consulta estándar → Gemini Flash / Claude Haiku<br>
-                                Metadata: { lang: "ES-LATAM", year: 2026 } · Similitud: 0.91 y 0.87
+                                Router: Estándar → Gemini Flash<br>
+                                ES-LATAM, 2026 · Similitud: 0.91
                             </div>
                         </div>
 
                         <div class="trace-item" style="border-color: var(--color-amber); margin-left: 20px;">
                             <div class="trace-header" onclick="toggleTrace('trace-3')">
-                                <span>🤖 [Span 2 · Generación LLM]</span>
-                                <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-amber);">$0.0009 USD | 900ms</span>
+                                <span><span class="dot dot-amber"></span>[Span 2] Generación LLM</span>
+                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-amber);">$0.0009 · 900ms</span>
                             </div>
                             <div class="trace-body" id="trace-3">
-                                TTFT (Primer Token): 220ms · Streaming Activo<br>
-                                Salida: 180 tokens · Cita verificada: Manual Pagos v3 pág. 12
+                                TTFT: 220ms · Streaming<br>
+                                180 tokens · Manual Pagos v3 pág. 12
                             </div>
                         </div>
 
                         <div class="trace-item" style="border-color: var(--color-green); margin-left: 20px; margin-bottom: 0;">
                             <div class="trace-header" onclick="toggleTrace('trace-4')">
-                                <span>📊 [Span 3 · Eval Asíncrona y Feedback]</span>
-                                <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-green);">$0.0001 USD | 90ms</span>
+                                <span><span class="dot dot-purple"></span>[Span 3] Eval y Feedback</span>
+                                <span style="font-family: monospace; font-size: 0.75rem; color: var(--color-green);">$0.0001 · 90ms</span>
                             </div>
                             <div class="trace-body" id="trace-4" style="display: block;">
-                                Faithfulness Eval: 0.97 (PASS) · Context Precision: 0.93<br>
-                                <button type="button" class="preset-btn" style="margin-top: 6px;" onclick="triggerFlywheelLog()">👎 Simular reporte → mandar al Golden Dataset</button>
-                                <div id="flywheel-feedback-log" style="margin-top: 5px; color: #94a3b8;">Estado: esperando feedback de usuario o lingüista...</div>
+                                Faithfulness: 0.97 (PASS) · Contexto: 0.93<br>
+                                <button type="button" class="preset-btn" style="margin-top: 7px;" onclick="triggerFlywheelLog()">Simular reporte → mandar al Golden Dataset</button>
+                                <div id="flywheel-feedback-log" style="margin-top: 6px; color: var(--text-secondary);">Estado: esperando feedback...</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Weekly review -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; padding: 1.15rem 1.4rem;">
-                    <h4 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff; margin-bottom: 0.65rem;">☕ Qué mirás en Langfuse todas las semanas</h4>
-                    <div style="background: rgba(139, 92, 246, 0.09); border-left: 4px solid var(--color-purple); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45; margin-bottom: 0.65rem;">
-                        <strong>1. Buscar el origen real (Span 1 vs. Span 2):</strong> Si reportan un error, mirás si el buscador trajo malos fragmentos (Span 1) o si falló la respuesta del modelo (Span 2).
-                    </div>
-                    <div style="background: rgba(239, 68, 68, 0.09); border-left: 4px solid var(--color-red); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45; margin-bottom: 0.65rem;">
-                        <strong>2. Detectar Model Drift:</strong> Si el promedio semanal de <em>Faithfulness</em> cae sin que hayan subido código nuevo, detectás cambios del proveedor de inmediato.
-                    </div>
-                    <div style="background: rgba(245, 158, 11, 0.09); border-left: 4px solid var(--color-amber); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45;">
-                        <strong>3. Costo por flujo y latencia P95:</strong> Validás cuánto gasta cada área, si el router realmente manda la mayoría por Flash y que el 95% no espere de más.
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3 class="card-title">
+                        <i data-lucide="eye" class="icon-sm" style="color: var(--color-amber);"></i>
+                        Chequeo semanal en Langfuse
+                    </h3>
+                    <div class="stack-list">
+                        <div class="clean-item accent-purple">
+                            <strong>1. Aislar Span 1 vs. Span 2</strong>
+                            <span class="item-meta">Ver si falló la búsqueda vectorial (Span 1) o la respuesta del modelo (Span 2).</span>
+                        </div>
+                        <div class="clean-item accent-red">
+                            <strong>2. Detectar Model Drift</strong>
+                            <span class="item-meta">Si cae Fidelidad sin cambios de código, el proveedor varió comportamiento.</span>
+                        </div>
+                        <div class="clean-item accent-amber">
+                            <strong>3. Costo por flujo y P95</strong>
+                            <span class="item-meta">Controlar gasto por área, filtro del router y demora máxima.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1146,44 +1219,47 @@
         <!-- SLIDE 12: INTERVIEW STRATEGY & LOCALIZATION BACKGROUND -->
         <div class="slide" id="slide-12">
             <h2 class="slide-title">Cómo encarar entrevistas técnicas y defender tu perfil</h2>
-            <p class="slide-subtitle">Cómo ordenar respuestas cuando no te piden código y cómo traducir tu experiencia en Localización a IA</p>
-            <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En entrevistas de producto/proyecto nadie espera que sepas programar. Quieren ver cómo investigás un problema antes de pedir cambios, qué elegís resignar (<em>trade-off</em>) y cómo medís si funcionó.
-            </div>
-            
+            <p class="slide-subtitle">No esperan código: evalúan cómo investigás con datos, qué trade-off aceptás y cómo medís impacto.</p>
+
             <div class="grid-2">
-                <!-- Left: Structure -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(245,158,11,0.3);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-amber); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="award" class="icon-sm"></i> Cómo ordenar tus respuestas
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.28);">
+                    <h3 class="card-title" style="color: var(--color-amber);">
+                        <i data-lucide="award" class="icon-sm"></i>
+                        Estructura en 3 pasos
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.79rem;">
-                        <div style="background: rgba(245,158,11,0.09); border-left: 3px solid var(--color-amber); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fde68a;">1. Qué revisarías primero con datos:</strong> <em>"Antes de cambiar el modelo o tocar prompts, reviso trazas en Langfuse y hablo con usuarios para separar falla técnica de fricción de uso."</em>
+                    <div class="stack-list">
+                        <div class="clean-item accent-amber">
+                            <strong>1. Diagnóstico con datos</strong>
+                            <span class="item-meta">Cruzar trazas en Langfuse y hablar con usuarios antes de pedir cambios de modelo o prompt.</span>
                         </div>
-                        <div style="background: rgba(59,130,246,0.09); border-left: 3px solid var(--color-blue); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #93c5fd;">2. Qué cambio proponés y qué trade-off aceptás:</strong> <em>"Pruebo un Spike corto de 1 semana o aplico Routing por categoría, aclarando qué dejamos afuera en esta etapa."</em>
+                        <div class="clean-item accent-blue">
+                            <strong>2. Propuesta y trade-off</strong>
+                            <span class="item-meta">Proponer un Spike de 1 semana o Routing por categoría, aclarando qué queda afuera hoy.</span>
                         </div>
-                        <div style="background: rgba(16,185,129,0.09); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #6ee7b7;">3. Cómo medís si sirvió:</strong> <em>"Defino de entrada el indicador de corte: adopción semanal, calidad en Evals o baja en costo por consulta."</em>
+                        <div class="clean-item accent-green">
+                            <strong>3. Métrica de corte</strong>
+                            <span class="item-meta">Definir de entrada cómo medís éxito: adopción semanal, nota en Evals o costo por consulta.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Localization Background -->
-                <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(139,92,246,0.32);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: #c4b5fd; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="sparkles" class="icon-sm"></i> Lo que ya traés de Localización (y suma directo en IA)
+                <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.28);">
+                    <h3 class="card-title" style="color: #c4b5fd;">
+                        <i data-lucide="briefcase" class="icon-sm"></i>
+                        Tu experiencia en Localización → IA
                     </h3>
-                    <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.79rem;">
-                        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #fde68a;">Glosarios y QA lingüístico →</strong> <em>Contexto y rúbricas de evaluación</em>. Ya sabés cómo definir qué es una respuesta fiel vs. ambigua.
+                    <div class="stack-list">
+                        <div class="clean-item accent-amber">
+                            <strong>Glosarios y QA lingüístico → Evals</strong>
+                            <span class="item-meta">Criterio directo para armar rúbricas, detectar ambigüedades y curar contextos.</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #93c5fd;">Coordinar traductores y entregas →</strong> <em>Flujos Human-in-the-Loop (HITL)</em>, acuerdos de servicio (SLAs) y alineación entre equipos.
+                        <div class="clean-item accent-blue">
+                            <strong>Coordinar traductores → Flujos HITL</strong>
+                            <span class="item-meta">Gestión de revisores humanos, SLAs y alineación entre equipos técnicos y negocio.</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #6ee7b7;">Proyectos multilingües →</strong> Prever mayor gasto de tokens en ES/PT frente a inglés y cuidar matices culturales en salidas.
+                        <div class="clean-item accent-green">
+                            <strong>Proyectos multilingües → FinOps y sesgos</strong>
+                            <span class="item-meta">Prever el gasto extra de tokens en ES/PT frente a inglés y cuidar matices culturales.</span>
                         </div>
                     </div>
                 </div>
@@ -1193,49 +1269,53 @@
         <!-- SLIDE 13: REAL INTERVIEW DILEMMA 1 (LOW ADOPTION & BUDGET) -->
         <div class="slide" id="slide-13">
             <h2 class="slide-title">Caso de entrevista 1: Baja adopción y presupuesto en riesgo</h2>
-            <p class="slide-subtitle">Simulá la auditoría a la izquierda y elegí cuál de las 3 respuestas defenderías en una entrevista</p>
-            <div class="simple-banner">
-                <strong>💡 La pregunta:</strong> <em>"Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie del equipo lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?"</em>
+            <p class="slide-subtitle">Auditá el tablero a la izquierda y elegí qué estrategia defenderías.</p>
+
+            <div class="case-quote">
+                <strong>Escenario:</strong> "Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?"
             </div>
-            
+
             <div class="grid-2">
-                <!-- Left: Adoption Monitor -->
-                <div class="glass-card" style="padding: 1.1rem 1.35rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.55rem;">
-                        <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: var(--color-amber); display: flex; align-items: center; gap: 0.45rem;">
-                            <i data-lucide="bar-chart-2" class="icon-sm"></i> Tablero Adopción y Fricción
-                        </h3>
-                        <button type="button" class="btn-nav" onclick="resetAdoptionSim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
-                    </div>
-                    
-                    <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 0.85rem; border-radius: 10px; text-align: center; margin-bottom: 0.7rem;">
-                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">USO SEMANAL ACTUAL</p>
-                        <p style="font-size: 1.9rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12%</p>
-                        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.4;" id="sim-adopt-lbl">1° Tocá "Auditar uso" para cruzar Langfuse y charlas con usuarios.</p>
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+                            <h3 class="card-title" style="color: var(--color-amber); margin-bottom: 0;">
+                                <i data-lucide="bar-chart-2" class="icon-sm"></i>
+                                Tablero Adopción y Fricción
+                            </h3>
+                            <button type="button" class="btn-nav" onclick="resetAdoptionSim()" style="padding: 5px 10px; font-size: 0.74rem;">
+                                <i data-lucide="rotate-ccw" class="icon-xs"></i> Reiniciar
+                            </button>
+                        </div>
+
+                        <div style="background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.07); padding: 1.05rem; border-radius: 12px; text-align: center; margin-bottom: 1rem;">
+                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.25rem;">USO SEMANAL ACTUAL</p>
+                            <p style="font-size: 1.9rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12%</p>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.42;" id="sim-adopt-lbl">1° Tocá "Auditar uso" para cruzar Langfuse y entrevistas cortas.</p>
+                        </div>
                     </div>
 
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">1. Auditar uso</button>
-                        <button type="button" class="btn-nav" id="btn-fix-adopt" onclick="applyAdoptionFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">2. Aplicar plan</button>
+                    <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+                        <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); flex: 1; justify-content: center;">1. Auditar uso</button>
+                        <button type="button" class="btn-nav" id="btn-fix-adopt" onclick="applyAdoptionFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Aplicar plan</button>
                     </div>
                 </div>
 
-                <!-- Right: 3 Neutral Plausible Options (B is best) -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1.35rem;">
-                    <div class="chat-container" id="chat-c1" style="height: 138px; margin-bottom: 0.55rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="chat-container" id="chat-c1">
                         <div class="chat-bubble mentor">
-                            <strong>Entrevistador:</strong> "El bot pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"
+                            <strong>Entrevistador:</strong> "Solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"
                         </div>
                     </div>
                     <div class="roleplay-options">
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('a', this)">
-                            <strong>Opción A:</strong> "Pido un mail de dirección y armo capacitaciones obligatorias para empujar el uso."
+                            <strong>Opción A:</strong> "Pido un mail de dirección y capacitaciones obligatorias para empujar el uso."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('b', this)">
-                            <strong>Opción B:</strong> "Cruzo Langfuse con 8–10 entrevistas cortas para ver dónde se traban, llevo el bot a un flujo en Jira con streaming y bajo el gasto con Routing/Batch."
+                            <strong>Opción B:</strong> "Cruzo Langfuse con 8-10 charlas cortas, llevo el flujo dentro de Jira con streaming y bajo costo con Routing/Batch."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('c', this)">
-                            <strong>Opción C:</strong> "Pido 2 meses más para migrar a un modelo más potente y sumar varias integraciones antes de volver a medir."
+                            <strong>Opción C:</strong> "Pido 2 meses más para migrar a un modelo más potente y sumar integraciones antes de medir."
                         </button>
                     </div>
                 </div>
@@ -1245,58 +1325,60 @@
         <!-- SLIDE 14: REAL INTERVIEW DILEMMA 2 (MODEL DRIFT + BONUS) -->
         <div class="slide" id="slide-14">
             <h2 class="slide-title">Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</h2>
-            <p class="slide-subtitle">Un cambio a un modelo más barato dejó los tests de software en verde, pero rompió términos clave</p>
-            <div class="simple-banner">
-                <strong>💡 La pregunta:</strong> <em>"Migramos a un modelo más económico para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores de glosario y quejas de clientes. ¿Qué hacés hoy?"</em>
+            <p class="slide-subtitle">Un cambio a modelo económico dejó tests en verde, pero degradó terminología clave.</p>
+
+            <div class="case-quote">
+                <strong>Escenario:</strong> "Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?"
             </div>
-            
+
             <div class="grid-2">
-                <!-- Left: Drift Monitor + Collapsible Extra -->
-                <div class="glass-card" style="padding: 1.1rem 1.35rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: var(--color-purple); display: flex; align-items: center; gap: 0.45rem;">
-                                <i data-lucide="trending-down" class="icon-sm"></i> Calidad y Drift en Evals
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+                            <h3 class="card-title" style="color: var(--color-purple); margin-bottom: 0;">
+                                <i data-lucide="trending-down" class="icon-sm"></i>
+                                Calidad y Drift en Evals
                             </h3>
-                            <button type="button" class="btn-nav" onclick="resetDriftSim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
-                        </div>
-                        
-                        <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 0.75rem; border-radius: 10px; text-align: center; margin-bottom: 0.6rem;">
-                            <p style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">FIDELIDAD EN TERMINOLOGÍA</p>
-                            <p style="font-size: 1.85rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-drift-val">0.64 ⚠️</p>
-                            <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.35;" id="sim-drift-log">1° Tocá "Simular caída" para ver qué muestra el Golden Dataset.</p>
+                            <button type="button" class="btn-nav" onclick="resetDriftSim()" style="padding: 5px 10px; font-size: 0.74rem;">
+                                <i data-lucide="rotate-ccw" class="icon-xs"></i> Reiniciar
+                            </button>
                         </div>
 
-                        <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.55rem;">
-                            <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center; font-size: 0.75rem;">1. Simular caída</button>
-                            <button type="button" class="btn-nav" id="btn-fix-drift" onclick="applyDriftFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center; font-size: 0.75rem;">2. Rollback + Routing</button>
+                        <div style="background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.07); padding: 0.95rem; border-radius: 12px; text-align: center; margin-bottom: 0.85rem;">
+                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.2rem;">FIDELIDAD EN TERMINOLOGÍA</p>
+                            <p style="font-size: 1.85rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-drift-val">0.64</p>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem; line-height: 1.4;" id="sim-drift-log">1° Tocá "Simular caída" para revisar el Golden Dataset.</p>
+                        </div>
+
+                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                            <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center;">1. Simular caída</button>
+                            <button type="button" class="btn-nav" id="btn-fix-drift" onclick="applyDriftFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Rollback + Routing</button>
                         </div>
                     </div>
 
-                    <div style="border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 0.45rem;">
-                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">⚡ Extra: si el Director pide un agente en 30 días sin datos limpios</button>
-                        <div id="bonus-case-box" style="display: none; margin-top: 0.4rem; font-size: 0.74rem; color: #cbd5e1; background: rgba(245,158,11,0.08); border-left: 3px solid var(--color-amber); padding: 0.5rem 0.65rem; border-radius: 6px; line-height: 1.4;">
-                            <strong>Cómo responder sin decir "no se puede":</strong> Proponés un <strong>Discovery Spike de 1 semana</strong> con 30 casos reales + una alternativa <em>Configure/Buy</em> rápida mientras ordenan los datos y validan en <strong>Shadow Mode</strong>.
+                    <div style="border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 0.65rem;">
+                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">Extra: agente en 30 días sin datos limpios</button>
+                        <div id="bonus-case-box" style="display: none; margin-top: 0.55rem; font-size: 0.8rem; color: #cbd5e1; background: rgba(245,158,11,0.08); border-left: 3px solid var(--color-amber); padding: 0.6rem 0.75rem; border-radius: 6px; line-height: 1.45;">
+                            <strong>Respuesta:</strong> Spike de 5 días con 30 casos reales + vía Configure/Buy mientras ordenan datos en Shadow Mode.
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: 3 Neutral Plausible Options (C is best) -->
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1.35rem;">
-                    <div class="chat-container" id="chat-c2" style="height: 138px; margin-bottom: 0.55rem;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="chat-container" id="chat-c2">
                         <div class="chat-bubble mentor">
-                            <strong>Entrevistador:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"
+                            <strong>Entrevistador:</strong> "Ahorramos 60% y pasan los tests, pero fallan términos legales. ¿Qué hacés?"
                         </div>
                     </div>
                     <div class="roleplay-options">
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('a', this)">
-                            <strong>Opción A:</strong> "Volver el 100% del tráfico al modelo anterior y dar de baja el cambio de ahorro."
+                            <strong>Opción A:</strong> "Volver el 100% al modelo anterior y suspender el ahorro."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('b', this)">
-                            <strong>Opción B:</strong> "Dejar el modelo más económico y pedirle a lingüistas que revisen a mano el 100% de las salidas durante un mes."
+                            <strong>Opción B:</strong> "Dejar el modelo económico y revisar a mano el 100% durante un mes."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('c', this)">
-                            <strong>Opción C:</strong> "Revertir con feature flag solo el flujo de terminología crítica, correr el Golden Dataset por categoría en Langfuse y dejar el modelo chico únicamente donde supere 0.90, con alertas de Drift."
+                            <strong>Opción C:</strong> "Revertir con feature flag el flujo crítico, auditar por categoría en Langfuse y dejar modelo chico donde supere 0.90."
                         </button>
                     </div>
                 </div>
@@ -1305,46 +1387,46 @@
 
         <!-- SLIDE 15: CLOSING & NEXT STEPS -->
         <div class="slide" id="slide-15">
-            <div class="glass-card text-center" style="max-width: 960px; padding: 1.6rem 2.1rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 0.55rem;">🎓 FIN DEL PROGRAMA · 4 DE 4</span>
-                <h2 class="slide-title" style="font-size: 2.05rem; margin-bottom: 0.4rem;">Cierre del programa y próximos pasos</h2>
-                <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.48; max-width: 760px; margin: 0 auto 0.9rem;">
-                    Ya tenés el mapa completo para sentarte en una mesa técnica hablando el mismo idioma que el equipo de desarrollo: cómo trabajan, qué hace un RAG o un agente por dentro, cuánto cuesta operarlo y cómo se defiende en producción.
+            <div class="glass-card text-center" style="max-width: 980px; padding: 2.25rem 2.6rem;">
+                <span class="pill-tag" style="margin-bottom: 0.75rem;">FIN DEL PROGRAMA · 4 DE 4</span>
+                <h2 class="slide-title" style="font-size: 2.15rem; margin-bottom: 0.65rem;">Cierre del programa y próximos pasos</h2>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.55; max-width: 720px; margin: 0 auto 1.5rem;">
+                    Mapa completo para conversar con desarrollo, validar presupuestos y defender decisiones de producto con IA en producción.
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; text-align: left; margin-bottom: 0.95rem;">
-                    <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 9px; padding: 0.55rem 0.7rem;">
-                        <strong style="color: #60a5fa; font-size: 0.74rem; display: block;">✓ SESIÓN 1</strong>
-                        <span style="font-size: 0.74rem; color: #e2e8f0;">APIs REST, Git, CI/CD, Cloud/AWS &amp; Agile</span>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; text-align: left; margin-bottom: 1.35rem;">
+                    <div style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.25); border-radius: 10px; padding: 0.75rem 0.85rem;">
+                        <strong style="color: #60a5fa; font-size: 0.73rem; display: block; margin-bottom: 0.25rem;">SESIÓN 1</strong>
+                        <span style="font-size: 0.8rem; color: #e2e8f0; line-height: 1.4;">APIs REST, Git, CI/CD, AWS y Agile</span>
                     </div>
-                    <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 9px; padding: 0.55rem 0.7rem;">
-                        <strong style="color: #34d399; font-size: 0.74rem; display: block;">✓ SESIÓN 2</strong>
-                        <span style="font-size: 0.74rem; color: #e2e8f0;">LLMs, Tokens, Embeddings, Pinecone &amp; RAG</span>
+                    <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; padding: 0.75rem 0.85rem;">
+                        <strong style="color: #34d399; font-size: 0.73rem; display: block; margin-bottom: 0.25rem;">SESIÓN 2</strong>
+                        <span style="font-size: 0.8rem; color: #e2e8f0; line-height: 1.4;">LLMs, Embeddings, Pinecone y RAG</span>
                     </div>
-                    <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 9px; padding: 0.55rem 0.7rem;">
-                        <strong style="color: #c084fc; font-size: 0.74rem; display: block;">✓ SESIÓN 3</strong>
-                        <span style="font-size: 0.74rem; color: #e2e8f0;">Agentes ReAct, MCP, Pydantic, HITL &amp; Antigravity</span>
+                    <div style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.25); border-radius: 10px; padding: 0.75rem 0.85rem;">
+                        <strong style="color: #c084fc; font-size: 0.73rem; display: block; margin-bottom: 0.25rem;">SESIÓN 3</strong>
+                        <span style="font-size: 0.8rem; color: #e2e8f0; line-height: 1.4;">Agentes ReAct, MCP, HITL y Antigravity</span>
                     </div>
-                    <div style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.45); border-radius: 9px; padding: 0.55rem 0.7rem;">
-                        <strong style="color: #fbbf24; font-size: 0.74rem; display: block;">✓ SESIÓN 4</strong>
-                        <span style="font-size: 0.74rem; color: #ffffff;">FinOps/TCO, Build vs. Buy, Rollout, Evals &amp; Casos</span>
-                    </div>
-                </div>
-
-                <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(245,158,11,0.28); border-radius: 12px; padding: 0.75rem 0.95rem; text-align: left; margin-bottom: 1rem;">
-                    <div style="font-size: 0.78rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.45rem;">🗓️ Cómo seguir practicando este mes</div>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55rem; font-size: 0.73rem; color: #e2e8f0; line-height: 1.38;">
-                        <div><strong style="color: #93c5fd;">Semana 1:</strong> Bajá a 1 página tu caso práctico (usando el Mock PRD de S2 y la cuenta de TCO/tiempo de hoy).</div>
-                        <div><strong style="color: #6ee7b7;">Semana 2:</strong> Ajustá CV y LinkedIn conectando tu experiencia en Localización con proyectos de IA y QA.</div>
-                        <div><strong style="color: #c4b5fd;">Semana 3:</strong> Repasá en voz alta cómo mostraste el flujo de Antigravity + AWS MCP en 2 minutos.</div>
-                        <div><strong style="color: #fde68a;">Semana 4:</strong> Volvé al Simulador S4 y practicá defender los dos casos de entrevista sin leer la respuesta.</div>
+                    <div style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.42); border-radius: 10px; padding: 0.75rem 0.85rem;">
+                        <strong style="color: #fbbf24; font-size: 0.73rem; display: block; margin-bottom: 0.25rem;">SESIÓN 4</strong>
+                        <span style="font-size: 0.8rem; color: #ffffff; line-height: 1.4;">FinOps/TCO, Rollout, Evals y Casos</span>
                     </div>
                 </div>
 
-                <div style="display: inline-flex; gap: 0.65rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="./actividad_practica_sesion_4.html" class="btn-nav" style="border-color: var(--color-green); color: #6ee7b7; background: rgba(16,185,129,0.12); text-decoration: none;"><i data-lucide="zap"></i> Abrir Simulador Práctico S4</a>
-                    <a href="./glosario_completo_sesion_4.html" class="btn-nav" style="border-color: var(--color-amber); color: var(--color-amber); text-decoration: none;"><i data-lucide="book-open"></i> Explorar Glosario S4</a>
-                    <a href="../index.html" class="btn-nav" style="text-decoration: none;"><i data-lucide="home"></i> Portal Principal</a>
+                <div style="background: rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; text-align: left; margin-bottom: 1.5rem;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.65rem;">Próximo mes · 4 pasos simples</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; font-size: 0.79rem; color: #cbd5e1; line-height: 1.45;">
+                        <div><strong style="color: #93c5fd; display: block; margin-bottom: 0.15rem;">Semana 1</strong>Armá en 1 página tu caso práctico con PRD y cuenta TCO.</div>
+                        <div><strong style="color: #6ee7b7; display: block; margin-bottom: 0.15rem;">Semana 2</strong>Conectá tu experiencia en Localización con proyectos de IA en CV y LinkedIn.</div>
+                        <div><strong style="color: #c4b5fd; display: block; margin-bottom: 0.15rem;">Semana 3</strong>Practicá explicar en 2 minutos el flujo Antigravity + AWS MCP.</div>
+                        <div><strong style="color: #fde68a; display: block; margin-bottom: 0.15rem;">Semana 4</strong>Repasá los 2 casos de entrevista en el Simulador S4.</div>
+                    </div>
+                </div>
+
+                <div style="display: inline-flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="./actividad_practica_sesion_4.html" class="btn-nav" style="border-color: var(--color-green); color: #6ee7b7; background: rgba(16,185,129,0.12); text-decoration: none;"><i data-lucide="zap" class="icon-sm"></i> Simulador Práctico S4</a>
+                    <a href="./glosario_completo_sesion_4.html" class="btn-nav" style="border-color: var(--color-amber); color: var(--color-amber); text-decoration: none;"><i data-lucide="book-open" class="icon-sm"></i> Glosario Completo S4</a>
+                    <a href="../index.html" class="btn-nav" style="text-decoration: none;"><i data-lucide="home" class="icon-sm"></i> Portal Principal</a>
                 </div>
             </div>
         </div>
@@ -1389,7 +1471,7 @@
 
             document.getElementById('btn-prev').disabled = (currentSlide === 1);
             document.getElementById('btn-next').disabled = (currentSlide === totalSlides);
-            
+
             if (currentSlide === 3) {
                 updateRouterSim();
             } else if (currentSlide === 6) {
@@ -1442,8 +1524,8 @@
             if (!slider) return;
             const pctSmall = parseInt(slider.value, 10);
             document.getElementById('router-pct-val').textContent = pctSmall + '%';
-            const baseCost = 1200; // 100% Frontier model
-            const smallUnitRatio = 0.05; // Small model costs ~5% of Frontier
+            const baseCost = 1200;
+            const smallUnitRatio = 0.05;
             const newCost = baseCost * ((pctSmall / 100) * smallUnitRatio + ((100 - pctSmall) / 100) * 1.0);
             const saved = baseCost - newCost;
             const savedPct = Math.round((saved / baseCost) * 100);
@@ -1453,9 +1535,9 @@
 
         // --- SLIDE 5: BUILD VS BUY MINI-ADVISOR ---
         const buildBuyCases = {
-            1: '<strong style="color: #93c5fd;">🛒 Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Poner ingenieros a mantener un transcriptor propio es desperdiciar presupuesto y tiempo de ingeniería; conviene una licencia corporativa.',
-            2: '<strong style="color: #fbbf24;">🧩 Conviene CONFIGURE (Managed + MCP) · ~2 semanas</strong> — Conectar Jira y glosarios mediante conectores MCP o AWS Bedrock KB te deja probar adopción e impacto real sin mantener servidores propios.',
-            3: '<strong style="color: #c4b5fd;">🏗️ Conviene BUILD vía Model Gateway (AWS Bedrock) · 8-12 semanas</strong> — A escala de 500k docs/mes y requisitos médicos, necesitás control propio de Model Routing, Batch API y Evals, usando un Gateway para no quedar atada a un proveedor.'
+            1: '<strong style="color: #93c5fd;">Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Mantener un transcriptor propio desperdicia tiempo de ingeniería frente a una licencia corporativa.',
+            2: '<strong style="color: #fbbf24;">Conviene CONFIGURE (Managed + MCP) · ~2 semanas</strong> — Conectar Jira y glosarios mediante conectores MCP o AWS Bedrock KB permite validar adopción sin mantener servidores propios.',
+            3: '<strong style="color: #c4b5fd;">Conviene BUILD vía Model Gateway (AWS Bedrock) · 8-12 semanas</strong> — A escala de 500k docs/mes y requisitos médicos, necesitás control propio de Model Routing, Batch API y Evals sin quedar atada a un proveedor.'
         };
         function selectBuildBuyCase(idx, btn) {
             const box = document.getElementById('bb-result');
@@ -1524,21 +1606,21 @@
                 risk: 'Sin impacto en el usuario final',
                 riskColor: '#6ee7b7',
                 gate: 'Acuerdo ≥ 90% vs. revisión humana',
-                action: 'Revisar diferencias en Langfuse y ajustar prompts antes de exponerlo.'
+                action: 'Revisar diferencias en Langfuse y ajustar prompts antes de abrirlo.'
             },
             2: {
                 traffic: '5% → 25% → 100% gradual',
                 risk: 'Acotado, con rollback en 1 clic',
                 riskColor: '#fde68a',
-                gate: 'Latencia P95 < 1.5s y costo en línea 7 días',
+                gate: 'Latencia P95 < 1.5s y costo estable 7 días',
                 action: 'Vigilar alertas de presupuesto y Drift con Feature Flags activas.'
             },
             3: {
-                traffic: '100% en vivo con 👍 / 👎',
-                risk: 'Ajuste continuo todas las semanas',
+                traffic: '100% en vivo con feedback',
+                risk: 'Ajuste continuo semanal',
                 riskColor: '#93c5fd',
                 gate: 'Cada error corregido suma al Golden Dataset',
-                action: 'Priorizar los temas con más pulgares abajo en el refinamiento semanal.'
+                action: 'Priorizar los temas con más reportes negativos en el refinamiento.'
             }
         };
         function selectRolloutPhase(phaseNum) {
@@ -1549,24 +1631,27 @@
             const p = rolloutPhases[phaseNum];
             const box = document.getElementById('rollout-detail');
             if (!p || !box) return;
-            box.innerHTML = `<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; font-size: 0.79rem;">
-                <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Quién lo ve</strong><span style="color: #f8fafc;">${p.traffic}</span></div>
-                <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Exposición</strong><span style="color: ${p.riskColor};">${p.risk}</span></div>
-                <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Criterio para avanzar</strong><span style="color: #f8fafc;">${p.gate}</span></div>
-                <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Qué hacés vos</strong><span style="color: #cbd5e1;">${p.action}</span></div>
+            box.innerHTML = `<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; font-size: 0.85rem; line-height: 1.48;">
+                <div><strong style="color: var(--color-amber); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">QUIÉN LO VE</strong><span style="color: #f8fafc;">${p.traffic}</span></div>
+                <div><strong style="color: var(--color-blue); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">EXPOSICIÓN</strong><span style="color: ${p.riskColor};">${p.risk}</span></div>
+                <div><strong style="color: var(--color-purple); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">CRITERIO DE AVANCE</strong><span style="color: #f8fafc;">${p.gate}</span></div>
+                <div><strong style="color: var(--color-green); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">TU TAREA COMO PM</strong><span style="color: #cbd5e1;">${p.action}</span></div>
             </div>`;
         }
 
         // --- SLIDE 8: UX LATENCY DEMO ---
         function runUxLatencyDemo(mode) {
             const box = document.getElementById('ux-demo-box');
+            document.querySelectorAll('#slide-8 [data-ux]').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-ux') === mode);
+            });
             if (!box) return;
             if (mode === 'slow') {
                 box.style.color = '#fca5a5';
-                box.innerHTML = '⏳ [0.0s - 12.0s] Pantalla congelada sin aviso mientras consulta API 1 → API 2 → API 3 en fila.<br>🚪 Resultado: muchos usuarios cierran la pestaña antes de ver respuesta.';
+                box.innerHTML = '[0.0s - 12.0s] Pantalla congelada sin aviso mientras consulta API 1 → API 2 → API 3 en fila.<br>Resultado: muchos usuarios cierran la pestaña antes de ver respuesta.';
             } else {
                 box.style.color = '#6ee7b7';
-                box.innerHTML = '⚡ [0.3s] Aviso: "Consultando Jira + glosario en paralelo..."<br>⚡ [0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."';
+                box.innerHTML = '[0.3s] Consultando Jira + glosario en paralelo...<br>[0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."';
             }
         }
 
@@ -1575,11 +1660,11 @@
             const fidelidad = parseFloat(document.getElementById('eval-fidelidad').value);
             const contexto = parseFloat(document.getElementById('eval-contexto').value);
             const relevancia = parseFloat(document.getElementById('eval-relevancia').value);
-            
+
             document.getElementById('eval-fidelidad-val').textContent = fidelidad.toFixed(1);
             document.getElementById('eval-contexto-val').textContent = contexto.toFixed(1);
             document.getElementById('eval-relevancia-val').textContent = relevancia.toFixed(1);
-            
+
             const avgScore = (fidelidad + contexto + relevancia) / 3;
             const statusTag = document.getElementById('eval-status');
             const critique = document.getElementById('eval-critique');
@@ -1635,7 +1720,7 @@
             const log = document.getElementById('flywheel-feedback-log');
             if (!log) return;
             log.style.color = '#6ee7b7';
-            log.textContent = '✅ Caso #S4-PROD-992 guardado con la corrección → sumado al Golden Dataset.';
+            log.textContent = 'PASS: Caso #S4-PROD-992 guardado con la corrección → sumado al Golden Dataset.';
         }
 
         // --- SLIDE 13: INTERVIEW CASE 1 (ADOPTION & BUDGET - OPTION B WINS) ---
@@ -1652,8 +1737,8 @@
 
             val.style.color = 'var(--color-red)';
             val.textContent = 'Bajo · En riesgo';
-            lbl.textContent = '⚠️ Hallazgos: espera larga sin streaming, molesta salir de Jira y varios siguen usando cuentas personales.';
-            chat.innerHTML += '<div class="chat-bubble pm"><strong>Auditoría (Langfuse + entrevistas cortas):</strong> No es un problema de precisión del modelo: es fricción de uso y costo alto sin Routing.</div>';
+            lbl.textContent = 'Hallazgos: espera larga sin streaming, fricción al salir de Jira y uso de cuentas personales.';
+            chat.innerHTML += '<div class="chat-bubble pm"><strong>Auditoría (Langfuse + entrevistas cortas):</strong> No es un problema de precisión: es fricción de uso y costo alto sin Routing.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1666,8 +1751,8 @@
 
             val.style.color = 'var(--color-green)';
             val.textContent = 'Uso sostenido';
-            lbl.textContent = '✅ Acceso directo en Jira + Streaming (<1s) + Model Routing/Batch para bajar factura mensual.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Resultado:</strong> Sube el uso recurrente en el equipo piloto, baja el Shadow AI y Finanzas aprueba continuar un trimestre más.</div>';
+            lbl.textContent = 'Acceso directo en Jira + Streaming (<1s) + Model Routing/Batch para bajar factura mensual.';
+            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Resultado:</strong> Sube el uso recurrente en el equipo piloto, baja el Shadow AI y Finanzas aprueba continuar un trimestre más.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1676,14 +1761,14 @@
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Un mail de dirección empuja el uso una semana por obligación y después vuelve a caer porque la fricción sigue igual y el gasto también.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Un mail de dirección empuja el uso una semana por obligación y luego cae porque la fricción y el gasto siguen iguales.</div>';
             } else if (choice === 'b') {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "1) Cruzo Langfuse con 8–10 charlas cortas para ver dónde abandonan; 2) Llevo el asistente a un flujo concreto dentro de Jira con streaming; 3) Bajo el gasto con Model Routing y Batch para defender el presupuesto."</div>';
+                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "Cruzo Langfuse con 8-10 charlas cortas, llevo el flujo dentro de Jira con streaming y bajo el costo con Model Routing y Batch."</div>';
                 applyAdoptionFix();
             } else {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Finanzas corta en 30 días: pedir 2 meses más y un modelo más caro sin entender por qué no lo usan acelera el cierre.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Finanzas corta en 30 días: pedir 2 meses más y un modelo más caro sin entender por qué no lo usan acelera el cierre.</div>';
             }
             chat.scrollTop = chat.scrollHeight;
         }
@@ -1692,10 +1777,10 @@
             adoptionSimRunning = false;
             document.getElementById('sim-adopt-val').textContent = '12%';
             document.getElementById('sim-adopt-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-adopt-lbl').textContent = '1° Tocá "Auditar uso" para cruzar Langfuse y charlas con usuarios.';
+            document.getElementById('sim-adopt-lbl').textContent = '1° Tocá "Auditar uso" para cruzar Langfuse y entrevistas cortas.';
             document.getElementById('btn-run-adopt').disabled = false;
             document.getElementById('btn-fix-adopt').disabled = true;
-            document.getElementById('chat-c1').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "El bot pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"</div>';
+            document.getElementById('chat-c1').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"</div>';
             document.querySelectorAll('#slide-13 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 
@@ -1712,8 +1797,8 @@
             const chat = document.getElementById('chat-c2');
 
             val.style.color = 'var(--color-red)';
-            val.textContent = '0.64 ❌';
-            log.textContent = '⚠️ Tests de código en verde, pero Fidelidad cayó de 0.94 a 0.64 en términos legales bajo NDA.';
+            val.textContent = '0.64 (ALERTA)';
+            log.textContent = 'Tests de código en verde, pero Fidelidad cayó de 0.94 a 0.64 en términos legales bajo NDA.';
             chat.innerHTML += '<div class="chat-bubble pm"><strong>Diagnóstico Evals:</strong> Los unit tests solo validan formato JSON, no sentido lingüístico. El modelo chico omitió reglas del glosario ES/PT.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
@@ -1726,9 +1811,9 @@
             const chat = document.getElementById('chat-c2');
 
             val.style.color = 'var(--color-green)';
-            val.textContent = '0.95 ✅';
-            log.textContent = '✅ Routing selectivo (modelo chico donde supera 0.90 / grande en Legal) + alerta de Drift en CI/CD.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución aplicada:</strong> Se frenan los errores de localización sin perder gran parte del ahorro en consultas simples.</div>';
+            val.textContent = '0.95 (OK)';
+            log.textContent = 'Routing selectivo (modelo chico donde supera 0.90 / grande en Legal) + alerta de Drift en CI/CD.';
+            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Solución aplicada:</strong> Se frenan los errores de localización sin perder gran parte del ahorro en consultas simples.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1737,13 +1822,13 @@
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Volver el 100% para siempre apaga el incendio hoy, pero perdés todo el ahorro buscado y seguís sin Evals para detectar el próximo Drift.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Volver el 100% apaga el incendio hoy, pero perdés el ahorro buscado y seguís sin Evals para detectar el próximo Drift.</div>';
             } else if (choice === 'b') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Revisar el 100% a mano arma un cuello de botella humano que sale más caro que usar el modelo grande.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Revisar el 100% a mano arma un cuello de botella humano más caro que el modelo grande.</div>';
             } else {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "1) Rollback con feature flag solo en terminología crítica; 2) Corro el Golden Dataset por categoría en Langfuse; 3) Dejo modelo chico donde saca ≥ 0.90 y pongo alerta de Drift."</div>';
+                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "Rollback con feature flag solo en terminología crítica, corro el Golden Dataset por categoría en Langfuse y dejo modelo chico donde supere 0.90."</div>';
                 applyDriftFix();
             }
             chat.scrollTop = chat.scrollHeight;
@@ -1751,12 +1836,12 @@
 
         function resetDriftSim() {
             driftSimRunning = false;
-            document.getElementById('sim-drift-val').textContent = '0.64 ⚠️';
+            document.getElementById('sim-drift-val').textContent = '0.64';
             document.getElementById('sim-drift-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-drift-log').textContent = '1° Tocá "Simular caída" para ver qué muestra el Golden Dataset.';
+            document.getElementById('sim-drift-log').textContent = '1° Tocá "Simular caída" para revisar el Golden Dataset.';
             document.getElementById('btn-run-drift').disabled = false;
             document.getElementById('btn-fix-drift').disabled = true;
-            document.getElementById('chat-c2').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"</div>';
+            document.getElementById('chat-c2').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Ahorramos 60% y pasan los tests, pero fallan términos legales. ¿Qué hacés?"</div>';
             document.querySelectorAll('#slide-14 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 
@@ -1780,7 +1865,6 @@
             --anabela-accent-rgb: 245, 158, 11;
         }
 
-        /* Ambient Interactive Canvas */
         #anabela-ambient-canvas {
             position: fixed;
             top: 0;
@@ -1789,10 +1873,9 @@
             height: 100vh;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.65;
+            opacity: 0.32;
         }
 
-        /* Floating Top HUD Bar */
         .anabela-top-hud {
             position: fixed;
             top: 10px;
@@ -1811,21 +1894,21 @@
             justify-content: space-between;
             padding: 0 1rem;
             z-index: 250;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(var(--anabela-accent-rgb), 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(var(--anabela-accent-rgb), 0.1);
             transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .anabela-hud-left, .anabela-hud-right {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.55rem;
         }
 
         .anabela-hud-btn {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 13px;
+            padding: 6px 12px;
             border-radius: 999px;
             font-size: 0.76rem;
             font-weight: 600;
@@ -1844,7 +1927,7 @@
             border-color: var(--anabela-accent);
             color: #ffffff;
             transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(var(--anabela-accent-rgb), 0.25);
+            box-shadow: 0 4px 14px rgba(var(--anabela-accent-rgb), 0.22);
         }
 
         .anabela-hud-badge {
@@ -1857,8 +1940,8 @@
             font-weight: 700;
             letter-spacing: 0.03em;
             color: #ffffff;
-            background: linear-gradient(135deg, rgba(var(--anabela-accent-rgb), 0.25), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(var(--anabela-accent-rgb), 0.4);
+            background: linear-gradient(135deg, rgba(var(--anabela-accent-rgb), 0.22), rgba(139, 92, 246, 0.18));
+            border: 1px solid rgba(var(--anabela-accent-rgb), 0.35);
         }
 
         .anabela-hud-pulse {
@@ -1880,32 +1963,32 @@
         }
         .nav-bar {
             height: 56px !important;
-            background: rgba(8, 12, 22, 0.88) !important;
+            background: rgba(8, 12, 22, 0.9) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
             border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         }
         .slide {
-            padding-top: 3.7rem !important;
-            padding-bottom: 1.1rem !important;
+            padding-top: 4.5rem !important;
+            padding-bottom: 1.75rem !important;
         }
         @media (min-width: 769px) {
             .slide > *:last-child {
-                margin-bottom: 0.4rem !important;
+                margin-bottom: 0.5rem !important;
             }
         }
         @media (max-height: 820px) and (min-width: 769px) {
             .slide {
-                padding-top: 3.5rem !important;
-                padding-bottom: 0.75rem !important;
+                padding-top: 4rem !important;
+                padding-bottom: 1.1rem !important;
             }
             .slide-title {
-                font-size: 1.72rem !important;
-                margin-bottom: 0.2rem !important;
+                font-size: 1.85rem !important;
+                margin-bottom: 0.35rem !important;
             }
             .slide-subtitle {
-                font-size: 0.85rem !important;
-                margin-bottom: 0.7rem !important;
+                font-size: 0.9rem !important;
+                margin-bottom: 1.15rem !important;
             }
         }
 
@@ -1930,23 +2013,13 @@
             animation: anabelaSpringUp 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both;
         }
 
-        .glass-card {
-            background: rgba(15, 23, 42, 0.72) !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.09) !important;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-                        border-color 0.35s ease,
-                        box-shadow 0.35s ease !important;
-        }
-
         .glass-card::after {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(
                 520px circle at var(--mouse-x, 50%) var(--mouse-y, -200%),
-                rgba(var(--anabela-accent-rgb), 0.13),
+                rgba(var(--anabela-accent-rgb), 0.11),
                 transparent 45%
             );
             opacity: 0;
@@ -1962,11 +2035,10 @@
             z-index: 1;
         }
         .glass-card:hover {
-            border-color: rgba(var(--anabela-accent-rgb), 0.42) !important;
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(var(--anabela-accent-rgb), 0.14) !important;
+            border-color: rgba(var(--anabela-accent-rgb), 0.36) !important;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 26px rgba(var(--anabela-accent-rgb), 0.12) !important;
         }
 
-        /* Slide Overview Drawer Modal */
         .anabela-drawer-overlay {
             position: fixed;
             inset: 0;
@@ -2081,7 +2153,7 @@
                 padding: 4.3rem 1.6rem 5.5rem !important;
             }
             .slide-title {
-                font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
+                font-size: clamp(1.5rem, 3.5vw, 2.15rem) !important;
             }
             [style*="grid-template-columns: repeat(4"] {
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -2114,7 +2186,7 @@
                 height: calc(100dvh - 64px) !important;
             }
             .slide {
-                padding: 3.8rem 1rem 5.2rem !important;
+                padding: 3.9rem 1rem 5.2rem !important;
                 justify-content: flex-start !important;
             }
             .slide::before, .slide::after {
@@ -2123,21 +2195,21 @@
             .slide-title {
                 font-size: 1.45rem !important;
                 line-height: 1.2 !important;
-                margin-bottom: 0.4rem !important;
+                margin-bottom: 0.45rem !important;
             }
             .slide-subtitle {
-                font-size: 0.84rem !important;
-                line-height: 1.4 !important;
-                margin-bottom: 1rem !important;
+                font-size: 0.85rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 1.15rem !important;
             }
             .glass-card {
-                padding: 1rem !important;
+                padding: 1.15rem !important;
                 max-width: 100% !important;
             }
             .grid-2, .grid-3,
             [style*="grid-template-columns: repeat("] {
                 grid-template-columns: 1fr !important;
-                gap: 0.85rem !important;
+                gap: 0.95rem !important;
             }
             .nav-bar {
                 height: 64px !important;
@@ -2153,17 +2225,17 @@
         }
     </style>
 
-    <!-- Ambient Canvas -->
     <canvas id="anabela-ambient-canvas"></canvas>
 
-    <!-- Floating Top HUD -->
     <div class="anabela-top-hud" role="navigation" aria-label="Barra superior de sesión">
         <div class="anabela-hud-left">
             <a href="../index.html" class="anabela-hud-btn" title="Volver al Portal Principal">
-                ⬅ <span class="hud-label-hide-sm">Portal Principal</span>
+                <i data-lucide="arrow-left" class="icon-xs"></i>
+                <span class="hud-label-hide-sm">Portal Principal</span>
             </a>
             <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaDrawer()" title="Ver mapa de todas las diapositivas">
-                ☰ <span id="anabela-hud-counter">Slides</span>
+                <i data-lucide="layout-grid" class="icon-xs"></i>
+                <span id="anabela-hud-counter">Slides</span>
             </button>
         </div>
         <div class="anabela-hud-badge">
@@ -2172,23 +2244,26 @@
         </div>
         <div class="anabela-hud-right">
             <a href="./actividad_practica_sesion_4.html" class="anabela-hud-btn" title="Abrir Simulador Práctico de la Sesión 4">
-                🧪 <span class="hud-label-hide-sm">Simulador S4</span>
+                <i data-lucide="flask-conical" class="icon-xs"></i>
+                <span class="hud-label-hide-sm">Simulador S4</span>
             </a>
             <a href="./glosario_completo_sesion_4.html" class="anabela-hud-btn" title="Abrir Glosario Completo de la Sesión 4">
-                📖 <span class="hud-label-hide-sm">Glosario S4</span>
+                <i data-lucide="book-open" class="icon-xs"></i>
+                <span class="hud-label-hide-sm">Glosario S4</span>
             </a>
             <button type="button" class="anabela-hud-btn" onclick="window.toggleAnabelaFullscreen()" title="Pantalla Completa">
-                ⛶ <span class="hud-label-hide-sm"> Expandir</span>
+                <i data-lucide="maximize-2" class="icon-xs"></i>
+                <span class="hud-label-hide-sm">Expandir</span>
             </button>
         </div>
     </div>
 
-    <!-- Slide Overview Drawer Modal -->
     <div class="anabela-drawer-overlay" id="anabela-drawer-overlay" onclick="if(event.target===this) window.toggleAnabelaDrawer()">
         <div class="anabela-drawer-modal">
             <div class="anabela-drawer-header">
                 <div class="anabela-drawer-title">
-                    <span>🗂️ Mapa Interactivo de Diapositivas — Sesión 4</span>
+                    <i data-lucide="layers" class="icon-sm" style="color: var(--color-amber);"></i>
+                    <span>Mapa de diapositivas — Sesión 4</span>
                 </div>
                 <button type="button" class="anabela-drawer-close" onclick="window.toggleAnabelaDrawer()" aria-label="Cerrar">&times;</button>
             </div>
@@ -2198,6 +2273,10 @@
 
     <script id="anabela-motion-engine-js">
     (function() {
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
         const canvas = document.getElementById('anabela-ambient-canvas');
         if (canvas) {
             const ctx = canvas.getContext('2d');
@@ -2215,13 +2294,13 @@
                 mouse.y = e.clientY;
             }, { passive: true });
 
-            const count = window.innerWidth < 768 ? 24 : 48;
+            const count = window.innerWidth < 768 ? 20 : 38;
             const particles = Array.from({ length: count }, () => ({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.35,
-                vy: (Math.random() - 0.5) * 0.35,
-                r: Math.random() * 1.8 + 0.8
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                r: Math.random() * 1.6 + 0.7
             }));
 
             function renderParticles() {
@@ -2237,13 +2316,13 @@
                     const dym = p.y - mouse.y;
                     const distMouse = Math.sqrt(dxm * dxm + dym * dym);
                     if (distMouse < 140 && distMouse > 0) {
-                        p.x += (dxm / distMouse) * 0.45;
-                        p.y += (dym / distMouse) * 0.45;
+                        p.x += (dxm / distMouse) * 0.4;
+                        p.y += (dym / distMouse) * 0.4;
                     }
 
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(245, 158, 11, 0.45)';
+                    ctx.fillStyle = 'rgba(245, 158, 11, 0.4)';
                     ctx.fill();
 
                     for (let j = i + 1; j < particles.length; j++) {
@@ -2255,7 +2334,7 @@
                             ctx.beginPath();
                             ctx.moveTo(p.x, p.y);
                             ctx.lineTo(p2.x, p2.y);
-                            ctx.strokeStyle = 'rgba(245, 158, 11, ' + ((1 - dist / 130) * 0.12).toFixed(3) + ')';
+                            ctx.strokeStyle = 'rgba(245, 158, 11, ' + ((1 - dist / 130) * 0.1).toFixed(3) + ')';
                             ctx.lineWidth = 1;
                             ctx.stroke();
                         }
