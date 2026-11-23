@@ -571,452 +571,444 @@ const SESSION_3_DATA = {
 
 const SESSION_4_DATA = {
     "sessionNum": 4,
-    "title": "Liderazgo Ejecutivo de Productos de IA: FinOps, Build vs. Buy, Evals & Entrevistas",
-    "subtitle": "Guion completo paso a paso para la Sesión 4 (100% temas nuevos sin repetición de S1–S3), con calculadoras FinOps/TCO, lanzamiento gradual, AI Evals avanzadas y dilemas reales de PM Senior.",
+    "title": "Costos reales de IA, Lanzamiento, Evals y Entrevistas",
+    "subtitle": "Guion hablado paso a paso para la última sesión con Anabela: costos reales (Model Routing, Batch, TCO y Build vs. Buy), salida gradual, UX y riesgos 2026, Evals/Drift en Langfuse y dos casos reales de entrevista.",
     "accentHex": "#f59e0b",
     "accentRgb": "245, 158, 11",
-    "goal": "Cerrar el programa elevando a Anabela al rol ejecutivo de AI Product / Project Manager: decidir Build vs. Buy vs. Configure, optimizar costos con Model Routing y Batch API (-50%) sobre TCO real, lanzar sin riesgo (Shadow Mode, Canary y AI UX), diagnosticar la Tríada RAG, Trajectory Evals y Model Drift en Langfuse, y resolver dilemas reales de entrevista con trade-offs claros.",
+    "goal": "Cerrar el programa bajando a tierra cómo se decide, presupuesta, lanza y defiende un producto de IA en producción: Build vs. Buy vs. Configure, Model Routing y Batch API (-50%) sobre TCO real, cálculo honesto de capacidad liberada, Shadow Mode y Canary, UX y Spikes en Agile, Evals y Model Drift en Langfuse, y práctica con casos de entrevista reales.",
     "agenda": [
         {
             "time": "00 - 18 min",
-            "module": "FinOps Avanzado, Build vs. Buy & Business Case",
+            "module": "Costos reales, Build vs. Buy y tiempo del equipo",
             "slides": "Slides 1 a 6",
-            "focus": "Model Routing (80/20), Batch API (-50%), los 4 costos ocultos del TCO (incluyendo impuesto multilingüe), marco Build vs. Buy vs. Configure (Model Gateway) y Calculadora de ROI & Payback."
+            "focus": "Model Routing (80/20), Batch API (-50%), los 4 costos ocultos del TCO (incluyendo idioma ES/PT vs EN), cuándo comprar vs. construir y calculadora de capacidad liberada."
         },
         {
             "time": "18 - 33 min",
-            "module": "Lanzamiento Seguro, AI UX & Gobernanza 2026",
+            "module": "Salida gradual, UX y riesgos actuales",
             "slides": "Slides 7 a 8",
-            "focus": "Stepper de Shadow Mode → Canary Rollout → Data Flywheel, Token Streaming (< 1s), Agile Probabilístico (Discovery Spike) y gobernanza de Shadow AI, EU AI Act e IP."
+            "focus": "Shadow Mode → Canary → circuito de feedback, Token Streaming (< 1s), Discovery Spikes de 1 semana en Agile y riesgos reales hoy (Shadow AI, EU AI Act e IP)."
         },
         {
             "time": "33 - 45 min",
-            "module": "AI Evals Avanzados & Observabilidad en Langfuse",
+            "module": "AI Evals en la práctica y monitoreo en Langfuse",
             "slides": "Slides 9 a 11",
-            "focus": "Mapeo de Tríada RAG a tickets exactos de Backlog, Trajectory Evals de agentes, Model Drift con calibración SME y el ritual de 5 minutos en Langfuse."
+            "focus": "Qué parte del sistema tocar cuando baja cada métrica de la Tríada RAG, Trajectory Evals en agentes, Model Drift calibrado con criterio humano y revisión semanal en Langfuse."
         },
         {
             "time": "45 - 60 min",
-            "module": "Entrevistas Senior con Dilemas Reales & Plan 30 Días",
+            "module": "Entrevistas reales y cierre del programa",
             "slides": "Slides 12 a 15",
-            "focus": "Ventaja injusta desde Localización, simulacros de 3 opciones (Adopción 12% y Model Drift + Bonus VP) y Plan de Acción de 30 días."
+            "focus": "Cómo ordenar respuestas y contar su experiencia en Localización sin sonar armada, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes."
         }
     ],
     "slides": [
         {
             "num": 1,
             "id": "slide-1",
-            "title": "Liderazgo Ejecutivo de Productos de IA",
+            "title": "Llevar la IA a Producción: Costos, Calidad y Entrevistas",
             "duration": "2 Min",
             "tags": [
                 "Sesión 4 · Cierre",
-                "FinOps & Build/Buy",
-                "AI UX & Evals",
-                "Rol PM Senior"
+                "Costos & Build/Buy",
+                "Rollout & Evals",
+                "Entrevistas"
             ],
-            "interaction": "Mostrá la portada y señalá las 4 tarjetas del recorrido: Base (S1), Memoria (S2), Acción (S3) y Hoy Liderazgo Ejecutivo (S4).",
-            "script": "**1️⃣ BIENVENIDA A LA SESIÓN FINAL (El salto al rol ejecutivo):**\n• En las **Sesiones 1 a 3** aprendiste cómo se construye todo por dentro: ingeniería y Agile (S1), memoria segura con RAG (S2) y manos con Agentes y MCP (S3).\n\n**2️⃣ EL FOCO DE HOY (100% TEMAS NUEVOS):**\n• Hoy no vamos a repetir cosas básicas de tokens ni de PII que ya dominás: nos ponemos el sombrero de **AI Product Manager** para decidir qué comprar vs. construir, defender un **Business Case con TCO real**, lanzar sin fricción y resolver **dilemas difíciles de entrevista**.",
-            "bridge": "Miremos en la Slide 2 los 4 bloques 100% nuevos que vamos a recorrer hoy en 60 minutos.",
+            "interaction": "Mostrá la portada y repasá las 4 tarjetas del recorrido: Base (S1), Memoria (S2), Acción (S3) y Hoy salida a producción y entrevistas (S4).",
+            "script": "**1️⃣ ARRANQUE DE LA ÚLTIMA CLASE (Las 4 sesiones en perspectiva):**\n• En las primeras tres clases vimos cómo trabajan los equipos de desarrollo (S1), cómo funciona un LLM y un RAG por dentro (S2), y cómo un agente ejecuta acciones con herramientas y frenos humanos (S3).\n\n**2️⃣ QUÉ NOS FALTA VER HOY:**\n• Hoy no vamos a repetir lo básico de tokens ni de PII que ya tenés claro. Nos enfocamos en lo que te toca resolver cuando el producto ya existe o lo están por aprobar: **cuánto sale de verdad, qué conviene comprar en vez de programar, cómo salir a usuarios reales sin romper nada y cómo responder casos difíciles en entrevistas**.",
+            "bridge": "Miremos rápido en la Slide 2 los cuatro bloques de hoy.",
             "cheatSheet": {
-                "idea": "Presentar la Sesión 4 como el salto de la arquitectura técnica (S1-S3) al liderazgo ejecutivo de producto IA (FinOps, Build/Buy, Rollout/UX, Evals y Entrevistas).",
-                "clicks": "Recorré visualmente las 4 tarjetas S1 → S2 → S3 → S4 en portada.",
-                "analogy": "En S1–S3 aprendiste cómo funciona el avión y sus motores; hoy aprendés a dirigir la aerolínea: rentabilidad por ruta, cuándo alquilar vs. fabricar y cómo manejar turbulencias reales."
+                "idea": "Conectar S1–S3 (cómo se construye) con S4 (costos reales, Build vs Buy, salida a producción, Evals/Drift y entrevistas).",
+                "clicks": "Señalá las 4 tarjetas S1 → S2 → S3 → S4 en portada.",
+                "analogy": "En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay plata, usuarios y preguntas de directorio."
             },
             "plainTerms": [
                 {
-                    "term": "AI Product Leadership",
-                    "simple": "Tomar decisiones de negocio, inversión, experiencia de usuario y calidad alrededor de la IA sin depender de intuición."
+                    "term": "Paso a Producción (Productización)",
+                    "simple": "Todo lo que pasa después del prototipo: presupuesto real, experiencia de uso, monitoreo semanal y manejo de riesgos."
                 }
             ]
         },
         {
             "num": 2,
             "id": "slide-2",
-            "title": "Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)",
+            "title": "Qué vamos a ver hoy (Sesión 4)",
             "duration": "2 Min",
             "tags": [
-                "1. FinOps & Build/Buy",
-                "2. Shadow Mode & AI UX",
+                "1. Costos & Build/Buy",
+                "2. Rollout & UX",
                 "3. Evals & Langfuse",
-                "4. Dilemas & Plan 30D"
+                "4. Entrevistas"
             ],
-            "interaction": "Señalá las 4 tarjetas en pantalla destacando que cada bloque aporta herramientas nuevas de gestión.",
-            "script": "**1️⃣ LOS 4 BLOQUES DE HOY (Señalá la grilla 2×2):**\n• **1. FinOps Avanzado & Build vs. Buy:** Model Routing (80/20), Batch API (-50%), costos ocultos del TCO, cuándo comprar SaaS vs. configurar vs. construir y la Calculadora de ROI & Payback.\n• **2. Lanzamiento Seguro & AI UX:** Cómo salir con *Shadow Mode* y *Canary*, evitar pantallas congeladas, usar *Discovery Spikes* y gobernar *Shadow AI* y *EU AI Act*.\n• **3. AI Evals Avanzados & Langfuse:** Diagnóstico de causa raíz en la Tríada RAG, Evals de Agentes y detección de *Model Drift*.\n• **4. Entrevistas Senior & Plan 30 Días:** Tu diferencial desde Localización, 2 crisis con dilemas reales y tu hoja de ruta post-mentoría.",
-            "bridge": "Arranquemos con la palanca número uno de FinOps en producción: cómo dejar de pagar el modelo más caro para todo en la Slide 3.",
+            "interaction": "Señalá las 4 tarjetas de la grilla marcando los tiempos de la hora.",
+            "script": "**1️⃣ LOS 4 BLOQUES DE HOY (Grilla 2×2):**\n• **1. Costos reales y Build vs. Buy:** Model Routing, Batch API a mitad de precio, gastos fijos que suelen olvidarse y cuándo comprar un SaaS en lugar de desarrollar.\n• **2. Cómo lanzar y UX para IA:** Salir por etapas (*Shadow Mode → Canary*), evitar pantallas congeladas, usar *Spikes* cortos en Agile y manejar *Shadow AI* y *EU AI Act*.\n• **3. Evaluar calidad y monitorear en Langfuse:** Qué parte tocar cuando cae una métrica, Evals en agentes y cómo detectar *Model Drift*.\n• **4. Entrevistas reales y cierre:** Cómo contar tu experiencia previa en Localización y practicar 2 casos con opciones parejas.",
+            "bridge": "Arranquemos por la decisión de costos más común cuando ya hay tráfico real: el Model Routing en la Slide 3.",
             "cheatSheet": {
-                "idea": "Presentar el mapa completo de 4 bloques nuevos sin solaparse con S1–S3.",
-                "clicks": "Señalá brevemente las 4 tarjetas de la agenda.",
-                "analogy": "Es tu tablero de Directora de Producto: Finanzas, Lanzamiento/UX, Calidad y Carrera."
+                "idea": "Presentar el mapa completo de la hora en 4 bloques concretos.",
+                "clicks": "Recorré las 4 tarjetas en 30 segundos.",
+                "analogy": "Cuatro frentes concretos: plata, salida a calle, calidad y entrevistas."
             },
             "plainTerms": [
                 {
                     "term": "FinOps en IA",
-                    "simple": "Disciplina para optimizar el costo real en la nube de un producto de IA sin sacrificar la calidad que el usuario percibe."
+                    "simple": "Controlar y bajar el gasto mensual de un sistema de IA en la nube sin arruinar la calidad."
                 }
             ]
         },
         {
             "num": 3,
             "id": "slide-3",
-            "title": "FinOps 1: Model Routing (Enrutamiento de Modelos)",
+            "title": "FinOps 1: Model Routing (enrutamiento de modelos)",
             "duration": "4 Min",
             "tags": [
                 "Model Routing",
-                "Tiered Routing (80/20)",
-                "Simulador -76%"
+                "Carriles 80/20",
+                "Simulador de ahorro"
             ],
-            "interaction": "Explicá las dos rutas a la izquierda y mové el deslizador de la derecha en vivo para mostrar la caída de $1,200 a $288 USD/mes.",
-            "script": "**1️⃣ EL ERROR DE USAR UN ÚNICO MODELO FRONTIER (Tarjeta izquierda):**\n• Si usás *Claude Opus* o *GPT-4o* para clasificar un ticket simple o responder una FAQ, estás pagando **20 veces más** y esperando el triple sin necesidad.\n• Con **Model Routing**, un clasificador rápido en la puerta separa el tráfico en dos carriles:\n  • **🟢 Ruta Rápida (70%-85%):** Modelos livianos (*Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro*) a ~$0.15/1M tokens en `0.3 seg`.\n  • **🟣 Ruta Experta (15%-30%):** Modelos *Frontier* solo para contratos ambiguos, transcreación o razonamiento multi-paso.\n\n**2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):**\n• Mandar el 100% al modelo grande cuesta **$1,200 USD/mes**. Al derivar el **80%** al modelo liviano, la factura cae a **$288 USD/mes** (**76% de ahorro**, $912 USD menos cada mes) y la UX se siente instantánea.",
-            "bridge": "Ese ahorro es para chats en vivo. ¿Qué pasa cuando además tenés procesos masivos nocturnos, y qué costos ocultos suelen olvidar en un presupuesto? Pasemos a la Slide 4.",
+            "interaction": "Explicá los dos carriles a la izquierda y mové el deslizador de la derecha en vivo para ver cómo baja de $1,200 a $288 USD/mes.",
+            "script": "**1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):**\n• Mandar una duda simple o la clasificación de un ticket a *Claude Opus* o *GPT-4o* es pagar alrededor de **20 veces más** y esperar el triple de tiempo sin ningún beneficio.\n• Con **Model Routing**, ponés un filtro rápido en la entrada que separa en dos carriles:\n  • **🟢 Carril rápido (70%-85%):** Modelos chicos (*Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro*) a ~$0.15/1M tokens en ~`0.3 seg`.\n  • **🟣 Carril complejo (15%-30%):** Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.\n\n**2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):**\n• Si todo va al modelo grande gastás **$1,200/mes**. Si mandás el **80%** de lo simple al modelo chico, la cuenta cae a **$288/mes** (**76% menos**) y encima responde mucho más rápido.",
+            "bridge": "Eso resuelve el chat en vivo. Pero ¿qué pasa cuando tenés un volumen grande que puede esperar a la noche, y qué gastos extras suelen quedar afuera del primer presupuesto? Pasemos a la Slide 4.",
             "cheatSheet": {
-                "idea": "No usamos un modelo caro para todo: un Model Router manda el 80% fácil a Flash/Haiku y deja solo el 20% complejo al modelo Frontier.",
-                "clicks": "1° Señalá Ruta Rápida vs. Experta → 2° Mové el slider del simulador al 80% para ver $1,200 → $288/mes.",
-                "analogy": "En un hospital no te atiende un neurocirujano para tomarte la presión: la guardia general resuelve rápido el 80% y deriva solo lo complejo."
+                "idea": "Usar un clasificador liviano para mandar el 80% de pedidos simples a modelos Flash/Haiku y dejar el modelo caro solo para el 20% difícil.",
+                "clicks": "Explicá los 2 carriles a la izquierda y mové el slider al 80% a la derecha ($1,200 → $288).",
+                "analogy": "En una guardia no atiende el especialista más caro los casos de rutina; filtra primero la atención general y deriva solo lo complejo."
             },
             "plainTerms": [
                 {
                     "term": "Model Routing",
-                    "simple": "Semáforo inteligente que manda tareas simples a un modelo barato y rápido, y tareas difíciles al modelo más potente."
+                    "simple": "Un filtro en la puerta que manda las tareas fáciles a un modelo barato y rápido, y las difíciles al modelo más potente."
                 }
             ]
         },
         {
             "num": 4,
             "id": "slide-4",
-            "title": "FinOps 2: Batch API (-50%) & Los 4 Costos Ocultos (TCO)",
+            "title": "FinOps 2: Batch API (-50%) y costos ocultos (TCO)",
             "duration": "3 Min",
             "tags": [
                 "Batch API (-50%)",
-                "TCO Real",
-                "Impuesto Multilingüe"
+                "TCO real",
+                "Idiomas ES/PT vs EN"
             ],
-            "interaction": "Compará Síncrono vs. Batch API a la izquierda y recorré los 4 puntos del TCO a la derecha destacando el +20–30% multilingüe.",
-            "script": "**1️⃣ SEPARAR TIEMPO REAL DE PROCESAMIENTO NOCTURNO (Tarjeta izquierda):**\n• **⚡ Síncrono (100% tarifa):** Chatbots donde un usuario espera respuesta en menos de 2 segundos.\n• **🌙 Batch API / Asíncrono (50% Off):** Cuando procesás 3.000 strings de un release o auditás glosarios para mañana a la mañana, mandás el lote por **Batch API** (AWS Bedrock / OpenAI) y pagás **exactamente la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Un PM Junior solo cotiza los tokens de salida. Vos incluís el **TCO completo**: **1)** Multiplicador agéntico ReAct (×4 lecturas), **2)** Infraestructura fija (Vector DB + Langfuse, ~$70–$250/mes), **3)** **Impuesto Multilingüe** (ES, PT y DE consumen ~20–30% más tokens que Inglés — clave en localización), y **4)** Evals automáticas (~8%) + horas HITL.",
-            "bridge": "Ahora bien: antes de gastar un solo dólar en infraestructura o ingenieros, hay una pregunta previa que define a un PM Senior. Vamos a la Slide 5: Build vs. Buy vs. Configure.",
+            "interaction": "Compará Síncrono vs. Batch API a la izquierda y recorré los 4 puntos del TCO a la derecha marcando la diferencia de tokens por idioma.",
+            "script": "**1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):**\n• **⚡ Síncrono (100% tarifa):** Chat donde la persona está esperando en pantalla en menos de 2 segundos.\n• **🌙 Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Si solo multiplicás tokens de salida te quedás corta. En la cuenta real entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.",
+            "bridge": "Igual, antes de calcular servidores y APIs, hay una pregunta previa que ahorra meses de trabajo. Vamos a la Slide 5: Build vs. Buy vs. Configure.",
             "cheatSheet": {
-                "idea": "Combinar Batch API (-50% en cargas nocturnas/asíncronas) con un presupuesto de TCO realista que incluya infraestructura fija y +25% por idiomas ES/PT.",
-                "clicks": "Compará las 2 tarjetas: velocidades de API a la izquierda y los 4 costos ocultos del TCO a la derecha.",
-                "analogy": "Batch API es el envío en camión nocturno a mitad de precio frente a la moto urgente; el TCO es sumar seguro, peajes y patente además de la nafta."
+                "idea": "Usar Batch API (-50%) para tareas que pueden esperar horas y sumar al presupuesto los 4 gastos ocultos del TCO (incluyendo +20-30% de tokens en ES/PT).",
+                "clicks": "Compará la tarjeta izquierda (Tiempo real vs Batch) y los 4 puntos del TCO a la derecha.",
+                "analogy": "Batch API es el envío programado nocturno a mitad de precio en lugar de moto urgente; el TCO es contar seguro y mantenimiento además de la nafta."
             },
             "plainTerms": [
                 {
-                    "term": "Impuesto Multilingüe de Tokens",
-                    "simple": "Español, portugués o alemán generan ~20–30% más tokens que el inglés para la misma frase, encareciendo los proyectos multilingües."
-                },
-                {
                     "term": "TCO (Costo Total de Propiedad)",
-                    "simple": "La suma real de tokens, base vectorial, observabilidad, evaluaciones automáticas y tiempo humano de revisión."
+                    "simple": "Todo lo que cuesta mantener el sistema andando por mes: tokens, base vectorial, monitoreo, evaluaciones y revisión humana."
                 }
             ]
         },
         {
             "num": 5,
             "id": "slide-5",
-            "title": "Build vs. Buy vs. Configure (y Vendor Lock-in)",
+            "title": "Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)",
             "duration": "4 Min",
             "tags": [
-                "Build vs. Buy vs. Configure",
+                "Build vs. Buy",
                 "Model Gateway",
-                "Anti Vendor Lock-in"
+                "Vendor Lock-in"
             ],
-            "interaction": "Explicá las 3 columnas arriba y hacé clic en los 3 escenarios del Mini-Asesor abajo para mostrar la recomendación en vivo.",
-            "script": "**1️⃣ TU PRIMERA DECISIÓN COMO PM ANTES DE PEDIR DEVS (3 tarjetas superiores):**\n• **🛒 BUY (SaaS):** Si es una tarea genérica sin ventaja competitiva (ej. resumir reuniones internas), comprás licencia en 3 días. No gastes ingenieros ahí.\n• **🧩 CONFIGURE (Low-Code / MCP):** Para pilotos y automatizaciones conectando Jira o glosarios, orquestás con AWS Bedrock KB o MCP en 2 semanas.\n• **🏗️ BUILD (Propio):** Solo cuando es tu diferencial core y tenés gran escala. Siempre detrás de un **Model Gateway** (*AWS Bedrock* o *LiteLLM*) para cambiar entre Claude, Gemini o GPT sin reescribir código (**anti Vendor Lock-in**).\n\n**2️⃣ MINI-ASESOR EN VIVO (Tocá los 3 botones de abajo):**\n• Probá los 3 casos con Anabela: *1. Resumir llamadas → BUY*, *2. Piloto QA conectado a Jira → CONFIGURE*, *3. Motor médico de 500k docs/mes → BUILD con Gateway*.",
-            "bridge": "Cuando ya elegiste construir o configurar un caso de alto impacto, ¿cómo defendés los números completos ante el Director Financiero? Abramos la Calculadora en la Slide 6.",
+            "interaction": "Recorré las 3 columnas arriba y hacé clic en los 3 botones abajo para debatir qué conviene en cada caso.",
+            "script": "**1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):**\n• **🛒 BUY (SaaS):** Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.\n• **🧩 CONFIGURE (Conectado):** Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.\n• **🏗️ BUILD (Propio):** Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un **Model Gateway** (*AWS Bedrock / LiteLLM*) para cambiar entre Claude, Gemini y GPT sin reescribir código (**evitar Vendor Lock-in**).\n\n**2️⃣ 3 CASOS CONCRETOS (Botones de abajo):**\n• Probalos con Anabela: *1. Resumir reuniones → BUY*, *2. Piloto QA en Jira → CONFIGURE*, *3. Motor médico 500k docs/mes → BUILD con Gateway*.",
+            "bridge": "Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas sin vender humo? Pasemos a la Slide 6.",
             "cheatSheet": {
-                "idea": "Un PM Senior decide primero si comprar SaaS (Buy), conectar herramientas (Configure) o construir propio detrás de un Model Gateway para evitar Vendor Lock-in.",
-                "clicks": "Recorré Buy / Configure / Build y luego tocá los 3 botones del Mini-Asesor abajo.",
-                "analogy": "Si necesitás viajar al aeropuerto te tomás un taxi (Buy); si repartís en tu barrio alquilás una camioneta estándar (Configure); solo armás flota propia si sos Mercado Libre (Build)."
+                "idea": "Evaluar Buy vs Configure vs Build antes de pedir devs, y usar un Model Gateway si se desarrolla propio para no quedar atado a un proveedor.",
+                "clicks": "Recorré las 3 tarjetas y tocá los 3 casos de abajo.",
+                "analogy": "Para ir al aeropuerto te tomás un taxi (Buy); no te comprás una fábrica de autos."
             },
             "plainTerms": [
                 {
                     "term": "Model Gateway (Anti Vendor Lock-in)",
-                    "simple": "Un enchufe adaptador único (como AWS Bedrock o LiteLLM) para cambiar de modelo de IA en minutos sin quedar atado a un solo proveedor."
+                    "simple": "Un adaptador único (como AWS Bedrock o LiteLLM) para cambiar de modelo de IA sin rehacer la aplicación."
                 }
             ]
         },
         {
             "num": 6,
             "id": "slide-6",
-            "title": "Ejercicio 1: Calculadora Realista de ROI, TCO & Payback",
+            "title": "Ejercicio 1: Costos de IA vs. tiempo del equipo",
             "duration": "3 Min",
             "tags": [
-                "ROI & Payback",
-                "Calculadora TCO",
-                "Business Case Finanzas"
+                "Capacidad liberada",
+                "TCO real",
+                "Cuenta Finanzas"
             ],
-            "interaction": "Dejá los valores base (5.000 docs, 15 min, $20/h) con los 3 checkboxes activos, luego destildá y tildá Routing/Batch/TCO para mostrar su impacto en el Payback.",
-            "script": "**1️⃣ ARMANDO UN BUSINESS CASE CREÍBLE ANTE FINANZAS (Izquierda):**\n• Con **5.000 documentos/mes** a **15 minutos** cada uno y **$20 USD/hora**, hacer el trabajo 100% manual requiere **1.250 horas** (7.8 personas FTE) y cuesta **$25.000 USD al mes**.\n\n**2️⃣ ACTIVANDO LAS PALANCAS FINOPS Y EL TCO REAL (Checkboxes y resultados a la derecha):**\n• Sin optimizar, la API base saldría $225/mes. Al activar **Model Routing + Batch API**, la inferencia baja a $27/mes; sumando el **TCO fijo ($180/mes de Vector DB y Langfuse + 8% de Evals)** el costo IA total real es **$209.16 USD/mes**.\n• Incluso pagando un **20% de supervisión humana HITL ($5.000/mes)**, el **ahorro neto es $19.790.84 USD/mes**: una inversión inicial de $8.000 USD se recupera (**Payback**) en apenas **1.8 semanas** (ROI 380%).",
-            "bridge": "Con los números aprobados, llega el momento de la verdad: ¿cómo lanzamos este producto a usuarios reales sin romper la operación ni quedar expuestos? Vamos al Bloque 2 en la Slide 7.",
+            "interaction": "Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá y volvé a tildar Routing/Batch/TCO destacando la nota sobre horas liberadas vs. nómina.",
+            "script": "**1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):**\n• Con **5.000 documentos/mes** de **15 min** a **$20/h**, hoy ese trabajo equivale a **1.250 horas** (7.8 personas FTE), o sea **$25,000 USD/mes** de valor de tiempo.\n• Activando **Model Routing + Batch**, la API cae de $225 a $27; sumando **$180 fijos de Vector DB/Langfuse + 8% de Evals**, el costo IA total real da **$209.16 USD/mes**. Sumado al **20% de revisión humana ($5,000/mes)**, liberás capacidad equivalente a **$19,790.84 USD/mes**.\n\n**2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):**\n• Aclará siempre que esto es **capacidad liberada del equipo** (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de **$15,000**, equivale a unas **3.3 semanas** de horas liberadas.",
+            "bridge": "Con el caso armado y aprobado, viene la parte práctica: ¿cómo salimos a producción sin romper nada ni hacer papelones con clientes? Vamos a la Slide 7.",
             "cheatSheet": {
-                "idea": "Calcular en vivo el retorno real incluyendo TCO fijo ($180/mes + 8% Evals), supervisión HITL (20%) y semanas de Payback sobre un setup de $8.000 USD.",
-                "clicks": "Mostrá los defaults (Ahorro $19.790,84/mes · Payback 1.8 semanas) y jugá destildando Routing, Batch o TCO.",
-                "analogy": "Es el flujo de caja del proyecto: te permite sentarte frente al CFO sabiendo exactamente el costo fijo, la supervisión humana y en qué semana se paga solo."
+                "idea": "Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.",
+                "clicks": "Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.",
+                "analogy": "Si ahorrás 1.000 horas del equipo no echás gente al día siguiente: usás esas horas para sacar atrasos o tomar más clientes sin contratar de más."
             },
             "plainTerms": [
                 {
-                    "term": "Payback Period (Período de Repago)",
-                    "simple": "Cuántas semanas o meses tarda el ahorro mensual del proyecto en devolver la inversión inicial de desarrollo."
+                    "term": "Capacidad Liberada",
+                    "simple": "Horas del equipo que dejan de ir a revisión repetitiva y pasan a tareas de mayor criterio, absorbiendo más trabajo sin sumar sueldos."
                 }
             ]
         },
         {
             "num": 7,
             "id": "slide-7",
-            "title": "Lanzamiento Seguro: Shadow Mode, Canary & Flywheel",
+            "title": "Lanzamiento gradual: Shadow Mode, Canary y feedback",
             "duration": "6 Min",
             "tags": [
                 "Shadow Mode",
                 "Canary Rollout",
-                "Data Flywheel"
+                "Feedback continuo"
             ],
-            "interaction": "Hacé clic sucesivamente en las 3 tarjetas de fase arriba para ir actualizando el tablero de Tráfico, Riesgo, Gate de Salida y Acción de la PM abajo.",
-            "script": "**1️⃣ FASE 1: SHADOW MODE / MODO SOMBRA (Clic en Tarjeta 1):**\n• Nunca encendés un agente nuevo para todos los clientes el lunes a la mañana. Durante 1–2 semanas corre en **Shadow Mode**: procesa pedidos reales detrás de escena sin que el cliente vea nada.\n• Mirá el panel abajo: **0% de tráfico expuesto**, riesgo cero y tu gate de salida es lograr **≥ 90% de acuerdo** contra el equipo experto.\n\n**2️⃣ FASE 2: CANARY ROLLOUT 5% → 25% → 100% (Clic en Tarjeta 2):**\n• Con *Feature Flags*, encendés solo al **5%** (o un proyecto piloto) vigilando latencia P95 y costos en Langfuse, con rollback en 1 clic si algo desvía.\n\n**3️⃣ FASE 3: DATA FLYWHEEL (Clic en Tarjeta 3):**\n• Sumás botones de **👍 / 👎**. Cada corrección de una lingüista o analista alimenta el *Golden Dataset* para mejorar cada sprint.",
-            "bridge": "Pero incluso si un agente es preciso y barato, muchos proyectos fracasan porque la gente no los usa o porque chocan con nuevas normas legales. Veamos AI UX y Gobernanza 2026 en la Slide 8.",
+            "interaction": "Hacé clic en las 3 etapas arriba para mostrar abajo cómo cambian exposición, riesgo, criterio para avanzar y tu tarea como PM.",
+            "script": "**1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):**\n• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en **Shadow Mode**: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.\n• Mirá el tablero de abajo: **0% de clientes expuestos** y avanzás recién cuando coincide **≥ 90%** con lo que resolvió el equipo humano.\n\n**2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):**\n• Con *Feature Flags*, prendés para un **5%** o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.\n\n**3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):**\n• Ponés **👍 / 👎**. Cada corrección que carga el especialista suma al *Golden Dataset* para que el mismo error no vuelva a pasar.",
+            "bridge": "Ahora bien: muchos sistemas funcionan bien en pruebas y aun así nadie los usa, o chocan con reglas nuevas de la empresa. Veamos UX, planificación en Agile y riesgos actuales en la Slide 8.",
             "cheatSheet": {
-                "idea": "Desplegar en 3 etapas medibles: Shadow Mode (0% expuesto), Canary con Feature Flags (5% → 100%) y Data Flywheel continuo.",
-                "clicks": "Hacé clic en Tarjeta 1, Tarjeta 2 y Tarjeta 3 para ver cómo cambia el tablero inferior.",
-                "analogy": "Como formar a un coordinador nuevo: dos semanas escucha en silencio al lado tuyo (Shadow), luego atiende un 5% de clientes supervisado (Canary) y cada corrección queda en el manual (Flywheel)."
+                "idea": "Lanzar en 3 etapas: Shadow Mode (silencioso), Canary con Feature Flags (5% → 100%) y circuito de feedback hacia el Golden Dataset.",
+                "clicks": "Hacé clic en Etapa 1, Etapa 2 y Etapa 3 mirando cómo cambia la barra inferior.",
+                "analogy": "Primero trabaja a puertas cerradas al lado del equipo (Shadow), después atiende un 5% de pedidos supervisado (Canary) y cada corrección queda anotada."
             },
             "plainTerms": [
                 {
                     "term": "Shadow Mode (Modo Sombra)",
-                    "simple": "El agente trabaja en paralelo leyendo casos reales pero sin responder al usuario final, solo para medir su acierto sin riesgo."
+                    "simple": "Correr el agente sobre casos reales sin que el usuario vea sus respuestas, solo para medir acierto contra el equipo humano."
                 },
                 {
                     "term": "Canary Rollout + Feature Flags",
-                    "simple": "Abrir el sistema a un 5% de usuarios con una llave de apagado rápido para volver atrás en 1 segundo si aparece un error."
+                    "simple": "Habilitar la función para un porcentaje chico de usuarios con una llave de apagado rápido."
                 }
             ]
         },
         {
             "num": 8,
             "id": "slide-8",
-            "title": "AI UX, Agile Probabilístico & Gobernanza 2026",
+            "title": "UX en productos de IA, Spikes en Agile y riesgos actuales",
             "duration": "9 Min",
             "tags": [
-                "AI UX & Streaming",
+                "UX & Streaming",
                 "Discovery Spike",
                 "Shadow AI & EU AI Act"
             ],
-            "interaction": "Tocá los dos botones de la mini-demo UX ('12s Congelada' vs. '0.8s Streaming') y conectá el Discovery Spike con los 3 riesgos de Gobernanza a la derecha.",
-            "script": "**1️⃣ AI UX: POR QUÉ FALLA LA ADOPCIÓN (Tarjeta izquierda + Mini-Demo):**\n• Un bot preciso igual fracasa por mala UX. Necesitás **TTFT &lt; 1s** combinando **Token Streaming** + **Parallel Tool Calling** + mensajes de estado (probá los dos botones abajo para contrastar *12s congelado* vs. *0.8s streaming*).\n• Además, evitá obligar a adivinar en un chat vacío: diseñá **botones contextuales dentro de Jira/TMS**, citas clicables y flujo *Copilot (Revisar y Aprobar)*.\n\n**2️⃣ AGILE PROBABILÍSTICO (DISCOVERY SPIKE):**\n• Nunca prometas fechas cerradas de 3 meses sin validar tus datos: corré un **Discovery Spike de 1 semana con 30 casos reales** para confirmar viabilidad técnica antes del roadmap.\n\n**3️⃣ GOBERNANZA EJECUTIVA 2026 (Tarjeta derecha):**\n• **Shadow AI:** Prohibir por mail empuja al equipo a cuentas personales; ganás dando una herramienta segura y rápida. **EU AI Act:** Casos de Alto Riesgo (RRHH/crédito) exigen trazas y supervisión humana, además de avisar que es IA. Y revisá siempre **Propiedad Intelectual (IP)** y sesgos multilingües.",
-            "bridge": "Ya sabemos lanzar y lograr que la gente adopte el producto. Ahora entremos al Bloque 3 (Slides 9 a 11) para auditar científicamente la calidad sin repetir lo básico.",
+            "interaction": "Alterná los dos botones de la mini-demo ('12s congelada' vs '0.8s streaming') y repasá los 3 riesgos actuales de la derecha.",
+            "script": "**1️⃣ UX EN IA Y PLANNING REALISTA (Tarjeta izquierda + Demo):**\n• Un modelo bueno fracasa si tarda 12 segundos con la pantalla en blanco: necesitás **Token Streaming** (primeras palabras en &lt; 1s), llamadas en paralelo y avisos de estado (*'Consultando Jira...'*).\n• Y no mandes a todos a un chat vacío: poné botones contextuales dentro de Jira/TMS donde ya trabajan.\n• En **Agile**, antes de prometer un trimestre cuando no sabés si tus datos alcanzan, corré un **Discovery Spike de 1 semana con ~30 casos reales**.\n\n**2️⃣ RIESGOS ACTUALES (Tarjeta derecha):**\n• **Shadow AI:** Si solo prohibís usar IA por mail, la gente igual pega textos en cuentas personales; la única forma real de frenarlo es dar una alternativa interna segura.\n• **EU AI Act:** Si el sistema toca RRHH, evaluaciones o crédito, exige trazas, supervisión humana y avisar al usuario.\n• Y revisá siempre **Propiedad Intelectual (IP)** y sesgos en idiomas fuera del inglés.",
+            "bridge": "Ya vimos cómo presupuestar y lanzar cuidando la experiencia. Pasemos al bloque 3 (Slides 9 a 11) para bajar a tierra cómo evaluar calidad y usar Langfuse.",
             "cheatSheet": {
-                "idea": "Cubrir lo que define el éxito real en 2026: UX rápida (Streaming + botones contextuales), Discovery Spikes de 1 semana antes de prometer fechas, y gobierno de Shadow AI / EU AI Act / IP.",
-                "clicks": "Alterná '🐢 12s Congelada' y '⚡ 0.8s Streaming' en la tarjeta izquierda y señalá los 3 pilares de gobernanza a la derecha.",
-                "analogy": "Discovery Spike es probar la tela con una muestra de 30 piezas antes de cortar mil trajes; combatir el Shadow AI es abrir una autopista segura en vez de poner carteles de 'prohibido pasar'."
+                "idea": "Explicar por qué falla la adopción por mala UX, cómo usar Discovery Spikes de 1 semana antes de comprometer fechas, y los 3 riesgos de 2026 (Shadow AI, EU AI Act, IP).",
+                "clicks": "Tocá '🐢 12s congelada' vs '⚡ 0.8s streaming' y repasá los 3 bloques de la derecha.",
+                "analogy": "Discovery Spike es probar una tanda chica de 30 casos antes de prometer 3 meses; frenar Shadow AI es ofrecer una vía segura en vez de solo prohibir."
             },
             "plainTerms": [
                 {
-                    "term": "TTFT (Time To First Token)",
-                    "simple": "Los segundos hasta que aparece la primera palabra en pantalla; debajo de 1 segundo evita que el usuario abandone."
+                    "term": "Discovery Spike",
+                    "simple": "Una prueba corta de 5 días con ~30 casos reales al arranque para comprobar si los datos sirven antes de armar todo el roadmap."
                 },
                 {
                     "term": "Shadow AI",
-                    "simple": "Cuando los empleados usan cuentas personales gratuitas de IA a escondidas porque la empresa no les da una solución cómoda y aprobada."
-                },
-                {
-                    "term": "Discovery Spike",
-                    "simple": "Prueba corta de 5 días con 30 casos reales al principio de un proyecto para verificar si los datos alcanzan antes de comprometer un roadmap."
+                    "simple": "Cuando la gente usa herramientas de IA personales en el trabajo porque la empresa no le dio una opción aprobada que le sirva."
                 }
             ]
         },
         {
             "num": 9,
             "id": "slide-9",
-            "title": "AI Evals Avanzados: Tríada, Agentes & Model Drift",
+            "title": "AI Evals en la práctica: Tríada RAG, Agentes y Model Drift",
             "duration": "4 Min",
             "tags": [
-                "Tríada RAG → Backlog",
+                "Tríada RAG → Sprint",
                 "Trajectory Evals",
                 "Model Drift & SME"
             ],
-            "interaction": "Conectá cada métrica de la Tríada a la izquierda con su ticket exacto de ingeniería, y destacá Trajectory Evals + ventaja lingüística (SME) a la derecha.",
-            "script": "**1️⃣ DE MÉTRICA QUE FALLA A TICKET DE BACKLOG (Tarjeta izquierda):**\n• En S2 viste el *Golden Dataset* en CI/CD. Hoy lo traducimos en decisiones de PM: si cae **Fidelidad**, tocás *System Prompt / Temperatura 0.0 / Guardrail*; si cae **Precisión de Contexto**, tocás *Chunking / Metadatos / Vector DB* (no el prompt); si cae **Relevancia**, ajustás *formato e instrucción*.\n\n**2️⃣ TRAJECTORY EVALS & MODEL DRIFT (Tarjeta derecha):**\n• En Agentes evaluamos la trayectoria (**Trajectory Evaluation**): ¿llamó a la herramienta correcta con JSON válido sin dar vueltas extra?\n• Y cuidado con el **Model Drift**: un proveedor actualiza su modelo en silencio y tu calidad cae sin que hayas tocado código. Calibrar un *LLM-as-a-Judge* requiere criterio experto (**SME**): ahí tu background en **Traducción y QA Lingüístico** es una ventaja enorme.",
-            "bridge": "Probemos diagnosticar causas raíz en vivo en la Slide 10 usando el simulador con presets.",
+            "interaction": "Mostrá la columna izquierda (qué nota baja → qué ticket creás) y la derecha (agentes y Model Drift).",
+            "script": "**1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):**\n• En S2 vimos el *Golden Dataset* en CI/CD. En el día a día te sirve para no mandar tickets a ciegas:\n  • Baja **Fidelidad** → el modelo inventó → ajustar *Prompt / Temperatura 0.0 / Guardrail*.\n  • Baja **Precisión de Contexto** → el buscador trajo mal párrafo → revisar *Chunking / Metadatos / Vector DB* (no el prompt).\n  • Baja **Relevancia** → dio vueltas → ajustar formato e instrucción.\n\n**2️⃣ AGENTES Y MODEL DRIFT (Tarjeta derecha):**\n• En agentes mirás además la trayectoria (**Trajectory Evaluation**): si eligió la herramienta correcta y con JSON válido.\n• Y ojo con el **Model Drift**: a veces el proveedor cambia el modelo por detrás o el equipo pasa a un modelo más chico y la calidad cae sin que nadie haya tocado el código. Calibrar un *LLM-as-a-Judge* pide criterio real del idioma y del negocio (ahí aporta directo tu experiencia en **Traducción y QA**).",
+            "bridge": "Probémoslo rápido en el simulador de la Slide 10 para ver cómo cambia el ticket según la falla.",
             "cheatSheet": {
-                "idea": "Saber traducir qué métrica de la Tríada cayó en qué pieza técnica arreglar, evaluar trayectorias de agentes y detectar Model Drift con calibración SME.",
-                "clicks": "Recorré las 3 filas de la izquierda (Fidelidad / Contexto / Relevancia) y las 2 cajas de la derecha (Trajectory + Model Drift).",
-                "analogy": "Un buen médico no receta el mismo antibiótico para todo: si falla Contexto atiende la búsqueda (la biblioteca); si falla Fidelidad atiende la redacción (el orador)."
+                "idea": "Mapear la Tríada RAG a tickets concretos del sprint, sumar Trajectory Evals para agentes y entender Model Drift + calibración con criterio humano (SME).",
+                "clicks": "Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.",
+                "analogy": "Si el buscador trajo la página equivocada del manual, no retes al redactor: arreglá el índice de la biblioteca."
             },
             "plainTerms": [
                 {
-                    "term": "Trajectory Evaluation",
-                    "simple": "Evaluar el paso a paso de un agente: si eligió las herramientas correctas y en el menor número de vueltas."
+                    "term": "Model Drift",
+                    "simple": "Caída silenciosa de calidad en producción aunque el código no haya cambiado, por actualización del proveedor o cambio de modelo."
                 },
                 {
-                    "term": "Model Drift",
-                    "simple": "Cuando la calidad de la IA empeora sin cambios en tu código porque el proveedor actualizó el modelo o cambiaste a uno más económico."
+                    "term": "Trajectory Evaluation",
+                    "simple": "Revisar si un agente eligió bien las herramientas paso a paso, más allá de cómo redactó la respuesta final."
                 }
             ]
         },
         {
             "num": 10,
             "id": "slide-10",
-            "title": "Ejercicio 2: Simulador de Auditoría Evals (Causa Raíz)",
+            "title": "Ejercicio 2: Simulador de auditoría Evals",
             "duration": "4 Min",
             "tags": [
-                "Auditoría Práctica",
+                "Auditoría Evals",
                 "Alucinación vs Retrieval",
-                "Diagnóstico Sprint"
+                "Diagnóstico"
             ],
-            "interaction": "Hacé clic en los 3 presets arriba a la derecha ('🔍 Alucinación', '📂 Fallo Retrieval', '✅ Sana') para ver cómo cambia el ticket de Backlog en el veredicto.",
-            "script": "**1️⃣ EL CASO REAL EN PANTALLA (Columna izquierda):**\n• El manual oficial dice que *Checkout v4* está **bloqueado en QA lingüístico**, pero el bot alucina al final: *'mañana se aprobará automáticamente sin pruebas de QA'*.\n\n**2️⃣ DIAGNOSTICAR SIN ADIVINAR CON LOS 3 PRESETS (Columna derecha):**\n• **Clic en '🔍 Alucinación':** Contexto `1.0` pero Fidelidad `0.2` → **RECHAZADO · Ticket para Prompt / Temperatura / Guardrail**.\n• **Clic en '📂 Fallo Retrieval':** Fidelidad `0.9` pero Contexto `0.3` → **RECHAZADO · Ticket para Chunking / Metadatos / Vector DB**.\n• **Clic en '✅ Sana':** Todo ≥ `0.95` → **APROBADO PARA CANARY**.",
-            "bridge": "Ahora, cuando el sistema ya está en producción, ¿en qué tablero mira la PM todo esto los lunes en 5 minutos? Pasemos a la Slide 11: Langfuse.",
+            "interaction": "Tocá los 3 presets arriba a la derecha ('🔍 Alucinación', '📂 Fallo Retrieval', '✅ Sana') para ver cómo cambia el ticket de respuesta.",
+            "script": "**1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):**\n• El manual dice que *Checkout v4* está **bloqueado en QA lingüístico**, pero al final el bot inventó que *'mañana se aprueba automáticamente sin más pruebas'*.\n\n**2️⃣ PROBAR LOS 3 PRESETS (Derecha):**\n• **Alucinación:** Contexto `1.0` pero Fidelidad `0.2` → **RECHAZADO · Ticket para Prompt / Temperatura / Guardrail**.\n• **Fallo Retrieval:** Fidelidad `0.9` pero Contexto `0.3` → **RECHAZADO · Ticket para Chunking / Metadatos / Vector DB**.\n• **Sana:** Todo ≥ `0.95` → **Pasa a Canary**.",
+            "bridge": "Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse.",
             "cheatSheet": {
-                "idea": "Practicar el diagnóstico de causa raíz usando los 3 presets: Alucinación (Prompt) vs. Fallo Retrieval (Chunking/Vector DB) vs. Sana (Canary).",
-                "clicks": "Tocá los 3 botones preset arriba a la derecha: '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.",
-                "analogy": "Es diferenciar si el alumno contestó mal porque no leyó el capítulo correcto (Fallo Retrieval) o porque inventó un dato fuera del libro abierto (Alucinación)."
+                "idea": "Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).",
+                "clicks": "Tocá '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.",
+                "analogy": "Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad)."
             },
             "plainTerms": [
                 {
-                    "term": "Causa Raíz en Evals",
-                    "simple": "Identificar si el error nació en el buscador (Vector DB) o en el modelo (Prompt/LLM) antes de asignarlo al sprint."
+                    "term": "Diagnóstico de causa raíz",
+                    "simple": "Identificar si el error salió del buscador vectorial o del modelo antes de abrir una tarea en Jira."
                 }
             ]
         },
         {
             "num": 11,
             "id": "slide-11",
-            "title": "Observabilidad en Producción: Radiografía en Langfuse",
+            "title": "Monitoreo en producción con Langfuse",
             "duration": "4 Min",
             "tags": [
-                "Langfuse LLMOps",
+                "Langfuse",
                 "Traces & Spans",
-                "Data Flywheel en Vivo"
+                "Latencia P95"
             ],
-            "interaction": "Expandí los 4 pasos del árbol a la izquierda, tocá el botón '👎 Simular Reporte → Enviar al Golden Dataset' y repasá el Ritual de los Lunes a la derecha.",
-            "script": "**1️⃣ RADIOGRAFÍA EN LANGFUSE CON MODEL ROUTING (Árbol izquierdo):**\n• Abrís la **Traza** de una consulta real y ves en segundos: **Span 1** muestra que el *Model Router* eligió *Flash* (`$0.0001`, `160ms`) y recuperó 2 chunks con similitud `0.91` y `0.87`; **Span 2** muestra la generación con Streaming (`TTFT 220ms`); **Span 3** muestra la Eval asíncrona (`0.97`).\n• Tocá el botón **'👎 Simular Reporte → Enviar al Golden Dataset'** para mostrar cómo una corrección humana cierra el **Data Flywheel**.\n\n**2️⃣ EL RITUAL DE 5 MINUTOS DE LA PM CADA LUNES (Tarjeta derecha):**\n• 1) Diagnosticar Span 1 vs. Span 2 sin adivinar, 2) Mirar alertas de **Model Drift** si cae Faithfulness semanal, 3) Revisar costo por área y **latencia P95**.",
-            "bridge": "Con todo el arsenal técnico y de liderazgo listo, dediquemos los últimos 15 minutos al Bloque 4: entrevistas senior con dilemas reales y tu Plan de 30 Días. Vamos a la Slide 12.",
+            "interaction": "Hacé clic en los 4 pasos de la traza a la izquierda, tocá '👎 Simular reporte → mandar al Golden Dataset' y repasá los 3 chequeos semanales a la derecha.",
+            "script": "**1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):**\n• Cada mensaje deja una **Traza** dividida en pasos (**Spans**): en **Span 1** ves que el router eligió *Flash* (`$0.0001`, `160ms`) y qué chunks trajo; en **Span 2** ves el streaming (`TTFT 220ms`); en **Span 3** la nota de Eval (`0.97`).\n• Probá el botón **'👎 Simular reporte → mandar al Golden Dataset'** para ver cómo entra una corrección real al set de pruebas.\n\n**2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):**\n• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de *Faithfulness* sin cambios propios, detectás **Model Drift**; 3) Controlás costo por área y **latencia P95**.",
+            "bridge": "Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12.",
             "cheatSheet": {
-                "idea": "Usar Langfuse para ver trazas completas (Router + Retrieval + Generation + Async Eval), alimentar el Data Flywheel y correr el ritual semanal de 5 minutos.",
-                "clicks": "Hacé clic en los 4 nodos del árbol a la izquierda y tocá el botón '👎 Simular Reporte → Enviar al Golden Dataset'.",
-                "analogy": "Es la caja negra y la telemetría de cada consulta en vivo: en 10 segundos ves cuánto tardó, cuánto costó y qué paso falló."
+                "idea": "Leer trazas en Langfuse (Span de Router/Retrieval, Span de LLM, Span de Eval) y revisar cada semana origen de errores, Model Drift y P95.",
+                "clicks": "Expandí los 4 nodos de la izquierda y tocá el botón de reporte negativo.",
+                "analogy": "Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso falló y cuánto costó."
             },
             "plainTerms": [
                 {
                     "term": "Latencia P95",
-                    "simple": "El tiempo máximo que espera el 95% de los usuarios; vigila que los casos lentos no arruinen la experiencia aunque el promedio parezca bueno."
+                    "simple": "El tiempo máximo que tarda para el 95% de los usuarios; evita que un promedio lindo esconda demoras feas en casos puntuales."
                 }
             ]
         },
         {
             "num": 12,
             "id": "slide-12",
-            "title": "Entrevistas Senior: Fórmula de 3 Pasos + Tu Ventaja Injusta",
+            "title": "Cómo encarar entrevistas técnicas y defender tu perfil",
             "duration": "3 Min",
             "tags": [
-                "Trade-offs de PM",
-                "Fórmula 3 Pasos",
-                "Perfil Localización → IA"
+                "Entrevistas IT",
+                "Trade-offs",
+                "Localización → IA"
             ],
-            "interaction": "Repasá la fórmula de 3 pasos a la izquierda y conectá los 3 puentes directos de Anabela (Localización → AI PM) a la derecha.",
-            "script": "**1️⃣ CÓMO RESPONDE UNA PM SENIOR (Tarjeta izquierda):**\n• En entrevistas de alto nivel no hay opciones obvias: evaluán tu criterio en 3 pasos: **1)** Diagnóstico con datos (Langfuse + usuarios), **2)** Decisión de Backlog explicando el **trade-off** (qué ganás y qué acotás), **3)** Impacto medible en negocio/adopción/ROI.\n\n**2️⃣ TU VENTAJA INJUSTA DESDE LOCALIZACIÓN (Tarjeta derecha):**\n• Vos no llegás en cero: **Glosarios y QA Lingüístico** son *Context Engineering y Rúbricas de Evals (SME)*; **Gestión de traductores multi-región** es *Orquestación HITL, SLAs y stakeholders*; y **Dominio Multilingüe** es *Token Economics (+25% ES/PT) y auditoría de sesgos culturales*.",
-            "bridge": "Pongamos esa fórmula y tu perfil a prueba ahora mismo en 2 dilemas reales donde todas las opciones parecen tentadoras al principio. Pasemos a la Slide 13.",
+            "interaction": "Repasá los 3 pasos de la izquierda y cómo se traduce la experiencia de Anabela en la derecha.",
+            "script": "**1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):**\n• Nadie espera que escribas código. Miran si ordenás la cabeza así: **1)** qué revisás primero con datos (Langfuse + usuarios), **2)** qué cambio proponés y qué **trade-off** aceptás, y **3)** cómo medís si funcionó.\n\n**2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):**\n• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace ver al toque el mayor gasto de tokens en ES/PT y los matices culturales.",
+            "bridge": "Vamos a probarlo en dos casos reales donde las tres opciones parecen razonables a primera vista. Pasemos a la Slide 13.",
             "cheatSheet": {
-                "idea": "Estructurar respuestas senior alrededor de evidencia → decisión con trade-off → impacto medible, apalancando el background de Localización de Anabela.",
-                "clicks": "Señalá primero los 3 pasos a la izquierda y luego los 3 puentes profesionales de Anabela a la derecha.",
-                "analogy": "Tu trayectoria en Localización no es algo del pasado: es exactamente lo que hoy las empresas de IA buscan desesperadamente para evaluar y gobernar lenguaje."
+                "idea": "Ordenar respuestas en 3 puntos (qué mirás → qué decidís y qué resignás → cómo medís) y conectar Localización con Evals, HITL y costos multilingües.",
+                "clicks": "Señalá primero los 3 pasos a la izquierda y después los 3 puentes a la derecha.",
+                "analogy": "Tu experiencia en Localización no queda afuera: es exactamente el criterio de lenguaje, calidad y coordinación que falta en muchos equipos técnicos."
             },
             "plainTerms": [
                 {
-                    "term": "SME (Subject Matter Expert)",
-                    "simple": "Experto humano de dominio que define criterios de calidad y calibra las rúbricas de evaluación automática."
+                    "term": "Trade-off",
+                    "simple": "Elegir qué priorizás y qué dejás de lado (por ejemplo, velocidad o costo frente a cobertura total en una primera etapa)."
                 }
             ]
         },
         {
             "num": 13,
             "id": "slide-13",
-            "title": "Entrevista Real 1: Adopción al 12% y Presupuesto en Riesgo",
+            "title": "Caso de entrevista 1: Baja adopción y presupuesto en riesgo",
             "duration": "4 Min",
             "tags": [
-                "Dilema Adopción 12%",
-                "AI UX + FinOps",
-                "3 Opciones Plausibles"
+                "Caso adopción",
+                "UX + FinOps",
+                "3 opciones parejas"
             ],
-            "interaction": "Tocá '1. Auditar Adopción' a la izquierda y probá con Anabela las 3 opciones plausibles a la derecha (A comunicación, B más ingeniería, C estrategia integral).",
-            "script": "**1️⃣ EL DILEMA DEL HIRING MANAGER (Leé la pregunta):**\n• *'El asistente funciona bien técnicamente, pero solo lo usa el 12% del equipo y Finanzas quiere cancelar el presupuesto en 30 días. ¿Qué priorizás?'*\n\n**2️⃣ ANALIZAR LOS 3 CAMINOS (Hacé clic en Auditar y probá A, B y C):**\n• **Opción A (Mail del VP + capacitación obligatoria):** Sube una semana por obligación y vuelve a caer porque no quitaste la fricción real.\n• **Opción B (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; sumar deuda técnica acelera la cancelación.\n• **Opción C (PM Senior ✅):** Cruzás Langfuse + 10 entrevistas (41% abandona por espera de 12s y 38% usa *Shadow AI*), embebés el bot en 1 flujo clave dentro de Jira con **Token Streaming** y bajás 70% la factura con **Model Routing + Batch** para renovar con ROI positivo.",
-            "bridge": "Excelente. Resolviste una crisis de negocio y adopción. Vamos al segundo dilema en la Slide 14: qué pasa cuando un ahorro de costos rompe la calidad lingüística sin que fallen los tests tradicionales.",
+            "interaction": "Tocá '1. Auditar uso' a la izquierda y dejá que Anabela elija primero entre Opción A, B y C a la derecha antes de probarlas.",
+            "script": "**1️⃣ LA PREGUNTA (Leela tal cual):**\n• *'Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*\n\n**2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**\n• Preguntale a Anabela cuál elegiría antes de hacer clic.\n• **Opción A (Mail de dirección + capacitación):** Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.\n• **Opción C (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.\n• **Opción B (Mejor camino ✅):** Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.",
+            "bridge": "Bien resuelto: entendiste el problema de uso y de presupuesto antes de pedir más desarrollo. Vamos al segundo caso en la Slide 14.",
             "cheatSheet": {
-                "idea": "Mostrar que los proyectos de IA mueren más por baja adopción/fricción UX y falta de ROI claro que por falla técnica, usando 3 opciones realistas.",
-                "clicks": "1° Izquierda: '1. Auditar Adopción' → 2° Derecha: probá A, B y C para comparar el feedback.",
-                "analogy": "Si nadie entra a un gimnasio moderno y caro, no sirve pintar las paredes ni obligar con un memo: mirás por qué la gente no llega (fricción), mejorás la entrada y ajustás costos."
+                "idea": "Caso donde el bot funciona técnicamente pero no se adopta: la mejor opción es la B (auditar datos/entrevistas + llevarlo al flujo real con streaming + bajar costo).",
+                "clicks": "1° '1. Auditar uso' → 2° Que Anabela elija entre A, B y C (gana la B).",
+                "analogy": "Si nadie usa una herramienta cara, no sirve mandar un mail obligando ni agregarle funciones: primero mirás dónde se traban."
             },
             "plainTerms": [
                 {
-                    "term": "Fricción de Flujo (Workflow Friction)",
-                    "simple": "Obligar al usuario a salir de su herramienta diaria (Jira/TMS) para copiar y pegar textos en otro chat aparte."
+                    "term": "Fricción de flujo",
+                    "simple": "Obligar a la persona a salir de su herramienta diaria (Jira/TMS) para copiar y pegar textos en un chat aparte."
                 }
             ]
         },
         {
             "num": 14,
             "id": "slide-14",
-            "title": "Entrevista Real 2: Regresión Silenciosa (Model Drift)",
+            "title": "Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)",
             "duration": "5 Min",
             "tags": [
-                "Dilema Model Drift",
-                "Rollback por Flag + Routing",
-                "Bonus Presión VP"
+                "Model Drift",
+                "Feature Flag + Routing",
+                "Extra Director"
             ],
-            "interaction": "Tocá '1. Simular Regresión' a la izquierda, debatan las Opciones A, B y C a la derecha, y cerrá abriendo la tarjeta '⚡ Bonus Entrevista: Presión del VP'.",
-            "script": "**1️⃣ EL DILEMA REAL EN LOCALIZACIÓN (Leé la pregunta):**\n• *'Para ahorrar 60% migramos a un modelo económico. Todos los tests unitarios pasan en verde, pero Localización reporta errores de terminología y quejas de clientes. ¿Qué hacés?'*\n\n**2️⃣ ANALIZAR LAS 3 OPCIONES (A, B y C) + BONUS VP:**\n• **Opción A (Rollback total para siempre):** Apaga el incendio pero destruye el ahorro y no instala Evals.\n• **Opción B (Revisión manual 100%):** Crea un cuello de botella humano que cuesta más que el modelo.\n• **Opción C (PM Senior ✅):** Rollback por *Feature Flag* solo en flujos críticos, evaluación del *Golden Dataset* por categoría en Langfuse y **Model Routing selectivo** (Flash donde saca ≥ 0.90, Frontier en terminología legal) + alertas de Drift.\n• Si queda 1 minuto, abrí **'⚡ Bonus Entrevista: Presión del VP'** para mostrar cómo frenar pedidos irreales con un *Discovery Spike* de 1 semana.",
-            "bridge": "Resolviste los dilemas con nivel de Product Manager Senior. Pasemos a la última slide, la Slide 15, para celebrar y dejar claro tu Plan de Acción de los próximos 30 días.",
+            "interaction": "Tocá '1. Simular caída' a la izquierda, debatan A, B y C a la derecha (gana la C), y si da el tiempo abrí el bloque desplegable 'Extra' abajo.",
+            "script": "**1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:**\n• *'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'*\n\n**2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:**\n• **Opción A (Volver todo atrás para siempre):** Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.\n• **Opción B (Revisión manual al 100%):** Arma un cuello de botella más caro que el modelo grande.\n• **Opción C (Mejor camino ✅):** Revertís con *feature flag* solo en terminología crítica, corrés el *Golden Dataset* por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.\n• Si sobra 1 minuto, abrí el bloque **'Extra'** abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (*Discovery Spike* + *Shadow Mode*).",
+            "bridge": "Con esto cerramos los casos de entrevista. Pasemos a la última slide, la Slide 15, para repasar todo y ver cómo seguir este mes.",
             "cheatSheet": {
-                "idea": "Resolver una regresión semántica silenciosa sin perder el 60% de ahorro: Rollback selectivo por Flag + Evals por categoría + Routing híbrido + Bonus VP.",
-                "clicks": "1° '1. Simular Regresión' → 2° Compará A, B y C → 3° Abrí '⚡ Bonus Entrevista: Presión del VP'.",
-                "analogy": "Si una nueva flota de camiones económicos falla solo en caminos de montaña, no vendés toda la flota ni mandás acompañantes a pie: dejás los económicos en autopista y los potentes solo en montaña."
+                "idea": "Resolver un Model Drift en terminología sin tirar todo el ahorro ni tapar con revisión manual 100%: gana la C (rollback selectivo + Evals por categoría + Routing).",
+                "clicks": "1° '1. Simular caída' → 2° Debatir A, B y C (gana C) → 3° Abrir bloque Extra abajo.",
+                "analogy": "Si un cambio de proveedor falla solo en textos legales, no frenás toda la operación ni revisás todo a mano: separás por tipo de tarea."
             },
             "plainTerms": [
                 {
-                    "term": "Routing Selectivo por Categoría",
-                    "simple": "Mantener modelos livianos en las tareas donde las Evals superan 0.90 y reservar el modelo Frontier solo donde la precisión terminológica es crítica."
+                    "term": "Routing por categoría",
+                    "simple": "Dejar el modelo económico donde las pruebas dan arriba de 0.90 y mantener el modelo grande en los casos donde el detalle importa."
                 }
             ]
         },
         {
             "num": 15,
             "id": "slide-15",
-            "title": "¡Felicitaciones Anabela por Completar las 4 Sesiones!",
+            "title": "Cierre del programa y próximos pasos",
             "duration": "3 Min",
             "tags": [
-                "Graduación",
-                "Plan de Acción 30 Días",
-                "AI PM Kit"
+                "Cierre",
+                "Repaso S1–S4",
+                "Próximo mes"
             ],
-            "interaction": "Repasá las 4 insignias completadas, recorré semana por semana el Plan de Acción de 30 Días y mostrale los botones al Simulador S4, Glosario S4 y Portal.",
-            "script": "**1️⃣ ¡FELICITACIONES POR COMPLETAR EL PROGRAMA! (Repaso S1–S4):**\n• En 4 sesiones uniste tu experiencia en gestión de proyectos y localización con el mapa completo de IT/IA: ingeniería y Agile (S1), LLMs y RAG (S2), Agentes ReAct/MCP (S3) y hoy FinOps real, Build vs. Buy, Lanzamiento/UX, Evals avanzadas y dilemas de entrevista (S4).\n\n**2️⃣ TU PLAN DE ACCIÓN DE 30 DÍAS (Señalá el bloque de 4 semanas):**\n• **Semana 1:** Armá un Caso de Estudio de 1 página con la App Mock PRD (S2) y el cálculo ROI/TCO.\n• **Semana 2:** Actualizá CV y LinkedIn en clave *AI Product / Localization Ops*.\n• **Semana 3:** Repasá tu demo práctica de Antigravity + AWS MCP y tu pitch de 2 min.\n• **Semana 4:** Practicá en voz alta los dilemas del Simulador S4.",
-            "bridge": "🏁 Cierre Final del Programa: Tenés todo el Portal disponible con las 4 presentaciones, los 4 glosarios y los simuladores para repasar antes de cualquier entrevista. ¡Muchísimos éxitos!",
+            "interaction": "Repasá las 4 sesiones, recorré los 4 pasos simples para el próximo mes y recordale dónde quedan el Simulador S4, Glosario S4 y Portal.",
+            "script": "**1️⃣ CIERRE DEL RECORRIDO (Las 4 sesiones):**\n• En cuatro clases conectaste tu base de gestión y localización con cómo trabajan hoy los equipos de software (S1), LLMs y RAG (S2), Agentes y MCP (S3) y hoy costos reales, salida gradual, Evals/Drift y entrevistas (S4).\n\n**2️⃣ CÓMO SEGUIR PRACTICANDO ESTE MES (4 pasos simples):**\n• **Semana 1:** Bajá a una página tu caso práctico usando el Mock PRD de S2 y el cálculo honesto de TCO/tiempo de hoy.\n• **Semana 2:** Ajustá CV y LinkedIn conectando tu trayectoria en Localización con proyectos de IA y QA.\n• **Semana 3:** Repasá en voz alta cómo mostraste el flujo de Antigravity + AWS MCP en 2 minutos.\n• **Semana 4:** Volvé al Simulador S4 y practicá defender los dos casos sin mirar la respuesta.",
+            "bridge": "🏁 Cierre Final: Todo el portal con las 4 presentaciones, glosarios, Mock PRD y simuladores te queda abierto para consultar cuando tengas una entrevista o reunión técnica. ¡Muchos éxitos!",
             "cheatSheet": {
-                "idea": "Cerrar celebrando las 4 sesiones y entregando un Plan de Acción concreto de 4 semanas para entrevistas y posicionamiento profesional.",
-                "clicks": "Repasá las 4 insignias, el bloque de 4 semanas del Plan de 30 Días y los 3 botones inferiores.",
-                "analogy": "Terminaste el entrenamiento con un mapa completo y un kit de herramientas listo para salir a la cancha desde mañana."
+                "idea": "Cerrar de forma cercana repasando las 4 clases y dejando 4 tareas semanales concretas para el próximo mes.",
+                "clicks": "Mostrá las 4 tarjetas S1–S4, la fila de 4 semanas y los 3 botones finales.",
+                "analogy": "Te queda el mapa entero ordenado en un solo lugar para repasar 15 minutos antes de cualquier charla técnica."
             },
             "plainTerms": [
                 {
-                    "term": "AI Product / Project Manager",
-                    "simple": "Líder capaz de conectar las necesidades de negocio y lenguaje con arquitectura técnica, presupuesto FinOps, experiencia de usuario y calidad medible."
+                    "term": "Portfolio práctico de 1 página",
+                    "simple": "Un caso concreto (problema, arquitectura, riesgos, TCO y cómo lo medirías) listo para contar en 3 minutos en una entrevista."
                 }
             ]
         }
     ],
     "mentalMap60s": [
         {
-            "step": "1. FinOps Avanzado, Build vs. Buy & ROI/Payback (Slides 1 a 6)",
-            "text": "Model Routing (80% a Flash/Haiku ahorra ~76%), Batch API (-50% nocturno), TCO completo (incluyendo +20–30% por idiomas ES/PT), marco **Build vs. Buy vs. Configure** con Model Gateway y Calculadora de **ROI + Payback**."
+            "step": "1. Costos reales, Build vs. Buy y tiempo liberado (Slides 1 a 6)",
+            "text": "Model Routing (80% a modelo chico ahorra ~76%), Batch API (-50% nocturno), TCO completo (incluyendo +20–30% de tokens en ES/PT), decidir **Build vs. Buy vs. Configure** con Model Gateway y presentar **capacidad liberada** ante Finanzas sin vender recorte de nómina."
         },
         {
-            "step": "2. Lanzamiento Seguro, AI UX & Gobernanza 2026 (Slides 7 a 8)",
-            "text": "Stepper de **Shadow Mode → Canary Rollout → Data Flywheel**, cómo mejorar adopción con **Token Streaming (< 1s)** y flujos contextuales, **Discovery Spikes** de 1 semana en Agile probabilístico, y gestión de **Shadow AI, EU AI Act e IP**."
+            "step": "2. Salida gradual, UX y riesgos 2026 (Slides 7 a 8)",
+            "text": "Salir con **Shadow Mode → Canary → feedback**, bajar la espera con **Token Streaming (< 1s)** y botones en Jira/TMS, correr un **Discovery Spike** de 1 semana antes de prometer fechas, y manejar **Shadow AI, EU AI Act e IP**."
         },
         {
-            "step": "3. AI Evals Avanzados & Langfuse (Slides 9 a 11)",
-            "text": "Conectar la **Tríada RAG** con tickets exactos de Backlog (Prompt vs. Vector DB), **Trajectory Evals** para agentes, **Model Drift** calibrado con criterio humano experto (**SME**) y el ritual semanal de 5 minutos en **Langfuse**."
+            "step": "3. AI Evals en la práctica y Langfuse (Slides 9 a 11)",
+            "text": "Saber qué ticket abrir según qué métrica de la **Tríada RAG** cayó, sumar **Trajectory Evals** en agentes, detectar **Model Drift** calibrado con criterio de negocio/idioma y revisar cada semana trazas y **P95** en **Langfuse**."
         },
         {
-            "step": "4. Entrevistas Senior con Dilemas Reales & Plan 30 Días (Slides 12 a 15)",
-            "text": "Ventaja injusta desde Localización, 2 simuladores con **3 opciones plausibles con trade-offs** (Crisis de Adopción 12% y Model Drift + Bonus Presión del VP) y un **Plan de Acción de 30 días**."
+            "step": "4. Entrevistas reales y cierre (Slides 12 a 15)",
+            "text": "Cómo ordenar respuestas y defender su experiencia en Localización, **2 casos con 3 opciones parejas** (Adopción baja → gana B; Model Drift → gana C + Extra Director) y 4 pasos concretos para practicar en el mes."
         }
     ]
 };

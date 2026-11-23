@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Práctico Sesión 4: FinOps, Build vs. Buy, Evals &amp; Entrevistas | Anabela Hotian</title>
+    <title>Laboratorio Práctico Sesión 4: Costos, Build vs. Buy, Evals y Entrevistas | Anabela Hotian</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -163,70 +163,70 @@
             <a href="./slides_sesion_4.html">▶ Volver a Slides S4</a>
             <a href="./glosario_completo_sesion_4.html">📖 Glosario S4</a>
         </div>
-        <span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--amber);">SESIÓN 04 · LABORATORIO FINOPS, BUILD/BUY, EVALS &amp; ENTREVISTAS</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--amber);">SESIÓN 04 · LABORATORIO PRÁCTICO</span>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h1>🧪 Simulador Ejecutivo S4: FinOps Real, Rollout, Evals &amp; Dilemas PM</h1>
-            <p>Configurá las 4 decisiones de liderazgo de tu producto de IA a la izquierda (o hacé clic en <strong>"✨ Cargar Configuración Ideal PM Senior"</strong>) y ponelas a prueba contra los 3 dilemas reales de entrevista a la derecha.</p>
+            <h1>🧪 Laboratorio S4: Costos, Lanzamiento, Evals y Casos Reales</h1>
+            <p>Elegí cómo planteás cada frente del proyecto a la izquierda (o tocá <strong>"Cargar configuración recomendada"</strong>) y probá qué pasa ante los 3 casos de la derecha.</p>
         </section>
 
         <div class="grid-2">
             <div class="card">
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
-                    <h2>1. Decisiones Ejecutivas de Producto IA</h2>
-                    <button type="button" class="btn" onclick="loadIdealS4()">✨ Cargar Configuración Ideal PM Senior</button>
+                    <h2>1. Decisiones del proyecto</h2>
+                    <button type="button" class="btn" onclick="loadIdealS4()">✨ Cargar configuración recomendada</button>
                 </div>
 
                 <div class="control-group">
-                    <label>💰 1. Estrategia FinOps &amp; Arquitectura de Modelos:</label>
+                    <label>💰 1. Costos y arquitectura de modelos (FinOps):</label>
                     <select id="cfg-finops">
-                        <option value="bad">Modelo Frontier para todo en tiempo real (sin Gateway ni Batch)</option>
-                        <option value="good">Model Routing (80/20) + Batch API (-50%) + Model Gateway (AWS Bedrock)</option>
+                        <option value="bad">Mandar todo al modelo más grande en tiempo real</option>
+                        <option value="good">Model Routing (80/20) + Batch API (-50%) + Model Gateway</option>
                     </select>
                 </div>
 
                 <div class="control-group">
-                    <label>🚀 2. Lanzamiento, AI UX &amp; Agile Probabilístico:</label>
+                    <label>🚀 2. Salida a producción, UX y planificación:</label>
                     <select id="cfg-rollout">
-                        <option value="bad">Lanzamiento Big Bang 100% con pantalla congelada 12s y chat vacío</option>
+                        <option value="bad">Salir para el 100% de golpe con chat vacío y pantalla congelada</option>
                         <option value="good">Discovery Spike (1 sem) + Shadow Mode → Canary + Token Streaming (&lt; 1s)</option>
                     </select>
                 </div>
 
                 <div class="control-group">
-                    <label>📊 3. Calidad Científica (AI Evals) &amp; Observabilidad:</label>
+                    <label>📊 3. Evaluaciones y monitoreo:</label>
                     <select id="cfg-evals">
-                        <option value="bad">Pruebas manuales al inicio sin alertas ni trazas semanales</option>
-                        <option value="good">Tríada RAG + Agent Trajectory Evals + Langfuse + Alertas de Model Drift</option>
+                        <option value="bad">Probar un rato a ojo antes de salir y no medir después</option>
+                        <option value="good">Tríada RAG + Trajectory Evals + Langfuse + alertas de Model Drift</option>
                     </select>
                 </div>
 
                 <div class="control-group">
-                    <label>⚖️ 4. Build vs. Buy &amp; Gobernanza 2026:</label>
+                    <label>⚖️ 4. Build vs. Buy y gobernanza:</label>
                     <select id="cfg-gov">
-                        <option value="bad">Prohibir IA por mail y mandar construir todo a medida desde cero</option>
-                        <option value="good">Decisión Build vs. Buy + Alternativa Corporativa anti-Shadow AI + EU AI Act</option>
+                        <option value="bad">Prohibir IA por mail y mandar programar todo desde cero</option>
+                        <option value="good">Evaluar Build vs. Buy + dar opción interna contra Shadow AI + EU AI Act</option>
                     </select>
                 </div>
             </div>
 
             <div class="card">
-                <h2>2. Probá tu Estrategia ante 3 Dilemas de Entrevista</h2>
-                <p style="font-size:0.84rem; color:var(--muted); margin-bottom:0.85rem;">Hacé clic en cada escenario para simular qué pasa en producción y cómo evalúa tu respuesta el comité:</p>
+                <h2>2. Probá tu estrategia ante 3 casos reales</h2>
+                <p style="font-size:0.84rem; color:var(--muted); margin-bottom:0.85rem;">Tocá cada escenario para simular qué ocurre en producción y qué responderías:</p>
 
                 <button type="button" class="scenario-btn" onclick="runS4Scenario(1)">
-                    <strong>📉 Crisis 1 (Adopción 12% &amp; Presupuesto):</strong> El bot funciona técnicamente, pero solo lo usa el 12% y Finanzas quiere cortarlo en 30 días.
+                    <strong>📉 Caso 1 (Baja adopción y presupuesto):</strong> El bot funciona técnicamente, pero solo lo usa una minoría (~12%) y Finanzas amenaza con cortarlo en 30 días.
                 </button>
                 <button type="button" class="scenario-btn" onclick="runS4Scenario(2)">
-                    <strong>🔍 Crisis 2 (Model Drift en Localización):</strong> Un cambio a modelo liviano dejó los unit tests en verde, pero rompió terminología legal bajo NDA.
+                    <strong>🔍 Caso 2 (Model Drift en Localización):</strong> Al pasar a un modelo más chico los tests de código siguen en verde, pero se rompen términos legales bajo NDA.
                 </button>
                 <button type="button" class="scenario-btn" onclick="runS4Scenario(3)">
-                    <strong>⚡ Crisis 3 (Presión del VP &amp; Shadow AI):</strong> El VP exige un agente autónomo en 30 días sin datos limpios mientras el equipo usa IA personal.
+                    <strong>⚡ Caso 3 (Pedido apurado y Shadow AI):</strong> Piden un agente en 30 días sin datos ordenados mientras el equipo ya pega cosas en cuentas personales.
                 </button>
 
-                <div class="console-out" id="s4-console">Seleccioná tus 4 decisiones a la izquierda y tocá uno de los 3 dilemas arriba para ver el diagnóstico...</div>
+                <div class="console-out" id="s4-console">Elegí las 4 opciones a la izquierda y tocá uno de los 3 casos arriba para ver el resultado...</div>
             </div>
         </div>
     </main>
@@ -239,7 +239,7 @@
             document.getElementById('cfg-gov').value = 'good';
             const out = document.getElementById('s4-console');
             out.style.color = '#6ee7b7';
-            out.textContent = "✅ CONFIGURACIÓN IDEAL DE PM SENIOR CARGADA:\n• FinOps: Model Routing (80/20) + Batch API (-50%) + Model Gateway (AWS Bedrock)\n• Lanzamiento & UX: Discovery Spike + Shadow Mode → Canary + Token Streaming (< 1s)\n• Calidad & Observabilidad: Tríada RAG + Trajectory Evals + Langfuse + Alertas Drift\n• Gobernanza 2026: Build vs. Buy + Alternativa anti-Shadow AI + EU AI Act\n\n👉 Ahora hacé clic en cualquiera de los 3 dilemas de entrevista arriba para probarla.";
+            out.textContent = "✅ CONFIGURACIÓN RECOMENDADA CARGADA:\n• FinOps: Model Routing (80/20) + Batch API (-50%) + Model Gateway\n• Lanzamiento y UX: Discovery Spike + Shadow Mode → Canary + Token Streaming (< 1s)\n• Calidad y trazas: Tríada RAG + Trajectory Evals + Langfuse + alertas de Drift\n• Gobernanza: Build vs. Buy + herramienta interna frente a Shadow AI + EU AI Act\n\n👉 Tocá cualquiera de los 3 casos arriba para probarla.";
         }
 
         function runS4Scenario(num) {
@@ -252,26 +252,26 @@
             if (num === 1) {
                 if (finops === 'good' && rollout === 'good') {
                     out.style.color = '#a7f3d0';
-                    out.textContent = "✅ DILEMA 1 RESUELTO (ADOPCIÓN + ROI ANTE FINANZAS):\n1. [Diagnóstico UX + Langfuse]: Detectás 41% de abandono por espera de 12s y fricción fuera de Jira/TMS.\n2. [Acción AI UX]: Activás Token Streaming (< 1s) y acceso contextual embebido en 1 flujo clave.\n3. [FinOps Real]: Con Model Routing (80/20) y Batch API (-50%) bajás la factura mensual ~70%.\n📈 RESULTADO: Adopción sube del 12% al 58% en 3 semanas y Finanzas renueva el presupuesto con Payback < 2 semanas.";
+                    out.textContent = "✅ CASO 1 RESUELTO (ADOPCIÓN Y PRESUPUESTO):\n1. [Langfuse + entrevistas]: Detectás espera larga sin streaming y fricción por tener que salir de Jira/TMS.\n2. [Cambio de UX]: Llevás el asistente a un flujo concreto con Token Streaming (< 1s).\n3. [FinOps]: Aplicás Model Routing (80/20) y Batch API (-50%) para bajar la factura mensual.\n📈 RESULTADO: Sube el uso recurrente en el equipo piloto y Finanzas renueva el presupuesto un trimestre más.";
                 } else {
                     out.style.color = '#fca5a5';
-                    out.textContent = "❌ DILEMA 1 FALLIDO (CANCELACIÓN POR BAJA ADOPCIÓN Y COSTO ALTO):\n• Sin Token Streaming ni integración en el flujo real, los usuarios siguen evitando el chat vacío.\n• Al usar 100% modelo Frontier en tiempo real, el costo por usuario activo resulta injustificable para Finanzas.\n👉 Activá FinOps + Lanzamiento/UX ideales y volvé a probar.";
+                    out.textContent = "❌ CASO 1 FALLIDO (BAJA ADOPCIÓN Y COSTO INJUSTIFICABLE):\n• Sin streaming ni integración en el flujo de trabajo, el equipo evita el chat aparte.\n• Mandar todo al modelo caro en tiempo real deja un costo por usuario activo difícil de defender ante Finanzas.\n👉 Ajustá FinOps + Lanzamiento/UX y volvé a probar.";
                 }
             } else if (num === 2) {
                 if (evals === 'good' && finops === 'good') {
                     out.style.color = '#a7f3d0';
-                    out.textContent = "✅ DILEMA 2 RESUELTO (MODEL DRIFT + ROUTING SELECTIVO):\n1. [Rollback por Flag]: Volvés al modelo Frontier solo en terminología crítica sin perder el ahorro en FAQs.\n2. [Tríada RAG + Langfuse]: Corrés el Golden Dataset por categoría; el Juez LLM calibrado con criterio SME detecta caída de Faithfulness de 0.94 a 0.64.\n3. [Model Gateway + Routing]: Dejás Flash donde saca >= 0.90 y activás alerta automática de Drift en CI/CD.\n🎯 RESULTADO: Cero quejas en localización y ~65% de ahorro FinOps sostenido.";
+                    out.textContent = "✅ CASO 2 RESUELTO (MODEL DRIFT + ROUTING POR CATEGORÍA):\n1. [Rollback por Feature Flag]: Volvés al modelo grande solo en terminología legal sin perder el ahorro en consultas simples.\n2. [Tríada RAG + Langfuse]: Corrés el Golden Dataset por categoría calibrado con gente de Localización y ves dónde cayó la Fidelidad.\n3. [Model Gateway + alerta]: Dejás el modelo chico únicamente donde supera 0.90 y activás alerta automática de Drift en CI/CD.\n🎯 RESULTADO: Se cortan los errores de glosario manteniendo gran parte del ahorro.";
                 } else {
                     out.style.color = '#fca5a5';
-                    out.textContent = "❌ DILEMA 2 FALLIDO (REGRESIÓN SILENCIOSA EN PRODUCCIÓN):\n• Sin Tríada RAG ni alertas de Model Drift, los unit tests de software pasaron en verde mientras la calidad lingüística cayó.\n• Sin Model Gateway ni Routing por categoría, solo podés elegir entre quejas de clientes o cancelar todo el ahorro.\n👉 Activá FinOps + Evals/Langfuse ideales y reintentá.";
+                    out.textContent = "❌ CASO 2 FALLIDO (CAÍDA SILENCIOSA EN PRODUCCIÓN):\n• Sin Tríada RAG ni alertas de Model Drift, los tests de software pasan en verde mientras empeoran los textos.\n• Sin Model Gateway ni Routing por categoría, solo podés elegir entre errores de clientes o cancelar todo el ahorro.\n👉 Ajustá FinOps + Evals/Langfuse y reintentá.";
                 }
             } else if (num === 3) {
                 if (gov === 'good' && rollout === 'good') {
                     out.style.color = '#a7f3d0';
-                    out.textContent = "✅ DILEMA 3 RESUELTO (PRESIÓN DEL VP + SHADOW AI + EU AI ACT):\n1. [Discovery Spike 1 sem]: En vez de prometer un agente en 30 días a ciegas, probás 30 casos reales en 5 días para medir calidad de datos.\n2. [Build vs. Buy + Shadow Mode]: Resolvés rápido con Configure/MCP o Buy para frenar el Shadow AI personal mientras corrés Shadow Mode interno.\n3. [EU AI Act & IP]: Dejás trazabilidad en Langfuse y supervisión humana HITL en decisiones sensibles.\n🏆 RESULTADO: Alinear al VP con entregas rápidas seguras sin deuda técnica ni riesgo legal.";
+                    out.textContent = "✅ CASO 3 RESUELTO (PEDIDO APURADO + SHADOW AI):\n1. [Discovery Spike de 1 semana]: Antes de prometer un agente en 30 días, probás ~30 casos reales para validar si alcanzan los datos.\n2. [Build vs. Buy + Shadow Mode]: Resolvés la urgencia con una opción Configure/Buy segura para frenar el Shadow AI mientras corrés pruebas en Shadow Mode.\n3. [EU AI Act e IP]: Dejás trazabilidad en Langfuse y revisión humana en pasos sensibles.\n🏆 RESULTADO: Acompañás al negocio sin prometer fechas imposibles ni abrir brechas legales.";
                 } else {
                     out.style.color = '#fca5a5';
-                    out.textContent = "❌ DILEMA 3 FALLIDO (BIG BANG + SHADOW AI DESCONTROLADO):\n• Mandar a construir a medida en 30 días sin Discovery Spike ni datos limpios garantiza retrasos y alucinaciones en vivo.\n• Prohibir la IA por mail sin ofrecer alternativa corporativa acelera el uso de Shadow AI fuera de control.\n👉 Activá Lanzamiento/UX + Gobernanza 2026 ideales y volvé a probar.";
+                    out.textContent = "❌ CASO 3 FALLIDO (BIG BANG SIN DATOS + SHADOW AI):\n• Mandar programar un agente a medida en 30 días con datos sucios termina en retrasos y errores en vivo.\n• Prohibir IA por mail sin ofrecer alternativa corporativa hace que la gente siga usando cuentas personales.\n👉 Ajustá Lanzamiento/UX + Gobernanza y volvé a probar.";
                 }
             }
         }

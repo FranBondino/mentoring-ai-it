@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liderazgo Ejecutivo en IA, FinOps, Evals &amp; Entrevistas - Sesión 4</title>
+    <title>Llevar la IA a Producción: Costos, Calidad y Entrevistas - Sesión 4</title>
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -544,12 +544,12 @@
         <!-- SLIDE 1: COVER -->
         <div class="slide active" id="slide-1">
             <div class="glass-card text-center" style="max-width: 900px; padding: 2.5rem 2.8rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 1rem;">SESIÓN 4 · CIERRE EJECUTIVO DE PRODUCTO IA</span>
-                <h1 class="slide-title" style="font-size: 2.9rem; line-height: 1.08; margin-bottom: 1rem; background: linear-gradient(135deg, #ffffff 40%, var(--color-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Liderazgo Ejecutivo de Productos de IA
+                <span class="nav-session" style="display: inline-block; margin-bottom: 1rem;">SESIÓN 4 · CIERRE DEL PROGRAMA</span>
+                <h1 class="slide-title" style="font-size: 2.85rem; line-height: 1.08; margin-bottom: 1rem; background: linear-gradient(135deg, #ffffff 40%, var(--color-amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Llevar la IA a Producción: Costos, Calidad y Entrevistas
                 </h1>
-                <p style="font-size: 1.03rem; color: var(--text-secondary); line-height: 1.55; max-width: 720px; margin: 0 auto 1.4rem;">
-                    FinOps avanzado y decisiones <em>Build vs. Buy</em>, lanzamiento seguro con AI UX, calidad científica con Evals y Langfuse, y dilemas reales de entrevistas PM Senior.
+                <p style="font-size: 1.02rem; color: var(--text-secondary); line-height: 1.55; max-width: 720px; margin: 0 auto 1.4rem;">
+                    Cómo decidir si comprar o construir, armar números honestos para Finanzas, lanzar sin quemar al equipo, evaluar calidad en serio y defender tu perfil en entrevistas.
                 </p>
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem; text-align: left; margin-bottom: 1.4rem;">
                     <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.28); border-radius: 10px; padding: 0.6rem 0.75rem;">
@@ -565,8 +565,8 @@
                         <span style="font-size: 0.76rem; color: #cbd5e1;">Agentes ReAct, MCP &amp; HITL</span>
                     </div>
                     <div style="background: rgba(245,158,11,0.16); border: 1px solid rgba(245,158,11,0.5); border-radius: 10px; padding: 0.6rem 0.75rem;">
-                        <strong style="color: #fbbf24; font-size: 0.74rem; display: block;">S4 · HOY (LIDERAZGO)</strong>
-                        <span style="font-size: 0.76rem; color: #ffffff;">FinOps, Build/Buy, Evals &amp; Rol PM</span>
+                        <strong style="color: #fbbf24; font-size: 0.74rem; display: block;">S4 · HOY</strong>
+                        <span style="font-size: 0.76rem; color: #ffffff;">Costos, Rollout, Evals y Entrevistas</span>
                     </div>
                 </div>
                 <div style="width: 110px; height: 5px; background: var(--color-amber); border-radius: 3px; margin: 0 auto;"></div>
@@ -575,91 +575,91 @@
 
         <!-- SLIDE 2: AGENDA -->
         <div class="slide" id="slide-2">
-            <h2 class="slide-title">Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)</h2>
-            <p class="slide-subtitle">Sin repetir lo visto en S1–S3: hoy nos enfocamos en cómo decidir, lanzar, gobernar y defender productos de IA</p>
+            <h2 class="slide-title">Qué vamos a ver hoy (Sesión 4)</h2>
+            <p class="slide-subtitle">Pasamos de cómo funciona la IA por dentro a qué decisiones tomás vos cuando el proyecto sale a la calle</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En las Sesiones 1 a 3 aprendiste cómo se construye un sistema de IA. Hoy damos el salto al sombrero de <strong>AI Product / Project Manager</strong>: qué conviene comprar vs. construir, cómo calcular el retorno real con costos ocultos, cómo lanzar sin quemar a los usuarios y cómo resolver dilemas difíciles de entrevista.
+                <strong>💡 En criollo:</strong> Ya viste cómo trabaja desarrollo, cómo se arma un RAG y qué hace un agente. Hoy cerramos con lo que te van a pedir como PM en el día a día: <strong>cuidar el presupuesto real</strong>, <strong>lanzar de a poco</strong>, <strong>medir si la calidad cayó</strong> y <strong>responder casos de entrevista con criterio</strong>.
             </div>
             
             <div class="grid-2" style="gap: 1rem;">
                 <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.3); padding: 1.1rem 1.35rem;">
                     <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-amber); margin-bottom: 0.4rem;">
                         <i data-lucide="line-chart" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">1. FinOps Avanzado &amp; Build vs. Buy</h3>
+                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">1. Costos reales y Build vs. Buy</h3>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;"><strong>Model Routing</strong>, <strong>Batch API (-50%)</strong>, costos ocultos del TCO (incluyendo impuesto multilingüe), decisión <strong>Build vs. Buy vs. Configure</strong> y <strong>Calculadora de ROI &amp; Payback</strong>.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;"><strong>Model Routing</strong> (modelos chicos vs. grandes), <strong>Batch API (-50%)</strong>, los costos fijos que no están en la factura del LLM, cuándo comprar vs. construir y la calculadora de tiempo liberado.</p>
                 </div>
                 
                 <div class="glass-card" style="border-color: rgba(59, 130, 246, 0.3); padding: 1.1rem 1.35rem;">
                     <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-blue); margin-bottom: 0.4rem;">
                         <i data-lucide="rocket" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">2. Lanzamiento Seguro &amp; AI UX</h3>
+                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">2. Cómo lanzar y diseñar UX para IA</h3>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Despliegue gradual (<strong>Shadow Mode → Canary → Data Flywheel</strong>), <strong>Token Streaming</strong>, <strong>Discovery Spikes</strong> en Agile probabilístico y gobernanza frente a <strong>Shadow AI y EU AI Act</strong>.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Despliegue por etapas (<strong>Shadow Mode → Canary → Feedback</strong>), <strong>Token Streaming</strong>, <strong>Spikes</strong> cortos antes de prometer fechas y riesgos actuales (<strong>Shadow AI, EU AI Act e IP</strong>).</p>
                 </div>
                 
                 <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3); padding: 1.1rem 1.35rem;">
                     <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-green); margin-bottom: 0.4rem;">
                         <i data-lucide="activity" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">3. AI Evals Avanzados &amp; Langfuse</h3>
+                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">3. Evaluar calidad y monitorear en Langfuse</h3>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Diagnóstico por causa raíz con la <strong>Tríada RAG</strong>, <strong>Trajectory Evals</strong> para agentes, alertas contra <strong>Model Drift</strong> y el ritual de 5 minutos en <strong>Langfuse</strong>.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Qué parte del sistema arreglar cuando baja la <strong>Tríada RAG</strong>, cómo evaluar herramientas en agentes, alertas de <strong>Model Drift</strong> y qué mirar cada semana en <strong>Langfuse</strong>.</p>
                 </div>
 
                 <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.3); padding: 1.1rem 1.35rem;">
                     <div style="display: flex; align-items: center; gap: 0.55rem; color: var(--color-purple); margin-bottom: 0.4rem;">
                         <i data-lucide="user-check" class="icon-sm"></i>
-                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">4. Entrevistas Senior &amp; Plan 30 Días</h3>
+                        <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff;">4. Entrevistas reales y cierre</h3>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Tu ventaja injusta desde Localización, <strong>2 simuladores de crisis con trade-offs reales</strong> (Adopción 12% y Model Drift) más tu <strong>Plan de Acción de 30 Días</strong>.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.44;">Cómo contar tu experiencia en Localización sin sonar armada, <strong>2 casos de entrevista con opciones parejas</strong> (baja adopción y caída de calidad) y plan para el próximo mes.</p>
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 3: MODEL ROUTING -->
         <div class="slide" id="slide-3">
-            <h2 class="slide-title">FinOps 1: Model Routing (Enrutamiento de Modelos)</h2>
-            <p class="slide-subtitle">Por qué nunca usamos el modelo más caro para el 100% de las tareas y cómo armamos un "semáforo inteligente"</p>
+            <h2 class="slide-title">FinOps 1: Model Routing (enrutamiento de modelos)</h2>
+            <p class="slide-subtitle">Por qué no tiene sentido pagar el modelo más caro para el 100% de los mensajes</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Usar un modelo de frontera (<em>GPT-4o / Claude Opus</em>) para clasificar un ticket simple es contratar a un cirujano para poner una curita: cuesta <strong>20 veces más caro</strong> y tarda el triple. Con <strong>Model Routing</strong>, un clasificador deriva el <strong>80% de las consultas fáciles a un Modelo Liviano (Flash / Haiku)</strong> y reserva el modelo grande para el 20% difícil.
+                <strong>💡 En palabras simples:</strong> Usar un modelo grande (<em>GPT-4o / Claude Opus</em>) para clasificar un ticket o responder una duda frecuente es pagar <strong>20 veces más</strong> y esperar el triple de tiempo sin necesidad. Con <strong>Model Routing</strong>, un filtro rápido manda alrededor del <strong>80% de los pedidos simples a un modelo chico (Flash / Haiku)</strong> y deja el modelo pesado solo para el resto.
             </div>
             
             <div class="grid-2">
                 <div class="glass-card" style="padding: 1.25rem 1.5rem;">
                     <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-amber); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="git-branch" class="icon-sm"></i> Arquitectura de 2 Niveles (Tiered Routing)
+                        <i data-lucide="git-branch" class="icon-sm"></i> Dos carriles según la dificultad
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.8rem;">
                         <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-left: 4px solid var(--color-green); padding: 0.7rem 0.85rem; border-radius: 8px;">
-                            <strong style="color: #34d399; display: block; margin-bottom: 0.2rem;">🟢 Ruta Rápida (70% - 85% de consultas) · Modelos Small / Flash</strong>
-                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro.<br><strong>Costo:</strong> ~$0.15 / 1M tokens · <strong>Velocidad:</strong> 0.3 seg. Ideal para extraer campos, clasificar tickets y FAQs simples.</span>
+                            <strong style="color: #34d399; display: block; margin-bottom: 0.2rem;">🟢 Carril rápido (70% - 85% del tráfico) · Modelos chicos</strong>
+                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro.<br><strong>Costo ref.:</strong> ~$0.15 / 1M tokens · <strong>Velocidad:</strong> ~0.3 seg. Sirve para extraer campos, clasificar tickets y dudas directas.</span>
                         </div>
                         <div style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-left: 4px solid var(--color-purple); padding: 0.7rem 0.85rem; border-radius: 8px;">
-                            <strong style="color: #c084fc; display: block; margin-bottom: 0.2rem;">🟣 Ruta Experta (15% - 30% de consultas) · Modelos Frontier</strong>
-                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Claude Sonnet/Opus, GPT-4o, Gemini Pro.<br><strong>Costo:</strong> ~$3.00 a $15.00 / 1M tokens · <strong>Uso:</strong> Razonamiento multi-paso, contratos ambiguos o transcreación compleja.</span>
+                            <strong style="color: #c084fc; display: block; margin-bottom: 0.2rem;">🟣 Carril complejo (15% - 30% del tráfico) · Modelos grandes</strong>
+                            <span style="color: #cbd5e1;"><em>Ejemplos:</em> Claude Sonnet/Opus, GPT-4o, Gemini Pro.<br><strong>Costo ref.:</strong> ~$3.00 a $15.00 / 1M tokens · <strong>Uso:</strong> Contratos ambiguos, transcreación o decisiones de varios pasos.</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
                     <div>
-                        <h4 style="font-family: var(--font-display); font-size: 1.02rem; color: #ffffff; margin-bottom: 0.65rem;">🎛️ Simulador en Vivo: Calibrá tu Model Router</h4>
+                        <h4 style="font-family: var(--font-display); font-size: 1.02rem; color: #ffffff; margin-bottom: 0.65rem;">🎛️ Simulador en vivo: calibrá tu Model Router</h4>
                         <div class="calculator-row" style="margin-bottom: 0.35rem;">
-                            <span class="calculator-label" style="font-size: 0.82rem;">% de Consultas Simples derivadas al Modelo Liviano:</span>
+                            <span class="calculator-label" style="font-size: 0.82rem;">% de consultas simples enviadas al modelo chico:</span>
                             <span class="calculator-value" id="router-pct-val">80%</span>
                         </div>
                         <input type="range" min="0" max="95" step="5" value="80" class="calculator-slider" id="router-pct-slider" oninput="updateRouterSim()" style="margin-bottom: 0.75rem;">
                         <div class="results-box" style="margin-top: 0.3rem; padding: 0.9rem;">
                             <div class="results-row">
-                                <span>Si mandás 100% al Modelo Grande:</span>
+                                <span>Si mandás 100% al modelo grande:</span>
                                 <span style="color: var(--color-red); font-family: monospace; font-weight: 700;">$1,200.00 / mes</span>
                             </div>
                             <div class="results-row">
-                                <span>Con tu Model Router Activo:</span>
+                                <span>Con Model Routing activo:</span>
                                 <span id="router-new-cost" style="color: var(--color-green); font-family: monospace; font-weight: 800;">$288.00 / mes</span>
                             </div>
                             <div class="results-row total" style="margin-bottom: 0;">
-                                <span>Ahorro por Enrutamiento Inteligente:</span>
+                                <span>Ahorro estimado en tokens:</span>
                                 <span id="router-saving-pct" style="font-family: monospace;">76% de ahorro ($912 USD)</span>
                             </div>
                         </div>
@@ -670,27 +670,27 @@
 
         <!-- SLIDE 4: BATCH API (-50%) & TCO -->
         <div class="slide" id="slide-4">
-            <h2 class="slide-title">FinOps 2: Batch API (-50%) &amp; Los 4 Costos Ocultos (TCO)</h2>
-            <p class="slide-subtitle">Cómo pagar la mitad en procesamientos masivos y qué costos invisibles siempre entran en un presupuesto real</p>
+            <h2 class="slide-title">FinOps 2: Batch API (-50%) y costos ocultos (TCO)</h2>
+            <p class="slide-subtitle">Cómo pagar la mitad en tareas sin apuro y qué gastos extras suelen quedar afuera de los primeros presupuestos</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Si una tarea no necesita respuesta en 1 segundo (por ejemplo, pre-traducir un paquete de release o auditar 5.000 segmentos de glosario durante la noche), usás la <strong>Batch API (Modo Asíncrono)</strong> y todos los proveedores te cobran <strong>exactamente el 50%</strong>. Además, tu presupuesto debe contemplar el <strong>TCO (Costo Total de Propiedad)</strong>.
+                <strong>💡 En palabras simples:</strong> Si un trabajo no necesita respuesta en vivo (por ejemplo, pre-traducir un paquete de release o revisar 5.000 segmentos durante la noche), lo mandás por <strong>Batch API</strong> y los proveedores te cobran la mitad. Además, el costo real (<strong>TCO</strong>) incluye infraestructura fija, idioma y evaluación.
             </div>
             
             <div class="grid-2">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
                     <div>
                         <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-green); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="clock" class="icon-sm"></i> API en Tiempo Real vs. Batch API (-50% Off)
+                            <i data-lucide="clock" class="icon-sm"></i> Tiempo real vs. Batch API (-50%)
                         </h3>
                         <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.65rem;">
-                            Como PM, separás tus flujos según la urgencia real del usuario:
+                            No todo necesita velocidad de chat. Separás según la urgencia real:
                         </p>
                         <div style="font-size: 0.79rem; display: flex; flex-direction: column; gap: 0.5rem;">
                             <div style="background: rgba(59,130,246,0.08); border-left: 3px solid var(--color-blue); padding: 0.58rem 0.78rem; border-radius: 6px;">
-                                <strong style="color: #93c5fd;">⚡ Síncrono (Tiempo Real · Tarifa 100%):</strong> Asistentes interactivos donde una persona espera respuesta inmediata en pantalla (SLA &lt; 2 seg).
+                                <strong style="color: #93c5fd;">⚡ Síncrono (tarifa 100%):</strong> Chat o asistente donde la persona está esperando en pantalla en menos de 2 segundos.
                             </div>
                             <div style="background: rgba(16,185,129,0.08); border-left: 3px solid var(--color-green); padding: 0.58rem 0.78rem; border-radius: 6px;">
-                                <strong style="color: #6ee7b7;">🌙 Batch API / Asíncrono (Tarifa 50% Off):</strong> Pre-traducción nocturna de releases, QA masivo de glosarios o clasificación de tickets históricos en 1–12 hs (<em>AWS Bedrock Batch / OpenAI Batch</em>).
+                                <strong style="color: #6ee7b7;">🌙 Batch API / Asíncrono (tarifa 50%):</strong> Pre-traducción nocturna de releases, control de glosarios o análisis de tickets históricos en 1–12 hs (<em>AWS Bedrock Batch / OpenAI Batch</em>).
                             </div>
                         </div>
                     </div>
@@ -699,16 +699,16 @@
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem 1.5rem;">
                     <div>
                         <h3 style="font-family: var(--font-display); font-size: 1.08rem; color: var(--color-amber); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="layers" class="icon-sm"></i> Los 4 Costos Ocultos del TCO
+                            <i data-lucide="layers" class="icon-sm"></i> Los 4 costos ocultos del TCO
                         </h3>
                         <p style="font-size: 0.79rem; color: var(--text-secondary); margin-bottom: 0.55rem;">
-                            Un PM Junior solo cotiza los tokens de la respuesta. Un PM Senior presupuesta el TCO completo:
+                            Mirar solo el precio por millón de tokens de la respuesta deja afuera gastos reales:
                         </p>
                         <ul style="font-size: 0.78rem; color: #e2e8f0; line-height: 1.46; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.36rem;">
-                            <li><strong style="color: var(--color-amber);">1. Multiplicador Agéntico (ReAct ×4):</strong> Un agente que razona 4 pasos envía el contexto acumulado 4 veces por tarea.</li>
-                            <li><strong style="color: var(--color-blue);">2. Infraestructura Fija:</strong> Alojamiento mensual de Vector DB + Observabilidad Langfuse (~$70 a $250 USD/mes).</li>
-                            <li><strong style="color: var(--color-green);">3. Impuesto Multilingüe de Tokens:</strong> Español, Portugués o Alemán consumen ~20–30% más tokens que Inglés para la misma idea.</li>
-                            <li><strong style="color: var(--color-purple);">4. Evals Automáticas + HITL:</strong> Auditar 10% del tráfico con un Juez LLM suma ~8% de tokens, más las horas de supervisión humana.</li>
+                            <li><strong style="color: var(--color-amber);">1. Vueltas internas del agente:</strong> Si un agente ReAct da 4 pasos, reenvía el contexto acumulado varias veces por consulta.</li>
+                            <li><strong style="color: var(--color-blue);">2. Infraestructura fija:</strong> Alojamiento mensual de Base Vectorial + herramienta de monitoreo (~$70 a $250 USD/mes base).</li>
+                            <li><strong style="color: var(--color-green);">3. Diferencia por idioma (ES/PT vs. EN):</strong> Los tokenizadores están más optimizados para inglés; español y portugués suelen gastar ~20–30% más tokens para la misma idea.</li>
+                            <li><strong style="color: var(--color-purple);">4. Evaluaciones + revisión humana:</strong> Auditar un porcentaje del tráfico con otro LLM suma tokens, y alguien del equipo tiene que revisar casos críticos.</li>
                         </ul>
                     </div>
                 </div>
@@ -717,35 +717,35 @@
 
         <!-- SLIDE 5: BUILD VS BUY VS CONFIGURE -->
         <div class="slide" id="slide-5">
-            <h2 class="slide-title">Build vs. Buy vs. Configure (y Vendor Lock-in)</h2>
-            <p class="slide-subtitle">La decisión estratégica #1 de una AI PM antes de escribir una sola línea de código o pedir desarrolladores</p>
+            <h2 class="slide-title">Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)</h2>
+            <p class="slide-subtitle">La primera decisión antes de pedir desarrolladores o comprometer meses de trabajo</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Tu primer trabajo como PM no es pedirle a ingeniería que construya todo desde cero. Primero evaluás si conviene <strong>comprar un SaaS</strong>, <strong>configurar herramientas conectadas por MCP</strong> o <strong>construir arquitectura propia</strong> — y siempre evitás quedar atada a un único proveedor (<em>Vendor Lock-in</em>).
+                <strong>💡 En palabras simples:</strong> Muchas veces no hace falta construir nada propio. Primero evaluás si alcanza con <strong>comprar una herramienta armada (Buy)</strong>, <strong>conectar lo que ya tenés (Configure)</strong> o <strong>programar algo a medida (Build)</strong> — y si construís, evitás quedar atada a un solo proveedor.
             </div>
 
             <div class="grid-3" style="margin-bottom: 0.85rem;">
                 <div class="glass-card" style="border-color: rgba(59,130,246,0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: #93c5fd; border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">🛒 BUY (SaaS Listo)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Comprar Producto Existente</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Días · <strong>Equipo dev:</strong> Cero.<br>Ideal para necesidades genéricas sin ventaja competitiva propia (resumir reuniones, DeepL Pro, soporte estándar).</p>
+                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: #93c5fd; border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">🛒 BUY (SaaS)</span>
+                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Comprar algo listo</h3>
+                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Días · <strong>Equipo dev:</strong> Cero.<br>Sirve para tareas comunes que no diferencian a la empresa (resumir llamadas, DeepL Pro, soporte estándar).</p>
                 </div>
 
                 <div class="glass-card" style="border-color: rgba(245,158,11,0.35); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">🧩 CONFIGURE (Low-Code / MCP)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Orquestar Flujos Gestionados</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> 1–3 semanas · <strong>Mantenimiento:</strong> Bajo.<br>Ideal para pilotos y automatizaciones internas conectando Jira, Slack y repositorios (AWS Bedrock KB, n8n, Antigravity + MCP).</p>
+                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">🧩 CONFIGURE (Conectado)</span>
+                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Armar sobre plataformas</h3>
+                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> 1–3 semanas · <strong>Mantenimiento:</strong> Bajo.<br>Útil para pilotos y flujos internos conectando Jira, Slack o repositorios (AWS Bedrock KB, n8n, conectores MCP).</p>
                 </div>
 
                 <div class="glass-card" style="border-color: rgba(139,92,246,0.3); padding: 1rem 1.15rem;">
                     <span class="nav-session" style="background: rgba(139,92,246,0.15); color: #c084fc; border-color: rgba(139,92,246,0.3); margin-bottom: 0.45rem; display: inline-block;">🏗️ BUILD (Propio + Gateway)</span>
-                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Arquitectura a Medida</h3>
-                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Meses · <strong>Equipo:</strong> Full devs + MLOps.<br>Solo cuando es tu <strong>diferencial competitivo core</strong> y hay alta escala. Usá un <strong>Model Gateway</strong> (<em>AWS Bedrock / LiteLLM</em>) para cambiar entre Claude, Gemini y GPT sin reescribir código.</p>
+                    <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: #ffffff; margin-bottom: 0.35rem;">Desarrollo a medida</h3>
+                    <p style="font-size: 0.77rem; color: var(--text-secondary); line-height: 1.42;"><strong>Plazo:</strong> Meses · <strong>Equipo:</strong> Devs dedicados.<br>Solo si es clave para el negocio y hay volumen. Poné un <strong>Model Gateway</strong> (<em>AWS Bedrock / LiteLLM</em>) para cambiar de modelo sin reescribir código.</p>
                 </div>
             </div>
 
             <div class="glass-card" style="max-width: 1100px; padding: 0.85rem 1.2rem; border-color: rgba(16,185,129,0.3);">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 0.55rem;">
-                    <span style="font-size: 0.82rem; font-weight: 700; color: #6ee7b7;">🧭 Mini-Asesor PM: Elegí un caso para recomendar Build, Buy o Configure</span>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #6ee7b7;">🧭 3 casos concretos: ¿qué elegirías?</span>
                     <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
                         <button type="button" class="preset-btn active" onclick="selectBuildBuyCase(1, this)">1. Resumir llamadas internas</button>
                         <button type="button" class="preset-btn" onclick="selectBuildBuyCase(2, this)">2. Piloto QA conectado a Jira</button>
@@ -753,17 +753,17 @@
                     </div>
                 </div>
                 <div id="bb-result" style="font-size: 0.79rem; color: #e2e8f0; background: rgba(0,0,0,0.32); padding: 0.6rem 0.85rem; border-radius: 8px; line-height: 1.45;">
-                    <strong style="color: #93c5fd;">🛒 Recomendación: BUY (SaaS) · Plazo: 3 días</strong> — Resumir reuniones es un commodity sin diferencial de negocio. Comprar una licencia Enterprise ahorra meses de ingeniería para dedicar los devs al producto core.
+                    <strong style="color: #93c5fd;">🛒 Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Poner ingenieros a mantener un transcriptor propio es perder plata y tiempo; comprás licencia corporativa y listo.
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 6: INTERACTIVE ROI, TCO & PAYBACK CALCULATOR -->
+        <!-- SLIDE 6: INTERACTIVE ROI, TCO & TIME CALCULATOR -->
         <div class="slide" id="slide-6">
-            <h2 class="slide-title">Ejercicio 1: Calculadora Realista de ROI, TCO &amp; Payback</h2>
-            <p class="slide-subtitle">Combiná volumen y horas humanas con tus palancas de FinOps para defender el Business Case ante Finanzas</p>
+            <h2 class="slide-title">Ejercicio 1: Costos de IA vs. tiempo del equipo</h2>
+            <p class="slide-subtitle">Cómo armar un cálculo creíble para Finanzas separando gasto real de API/infra y horas liberadas del equipo</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> No alcanza con mostrar tokens baratos: Finanzas te va a preguntar <strong>cuánto sale la infraestructura fija (TCO)</strong> y <strong>en cuántas semanas recuperamos la inversión inicial ($8.000 USD de implementación)</strong>. Jugá con los deslizadores y checkboxes abajo.
+                <strong>💡 Ojo con la trampa típica:</strong> Muchas presentaciones venden "ahorro de \$20.000 por mes" como si fuera plata en caja al día siguiente. Ante Finanzas conviene hablar de <strong>capacidad liberada</strong> y mostrar el costo fijo de infraestructura + revisión humana.
             </div>
             
             <div class="grid-2">
@@ -791,196 +791,199 @@
                         <div style="display: flex; flex-direction: column; gap: 0.4rem;">
                             <label class="check-pill">
                                 <input type="checkbox" id="opt-routing" checked onchange="calculateROI()">
-                                <span><strong>Model Routing (80/20):</strong> 80% a modelo Flash/Haiku (-76% costo API)</span>
+                                <span><strong>Model Routing (80/20):</strong> 80% a modelo Flash/Haiku (-76% API)</span>
                             </label>
                             <label class="check-pill">
                                 <input type="checkbox" id="opt-batch" checked onchange="calculateROI()">
-                                <span><strong>Batch API Nocturna:</strong> Procesamiento asíncrono (-50% tarifa)</span>
+                                <span><strong>Batch API nocturna:</strong> Procesamiento sin urgencia (-50%)</span>
                             </label>
                             <label class="check-pill">
                                 <input type="checkbox" id="opt-tco" checked onchange="calculateROI()">
-                                <span><strong>TCO Real:</strong> +$180/mes fijo (Vector DB + Langfuse) y +8% Evals</span>
+                                <span><strong>Sumar TCO fijo:</strong> +$180/mes (Vector DB + Langfuse) y +8% Evals</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Results -->
-                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.35); padding: 1.15rem 1.45rem;">
-                    <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: var(--color-green); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i data-lucide="activity" class="icon-sm"></i> Business Case Mensual (FinOps + TCO)
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.35); padding: 1.1rem 1.4rem;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.02rem; color: var(--color-green); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="activity" class="icon-sm"></i> Cuenta mensual (FinOps + TCO)
                     </h3>
                     
-                    <div class="results-box" style="margin-top: 0.35rem; padding: 0.9rem 1rem;">
+                    <div class="results-box" style="margin-top: 0.3rem; padding: 0.85rem 0.95rem;">
                         <div class="results-row">
-                            <span>Costo 100% Manual Humano:</span>
+                            <span>Valor del tiempo manual actual:</span>
                             <span id="cost-human" style="font-weight: 700; color: #ffffff; font-family: monospace;">$0.00</span>
                         </div>
-                        <div class="results-row" style="font-size: 0.77rem; color: var(--text-secondary);">
-                            <span>Tiempo humano requerido (Sin IA):</span>
+                        <div class="results-row" style="font-size: 0.76rem; color: var(--text-secondary);">
+                            <span>Horas / personas equivalentes:</span>
                             <span id="hours-needed" style="font-family: monospace;">0 hs (0.0 personas FTE)</span>
                         </div>
                         <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.4rem; margin-top: 0.4rem;">
-                            <span>API Frontier Base (Sin FinOps, $0.045/doc):</span>
+                            <span>API Frontier sin optimizar ($0.045/doc):</span>
                             <span id="cost-base-api" style="color: var(--color-red); font-family: monospace;">$0.00</span>
                         </div>
                         <div class="results-row">
-                            <span style="font-weight: 600; color: var(--color-green);">Costo IA Optimizado + TCO Real:</span>
+                            <span style="font-weight: 600; color: var(--color-green);">Costo IA optimizado + infra fija + Evals:</span>
                             <span id="cost-opt-api" style="font-weight: 700; color: var(--color-green); font-family: monospace;">$0.00</span>
                         </div>
-                        <div class="results-row" style="font-size: 0.78rem; color: #93c5fd;">
-                            <span>Supervisión Humana HITL (20% del tiempo):</span>
+                        <div class="results-row" style="font-size: 0.77rem; color: #93c5fd;">
+                            <span>Revisión humana (HITL · 20% del tiempo):</span>
                             <span id="cost-hitl" style="font-family: monospace;">$0.00</span>
                         </div>
 
                         <div class="results-row total">
-                            <span>Ahorro Neto Mensual (IA + HITL):</span>
+                            <span>Capacidad liberada (valor equiv./mes):</span>
                             <span id="roi-savings" style="font-family: monospace;">$0.00</span>
                         </div>
-                        <div class="results-row" style="margin-bottom: 0; font-size: 0.8rem; color: #fde68a; font-weight: 700;">
-                            <span>Payback (Setup $8.000) &amp; ROI Mensual:</span>
+                        <div class="results-row" style="margin-bottom: 0; font-size: 0.78rem; color: #fde68a; font-weight: 700;">
+                            <span>Referencia de repago (piloto de $15.000):</span>
                             <span id="roi-payback" style="font-family: monospace;">-</span>
                         </div>
                     </div>
+                    <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.38;">
+                        Dato clave frente a Finanzas: esto es <strong>tiempo liberado del equipo</strong> para absorber más volumen o bajar demoras, no reducción inmediata de nómina el mes 1.
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 7: SHADOW MODE, CANARY & DATA FLYWHEEL -->
         <div class="slide" id="slide-7">
-            <h2 class="slide-title">Lanzamiento Seguro: Shadow Mode, Canary &amp; Flywheel</h2>
-            <p class="slide-subtitle">Hacé clic en cada fase para ver cómo lanzás un producto probabilístico sin arriesgar clientes ni reputación</p>
+            <h2 class="slide-title">Lanzamiento gradual: Shadow Mode, Canary y feedback</h2>
+            <p class="slide-subtitle">Hacé clic en cada etapa para ver cómo probás un sistema de IA sin exponer a los clientes desde el día 1</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En software clásico probás en QA y prendés para el 100%. En IA primero ponés al agente en <strong>Modo Sombra</strong> (trabaja en silencio detrás de tu equipo), luego habilitás un <strong>Canary del 5%</strong> con Feature Flags y cerrás el ciclo con un <strong>Data Flywheel</strong> que mejora cada semana.
+                <strong>💡 En palabras simples:</strong> En software clásico probás en staging y salís para todos. Como la IA puede contestar distinto cada vez, primero corre en silencio (<strong>Shadow Mode</strong>), después la prendés para un grupo chico (<strong>Canary</strong>) y armás un circuito simple para sumar los errores corregidos al dataset.
             </div>
             
             <div class="grid-3" style="margin-bottom: 0.85rem;">
                 <div class="glass-card phase-card phase-active" id="phase-card-1" onclick="selectRolloutPhase(1)" style="border-color: rgba(59, 130, 246, 0.35); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">FASE 1 · SEMANAS 1-2</span>
+                    <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem; display: inline-block;">ETAPA 1 · SEMANAS 1-2</span>
                     <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">1. Shadow Mode (Modo Sombra)</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">El agente procesa tráfico real en secreto sin mostrarse al usuario final. Comparamos sus propuestas contra humanos.</p>
+                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">El bot procesa casos reales en segundo plano sin mostrarle nada al cliente. Comparamos qué habría respondido contra lo que hizo el equipo.</p>
                 </div>
 
                 <div class="glass-card phase-card" id="phase-card-2" onclick="selectRolloutPhase(2)" style="border-color: rgba(245, 158, 11, 0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">FASE 2 · SEMANAS 3-4</span>
+                    <span class="nav-session" style="margin-bottom: 0.45rem; display: inline-block;">ETAPA 2 · SEMANAS 3-4</span>
                     <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">2. Canary Rollout (5% → 100%)</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Prendemos con Feature Flags para el 5% de usuarios o un proyecto piloto interno, con rollback en 1 clic.</p>
+                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Se habilita con Feature Flags para el 5% o un proyecto piloto interno, con botón de rollback inmediato si sube el costo o cae la calidad.</p>
                 </div>
 
                 <div class="glass-card phase-card" id="phase-card-3" onclick="selectRolloutPhase(3)" style="border-color: rgba(16, 185, 129, 0.3); padding: 1rem 1.15rem;">
-                    <span class="nav-session" style="background: rgba(16,185,129,0.15); color: var(--color-green); border-color: rgba(16,185,129,0.3); margin-bottom: 0.45rem; display: inline-block;">FASE 3 · CONTINUO</span>
-                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">3. Data Flywheel (Mejora)</h3>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Cada botón 👍/👎 y cada corrección del lingüista o analista alimenta el Golden Dataset del sprint siguiente.</p>
+                    <span class="nav-session" style="background: rgba(16,185,129,0.15); color: var(--color-green); border-color: rgba(16,185,129,0.3); margin-bottom: 0.45rem; display: inline-block;">ETAPA 3 · EN MARCHA</span>
+                    <h3 style="font-family: var(--font-display); font-size: 1rem; color: #ffffff; margin-bottom: 0.35rem;">3. Circuito de feedback</h3>
+                    <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.42;">Cada botón 👍/👎 y cada corrección del especialista pasan al Golden Dataset para que no vuelva a fallar el mismo caso.</p>
                 </div>
             </div>
 
             <div class="glass-card" id="rollout-detail" style="max-width: 1100px; padding: 0.9rem 1.25rem; border-color: rgba(245,158,11,0.35);">
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; font-size: 0.79rem;">
-                    <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Tráfico Expuesto</strong><span style="color: #f8fafc;">0% clientes (100% interno)</span></div>
-                    <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Nivel de Riesgo</strong><span style="color: #6ee7b7;">Cero impacto en usuario</span></div>
-                    <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Métrica Gate (Salida)</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. expertos</span></div>
-                    <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Acción de la PM</strong><span style="color: #cbd5e1;">Auditar discrepancias en Langfuse y ajustar prompts antes de exponer.</span></div>
+                    <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Quién lo ve</strong><span style="color: #f8fafc;">0% clientes (solo equipo interno)</span></div>
+                    <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Exposición</strong><span style="color: #6ee7b7;">Sin impacto en el usuario final</span></div>
+                    <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Criterio para avanzar</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. revisión humana</span></div>
+                    <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Qué hacés vos</strong><span style="color: #cbd5e1;">Revisar diferencias en Langfuse y ajustar prompts antes de exponerlo.</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 8: AI UX, PROBABILISTIC AGILE & GOVERNANCE 2026 -->
+        <!-- SLIDE 8: UX, SPIKES IN AGILE & CURRENT RISKS -->
         <div class="slide" id="slide-8">
-            <h2 class="slide-title">AI UX, Agile Probabilístico &amp; Gobernanza 2026</h2>
-            <p class="slide-subtitle">Por qué los usuarios abandonan bots lentos o cajas de chat vacías, y los 3 riesgos ejecutivos de 2026</p>
+            <h2 class="slide-title">UX en productos de IA, Spikes en Agile y riesgos actuales</h2>
+            <p class="slide-subtitle">Por qué muchos bots precisos igual se dejan de usar, cómo estimar sin mentir en Agile y 3 riesgos reales hoy</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> Un gran motor de IA fracasa si la pantalla queda congelada 12 segundos o si el empleado tiene que adivinar qué escribir en un chat en blanco. Además, como líder en 2026 gobernás el <strong>Shadow AI</strong>, el <strong>EU AI Act</strong> y la <strong>Propiedad Intelectual</strong>.
+                <strong>💡 En palabras simples:</strong> Si la pantalla queda congelada 12 segundos o el usuario tiene que adivinar qué escribir en un chat vacío, abandona la herramienta. Y en 2026 los riesgos ya no son solo PII: aparecen el <strong>Shadow AI</strong>, el <strong>EU AI Act</strong> y los derechos de <strong>Propiedad Intelectual</strong>.
             </div>
             
             <div class="grid-2">
-                <!-- Left: AI UX + Discovery Spike -->
+                <!-- Left: UX + Agile Spikes -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem;">
                     <h3 style="font-family: var(--font-display); font-size: 1.03rem; color: var(--color-blue); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="sparkles" class="icon-sm"></i> AI UX &amp; Agile Probabilístico
+                        <i data-lucide="sparkles" class="icon-sm"></i> UX y planificación en Agile
                     </h3>
                     <ul style="font-size: 0.78rem; color: #e2e8f0; line-height: 1.44; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.65rem;">
-                        <li><strong>Velocidad Percibida (TTFT &lt; 1s):</strong> Usá <strong>Token Streaming</strong> + <strong>Parallel Tool Calling</strong> + mensajes de estado (<em>"Consultando Jira y Glosario..."</em>).</li>
-                        <li><strong>Más allá del Chat vacío:</strong> Botones contextuales dentro de Jira/TMS, citas clicables y flujo <em>Copilot ("Revisar y Aprobar")</em>.</li>
-                        <li><strong>Discovery Spike (1 semana):</strong> En Agile probabilístico nunca prometás 3 meses sin probar los datos primero: corré un <strong>Spike de 5 días con 30 casos reales</strong>.</li>
+                        <li><strong>Velocidad percibida (TTFT &lt; 1s):</strong> Usar <strong>Token Streaming</strong> + llamadas a APIs en paralelo + avisos claros (<em>"Consultando Jira y glosario..."</em>).</li>
+                        <li><strong>No todo es un chat vacío:</strong> Botones contextuales dentro de Jira/TMS, citas clicables y modo <em>"Sugerir para que apruebes"</em>.</li>
+                        <li><strong>Discovery Spike (1 semana):</strong> En IA los datos mandan; antes de prometer un trimestre en el roadmap, corré un <strong>Spike de 5 días con ~30 casos reales</strong> para ver si la calidad da.</li>
                     </ul>
 
                     <div style="background: rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.65rem 0.85rem;">
                         <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.45rem; flex-wrap: wrap;">
-                            <span style="font-size: 0.74rem; font-weight: 700; color: #93c5fd;">⚡ Mini-Demo UX: Latencia Percibida</span>
+                            <span style="font-size: 0.74rem; font-weight: 700; color: #93c5fd;">⚡ Mini-demo UX: espera percibida</span>
                             <div style="display: flex; gap: 0.35rem;">
-                                <button type="button" class="preset-btn" onclick="runUxLatencyDemo('slow')">🐢 12s Congelada</button>
-                                <button type="button" class="preset-btn active" onclick="runUxLatencyDemo('fast')">⚡ 0.8s Streaming</button>
+                                <button type="button" class="preset-btn" onclick="runUxLatencyDemo('slow')">🐢 12s congelada</button>
+                                <button type="button" class="preset-btn active" onclick="runUxLatencyDemo('fast')">⚡ 0.8s streaming</button>
                             </div>
                         </div>
                         <div id="ux-demo-box" style="font-family: monospace; font-size: 0.74rem; color: #6ee7b7; line-height: 1.4;">
-                            ⚡ [0.3s] Consultando Jira + Glosario en paralelo...<br>⚡ [0.8s] Streaming activo: "El Release v2.4 tiene 10 módulos listos..."
+                            ⚡ [0.3s] Consultando Jira + glosario en paralelo...<br>⚡ [0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Gobernanza Ejecutiva 2026 -->
+                <!-- Right: Current Risks -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(245,158,11,0.3);">
                     <h3 style="font-family: var(--font-display); font-size: 1.03rem; color: var(--color-amber); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="scale" class="icon-sm"></i> Gobernanza Ejecutiva 2026
+                        <i data-lucide="scale" class="icon-sm"></i> Riesgos actuales (más allá de PII)
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.78rem;">
                         <div style="background: rgba(239,68,68,0.09); border-left: 3px solid var(--color-red); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fca5a5;">🚫 Shadow AI (El elefante en la sala):</strong> Si la empresa solo prohíbe usar IA, el 60% del equipo igual pega archivos en cuentas personales. La solución es darles una <strong>herramienta corporativa segura y más rápida</strong>.
+                            <strong style="color: #fca5a5;">🚫 Shadow AI:</strong> Si la empresa solo manda un mail prohibiendo usar IA, mucha gente pega textos igual en su cuenta personal. Se resuelve dando una alternativa interna cómoda y segura.
                         </div>
                         <div style="background: rgba(245,158,11,0.09); border-left: 3px solid var(--color-amber); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fde68a;">⚖️ EU AI Act &amp; Transparencia:</strong> Si la IA evalúa candidatos, performance o crédito (<em>Alto Riesgo</em>), exige registro de trazas, supervisión humana obligatoria y avisar al usuario que interactúa con IA.
+                            <strong style="color: #fde68a;">⚖️ EU AI Act y transparencia:</strong> Cuando la IA filtra CVs, performance o crédito (<em>Alto Riesgo</em>), exige registro de trazas, revisión humana y avisarle al usuario que interactúa con IA.
                         </div>
                         <div style="background: rgba(139,92,246,0.09); border-left: 3px solid var(--color-purple); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #c4b5fd;">📜 Propiedad Intelectual (IP) &amp; Bias:</strong> Verificar cláusulas de indemnidad IP en contratos Enterprise y auditar sesgos culturales o de género en outputs multilingües.
+                            <strong style="color: #c4b5fd;">📜 Propiedad Intelectual (IP) y sesgos:</strong> Revisar cláusulas de indemnidad en contratos Enterprise y chequear sesgos culturales o de género en idiomas distintos al inglés.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 9: ADVANCED AI EVALS, AGENT TRAJECTORY & MODEL DRIFT -->
+        <!-- SLIDE 9: PRACTICAL AI EVALS, AGENT TRAJECTORY & MODEL DRIFT -->
         <div class="slide" id="slide-9">
-            <h2 class="slide-title">AI Evals Avanzados: Tríada, Agentes &amp; Model Drift</h2>
-            <p class="slide-subtitle">Cómo convertir una métrica que falla en una tarea exacta de ingeniería y detectar regresiones silenciosas</p>
+            <h2 class="slide-title">AI Evals en la práctica: Tríada RAG, Agentes y Model Drift</h2>
+            <p class="slide-subtitle">Cómo saber qué parte del sistema arreglar cuando falla una métrica y qué cambia al evaluar agentes</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En la Sesión 2 viste que corremos el <em>Golden Dataset</em> en CI/CD. Hoy subimos a nivel <strong>PM Senior</strong>: saber <strong>qué pieza técnica reparar según qué nota bajó</strong>, evaluar si un Agente eligió bien sus herramientas y detectar <strong>Model Drift</strong> cuando el proveedor actualiza el modelo en silencio.
+                <strong>💡 En palabras simples:</strong> En la Sesión 2 viste el <em>Golden Dataset</em> en CI/CD. Hoy bajamos a tierra cómo leer la <strong>Tríada RAG</strong> para asignarle el ticket al área correcta, cómo evaluar pasos en un agente y qué hacer ante un <strong>Model Drift</strong>.
             </div>
             
             <div class="grid-2">
                 <!-- Left: Tríada RAG -> Backlog Action -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem;">
                     <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: var(--color-amber); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="check-square" class="icon-sm"></i> Tríada RAG → ¿Qué Arreglamos en el Sprint?
+                        <i data-lucide="check-square" class="icon-sm"></i> Qué métrica baja → qué tocás en el Sprint
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.52rem; font-size: 0.78rem;">
                         <div style="background: rgba(16,185,129,0.09); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #6ee7b7;">1. Fidelidad (Faithfulness) baja →</strong> El bot inventó algo fuera del contexto.<br>
-                            <span style="color: #cbd5e1;"><em>Acción Backlog:</em> Ajustar <strong>System Prompt, Temperatura 0.0 o Guardrail</strong> de cita obligatoria.</span>
+                            <strong style="color: #6ee7b7;">1. Fidelidad (Faithfulness) baja →</strong> El bot inventó algo que no estaba en el texto.<br>
+                            <span style="color: #cbd5e1;"><em>Backlog:</em> Ajustar <strong>System Prompt, Temperatura 0.0 o Guardrail</strong> de cita obligatoria.</span>
                         </div>
                         <div style="background: rgba(59,130,246,0.09); border-left: 3px solid var(--color-blue); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #93c5fd;">2. Precisión de Contexto baja →</strong> El buscador trajo párrafos irrelevantes.<br>
-                            <span style="color: #cbd5e1;"><em>Acción Backlog:</em> Ajustar <strong>Chunking, Metadatos o Top-K</strong> en la Vector DB (no tocar el prompt).</span>
+                            <strong style="color: #93c5fd;">2. Precisión de Contexto baja →</strong> El buscador trajo fragmentos que no servían.<br>
+                            <span style="color: #cbd5e1;"><em>Backlog:</em> Revisar <strong>Chunking, Metadatos o Top-K</strong> en la Vector DB (no tocar el prompt).</span>
                         </div>
                         <div style="background: rgba(139,92,246,0.09); border-left: 3px solid var(--color-purple); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #c4b5fd;">3. Relevancia de Respuesta baja →</strong> Se fue por las ramas sin contestar.<br>
-                            <span style="color: #cbd5e1;"><em>Acción Backlog:</em> Refinar instrucciones de <strong>formato, concisión y tono</strong>.</span>
+                            <strong style="color: #c4b5fd;">3. Relevancia de Respuesta baja →</strong> Contestó por las ramas sin resolver la duda.<br>
+                            <span style="color: #cbd5e1;"><em>Backlog:</em> Corregir instrucciones de <strong>formato, largo y estructura</strong>.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Agent Trajectory + Model Drift + SME advantage -->
+                <!-- Right: Agent Trajectory + Model Drift + SME -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(139,92,246,0.3);">
                     <h3 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="compass" class="icon-sm"></i> 2 Conceptos Senior Nuevos en 2026
+                        <i data-lucide="compass" class="icon-sm"></i> Más allá de RAG: Agentes y Model Drift
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.78rem;">
                         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.6rem 0.8rem; border-radius: 8px;">
                             <strong style="color: #fbbf24; display: block; margin-bottom: 0.2rem;">🤖 Trajectory Evaluation (Evals de Agentes)</strong>
-                            <span style="color: #cbd5e1;">En un Agente no basta calificar el texto final: medimos si llamó a la <strong>herramienta correcta</strong> (<em>Tool Accuracy</em>), con los argumentos JSON válidos y en el mínimo de pasos.</span>
+                            <span style="color: #cbd5e1;">En un agente no basta evaluar la respuesta final: medís si eligió la <strong>herramienta correcta</strong> (<em>Tool Accuracy</em>), mandó bien los datos JSON y no dio pasos de más.</span>
                         </div>
                         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.6rem 0.8rem; border-radius: 8px;">
-                            <strong style="color: #c4b5fd; display: block; margin-bottom: 0.2rem;">📉 Model Drift &amp; Tu Superpoder Lingüístico (SME)</strong>
-                            <span style="color: #cbd5e1;">Si el proveedor actualiza su modelo en silencio, la calidad puede caer sin que nadie haya tocado tu código. Calibrar un <em>LLM-as-a-Judge</em> exige criterio humano experto (<strong>SME</strong>) para redactar rúbricas: <strong>tu ventaja directa de Traducción y QA Lingüístico</strong>.</span>
+                            <strong style="color: #c4b5fd; display: block; margin-bottom: 0.2rem;">📉 Model Drift y criterio humano (SME)</strong>
+                            <span style="color: #cbd5e1;">Si el proveedor actualiza el modelo o cambiás a uno más económico, la calidad puede bajar sin que nadie haya tocado tu código. Calibrar un <em>LLM-as-a-Judge</em> necesita alguien que entienda bien el dominio y el idioma (como alguien de Traducción/QA).</span>
                         </div>
                     </div>
                 </div>
@@ -989,10 +992,10 @@
 
         <!-- SLIDE 10: INTERACTIVE EVALS CHECKER (EXERCISE 2) -->
         <div class="slide" id="slide-10">
-            <h2 class="slide-title">Ejercicio 2: Simulador de Auditoría Evals (Causa Raíz)</h2>
-            <p class="slide-subtitle">Probá los 3 escenarios rápidos arriba a la derecha o mové los sliders para ver qué ticket enviás al Sprint</p>
+            <h2 class="slide-title">Ejercicio 2: Simulador de auditoría Evals</h2>
+            <p class="slide-subtitle">Probá los 3 botones arriba a la derecha o mové los sliders para ver qué ticket mandarías al equipo</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> No todas las fallas de un chatbot se arreglan tocando el prompt. Usá los 3 presets de la derecha para ver cómo la <strong>Tríada RAG</strong> distingue una <strong>Alucinación (Fidelidad)</strong> de un <strong>Fallo de Búsqueda (Contexto)</strong>.
+                <strong>💡 En palabras simples:</strong> No toda falla se arregla tocando el prompt. Usá los presets de la derecha para distinguir entre una <strong>alucinación (Fidelidad)</strong> y un <strong>error del buscador (Contexto)</strong>.
             </div>
             
             <div class="grid-2">
@@ -1000,15 +1003,15 @@
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.15rem 1.4rem;">
                     <div>
                         <div style="font-size: 0.77rem; color: #fde68a; margin-bottom: 0.45rem;">
-                            <strong>❓ Pregunta del Usuario:</strong> "¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?"
+                            <strong>❓ Pregunta del usuario:</strong> "¿Cuál es el estado de los módulos Pagos v3 y Checkout v4 para el lanzamiento en ES y PT?"
                         </div>
-                        <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">1. FRAGMENTO OFICIAL RECUPERADO (GROUND TRUTH)</span>
+                        <span class="nav-session" style="background: rgba(59,130,246,0.15); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">1. FRAGMENTO OFICIAL RECUPERADO</span>
                         <div style="font-size: 0.77rem; font-family: monospace; background: rgba(0,0,0,0.35); padding: 0.55rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 0.65rem; color: #cbd5e1; line-height: 1.42;">
                             • [Módulo Pagos v3]: Activo en Producción (Idiomas: EN, ES, PT).<br>
                             • [Módulo Checkout v4]: EN REVISIÓN DE QA LINGÜÍSTICO. Bloqueado para despliegue hasta corregir glosario PT-BR.
                         </div>
                         
-                        <span class="nav-session" style="background: rgba(139,92,246,0.15); color: var(--color-purple); border-color: rgba(139,92,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">2. RESPUESTA GENERADA POR EL BOT (CON ALUCINACIÓN AL FINAL)</span>
+                        <span class="nav-session" style="background: rgba(139,92,246,0.15); color: var(--color-purple); border-color: rgba(139,92,246,0.3); margin-bottom: 0.4rem; display: inline-block; font-size: 0.71rem;">2. RESPUESTA DEL BOT (CON ALUCINACIÓN AL FINAL)</span>
                         <div style="font-size: 0.79rem; background: rgba(255,255,255,0.03); padding: 0.68rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.45; color: #ffffff;">
                             "El Módulo Pagos v3 está activo en producción (EN, ES, PT). El Módulo Checkout v4 sigue en revisión de QA y aún no debe desplegarse. <span style="background: rgba(239,68,68,0.22); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además, te confirmo que mañana al mediodía se aprobará automáticamente sin necesitar más pruebas de QA.</span>"
                         </div>
@@ -1030,19 +1033,19 @@
                     
                     <div>
                         <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">1. Fidelidad al Manual (Sin inventos):</span>
+                            <span class="calculator-label" style="font-size: 0.79rem;">1. Fidelidad al manual (sin inventos):</span>
                             <span class="score-indicator" id="eval-fidelidad-val">0.2</span>
                         </div>
                         <input type="range" min="0" max="1" step="0.1" value="0.2" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
                         
                         <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">2. Precisión del Contexto Recuperado:</span>
+                            <span class="calculator-label" style="font-size: 0.79rem;">2. Precisión del contexto recuperado:</span>
                             <span class="score-indicator" id="eval-contexto-val">1.0</span>
                         </div>
                         <input type="range" min="0" max="1" step="0.1" value="1.0" class="calculator-slider" id="eval-contexto" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
 
                         <div class="calculator-row" style="margin-bottom: 0.2rem;">
-                            <span class="calculator-label" style="font-size: 0.79rem;">3. Relevancia de la Respuesta:</span>
+                            <span class="calculator-label" style="font-size: 0.79rem;">3. Relevancia de la respuesta:</span>
                             <span class="score-indicator" id="eval-relevancia-val">0.9</span>
                         </div>
                         <input type="range" min="0" max="1" step="0.1" value="0.9" class="calculator-slider" id="eval-relevancia" oninput="calculateEval()" style="margin-bottom: 0.55rem;">
@@ -1053,7 +1056,7 @@
                                 <span id="eval-status" class="eval-tag fail" style="margin-top: 0.25rem; display: inline-block;">RECHAZADO</span>
                             </div>
                             <div style="font-size: 0.74rem; color: var(--color-red); text-align: right; max-width: 265px; line-height: 1.35;" id="eval-critique">
-                                Bloqueado: Fidelidad menor a 0.80. Ticket para Prompt / Guardrail.
+                                Alucinación (Fidelidad &lt; 0.80): Ticket para Prompt / Temperatura 0.0 / Guardrail.
                             </div>
                         </div>
                     </div>
@@ -1063,45 +1066,45 @@
 
         <!-- SLIDE 11: OBSERVABILITY IN LANGFUSE -->
         <div class="slide" id="slide-11">
-            <h2 class="slide-title">Observabilidad en Producción: Radiografía en Langfuse</h2>
-            <p class="slide-subtitle">Hacé clic en cada paso de la traza y probá cómo un voto negativo alimenta el Data Flywheel</p>
+            <h2 class="slide-title">Monitoreo en producción con Langfuse</h2>
+            <p class="slide-subtitle">Hacé clic en cada paso de la traza y probá cómo un reporte de usuario pasa al dataset de pruebas</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> <strong>Langfuse</strong> es la "caja negra" y el ticket detallado de cada interacción en producción. Con un clic ves qué modelo eligió el <strong>Model Router</strong>, qué fragmentos trajo la Vector DB, cuánto tardó cada <strong>Span</strong> y qué nota le puso la evaluación asíncrona.
+                <strong>💡 En palabras simples:</strong> <strong>Langfuse</strong> te deja ver la radiografía de cada respuesta en producción: qué modelo eligió el router, qué fragmentos trajo la base vectorial, cuánto tardó cada paso y qué nota le puso la evaluación.
             </div>
             
             <div class="grid-2">
                 <!-- Left: 4 Clickable Trace Nodes -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem;">
                     <h3 style="font-family: var(--font-display); font-size: 1rem; color: var(--color-purple); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="git-merge" class="icon-sm"></i> Árbol de Ejecución en Langfuse (Clic en cada Span)
+                        <i data-lucide="git-merge" class="icon-sm"></i> Traza en Langfuse (clic en cada paso)
                     </h3>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.22rem;">
                         <div class="trace-item" style="border-color: var(--color-purple);">
                             <div class="trace-header" onclick="toggleTrace('trace-1')">
-                                <span>🟢 [Trace Principal] Consulta Release Pagos v3</span>
+                                <span>🟢 [Trace] Consulta Release Pagos v3</span>
                                 <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-purple);">$0.0011 USD | 1.15s</span>
                             </div>
                             <div class="trace-body" id="trace-1" style="display: block;">
-                                Usuario: anabela.hotian@empresa-global.com | Rol: PM Localization<br>
-                                Sesión: #S4-PROD-992 | Ruta: Flash (Model Router) | Estado: 200 OK
+                                Usuario: anabela.hotian@empresa.com | Rol: Localization PM<br>
+                                Sesión: #S4-PROD-992 | Ruta: Flash (Router) | Estado: 200 OK
                             </div>
                         </div>
                         
                         <div class="trace-item" style="border-color: var(--color-blue); margin-left: 20px;">
                             <div class="trace-header" onclick="toggleTrace('trace-2')">
-                                <span>🔀 [Span 1 · Model Router &amp; Retrieval]</span>
+                                <span>🔀 [Span 1 · Router y Retrieval]</span>
                                 <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-blue);">$0.0001 USD | 160ms</span>
                             </div>
                             <div class="trace-body" id="trace-2">
-                                Router Decision: Consulta estándar → Gemini Flash / Claude Haiku<br>
+                                Decisión Router: Consulta estándar → Gemini Flash / Claude Haiku<br>
                                 Metadata: { lang: "ES-LATAM", year: 2026 } · Similitud: 0.91 y 0.87
                             </div>
                         </div>
 
                         <div class="trace-item" style="border-color: var(--color-amber); margin-left: 20px;">
                             <div class="trace-header" onclick="toggleTrace('trace-3')">
-                                <span>🤖 [Span 2 · LLM Generation]</span>
+                                <span>🤖 [Span 2 · Generación LLM]</span>
                                 <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-amber);">$0.0009 USD | 900ms</span>
                             </div>
                             <div class="trace-body" id="trace-3">
@@ -1112,201 +1115,201 @@
 
                         <div class="trace-item" style="border-color: var(--color-green); margin-left: 20px; margin-bottom: 0;">
                             <div class="trace-header" onclick="toggleTrace('trace-4')">
-                                <span>📊 [Span 3 · Async Eval &amp; Feedback]</span>
+                                <span>📊 [Span 3 · Eval Asíncrona y Feedback]</span>
                                 <span style="font-family: monospace; font-size: 0.72rem; color: var(--color-green);">$0.0001 USD | 90ms</span>
                             </div>
                             <div class="trace-body" id="trace-4" style="display: block;">
                                 Faithfulness Eval: 0.97 (PASS) · Context Precision: 0.93<br>
-                                <button type="button" class="preset-btn" style="margin-top: 6px;" onclick="triggerFlywheelLog()">👎 Simular Reporte → Enviar al Golden Dataset</button>
-                                <div id="flywheel-feedback-log" style="margin-top: 5px; color: #94a3b8;">Estado: Esperando feedback de usuario o lingüista...</div>
+                                <button type="button" class="preset-btn" style="margin-top: 6px;" onclick="triggerFlywheelLog()">👎 Simular reporte → mandar al Golden Dataset</button>
+                                <div id="flywheel-feedback-log" style="margin-top: 5px; color: #94a3b8;">Estado: esperando feedback de usuario o lingüista...</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: 5-Minute Monday Ritual -->
+                <!-- Right: Weekly review -->
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; padding: 1.15rem 1.4rem;">
-                    <h4 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff; margin-bottom: 0.65rem;">☕ El Ritual de 5 Minutos de la PM cada Lunes</h4>
+                    <h4 style="font-family: var(--font-display); font-size: 1.04rem; color: #ffffff; margin-bottom: 0.65rem;">☕ Qué mirás en Langfuse todas las semanas</h4>
                     <div style="background: rgba(139, 92, 246, 0.09); border-left: 4px solid var(--color-purple); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45; margin-bottom: 0.65rem;">
-                        <strong>1. Diagnosticar sin adivinar (Span 1 vs. Span 2):</strong> Si un equipo reporta mala respuesta, mirás el <em>Span 1</em> para ver si falló el buscador vectorial o el <em>Span 2</em> si falló el modelo.
+                        <strong>1. Buscar el origen real (Span 1 vs. Span 2):</strong> Si reportan un error, mirás si el buscador trajo malos fragmentos (Span 1) o si falló la respuesta del modelo (Span 2).
                     </div>
                     <div style="background: rgba(239, 68, 68, 0.09); border-left: 4px solid var(--color-red); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45; margin-bottom: 0.65rem;">
-                        <strong>2. Alertas de Model Drift:</strong> Si el promedio semanal de <em>Faithfulness</em> cae de 0.93 a 0.81 sin deploy tuyo, detectás cambio silencioso del modelo al instante.
+                        <strong>2. Detectar Model Drift:</strong> Si el promedio semanal de <em>Faithfulness</em> cae sin que hayan subido código nuevo, detectás cambios del proveedor al toque.
                     </div>
                     <div style="background: rgba(245, 158, 11, 0.09); border-left: 4px solid var(--color-amber); padding: 0.68rem 0.85rem; border-radius: 6px; font-size: 0.79rem; line-height: 1.45;">
-                        <strong>3. Costo por Área y Latencia P95:</strong> Controlás cuánto gasta cada flujo, si el 80% realmente va por Flash y que el 95% de los usuarios espere &lt; 1.5s.
+                        <strong>3. Costo por flujo y latencia P95:</strong> Validás cuánto gasta cada área, si el router realmente manda la mayoría por Flash y que el 95% no espere de más.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 12: SENIOR INTERVIEW STRATEGY + UNFAIR ADVANTAGE -->
+        <!-- SLIDE 12: INTERVIEW STRATEGY & LOCALIZATION BACKGROUND -->
         <div class="slide" id="slide-12">
-            <h2 class="slide-title">Entrevistas Senior: Fórmula de 3 Pasos + Tu Ventaja Injusta</h2>
-            <p class="slide-subtitle">Cómo responder casos difíciles con criterio de negocio y convertir tu trayectoria en Localización en tu diferencial</p>
+            <h2 class="slide-title">Cómo encarar entrevistas técnicas y defender tu perfil</h2>
+            <p class="slide-subtitle">Cómo ordenar respuestas cuando no te piden código y cómo traducir tu experiencia en Localización a IA</p>
             <div class="simple-banner">
-                <strong>💡 En palabras simples:</strong> En una entrevista senior casi nunca hay una única respuesta mágica: te evalúan por cómo exponés el <strong>trade-off</strong> (costo vs. calidad vs. adopción) y cómo conectás tu experiencia previa de Traducción y Localización con los problemas reales de la IA.
+                <strong>💡 En palabras simples:</strong> En entrevistas de producto/proyecto nadie espera que sepas programar. Quieren ver cómo investigás un problema antes de pedir cambios, qué elegís resignar (<em>trade-off</em>) y cómo medís si funcionó.
             </div>
             
             <div class="grid-2">
-                <!-- Left: 3-Step Formula -->
+                <!-- Left: Structure -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(245,158,11,0.3);">
                     <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: var(--color-amber); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="award" class="icon-sm"></i> La Fórmula de 3 Pasos frente al Hiring Manager
+                        <i data-lucide="award" class="icon-sm"></i> Cómo ordenar tus respuestas
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.79rem;">
                         <div style="background: rgba(245,158,11,0.09); border-left: 3px solid var(--color-amber); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #fde68a;">1. Diagnóstico basado en evidencia:</strong> <em>"Antes de tocar código, reviso trazas en Langfuse y hablo con 10 usuarios para separar falla técnica de fricción UX."</em>
+                            <strong style="color: #fde68a;">1. Qué revisarías primero con datos:</strong> <em>"Antes de cambiar el modelo o tocar prompts, reviso trazas en Langfuse y hablo con usuarios para separar falla técnica de fricción de uso."</em>
                         </div>
                         <div style="background: rgba(59,130,246,0.09); border-left: 3px solid var(--color-blue); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #93c5fd;">2. Decisión en el Backlog con Trade-off explícito:</strong> <em>"Elijo Routing selectivo o un Discovery Spike de 1 semana explicando qué riesgo acotamos y qué dejamos para Fase 2."</em>
+                            <strong style="color: #93c5fd;">2. Qué cambio proponés y qué trade-off aceptás:</strong> <em>"Pruebo un Spike corto de 1 semana o aplico Routing por categoría, aclarando qué dejamos afuera en esta etapa."</em>
                         </div>
                         <div style="background: rgba(16,185,129,0.09); border-left: 3px solid var(--color-green); padding: 0.55rem 0.75rem; border-radius: 6px;">
-                            <strong style="color: #6ee7b7;">3. Impacto medible en Negocio / ROI / Riesgo:</strong> <em>"Cerramos con métricas claras: adopción del 12% → 58%, ahorro del 70% y cero quejas de clientes."</em>
+                            <strong style="color: #6ee7b7;">3. Cómo medís si sirvió:</strong> <em>"Defino de entrada el indicador de corte: adopción semanal, calidad en Evals o baja en costo por consulta."</em>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Unfair Advantage -->
+                <!-- Right: Localization Background -->
                 <div class="glass-card" style="padding: 1.15rem 1.4rem; border-color: rgba(139,92,246,0.32);">
                     <h3 style="font-family: var(--font-display); font-size: 1.05rem; color: #c4b5fd; margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.45rem;">
-                        <i data-lucide="sparkles" class="icon-sm"></i> Tu Ventaja Injusta (Localización → AI PM)
+                        <i data-lucide="sparkles" class="icon-sm"></i> Lo que ya traés de Localización (y suma directo en IA)
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.79rem;">
                         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #fde68a;">Glosarios &amp; QA Lingüístico →</strong> <em>Context Engineering &amp; Diseño de Rúbricas de Evals (SME)</em>. Sabés exactamente cómo definir ambigüedad y fidelidad.
+                            <strong style="color: #fde68a;">Glosarios y QA lingüístico →</strong> <em>Contexto y rúbricas de evaluación</em>. Ya sabés cómo definir qué es una respuesta fiel vs. ambigua.
                         </div>
                         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #93c5fd;">Gestión de Traductores Multi-Región →</strong> <em>Orquestación Human-in-the-Loop (HITL)</em>, SLAs de calidad, entregas por lotes y coordinación de stakeholders.
+                            <strong style="color: #93c5fd;">Coordinar traductores y entregas →</strong> <em>Flujos Human-in-the-Loop (HITL)</em>, acuerdos de servicio (SLAs) y alineación entre equipos.
                         </div>
                         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 0.55rem 0.75rem; border-radius: 8px;">
-                            <strong style="color: #6ee7b7;">Dominio Multilingüe →</strong> <em>Multilingual Token Economics</em> (presupuestar +25% en ES/PT) y auditoría real de sesgos culturales.
+                            <strong style="color: #6ee7b7;">Proyectos multilingües →</strong> Prever mayor gasto de tokens en ES/PT frente a inglés y cuidar matices culturales en salidas.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 13: REAL INTERVIEW DILEMMA 1 (ADOPTION 12%) -->
+        <!-- SLIDE 13: REAL INTERVIEW DILEMMA 1 (LOW ADOPTION & BUDGET) -->
         <div class="slide" id="slide-13">
-            <h2 class="slide-title">Entrevista Real 1: Adopción al 12% y Presupuesto en Riesgo</h2>
-            <p class="slide-subtitle">Simulá la auditoría a la izquierda y elegí entre 3 decisiones plausibles de PM a la derecha</p>
+            <h2 class="slide-title">Caso de entrevista 1: Baja adopción y presupuesto en riesgo</h2>
+            <p class="slide-subtitle">Simulá la auditoría a la izquierda y elegí cuál de las 3 respuestas defenderías en una entrevista</p>
             <div class="simple-banner">
-                <strong>💡 La pregunta real:</strong> <em>"Lanzamos un asistente interno hace 2 meses. Funciona bien técnicamente, pero solo lo usa el 12% del equipo y Finanzas quiere cancelar el presupuesto en 30 días. ¿Qué hacés?"</em>
+                <strong>💡 La pregunta:</strong> <em>"Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie del equipo lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?"</em>
             </div>
             
             <div class="grid-2">
-                <!-- Left: Adoption & FinOps Monitor -->
+                <!-- Left: Adoption Monitor -->
                 <div class="glass-card" style="padding: 1.1rem 1.35rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.55rem;">
                         <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: var(--color-amber); display: flex; align-items: center; gap: 0.45rem;">
-                            <i data-lucide="bar-chart-2" class="icon-sm"></i> Tablero Adopción &amp; Fricción UX
+                            <i data-lucide="bar-chart-2" class="icon-sm"></i> Tablero Adopción y Fricción
                         </h3>
                         <button type="button" class="btn-nav" onclick="resetAdoptionSim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
                     </div>
                     
                     <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 0.85rem; border-radius: 10px; text-align: center; margin-bottom: 0.7rem;">
-                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">ADOPCIÓN ACTIVA SEMANAL</p>
-                        <p style="font-size: 2rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12%</p>
-                        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.4;" id="sim-adopt-lbl">1° Tocá "Auditar Adopción" para cruzar Langfuse y entrevistas.</p>
+                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">USO SEMANAL ACTUAL</p>
+                        <p style="font-size: 1.9rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12%</p>
+                        <p style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.4;" id="sim-adopt-lbl">1° Tocá "Auditar uso" para cruzar Langfuse y charlas con usuarios.</p>
                     </div>
 
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">1. Auditar Adopción</button>
-                        <button type="button" class="btn-nav" id="btn-fix-adopt" onclick="applyAdoptionFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">2. Aplicar Plan PM</button>
+                        <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">1. Auditar uso</button>
+                        <button type="button" class="btn-nav" id="btn-fix-adopt" onclick="applyAdoptionFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center; font-size: 0.78rem;">2. Aplicar plan</button>
                     </div>
                 </div>
 
-                <!-- Right: 3 Plausible Trade-offs -->
+                <!-- Right: 3 Neutral Plausible Options (B is best) -->
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1.35rem;">
                     <div class="chat-container" id="chat-c1" style="height: 138px; margin-bottom: 0.55rem;">
                         <div class="chat-bubble mentor">
-                            <strong>Hiring Manager:</strong> "El bot pasa todas las pruebas técnicas, pero solo lo usa el 12% y Finanzas lo corta en 30 días. ¿Qué priorizás?"
+                            <strong>Entrevistador:</strong> "El bot pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"
                         </div>
                     </div>
                     <div class="roleplay-options">
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('a', this)">
-                            <strong>Opción A (Solo Comunicación):</strong> "Pido un mail del VP y armo capacitaciones obligatorias para forzar al equipo a usarlo."
+                            <strong>Opción A:</strong> "Pido un mail de dirección y armo capacitaciones obligatorias para empujar el uso."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('b', this)">
-                            <strong>Opción B (Solo Ingeniería):</strong> "Pido 2 meses más para migrar a un modelo más potente y agregar 5 integraciones nuevas."
+                            <strong>Opción B:</strong> "Cruzo Langfuse con 8–10 entrevistas cortas para ver dónde se traban, llevo el bot a un flujo en Jira con streaming y bajo el gasto con Routing/Batch."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('c', this)">
-                            <strong>Opción C (Estrategia PM Senior):</strong> "Cruzo Langfuse + 10 entrevistas para quitar la fricción en 1 flujo clave (acceso en Jira + Streaming) y recorto el gasto con Routing/Batch."
+                            <strong>Opción C:</strong> "Pido 2 meses más para migrar a un modelo más potente y sumar varias integraciones antes de volver a medir."
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 14: REAL INTERVIEW DILEMMA 2 (MODEL DRIFT + VP BONUS) -->
+        <!-- SLIDE 14: REAL INTERVIEW DILEMMA 2 (MODEL DRIFT + BONUS) -->
         <div class="slide" id="slide-14">
-            <h2 class="slide-title">Entrevista Real 2: Regresión Silenciosa (Model Drift)</h2>
-            <p class="slide-subtitle">Un ahorro de 60% en modelo rompió la terminología aunque todos los tests de software pasen en verde</p>
+            <h2 class="slide-title">Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</h2>
+            <p class="slide-subtitle">Un cambio a un modelo más barato dejó los tests de software en verde, pero rompió términos clave</p>
             <div class="simple-banner">
-                <strong>💡 La pregunta real:</strong> <em>"Migramos a un modelo más económico para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores de glosario y quejas de clientes. ¿Qué hacés hoy?"</em>
+                <strong>💡 La pregunta:</strong> <em>"Migramos a un modelo más económico para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores de glosario y quejas de clientes. ¿Qué hacés hoy?"</em>
             </div>
             
             <div class="grid-2">
-                <!-- Left: Drift Monitor + Collapsible VP Pressure Bonus -->
+                <!-- Left: Drift Monitor + Collapsible Extra -->
                 <div class="glass-card" style="padding: 1.1rem 1.35rem; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                             <h3 style="font-family: var(--font-display); font-size: 0.98rem; color: var(--color-purple); display: flex; align-items: center; gap: 0.45rem;">
-                                <i data-lucide="trending-down" class="icon-sm"></i> Monitor de Calidad &amp; Drift
+                                <i data-lucide="trending-down" class="icon-sm"></i> Calidad y Drift en Evals
                             </h3>
                             <button type="button" class="btn-nav" onclick="resetDriftSim()" style="padding: 4px 10px; font-size: 0.72rem;">↺ Reiniciar</button>
                         </div>
                         
                         <div style="background: rgba(0,0,0,0.42); border: 1px solid rgba(255,255,255,0.07); padding: 0.75rem; border-radius: 10px; text-align: center; margin-bottom: 0.6rem;">
-                            <p style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">FAITHFULNESS EN TERMINOLOGÍA</p>
+                            <p style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 0.15rem;">FIDELIDAD EN TERMINOLOGÍA</p>
                             <p style="font-size: 1.85rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-drift-val">0.64 ⚠️</p>
-                            <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.35;" id="sim-drift-log">1° Tocá "Simular Regresión" para ver el Golden Dataset vs. modelo liviano.</p>
+                            <p style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 0.2rem; line-height: 1.35;" id="sim-drift-log">1° Tocá "Simular caída" para ver qué muestra el Golden Dataset.</p>
                         </div>
 
                         <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.55rem;">
-                            <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center; font-size: 0.75rem;">1. Simular Regresión</button>
+                            <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center; font-size: 0.75rem;">1. Simular caída</button>
                             <button type="button" class="btn-nav" id="btn-fix-drift" onclick="applyDriftFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center; font-size: 0.75rem;">2. Rollback + Routing</button>
                         </div>
                     </div>
 
                     <div style="border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 0.45rem;">
-                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">⚡ Bonus Entrevista: Presión del VP ("Quiero un Agente en 30 días sin datos limpios")</button>
+                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">⚡ Extra: si el Director pide un agente en 30 días sin datos limpios</button>
                         <div id="bonus-case-box" style="display: none; margin-top: 0.4rem; font-size: 0.74rem; color: #cbd5e1; background: rgba(245,158,11,0.08); border-left: 3px solid var(--color-amber); padding: 0.5rem 0.65rem; border-radius: 6px; line-height: 1.4;">
-                            <strong>Respuesta modelo:</strong> "Propongo un <strong>Discovery Spike de 1 semana</strong> con 30 casos reales + opción <em>Configure/Buy</em> antes de comprometer desarrollo, y un piloto en <strong>Shadow Mode</strong> mientras curamos los datos."
+                            <strong>Cómo responder sin decir "no se puede":</strong> Proponés un <strong>Discovery Spike de 1 semana</strong> con 30 casos reales + una alternativa <em>Configure/Buy</em> rápida mientras ordenan los datos y validan en <strong>Shadow Mode</strong>.
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: 3 Plausible Trade-offs -->
+                <!-- Right: 3 Neutral Plausible Options (C is best) -->
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1.35rem;">
                     <div class="chat-container" id="chat-c2" style="height: 138px; margin-bottom: 0.55rem;">
                         <div class="chat-bubble mentor">
-                            <strong>Hiring Manager:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"
+                            <strong>Entrevistador:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"
                         </div>
                     </div>
                     <div class="roleplay-options">
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('a', this)">
-                            <strong>Opción A (Rollback Total Permanente):</strong> "Vuelvo el 100% al modelo caro para siempre y cancelo el plan de optimización de costos."
+                            <strong>Opción A:</strong> "Volver el 100% del tráfico al modelo anterior y dar de baja el cambio de ahorro."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('b', this)">
-                            <strong>Opción B (Revisión Manual 100%):</strong> "Dejo el modelo barato y pido a lingüistas revisar manualmente el 100% de las salidas todo el mes."
+                            <strong>Opción B:</strong> "Dejar el modelo más económico y pedirle a lingüistas que revisen a mano el 100% de las salidas durante un mes."
                         </button>
                         <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('c', this)">
-                            <strong>Opción C (Estrategia PM Senior):</strong> "Rollback inmediato por Flag en terminología crítica, corro Evals por categoría y aplico Model Routing selectivo + alertas de Drift."
+                            <strong>Opción C:</strong> "Revertir con feature flag solo el flujo de terminología crítica, correr el Golden Dataset por categoría en Langfuse y dejar el modelo chico únicamente donde supere 0.90, con alertas de Drift."
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 15: GRADUATION & 30-DAY ACTION PLAN -->
+        <!-- SLIDE 15: CLOSING & NEXT STEPS -->
         <div class="slide" id="slide-15">
             <div class="glass-card text-center" style="max-width: 960px; padding: 1.6rem 2.1rem;">
-                <span class="nav-session" style="display: inline-block; margin-bottom: 0.55rem;">🎓 PROGRAMA DE MENTORÍA COMPLETADO</span>
-                <h2 class="slide-title" style="font-size: 2.05rem; margin-bottom: 0.4rem;">¡Felicitaciones Anabela por Completar las 4 Sesiones!</h2>
+                <span class="nav-session" style="display: inline-block; margin-bottom: 0.55rem;">🎓 FIN DEL PROGRAMA · 4 DE 4</span>
+                <h2 class="slide-title" style="font-size: 2.05rem; margin-bottom: 0.4rem;">Cierre del programa y próximos pasos</h2>
                 <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.48; max-width: 760px; margin: 0 auto 0.9rem;">
-                    Unís tu experiencia en Gestión de Proyectos y Localización con arquitectura Cloud/RAG/Agentes, FinOps real, AI Evals y criterio de Producto 2026.
+                    Ya tenés el mapa completo para sentarte en una mesa técnica sin que te suene a chino: cómo trabajan los devs, qué hace un RAG o un agente por dentro, cuánto cuesta en serio y cómo se defiende en producción.
                 </p>
 
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; text-align: left; margin-bottom: 0.95rem;">
@@ -1324,17 +1327,17 @@
                     </div>
                     <div style="background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.45); border-radius: 9px; padding: 0.55rem 0.7rem;">
                         <strong style="color: #fbbf24; font-size: 0.74rem; display: block;">✓ SESIÓN 4</strong>
-                        <span style="font-size: 0.74rem; color: #ffffff;">FinOps/ROI, Build/Buy, Shadow/UX, Evals &amp; Entrevistas</span>
+                        <span style="font-size: 0.74rem; color: #ffffff;">FinOps/TCO, Build vs. Buy, Rollout, Evals &amp; Casos</span>
                     </div>
                 </div>
 
                 <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(245,158,11,0.28); border-radius: 12px; padding: 0.75rem 0.95rem; text-align: left; margin-bottom: 1rem;">
-                    <div style="font-size: 0.78rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.45rem;">🗓️ Tu Plan de Acción de 30 Días (De este Portal a tu Próxima Oferta)</div>
+                    <div style="font-size: 0.78rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.45rem;">🗓️ Cómo seguir practicando este mes</div>
                     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55rem; font-size: 0.73rem; color: #e2e8f0; line-height: 1.38;">
-                        <div><strong style="color: #93c5fd;">Semana 1:</strong> Armá 1 Caso de Estudio de 1 página (App Mock PRD S2 + cálculo ROI/TCO).</div>
-                        <div><strong style="color: #6ee7b7;">Semana 2:</strong> Actualizá CV y LinkedIn destacando <em>AI Product / Localization Ops</em>.</div>
-                        <div><strong style="color: #c4b5fd;">Semana 3:</strong> Repasá tu demo práctica en Antigravity + AWS MCP y tu pitch de 2 min.</div>
-                        <div><strong style="color: #fde68a;">Semana 4:</strong> Practicá en voz alta los dilemas de adopción y Drift en el Simulador S4.</div>
+                        <div><strong style="color: #93c5fd;">Semana 1:</strong> Bajá a 1 página tu caso práctico (usando el Mock PRD de S2 y la cuenta de TCO/tiempo de hoy).</div>
+                        <div><strong style="color: #6ee7b7;">Semana 2:</strong> Ajustá CV y LinkedIn conectando tu experiencia en Localización con proyectos de IA y QA.</div>
+                        <div><strong style="color: #c4b5fd;">Semana 3:</strong> Repasá en voz alta cómo mostraste el flujo de Antigravity + AWS MCP en 2 minutos.</div>
+                        <div><strong style="color: #fde68a;">Semana 4:</strong> Volvé al Simulador S4 y practicá defender los dos casos de entrevista sin leer la respuesta.</div>
                     </div>
                 </div>
 
@@ -1450,9 +1453,9 @@
 
         // --- SLIDE 5: BUILD VS BUY MINI-ADVISOR ---
         const buildBuyCases = {
-            1: '<strong style="color: #93c5fd;">🛒 Recomendación: BUY (SaaS) · Plazo: 3 días</strong> — Resumir reuniones es un commodity sin diferencial de negocio. Comprar una licencia Enterprise ahorra meses de ingeniería para dedicar los devs al producto core.',
-            2: '<strong style="color: #fbbf24;">🧩 Recomendación: CONFIGURE (Managed + MCP) · Plazo: 2 semanas</strong> — Conectar Jira y glosarios mediante conectores MCP o AWS Bedrock KB permite validar adopción e impacto real sin mantener servidores propios.',
-            3: '<strong style="color: #c4b5fd;">🏗️ Recomendación: BUILD vía Model Gateway (AWS Bedrock) · Plazo: 8-12 semanas</strong> — A escala de 500k docs/mes y requisitos médicos, necesitás control propio de Model Routing, Batch API y Evals, usando un Gateway para evitar Vendor Lock-in.'
+            1: '<strong style="color: #93c5fd;">🛒 Conviene BUY (SaaS) · ~3 días</strong> — Resumir reuniones no diferencia a la empresa. Poner ingenieros a mantener un transcriptor propio es perder plata y tiempo; comprás licencia corporativa y listo.',
+            2: '<strong style="color: #fbbf24;">🧩 Conviene CONFIGURE (Managed + MCP) · ~2 semanas</strong> — Conectar Jira y glosarios mediante conectores MCP o AWS Bedrock KB te deja probar adopción e impacto real sin mantener servidores propios.',
+            3: '<strong style="color: #c4b5fd;">🏗️ Conviene BUILD vía Model Gateway (AWS Bedrock) · 8-12 semanas</strong> — A escala de 500k docs/mes y requisitos médicos, necesitás control propio de Model Routing, Batch API y Evals, usando un Gateway para no quedar atada a un proveedor.'
         };
         function selectBuildBuyCase(idx, btn) {
             const box = document.getElementById('bb-result');
@@ -1464,7 +1467,7 @@
             box.innerHTML = buildBuyCases[idx];
         }
 
-        // --- SLIDE 6: REALISTIC ROI, TCO & PAYBACK CALCULATOR ---
+        // --- SLIDE 6: COSTOS VS TIEMPO DEL EQUIPO ---
         function calculateROI() {
             const volume = parseInt(document.getElementById('calc-volume').value, 10);
             const minsPerDoc = parseInt(document.getElementById('calc-mins').value, 10);
@@ -1505,12 +1508,11 @@
 
             const paybackEl = document.getElementById('roi-payback');
             if (netSavings <= 0) {
-                paybackEl.textContent = 'No rentable con estos parámetros';
+                paybackEl.textContent = 'Con estos valores no se justifica';
                 paybackEl.style.color = 'var(--color-red)';
             } else {
-                const paybackWeeks = (8000 / netSavings) * 4.33;
-                const roiPct = Math.round((netSavings / totalHybridCost) * 100);
-                paybackEl.textContent = `${paybackWeeks.toFixed(1)} semanas · ROI ${roiPct}%`;
+                const paybackWeeks = (15000 / netSavings) * 4.33;
+                paybackEl.textContent = `~${paybackWeeks.toFixed(1)} semanas de horas liberadas`;
                 paybackEl.style.color = '#fde68a';
             }
         }
@@ -1518,25 +1520,25 @@
         // --- SLIDE 7: SAFE ROLLOUT STEPPER ---
         const rolloutPhases = {
             1: {
-                traffic: '0% clientes (100% interno)',
-                risk: 'Cero impacto en usuario',
+                traffic: '0% clientes (solo equipo interno)',
+                risk: 'Sin impacto en el usuario final',
                 riskColor: '#6ee7b7',
-                gate: 'Acuerdo ≥ 90% vs. expertos',
-                action: 'Auditar discrepancias en Langfuse y ajustar prompts antes de exponer.'
+                gate: 'Acuerdo ≥ 90% vs. revisión humana',
+                action: 'Revisar diferencias en Langfuse y ajustar prompts antes de exponerlo.'
             },
             2: {
-                traffic: '5% → 25% → 100% progresivo',
-                risk: 'Acotado con Rollback en 1 clic',
+                traffic: '5% → 25% → 100% gradual',
+                risk: 'Acotado, con rollback en 1 clic',
                 riskColor: '#fde68a',
-                gate: 'Latencia P95 < 1.5s y costo en target 7 días',
-                action: 'Monitorear alertas de presupuesto y Drift con Feature Flags activas.'
+                gate: 'Latencia P95 < 1.5s y costo en línea 7 días',
+                action: 'Vigilar alertas de presupuesto y Drift con Feature Flags activas.'
             },
             3: {
-                traffic: '100% producción con 👍 / 👎',
-                risk: 'Mejora continua semanal',
+                traffic: '100% en vivo con 👍 / 👎',
+                risk: 'Ajuste continuo todas las semanas',
                 riskColor: '#93c5fd',
-                gate: 'Cada error corregido entra al Golden Dataset',
-                action: 'Priorizar top categorías con pulgar abajo en el refinamiento de cada Sprint.'
+                gate: 'Cada error corregido suma al Golden Dataset',
+                action: 'Priorizar los temas con más pulgares abajo en el refinamiento semanal.'
             }
         };
         function selectRolloutPhase(phaseNum) {
@@ -1548,23 +1550,23 @@
             const box = document.getElementById('rollout-detail');
             if (!p || !box) return;
             box.innerHTML = `<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; font-size: 0.79rem;">
-                <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Tráfico Expuesto</strong><span style="color: #f8fafc;">${p.traffic}</span></div>
-                <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Nivel de Riesgo</strong><span style="color: ${p.riskColor};">${p.risk}</span></div>
-                <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Métrica Gate (Salida)</strong><span style="color: #f8fafc;">${p.gate}</span></div>
-                <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Acción de la PM</strong><span style="color: #cbd5e1;">${p.action}</span></div>
+                <div><strong style="color: var(--color-amber); display: block; margin-bottom: 0.15rem;">👥 Quién lo ve</strong><span style="color: #f8fafc;">${p.traffic}</span></div>
+                <div><strong style="color: var(--color-blue); display: block; margin-bottom: 0.15rem;">🛡️ Exposición</strong><span style="color: ${p.riskColor};">${p.risk}</span></div>
+                <div><strong style="color: var(--color-purple); display: block; margin-bottom: 0.15rem;">🎯 Criterio para avanzar</strong><span style="color: #f8fafc;">${p.gate}</span></div>
+                <div><strong style="color: var(--color-green); display: block; margin-bottom: 0.15rem;">📋 Qué hacés vos</strong><span style="color: #cbd5e1;">${p.action}</span></div>
             </div>`;
         }
 
-        // --- SLIDE 8: AI UX LATENCY DEMO ---
+        // --- SLIDE 8: UX LATENCY DEMO ---
         function runUxLatencyDemo(mode) {
             const box = document.getElementById('ux-demo-box');
             if (!box) return;
             if (mode === 'slow') {
                 box.style.color = '#fca5a5';
-                box.innerHTML = '⏳ [0.0s - 12.0s] Pantalla congelada sin feedback mientras consulta API 1 → API 2 → API 3 en fila.<br>🚪 Resultado UX: 41% de los usuarios cierra la pestaña antes de ver respuesta.';
+                box.innerHTML = '⏳ [0.0s - 12.0s] Pantalla congelada sin aviso mientras consulta API 1 → API 2 → API 3 en fila.<br>🚪 Resultado: muchos usuarios cierran la pestaña antes de ver respuesta.';
             } else {
                 box.style.color = '#6ee7b7';
-                box.innerHTML = '⚡ [0.3s] Indicador: "Consultando Jira + Glosario en paralelo..."<br>⚡ [0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."';
+                box.innerHTML = '⚡ [0.3s] Aviso: "Consultando Jira + glosario en paralelo..."<br>⚡ [0.8s] Token Streaming activo: "El Release v2.4 tiene 10 módulos listos..."';
             }
         }
 
@@ -1585,7 +1587,7 @@
             if (fidelidad >= 0.8 && contexto >= 0.8 && relevancia >= 0.8) {
                 statusTag.textContent = "APROBADO PARA CANARY (" + Math.round(avgScore * 100) + "%)";
                 statusTag.className = "eval-tag success";
-                critique.textContent = "Las 3 métricas superan 0.80. Apto para avanzar a Canary Rollout.";
+                critique.textContent = "Las 3 métricas superan 0.80. Pasa a Canary.";
                 critique.style.color = "var(--color-green)";
             } else {
                 statusTag.textContent = "RECHAZADO (" + Math.round(avgScore * 100) + "%)";
@@ -1633,10 +1635,10 @@
             const log = document.getElementById('flywheel-feedback-log');
             if (!log) return;
             log.style.color = '#6ee7b7';
-            log.textContent = '✅ Caso #S4-PROD-992 exportado con corrección SME → Agregado al Golden Dataset v2.5 (Data Flywheel activo).';
+            log.textContent = '✅ Caso #S4-PROD-992 guardado con la corrección → sumado al Golden Dataset.';
         }
 
-        // --- SLIDE 13: INTERVIEW CASE 1 (ADOPTION 12% & BUDGET THREAT) ---
+        // --- SLIDE 13: INTERVIEW CASE 1 (ADOPTION & BUDGET - OPTION B WINS) ---
         let adoptionSimRunning = false;
         function startAdoptionAudit() {
             if (adoptionSimRunning) return;
@@ -1649,9 +1651,9 @@
             const chat = document.getElementById('chat-c1');
 
             val.style.color = 'var(--color-red)';
-            val.textContent = '12% · En Riesgo';
-            lbl.textContent = '⚠️ Hallazgos: 41% abandona por espera de 12s, odian copiar/pegar fuera de Jira y 38% usa Shadow AI personal.';
-            chat.innerHTML += '<div class="chat-bubble pm"><strong>Auditoría PM (Langfuse + 10 entrevistas):</strong> El problema no es precisión técnica: es fricción UX (espera sin Streaming y app separada del flujo diario) más costo inflado sin Routing.</div>';
+            val.textContent = 'Bajo · En riesgo';
+            lbl.textContent = '⚠️ Hallazgos: espera larga sin streaming, molesta salir de Jira y varios siguen usando cuentas personales.';
+            chat.innerHTML += '<div class="chat-bubble pm"><strong>Auditoría (Langfuse + entrevistas cortas):</strong> No es un problema de precisión del modelo: es fricción de uso y costo alto sin Routing.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1663,9 +1665,9 @@
             const chat = document.getElementById('chat-c1');
 
             val.style.color = 'var(--color-green)';
-            val.textContent = '58% · ROI +';
-            lbl.textContent = '✅ Acceso directo en Jira + Token Streaming (<1s) + Model Routing/Batch (-70% costo API) en 3 semanas.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Plan Ejecutado:</strong> Adopción subió de 12% a 58%, Shadow AI cayó y Finanzas renovó el presupuesto con ROI positivo.</div>';
+            val.textContent = 'Uso sostenido';
+            lbl.textContent = '✅ Acceso directo en Jira + Streaming (<1s) + Model Routing/Batch para bajar factura mensual.';
+            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Resultado:</strong> Sube el uso recurrente en el equipo piloto, baja el Shadow AI y Finanzas aprueba continuar un trimestre más.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1674,14 +1676,14 @@
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Un mail del VP genera un pico de uso de 5 días por obligación y después cae de nuevo porque no quitaste la fricción real ni defendiste el ROI ante Finanzas.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Un mail de dirección empuja el uso una semana por obligación y después vuelve a caer porque la fricción sigue igual y el gasto también.</div>';
             } else if (choice === 'b') {
-                btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Finanzas cierra el presupuesto en 30 días: pedir 2 meses más y un modelo más caro sin entender por qué no lo usan acelera la cancelación.</div>';
-            } else {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Respuesta Senior ✅):</strong> "1) Audito Langfuse y entrevistas cortas para ver dónde abandonan; 2) Embebemos el asistente en 1 flujo clave con Token Streaming (<1s); 3) Bajo la factura 70% con Model Routing/Batch para mostrar ROI en 3 semanas."</div>';
+                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "1) Cruzo Langfuse con 8–10 charlas cortas para ver dónde abandonan; 2) Llevo el asistente a un flujo concreto dentro de Jira con streaming; 3) Bajo el gasto con Model Routing y Batch para defender el presupuesto."</div>';
                 applyAdoptionFix();
+            } else {
+                btn.classList.add('opt-wrong');
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Finanzas corta en 30 días: pedir 2 meses más y un modelo más caro sin entender por qué no lo usan acelera el cierre.</div>';
             }
             chat.scrollTop = chat.scrollHeight;
         }
@@ -1690,14 +1692,14 @@
             adoptionSimRunning = false;
             document.getElementById('sim-adopt-val').textContent = '12%';
             document.getElementById('sim-adopt-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-adopt-lbl').textContent = '1° Tocá "Auditar Adopción" para cruzar Langfuse y entrevistas.';
+            document.getElementById('sim-adopt-lbl').textContent = '1° Tocá "Auditar uso" para cruzar Langfuse y charlas con usuarios.';
             document.getElementById('btn-run-adopt').disabled = false;
             document.getElementById('btn-fix-adopt').disabled = true;
-            document.getElementById('chat-c1').innerHTML = '<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "El bot pasa todas las pruebas técnicas, pero solo lo usa el 12% y Finanzas lo corta en 30 días. ¿Qué priorizás?"</div>';
+            document.getElementById('chat-c1').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "El bot pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"</div>';
             document.querySelectorAll('#slide-13 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 
-        // --- SLIDE 14: INTERVIEW CASE 2 (MODEL DRIFT + VP BONUS) ---
+        // --- SLIDE 14: INTERVIEW CASE 2 (MODEL DRIFT + BONUS - OPTION C WINS) ---
         let driftSimRunning = false;
         function startDriftSim() {
             if (driftSimRunning) return;
@@ -1711,8 +1713,8 @@
 
             val.style.color = 'var(--color-red)';
             val.textContent = '0.64 ❌';
-            log.textContent = '⚠️ Unit tests en verde, pero Faithfulness cayó de 0.94 a 0.64 en términos legales bajo NDA.';
-            chat.innerHTML += '<div class="chat-bubble pm"><strong>Diagnóstico Evals:</strong> Los tests tradicionales solo chequean formato JSON, no calidad semántica. El modelo barato omitió reglas del glosario ES/PT.</div>';
+            log.textContent = '⚠️ Tests de código en verde, pero Fidelidad cayó de 0.94 a 0.64 en términos legales bajo NDA.';
+            chat.innerHTML += '<div class="chat-bubble pm"><strong>Diagnóstico Evals:</strong> Los unit tests solo validan formato JSON, no sentido lingüístico. El modelo chico omitió reglas del glosario ES/PT.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1725,8 +1727,8 @@
 
             val.style.color = 'var(--color-green)';
             val.textContent = '0.95 ✅';
-            log.textContent = '✅ Model Routing selectivo (75% Flash en FAQs ≥ 0.90 / 25% Frontier en Legal) + Alerta Drift en CI/CD.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución Aplicada:</strong> Cero quejas en localización y mantenemos ~65% del ahorro usando Routing por categoría.</div>';
+            log.textContent = '✅ Routing selectivo (modelo chico donde supera 0.90 / grande en Legal) + alerta de Drift en CI/CD.';
+            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>✅ Solución aplicada:</strong> Se frenan los errores de localización sin perder gran parte del ahorro en consultas simples.</div>';
             chat.scrollTop = chat.scrollHeight;
         }
 
@@ -1735,13 +1737,13 @@
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Hacer rollback total para siempre apaga el incendio hoy, pero destruye la meta de ahorro del 60% y no instala Evals para evitar el próximo Drift.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Volver el 100% para siempre apaga el incendio hoy, pero perdés todo el ahorro buscado y seguís sin Evals para detectar el próximo Drift.</div>';
             } else if (choice === 'b') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Feedback Entrevistador:</strong> Poner a lingüistas a revisar el 100% manualmente crea un cuello de botella operativo que cuesta más que el ahorro del modelo.</div>';
+                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>⚠️ Comentario del entrevistador:</strong> Revisar el 100% a mano arma un cuello de botella humano que sale más caro que usar el modelo grande.</div>';
             } else {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>PM (Respuesta Senior ✅):</strong> "1) Rollback por Feature Flag solo en flujos críticos; 2) Evalúo el Golden Dataset por categoría en Langfuse; 3) Dejo modelo Flash donde saca ≥ 0.90 y Frontier en terminología legal + alerta de Drift."</div>';
+                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "1) Rollback con feature flag solo en terminología crítica; 2) Corro el Golden Dataset por categoría en Langfuse; 3) Dejo modelo chico donde saca ≥ 0.90 y pongo alerta de Drift."</div>';
                 applyDriftFix();
             }
             chat.scrollTop = chat.scrollHeight;
@@ -1751,10 +1753,10 @@
             driftSimRunning = false;
             document.getElementById('sim-drift-val').textContent = '0.64 ⚠️';
             document.getElementById('sim-drift-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-drift-log').textContent = '1° Tocá "Simular Regresión" para ver el Golden Dataset vs. modelo liviano.';
+            document.getElementById('sim-drift-log').textContent = '1° Tocá "Simular caída" para ver qué muestra el Golden Dataset.';
             document.getElementById('btn-run-drift').disabled = false;
             document.getElementById('btn-fix-drift').disabled = true;
-            document.getElementById('chat-c2').innerHTML = '<div class="chat-bubble mentor"><strong>Hiring Manager:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"</div>';
+            document.getElementById('chat-c2').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Ahorramos 60% con el modelo chico y el código pasa los tests, pero Localización reporta errores graves en términos legales. ¿Qué hacés?"</div>';
             document.querySelectorAll('#slide-14 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 

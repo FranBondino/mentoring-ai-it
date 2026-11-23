@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guion Orador - Sesión 4: Liderazgo Ejecutivo de Productos de IA: FinOps, Build vs. Buy, Evals & Entrevistas | Anabela Hotian</title>
+  <title>Guion Orador - Sesión 4: Costos reales de IA, Lanzamiento, Evals y Entrevistas | Anabela Hotian</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -551,8 +551,8 @@
   <main class="container">
     <section class="hero-box">
       <span class="hero-eyebrow">COPILOTO DE ORADOR · MENTORÍA ANABELA HOTIAN</span>
-      <h1>Sesión 4: Liderazgo Ejecutivo de Productos de IA: FinOps, Build vs. Buy, Evals & Entrevistas</h1>
-      <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Cerrar el programa elevando a Anabela al rol ejecutivo de AI Product / Project Manager: decidir Build vs. Buy vs. Configure, optimizar costos con Model Routing y Batch API (-50%) sobre TCO real, lanzar sin riesgo (Shadow Mode, Canary y AI UX), diagnosticar la Tríada RAG, Trajectory Evals y Model Drift en Langfuse, y resolver dilemas reales de entrevista con trade-offs claros.</p>
+      <h1>Sesión 4: Costos reales de IA, Lanzamiento, Evals y Entrevistas</h1>
+      <p class="hero-goal"><strong>🎯 Objetivo pedagógico:</strong> Cerrar el programa bajando a tierra cómo se decide, presupuesta, lanza y defiende un producto de IA en producción: Build vs. Buy vs. Configure, Model Routing y Batch API (-50%) sobre TCO real, cálculo honesto de capacidad liberada, Shadow Mode y Canary, UX y Spikes en Agile, Evals y Model Drift en Langfuse, y práctica con casos de entrevista reales.</p>
 
       
     <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(59, 130, 246, 0.12)); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 14px; padding: 1.15rem 1.35rem; margin-bottom: 1.25rem;">
@@ -562,23 +562,23 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.7rem;">
         
           <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
-            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">1. FinOps Avanzado, Build vs. Buy & ROI/Payback (Slides 1 a 6)</strong>
-            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Model Routing (80% a Flash/Haiku ahorra ~76%), Batch API (-50% nocturno), TCO completo (incluyendo +20–30% por idiomas ES/PT), marco <strong style="color:#fff; font-weight:700;">Build vs. Buy vs. Configure</strong> con Model Gateway y Calculadora de <strong style="color:#fff; font-weight:700;">ROI + Payback</strong>.</p>
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">1. Costos reales, Build vs. Buy y tiempo liberado (Slides 1 a 6)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Model Routing (80% a modelo chico ahorra ~76%), Batch API (-50% nocturno), TCO completo (incluyendo +20–30% de tokens en ES/PT), decidir <strong style="color:#fff; font-weight:700;">Build vs. Buy vs. Configure</strong> con Model Gateway y presentar <strong style="color:#fff; font-weight:700;">capacidad liberada</strong> ante Finanzas sin vender recorte de nómina.</p>
           </div>
         
           <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
-            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">2. Lanzamiento Seguro, AI UX & Gobernanza 2026 (Slides 7 a 8)</strong>
-            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Stepper de <strong style="color:#fff; font-weight:700;">Shadow Mode → Canary Rollout → Data Flywheel</strong>, cómo mejorar adopción con <strong style="color:#fff; font-weight:700;">Token Streaming (< 1s)</strong> y flujos contextuales, <strong style="color:#fff; font-weight:700;">Discovery Spikes</strong> de 1 semana en Agile probabilístico, y gestión de <strong style="color:#fff; font-weight:700;">Shadow AI, EU AI Act e IP</strong>.</p>
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">2. Salida gradual, UX y riesgos 2026 (Slides 7 a 8)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Salir con <strong style="color:#fff; font-weight:700;">Shadow Mode → Canary → feedback</strong>, bajar la espera con <strong style="color:#fff; font-weight:700;">Token Streaming (< 1s)</strong> y botones en Jira/TMS, correr un <strong style="color:#fff; font-weight:700;">Discovery Spike</strong> de 1 semana antes de prometer fechas, y manejar <strong style="color:#fff; font-weight:700;">Shadow AI, EU AI Act e IP</strong>.</p>
           </div>
         
           <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
-            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">3. AI Evals Avanzados & Langfuse (Slides 9 a 11)</strong>
-            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Conectar la <strong style="color:#fff; font-weight:700;">Tríada RAG</strong> con tickets exactos de Backlog (Prompt vs. Vector DB), <strong style="color:#fff; font-weight:700;">Trajectory Evals</strong> para agentes, <strong style="color:#fff; font-weight:700;">Model Drift</strong> calibrado con criterio humano experto (<strong style="color:#fff; font-weight:700;">SME</strong>) y el ritual semanal de 5 minutos en <strong style="color:#fff; font-weight:700;">Langfuse</strong>.</p>
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">3. AI Evals en la práctica y Langfuse (Slides 9 a 11)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Saber qué ticket abrir según qué métrica de la <strong style="color:#fff; font-weight:700;">Tríada RAG</strong> cayó, sumar <strong style="color:#fff; font-weight:700;">Trajectory Evals</strong> en agentes, detectar <strong style="color:#fff; font-weight:700;">Model Drift</strong> calibrado con criterio de negocio/idioma y revisar cada semana trazas y <strong style="color:#fff; font-weight:700;">P95</strong> en <strong style="color:#fff; font-weight:700;">Langfuse</strong>.</p>
           </div>
         
           <div style="background: rgba(7, 11, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.75rem 0.9rem;">
-            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">4. Entrevistas Senior con Dilemas Reales & Plan 30 Días (Slides 12 a 15)</strong>
-            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Ventaja injusta desde Localización, 2 simuladores con <strong style="color:#fff; font-weight:700;">3 opciones plausibles con trade-offs</strong> (Crisis de Adopción 12% y Model Drift + Bonus Presión del VP) y un <strong style="color:#fff; font-weight:700;">Plan de Acción de 30 días</strong>.</p>
+            <strong style="display: block; color: #34d399; font-size: 0.86rem; margin-bottom: 0.25rem;">4. Entrevistas reales y cierre (Slides 12 a 15)</strong>
+            <p style="color: #e2e8f0; font-size: 0.82rem; line-height: 1.45; margin: 0;">Cómo ordenar respuestas y defender su experiencia en Localización, <strong style="color:#fff; font-weight:700;">2 casos con 3 opciones parejas</strong> (Adopción baja → gana B; Model Drift → gana C + Extra Director) y 4 pasos concretos para practicar en el mes.</p>
           </div>
         
       </div>
@@ -591,8 +591,8 @@
     <div class="agenda-item">
       <span class="agenda-time">00 - 18 min</span>
       <div>
-        <strong>FinOps Avanzado, Build vs. Buy & Business Case</strong> <span class="agenda-slides">(Slides 1 a 6)</span>
-        <p>Model Routing (80/20), Batch API (-50%), los 4 costos ocultos del TCO (incluyendo impuesto multilingüe), marco Build vs. Buy vs. Configure (Model Gateway) y Calculadora de ROI & Payback.</p>
+        <strong>Costos reales, Build vs. Buy y tiempo del equipo</strong> <span class="agenda-slides">(Slides 1 a 6)</span>
+        <p>Model Routing (80/20), Batch API (-50%), los 4 costos ocultos del TCO (incluyendo idioma ES/PT vs EN), cuándo comprar vs. construir y calculadora de capacidad liberada.</p>
       </div>
     </div>
   
@@ -600,8 +600,8 @@
     <div class="agenda-item">
       <span class="agenda-time">18 - 33 min</span>
       <div>
-        <strong>Lanzamiento Seguro, AI UX & Gobernanza 2026</strong> <span class="agenda-slides">(Slides 7 a 8)</span>
-        <p>Stepper de Shadow Mode → Canary Rollout → Data Flywheel, Token Streaming (< 1s), Agile Probabilístico (Discovery Spike) y gobernanza de Shadow AI, EU AI Act e IP.</p>
+        <strong>Salida gradual, UX y riesgos actuales</strong> <span class="agenda-slides">(Slides 7 a 8)</span>
+        <p>Shadow Mode → Canary → circuito de feedback, Token Streaming (< 1s), Discovery Spikes de 1 semana en Agile y riesgos reales hoy (Shadow AI, EU AI Act e IP).</p>
       </div>
     </div>
   
@@ -609,8 +609,8 @@
     <div class="agenda-item">
       <span class="agenda-time">33 - 45 min</span>
       <div>
-        <strong>AI Evals Avanzados & Observabilidad en Langfuse</strong> <span class="agenda-slides">(Slides 9 a 11)</span>
-        <p>Mapeo de Tríada RAG a tickets exactos de Backlog, Trajectory Evals de agentes, Model Drift con calibración SME y el ritual de 5 minutos en Langfuse.</p>
+        <strong>AI Evals en la práctica y monitoreo en Langfuse</strong> <span class="agenda-slides">(Slides 9 a 11)</span>
+        <p>Qué parte del sistema tocar cuando baja cada métrica de la Tríada RAG, Trajectory Evals en agentes, Model Drift calibrado con criterio humano y revisión semanal en Langfuse.</p>
       </div>
     </div>
   
@@ -618,8 +618,8 @@
     <div class="agenda-item">
       <span class="agenda-time">45 - 60 min</span>
       <div>
-        <strong>Entrevistas Senior con Dilemas Reales & Plan 30 Días</strong> <span class="agenda-slides">(Slides 12 a 15)</span>
-        <p>Ventaja injusta desde Localización, simulacros de 3 opciones (Adopción 12% y Model Drift + Bonus VP) y Plan de Acción de 30 días.</p>
+        <strong>Entrevistas reales y cierre del programa</strong> <span class="agenda-slides">(Slides 12 a 15)</span>
+        <p>Cómo ordenar respuestas y contar su experiencia en Localización sin sonar armada, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes.</p>
       </div>
     </div>
   
@@ -637,21 +637,21 @@
     <nav class="quick-jump">
       <div class="quick-jump-title">⚡ Salto Rápido a Diapositivas (15 Slides)</div>
       <div class="jump-grid">
-        <a href="#slide-1" class="jump-chip" id="chip-1"><span>#1</span> Liderazgo Ejecutivo de Productos de IA</a>
-        <a href="#slide-2" class="jump-chip" id="chip-2"><span>#2</span> Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)</a>
-        <a href="#slide-3" class="jump-chip" id="chip-3"><span>#3</span> FinOps 1: Model Routing (Enrutamiento de Modelos)</a>
-        <a href="#slide-4" class="jump-chip" id="chip-4"><span>#4</span> FinOps 2: Batch API (-50%) & Los 4 Costos Ocultos (TCO)</a>
-        <a href="#slide-5" class="jump-chip" id="chip-5"><span>#5</span> Build vs. Buy vs. Configure (y Vendor Lock-in)</a>
-        <a href="#slide-6" class="jump-chip" id="chip-6"><span>#6</span> Ejercicio 1: Calculadora Realista de ROI, TCO & Payback</a>
-        <a href="#slide-7" class="jump-chip" id="chip-7"><span>#7</span> Lanzamiento Seguro: Shadow Mode, Canary & Flywheel</a>
-        <a href="#slide-8" class="jump-chip" id="chip-8"><span>#8</span> AI UX, Agile Probabilístico & Gobernanza 2026</a>
-        <a href="#slide-9" class="jump-chip" id="chip-9"><span>#9</span> AI Evals Avanzados: Tríada, Agentes & Model Drift</a>
-        <a href="#slide-10" class="jump-chip" id="chip-10"><span>#10</span> Ejercicio 2: Simulador de Auditoría Evals (Causa Raíz)</a>
-        <a href="#slide-11" class="jump-chip" id="chip-11"><span>#11</span> Observabilidad en Producción: Radiografía en Langfuse</a>
-        <a href="#slide-12" class="jump-chip" id="chip-12"><span>#12</span> Entrevistas Senior: Fórmula de 3 Pasos + Tu Ventaja Injusta</a>
-        <a href="#slide-13" class="jump-chip" id="chip-13"><span>#13</span> Entrevista Real 1: Adopción al 12% y Presupuesto en Riesgo</a>
-        <a href="#slide-14" class="jump-chip" id="chip-14"><span>#14</span> Entrevista Real 2: Regresión Silenciosa (Model Drift)</a>
-        <a href="#slide-15" class="jump-chip" id="chip-15"><span>#15</span> ¡Felicitaciones Anabela por Completar las 4 Sesiones!</a>
+        <a href="#slide-1" class="jump-chip" id="chip-1"><span>#1</span> Llevar la IA a Producción: Costos, Calidad y Entrevistas</a>
+        <a href="#slide-2" class="jump-chip" id="chip-2"><span>#2</span> Qué vamos a ver hoy (Sesión 4)</a>
+        <a href="#slide-3" class="jump-chip" id="chip-3"><span>#3</span> FinOps 1: Model Routing (enrutamiento de modelos)</a>
+        <a href="#slide-4" class="jump-chip" id="chip-4"><span>#4</span> FinOps 2: Batch API (-50%) y costos ocultos (TCO)</a>
+        <a href="#slide-5" class="jump-chip" id="chip-5"><span>#5</span> Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)</a>
+        <a href="#slide-6" class="jump-chip" id="chip-6"><span>#6</span> Ejercicio 1: Costos de IA vs. tiempo del equipo</a>
+        <a href="#slide-7" class="jump-chip" id="chip-7"><span>#7</span> Lanzamiento gradual: Shadow Mode, Canary y feedback</a>
+        <a href="#slide-8" class="jump-chip" id="chip-8"><span>#8</span> UX en productos de IA, Spikes en Agile y riesgos actuales</a>
+        <a href="#slide-9" class="jump-chip" id="chip-9"><span>#9</span> AI Evals en la práctica: Tríada RAG, Agentes y Model Drift</a>
+        <a href="#slide-10" class="jump-chip" id="chip-10"><span>#10</span> Ejercicio 2: Simulador de auditoría Evals</a>
+        <a href="#slide-11" class="jump-chip" id="chip-11"><span>#11</span> Monitoreo en producción con Langfuse</a>
+        <a href="#slide-12" class="jump-chip" id="chip-12"><span>#12</span> Cómo encarar entrevistas técnicas y defender tu perfil</a>
+        <a href="#slide-13" class="jump-chip" id="chip-13"><span>#13</span> Caso de entrevista 1: Baja adopción y presupuesto en riesgo</a>
+        <a href="#slide-14" class="jump-chip" id="chip-14"><span>#14</span> Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</a>
+        <a href="#slide-15" class="jump-chip" id="chip-15"><span>#15</span> Cierre del programa y próximos pasos</a>
       </div>
     </nav>
 
@@ -664,10 +664,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(1, this.checked)">
               <span class="slide-num">SLIDE 01</span>
             </label>
-            <h2 class="slide-title">Liderazgo Ejecutivo de Productos de IA</h2>
+            <h2 class="slide-title">Llevar la IA a Producción: Costos, Calidad y Entrevistas</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Sesión 4 · Cierre · FinOps & Build/Buy · AI UX & Evals · Rol PM Senior</span>
+            <span class="badge-tag">Sesión 4 · Cierre · Costos & Build/Buy · Rollout & Evals · Entrevistas</span>
             <span class="time-tag">⏱️ 2 Min</span>
           </div>
         </div>
@@ -680,15 +680,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Presentar la Sesión 4 como el salto de la arquitectura técnica (S1-S3) al liderazgo ejecutivo de producto IA (FinOps, Build/Buy, Rollout/UX, Evals y Entrevistas).</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Conectar S1–S3 (cómo se construye) con S4 (costos reales, Build vs Buy, salida a producción, Evals/Drift y entrevistas).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré visualmente las 4 tarjetas S1 → S2 → S3 → S4 en portada.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá las 4 tarjetas S1 → S2 → S3 → S4 en portada.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En S1–S3 aprendiste cómo funciona el avión y sus motores; hoy aprendés a dirigir la aerolínea: rentabilidad por ruta, cuándo alquilar vs. fabricar y cómo manejar turbulencias reales.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay plata, usuarios y preguntas de directorio.</p>
             </div>
           </div>
         </div>
@@ -697,14 +697,14 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ BIENVENIDA A LA SESIÓN FINAL (El salto al rol ejecutivo):
-• En las Sesiones 1 a 3 aprendiste cómo se construye todo por dentro: ingeniería y Agile (S1), memoria segura con RAG (S2) y manos con Agentes y MCP (S3).
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ ARRANQUE DE LA ÚLTIMA CLASE (Las 4 sesiones en perspectiva):
+• En las primeras tres clases vimos cómo trabajan los equipos de desarrollo (S1), cómo funciona un LLM y un RAG por dentro (S2), y cómo un agente ejecuta acciones con herramientas y frenos humanos (S3).
 
-2️⃣ EL FOCO DE HOY (100% TEMAS NUEVOS):
-• Hoy no vamos a repetir cosas básicas de tokens ni de PII que ya dominás: nos ponemos el sombrero de AI Product Manager para decidir qué comprar vs. construir, defender un Business Case con TCO real, lanzar sin fricción y resolver dilemas difíciles de entrevista.`)">📋 Copiar Guion</button>
+2️⃣ QUÉ NOS FALTA VER HOY:
+• Hoy no vamos a repetir lo básico de tokens ni de PII que ya tenés claro. Nos enfocamos en lo que te toca resolver cuando el producto ya existe o lo están por aprobar: cuánto sale de verdad, qué conviene comprar en vez de programar, cómo salir a usuarios reales sin romper nada y cómo responder casos difíciles en entrevistas.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ BIENVENIDA A LA SESIÓN FINAL (El salto al rol ejecutivo):</strong><br>• En las <strong style="color:#fff; font-weight:700;">Sesiones 1 a 3</strong> aprendiste cómo se construye todo por dentro: ingeniería y Agile (S1), memoria segura con RAG (S2) y manos con Agentes y MCP (S3).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ EL FOCO DE HOY (100% TEMAS NUEVOS):</strong><br>• Hoy no vamos a repetir cosas básicas de tokens ni de PII que ya dominás: nos ponemos el sombrero de <strong style="color:#fff; font-weight:700;">AI Product Manager</strong> para decidir qué comprar vs. construir, defender un <strong style="color:#fff; font-weight:700;">Business Case con TCO real</strong>, lanzar sin fricción y resolver <strong style="color:#fff; font-weight:700;">dilemas difíciles de entrevista</strong>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ARRANQUE DE LA ÚLTIMA CLASE (Las 4 sesiones en perspectiva):</strong><br>• En las primeras tres clases vimos cómo trabajan los equipos de desarrollo (S1), cómo funciona un LLM y un RAG por dentro (S2), y cómo un agente ejecuta acciones con herramientas y frenos humanos (S3).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ QUÉ NOS FALTA VER HOY:</strong><br>• Hoy no vamos a repetir lo básico de tokens ni de PII que ya tenés claro. Nos enfocamos en lo que te toca resolver cuando el producto ya existe o lo están por aprobar: <strong style="color:#fff; font-weight:700;">cuánto sale de verdad, qué conviene comprar en vez de programar, cómo salir a usuarios reales sin romper nada y cómo responder casos difíciles en entrevistas</strong>.
           </blockquote>
         </div>
 
@@ -716,8 +716,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 AI Product Leadership</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Tomar decisiones de negocio, inversión, experiencia de usuario y calidad alrededor de la IA sin depender de intuición.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Paso a Producción (Productización)</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Todo lo que pasa después del prototipo: presupuesto real, experiencia de uso, monitoreo semanal y manejo de riesgos.</p>
                 </div>
               
             </div>
@@ -731,10 +731,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 2: Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Miremos en la Slide 2 los 4 bloques 100% nuevos que vamos a recorrer hoy en 60 minutos.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 2: Qué vamos a ver hoy (Sesión 4)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Miremos rápido en la Slide 2 los cuatro bloques de hoy.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Miremos en la Slide 2 los 4 bloques 100% nuevos que vamos a recorrer hoy en 60 minutos.”</p>
+            <p class="bridge-text">“Miremos rápido en la Slide 2 los cuatro bloques de hoy.”</p>
           </div>
         </div>
       </article>
@@ -747,10 +747,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(2, this.checked)">
               <span class="slide-num">SLIDE 02</span>
             </label>
-            <h2 class="slide-title">Agenda Ejecutiva de la Sesión 4 (100% Temas Nuevos)</h2>
+            <h2 class="slide-title">Qué vamos a ver hoy (Sesión 4)</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">1. FinOps & Build/Buy · 2. Shadow Mode & AI UX · 3. Evals & Langfuse · 4. Dilemas & Plan 30D</span>
+            <span class="badge-tag">1. Costos & Build/Buy · 2. Rollout & UX · 3. Evals & Langfuse · 4. Entrevistas</span>
             <span class="time-tag">⏱️ 2 Min</span>
           </div>
         </div>
@@ -763,15 +763,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Presentar el mapa completo de 4 bloques nuevos sin solaparse con S1–S3.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Presentar el mapa completo de la hora en 4 bloques concretos.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá brevemente las 4 tarjetas de la agenda.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 4 tarjetas en 30 segundos.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es tu tablero de Directora de Producto: Finanzas, Lanzamiento/UX, Calidad y Carrera.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Cuatro frentes concretos: plata, salida a calle, calidad y entrevistas.</p>
             </div>
           </div>
         </div>
@@ -780,14 +780,14 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ LOS 4 BLOQUES DE HOY (Señalá la grilla 2×2):
-• 1. FinOps Avanzado & Build vs. Buy: Model Routing (80/20), Batch API (-50%), costos ocultos del TCO, cuándo comprar SaaS vs. configurar vs. construir y la Calculadora de ROI & Payback.
-• 2. Lanzamiento Seguro & AI UX: Cómo salir con Shadow Mode y Canary, evitar pantallas congeladas, usar Discovery Spikes y gobernar Shadow AI y EU AI Act.
-• 3. AI Evals Avanzados & Langfuse: Diagnóstico de causa raíz en la Tríada RAG, Evals de Agentes y detección de Model Drift.
-• 4. Entrevistas Senior & Plan 30 Días: Tu diferencial desde Localización, 2 crisis con dilemas reales y tu hoja de ruta post-mentoría.`)">📋 Copiar Guion</button>
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ LOS 4 BLOQUES DE HOY (Grilla 2×2):
+• 1. Costos reales y Build vs. Buy: Model Routing, Batch API a mitad de precio, gastos fijos que suelen olvidarse y cuándo comprar un SaaS en lugar de desarrollar.
+• 2. Cómo lanzar y UX para IA: Salir por etapas (Shadow Mode → Canary), evitar pantallas congeladas, usar Spikes cortos en Agile y manejar Shadow AI y EU AI Act.
+• 3. Evaluar calidad y monitorear en Langfuse: Qué parte tocar cuando cae una métrica, Evals en agentes y cómo detectar Model Drift.
+• 4. Entrevistas reales y cierre: Cómo contar tu experiencia previa en Localización y practicar 2 casos con opciones parejas.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ LOS 4 BLOQUES DE HOY (Señalá la grilla 2×2):</strong><br>• <strong style="color:#fff; font-weight:700;">1. FinOps Avanzado & Build vs. Buy:</strong> Model Routing (80/20), Batch API (-50%), costos ocultos del TCO, cuándo comprar SaaS vs. configurar vs. construir y la Calculadora de ROI & Payback.<br>• <strong style="color:#fff; font-weight:700;">2. Lanzamiento Seguro & AI UX:</strong> Cómo salir con <em style="color:#fde68a;">Shadow Mode</em> y <em style="color:#fde68a;">Canary</em>, evitar pantallas congeladas, usar <em style="color:#fde68a;">Discovery Spikes</em> y gobernar <em style="color:#fde68a;">Shadow AI</em> y <em style="color:#fde68a;">EU AI Act</em>.<br>• <strong style="color:#fff; font-weight:700;">3. AI Evals Avanzados & Langfuse:</strong> Diagnóstico de causa raíz en la Tríada RAG, Evals de Agentes y detección de <em style="color:#fde68a;">Model Drift</em>.<br>• <strong style="color:#fff; font-weight:700;">4. Entrevistas Senior & Plan 30 Días:</strong> Tu diferencial desde Localización, 2 crisis con dilemas reales y tu hoja de ruta post-mentoría.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LOS 4 BLOQUES DE HOY (Grilla 2×2):</strong><br>• <strong style="color:#fff; font-weight:700;">1. Costos reales y Build vs. Buy:</strong> Model Routing, Batch API a mitad de precio, gastos fijos que suelen olvidarse y cuándo comprar un SaaS en lugar de desarrollar.<br>• <strong style="color:#fff; font-weight:700;">2. Cómo lanzar y UX para IA:</strong> Salir por etapas (<em style="color:#fde68a;">Shadow Mode → Canary</em>), evitar pantallas congeladas, usar <em style="color:#fde68a;">Spikes</em> cortos en Agile y manejar <em style="color:#fde68a;">Shadow AI</em> y <em style="color:#fde68a;">EU AI Act</em>.<br>• <strong style="color:#fff; font-weight:700;">3. Evaluar calidad y monitorear en Langfuse:</strong> Qué parte tocar cuando cae una métrica, Evals en agentes y cómo detectar <em style="color:#fde68a;">Model Drift</em>.<br>• <strong style="color:#fff; font-weight:700;">4. Entrevistas reales y cierre:</strong> Cómo contar tu experiencia previa en Localización y practicar 2 casos con opciones parejas.
           </blockquote>
         </div>
 
@@ -800,7 +800,7 @@
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 FinOps en IA</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Disciplina para optimizar el costo real en la nube de un producto de IA sin sacrificar la calidad que el usuario percibe.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Controlar y bajar el gasto mensual de un sistema de IA en la nube sin arruinar la calidad.</p>
                 </div>
               
             </div>
@@ -814,10 +814,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 3: FinOps 1: Model Routing (Enrutamiento de Modelos)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Arranquemos con la palanca número uno de FinOps en producción: cómo dejar de pagar el modelo más caro para todo en la Slide 3.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 3: FinOps 1: Model Routing (enrutamiento de modelos)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Arranquemos por la decisión de costos más común cuando ya hay tráfico real: el Model Routing en la Slide 3.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Arranquemos con la palanca número uno de FinOps en producción: cómo dejar de pagar el modelo más caro para todo en la Slide 3.”</p>
+            <p class="bridge-text">“Arranquemos por la decisión de costos más común cuando ya hay tráfico real: el Model Routing en la Slide 3.”</p>
           </div>
         </div>
       </article>
@@ -830,10 +830,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(3, this.checked)">
               <span class="slide-num">SLIDE 03</span>
             </label>
-            <h2 class="slide-title">FinOps 1: Model Routing (Enrutamiento de Modelos)</h2>
+            <h2 class="slide-title">FinOps 1: Model Routing (enrutamiento de modelos)</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Model Routing · Tiered Routing (80/20) · Simulador -76%</span>
+            <span class="badge-tag">Model Routing · Carriles 80/20 · Simulador de ahorro</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -846,15 +846,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">No usamos un modelo caro para todo: un Model Router manda el 80% fácil a Flash/Haiku y deja solo el 20% complejo al modelo Frontier.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Usar un clasificador liviano para mandar el 80% de pedidos simples a modelos Flash/Haiku y dejar el modelo caro solo para el 20% difícil.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Señalá Ruta Rápida vs. Experta → 2° Mové el slider del simulador al 80% para ver $1,200 → $288/mes.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Explicá los 2 carriles a la izquierda y mové el slider al 80% a la derecha ($1,200 → $288).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En un hospital no te atiende un neurocirujano para tomarte la presión: la guardia general resuelve rápido el 80% y deriva solo lo complejo.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">En una guardia no atiende el especialista más caro los casos de rutina; filtra primero la atención general y deriva solo lo complejo.</p>
             </div>
           </div>
         </div>
@@ -863,17 +863,17 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL ERROR DE USAR UN ÚNICO MODELO FRONTIER (Tarjeta izquierda):
-• Si usás Claude Opus o GPT-4o para clasificar un ticket simple o responder una FAQ, estás pagando 20 veces más y esperando el triple sin necesidad.
-• Con Model Routing, un clasificador rápido en la puerta separa el tráfico en dos carriles:
-  • 🟢 Ruta Rápida (70%-85%): Modelos livianos (Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro) a ~\$0.15/1M tokens en 0.3 seg.
-  • 🟣 Ruta Experta (15%-30%): Modelos Frontier solo para contratos ambiguos, transcreación o razonamiento multi-paso.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):
+• Mandar una duda simple o la clasificación de un ticket a Claude Opus o GPT-4o es pagar alrededor de 20 veces más y esperar el triple de tiempo sin ningún beneficio.
+• Con Model Routing, ponés un filtro rápido en la entrada que separa en dos carriles:
+  • 🟢 Carril rápido (70%-85%): Modelos chicos (Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro) a ~\$0.15/1M tokens en ~0.3 seg.
+  • 🟣 Carril complejo (15%-30%): Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.
 
 2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):
-• Mandar el 100% al modelo grande cuesta \$1,200 USD/mes. Al derivar el 80% al modelo liviano, la factura cae a \$288 USD/mes (76% de ahorro, \$912 USD menos cada mes) y la UX se siente instantánea.`)">📋 Copiar Guion</button>
+• Si todo va al modelo grande gastás \$1,200/mes. Si mandás el 80% de lo simple al modelo chico, la cuenta cae a \$288/mes (76% menos) y encima responde mucho más rápido.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ EL ERROR DE USAR UN ÚNICO MODELO FRONTIER (Tarjeta izquierda):</strong><br>• Si usás <em style="color:#fde68a;">Claude Opus</em> o <em style="color:#fde68a;">GPT-4o</em> para clasificar un ticket simple o responder una FAQ, estás pagando <strong style="color:#fff; font-weight:700;">20 veces más</strong> y esperando el triple sin necesidad.<br>• Con <strong style="color:#fff; font-weight:700;">Model Routing</strong>, un clasificador rápido en la puerta separa el tráfico en dos carriles:<br>  • <strong style="color:#fff; font-weight:700;">🟢 Ruta Rápida (70%-85%):</strong> Modelos livianos (<em style="color:#fde68a;">Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro</em>) a ~$0.15/1M tokens en <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3 seg</code>.<br>  • <strong style="color:#fff; font-weight:700;">🟣 Ruta Experta (15%-30%):</strong> Modelos <em style="color:#fde68a;">Frontier</em> solo para contratos ambiguos, transcreación o razonamiento multi-paso.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):</strong><br>• Mandar el 100% al modelo grande cuesta <strong style="color:#fff; font-weight:700;">$1,200 USD/mes</strong>. Al derivar el <strong style="color:#fff; font-weight:700;">80%</strong> al modelo liviano, la factura cae a <strong style="color:#fff; font-weight:700;">$288 USD/mes</strong> (<strong style="color:#fff; font-weight:700;">76% de ahorro</strong>, $912 USD menos cada mes) y la UX se siente instantánea.
+            <strong style="color:#fff; font-weight:700;">1️⃣ POR QUÉ NO USAR UN SOLO MODELO PARA TODO (Tarjeta izquierda):</strong><br>• Mandar una duda simple o la clasificación de un ticket a <em style="color:#fde68a;">Claude Opus</em> o <em style="color:#fde68a;">GPT-4o</em> es pagar alrededor de <strong style="color:#fff; font-weight:700;">20 veces más</strong> y esperar el triple de tiempo sin ningún beneficio.<br>• Con <strong style="color:#fff; font-weight:700;">Model Routing</strong>, ponés un filtro rápido en la entrada que separa en dos carriles:<br>  • <strong style="color:#fff; font-weight:700;">🟢 Carril rápido (70%-85%):</strong> Modelos chicos (<em style="color:#fde68a;">Gemini Flash, Claude Haiku, GPT-4o-mini, AWS Nova Micro</em>) a ~$0.15/1M tokens en ~<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3 seg</code>.<br>  • <strong style="color:#fff; font-weight:700;">🟣 Carril complejo (15%-30%):</strong> Modelos grandes solo para contratos ambiguos, transcreación o decisiones de varios pasos.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ SIMULADOR EN VIVO (Mové el deslizador derecho):</strong><br>• Si todo va al modelo grande gastás <strong style="color:#fff; font-weight:700;">$1,200/mes</strong>. Si mandás el <strong style="color:#fff; font-weight:700;">80%</strong> de lo simple al modelo chico, la cuenta cae a <strong style="color:#fff; font-weight:700;">$288/mes</strong> (<strong style="color:#fff; font-weight:700;">76% menos</strong>) y encima responde mucho más rápido.
           </blockquote>
         </div>
 
@@ -886,7 +886,7 @@
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Model Routing</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Semáforo inteligente que manda tareas simples a un modelo barato y rápido, y tareas difíciles al modelo más potente.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un filtro en la puerta que manda las tareas fáciles a un modelo barato y rápido, y las difíciles al modelo más potente.</p>
                 </div>
               
             </div>
@@ -900,10 +900,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 4: FinOps 2: Batch API (-50%) & Los 4 Costos Ocultos (TCO)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ese ahorro es para chats en vivo. ¿Qué pasa cuando además tenés procesos masivos nocturnos, y qué costos ocultos suelen olvidar en un presupuesto? Pasemos a la Slide 4.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 4: FinOps 2: Batch API (-50%) y costos ocultos (TCO)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Eso resuelve el chat en vivo. Pero ¿qué pasa cuando tenés un volumen grande que puede esperar a la noche, y qué gastos extras suelen quedar afuera del primer presupuesto? Pasemos a la Slide 4.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ese ahorro es para chats en vivo. ¿Qué pasa cuando además tenés procesos masivos nocturnos, y qué costos ocultos suelen olvidar en un presupuesto? Pasemos a la Slide 4.”</p>
+            <p class="bridge-text">“Eso resuelve el chat en vivo. Pero ¿qué pasa cuando tenés un volumen grande que puede esperar a la noche, y qué gastos extras suelen quedar afuera del primer presupuesto? Pasemos a la Slide 4.”</p>
           </div>
         </div>
       </article>
@@ -916,10 +916,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(4, this.checked)">
               <span class="slide-num">SLIDE 04</span>
             </label>
-            <h2 class="slide-title">FinOps 2: Batch API (-50%) & Los 4 Costos Ocultos (TCO)</h2>
+            <h2 class="slide-title">FinOps 2: Batch API (-50%) y costos ocultos (TCO)</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Batch API (-50%) · TCO Real · Impuesto Multilingüe</span>
+            <span class="badge-tag">Batch API (-50%) · TCO real · Idiomas ES/PT vs EN</span>
             <span class="time-tag">⏱️ 3 Min</span>
           </div>
         </div>
@@ -932,15 +932,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Combinar Batch API (-50% en cargas nocturnas/asíncronas) con un presupuesto de TCO realista que incluya infraestructura fija y +25% por idiomas ES/PT.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Usar Batch API (-50%) para tareas que pueden esperar horas y sumar al presupuesto los 4 gastos ocultos del TCO (incluyendo +20-30% de tokens en ES/PT).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Compará las 2 tarjetas: velocidades de API a la izquierda y los 4 costos ocultos del TCO a la derecha.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Compará la tarjeta izquierda (Tiempo real vs Batch) y los 4 puntos del TCO a la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Batch API es el envío en camión nocturno a mitad de precio frente a la moto urgente; el TCO es sumar seguro, peajes y patente además de la nafta.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Batch API es el envío programado nocturno a mitad de precio en lugar de moto urgente; el TCO es contar seguro y mantenimiento además de la nafta.</p>
             </div>
           </div>
         </div>
@@ -949,15 +949,15 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ SEPARAR TIEMPO REAL DE PROCESAMIENTO NOCTURNO (Tarjeta izquierda):
-• ⚡ Síncrono (100% tarifa): Chatbots donde un usuario espera respuesta en menos de 2 segundos.
-• 🌙 Batch API / Asíncrono (50% Off): Cuando procesás 3.000 strings de un release o auditás glosarios para mañana a la mañana, mandás el lote por Batch API (AWS Bedrock / OpenAI) y pagás exactamente la mitad.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):
+• ⚡ Síncrono (100% tarifa): Chat donde la persona está esperando en pantalla en menos de 2 segundos.
+• 🌙 Batch API / Asíncrono (50% tarifa): Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por Batch API (OpenAI, Anthropic, AWS Bedrock) y te cobran la mitad.
 
 2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):
-• Un PM Junior solo cotiza los tokens de salida. Vos incluís el TCO completo: 1) Multiplicador agéntico ReAct (×4 lecturas), 2) Infraestructura fija (Vector DB + Langfuse, ~\$70–\$250/mes), 3) Impuesto Multilingüe (ES, PT y DE consumen ~20–30% más tokens que Inglés — clave en localización), y 4) Evals automáticas (~8%) + horas HITL.`)">📋 Copiar Guion</button>
+• Si solo multiplicás tokens de salida te quedás corta. En la cuenta real entran: 1) las vueltas internas del agente ReAct, 2) infraestructura fija de Vector DB y monitoreo (~\$70–\$250/mes), 3) la diferencia por idioma: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y 4) tokens de evaluaciones automáticas + horas humanas de revisión.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ SEPARAR TIEMPO REAL DE PROCESAMIENTO NOCTURNO (Tarjeta izquierda):</strong><br>• <strong style="color:#fff; font-weight:700;">⚡ Síncrono (100% tarifa):</strong> Chatbots donde un usuario espera respuesta en menos de 2 segundos.<br>• <strong style="color:#fff; font-weight:700;">🌙 Batch API / Asíncrono (50% Off):</strong> Cuando procesás 3.000 strings de un release o auditás glosarios para mañana a la mañana, mandás el lote por <strong style="color:#fff; font-weight:700;">Batch API</strong> (AWS Bedrock / OpenAI) y pagás <strong style="color:#fff; font-weight:700;">exactamente la mitad</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):</strong><br>• Un PM Junior solo cotiza los tokens de salida. Vos incluís el <strong style="color:#fff; font-weight:700;">TCO completo</strong>: <strong style="color:#fff; font-weight:700;">1)</strong> Multiplicador agéntico ReAct (×4 lecturas), <strong style="color:#fff; font-weight:700;">2)</strong> Infraestructura fija (Vector DB + Langfuse, ~$70–$250/mes), <strong style="color:#fff; font-weight:700;">3)</strong> <strong style="color:#fff; font-weight:700;">Impuesto Multilingüe</strong> (ES, PT y DE consumen ~20–30% más tokens que Inglés — clave en localización), y <strong style="color:#fff; font-weight:700;">4)</strong> Evals automáticas (~8%) + horas HITL.
+            <strong style="color:#fff; font-weight:700;">1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):</strong><br>• <strong style="color:#fff; font-weight:700;">⚡ Síncrono (100% tarifa):</strong> Chat donde la persona está esperando en pantalla en menos de 2 segundos.<br>• <strong style="color:#fff; font-weight:700;">🌙 Batch API / Asíncrono (50% tarifa):</strong> Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por <strong style="color:#fff; font-weight:700;">Batch API</strong> (OpenAI, Anthropic, AWS Bedrock) y te cobran <strong style="color:#fff; font-weight:700;">la mitad</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):</strong><br>• Si solo multiplicás tokens de salida te quedás corta. En la cuenta real entran: <strong style="color:#fff; font-weight:700;">1)</strong> las vueltas internas del agente ReAct, <strong style="color:#fff; font-weight:700;">2)</strong> infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), <strong style="color:#fff; font-weight:700;">3)</strong> la <strong style="color:#fff; font-weight:700;">diferencia por idioma</strong>: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y <strong style="color:#fff; font-weight:700;">4)</strong> tokens de evaluaciones automáticas + horas humanas de revisión.
           </blockquote>
         </div>
 
@@ -969,13 +969,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Impuesto Multilingüe de Tokens</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Español, portugués o alemán generan ~20–30% más tokens que el inglés para la misma frase, encareciendo los proyectos multilingües.</p>
-                </div>
-              
-                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 TCO (Costo Total de Propiedad)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">La suma real de tokens, base vectorial, observabilidad, evaluaciones automáticas y tiempo humano de revisión.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Todo lo que cuesta mantener el sistema andando por mes: tokens, base vectorial, monitoreo, evaluaciones y revisión humana.</p>
                 </div>
               
             </div>
@@ -989,10 +984,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 5: Build vs. Buy vs. Configure (y Vendor Lock-in)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: antes de gastar un solo dólar en infraestructura o ingenieros, hay una pregunta previa que define a un PM Senior. Vamos a la Slide 5: Build vs. Buy vs. Configure.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 5: Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Igual, antes de calcular servidores y APIs, hay una pregunta previa que ahorra meses de trabajo. Vamos a la Slide 5: Build vs. Buy vs. Configure.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ahora bien: antes de gastar un solo dólar en infraestructura o ingenieros, hay una pregunta previa que define a un PM Senior. Vamos a la Slide 5: Build vs. Buy vs. Configure.”</p>
+            <p class="bridge-text">“Igual, antes de calcular servidores y APIs, hay una pregunta previa que ahorra meses de trabajo. Vamos a la Slide 5: Build vs. Buy vs. Configure.”</p>
           </div>
         </div>
       </article>
@@ -1005,10 +1000,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(5, this.checked)">
               <span class="slide-num">SLIDE 05</span>
             </label>
-            <h2 class="slide-title">Build vs. Buy vs. Configure (y Vendor Lock-in)</h2>
+            <h2 class="slide-title">Build vs. Buy vs. Configure (y cómo evitar Vendor Lock-in)</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Build vs. Buy vs. Configure · Model Gateway · Anti Vendor Lock-in</span>
+            <span class="badge-tag">Build vs. Buy · Model Gateway · Vendor Lock-in</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -1021,15 +1016,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Un PM Senior decide primero si comprar SaaS (Buy), conectar herramientas (Configure) o construir propio detrás de un Model Gateway para evitar Vendor Lock-in.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Evaluar Buy vs Configure vs Build antes de pedir devs, y usar un Model Gateway si se desarrolla propio para no quedar atado a un proveedor.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré Buy / Configure / Build y luego tocá los 3 botones del Mini-Asesor abajo.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 tarjetas y tocá los 3 casos de abajo.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si necesitás viajar al aeropuerto te tomás un taxi (Buy); si repartís en tu barrio alquilás una camioneta estándar (Configure); solo armás flota propia si sos Mercado Libre (Build).</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Para ir al aeropuerto te tomás un taxi (Buy); no te comprás una fábrica de autos.</p>
             </div>
           </div>
         </div>
@@ -1038,16 +1033,16 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ TU PRIMERA DECISIÓN COMO PM ANTES DE PEDIR DEVS (3 tarjetas superiores):
-• 🛒 BUY (SaaS): Si es una tarea genérica sin ventaja competitiva (ej. resumir reuniones internas), comprás licencia en 3 días. No gastes ingenieros ahí.
-• 🧩 CONFIGURE (Low-Code / MCP): Para pilotos y automatizaciones conectando Jira o glosarios, orquestás con AWS Bedrock KB o MCP en 2 semanas.
-• 🏗️ BUILD (Propio): Solo cuando es tu diferencial core y tenés gran escala. Siempre detrás de un Model Gateway (AWS Bedrock o LiteLLM) para cambiar entre Claude, Gemini o GPT sin reescribir código (anti Vendor Lock-in).
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):
+• 🛒 BUY (SaaS): Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.
+• 🧩 CONFIGURE (Conectado): Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.
+• 🏗️ BUILD (Propio): Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un Model Gateway (AWS Bedrock / LiteLLM) para cambiar entre Claude, Gemini y GPT sin reescribir código (evitar Vendor Lock-in).
 
-2️⃣ MINI-ASESOR EN VIVO (Tocá los 3 botones de abajo):
-• Probá los 3 casos con Anabela: 1. Resumir llamadas → BUY, 2. Piloto QA conectado a Jira → CONFIGURE, 3. Motor médico de 500k docs/mes → BUILD con Gateway.`)">📋 Copiar Guion</button>
+2️⃣ 3 CASOS CONCRETOS (Botones de abajo):
+• Probalos con Anabela: 1. Resumir reuniones → BUY, 2. Piloto QA en Jira → CONFIGURE, 3. Motor médico 500k docs/mes → BUILD con Gateway.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ TU PRIMERA DECISIÓN COMO PM ANTES DE PEDIR DEVS (3 tarjetas superiores):</strong><br>• <strong style="color:#fff; font-weight:700;">🛒 BUY (SaaS):</strong> Si es una tarea genérica sin ventaja competitiva (ej. resumir reuniones internas), comprás licencia en 3 días. No gastes ingenieros ahí.<br>• <strong style="color:#fff; font-weight:700;">🧩 CONFIGURE (Low-Code / MCP):</strong> Para pilotos y automatizaciones conectando Jira o glosarios, orquestás con AWS Bedrock KB o MCP en 2 semanas.<br>• <strong style="color:#fff; font-weight:700;">🏗️ BUILD (Propio):</strong> Solo cuando es tu diferencial core y tenés gran escala. Siempre detrás de un <strong style="color:#fff; font-weight:700;">Model Gateway</strong> (<em style="color:#fde68a;">AWS Bedrock</em> o <em style="color:#fde68a;">LiteLLM</em>) para cambiar entre Claude, Gemini o GPT sin reescribir código (<strong style="color:#fff; font-weight:700;">anti Vendor Lock-in</strong>).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ MINI-ASESOR EN VIVO (Tocá los 3 botones de abajo):</strong><br>• Probá los 3 casos con Anabela: <em style="color:#fde68a;">1. Resumir llamadas → BUY</em>, <em style="color:#fde68a;">2. Piloto QA conectado a Jira → CONFIGURE</em>, <em style="color:#fde68a;">3. Motor médico de 500k docs/mes → BUILD con Gateway</em>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):</strong><br>• <strong style="color:#fff; font-weight:700;">🛒 BUY (SaaS):</strong> Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.<br>• <strong style="color:#fff; font-weight:700;">🧩 CONFIGURE (Conectado):</strong> Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.<br>• <strong style="color:#fff; font-weight:700;">🏗️ BUILD (Propio):</strong> Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un <strong style="color:#fff; font-weight:700;">Model Gateway</strong> (<em style="color:#fde68a;">AWS Bedrock / LiteLLM</em>) para cambiar entre Claude, Gemini y GPT sin reescribir código (<strong style="color:#fff; font-weight:700;">evitar Vendor Lock-in</strong>).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ 3 CASOS CONCRETOS (Botones de abajo):</strong><br>• Probalos con Anabela: <em style="color:#fde68a;">1. Resumir reuniones → BUY</em>, <em style="color:#fde68a;">2. Piloto QA en Jira → CONFIGURE</em>, <em style="color:#fde68a;">3. Motor médico 500k docs/mes → BUILD con Gateway</em>.
           </blockquote>
         </div>
 
@@ -1060,7 +1055,7 @@
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Model Gateway (Anti Vendor Lock-in)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un enchufe adaptador único (como AWS Bedrock o LiteLLM) para cambiar de modelo de IA en minutos sin quedar atado a un solo proveedor.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un adaptador único (como AWS Bedrock o LiteLLM) para cambiar de modelo de IA sin rehacer la aplicación.</p>
                 </div>
               
             </div>
@@ -1074,10 +1069,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 6: Ejercicio 1: Calculadora Realista de ROI, TCO & Payback</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Cuando ya elegiste construir o configurar un caso de alto impacto, ¿cómo defendés los números completos ante el Director Financiero? Abramos la Calculadora en la Slide 6.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 6: Ejercicio 1: Costos de IA vs. tiempo del equipo</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas sin vender humo? Pasemos a la Slide 6.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Cuando ya elegiste construir o configurar un caso de alto impacto, ¿cómo defendés los números completos ante el Director Financiero? Abramos la Calculadora en la Slide 6.”</p>
+            <p class="bridge-text">“Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas sin vender humo? Pasemos a la Slide 6.”</p>
           </div>
         </div>
       </article>
@@ -1090,10 +1085,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(6, this.checked)">
               <span class="slide-num">SLIDE 06</span>
             </label>
-            <h2 class="slide-title">Ejercicio 1: Calculadora Realista de ROI, TCO & Payback</h2>
+            <h2 class="slide-title">Ejercicio 1: Costos de IA vs. tiempo del equipo</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">ROI & Payback · Calculadora TCO · Business Case Finanzas</span>
+            <span class="badge-tag">Capacidad liberada · TCO real · Cuenta Finanzas</span>
             <span class="time-tag">⏱️ 3 Min</span>
           </div>
         </div>
@@ -1106,15 +1101,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Calcular en vivo el retorno real incluyendo TCO fijo ($180/mes + 8% Evals), supervisión HITL (20%) y semanas de Payback sobre un setup de $8.000 USD.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá los defaults (Ahorro $19.790,84/mes · Payback 1.8 semanas) y jugá destildando Routing, Batch o TCO.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es el flujo de caja del proyecto: te permite sentarte frente al CFO sabiendo exactamente el costo fijo, la supervisión humana y en qué semana se paga solo.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si ahorrás 1.000 horas del equipo no echás gente al día siguiente: usás esas horas para sacar atrasos o tomar más clientes sin contratar de más.</p>
             </div>
           </div>
         </div>
@@ -1123,15 +1118,15 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ ARMANDO UN BUSINESS CASE CREÍBLE ANTE FINANZAS (Izquierda):
-• Con 5.000 documentos/mes a 15 minutos cada uno y \$20 USD/hora, hacer el trabajo 100% manual requiere 1.250 horas (7.8 personas FTE) y cuesta \$25.000 USD al mes.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):
+• Con 5.000 documentos/mes de 15 min a \$20/h, hoy ese trabajo equivale a 1.250 horas (7.8 personas FTE), o sea \$25,000 USD/mes de valor de tiempo.
+• Activando Model Routing + Batch, la API cae de \$225 a \$27; sumando \$180 fijos de Vector DB/Langfuse + 8% de Evals, el costo IA total real da \$209.16 USD/mes. Sumado al 20% de revisión humana (\$5,000/mes), liberás capacidad equivalente a \$19,790.84 USD/mes.
 
-2️⃣ ACTIVANDO LAS PALANCAS FINOPS Y EL TCO REAL (Checkboxes y resultados a la derecha):
-• Sin optimizar, la API base saldría \$225/mes. Al activar Model Routing + Batch API, la inferencia baja a \$27/mes; sumando el TCO fijo (\$180/mes de Vector DB y Langfuse + 8% de Evals) el costo IA total real es \$209.16 USD/mes.
-• Incluso pagando un 20% de supervisión humana HITL (\$5.000/mes), el ahorro neto es \$19.790.84 USD/mes: una inversión inicial de \$8.000 USD se recupera (Payback) en apenas 1.8 semanas (ROI 380%).`)">📋 Copiar Guion</button>
+2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):
+• Aclará siempre que esto es capacidad liberada del equipo (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de \$15,000, equivale a unas 3.3 semanas de horas liberadas.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ ARMANDO UN BUSINESS CASE CREÍBLE ANTE FINANZAS (Izquierda):</strong><br>• Con <strong style="color:#fff; font-weight:700;">5.000 documentos/mes</strong> a <strong style="color:#fff; font-weight:700;">15 minutos</strong> cada uno y <strong style="color:#fff; font-weight:700;">$20 USD/hora</strong>, hacer el trabajo 100% manual requiere <strong style="color:#fff; font-weight:700;">1.250 horas</strong> (7.8 personas FTE) y cuesta <strong style="color:#fff; font-weight:700;">$25.000 USD al mes</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ ACTIVANDO LAS PALANCAS FINOPS Y EL TCO REAL (Checkboxes y resultados a la derecha):</strong><br>• Sin optimizar, la API base saldría $225/mes. Al activar <strong style="color:#fff; font-weight:700;">Model Routing + Batch API</strong>, la inferencia baja a $27/mes; sumando el <strong style="color:#fff; font-weight:700;">TCO fijo ($180/mes de Vector DB y Langfuse + 8% de Evals)</strong> el costo IA total real es <strong style="color:#fff; font-weight:700;">$209.16 USD/mes</strong>.<br>• Incluso pagando un <strong style="color:#fff; font-weight:700;">20% de supervisión humana HITL ($5.000/mes)</strong>, el <strong style="color:#fff; font-weight:700;">ahorro neto es $19.790.84 USD/mes</strong>: una inversión inicial de $8.000 USD se recupera (<strong style="color:#fff; font-weight:700;">Payback</strong>) en apenas <strong style="color:#fff; font-weight:700;">1.8 semanas</strong> (ROI 380%).
+            <strong style="color:#fff; font-weight:700;">1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):</strong><br>• Con <strong style="color:#fff; font-weight:700;">5.000 documentos/mes</strong> de <strong style="color:#fff; font-weight:700;">15 min</strong> a <strong style="color:#fff; font-weight:700;">$20/h</strong>, hoy ese trabajo equivale a <strong style="color:#fff; font-weight:700;">1.250 horas</strong> (7.8 personas FTE), o sea <strong style="color:#fff; font-weight:700;">$25,000 USD/mes</strong> de valor de tiempo.<br>• Activando <strong style="color:#fff; font-weight:700;">Model Routing + Batch</strong>, la API cae de $225 a $27; sumando <strong style="color:#fff; font-weight:700;">$180 fijos de Vector DB/Langfuse + 8% de Evals</strong>, el costo IA total real da <strong style="color:#fff; font-weight:700;">$209.16 USD/mes</strong>. Sumado al <strong style="color:#fff; font-weight:700;">20% de revisión humana ($5,000/mes)</strong>, liberás capacidad equivalente a <strong style="color:#fff; font-weight:700;">$19,790.84 USD/mes</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):</strong><br>• Aclará siempre que esto es <strong style="color:#fff; font-weight:700;">capacidad liberada del equipo</strong> (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de <strong style="color:#fff; font-weight:700;">$15,000</strong>, equivale a unas <strong style="color:#fff; font-weight:700;">3.3 semanas</strong> de horas liberadas.
           </blockquote>
         </div>
 
@@ -1143,8 +1138,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Payback Period (Período de Repago)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cuántas semanas o meses tarda el ahorro mensual del proyecto en devolver la inversión inicial de desarrollo.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Capacidad Liberada</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Horas del equipo que dejan de ir a revisión repetitiva y pasan a tareas de mayor criterio, absorbiendo más trabajo sin sumar sueldos.</p>
                 </div>
               
             </div>
@@ -1158,10 +1153,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 7: Lanzamiento Seguro: Shadow Mode, Canary & Flywheel</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con los números aprobados, llega el momento de la verdad: ¿cómo lanzamos este producto a usuarios reales sin romper la operación ni quedar expuestos? Vamos al Bloque 2 en la Slide 7.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 7: Lanzamiento gradual: Shadow Mode, Canary y feedback</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con el caso armado y aprobado, viene la parte práctica: ¿cómo salimos a producción sin romper nada ni hacer papelones con clientes? Vamos a la Slide 7.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Con los números aprobados, llega el momento de la verdad: ¿cómo lanzamos este producto a usuarios reales sin romper la operación ni quedar expuestos? Vamos al Bloque 2 en la Slide 7.”</p>
+            <p class="bridge-text">“Con el caso armado y aprobado, viene la parte práctica: ¿cómo salimos a producción sin romper nada ni hacer papelones con clientes? Vamos a la Slide 7.”</p>
           </div>
         </div>
       </article>
@@ -1174,10 +1169,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(7, this.checked)">
               <span class="slide-num">SLIDE 07</span>
             </label>
-            <h2 class="slide-title">Lanzamiento Seguro: Shadow Mode, Canary & Flywheel</h2>
+            <h2 class="slide-title">Lanzamiento gradual: Shadow Mode, Canary y feedback</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Shadow Mode · Canary Rollout · Data Flywheel</span>
+            <span class="badge-tag">Shadow Mode · Canary Rollout · Feedback continuo</span>
             <span class="time-tag">⏱️ 6 Min</span>
           </div>
         </div>
@@ -1190,15 +1185,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Desplegar en 3 etapas medibles: Shadow Mode (0% expuesto), Canary con Feature Flags (5% → 100%) y Data Flywheel continuo.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Lanzar en 3 etapas: Shadow Mode (silencioso), Canary con Feature Flags (5% → 100%) y circuito de feedback hacia el Golden Dataset.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic en Tarjeta 1, Tarjeta 2 y Tarjeta 3 para ver cómo cambia el tablero inferior.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic en Etapa 1, Etapa 2 y Etapa 3 mirando cómo cambia la barra inferior.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Como formar a un coordinador nuevo: dos semanas escucha en silencio al lado tuyo (Shadow), luego atiende un 5% de clientes supervisado (Canary) y cada corrección queda en el manual (Flywheel).</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Primero trabaja a puertas cerradas al lado del equipo (Shadow), después atiende un 5% de pedidos supervisado (Canary) y cada corrección queda anotada.</p>
             </div>
           </div>
         </div>
@@ -1207,18 +1202,18 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ FASE 1: SHADOW MODE / MODO SOMBRA (Clic en Tarjeta 1):
-• Nunca encendés un agente nuevo para todos los clientes el lunes a la mañana. Durante 1–2 semanas corre en Shadow Mode: procesa pedidos reales detrás de escena sin que el cliente vea nada.
-• Mirá el panel abajo: 0% de tráfico expuesto, riesgo cero y tu gate de salida es lograr ≥ 90% de acuerdo contra el equipo experto.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):
+• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en Shadow Mode: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.
+• Mirá el tablero de abajo: 0% de clientes expuestos y avanzás recién cuando coincide ≥ 90% con lo que resolvió el equipo humano.
 
-2️⃣ FASE 2: CANARY ROLLOUT 5% → 25% → 100% (Clic en Tarjeta 2):
-• Con Feature Flags, encendés solo al 5% (o un proyecto piloto) vigilando latencia P95 y costos en Langfuse, con rollback en 1 clic si algo desvía.
+2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):
+• Con Feature Flags, prendés para un 5% o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.
 
-3️⃣ FASE 3: DATA FLYWHEEL (Clic en Tarjeta 3):
-• Sumás botones de 👍 / 👎. Cada corrección de una lingüista o analista alimenta el Golden Dataset para mejorar cada sprint.`)">📋 Copiar Guion</button>
+3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):
+• Ponés 👍 / 👎. Cada corrección que carga el especialista suma al Golden Dataset para que el mismo error no vuelva a pasar.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ FASE 1: SHADOW MODE / MODO SOMBRA (Clic en Tarjeta 1):</strong><br>• Nunca encendés un agente nuevo para todos los clientes el lunes a la mañana. Durante 1–2 semanas corre en <strong style="color:#fff; font-weight:700;">Shadow Mode</strong>: procesa pedidos reales detrás de escena sin que el cliente vea nada.<br>• Mirá el panel abajo: <strong style="color:#fff; font-weight:700;">0% de tráfico expuesto</strong>, riesgo cero y tu gate de salida es lograr <strong style="color:#fff; font-weight:700;">≥ 90% de acuerdo</strong> contra el equipo experto.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ FASE 2: CANARY ROLLOUT 5% → 25% → 100% (Clic en Tarjeta 2):</strong><br>• Con <em style="color:#fde68a;">Feature Flags</em>, encendés solo al <strong style="color:#fff; font-weight:700;">5%</strong> (o un proyecto piloto) vigilando latencia P95 y costos en Langfuse, con rollback en 1 clic si algo desvía.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ FASE 3: DATA FLYWHEEL (Clic en Tarjeta 3):</strong><br>• Sumás botones de <strong style="color:#fff; font-weight:700;">👍 / 👎</strong>. Cada corrección de una lingüista o analista alimenta el <em style="color:#fde68a;">Golden Dataset</em> para mejorar cada sprint.
+            <strong style="color:#fff; font-weight:700;">1️⃣ ETAPA 1: SHADOW MODE / MODO SOMBRA (Clic en Etapa 1):</strong><br>• Nunca salís directo para el 100% de los usuarios. Las primeras 1–2 semanas el sistema corre en <strong style="color:#fff; font-weight:700;">Shadow Mode</strong>: procesa pedidos reales en segundo plano sin mostrarle nada al cliente.<br>• Mirá el tablero de abajo: <strong style="color:#fff; font-weight:700;">0% de clientes expuestos</strong> y avanzás recién cuando coincide <strong style="color:#fff; font-weight:700;">≥ 90%</strong> con lo que resolvió el equipo humano.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ ETAPA 2: CANARY 5% → 25% → 100% (Clic en Etapa 2):</strong><br>• Con <em style="color:#fde68a;">Feature Flags</em>, prendés para un <strong style="color:#fff; font-weight:700;">5%</strong> o un proyecto piloto mirando latencia P95 y costos, sabiendo que con un clic volvés atrás.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ ETAPA 3: CIRCUITO DE FEEDBACK (Clic en Etapa 3):</strong><br>• Ponés <strong style="color:#fff; font-weight:700;">👍 / 👎</strong>. Cada corrección que carga el especialista suma al <em style="color:#fde68a;">Golden Dataset</em> para que el mismo error no vuelva a pasar.
           </blockquote>
         </div>
 
@@ -1231,12 +1226,12 @@
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Shadow Mode (Modo Sombra)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El agente trabaja en paralelo leyendo casos reales pero sin responder al usuario final, solo para medir su acierto sin riesgo.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Correr el agente sobre casos reales sin que el usuario vea sus respuestas, solo para medir acierto contra el equipo humano.</p>
                 </div>
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Canary Rollout + Feature Flags</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Abrir el sistema a un 5% de usuarios con una llave de apagado rápido para volver atrás en 1 segundo si aparece un error.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Habilitar la función para un porcentaje chico de usuarios con una llave de apagado rápido.</p>
                 </div>
               
             </div>
@@ -1250,10 +1245,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 8: AI UX, Agile Probabilístico & Gobernanza 2026</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Pero incluso si un agente es preciso y barato, muchos proyectos fracasan porque la gente no los usa o porque chocan con nuevas normas legales. Veamos AI UX y Gobernanza 2026 en la Slide 8.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 8: UX en productos de IA, Spikes en Agile y riesgos actuales</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora bien: muchos sistemas funcionan bien en pruebas y aun así nadie los usa, o chocan con reglas nuevas de la empresa. Veamos UX, planificación en Agile y riesgos actuales en la Slide 8.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Pero incluso si un agente es preciso y barato, muchos proyectos fracasan porque la gente no los usa o porque chocan con nuevas normas legales. Veamos AI UX y Gobernanza 2026 en la Slide 8.”</p>
+            <p class="bridge-text">“Ahora bien: muchos sistemas funcionan bien en pruebas y aun así nadie los usa, o chocan con reglas nuevas de la empresa. Veamos UX, planificación en Agile y riesgos actuales en la Slide 8.”</p>
           </div>
         </div>
       </article>
@@ -1266,10 +1261,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(8, this.checked)">
               <span class="slide-num">SLIDE 08</span>
             </label>
-            <h2 class="slide-title">AI UX, Agile Probabilístico & Gobernanza 2026</h2>
+            <h2 class="slide-title">UX en productos de IA, Spikes en Agile y riesgos actuales</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">AI UX & Streaming · Discovery Spike · Shadow AI & EU AI Act</span>
+            <span class="badge-tag">UX & Streaming · Discovery Spike · Shadow AI & EU AI Act</span>
             <span class="time-tag">⏱️ 9 Min</span>
           </div>
         </div>
@@ -1282,15 +1277,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Cubrir lo que define el éxito real en 2026: UX rápida (Streaming + botones contextuales), Discovery Spikes de 1 semana antes de prometer fechas, y gobierno de Shadow AI / EU AI Act / IP.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Explicar por qué falla la adopción por mala UX, cómo usar Discovery Spikes de 1 semana antes de comprometer fechas, y los 3 riesgos de 2026 (Shadow AI, EU AI Act, IP).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Alterná '🐢 12s Congelada' y '⚡ 0.8s Streaming' en la tarjeta izquierda y señalá los 3 pilares de gobernanza a la derecha.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá '🐢 12s congelada' vs '⚡ 0.8s streaming' y repasá los 3 bloques de la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Discovery Spike es probar la tela con una muestra de 30 piezas antes de cortar mil trajes; combatir el Shadow AI es abrir una autopista segura en vez de poner carteles de 'prohibido pasar'.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Discovery Spike es probar una tanda chica de 30 casos antes de prometer 3 meses; frenar Shadow AI es ofrecer una vía segura en vez de solo prohibir.</p>
             </div>
           </div>
         </div>
@@ -1299,18 +1294,18 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ AI UX: POR QUÉ FALLA LA ADOPCIÓN (Tarjeta izquierda + Mini-Demo):
-• Un bot preciso igual fracasa por mala UX. Necesitás TTFT &lt; 1s combinando Token Streaming + Parallel Tool Calling + mensajes de estado (probá los dos botones abajo para contrastar 12s congelado vs. 0.8s streaming).
-• Además, evitá obligar a adivinar en un chat vacío: diseñá botones contextuales dentro de Jira/TMS, citas clicables y flujo Copilot (Revisar y Aprobar).
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ UX EN IA Y PLANNING REALISTA (Tarjeta izquierda + Demo):
+• Un modelo bueno fracasa si tarda 12 segundos con la pantalla en blanco: necesitás Token Streaming (primeras palabras en &lt; 1s), llamadas en paralelo y avisos de estado ('Consultando Jira...').
+• Y no mandes a todos a un chat vacío: poné botones contextuales dentro de Jira/TMS donde ya trabajan.
+• En Agile, antes de prometer un trimestre cuando no sabés si tus datos alcanzan, corré un Discovery Spike de 1 semana con ~30 casos reales.
 
-2️⃣ AGILE PROBABILÍSTICO (DISCOVERY SPIKE):
-• Nunca prometas fechas cerradas de 3 meses sin validar tus datos: corré un Discovery Spike de 1 semana con 30 casos reales para confirmar viabilidad técnica antes del roadmap.
-
-3️⃣ GOBERNANZA EJECUTIVA 2026 (Tarjeta derecha):
-• Shadow AI: Prohibir por mail empuja al equipo a cuentas personales; ganás dando una herramienta segura y rápida. EU AI Act: Casos de Alto Riesgo (RRHH/crédito) exigen trazas y supervisión humana, además de avisar que es IA. Y revisá siempre Propiedad Intelectual (IP) y sesgos multilingües.`)">📋 Copiar Guion</button>
+2️⃣ RIESGOS ACTUALES (Tarjeta derecha):
+• Shadow AI: Si solo prohibís usar IA por mail, la gente igual pega textos en cuentas personales; la única forma real de frenarlo es dar una alternativa interna segura.
+• EU AI Act: Si el sistema toca RRHH, evaluaciones o crédito, exige trazas, supervisión humana y avisar al usuario.
+• Y revisá siempre Propiedad Intelectual (IP) y sesgos en idiomas fuera del inglés.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ AI UX: POR QUÉ FALLA LA ADOPCIÓN (Tarjeta izquierda + Mini-Demo):</strong><br>• Un bot preciso igual fracasa por mala UX. Necesitás <strong style="color:#fff; font-weight:700;">TTFT &lt; 1s</strong> combinando <strong style="color:#fff; font-weight:700;">Token Streaming</strong> + <strong style="color:#fff; font-weight:700;">Parallel Tool Calling</strong> + mensajes de estado (probá los dos botones abajo para contrastar <em style="color:#fde68a;">12s congelado</em> vs. <em style="color:#fde68a;">0.8s streaming</em>).<br>• Además, evitá obligar a adivinar en un chat vacío: diseñá <strong style="color:#fff; font-weight:700;">botones contextuales dentro de Jira/TMS</strong>, citas clicables y flujo <em style="color:#fde68a;">Copilot (Revisar y Aprobar)</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ AGILE PROBABILÍSTICO (DISCOVERY SPIKE):</strong><br>• Nunca prometas fechas cerradas de 3 meses sin validar tus datos: corré un <strong style="color:#fff; font-weight:700;">Discovery Spike de 1 semana con 30 casos reales</strong> para confirmar viabilidad técnica antes del roadmap.<br><br><strong style="color:#fff; font-weight:700;">3️⃣ GOBERNANZA EJECUTIVA 2026 (Tarjeta derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Shadow AI:</strong> Prohibir por mail empuja al equipo a cuentas personales; ganás dando una herramienta segura y rápida. <strong style="color:#fff; font-weight:700;">EU AI Act:</strong> Casos de Alto Riesgo (RRHH/crédito) exigen trazas y supervisión humana, además de avisar que es IA. Y revisá siempre <strong style="color:#fff; font-weight:700;">Propiedad Intelectual (IP)</strong> y sesgos multilingües.
+            <strong style="color:#fff; font-weight:700;">1️⃣ UX EN IA Y PLANNING REALISTA (Tarjeta izquierda + Demo):</strong><br>• Un modelo bueno fracasa si tarda 12 segundos con la pantalla en blanco: necesitás <strong style="color:#fff; font-weight:700;">Token Streaming</strong> (primeras palabras en &lt; 1s), llamadas en paralelo y avisos de estado (<em style="color:#fde68a;">'Consultando Jira...'</em>).<br>• Y no mandes a todos a un chat vacío: poné botones contextuales dentro de Jira/TMS donde ya trabajan.<br>• En <strong style="color:#fff; font-weight:700;">Agile</strong>, antes de prometer un trimestre cuando no sabés si tus datos alcanzan, corré un <strong style="color:#fff; font-weight:700;">Discovery Spike de 1 semana con ~30 casos reales</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ RIESGOS ACTUALES (Tarjeta derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Shadow AI:</strong> Si solo prohibís usar IA por mail, la gente igual pega textos en cuentas personales; la única forma real de frenarlo es dar una alternativa interna segura.<br>• <strong style="color:#fff; font-weight:700;">EU AI Act:</strong> Si el sistema toca RRHH, evaluaciones o crédito, exige trazas, supervisión humana y avisar al usuario.<br>• Y revisá siempre <strong style="color:#fff; font-weight:700;">Propiedad Intelectual (IP)</strong> y sesgos en idiomas fuera del inglés.
           </blockquote>
         </div>
 
@@ -1322,18 +1317,13 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 TTFT (Time To First Token)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Los segundos hasta que aparece la primera palabra en pantalla; debajo de 1 segundo evita que el usuario abandone.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Discovery Spike</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Una prueba corta de 5 días con ~30 casos reales al arranque para comprobar si los datos sirven antes de armar todo el roadmap.</p>
                 </div>
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Shadow AI</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cuando los empleados usan cuentas personales gratuitas de IA a escondidas porque la empresa no les da una solución cómoda y aprobada.</p>
-                </div>
-              
-                <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Discovery Spike</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Prueba corta de 5 días con 30 casos reales al principio de un proyecto para verificar si los datos alcanzan antes de comprometer un roadmap.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cuando la gente usa herramientas de IA personales en el trabajo porque la empresa no le dio una opción aprobada que le sirva.</p>
                 </div>
               
             </div>
@@ -1347,10 +1337,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 9: AI Evals Avanzados: Tríada, Agentes & Model Drift</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya sabemos lanzar y lograr que la gente adopte el producto. Ahora entremos al Bloque 3 (Slides 9 a 11) para auditar científicamente la calidad sin repetir lo básico.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 9: AI Evals en la práctica: Tríada RAG, Agentes y Model Drift</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ya vimos cómo presupuestar y lanzar cuidando la experiencia. Pasemos al bloque 3 (Slides 9 a 11) para bajar a tierra cómo evaluar calidad y usar Langfuse.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ya sabemos lanzar y lograr que la gente adopte el producto. Ahora entremos al Bloque 3 (Slides 9 a 11) para auditar científicamente la calidad sin repetir lo básico.”</p>
+            <p class="bridge-text">“Ya vimos cómo presupuestar y lanzar cuidando la experiencia. Pasemos al bloque 3 (Slides 9 a 11) para bajar a tierra cómo evaluar calidad y usar Langfuse.”</p>
           </div>
         </div>
       </article>
@@ -1363,10 +1353,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(9, this.checked)">
               <span class="slide-num">SLIDE 09</span>
             </label>
-            <h2 class="slide-title">AI Evals Avanzados: Tríada, Agentes & Model Drift</h2>
+            <h2 class="slide-title">AI Evals en la práctica: Tríada RAG, Agentes y Model Drift</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Tríada RAG → Backlog · Trajectory Evals · Model Drift & SME</span>
+            <span class="badge-tag">Tríada RAG → Sprint · Trajectory Evals · Model Drift & SME</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -1379,15 +1369,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Saber traducir qué métrica de la Tríada cayó en qué pieza técnica arreglar, evaluar trayectorias de agentes y detectar Model Drift con calibración SME.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Mapear la Tríada RAG a tickets concretos del sprint, sumar Trajectory Evals para agentes y entender Model Drift + calibración con criterio humano (SME).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 filas de la izquierda (Fidelidad / Contexto / Relevancia) y las 2 cajas de la derecha (Trajectory + Model Drift).</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Un buen médico no receta el mismo antibiótico para todo: si falla Contexto atiende la búsqueda (la biblioteca); si falla Fidelidad atiende la redacción (el orador).</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si el buscador trajo la página equivocada del manual, no retes al redactor: arreglá el índice de la biblioteca.</p>
             </div>
           </div>
         </div>
@@ -1396,15 +1386,18 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ DE MÉTRICA QUE FALLA A TICKET DE BACKLOG (Tarjeta izquierda):
-• En S2 viste el Golden Dataset en CI/CD. Hoy lo traducimos en decisiones de PM: si cae Fidelidad, tocás System Prompt / Temperatura 0.0 / Guardrail; si cae Precisión de Contexto, tocás Chunking / Metadatos / Vector DB (no el prompt); si cae Relevancia, ajustás formato e instrucción.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):
+• En S2 vimos el Golden Dataset en CI/CD. En el día a día te sirve para no mandar tickets a ciegas:
+  • Baja Fidelidad → el modelo inventó → ajustar Prompt / Temperatura 0.0 / Guardrail.
+  • Baja Precisión de Contexto → el buscador trajo mal párrafo → revisar Chunking / Metadatos / Vector DB (no el prompt).
+  • Baja Relevancia → dio vueltas → ajustar formato e instrucción.
 
-2️⃣ TRAJECTORY EVALS & MODEL DRIFT (Tarjeta derecha):
-• En Agentes evaluamos la trayectoria (Trajectory Evaluation): ¿llamó a la herramienta correcta con JSON válido sin dar vueltas extra?
-• Y cuidado con el Model Drift: un proveedor actualiza su modelo en silencio y tu calidad cae sin que hayas tocado código. Calibrar un LLM-as-a-Judge requiere criterio experto (SME): ahí tu background en Traducción y QA Lingüístico es una ventaja enorme.`)">📋 Copiar Guion</button>
+2️⃣ AGENTES Y MODEL DRIFT (Tarjeta derecha):
+• En agentes mirás además la trayectoria (Trajectory Evaluation): si eligió la herramienta correcta y con JSON válido.
+• Y ojo con el Model Drift: a veces el proveedor cambia el modelo por detrás o el equipo pasa a un modelo más chico y la calidad cae sin que nadie haya tocado el código. Calibrar un LLM-as-a-Judge pide criterio real del idioma y del negocio (ahí aporta directo tu experiencia en Traducción y QA).`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ DE MÉTRICA QUE FALLA A TICKET DE BACKLOG (Tarjeta izquierda):</strong><br>• En S2 viste el <em style="color:#fde68a;">Golden Dataset</em> en CI/CD. Hoy lo traducimos en decisiones de PM: si cae <strong style="color:#fff; font-weight:700;">Fidelidad</strong>, tocás <em style="color:#fde68a;">System Prompt / Temperatura 0.0 / Guardrail</em>; si cae <strong style="color:#fff; font-weight:700;">Precisión de Contexto</strong>, tocás <em style="color:#fde68a;">Chunking / Metadatos / Vector DB</em> (no el prompt); si cae <strong style="color:#fff; font-weight:700;">Relevancia</strong>, ajustás <em style="color:#fde68a;">formato e instrucción</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ TRAJECTORY EVALS & MODEL DRIFT (Tarjeta derecha):</strong><br>• En Agentes evaluamos la trayectoria (<strong style="color:#fff; font-weight:700;">Trajectory Evaluation</strong>): ¿llamó a la herramienta correcta con JSON válido sin dar vueltas extra?<br>• Y cuidado con el <strong style="color:#fff; font-weight:700;">Model Drift</strong>: un proveedor actualiza su modelo en silencio y tu calidad cae sin que hayas tocado código. Calibrar un <em style="color:#fde68a;">LLM-as-a-Judge</em> requiere criterio experto (<strong style="color:#fff; font-weight:700;">SME</strong>): ahí tu background en <strong style="color:#fff; font-weight:700;">Traducción y QA Lingüístico</strong> es una ventaja enorme.
+            <strong style="color:#fff; font-weight:700;">1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):</strong><br>• En S2 vimos el <em style="color:#fde68a;">Golden Dataset</em> en CI/CD. En el día a día te sirve para no mandar tickets a ciegas:<br>  • Baja <strong style="color:#fff; font-weight:700;">Fidelidad</strong> → el modelo inventó → ajustar <em style="color:#fde68a;">Prompt / Temperatura 0.0 / Guardrail</em>.<br>  • Baja <strong style="color:#fff; font-weight:700;">Precisión de Contexto</strong> → el buscador trajo mal párrafo → revisar <em style="color:#fde68a;">Chunking / Metadatos / Vector DB</em> (no el prompt).<br>  • Baja <strong style="color:#fff; font-weight:700;">Relevancia</strong> → dio vueltas → ajustar formato e instrucción.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ AGENTES Y MODEL DRIFT (Tarjeta derecha):</strong><br>• En agentes mirás además la trayectoria (<strong style="color:#fff; font-weight:700;">Trajectory Evaluation</strong>): si eligió la herramienta correcta y con JSON válido.<br>• Y ojo con el <strong style="color:#fff; font-weight:700;">Model Drift</strong>: a veces el proveedor cambia el modelo por detrás o el equipo pasa a un modelo más chico y la calidad cae sin que nadie haya tocado el código. Calibrar un <em style="color:#fde68a;">LLM-as-a-Judge</em> pide criterio real del idioma y del negocio (ahí aporta directo tu experiencia en <strong style="color:#fff; font-weight:700;">Traducción y QA</strong>).
           </blockquote>
         </div>
 
@@ -1416,13 +1409,13 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Trajectory Evaluation</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Evaluar el paso a paso de un agente: si eligió las herramientas correctas y en el menor número de vueltas.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Model Drift</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Caída silenciosa de calidad en producción aunque el código no haya cambiado, por actualización del proveedor o cambio de modelo.</p>
                 </div>
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Model Drift</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Cuando la calidad de la IA empeora sin cambios en tu código porque el proveedor actualizó el modelo o cambiaste a uno más económico.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Trajectory Evaluation</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Revisar si un agente eligió bien las herramientas paso a paso, más allá de cómo redactó la respuesta final.</p>
                 </div>
               
             </div>
@@ -1436,10 +1429,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 10: Ejercicio 2: Simulador de Auditoría Evals (Causa Raíz)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Probemos diagnosticar causas raíz en vivo en la Slide 10 usando el simulador con presets.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 10: Ejercicio 2: Simulador de auditoría Evals</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Probémoslo rápido en el simulador de la Slide 10 para ver cómo cambia el ticket según la falla.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Probemos diagnosticar causas raíz en vivo en la Slide 10 usando el simulador con presets.”</p>
+            <p class="bridge-text">“Probémoslo rápido en el simulador de la Slide 10 para ver cómo cambia el ticket según la falla.”</p>
           </div>
         </div>
       </article>
@@ -1452,10 +1445,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(10, this.checked)">
               <span class="slide-num">SLIDE 10</span>
             </label>
-            <h2 class="slide-title">Ejercicio 2: Simulador de Auditoría Evals (Causa Raíz)</h2>
+            <h2 class="slide-title">Ejercicio 2: Simulador de auditoría Evals</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Auditoría Práctica · Alucinación vs Retrieval · Diagnóstico Sprint</span>
+            <span class="badge-tag">Auditoría Evals · Alucinación vs Retrieval · Diagnóstico</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -1468,15 +1461,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Practicar el diagnóstico de causa raíz usando los 3 presets: Alucinación (Prompt) vs. Fallo Retrieval (Chunking/Vector DB) vs. Sana (Canary).</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá los 3 botones preset arriba a la derecha: '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Tocá '🔍 Alucinación', '📂 Fallo Retrieval' y '✅ Sana'.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es diferenciar si el alumno contestó mal porque no leyó el capítulo correcto (Fallo Retrieval) o porque inventó un dato fuera del libro abierto (Alucinación).</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad).</p>
             </div>
           </div>
         </div>
@@ -1485,16 +1478,16 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL CASO REAL EN PANTALLA (Columna izquierda):
-• El manual oficial dice que Checkout v4 está bloqueado en QA lingüístico, pero el bot alucina al final: 'mañana se aprobará automáticamente sin pruebas de QA'.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):
+• El manual dice que Checkout v4 está bloqueado en QA lingüístico, pero al final el bot inventó que 'mañana se aprueba automáticamente sin más pruebas'.
 
-2️⃣ DIAGNOSTICAR SIN ADIVINAR CON LOS 3 PRESETS (Columna derecha):
-• Clic en '🔍 Alucinación': Contexto 1.0 pero Fidelidad 0.2 → RECHAZADO · Ticket para Prompt / Temperatura / Guardrail.
-• Clic en '📂 Fallo Retrieval': Fidelidad 0.9 pero Contexto 0.3 → RECHAZADO · Ticket para Chunking / Metadatos / Vector DB.
-• Clic en '✅ Sana': Todo ≥ 0.95 → APROBADO PARA CANARY.`)">📋 Copiar Guion</button>
+2️⃣ PROBAR LOS 3 PRESETS (Derecha):
+• Alucinación: Contexto 1.0 pero Fidelidad 0.2 → RECHAZADO · Ticket para Prompt / Temperatura / Guardrail.
+• Fallo Retrieval: Fidelidad 0.9 pero Contexto 0.3 → RECHAZADO · Ticket para Chunking / Metadatos / Vector DB.
+• Sana: Todo ≥ 0.95 → Pasa a Canary.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ EL CASO REAL EN PANTALLA (Columna izquierda):</strong><br>• El manual oficial dice que <em style="color:#fde68a;">Checkout v4</em> está <strong style="color:#fff; font-weight:700;">bloqueado en QA lingüístico</strong>, pero el bot alucina al final: <em style="color:#fde68a;">'mañana se aprobará automáticamente sin pruebas de QA'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ DIAGNOSTICAR SIN ADIVINAR CON LOS 3 PRESETS (Columna derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Clic en '🔍 Alucinación':</strong> Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.0</code> pero Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.2</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Prompt / Temperatura / Guardrail</strong>.<br>• <strong style="color:#fff; font-weight:700;">Clic en '📂 Fallo Retrieval':</strong> Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.9</code> pero Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Chunking / Metadatos / Vector DB</strong>.<br>• <strong style="color:#fff; font-weight:700;">Clic en '✅ Sana':</strong> Todo ≥ <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95</code> → <strong style="color:#fff; font-weight:700;">APROBADO PARA CANARY</strong>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ EL EJEMPLO EN PANTALLA (Izquierda):</strong><br>• El manual dice que <em style="color:#fde68a;">Checkout v4</em> está <strong style="color:#fff; font-weight:700;">bloqueado en QA lingüístico</strong>, pero al final el bot inventó que <em style="color:#fde68a;">'mañana se aprueba automáticamente sin más pruebas'</em>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ PROBAR LOS 3 PRESETS (Derecha):</strong><br>• <strong style="color:#fff; font-weight:700;">Alucinación:</strong> Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">1.0</code> pero Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.2</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Prompt / Temperatura / Guardrail</strong>.<br>• <strong style="color:#fff; font-weight:700;">Fallo Retrieval:</strong> Fidelidad <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.9</code> pero Contexto <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.3</code> → <strong style="color:#fff; font-weight:700;">RECHAZADO · Ticket para Chunking / Metadatos / Vector DB</strong>.<br>• <strong style="color:#fff; font-weight:700;">Sana:</strong> Todo ≥ <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.95</code> → <strong style="color:#fff; font-weight:700;">Pasa a Canary</strong>.
           </blockquote>
         </div>
 
@@ -1506,8 +1499,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Causa Raíz en Evals</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Identificar si el error nació en el buscador (Vector DB) o en el modelo (Prompt/LLM) antes de asignarlo al sprint.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Diagnóstico de causa raíz</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Identificar si el error salió del buscador vectorial o del modelo antes de abrir una tarea en Jira.</p>
                 </div>
               
             </div>
@@ -1521,10 +1514,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 11: Observabilidad en Producción: Radiografía en Langfuse</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Ahora, cuando el sistema ya está en producción, ¿en qué tablero mira la PM todo esto los lunes en 5 minutos? Pasemos a la Slide 11: Langfuse.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 11: Monitoreo en producción con Langfuse</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Ahora, cuando el sistema ya está en producción, ¿en qué tablero mira la PM todo esto los lunes en 5 minutos? Pasemos a la Slide 11: Langfuse.”</p>
+            <p class="bridge-text">“Y cuando ya está andando en vivo, ¿dónde mirás todas estas trazas sin pedirle favores a un developer? Vamos a la Slide 11: Langfuse.”</p>
           </div>
         </div>
       </article>
@@ -1537,10 +1530,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(11, this.checked)">
               <span class="slide-num">SLIDE 11</span>
             </label>
-            <h2 class="slide-title">Observabilidad en Producción: Radiografía en Langfuse</h2>
+            <h2 class="slide-title">Monitoreo en producción con Langfuse</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Langfuse LLMOps · Traces & Spans · Data Flywheel en Vivo</span>
+            <span class="badge-tag">Langfuse · Traces & Spans · Latencia P95</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -1553,15 +1546,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Usar Langfuse para ver trazas completas (Router + Retrieval + Generation + Async Eval), alimentar el Data Flywheel y correr el ritual semanal de 5 minutos.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Leer trazas en Langfuse (Span de Router/Retrieval, Span de LLM, Span de Eval) y revisar cada semana origen de errores, Model Drift y P95.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Hacé clic en los 4 nodos del árbol a la izquierda y tocá el botón '👎 Simular Reporte → Enviar al Golden Dataset'.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Expandí los 4 nodos de la izquierda y tocá el botón de reporte negativo.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es la caja negra y la telemetría de cada consulta en vivo: en 10 segundos ves cuánto tardó, cuánto costó y qué paso falló.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso falló y cuánto costó.</p>
             </div>
           </div>
         </div>
@@ -1570,15 +1563,15 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ RADIOGRAFÍA EN LANGFUSE CON MODEL ROUTING (Árbol izquierdo):
-• Abrís la Traza de una consulta real y ves en segundos: Span 1 muestra que el Model Router eligió Flash (\$0.0001, 160ms) y recuperó 2 chunks con similitud 0.91 y 0.87; Span 2 muestra la generación con Streaming (TTFT 220ms); Span 3 muestra la Eval asíncrona (0.97).
-• Tocá el botón '👎 Simular Reporte → Enviar al Golden Dataset' para mostrar cómo una corrección humana cierra el Data Flywheel.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):
+• Cada mensaje deja una Traza dividida en pasos (Spans): en Span 1 ves que el router eligió Flash (\$0.0001, 160ms) y qué chunks trajo; en Span 2 ves el streaming (TTFT 220ms); en Span 3 la nota de Eval (0.97).
+• Probá el botón '👎 Simular reporte → mandar al Golden Dataset' para ver cómo entra una corrección real al set de pruebas.
 
-2️⃣ EL RITUAL DE 5 MINUTOS DE LA PM CADA LUNES (Tarjeta derecha):
-• 1) Diagnosticar Span 1 vs. Span 2 sin adivinar, 2) Mirar alertas de Model Drift si cae Faithfulness semanal, 3) Revisar costo por área y latencia P95.`)">📋 Copiar Guion</button>
+2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):
+• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de Faithfulness sin cambios propios, detectás Model Drift; 3) Controlás costo por área y latencia P95.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ RADIOGRAFÍA EN LANGFUSE CON MODEL ROUTING (Árbol izquierdo):</strong><br>• Abrís la <strong style="color:#fff; font-weight:700;">Traza</strong> de una consulta real y ves en segundos: <strong style="color:#fff; font-weight:700;">Span 1</strong> muestra que el <em style="color:#fde68a;">Model Router</em> eligió <em style="color:#fde68a;">Flash</em> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0001</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">160ms</code>) y recuperó 2 chunks con similitud <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.91</code> y <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.87</code>; <strong style="color:#fff; font-weight:700;">Span 2</strong> muestra la generación con Streaming (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">TTFT 220ms</code>); <strong style="color:#fff; font-weight:700;">Span 3</strong> muestra la Eval asíncrona (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.97</code>).<br>• Tocá el botón <strong style="color:#fff; font-weight:700;">'👎 Simular Reporte → Enviar al Golden Dataset'</strong> para mostrar cómo una corrección humana cierra el <strong style="color:#fff; font-weight:700;">Data Flywheel</strong>.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ EL RITUAL DE 5 MINUTOS DE LA PM CADA LUNES (Tarjeta derecha):</strong><br>• 1) Diagnosticar Span 1 vs. Span 2 sin adivinar, 2) Mirar alertas de <strong style="color:#fff; font-weight:700;">Model Drift</strong> si cae Faithfulness semanal, 3) Revisar costo por área y <strong style="color:#fff; font-weight:700;">latencia P95</strong>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ RADIOGRAFÍA DE UNA CONSULTA EN LANGFUSE (Árbol izquierdo):</strong><br>• Cada mensaje deja una <strong style="color:#fff; font-weight:700;">Traza</strong> dividida en pasos (<strong style="color:#fff; font-weight:700;">Spans</strong>): en <strong style="color:#fff; font-weight:700;">Span 1</strong> ves que el router eligió <em style="color:#fde68a;">Flash</em> (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">$0.0001</code>, <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">160ms</code>) y qué chunks trajo; en <strong style="color:#fff; font-weight:700;">Span 2</strong> ves el streaming (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">TTFT 220ms</code>); en <strong style="color:#fff; font-weight:700;">Span 3</strong> la nota de Eval (<code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.36rem; border-radius:5px; font-family:'JetBrains Mono',monospace; font-size:0.9em; color:#93c5fd;">0.97</code>).<br>• Probá el botón <strong style="color:#fff; font-weight:700;">'👎 Simular reporte → mandar al Golden Dataset'</strong> para ver cómo entra una corrección real al set de pruebas.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ QUÉ MIRÁS TODAS LAS SEMANAS (Tarjeta derecha):</strong><br>• 1) Si reportan un error, mirás Span 1 vs. Span 2 sin adivinar; 2) Si cae el promedio de <em style="color:#fde68a;">Faithfulness</em> sin cambios propios, detectás <strong style="color:#fff; font-weight:700;">Model Drift</strong>; 3) Controlás costo por área y <strong style="color:#fff; font-weight:700;">latencia P95</strong>.
           </blockquote>
         </div>
 
@@ -1591,7 +1584,7 @@
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
                   <span class="pt-term" style="font-size: 0.84rem;">🔹 Latencia P95</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El tiempo máximo que espera el 95% de los usuarios; vigila que los casos lentos no arruinen la experiencia aunque el promedio parezca bueno.</p>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">El tiempo máximo que tarda para el 95% de los usuarios; evita que un promedio lindo esconda demoras feas en casos puntuales.</p>
                 </div>
               
             </div>
@@ -1605,10 +1598,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 12: Entrevistas Senior: Fórmula de 3 Pasos + Tu Ventaja Injusta</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con todo el arsenal técnico y de liderazgo listo, dediquemos los últimos 15 minutos al Bloque 4: entrevistas senior con dilemas reales y tu Plan de 30 Días. Vamos a la Slide 12.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 12: Cómo encarar entrevistas técnicas y defender tu perfil</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Con todo el arsenal técnico y de liderazgo listo, dediquemos los últimos 15 minutos al Bloque 4: entrevistas senior con dilemas reales y tu Plan de 30 Días. Vamos a la Slide 12.”</p>
+            <p class="bridge-text">“Con toda la parte técnica y operativa cubierta, usemos los últimos 15 minutos para entrevistas y cómo defender tu perfil. Pasemos a la Slide 12.”</p>
           </div>
         </div>
       </article>
@@ -1621,10 +1614,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(12, this.checked)">
               <span class="slide-num">SLIDE 12</span>
             </label>
-            <h2 class="slide-title">Entrevistas Senior: Fórmula de 3 Pasos + Tu Ventaja Injusta</h2>
+            <h2 class="slide-title">Cómo encarar entrevistas técnicas y defender tu perfil</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Trade-offs de PM · Fórmula 3 Pasos · Perfil Localización → IA</span>
+            <span class="badge-tag">Entrevistas IT · Trade-offs · Localización → IA</span>
             <span class="time-tag">⏱️ 3 Min</span>
           </div>
         </div>
@@ -1637,15 +1630,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Estructurar respuestas senior alrededor de evidencia → decisión con trade-off → impacto medible, apalancando el background de Localización de Anabela.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Ordenar respuestas en 3 puntos (qué mirás → qué decidís y qué resignás → cómo medís) y conectar Localización con Evals, HITL y costos multilingües.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá primero los 3 pasos a la izquierda y luego los 3 puentes profesionales de Anabela a la derecha.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Señalá primero los 3 pasos a la izquierda y después los 3 puentes a la derecha.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Tu trayectoria en Localización no es algo del pasado: es exactamente lo que hoy las empresas de IA buscan desesperadamente para evaluar y gobernar lenguaje.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Tu experiencia en Localización no queda afuera: es exactamente el criterio de lenguaje, calidad y coordinación que falta en muchos equipos técnicos.</p>
             </div>
           </div>
         </div>
@@ -1654,14 +1647,14 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ CÓMO RESPONDE UNA PM SENIOR (Tarjeta izquierda):
-• En entrevistas de alto nivel no hay opciones obvias: evaluán tu criterio en 3 pasos: 1) Diagnóstico con datos (Langfuse + usuarios), 2) Decisión de Backlog explicando el trade-off (qué ganás y qué acotás), 3) Impacto medible en negocio/adopción/ROI.
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):
+• Nadie espera que escribas código. Miran si ordenás la cabeza así: 1) qué revisás primero con datos (Langfuse + usuarios), 2) qué cambio proponés y qué trade-off aceptás, y 3) cómo medís si funcionó.
 
-2️⃣ TU VENTAJA INJUSTA DESDE LOCALIZACIÓN (Tarjeta derecha):
-• Vos no llegás en cero: Glosarios y QA Lingüístico son Context Engineering y Rúbricas de Evals (SME); Gestión de traductores multi-región es Orquestación HITL, SLAs y stakeholders; y Dominio Multilingüe es Token Economics (+25% ES/PT) y auditoría de sesgos culturales.`)">📋 Copiar Guion</button>
+2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):
+• No empezás de cero: haber armado glosarios y QA lingüístico te da criterio directo para armar rúbricas de evaluación y contexto; coordinar traductores y entregas es gestionar flujos Human-in-the-Loop, SLAs y stakeholders; y manejar proyectos multilingües te hace ver al toque el mayor gasto de tokens en ES/PT y los matices culturales.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ CÓMO RESPONDE UNA PM SENIOR (Tarjeta izquierda):</strong><br>• En entrevistas de alto nivel no hay opciones obvias: evaluán tu criterio en 3 pasos: <strong style="color:#fff; font-weight:700;">1)</strong> Diagnóstico con datos (Langfuse + usuarios), <strong style="color:#fff; font-weight:700;">2)</strong> Decisión de Backlog explicando el <strong style="color:#fff; font-weight:700;">trade-off</strong> (qué ganás y qué acotás), <strong style="color:#fff; font-weight:700;">3)</strong> Impacto medible en negocio/adopción/ROI.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ TU VENTAJA INJUSTA DESDE LOCALIZACIÓN (Tarjeta derecha):</strong><br>• Vos no llegás en cero: <strong style="color:#fff; font-weight:700;">Glosarios y QA Lingüístico</strong> son <em style="color:#fde68a;">Context Engineering y Rúbricas de Evals (SME)</em>; <strong style="color:#fff; font-weight:700;">Gestión de traductores multi-región</strong> es <em style="color:#fde68a;">Orquestación HITL, SLAs y stakeholders</em>; y <strong style="color:#fff; font-weight:700;">Dominio Multilingüe</strong> es <em style="color:#fde68a;">Token Economics (+25% ES/PT) y auditoría de sesgos culturales</em>.
+            <strong style="color:#fff; font-weight:700;">1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):</strong><br>• Nadie espera que escribas código. Miran si ordenás la cabeza así: <strong style="color:#fff; font-weight:700;">1)</strong> qué revisás primero con datos (Langfuse + usuarios), <strong style="color:#fff; font-weight:700;">2)</strong> qué cambio proponés y qué <strong style="color:#fff; font-weight:700;">trade-off</strong> aceptás, y <strong style="color:#fff; font-weight:700;">3)</strong> cómo medís si funcionó.<br><br><strong style="color:#fff; font-weight:700;">2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):</strong><br>• No empezás de cero: haber armado <strong style="color:#fff; font-weight:700;">glosarios y QA lingüístico</strong> te da criterio directo para armar rúbricas de evaluación y contexto; <strong style="color:#fff; font-weight:700;">coordinar traductores y entregas</strong> es gestionar flujos <em style="color:#fde68a;">Human-in-the-Loop</em>, SLAs y stakeholders; y manejar <strong style="color:#fff; font-weight:700;">proyectos multilingües</strong> te hace ver al toque el mayor gasto de tokens en ES/PT y los matices culturales.
           </blockquote>
         </div>
 
@@ -1673,8 +1666,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 SME (Subject Matter Expert)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Experto humano de dominio que define criterios de calidad y calibra las rúbricas de evaluación automática.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Trade-off</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Elegir qué priorizás y qué dejás de lado (por ejemplo, velocidad o costo frente a cobertura total en una primera etapa).</p>
                 </div>
               
             </div>
@@ -1688,10 +1681,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 13: Entrevista Real 1: Adopción al 12% y Presupuesto en Riesgo</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Pongamos esa fórmula y tu perfil a prueba ahora mismo en 2 dilemas reales donde todas las opciones parecen tentadoras al principio. Pasemos a la Slide 13.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 13: Caso de entrevista 1: Baja adopción y presupuesto en riesgo</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Vamos a probarlo en dos casos reales donde las tres opciones parecen razonables a primera vista. Pasemos a la Slide 13.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Pongamos esa fórmula y tu perfil a prueba ahora mismo en 2 dilemas reales donde todas las opciones parecen tentadoras al principio. Pasemos a la Slide 13.”</p>
+            <p class="bridge-text">“Vamos a probarlo en dos casos reales donde las tres opciones parecen razonables a primera vista. Pasemos a la Slide 13.”</p>
           </div>
         </div>
       </article>
@@ -1704,10 +1697,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(13, this.checked)">
               <span class="slide-num">SLIDE 13</span>
             </label>
-            <h2 class="slide-title">Entrevista Real 1: Adopción al 12% y Presupuesto en Riesgo</h2>
+            <h2 class="slide-title">Caso de entrevista 1: Baja adopción y presupuesto en riesgo</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Dilema Adopción 12% · AI UX + FinOps · 3 Opciones Plausibles</span>
+            <span class="badge-tag">Caso adopción · UX + FinOps · 3 opciones parejas</span>
             <span class="time-tag">⏱️ 4 Min</span>
           </div>
         </div>
@@ -1720,15 +1713,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Mostrar que los proyectos de IA mueren más por baja adopción/fricción UX y falta de ROI claro que por falla técnica, usando 3 opciones realistas.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Caso donde el bot funciona técnicamente pero no se adopta: la mejor opción es la B (auditar datos/entrevistas + llevarlo al flujo real con streaming + bajar costo).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° Izquierda: '1. Auditar Adopción' → 2° Derecha: probá A, B y C para comparar el feedback.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° '1. Auditar uso' → 2° Que Anabela elija entre A, B y C (gana la B).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si nadie entra a un gimnasio moderno y caro, no sirve pintar las paredes ni obligar con un memo: mirás por qué la gente no llega (fricción), mejorás la entrada y ajustás costos.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si nadie usa una herramienta cara, no sirve mandar un mail obligando ni agregarle funciones: primero mirás dónde se traban.</p>
             </div>
           </div>
         </div>
@@ -1737,16 +1730,17 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL DILEMA DEL HIRING MANAGER (Leé la pregunta):
-• 'El asistente funciona bien técnicamente, pero solo lo usa el 12% del equipo y Finanzas quiere cancelar el presupuesto en 30 días. ¿Qué priorizás?'
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ LA PREGUNTA (Leela tal cual):
+• 'Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'
 
-2️⃣ ANALIZAR LOS 3 CAMINOS (Hacé clic en Auditar y probá A, B y C):
-• Opción A (Mail del VP + capacitación obligatoria): Sube una semana por obligación y vuelve a caer porque no quitaste la fricción real.
-• Opción B (Pedir 2 meses y modelo más caro): Finanzas corta en 30 días; sumar deuda técnica acelera la cancelación.
-• Opción C (PM Senior ✅): Cruzás Langfuse + 10 entrevistas (41% abandona por espera de 12s y 38% usa Shadow AI), embebés el bot en 1 flujo clave dentro de Jira con Token Streaming y bajás 70% la factura con Model Routing + Batch para renovar con ROI positivo.`)">📋 Copiar Guion</button>
+2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):
+• Preguntale a Anabela cuál elegiría antes de hacer clic.
+• Opción A (Mail de dirección + capacitación): Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.
+• Opción C (Pedir 2 meses y modelo más caro): Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.
+• Opción B (Mejor camino ✅): Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ EL DILEMA DEL HIRING MANAGER (Leé la pregunta):</strong><br>• <em style="color:#fde68a;">'El asistente funciona bien técnicamente, pero solo lo usa el 12% del equipo y Finanzas quiere cancelar el presupuesto en 30 días. ¿Qué priorizás?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ ANALIZAR LOS 3 CAMINOS (Hacé clic en Auditar y probá A, B y C):</strong><br>• <strong style="color:#fff; font-weight:700;">Opción A (Mail del VP + capacitación obligatoria):</strong> Sube una semana por obligación y vuelve a caer porque no quitaste la fricción real.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Pedir 2 meses y modelo más caro):</strong> Finanzas corta en 30 días; sumar deuda técnica acelera la cancelación.<br>• <strong style="color:#fff; font-weight:700;">Opción C (PM Senior ✅):</strong> Cruzás Langfuse + 10 entrevistas (41% abandona por espera de 12s y 38% usa <em style="color:#fde68a;">Shadow AI</em>), embebés el bot en 1 flujo clave dentro de Jira con <strong style="color:#fff; font-weight:700;">Token Streaming</strong> y bajás 70% la factura con <strong style="color:#fff; font-weight:700;">Model Routing + Batch</strong> para renovar con ROI positivo.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA (Leela tal cual):</strong><br>• <em style="color:#fde68a;">'Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):</strong><br>• Preguntale a Anabela cuál elegiría antes de hacer clic.<br>• <strong style="color:#fff; font-weight:700;">Opción A (Mail de dirección + capacitación):</strong> Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Pedir 2 meses y modelo más caro):</strong> Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Mejor camino ✅):</strong> Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.
           </blockquote>
         </div>
 
@@ -1758,8 +1752,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Fricción de Flujo (Workflow Friction)</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Obligar al usuario a salir de su herramienta diaria (Jira/TMS) para copiar y pegar textos en otro chat aparte.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Fricción de flujo</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Obligar a la persona a salir de su herramienta diaria (Jira/TMS) para copiar y pegar textos en un chat aparte.</p>
                 </div>
               
             </div>
@@ -1773,10 +1767,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 14: Entrevista Real 2: Regresión Silenciosa (Model Drift)</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Excelente. Resolviste una crisis de negocio y adopción. Vamos al segundo dilema en la Slide 14: qué pasa cuando un ahorro de costos rompe la calidad lingüística sin que fallen los tests tradicionales.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 14: Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Bien resuelto: entendiste el problema de uso y de presupuesto antes de pedir más desarrollo. Vamos al segundo caso en la Slide 14.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Excelente. Resolviste una crisis de negocio y adopción. Vamos al segundo dilema en la Slide 14: qué pasa cuando un ahorro de costos rompe la calidad lingüística sin que fallen los tests tradicionales.”</p>
+            <p class="bridge-text">“Bien resuelto: entendiste el problema de uso y de presupuesto antes de pedir más desarrollo. Vamos al segundo caso en la Slide 14.”</p>
           </div>
         </div>
       </article>
@@ -1789,10 +1783,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(14, this.checked)">
               <span class="slide-num">SLIDE 14</span>
             </label>
-            <h2 class="slide-title">Entrevista Real 2: Regresión Silenciosa (Model Drift)</h2>
+            <h2 class="slide-title">Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Dilema Model Drift · Rollback por Flag + Routing · Bonus Presión VP</span>
+            <span class="badge-tag">Model Drift · Feature Flag + Routing · Extra Director</span>
             <span class="time-tag">⏱️ 5 Min</span>
           </div>
         </div>
@@ -1805,15 +1799,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Resolver una regresión semántica silenciosa sin perder el 60% de ahorro: Rollback selectivo por Flag + Evals por categoría + Routing híbrido + Bonus VP.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Resolver un Model Drift en terminología sin tirar todo el ahorro ni tapar con revisión manual 100%: gana la C (rollback selectivo + Evals por categoría + Routing).</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° '1. Simular Regresión' → 2° Compará A, B y C → 3° Abrí '⚡ Bonus Entrevista: Presión del VP'.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">1° '1. Simular caída' → 2° Debatir A, B y C (gana C) → 3° Abrir bloque Extra abajo.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si una nueva flota de camiones económicos falla solo en caminos de montaña, no vendés toda la flota ni mandás acompañantes a pie: dejás los económicos en autopista y los potentes solo en montaña.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Si un cambio de proveedor falla solo en textos legales, no frenás toda la operación ni revisás todo a mano: separás por tipo de tarea.</p>
             </div>
           </div>
         </div>
@@ -1822,17 +1816,17 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ EL DILEMA REAL EN LOCALIZACIÓN (Leé la pregunta):
-• 'Para ahorrar 60% migramos a un modelo económico. Todos los tests unitarios pasan en verde, pero Localización reporta errores de terminología y quejas de clientes. ¿Qué hacés?'
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:
+• 'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'
 
-2️⃣ ANALIZAR LAS 3 OPCIONES (A, B y C) + BONUS VP:
-• Opción A (Rollback total para siempre): Apaga el incendio pero destruye el ahorro y no instala Evals.
-• Opción B (Revisión manual 100%): Crea un cuello de botella humano que cuesta más que el modelo.
-• Opción C (PM Senior ✅): Rollback por Feature Flag solo en flujos críticos, evaluación del Golden Dataset por categoría en Langfuse y Model Routing selectivo (Flash donde saca ≥ 0.90, Frontier en terminología legal) + alertas de Drift.
-• Si queda 1 minuto, abrí '⚡ Bonus Entrevista: Presión del VP' para mostrar cómo frenar pedidos irreales con un Discovery Spike de 1 semana.`)">📋 Copiar Guion</button>
+2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:
+• Opción A (Volver todo atrás para siempre): Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.
+• Opción B (Revisión manual al 100%): Arma un cuello de botella más caro que el modelo grande.
+• Opción C (Mejor camino ✅): Revertís con feature flag solo en terminología crítica, corrés el Golden Dataset por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.
+• Si sobra 1 minuto, abrí el bloque 'Extra' abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (Discovery Spike + Shadow Mode).`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ EL DILEMA REAL EN LOCALIZACIÓN (Leé la pregunta):</strong><br>• <em style="color:#fde68a;">'Para ahorrar 60% migramos a un modelo económico. Todos los tests unitarios pasan en verde, pero Localización reporta errores de terminología y quejas de clientes. ¿Qué hacés?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ ANALIZAR LAS 3 OPCIONES (A, B y C) + BONUS VP:</strong><br>• <strong style="color:#fff; font-weight:700;">Opción A (Rollback total para siempre):</strong> Apaga el incendio pero destruye el ahorro y no instala Evals.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Revisión manual 100%):</strong> Crea un cuello de botella humano que cuesta más que el modelo.<br>• <strong style="color:#fff; font-weight:700;">Opción C (PM Senior ✅):</strong> Rollback por <em style="color:#fde68a;">Feature Flag</em> solo en flujos críticos, evaluación del <em style="color:#fde68a;">Golden Dataset</em> por categoría en Langfuse y <strong style="color:#fff; font-weight:700;">Model Routing selectivo</strong> (Flash donde saca ≥ 0.90, Frontier en terminología legal) + alertas de Drift.<br>• Si queda 1 minuto, abrí <strong style="color:#fff; font-weight:700;">'⚡ Bonus Entrevista: Presión del VP'</strong> para mostrar cómo frenar pedidos irreales con un <em style="color:#fde68a;">Discovery Spike</em> de 1 semana.
+            <strong style="color:#fff; font-weight:700;">1️⃣ LA PREGUNTA DE LOCALIZACIÓN / MODEL DRIFT:</strong><br>• <em style="color:#fde68a;">'Migramos a un modelo más barato para ahorrar 60%. Todos los unit tests pasan en verde, pero Localización reporta errores graves en términos legales bajo NDA. ¿Qué hacés hoy?'</em><br><br><strong style="color:#fff; font-weight:700;">2️⃣ DEBATE ENTRE A, B Y C (Gana la C) + EXTRA:</strong><br>• <strong style="color:#fff; font-weight:700;">Opción A (Volver todo atrás para siempre):</strong> Apaga el fuego, pero perdés todo el ahorro y seguís sin Evals.<br>• <strong style="color:#fff; font-weight:700;">Opción B (Revisión manual al 100%):</strong> Arma un cuello de botella más caro que el modelo grande.<br>• <strong style="color:#fff; font-weight:700;">Opción C (Mejor camino ✅):</strong> Revertís con <em style="color:#fde68a;">feature flag</em> solo en terminología crítica, corrés el <em style="color:#fde68a;">Golden Dataset</em> por categoría en Langfuse y dejás el modelo chico únicamente donde saca ≥ 0.90, sumando alertas de Drift.<br>• Si sobra 1 minuto, abrí el bloque <strong style="color:#fff; font-weight:700;">'Extra'</strong> abajo sobre cómo responder cuando un Director pide un agente en 30 días sin datos limpios (<em style="color:#fde68a;">Discovery Spike</em> + <em style="color:#fde68a;">Shadow Mode</em>).
           </blockquote>
         </div>
 
@@ -1844,8 +1838,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Routing Selectivo por Categoría</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Mantener modelos livianos en las tareas donde las Evals superan 0.90 y reservar el modelo Frontier solo donde la precisión terminológica es crítica.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Routing por categoría</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Dejar el modelo económico donde las pruebas dan arriba de 0.90 y mantener el modelo grande en los casos donde el detalle importa.</p>
                 </div>
               
             </div>
@@ -1859,10 +1853,10 @@
         <div class="bridge-connector">
           <div class="bridge-card">
             <div class="bridge-head">
-              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 15: ¡Felicitaciones Anabela por Completar las 4 Sesiones!</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `Resolviste los dilemas con nivel de Product Manager Senior. Pasemos a la última slide, la Slide 15, para celebrar y dejar claro tu Plan de Acción de los próximos 30 días.`)">📋 Copiar Puente</button>
+              <span class="bridge-badge">🔗 PASO 4 · 🔗 Puente de Conexión → Slide 15: Cierre del programa y próximos pasos</span>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `Con esto cerramos los casos de entrevista. Pasemos a la última slide, la Slide 15, para repasar todo y ver cómo seguir este mes.`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“Resolviste los dilemas con nivel de Product Manager Senior. Pasemos a la última slide, la Slide 15, para celebrar y dejar claro tu Plan de Acción de los próximos 30 días.”</p>
+            <p class="bridge-text">“Con esto cerramos los casos de entrevista. Pasemos a la última slide, la Slide 15, para repasar todo y ver cómo seguir este mes.”</p>
           </div>
         </div>
       </article>
@@ -1875,10 +1869,10 @@
               <input type="checkbox" class="slide-check" onchange="toggleDone(15, this.checked)">
               <span class="slide-num">SLIDE 15</span>
             </label>
-            <h2 class="slide-title">¡Felicitaciones Anabela por Completar las 4 Sesiones!</h2>
+            <h2 class="slide-title">Cierre del programa y próximos pasos</h2>
           </div>
           <div class="header-right">
-            <span class="badge-tag">Graduación · Plan de Acción 30 Días · AI PM Kit</span>
+            <span class="badge-tag">Cierre · Repaso S1–S4 · Próximo mes</span>
             <span class="time-tag">⏱️ 3 Min</span>
           </div>
         </div>
@@ -1891,15 +1885,15 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #10b981; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #6ee7b7; margin-bottom: 0.15rem;">🎯 IDEA CENTRAL</span>
-              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Cerrar celebrando las 4 sesiones y entregando un Plan de Acción concreto de 4 semanas para entrevistas y posicionamiento profesional.</p>
+              <p style="font-size: 0.85rem; color: #ffffff; font-weight: 600; line-height: 1.4; margin: 0;">Cerrar de forma cercana repasando las 4 clases y dejando 4 tareas semanales concretas para el próximo mes.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #38bdf8; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #7dd3fc; margin-bottom: 0.15rem;">👆 QUÉ TOCAR EN LA SLIDE</span>
-              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Repasá las 4 insignias, el bloque de 4 semanas del Plan de 30 Días y los 3 botones inferiores.</p>
+              <p style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.4; margin: 0;">Mostrá las 4 tarjetas S1–S4, la fila de 4 semanas y los 3 botones finales.</p>
             </div>
             <div style="background: rgba(7, 11, 20, 0.82); border-left: 3px solid #f59e0b; border-radius: 8px; padding: 0.6rem 0.8rem;">
               <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #fcd34d; margin-bottom: 0.15rem;">💬 ANALOGÍA SIMPLE</span>
-              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Terminaste el entrenamiento con un mapa completo y un kit de herramientas listo para salir a la cancha desde mañana.</p>
+              <p style="font-size: 0.84rem; color: #fef3c7; line-height: 1.4; margin: 0;">Te queda el mapa entero ordenado en un solo lugar para repasar 15 minutos antes de cualquier charla técnica.</p>
             </div>
           </div>
         </div>
@@ -1908,17 +1902,17 @@
         <div class="script-section">
           <div class="section-head">
             <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
-            <button class="copy-btn" onclick="copyText(this, `1️⃣ ¡FELICITACIONES POR COMPLETAR EL PROGRAMA! (Repaso S1–S4):
-• En 4 sesiones uniste tu experiencia en gestión de proyectos y localización con el mapa completo de IT/IA: ingeniería y Agile (S1), LLMs y RAG (S2), Agentes ReAct/MCP (S3) y hoy FinOps real, Build vs. Buy, Lanzamiento/UX, Evals avanzadas y dilemas de entrevista (S4).
+            <button class="copy-btn" onclick="copyText(this, `1️⃣ CIERRE DEL RECORRIDO (Las 4 sesiones):
+• En cuatro clases conectaste tu base de gestión y localización con cómo trabajan hoy los equipos de software (S1), LLMs y RAG (S2), Agentes y MCP (S3) y hoy costos reales, salida gradual, Evals/Drift y entrevistas (S4).
 
-2️⃣ TU PLAN DE ACCIÓN DE 30 DÍAS (Señalá el bloque de 4 semanas):
-• Semana 1: Armá un Caso de Estudio de 1 página con la App Mock PRD (S2) y el cálculo ROI/TCO.
-• Semana 2: Actualizá CV y LinkedIn en clave AI Product / Localization Ops.
-• Semana 3: Repasá tu demo práctica de Antigravity + AWS MCP y tu pitch de 2 min.
-• Semana 4: Practicá en voz alta los dilemas del Simulador S4.`)">📋 Copiar Guion</button>
+2️⃣ CÓMO SEGUIR PRACTICANDO ESTE MES (4 pasos simples):
+• Semana 1: Bajá a una página tu caso práctico usando el Mock PRD de S2 y el cálculo honesto de TCO/tiempo de hoy.
+• Semana 2: Ajustá CV y LinkedIn conectando tu trayectoria en Localización con proyectos de IA y QA.
+• Semana 3: Repasá en voz alta cómo mostraste el flujo de Antigravity + AWS MCP en 2 minutos.
+• Semana 4: Volvé al Simulador S4 y practicá defender los dos casos sin mirar la respuesta.`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
-            <strong style="color:#fff; font-weight:700;">1️⃣ ¡FELICITACIONES POR COMPLETAR EL PROGRAMA! (Repaso S1–S4):</strong><br>• En 4 sesiones uniste tu experiencia en gestión de proyectos y localización con el mapa completo de IT/IA: ingeniería y Agile (S1), LLMs y RAG (S2), Agentes ReAct/MCP (S3) y hoy FinOps real, Build vs. Buy, Lanzamiento/UX, Evals avanzadas y dilemas de entrevista (S4).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ TU PLAN DE ACCIÓN DE 30 DÍAS (Señalá el bloque de 4 semanas):</strong><br>• <strong style="color:#fff; font-weight:700;">Semana 1:</strong> Armá un Caso de Estudio de 1 página con la App Mock PRD (S2) y el cálculo ROI/TCO.<br>• <strong style="color:#fff; font-weight:700;">Semana 2:</strong> Actualizá CV y LinkedIn en clave <em style="color:#fde68a;">AI Product / Localization Ops</em>.<br>• <strong style="color:#fff; font-weight:700;">Semana 3:</strong> Repasá tu demo práctica de Antigravity + AWS MCP y tu pitch de 2 min.<br>• <strong style="color:#fff; font-weight:700;">Semana 4:</strong> Practicá en voz alta los dilemas del Simulador S4.
+            <strong style="color:#fff; font-weight:700;">1️⃣ CIERRE DEL RECORRIDO (Las 4 sesiones):</strong><br>• En cuatro clases conectaste tu base de gestión y localización con cómo trabajan hoy los equipos de software (S1), LLMs y RAG (S2), Agentes y MCP (S3) y hoy costos reales, salida gradual, Evals/Drift y entrevistas (S4).<br><br><strong style="color:#fff; font-weight:700;">2️⃣ CÓMO SEGUIR PRACTICANDO ESTE MES (4 pasos simples):</strong><br>• <strong style="color:#fff; font-weight:700;">Semana 1:</strong> Bajá a una página tu caso práctico usando el Mock PRD de S2 y el cálculo honesto de TCO/tiempo de hoy.<br>• <strong style="color:#fff; font-weight:700;">Semana 2:</strong> Ajustá CV y LinkedIn conectando tu trayectoria en Localización con proyectos de IA y QA.<br>• <strong style="color:#fff; font-weight:700;">Semana 3:</strong> Repasá en voz alta cómo mostraste el flujo de Antigravity + AWS MCP en 2 minutos.<br>• <strong style="color:#fff; font-weight:700;">Semana 4:</strong> Volvé al Simulador S4 y practicá defender los dos casos sin mirar la respuesta.
           </blockquote>
         </div>
 
@@ -1930,8 +1924,8 @@
             <div style="display: flex; flex-direction: column; gap: 0.45rem;">
               
                 <div class="plain-term-item" style="padding: 0.5rem 0.75rem;">
-                  <span class="pt-term" style="font-size: 0.84rem;">🔹 AI Product / Project Manager</span>
-                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Líder capaz de conectar las necesidades de negocio y lenguaje con arquitectura técnica, presupuesto FinOps, experiencia de usuario y calidad medible.</p>
+                  <span class="pt-term" style="font-size: 0.84rem;">🔹 Portfolio práctico de 1 página</span>
+                  <p class="pt-desc" style="font-size: 0.8rem; margin: 0;">Un caso concreto (problema, arquitectura, riesgos, TCO y cómo lo medirías) listo para contar en 3 minutos en una entrevista.</p>
                 </div>
               
             </div>
@@ -1946,9 +1940,9 @@
           <div class="bridge-card">
             <div class="bridge-head">
               <span class="bridge-badge">🔗 PASO 4 · 🏁 Cierre de Sesión 4 y Puente a la Siguiente Clase</span>
-              <button class="copy-btn copy-bridge" onclick="copyText(this, `🏁 Cierre Final del Programa: Tenés todo el Portal disponible con las 4 presentaciones, los 4 glosarios y los simuladores para repasar antes de cualquier entrevista. ¡Muchísimos éxitos!`)">📋 Copiar Puente</button>
+              <button class="copy-btn copy-bridge" onclick="copyText(this, `🏁 Cierre Final: Todo el portal con las 4 presentaciones, glosarios, Mock PRD y simuladores te queda abierto para consultar cuando tengas una entrevista o reunión técnica. ¡Muchos éxitos!`)">📋 Copiar Puente</button>
             </div>
-            <p class="bridge-text">“🏁 Cierre Final del Programa: Tenés todo el Portal disponible con las 4 presentaciones, los 4 glosarios y los simuladores para repasar antes de cualquier entrevista. ¡Muchísimos éxitos!”</p>
+            <p class="bridge-text">“🏁 Cierre Final: Todo el portal con las 4 presentaciones, glosarios, Mock PRD y simuladores te queda abierto para consultar cuando tengas una entrevista o reunión técnica. ¡Muchos éxitos!”</p>
           </div>
         </div>
       </article>
