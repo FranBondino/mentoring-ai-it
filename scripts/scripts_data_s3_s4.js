@@ -599,7 +599,7 @@ const SESSION_4_DATA = {
             "time": "45 - 60 min",
             "module": "Entrevistas reales y cierre del programa",
             "slides": "Slides 12 a 15",
-            "focus": "Cómo ordenar respuestas y contar su experiencia en Localización sin sonar armada, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes."
+            "focus": "Cómo ordenar respuestas y contar su experiencia en Localización con ejemplos concretos, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes."
         }
     ],
     "slides": [
@@ -620,7 +620,7 @@ const SESSION_4_DATA = {
             "cheatSheet": {
                 "idea": "Conectar S1–S3 (cómo se construye) con S4 (costos reales, Build vs Buy, salida a producción, Evals/Drift y entrevistas).",
                 "clicks": "Señalá las 4 tarjetas S1 → S2 → S3 → S4 en portada.",
-                "analogy": "En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay plata, usuarios y preguntas de directorio."
+                "analogy": "En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay presupuesto, usuarios reales y preguntas de directorio."
             },
             "plainTerms": [
                 {
@@ -646,7 +646,7 @@ const SESSION_4_DATA = {
             "cheatSheet": {
                 "idea": "Presentar el mapa completo de la hora en 4 bloques concretos.",
                 "clicks": "Recorré las 4 tarjetas en 30 segundos.",
-                "analogy": "Cuatro frentes concretos: plata, salida a calle, calidad y entrevistas."
+                "analogy": "Cuatro frentes concretos: presupuesto, salida a producción, calidad y entrevistas."
             },
             "plainTerms": [
                 {
@@ -691,7 +691,7 @@ const SESSION_4_DATA = {
                 "Idiomas ES/PT vs EN"
             ],
             "interaction": "Compará Síncrono vs. Batch API a la izquierda y recorré los 4 puntos del TCO a la derecha marcando la diferencia de tokens por idioma.",
-            "script": "**1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):**\n• **⚡ Síncrono (100% tarifa):** Chat donde la persona está esperando en pantalla en menos de 2 segundos.\n• **🌙 Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Si solo multiplicás tokens de salida te quedás corta. En la cuenta real entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.",
+            "script": "**1️⃣ SEPARAR LO URGENTE DE LO NOCTURNO (Tarjeta izquierda):**\n• **⚡ Síncrono (100% tarifa):** Chat donde la persona está esperando en pantalla en menos de 2 segundos.\n• **🌙 Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.\n\n**2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**\n• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.",
             "bridge": "Igual, antes de calcular servidores y APIs, hay una pregunta previa que ahorra meses de trabajo. Vamos a la Slide 5: Build vs. Buy vs. Configure.",
             "cheatSheet": {
                 "idea": "Usar Batch API (-50%) para tareas que pueden esperar horas y sumar al presupuesto los 4 gastos ocultos del TCO (incluyendo +20-30% de tokens en ES/PT).",
@@ -717,7 +717,7 @@ const SESSION_4_DATA = {
             ],
             "interaction": "Recorré las 3 columnas arriba y hacé clic en los 3 botones abajo para debatir qué conviene en cada caso.",
             "script": "**1️⃣ ANTES DE PEDIR PROGRAMADORES (3 columnas):**\n• **🛒 BUY (SaaS):** Si es una necesidad común sin diferencial propio (resumir llamadas, DeepL Pro), comprás licencia en días y no distraés ingenieros.\n• **🧩 CONFIGURE (Conectado):** Para flujos internos conectando Jira, Slack o documentos, armás sobre AWS Bedrock KB, n8n o MCP en 1–3 semanas.\n• **🏗️ BUILD (Propio):** Solo si es parte central del negocio y hay escala. Y si desarrollás, poné un **Model Gateway** (*AWS Bedrock / LiteLLM*) para cambiar entre Claude, Gemini y GPT sin reescribir código (**evitar Vendor Lock-in**).\n\n**2️⃣ 3 CASOS CONCRETOS (Botones de abajo):**\n• Probalos con Anabela: *1. Resumir reuniones → BUY*, *2. Piloto QA en Jira → CONFIGURE*, *3. Motor médico 500k docs/mes → BUILD con Gateway*.",
-            "bridge": "Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas sin vender humo? Pasemos a la Slide 6.",
+            "bridge": "Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas con criterio realista? Pasemos a la Slide 6.",
             "cheatSheet": {
                 "idea": "Evaluar Buy vs Configure vs Build antes de pedir devs, y usar un Model Gateway si se desarrolla propio para no quedar atado a un proveedor.",
                 "clicks": "Recorré las 3 tarjetas y tocá los 3 casos de abajo.",
@@ -742,11 +742,11 @@ const SESSION_4_DATA = {
             ],
             "interaction": "Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá y volvé a tildar Routing/Batch/TCO destacando la nota sobre horas liberadas vs. nómina.",
             "script": "**1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):**\n• Con **5.000 documentos/mes** de **15 min** a **$20/h**, hoy ese trabajo equivale a **1.250 horas** (7.8 personas FTE), o sea **$25,000 USD/mes** de valor de tiempo.\n• Activando **Model Routing + Batch**, la API cae de $225 a $27; sumando **$180 fijos de Vector DB/Langfuse + 8% de Evals**, el costo IA total real da **$209.16 USD/mes**. Sumado al **20% de revisión humana ($5,000/mes)**, liberás capacidad equivalente a **$19,790.84 USD/mes**.\n\n**2️⃣ EL DETALLE QUE TE HACE SONAR HONESTA ANTE FINANZAS (Nota inferior):**\n• Aclará siempre que esto es **capacidad liberada del equipo** (para absorber más volumen o bajar demoras), no ahorro inmediato de sueldos el mes 1. Usándolo como referencia frente a un piloto de **$15,000**, equivale a unas **3.3 semanas** de horas liberadas.",
-            "bridge": "Con el caso armado y aprobado, viene la parte práctica: ¿cómo salimos a producción sin romper nada ni hacer papelones con clientes? Vamos a la Slide 7.",
+            "bridge": "Con el caso armado y aprobado, viene la parte operativa: ¿cómo salimos a producción sin afectar al negocio ni exponer errores frente a clientes? Vamos a la Slide 7.",
             "cheatSheet": {
                 "idea": "Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.",
                 "clicks": "Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.",
-                "analogy": "Si ahorrás 1.000 horas del equipo no echás gente al día siguiente: usás esas horas para sacar atrasos o tomar más clientes sin contratar de más."
+                "analogy": "Si liberás 1.000 horas del equipo no reducís personal al día siguiente: usás esas horas para absorber más volumen o bajar atrasos sin contratar de más."
             },
             "plainTerms": [
                 {
@@ -829,7 +829,7 @@ const SESSION_4_DATA = {
             "cheatSheet": {
                 "idea": "Mapear la Tríada RAG a tickets concretos del sprint, sumar Trajectory Evals para agentes y entender Model Drift + calibración con criterio humano (SME).",
                 "clicks": "Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.",
-                "analogy": "Si el buscador trajo la página equivocada del manual, no retes al redactor: arreglá el índice de la biblioteca."
+                "analogy": "Si el buscador trajo la página equivocada del manual, el problema no es quien redactó la respuesta: hay que corregir el índice."
             },
             "plainTerms": [
                 {
@@ -903,7 +903,7 @@ const SESSION_4_DATA = {
                 "Localización → IA"
             ],
             "interaction": "Repasá los 3 pasos de la izquierda y cómo se traduce la experiencia de Anabela en la derecha.",
-            "script": "**1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):**\n• Nadie espera que escribas código. Miran si ordenás la cabeza así: **1)** qué revisás primero con datos (Langfuse + usuarios), **2)** qué cambio proponés y qué **trade-off** aceptás, y **3)** cómo medís si funcionó.\n\n**2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):**\n• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace ver al toque el mayor gasto de tokens en ES/PT y los matices culturales.",
+            "script": "**1️⃣ QUÉ QUIEREN ESCUCHAR CUANDO TE HACEN UN CASO (Izquierda):**\n• Nadie espera que escribas código. Miran si ordenás la cabeza así: **1)** qué revisás primero con datos (Langfuse + usuarios), **2)** qué cambio proponés y qué **trade-off** aceptás, y **3)** cómo medís si funcionó.\n\n**2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):**\n• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace detectar enseguida el mayor gasto de tokens en ES/PT y los matices culturales.",
             "bridge": "Vamos a probarlo en dos casos reales donde las tres opciones parecen razonables a primera vista. Pasemos a la Slide 13.",
             "cheatSheet": {
                 "idea": "Ordenar respuestas en 3 puntos (qué mirás → qué decidís y qué resignás → cómo medís) y conectar Localización con Evals, HITL y costos multilingües.",
@@ -928,7 +928,7 @@ const SESSION_4_DATA = {
                 "3 opciones parejas"
             ],
             "interaction": "Tocá '1. Auditar uso' a la izquierda y dejá que Anabela elija primero entre Opción A, B y C a la derecha antes de probarlas.",
-            "script": "**1️⃣ LA PREGUNTA (Leela tal cual):**\n• *'Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*\n\n**2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**\n• Preguntale a Anabela cuál elegiría antes de hacer clic.\n• **Opción A (Mail de dirección + capacitación):** Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.\n• **Opción C (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.\n• **Opción B (Mejor camino ✅):** Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.",
+            "script": "**1️⃣ LA PREGUNTA (Leela tal cual):**\n• *'Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*\n\n**2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**\n• Preguntale a Anabela cuál elegiría antes de hacer clic.\n• **Opción A (Mail de dirección + capacitación):** Empuja el uso una semana y después vuelve a caer porque el problema real no se tocó.\n• **Opción C (Pedir 2 meses y modelo más caro):** Finanzas corta en 30 días; pedir más tiempo y gasto sin entender por qué no lo usan acelera el cierre.\n• **Opción B (Mejor camino ✅):** Cruzás Langfuse con 8–10 charlas cortas (espera larga sin streaming, salir de Jira), llevás el bot a un flujo puntual en Jira con streaming y bajás el gasto con Routing/Batch para defender el presupuesto.",
             "bridge": "Bien resuelto: entendiste el problema de uso y de presupuesto antes de pedir más desarrollo. Vamos al segundo caso en la Slide 14.",
             "cheatSheet": {
                 "idea": "Caso donde el bot funciona técnicamente pero no se adopta: la mejor opción es la B (auditar datos/entrevistas + llevarlo al flujo real con streaming + bajar costo).",

@@ -19,7 +19,7 @@
 | **00 - 18 min** | Costos reales, Build vs. Buy y tiempo del equipo | Slides 1 a 6 | Model Routing (80/20), Batch API (-50%), los 4 costos ocultos del TCO (incluyendo idioma ES/PT vs EN), cuándo comprar vs. construir y calculadora de capacidad liberada. |
 | **18 - 33 min** | Salida gradual, UX y riesgos actuales | Slides 7 a 8 | Shadow Mode → Canary → circuito de feedback, Token Streaming (< 1s), Discovery Spikes de 1 semana en Agile y riesgos reales hoy (Shadow AI, EU AI Act e IP). |
 | **33 - 45 min** | AI Evals en la práctica y monitoreo en Langfuse | Slides 9 a 11 | Qué parte del sistema tocar cuando baja cada métrica de la Tríada RAG, Trajectory Evals en agentes, Model Drift calibrado con criterio humano y revisión semanal en Langfuse. |
-| **45 - 60 min** | Entrevistas reales y cierre del programa | Slides 12 a 15 | Cómo ordenar respuestas y contar su experiencia en Localización sin sonar armada, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes. |
+| **45 - 60 min** | Entrevistas reales y cierre del programa | Slides 12 a 15 | Cómo ordenar respuestas y contar su experiencia en Localización con ejemplos concretos, 2 casos de entrevista con opciones parejas (baja adopción y Model Drift) y plan para el mes. |
 
 ---
 
@@ -29,7 +29,7 @@
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Conectar S1–S3 (cómo se construye) con S4 (costos reales, Build vs Buy, salida a producción, Evals/Drift y entrevistas).
 - **👆 Qué tocar en la Slide:** Señalá las 4 tarjetas S1 → S2 → S3 → S4 en portada.
-- **💬 La analogía ganadora:** En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay plata, usuarios y preguntas de directorio.
+- **💬 La analogía ganadora:** En S1–S3 viste cómo se arma el sistema; hoy ves cómo se maneja cuando ya hay presupuesto, usuarios reales y preguntas de directorio.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ ARRANQUE DE LA ÚLTIMA CLASE (Las 4 sesiones en perspectiva):**
@@ -55,7 +55,7 @@
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Presentar el mapa completo de la hora en 4 bloques concretos.
 - **👆 Qué tocar en la Slide:** Recorré las 4 tarjetas en 30 segundos.
-- **💬 La analogía ganadora:** Cuatro frentes concretos: plata, salida a calle, calidad y entrevistas.
+- **💬 La analogía ganadora:** Cuatro frentes concretos: presupuesto, salida a producción, calidad y entrevistas.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ LOS 4 BLOQUES DE HOY (Grilla 2×2):**
@@ -118,7 +118,7 @@
 • **🌙 Batch API / Asíncrono (50% tarifa):** Si te entran 3.000 strings de un release o querés auditar glosarios durante la noche para la mañana siguiente, lo mandás por **Batch API** (OpenAI, Anthropic, AWS Bedrock) y te cobran **la mitad**.
 
 **2️⃣ LOS 4 COSTOS OCULTOS DEL TCO (Tarjeta derecha):**
-• Si solo multiplicás tokens de salida te quedás corta. En la cuenta real entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.
+• Si solo multiplicás tokens de salida subestimás el gasto real. En la cuenta completa entran: **1)** las vueltas internas del agente ReAct, **2)** infraestructura fija de Vector DB y monitoreo (~$70–$250/mes), **3)** la **diferencia por idioma**: los tokenizadores están más optimizados para inglés y en español o portugués suelen gastar ~20–30% más tokens, y **4)** tokens de evaluaciones automáticas + horas humanas de revisión.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **TCO (Costo Total de Propiedad):** Todo lo que cuesta mantener el sistema andando por mes: tokens, base vectorial, monitoreo, evaluaciones y revisión humana.
@@ -155,7 +155,7 @@
 - Recorré las 3 columnas arriba y hacé clic en los 3 botones abajo para debatir qué conviene en cada caso.
 
 ### 🔗 Puente de Conexión → Slide 6 (Ejercicio 1: Costos de IA vs. tiempo del equipo)
-> **"Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas sin vender humo? Pasemos a la Slide 6."**
+> **"Cuando sí tiene sentido construir o configurar un proyecto interno, ¿cómo armás los números para Finanzas con criterio realista? Pasemos a la Slide 6."**
 
 ---
 
@@ -165,7 +165,7 @@
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.
 - **👆 Qué tocar en la Slide:** Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y jugá con los checks.
-- **💬 La analogía ganadora:** Si ahorrás 1.000 horas del equipo no echás gente al día siguiente: usás esas horas para sacar atrasos o tomar más clientes sin contratar de más.
+- **💬 La analogía ganadora:** Si liberás 1.000 horas del equipo no reducís personal al día siguiente: usás esas horas para absorber más volumen o bajar atrasos sin contratar de más.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ CÓMO PRESENTAR LOS NÚMEROS SIN EXAGERAR (Izquierda y derecha):**
@@ -182,7 +182,7 @@
 - Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá y volvé a tildar Routing/Batch/TCO destacando la nota sobre horas liberadas vs. nómina.
 
 ### 🔗 Puente de Conexión → Slide 7 (Lanzamiento gradual: Shadow Mode, Canary y feedback)
-> **"Con el caso armado y aprobado, viene la parte práctica: ¿cómo salimos a producción sin romper nada ni hacer papelones con clientes? Vamos a la Slide 7."**
+> **"Con el caso armado y aprobado, viene la parte operativa: ¿cómo salimos a producción sin afectar al negocio ni exponer errores frente a clientes? Vamos a la Slide 7."**
 
 ---
 
@@ -254,7 +254,7 @@
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
 - **🎯 Qué explicás acá (En 1 frase):** Mapear la Tríada RAG a tickets concretos del sprint, sumar Trajectory Evals para agentes y entender Model Drift + calibración con criterio humano (SME).
 - **👆 Qué tocar en la Slide:** Recorré las 3 métricas a la izquierda y las 2 cajas de la derecha.
-- **💬 La analogía ganadora:** Si el buscador trajo la página equivocada del manual, no retes al redactor: arreglá el índice de la biblioteca.
+- **💬 La analogía ganadora:** Si el buscador trajo la página equivocada del manual, el problema no es quien redactó la respuesta: hay que corregir el índice.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ QUÉ ARREGLAR SEGÚN QUÉ MÉTRICA CAE (Tarjeta izquierda):**
@@ -347,7 +347,7 @@
 • Nadie espera que escribas código. Miran si ordenás la cabeza así: **1)** qué revisás primero con datos (Langfuse + usuarios), **2)** qué cambio proponés y qué **trade-off** aceptás, y **3)** cómo medís si funcionó.
 
 **2️⃣ LO QUE YA TRAÉS DE LOCALIZACIÓN (Derecha):**
-• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace ver al toque el mayor gasto de tokens en ES/PT y los matices culturales.
+• No empezás de cero: haber armado **glosarios y QA lingüístico** te da criterio directo para armar rúbricas de evaluación y contexto; **coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y stakeholders; y manejar **proyectos multilingües** te hace detectar enseguida el mayor gasto de tokens en ES/PT y los matices culturales.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Trade-off:** Elegir qué priorizás y qué dejás de lado (por ejemplo, velocidad o costo frente a cobertura total en una primera etapa).
@@ -370,7 +370,7 @@
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 **1️⃣ LA PREGUNTA (Leela tal cual):**
-• *'Lanzamos un asistente interno hace 2 meses. Anda bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*
+• *'Lanzamos un asistente interno hace 2 meses. Funciona bien en pruebas técnicas, pero casi nadie lo usa (~12%) y Finanzas quiere cortar el presupuesto en 30 días. ¿Qué hacés?'*
 
 **2️⃣ COMPARAR LAS 3 OPCIONES (A, B y C — acá la mejor es la B):**
 • Preguntale a Anabela cuál elegiría antes de hacer clic.
