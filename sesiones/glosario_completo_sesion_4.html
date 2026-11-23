@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glosario de Master: Sesión 4 - Finanzas de la IA, Evals & Preparación de Entrevistas</title>
+    <title>Glosario de Master: Sesión 4 - FinOps Avanzado, Build vs. Buy, Evals &amp; Gobernanza</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     
     <style>
         :root {
-            --primary: #F59E0B; /* Orange-accent for Session 4 */
+            --primary: #F59E0B;
             --primary-light: #FEF3C7;
             --primary-dark: #D97706;
             --secondary: #3B82F6;
@@ -35,51 +35,48 @@
         .document-container { width: 100%; max-width: 1000px; background-color: var(--bg-card); box-shadow: var(--shadow-md); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); }
         
         /* PORTADA */
-        .cover-page { min-height: 700px; background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%); color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: 80px 60px; position: relative; overflow: hidden; }
+        .cover-page { min-height: 660px; background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%); color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: 70px 60px; position: relative; overflow: hidden; }
         .cover-page::before { content: ''; position: absolute; top: -10%; right: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%); border-radius: 50%; }
-        .cover-header { display: flex; justify-content: space-between; align-items: center; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; }
+        .cover-header { display: flex; justify-content: space-between; align-items: center; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 26px; }
         .logo-text { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--primary); }
         .edition-badge { background: rgba(245, 158, 11, 0.2); color: #FDE68A; border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
-        .cover-title { font-family: 'Outfit', sans-serif; font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 30px; background: linear-gradient(to right, #FFFFFF, #FDE68A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .cover-subtitle { font-size: 1.4rem; font-weight: 300; color: #94A3B8; max-width: 700px; margin-bottom: 50px; }
+        .cover-title { font-family: 'Outfit', sans-serif; font-size: 3.6rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(to right, #FFFFFF, #FDE68A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .cover-subtitle { font-size: 1.28rem; font-weight: 300; color: #94A3B8; max-width: 720px; margin-bottom: 42px; }
         .divider-accent { width: 150px; height: 8px; background: linear-gradient(90deg, var(--primary), #EF4444); border-radius: 4px; }
-        .cover-footer { display: flex; justify-content: space-between; align-items: flex-end; z-index: 10; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+        .cover-footer { display: flex; justify-content: space-between; align-items: flex-end; z-index: 10; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 34px; }
 
         /* SECCIONES */
-        .page-content { padding: 80px 60px; }
-        .page-header-title { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin-bottom: 40px; border-bottom: 4px solid var(--primary-light); display: inline-block; }
-        .section-intro { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 60px; padding-left: 25px; border-left: 6px solid var(--primary); font-style: italic; }
+        .page-content { padding: 70px 60px; }
+        .page-header-title { font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--text-dark); margin-bottom: 30px; margin-top: 20px; border-bottom: 4px solid var(--primary-light); display: inline-block; }
+        .section-intro { font-size: 1.12rem; color: var(--text-muted); margin-bottom: 50px; padding-left: 22px; border-left: 6px solid var(--primary); font-style: italic; }
 
         /* CARDS */
-        .glossary-card { margin-bottom: 80px; scroll-margin-top: 40px; }
-        .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
-        .concept-title { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--text-dark); display: flex; align-items: center; gap: 15px; }
-        .concept-index { background: var(--primary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.1rem; }
-        .concept-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--primary-dark); background: var(--primary-light); padding: 6px 14px; border-radius: 20px; }
+        .glossary-card { margin-bottom: 64px; scroll-margin-top: 80px; }
+        .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+        .concept-title { font-family: 'Outfit', sans-serif; font-size: 1.65rem; font-weight: 800; color: var(--text-dark); display: flex; align-items: center; gap: 14px; }
+        .concept-index { background: var(--primary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1.05rem; flex-shrink: 0; }
+        .concept-tag { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--primary-dark); background: var(--primary-light); padding: 6px 14px; border-radius: 20px; }
 
-        .definition-section { margin-bottom: 30px; }
-        .label { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--primary-dark); letter-spacing: 1.5px; margin-bottom: 12px; display: block; }
-        .definition-text { font-size: 1.1rem; color: var(--text-dark); text-align: justify; }
+        .definition-section { margin-bottom: 24px; }
+        .label { font-size: 0.84rem; font-weight: 800; text-transform: uppercase; color: var(--primary-dark); letter-spacing: 1.5px; margin-bottom: 10px; display: block; }
+        .definition-text { font-size: 1.05rem; color: var(--text-dark); }
 
-        /* DIAGRAMAS PRO */
-        .diagram-outer { background: var(--bg-light); border: 2px solid var(--border-color); border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
-        .diagram-label { text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 25px; letter-spacing: 1px; }
+        .diagram-outer { background: var(--bg-light); border: 2px solid var(--border-color); border-radius: 18px; padding: 30px; margin: 28px 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.04); }
+        .diagram-label { text-align: center; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 18px; letter-spacing: 1px; }
 
-        .insight-box { background: #FDFCFB; border: 2px solid #E2E8F0; border-left: 8px solid var(--primary); border-radius: 12px; padding: 30px; margin-top: 40px; position: relative; }
+        .insight-box { background: #FDFCFB; border: 2px solid #E2E8F0; border-left: 8px solid var(--primary); border-radius: 12px; padding: 24px; margin-top: 22px; position: relative; }
         .insight-box::after { content: 'ENFOQUE PM'; position: absolute; top: -12px; right: 20px; background: var(--primary-dark); color: white; font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 4px; }
-        .insight-header { font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--primary-dark); font-size: 1rem; margin-bottom: 15px; text-transform: uppercase; }
+        .insight-header { font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--primary-dark); font-size: 0.96rem; margin-bottom: 10px; text-transform: uppercase; }
         
-        .analog-box { background: rgba(254, 243, 199, 0.5); padding: 25px; border-radius: 12px; margin-top: 25px; border: 1px solid var(--primary-light); }
-        .analog-header { font-weight: 700; color: var(--text-dark); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .analog-box { background: rgba(254, 243, 199, 0.5); padding: 20px 24px; border-radius: 12px; margin-top: 20px; border: 1px solid var(--primary-light); }
+        .analog-header { font-weight: 700; color: var(--text-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
 
-        svg { filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05)); }
-        
         @media (max-width: 768px) {
-            .cover-page { padding: 40px 30px; }
-            .cover-title { font-size: 2.5rem; }
-            .page-content { padding: 40px 20px; }
-            .concept-title { font-size: 1.4rem; }
-            .diagram-outer { padding: 20px; }
+            .cover-page { padding: 40px 28px; }
+            .cover-title { font-size: 2.3rem; }
+            .page-content { padding: 36px 20px; }
+            .concept-title { font-size: 1.35rem; }
+            .diagram-outer { padding: 18px; }
         }
     
         .top-sticky-bar {
@@ -119,20 +116,18 @@
             border: 2px solid #f59e0b;
             border-left: 7px solid #d97706;
             border-radius: 12px;
-            padding: 18px 22px;
-            margin-bottom: 22px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
             color: #78350f;
-            font-size: 1.02rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.58;
         }
-        .simple-box strong {
-            color: #92400e;
-        }
+        .simple-box strong { color: #92400e; }
         body.quick-read-mode .definition-section,
-        body.quick-read-mode .diagram-outer {
+        body.quick-read-mode .diagram-outer,
+        body.quick-read-mode .insight-box {
             display: none !important;
         }
-
     </style>
 </head>
 <body>
@@ -150,17 +145,16 @@
         </button>
     </div>
 
-    
     <!-- PORTADA -->
     <div class="cover-page">
         <div class="cover-header">
             <div class="logo-text">Mentoría IT / AI</div>
-            <div class="edition-badge">Nivel Master - 2026</div>
+            <div class="edition-badge">Nivel Master · 2026</div>
         </div>
         
         <div class="cover-body">
-            <h1 class="cover-title">Finanzas de la IA &amp; Calidad:<br>Sesión 4</h1>
-            <p class="cover-subtitle">El manual definitivo para liderar la optimización de costos, gobernanza de seguridad, suites de evaluación (Evals) y preparación estratégica de entrevistas laborales de IT/IA.</p>
+            <h1 class="cover-title">Liderazgo Ejecutivo de Productos de IA:<br>Glosario Sesión 4</h1>
+            <p class="cover-subtitle">Referencia completa de FinOps avanzado, Build vs. Buy, lanzamiento gradual, AI UX, Gobernanza 2026, Evals avanzadas y casos matemáticos con ROI y Payback verificados.</p>
             <div class="divider-accent"></div>
         </div>
         
@@ -171,274 +165,296 @@
             </div>
             <div style="text-align: right;">
                 <p style="font-size: 0.8rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 2px;">Sesión Final</p>
-                <p style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-top: 5px;">Economics &amp; Evals</p>
+                <p style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-top: 5px;">FinOps · Evals · Rol PM</p>
             </div>
         </div>
     </div>
 
     <!-- CONTENIDO -->
     <div class="page-content">
-        
-        <h2 class="page-header-title">I. Conceptos de AI Economics (Finanzas de IA)</h2>
+
+        <!-- SECCIÓN I -->
+        <h2 class="page-header-title">I. FinOps Avanzado, Build vs. Buy &amp; ROI Real</h2>
         <p class="section-intro">
-            Desplegar modelos de Inteligencia Artificial Generativa no es equivalente al software tradicional. Cada llamada probabilística a un LLM tiene costos específicos y dinámicos que debés dominar para proponer casos de negocio viables.
+            Cómo pasar de conocer qué es un token a presupuestar el costo total real (TCO), elegir si conviene comprar o construir y defender el retorno de inversión ante Finanzas.
         </p>
 
-        <!-- 1. AI Economics & ROI -->
+        <!-- 01. Model Routing -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">01</span> AI Economics &amp; ROI</div>
-                <div class="concept-tag">Finanzas de la IA</div>
+                <div class="concept-title"><span class="concept-index">01</span> Model Routing (Enrutamiento Inteligente)</div>
+                <div class="concept-tag">Estrategia FinOps</div>
             </div>
-            <div class="simple-box"><strong>💡 En palabras simples:</strong> En el software clásico alquilás un servidor por un monto fijo al mes. En IA pagás como en un taxi con reloj: cada palabra leída (<em>Input Token</em>) y escrita (<em>Output Token</em>, 3 a 4 veces más caro) consume centavos de placa de video (GPU). El <strong>ROI</strong> es demostrar que gastar $150 USD de API al mes ahorra miles de dólares de trabajo manual repetitivo.</div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> En vez de usar el modelo más caro (<em>Claude Opus / GPT-4o</em>) para el 100% de las consultas, un clasificador envía el <strong>80% de las tareas simples a un modelo rápido y económico (Gemini Flash / Claude Haiku / GPT-4o-mini)</strong> y reserva el modelo grande solo para el 20% complejo, ahorrando cerca del 76% de la factura.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    La disciplina de negocio encargada de medir, analizar y optimizar la viabilidad financiera, el retorno de inversión (ROI) y los costos de infraestructura (COGS) asociados al despliegue de modelos de inteligencia artificial en producción. A diferencia de los servidores tradicionales, donde el almacenamiento y el procesamiento escalan de forma lineal y económica por peticiones HTTP, el software probabilístico de IA consume recursos de cómputo intensivos por cada token de entrada y salida procesado en la GPU.
-                </div>
+                <div class="definition-text">Patrón de arquitectura de dos o más niveles (<em>Tiered Routing</em>) donde un clasificador ligero evalúa la complejidad de cada solicitud entrante y la deriva dinámicamente a modelos livianos de baja latencia (~$0.15/1M tokens) o a modelos de frontera ($3 a $15/1M tokens) para razonamiento multi-paso y ambigüedad contractual.</div>
             </div>
-
             <div class="insight-box">
                 <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
-                Tu rol principal como PM de IA es justificar el caso de negocio demostrando que el ahorro operativo de tiempo y precisión (ej: automatizar la revisión de calidad lingüística o la atención de soporte técnico con IA) supera con creces la factura de API por consumo de tokens. Debés auditar las variables de costos constantemente para defender el margen de tu producto.
+                Un PM Senior nunca presupuesta el 100% del volumen al precio del modelo Frontier. Además, el Model Routing permite optimizar por categoría: por ejemplo, Flash para FAQs y Frontier para terminología legal bajo NDA.
             </div>
         </div>
 
-        <!-- 2. Prompt Caching -->
+        <!-- 02. Batch API -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">02</span> Prompt Caching (Caché de Contexto)</div>
-                <div class="concept-tag">Optimización de Costos</div>
+                <div class="concept-title"><span class="concept-index">02</span> Batch API (-50% Asíncrono)</div>
+                <div class="concept-tag">Optimización Masiva</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Cuando tenés que procesar miles de textos, releases o glosarios que no necesitan respuesta inmediata en 1 segundo (pueden entregarse en 1 a 12 horas), los enviás por <strong>Batch API (Modo Asíncrono)</strong> y todos los proveedores (OpenAI, Anthropic, AWS Bedrock) cobran <strong>exactamente la mitad (50% de descuento)</strong>.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    Una optimización de bajo nivel a nivel de infraestructura GPU que permite almacenar temporalmente el estado matemático de los tokens del sistema que no cambian (ej. prompts de sistema extensos, guías de estilo, glosarios técnicos o manuales de producto) en la memoria RAM del servidor de inferencia. Cuando el agente realiza consultas consecutivas, el modelo no vuelve a computar la porción estática, sino que reutiliza el estado guardado en caché.
-                </div>
-            </div>
-
-            <div class="diagram-outer">
-                <svg viewBox="0 0 700 250">
-                    <!-- Standard Flow -->
-                    <rect x="20" y="30" width="200" height="70" rx="8" fill="#F8FAFC" stroke="#EF4444" stroke-width="2"/>
-                    <text x="120" y="60" text-anchor="middle" font-size="11" font-weight="800" fill="#991B1B">Turno 1: Cómputo Completo</text>
-                    <text x="120" y="80" text-anchor="middle" font-size="9" fill="#475569">10k Tokens (Fijo) + 500 (Usuario)</text>
-                    
-                    <path d="M220 65 L300 65" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
-                    <text x="260" y="55" text-anchor="middle" font-size="9" fill="#475569">Factura 100%</text>
-
-                    <!-- Cached Flow -->
-                    <rect x="20" y="140" width="200" height="70" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
-                    <text x="120" y="170" text-anchor="middle" font-size="11" font-weight="800" fill="#065F46">Turno 2: PROMPT CACHING</text>
-                    <text x="120" y="190" text-anchor="middle" font-size="9" fill="#047857">10k Tokens (REUTILIZADOS) + 500 (Usuario)</text>
-
-                    <path d="M220 175 L300 175" stroke="#10B981" stroke-width="3" marker-end="url(#arrow-g)"/>
-                    <text x="260" y="160" text-anchor="middle" font-size="10" font-weight="800" fill="#047857">Ahorro: ~90%</text>
-                    
-                    <!-- GPU Mem -->
-                    <rect x="350" y="70" width="300" height="100" rx="10" fill="#1E293B" stroke="#3B82F6" stroke-width="3"/>
-                    <text x="500" y="110" text-anchor="middle" font-size="14" font-weight="900" fill="#FFFFFF">MEMORIA RAM GPU</text>
-                    <text x="500" y="135" text-anchor="middle" font-size="10" fill="#93C5FD">[Cache de Contexto Estático Guardado]</text>
-                </svg>
-                <div class="diagram-label">Prompt Caching: Evitando re-calcular tokens idénticos turno tras turno.</div>
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
-                Prompt Caching es tu mayor aliado técnico para reducir la latencia de primer token (TTFT) y los costos mensuales en interfaces conversacionales complejas. Debés exigir su configuración en el orquestador cuando inyectes bases de datos extensas o system prompts masivos de negocio.
+                <div class="definition-text">Modalidad de inferencia asíncrona por lotes diseñada para cargas masivas sin requerimiento de latencia interactiva (pre-traducción nocturna de paquetes de localización, auditorías de glosarios o etiquetado de históricos), ejecutada en ventanas de baja demanda a mitad de tarifa por millón de tokens.</div>
             </div>
         </div>
 
-        <!-- 3. RAG vs Fine-Tuning -->
+        <!-- 03. TCO & Multilingual Tax -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">03</span> RAG vs. Fine-Tuning</div>
-                <div class="concept-tag">Comparación Técnica</div>
+                <div class="concept-title"><span class="concept-index">03</span> TCO de IA &amp; Impuesto Multilingüe de Tokens</div>
+                <div class="concept-tag">Presupuesto Real</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> La factura del LLM no es el único gasto. El <strong>TCO (Costo Total de Propiedad)</strong> suma cuatro costos ocultos: las vueltas internas del agente (ReAct ×4), el alquiler fijo de la Base Vectorial + Langfuse (~$70–$250/mes), los tokens del juez de Evals (~8%) y el <strong>Impuesto Multilingüe</strong>: español y portugués consumen entre 20% y 30% más tokens que el inglés.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    La comparación de costos e infraestructura entre el uso de bases vectoriales para inyectar fragmentos de conocimiento relevantes en tiempo real (RAG) contra el entrenamiento estructurado de parámetros adicionales (Fine-Tuning) en un modelo pre-entrenado para adaptar su tono o comportamiento específico de salida.
-                </div>
-            </div>
-
-            <div class="analog-box">
-                <div class="analog-header">💡 Analogía Profesional</div>
-                <strong>Fine-Tuning</strong> enseña CÓMO hablar (estilo y estructura de datos), mientras que <strong>RAG</strong> enseña QUÉ decir (datos factuales y del negocio). Intentar inyectar información dinámica (como el estado de los tickets o proyectos del sprint actual) mediante Fine-Tuning requiere re-entrenar el modelo todos los días con costos astronómicos; con RAG solo actualizas un PDF en la base de datos de manera instantánea y gratuita.
+                <div class="definition-text">Contabilidad integral de costos operativos (COGS) de un producto de IA en producción. Contempla la multiplicación de contexto en bucles agénticos, costos fijos de infraestructura de recuperación y observabilidad, consumo de evaluación automática y varianza de tokenización BPE según el idioma del contenido.</div>
             </div>
         </div>
 
-        <h2 class="page-header-title">II. Calidad, Evals y Observabilidad</h2>
+        <!-- 04. Build vs. Buy vs. Configure & Model Gateway -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">04</span> Build vs. Buy vs. Configure &amp; Model Gateway</div>
+                <div class="concept-tag">Decisión de Arquitectura</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Antes de pedir programadores, el PM decide: <strong>BUY</strong> (comprar un SaaS ya hecho en días para tareas genéricas), <strong>CONFIGURE</strong> (conectar sistemas existentes vía MCP o AWS Bedrock KB en semanas) o <strong>BUILD</strong> (construir a medida solo si es tu ventaja competitiva core). Al construir, usás un <strong>Model Gateway</strong> (como AWS Bedrock o LiteLLM) para cambiar entre Claude, Gemini y GPT sin reescribir tu código (anti <em>Vendor Lock-in</em>).</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Marco de decisión de portafolio tecnológico que balancea <em>time-to-market</em>, costo de mantenimiento y diferenciación de negocio. El patrón <em>Model Gateway</em> introduce una capa de abstracción unificada que enruta llamadas a distintos proveedores de modelos, evitando dependencia tecnológica (<em>Vendor Lock-in</em>) y habilitando fallbacks automáticos.</div>
+            </div>
+        </div>
+
+        <!-- 05. ROI & Payback Period -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">05</span> ROI &amp; Payback Period (Retorno y Repago)</div>
+                <div class="concept-tag">Business Case</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> El <strong>ROI</strong> mide cuánto ahorra o genera el proyecto frente a lo que cuesta operarlo cada mes (IA + TCO + supervisión humana HITL). El <strong>Payback Period</strong> responde la pregunta favorita de Finanzas: <em>"Si invertimos $8.000 USD hoy en armarlo, ¿en cuántas semanas recuperamos la plata?"</em>.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Métricas financieras de viabilidad de producto. El retorno neto mensual contrasta el costo manual equivalente (horas-hombre y FTEs) contra el costo híbrido operativo (inferencia optimizada + TCO fijo + horas de supervisión HITL), mientras el Payback calcula el tiempo necesario para amortizar la inversión inicial (CapEx/implementación).</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN II -->
+        <h2 class="page-header-title">II. Lanzamiento Seguro, AI UX &amp; Gobernanza 2026</h2>
         <p class="section-intro">
-            Asegurar la calidad en un sistema probabilístico no se logra chateando cinco minutos con el bot de forma manual. Requiere diseñar sistemas automatizados que califiquen y monitoreen la salida cognitiva en base a métricas.
+            Cómo exponer un producto probabilístico a usuarios reales sin dañar la reputación, diseñar interfaces que el equipo adopte de verdad y gobernar los nuevos riesgos corporativos.
         </p>
 
-        <!-- 4. AI Evals -->
+        <!-- 06. Shadow Mode, Canary & Data Flywheel -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">04</span> AI Evals (Evaluaciones de Calidad)</div>
-                <div class="concept-tag">Calidad Probabilística</div>
+                <div class="concept-title"><span class="concept-index">06</span> Shadow Mode, Canary Rollout &amp; Data Flywheel</div>
+                <div class="concept-tag">Despliegue en Producción</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Nunca prendés un agente para el 100% el Día 1: <strong>1) Shadow Mode:</strong> el bot procesa pedidos reales en secreto sin que el cliente lo vea para medir si acierta ≥ 90% contra humanos; <strong>2) Canary Rollout:</strong> sale en vivo al 5% → 25% → 100% controlado por Feature Flags; <strong>3) Data Flywheel:</strong> cada voto 👎 corregido alimenta el <em>Golden Dataset</em> semanal.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    Suites de pruebas automatizadas y estandarizadas diseñadas específicamente para medir el desempeño semántico y conceptual de modelos probabilísticos de IA. En lugar de comparar textos idénticos carácter por carácter (lo cual es inútil con respuestas no-deterministas), las Evals utilizan modelos de lenguaje evaluadores (<strong>LLM-as-a-judge</strong>) para calificar la salida de acuerdo con rúbricas de negocio (fidelidad, relevancia del contexto, relevancia de la respuesta).
-                </div>
-            </div>
-
-            <div class="diagram-outer">
-                <svg viewBox="0 0 700 250">
-                    <!-- Input -->
-                    <rect x="20" y="80" width="130" height="80" rx="10" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-                    <text x="85" y="115" text-anchor="middle" font-size="11" font-weight="800">DATO RETRIEVED</text>
-                    <text x="85" y="135" text-anchor="middle" font-size="9" fill="#475569">[Contexto Documental]</text>
-
-                    <path d="M150 120 L220 120" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
-
-                    <!-- Judge -->
-                    <rect x="220" y="50" width="220" height="140" rx="15" fill="#FFFBEB" stroke="#F59E0B" stroke-width="3"/>
-                    <text x="330" y="90" text-anchor="middle" font-size="14" font-weight="900" fill="#92400E">LLM EVALUADOR (Judge)</text>
-                    <text x="330" y="115" text-anchor="middle" font-size="10" fill="#B45309">Contraste contra Rúbrica de Calidad</text>
-                    <text x="330" y="140" text-anchor="middle" font-size="10" font-weight="800" fill="#D97706">Métrica: FIDELIDAD</text>
-
-                    <path d="M440 120 L510 120" stroke="#10B981" stroke-width="3" marker-end="url(#arrow-g)"/>
-
-                    <!-- Output Score -->
-                    <rect x="510" y="80" width="150" height="80" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
-                    <text x="585" y="120" text-anchor="middle" font-size="14" font-weight="900" fill="#065F46">SCORE: 1.0 (Paso)</text>
-                    <text x="585" y="140" text-anchor="middle" font-size="9" fill="#047857">Evidencia 100% verídica</text>
-                </svg>
-                <div class="diagram-label">LLM-as-a-Judge: Un modelo externo audita la veracidad de la respuesta antes de ir a producción.</div>
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
-                Como PM, vos debés liderar la definición del **Golden Dataset** (el conjunto de pruebas estáticas con respuestas deseadas) y calibrar las rúbricas de evaluación. Esto permite al equipo de ingenieros realizar optimizaciones de prompts o de modelo sabiendo de antemano si el comportamiento mejoró o empeoró estadísticamente.
+                <div class="definition-text">Estrategia de despliegue progresivo para software probabilístico que desacopla el lanzamiento técnico de la exposición al usuario final mediante ejecución paralela silenciosa (<em>Shadow Mode</em>), liberación controlada por porcentajes con capacidad de rollback instantáneo (<em>Canary</em>) y captura estructurada de correcciones humanas (<em>Data Flywheel</em>).</div>
             </div>
         </div>
 
-        <!-- 5. Observabilidad & Tracing -->
+        <!-- 07. AI UX -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">05</span> Observabilidad &amp; Tracing (Langfuse)</div>
-                <div class="concept-tag">Monitoreo de Producción</div>
+                <div class="concept-title"><span class="concept-index">07</span> AI UX: TTFT, Token Streaming &amp; Parallel Tool Calling</div>
+                <div class="concept-tag">Experiencia de Usuario</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Si la pantalla queda en blanco 12 segundos, los usuarios cierran el bot aunque sea inteligente. Con <strong>Token Streaming</strong> la primera palabra aparece en menos de 1 segundo (bajo <strong>TTFT</strong>), con <strong>Parallel Tool Calling</strong> consultamos Jira, glosario y ERP al mismo tiempo, y evitamos la caja de chat vacía dando botones contextuales y citas clicables dentro de la herramienta donde ya trabajan.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    La capacidad de registrar, trazar y auditar el ciclo completo de ejecución de tus agentes de IA en producción. Plataformas de observabilidad específicas de LLMs como **Langfuse** o **Arize** permiten registrar cada entrada, llamada interna, embeddings, alucinación informada y costo exacto por consulta (Tracing) para transformarlos en métricas operativas de negocio accionables.
-                </div>
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
-                Si un usuario reporta que el chatbot dio una respuesta inexacta sobre una funcionalidad o término técnico, con Langfuse no adivinás: buscás el ID de la conversación y ves exactamente qué prompt del sistema se ejecutó, qué datos de la base de datos se inyectaron y qué respuesta generó el modelo. Permite gestionar con métricas de ingeniería y no con sensaciones subjetivas.
+                <div class="definition-text">Principios de diseño de interacción para sistemas generativos enfocados en minimizar el <em>Time To First Token (TTFT)</em> mediante transmisión progresiva por WebSockets/SSE, ejecución concurrente de herramientas externas, indicadores transparentes de estado y flujos embebidos tipo <em>Copilot (Revisar y Aprobar)</em>.</div>
             </div>
         </div>
 
-        <!-- 6. Data Leakage -->
+        <!-- 08. Discovery Spike -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">06</span> Data Leakage (Fuga de Datos)</div>
-                <div class="concept-tag">Seguridad y Privacidad</div>
+                <div class="concept-title"><span class="concept-index">08</span> Discovery Spike (Agile Probabilístico)</div>
+                <div class="concept-tag">Gestión Ágil IA</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> En IA no sabés de antemano si tus datos están limpios o si el modelo va a alcanzar el 90% de calidad. Por eso, antes de prometer un proyecto de 3 meses, corrés un <strong>Discovery Spike</strong> de 1 semana probando 30 casos reales para confirmar que la solución es viable.</div>
             <div class="definition-section">
                 <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    El riesgo de seguridad corporativa en el cual información confidencial, propiedad intelectual o datos personales sensibles de la organización se transmiten y filtran involuntariamente a servidores externos de proveedores de LLMs. Esto ocurre si se utilizan endpoints de consumo masivo que retienen y usan la información de los chats para entrenar futuros modelos públicos del proveedor.
-                </div>
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-header">🎯 Enfoque Estratégico para el PM</div>
-                Debés blindar tu arquitectura de IA exigiendo a los ingenieros el uso exclusivo de **Enterprise API Contracts** con políticas de almacenamiento de retención cero (Zero Data Retention) y la inyección de una capa de protección (API Gateway) que limpie los datos sensibles (PII) antes de ser enviados a internet.
+                <div class="definition-text">Iteración exploratoria acotada en tiempo (<em>time-boxed</em>, típicamente 3 a 5 días) previa al compromiso de roadmap completo, orientada a validar empíricamente la calidad de datos, viabilidad de recuperación y costo unitario sobre una muestra representativa de casos reales de negocio.</div>
             </div>
         </div>
 
-        <h2 class="page-header-title">III. Casos de Estudio y Ejercicios Prácticos</h2>
+        <!-- 09. Shadow AI, EU AI Act & IP -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">09</span> Shadow AI, EU AI Act &amp; Propiedad Intelectual</div>
+                <div class="concept-tag">Gobernanza 2026</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> <strong>Shadow AI</strong> ocurre cuando prohibís usar IA y el equipo igual pega archivos en cuentas gratuitas personales; se resuelve dándoles una alternativa corporativa segura y cómoda. El <strong>EU AI Act</strong> clasifica casos como RRHH o crédito como <em>Alto Riesgo</em> (exige supervisión humana y trazabilidad) y obliga a avisar cuando se habla con una IA. Además, revisamos cláusulas de <strong>Propiedad Intelectual (IP)</strong> y sesgos culturales.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Marco de gobernanza corporativa contemporánea que aborda el uso no autorizado de herramientas generativas personales (<em>Shadow AI</em>), los requisitos de cumplimiento regulatorio por niveles de riesgo (<em>EU AI Act</em>), la protección contractual de derechos de autor/indemnidad de propiedad intelectual y la auditoría de equidad lingüística.</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN III -->
+        <h2 class="page-header-title">III. Calidad Científica (AI Evals) &amp; Langfuse</h2>
         <p class="section-intro">
-            Análisis de los ejercicios matemáticos de ROI y gobernanza que consolidan la viabilidad del proyecto, sirviendo como excelentes piezas de portafolio para tus entrevistas laborales.
+            Cómo convertir métricas semánticas en decisiones de Sprint exactas, evaluar trayectorias de agentes y detectar caídas silenciosas de modelos en producción.
         </p>
 
-        <!-- Ejercicio 1 -->
+        <!-- 10. Tríada RAG -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">07</span> Ejercicio 1: Caso de Negocio y ROI (Automatización QA & Documentos)</div>
+                <div class="concept-title"><span class="concept-index">10</span> Tríada RAG (Diagnóstico de Causa Raíz)</div>
+                <div class="concept-tag">Evaluación Semántica</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> La <strong>Tríada RAG</strong> te dice qué pieza técnica arreglar: si falla <strong>Fidelidad (Faithfulness)</strong>, inventó datos → ajustás prompt/guardrail; si falla <strong>Precisión de Contexto</strong>, trajo mal párrafo → ajustás Chunking/Vector DB; si falla <strong>Relevancia</strong>, dio vueltas → ajustás formato e instrucción.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Conjunto estándar de tres métricas automáticas evaluadas mediante <em>LLM-as-a-Judge</em> para aislar fallas en sistemas RAG: adherencia estricta a la evidencia recuperada (<em>Faithfulness</em>), calidad de recuperación documental (<em>Context Precision</em>) y pertinencia directa frente a la consulta del usuario (<em>Answer Relevance</em>).</div>
+            </div>
+        </div>
+
+        <!-- 11. Trajectory Evaluation -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">11</span> Trajectory Evaluation (Evals de Agentes)</div>
+                <div class="concept-tag">Calidad Agéntica</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> Para evaluar un Agente no alcanza con mirar su frase final: medís si eligió la <strong>herramienta correcta</strong> (<em>Tool Accuracy</em>), si completó bien los datos JSON y si resolvió la tarea en 2 pasos en lugar de dar 8 vueltas innecesarias.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Evaluación paso a paso de la secuencia de razonamiento y llamadas a herramientas ejecutadas por un agente autónomo (<em>Tool Selection Accuracy</em>, validez de argumentos estructurados y eficiencia en cantidad de iteraciones), validada contra trayectorias esperadas de referencia.</div>
+            </div>
+        </div>
+
+        <!-- 12. Model Drift & SME Calibration -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">12</span> Model Drift &amp; Calibración SME</div>
+                <div class="concept-tag">Monitoreo Continuo</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> <strong>Model Drift</strong> pasa cuando el proveedor actualiza el modelo o cambiamos a un modelo más chico y la calidad cae en silencio aunque todos los tests de software sigan en verde. Para calibrar al juez automático hace falta criterio experto humano (<strong>SME</strong>) que redacte rúbricas claras: ahí brilla tu experiencia en Traducción y QA Lingüístico.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Degradación progresiva o repentina en el desempeño semántico de un sistema de IA causada por cambios en el modelo subyacente del proveedor o variación en los datos entrantes. Requiere calibración continua de las rúbricas de <em>LLM-as-a-Judge</em> junto a expertos de dominio (<em>Subject Matter Experts — SME</em>).</div>
+            </div>
+        </div>
+
+        <!-- 13. Langfuse -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">13</span> Observabilidad en Langfuse (Traces, Spans &amp; Alertas)</div>
+                <div class="concept-tag">LLMOps en Vivo</div>
+            </div>
+            <div class="simple-box"><strong>💡 En palabras simples:</strong> <strong>Langfuse</strong> es la caja negra del bot: cada conversación es una <strong>Traza (Trace)</strong> dividida en pasos (<strong>Spans</strong>) que muestran qué modelo eligió el Router, qué fragmentos trajo la Vector DB, cuánto tardó cada paso y cuántos centavos costó. En 5 minutos los lunes ves dónde mejorar.</div>
+            <div class="definition-section">
+                <span class="label">Definición Técnica Profunda</span>
+                <div class="definition-text">Plataforma de observabilidad y LLMOps que registra trazas jerárquicas completas (<em>Traces</em> y <em>Spans</em>), latencias por componente (incluyendo P95 y TTFT), costos por flujo/departamento, puntuaciones de Evals asíncronas y reportes de feedback humano integrables con el Golden Dataset.</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN IV -->
+        <h2 class="page-header-title">IV. Casos Prácticos Resueltos (Matemática Verificada)</h2>
+        <p class="section-intro">
+            Cálculos exactos alineados 1-a-1 con la Calculadora de ROI (Slide 6) y la matriz de diagnóstico de Evals (Slides 9–10) para usar en entrevistas reales.
+        </p>
+
+        <!-- 14. Caso 1: Business Case ROI, TCO & Payback -->
+        <div class="glossary-card">
+            <div class="card-header">
+                <div class="concept-title"><span class="concept-index">14</span> Caso 1: Business Case ROI, TCO &amp; Payback</div>
                 <div class="concept-tag">Caso Práctico</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 Resumen ejecutivo para entrevista:</strong> Automatizar la primera revisión de 5.000 documentos/mes ahorra 1.250 horas humanas ($25.000 USD/mes). Sumando Model Routing, Batch API, TCO fijo ($180/mes + 8% Evals) y 20% de supervisión humana HITL ($5.000), el ahorro neto mensual es de <strong>$19.790,84 USD</strong> y una inversión inicial de $8.000 se recupera en apenas <strong>1,8 semanas</strong>.</div>
             <div class="definition-section">
                 <div class="definition-text">
-                    <strong>Consigna:</strong> Evaluar la viabilidad financiera de automatizar la revisión documental y soporte con IA frente al procesamiento 100% manual.
-                    <br><br>
-                    <strong>Cálculos del Modelo de Costo IA (GPT-4o con Prompt Caching):</strong>
-                    <ul>
-                        <li><strong>Volumen mensual:</strong> 5.000 documentos de localización / tickets al mes.</li>
-                        <li><strong>Tamaño de entrada:</strong> 10.000 tokens promedio (incluye prompt base de auditoría y cláusulas del contrato).</li>
-                        <li><strong>Costo de entrada base:</strong> $5 USD por 1M tokens.</li>
-                        <li><strong>Costo de entrada con caché:</strong> $1.25 USD por 1M tokens (80% de descuento).</li>
-                        <li><strong>Costo de salida (Response):</strong> $15 USD por 1M tokens (500 tokens generados).</li>
+                    <strong>Parámetros de entrada (idénticos a los valores por defecto de Slide 6):</strong>
+                    <ul style="margin: 10px 0 16px 22px;">
+                        <li><strong>Volumen mensual:</strong> 5.000 documentos / tickets al mes.</li>
+                        <li><strong>Tiempo humano actual:</strong> 15 minutos por documento · <strong>Tarifa profesional:</strong> $20 USD/hora.</li>
+                        <li><strong>Inversión inicial de implementación (Setup):</strong> $8.000 USD.</li>
                     </ul>
-                    <br>
-                    <strong>Cálculo Unitario por Contrato:</strong>
-                    <div style="background: var(--bg-light); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px; margin: 10px 0; font-family: monospace; font-size: 0.95rem;">
-                        Entrada Sin Caché (2k tokens): 2.000 / 1.000.000 * $5.00 = $0.0100 USD<br>
-                        Entrada Con Caché (8k tokens): 8.000 / 1.000.000 * $1.25 = $0.0100 USD<br>
-                        Salida Generada (500 tokens): 500 / 1.000.000 * $15.00 = $0.0075 USD<br>
-                        -----------------------------------------------------------<br>
-                        COSTO TOTAL UNITARIO: $0.0275 USD por documento procesado.
+
+                    <div style="background: var(--bg-light); border: 1px solid var(--border-color); padding: 18px; border-radius: 10px; margin: 12px 0; font-family: monospace; font-size: 0.92rem; line-height: 1.65;">
+                        <strong>1. Costo 100% Manual Humano:</strong><br>
+                        • Horas requeridas = (5.000 × 15 min) / 60 = 1.250 hs/mes (7.8 personas FTE)<br>
+                        • Costo manual mensual = 1.250 hs × $20/h = <strong>$25,000.00 USD</strong><br><br>
+
+                        <strong>2. Costo API Base Frontier (sin FinOps, $0.045/doc):</strong><br>
+                        • 5.000 × $0.045 = $225.00 USD/mes<br><br>
+
+                        <strong>3. Costo IA Optimizado + TCO Real:</strong><br>
+                        • Con Model Routing (×0.24) + Batch API -50% (×0.50) = $225.00 × 0.24 × 0.50 = $27.00 USD<br>
+                        • Más TCO Evals (+8% sobre inferencia) = $27.00 × 1.08 = $29.16 USD<br>
+                        • Más TCO Infraestructura fija (Vector DB + Langfuse) = $180.00 USD<br>
+                        • <strong>Total IA Optimizado + TCO Real = $209.16 USD/mes</strong><br><br>
+
+                        <strong>4. Supervisión Humana HITL (20% del tiempo manual):</strong><br>
+                        • 20% × $25,000.00 = <strong>$5,000.00 USD/mes</strong><br><br>
+
+                        <strong>5. Resultado Neto, ROI y Payback:</strong><br>
+                        • Costo Híbrido Total (IA + HITL) = $209.16 + $5,000.00 = $5,209.16 USD/mes<br>
+                        • <strong>Ahorro Neto Mensual</strong> = $25,000.00 − $5,209.16 = <strong>$19,790.84 USD/mes</strong><br>
+                        • <strong>ROI Mensual sobre Costo Híbrido</strong> = $19,790.84 / $5,209.16 = <strong>380%</strong><br>
+                        • <strong>Payback Period ($8,000 Setup)</strong> = ($8,000 / $19,790.84) × 4.33 = <strong>1.8 semanas</strong>
                     </div>
-                    <strong>Margen de Comparativa Mensual:</strong>
-                    <ul>
-                        <li><strong>Costo IA Mensual:</strong> 5.000 documentos * $0.0275 = <strong>$275 USD al mes</strong>.</li>
-                        <li><strong>Costo Manual Humano:</strong> 1 analista junior revisa 4 documentos por hora (15 min c/u) (tarifa de $15/hr). Para auditar 5.000 documentos se requieren 2.000 horas de trabajo mensual (equivalente a ~12 analistas contratados a tiempo completo), costando <strong>$30.000 USD al mes</strong>.</li>
-                        <li><strong>Retorno y Eficiencia:</strong> Ahorro neto directo de <strong>$29.725 USD al mes</strong> (99% de ahorro) y reducción del ciclo de auditoría de semanas a escasos segundos.</li>
-                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Ejercicio 2 -->
+        <!-- 15. Caso 2: Matriz de Diagnóstico Evals & Model Drift -->
         <div class="glossary-card">
             <div class="card-header">
-                <div class="concept-title"><span class="concept-index">08</span> Ejercicio 2: Rúbricas de Evals para el Chatbot Corporativo</div>
+                <div class="concept-title"><span class="concept-index">15</span> Caso 2: Matriz de Diagnóstico de Evals &amp; Model Drift</div>
                 <div class="concept-tag">Caso Práctico</div>
             </div>
-            
+            <div class="simple-box"><strong>💡 Regla de oro en entrevistas:</strong> Cuando un test falla, nunca digas "ajustamos el prompt" por reflejo. Mirá qué métrica cayó en la Tríada o en Trajectory Evals y asigná el ticket al responsable exacto.</div>
             <div class="definition-section">
                 <div class="definition-text">
-                    <strong>Consigna:</strong> Crear una rúbrica en Langfuse para calificar la veracidad de la información de releases y módulos de localización reportada por el bot.
-                    <br><br>
-                    <strong>Métricas de Auditoría Cognitive:</strong>
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: left; font-size: 0.9rem;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px; text-align: left; font-size: 0.9rem;">
                         <thead>
                             <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-light);">
-                                <th style="padding: 10px;">Dimensión</th>
-                                <th style="padding: 10px;">Criterio de Evaluación</th>
-                                <th style="padding: 10px;">Rango Score</th>
+                                <th style="padding: 10px;">Métrica que Cae (&lt; 0.80)</th>
+                                <th style="padding: 10px;">Causa Raíz Técnica</th>
+                                <th style="padding: 10px;">Ticket Exacto en el Backlog</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr style="border-bottom: 1px solid var(--border-color);">
                                 <td style="padding: 10px; font-weight: 700;">Fidelidad (Faithfulness)</td>
-                                <td style="padding: 10px;">¿Toda afirmación de la respuesta está soportada estrictamente por los documentos oficiales extraídos de la Vector DB? (Evitar alucinaciones).</td>
-                                <td style="padding: 10px;"><strong>0.0</strong> (Alucinación grave) a <strong>1.0</strong> (Perfecta veracidad)</td>
+                                <td style="padding: 10px;">El LLM inventó datos, fechas o promesas ausentes en el contexto recuperado.</td>
+                                <td style="padding: 10px;">Reforzar System Prompt, fijar Temperatura 0.0 y agregar Guardrail de cita obligatoria.</td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 10px; font-weight: 700;">Relevancia de Contexto</td>
-                                <td style="padding: 10px;">¿Los fragmentos extraídos de la base de datos vectorial corresponden al módulo, idioma y versión consultada por el usuario?</td>
-                                <td style="padding: 10px;"><strong>0.0</strong> (Chunk irrelevante) a <strong>1.0</strong> (Información exacta)</td>
+                                <td style="padding: 10px; font-weight: 700;">Precisión de Contexto</td>
+                                <td style="padding: 10px;">El buscador vectorial trajo fragmentos de otra versión, idioma o regla cortada.</td>
+                                <td style="padding: 10px;">Revisar Chunking/Overlap, filtros de Metadatos (<code>lang</code>, <code>year</code>) o Top-K en Vector DB.</td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border-color);">
                                 <td style="padding: 10px; font-weight: 700;">Relevancia de Respuesta</td>
-                                <td style="padding: 10px;">¿La respuesta final soluciona de forma concisa, precisa y con el tono adecuado la consulta del usuario?</td>
-                                <td style="padding: 10px;"><strong>0.0</strong> (Evasiva/desvíos) a <strong>1.0</strong> (Resolución directa)</td>
+                                <td style="padding: 10px;">La respuesta es verídica, pero evasiva, demasiado larga o no resuelve la pregunta.</td>
+                                <td style="padding: 10px;">Ajustar instrucciones de formato, estructura y brevedad en la plantilla de salida.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 10px; font-weight: 700;">Tool Accuracy (Agentes)</td>
+                                <td style="padding: 10px;">El agente eligió la herramienta equivocada o dio demasiados pasos en ReAct.</td>
+                                <td style="padding: 10px;">Clarificar descripciones JSON de Tools/MCP y reducir herramientas ambiguas.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; font-weight: 700;">Caída en Producción (Model Drift)</td>
+                                <td style="padding: 10px;">Cambio silencioso de modelo o migración a modelo económico rompió categorías difíciles.</td>
+                                <td style="padding: 10px;">Rollback por Feature Flag en la categoría crítica + Model Routing selectivo + Alerta en Langfuse.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -446,57 +462,12 @@
             </div>
         </div>
 
-        <!-- 9. Model Routing -->
-        <div class="glossary-card">
-            <div class="card-header">
-                <div class="concept-title"><span class="concept-index">09</span> Model Routing (Enrutamiento Inteligente de Modelos)</div>
-                <div class="concept-tag">Estrategia FinOps</div>
-            </div>
-            <div class="simple-box"><strong>💡 En palabras simples:</strong> En vez de usar el modelo más caro (<em>Claude Opus / GPT-4o</em>) para el 100% de los mensajes, un clasificador deriva automáticamente el <strong>80% de las consultas fáciles a un modelo rápido y económico (Gemini Flash / Claude Haiku / GPT-4o-mini)</strong> y solo envía el 20% complejo al modelo grande, ahorrando cerca del 75% de la factura.</div>
-            <div class="definition-section">
-                <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    Patrón de arquitectura donde una capa intermedia evalúa la complejidad de cada consulta entrante y decide dinámicamente a qué modelo enviarla: modelos livianos de baja latencia (Small / Flash Models) para extracción, clasificación o FAQs, o modelos de frontera (Frontier Models) para razonamiento multi-paso y análisis contractual complejo.
-                </div>
-            </div>
-        </div>
-
-        <!-- 10. Batch API (-50%) -->
-        <div class="glossary-card">
-            <div class="card-header">
-                <div class="concept-title"><span class="concept-index">10</span> Batch API (-50% Descuento) &amp; Costos Ocultos</div>
-                <div class="concept-tag">Optimización Masiva</div>
-            </div>
-            <div class="simple-box"><strong>💡 En palabras simples:</strong> Cuando tenés que procesar miles de textos o módulos de localización que no necesitan respuesta en 1 segundo (pueden estar listos en unas horas o a la mañana siguiente), los enviás por <strong>Batch API (Modo Asíncrono)</strong> y todos los proveedores (OpenAI, Anthropic, AWS Bedrock) te cobran <strong>exactamente la mitad (50% de descuento)</strong>.</div>
-            <div class="definition-section">
-                <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    Modalidad de inferencia asíncrona por lotes diseñada para cargas de trabajo masivas sin requerimiento de respuesta inmediata (ej. pre-traducción de releases, auditoría de glosarios o análisis de tickets históricos), ofreciendo un 50% de descuento sobre la tarifa estándar por millón de tokens.
-                </div>
-            </div>
-        </div>
-
-        <!-- 11. Shadow Mode, Canary & Data Flywheel -->
-        <div class="glossary-card">
-            <div class="card-header">
-                <div class="concept-title"><span class="concept-index">11</span> Lanzamiento Seguro: Shadow Mode, Canary &amp; Data Flywheel</div>
-                <div class="concept-tag">Despliegue en Producción</div>
-            </div>
-            <div class="simple-box"><strong>💡 En palabras simples:</strong> Cómo lanzar un bot de IA sin riesgo: <strong>1) Shadow Mode (Modo Sombra):</strong> el bot procesa los tickets reales en silencio detrás de escena sin que el cliente lo vea para comparar su acierto contra los humanos; <strong>2) Canary Release:</strong> se activa en vivo solo para el 5% de los usuarios y sube gradualmente a 100%; <strong>3) Data Flywheel:</strong> cada corrección humana (👎) pasa al <em>Golden Dataset</em> para que el sistema mejore cada semana.</div>
-            <div class="definition-section">
-                <span class="label">Definición Técnica Profunda</span>
-                <div class="definition-text">
-                    Metodología de despliegue progresivo para productos probabilísticos que combina validación silenciosa en paralelo (Shadow Mode), exposición gradual controlada por métricas en Langfuse (Canary Rollout) y retroalimentación continua hacia la suite de evaluaciones (Data Flywheel).
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <!-- FOOTER -->
-    <div style="padding: 60px; background: #F8FAFC; border-top: 1px solid #E2E8F0; font-size: 0.9rem; color: #64748B; text-align: center;">
+    <div style="padding: 50px; background: #F8FAFC; border-top: 1px solid #E2E8F0; font-size: 0.9rem; color: #64748B; text-align: center;">
         <p>Glosario de Master para Product Managers de IA - Sesión 4</p>
-        <p style="margin-top: 15px; font-weight: 800; color: #475569; letter-spacing: 2px;">2026 ANABELA HOTIAN | MENTORÍA ESTRATÉGICA IT & IA</p>
+        <p style="margin-top: 12px; font-weight: 800; color: #475569; letter-spacing: 2px;">2026 ANABELA HOTIAN | MENTORÍA ESTRATÉGICA IT &amp; IA</p>
     </div>
 </div>
 
