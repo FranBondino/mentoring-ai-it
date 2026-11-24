@@ -1548,27 +1548,29 @@ Cuando surge una necesidad nueva de IA, muchos equipos piden programadores de en
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Capacidad liberada · TCO real · Cuenta Finanzas
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Calcular costo IA + TCO + 20% HITL frente al tiempo manual, aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.
-- **👆 Qué tocar en la Slide:** Mostrá los defaults ($209.16 IA + TCO, $5,000 HITL, $19,790.84 capacidad liberada, ~3.3 semanas para piloto $15k) y probá 500 docs / 5 min.
+- **🎯 Qué explicás acá (En 1 frase):** Comparar 3 escenarios (Óptimo $209.16, Sin FinOps $423.00 y Volumen Bajo 134.3 semanas), aclarando que es capacidad liberada y no recorte directo de nómina el mes 1.
+- **👆 Qué tocar en la Slide:** Recorré las 3 tarjetas estáticas de izquierda a derecha y cerrá con la nota inferior para Finanzas.
 - **💬 La analogía ganadora:** Si liberás 1.000 horas del equipo no reducís personal al día siguiente: usás esas horas para absorber más volumen o bajar atrasos sin contratar de más.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Esta calculadora es para que armes una cuenta creíble frente a Finanzas sin inflar ahorros falsos. **[Señalá los 3 deslizadores y los 3 checks a la izquierda]** Arrancamos con un volumen realista de **5.000 documentos o tickets al mes**, **15 minutos humanos** por cada uno y un costo profesional de **`$20` dólares la hora**, con **Model Routing**, **Batch API** y **TCO fijo (`+$180/mes` + `8%` Evals)** activados.
+En esta slide dejamos tres escenarios cerrados uno al lado del otro para que veas cómo defender los números frente a Finanzas sin inflar ahorros falsos. **[Señalá la tarjeta izquierda: Escenario 1 · Óptimo]** Mirá el primer escenario con un volumen real: `5.000 documentos` por mes de `15 minutos` a `$20` la hora. Hacerlo a mano suma `1.250 horas` (`7.8 FTE`), un valor de **`$25,000 USD`**. Con Routing, Batch y suma fija de TCO más `20%` de revisión humana, la operación IA + HITL cuesta **`$5,209` (`21%`)** y solo **`$209.16/mes`** en API + infraestructura + Evals. Libera tiempo por **`$19,790.84`** al mes, y un piloto de `$15.000` equivale a unas **`~3.3 semanas`** de horas liberadas.
 
-**[Señalá las barras comparativas y los números a la derecha]** Mirá las barras: hacer esto a mano equivale a **1.250 horas por mes (`7.8 personas FTE`)**, un valor de tiempo de **`$25,000.00 USD`**. La API optimizada más infraestructura fija y Evals cuesta **`$209.16 USD`**, y sumado al `20%` de revisión humana obligatoria (**HITL**, **`$5,000.00 USD`**), la operación híbrida representa apenas el **`21%`** (`$5,209 USD`), liberando tiempo equivalente a **`$19,790.84 USD/mes`**. **[Destildá Model Routing y Batch API y volvé a tildarlos]** Si sacamos Routing y Batch, la factura de IA salta a **`$423.00 USD/mes`**. **[Bajá a 500 docs y 5 min, luego volvé a 5.000 y 15 min]** Y si probamos con `500` casos de `5 minutos`, el valor manual cae a **`$833.33 USD`**, la infraestructura fija (`$180`) empuja la barra al **`42%` (`$182.92` solo de IA)** y un piloto de `$15.000` tardaría **`~134.3 semanas`** en repagarse: ahí sabés que no conviene construir. **[Señalá la nota al pie de la tarjeta derecha]** Volviendo al caso de `5.000`, el piloto equivale a **`~3.3 semanas`** de horas liberadas, pero aclará siempre que eso es **capacidad liberada** para absorber más volumen o bajar demoras, no recorte de sueldos el mes 1.
+**[Señalá la tarjeta del medio: Escenario 2 · Sin FinOps]** Mirá qué pasa con el mismo volumen si salís sin *Model Routing* ni *Batch*: pagás `$225` directos de API y con Evals + TCO fijo la cuenta sube a **`$423.00/mes`**, más del doble de costo de IA.
 
-### 🎛️ Cómo usar el simulador / ejemplo práctico: Calculadora FinOps vs. Tiempo del Equipo (3 pruebas en vivo)
-1. **Prueba 1 (Caso base equilibrado):** Dejá los defaults (`5.000 docs`, `15 min`, `$20/h`, los 3 checks activos). Señalá las barras superiores (**Manual $25,000 USD** vs **Operación IA + HITL $5,209 (21%)**), el costo IA+TCO (`$209.16 USD`), HITL (`$5,000.00 USD`), capacidad liberada (`$19,790.84 USD`) y repago de piloto `$15.000` en `~3.3 semanas`.
-2. **Prueba 2 (Impacto de FinOps):** Destildá `Model Routing (80/20)` y `Batch API nocturna` → el gasto IA+TCO sube de `$209.16` a `$423.00 USD/mes` (`$225` de API × `1.08` de Evals + `$180` fijos). Volvé a tildar ambos.
-3. **Prueba 3 (Cuándo NO conviene construir):** Bajá el primer slider a `500 docs` y el segundo a `5 min` → el tiempo manual cae a `$833.33 USD`, el costo fijo de infra (`$180`) hace que la IA+TCO (`$182.92`) empuje la barra al **42%** (`$350 USD`) y el repago de `$15.000` salte a **`~134.3 semanas`** (> 2 años).
-4. Volvé a `5.000 docs` y `15 min` y cerrá leyendo la nota inferior sobre capacidad liberada frente a nómina.
-- **Ejemplo práctico para contar:** Propuesta ante Finanzas para asistir en revisión documental de 5.000 archivos/mes: en lugar de prometer bajar sueldos desde el mes 1, mostrás que el equipo existente absorbe más volumen y acorta entregas sin nuevas contrataciones.
+**[Señalá la tarjeta derecha: Escenario 3 · Volumen Bajo]** Y fijate el tercer caso para saber cuándo decir que no: si tenés solo `500 docs` de `5 minutos`, el tiempo manual vale **`$833`**, pero la infraestructura fija de `$180` deja la IA en `$182.92/mes` y el total sube al **`42%`** (`$350`), estirando el repago a **`~134.3 semanas`**. **[Señalá la nota inferior]** Y en todos los casos, cerrá con la nota de abajo: esto es **capacidad liberada** para absorber volumen o bajar demoras, no recorte de nómina el mes 1.
+
+### 🎛️ Cómo usar el simulador / ejemplo práctico: Comparativa visual de 3 escenarios ante Finanzas
+1. **Tarjeta 1 (Escenario 1 · Óptimo):** Mostrá las dos barras (`Manual $25,000` vs `IA + HITL $5,209 (21%)`), remarcando que `IA + TCO + Evals` da `$209.16/mes` y el piloto `$15.000` equivale a `~3.3 semanas` de capacidad liberada.
+2. **Tarjeta 2 (Escenario 2 · Sin FinOps):** Señalá cómo sin Routing ni Batch el costo de IA se duplica de `$209` a `$423 (+102%)` con el mismo tráfico.
+3. **Tarjeta 3 (Escenario 3 · Volumen Bajo):** Mostrá el límite inferior (`500 docs · 5 min`): los `$180` fijos de infra mantienen la barra en `42%` y el repago salta a `~134.3 semanas` (`No conviene construir a medida`).
+4. Cerrá leyendo el recuadro ancho inferior sobre **capacidad liberada** frente a nómina.
+- **Ejemplo práctico para contar:** Propuesta ante Finanzas para asistir en revisión documental de 5.000 archivos/mes: en lugar de prometer bajar sueldos desde el mes 1, mostrás con los 3 escenarios que optimizás costos, sabés cuándo no conviene construir y que el equipo actual absorbe más volumen.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Capacidad Liberada:** Horas del equipo que dejan de ir a revisión repetitiva y pasan a tareas de mayor criterio, absorbiendo más trabajo sin sumar sueldos.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Dejá los defaults (5.000 docs, 15 min, $20/h) con los 3 checks marcados, luego destildá Routing/Batch y bajá volumen a 500 docs para mostrar cuándo no se justifica.
+- Recorré de izquierda a derecha las 3 tarjetas estáticas de escenarios (Óptimo, Sin FinOps y Volumen Bajo) y cerrá leyendo el recuadro inferior para Finanzas.
 
 ### 🔗 Puente de Conexión → Slide 7 (Lanzamiento gradual: Shadow Mode, Canary y feedback)
 > **"Con los números aprobados, pasamos del presupuesto a la operación: cómo lanzamos esto sobre tráfico real sin exponer errores frente a los clientes desde el día uno. Vamos a la Slide 7."**
@@ -1579,30 +1581,31 @@ Esta calculadora es para que armes una cuenta creíble frente a Finanzas sin inf
 - **⏱️ Tiempo estimado:** 6 Min | **🏷️ Etiquetas:** Shadow Mode · Canary Rollout · Feedback continuo
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Lanzar en 3 etapas: Shadow Mode (silencioso), Canary con Feature Flags (5% → 100%) y circuito de feedback hacia el Golden Dataset.
-- **👆 Qué tocar en la Slide:** Hacé clic en Etapa 1, Etapa 2 y Etapa 3 mirando cómo cambia la barra inferior.
+- **🎯 Qué explicás acá (En 1 frase):** Lanzar en 3 etapas: Shadow Mode (silencioso), Canary con Feature Flags (5% → 100%) y feedback hacia el Golden Dataset, monitoreado en Langfuse.
+- **👆 Qué tocar en la Slide:** Hacé clic en Etapa 1, Etapa 2 y Etapa 3 mirando la barra inferior y señalá la nota de Langfuse.
 - **💬 La analogía ganadora:** Primero trabaja a puertas cerradas al lado del equipo (Shadow), después atiende un 5% de pedidos supervisado (Canary) y cada corrección queda anotada.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-A diferencia del software clásico, donde probás en staging y salís para todos igual, un sistema de IA puede responder distinto frente a entradas nuevas. Por eso nunca se habilita directo al 100%. **[Señalá el diagrama SVG arriba y hacé clic en '1. Shadow Mode']** Durante las primeras una o dos semanas corre en **Shadow Mode**: procesa pedidos reales en segundo plano sin mostrar nada al cliente, y el panel inferior confirma **`0% clientes`** y **`Sin impacto en el usuario final`**. Recién avanzamos si alcanza un acuerdo mayor o igual al **`90%`** frente al trabajo del equipo humano.
+A diferencia del software clásico, donde probás en staging y salís para todos igual, un sistema de IA puede responder distinto frente a entradas nuevas. Por eso nunca se habilita directo al 100%. **[Señalá el diagrama SVG arriba y hacé clic en '1. Shadow Mode']** Durante las primeras una o dos semanas corre en **Shadow Mode**: procesa pedidos reales en segundo plano sin mostrar nada al cliente, y el panel inferior confirma **`0% clientes`** y **`Sin impacto en el usuario final`**. Recién avanzamos si alcanza un acuerdo mayor o igual al **`90%`** frente al equipo humano. Y fijate abajo donde dice **Langfuse**: Langfuse es el **panel de monitoreo de IA** donde queda guardada cada consulta con su respuesta, costo y latencia para poder comparar qué habría dicho el bot contra lo que hizo el equipo —después en la Slide 11 lo vamos a ver abierto por dentro—.
 
-**[Hacé clic en '2. Canary Rollout']** Cuando supera ese corte pasamos a **Canary Rollout**, habilitando con *Feature Flags* del **`5%`** al **`25%`** y hasta el **`100%`** gradualmente. Si en Langfuse la latencia P95 supera `1.5s` o sube el gasto, tenemos **rollback en un clic**.
+**[Hacé clic en '2. Canary Rollout']** Cuando supera ese corte pasamos a **Canary Rollout**, habilitando con *Feature Flags* del **`5%`** al **`25%`** y hasta el **`100%`** gradualmente. Si el monitoreo marca latencia P95 arriba de `1.5s` o sube el gasto, tenemos **rollback en un clic**.
 
-**[Hacé clic en '3. Circuito de feedback']** Y ya en vivo arranca el tercer paso que muestra la flecha punteada del diagrama: cada reporte negativo y corrección del especialista entra directo al **Golden Dataset** semanal para que el mismo fallo no vuelva a repetirse.
+**[Hacé clic en '3. Circuito de feedback']** Y ya en vivo arranca el tercer paso de la flecha punteada: cada reporte negativo y corrección del especialista entra al **Golden Dataset** semanal para que el mismo fallo no vuelva a repetirse.
 
 ### 🎛️ Cómo usar el simulador / ejemplo práctico: Pipeline Interactivo de Rollout (SVG + Tarjetas)
 1. Recorré el diagrama SVG superior (`1. Shadow Mode → 2. Canary Rollout → 3. Producción + Feedback`) y señalá la flecha punteada inferior (`Correcciones → Golden Dataset`).
-2. Clic en **1. Shadow Mode** (tarjeta o nodo SVG) → el panel inferior marca `0% clientes`, `Sin impacto en el usuario final`, `Acuerdo ≥ 90%` y revisar diferencias en Langfuse.
-3. Clic en **2. Canary Rollout** → cambia a `5% → 25% → 100% gradual`, `Acotado, con rollback en 1 clic` y `Latencia P95 < 1.5s y costo estable 7 días`.
+2. Clic en **1. Shadow Mode** → el panel inferior marca `0% clientes`, `Sin impacto`, `Acuerdo ≥ 90%` y **Comparar en Langfuse (panel de monitoreo)**. Señalá la nota al pie explicando qué es Langfuse.
+3. Clic en **2. Canary Rollout** → cambia a `5% → 25% → 100% gradual`, `rollback en 1 clic` y vigilar costo, latencia y Drift en Langfuse.
 4. Clic en **3. Circuito de feedback** → pasa a `100% en vivo con feedback` y sumar cada error corregido al *Golden Dataset*.
-- **Ejemplo práctico para contar:** Asistente nuevo de QA lingüístico: corre 2 semanas en *Shadow* frente al criterio del equipo; recién al superar 90% de coincidencia se habilita *Canary* en un único par de idiomas.
+- **Ejemplo práctico para contar:** Asistente nuevo de QA lingüístico: corre 2 semanas en *Shadow* frente al criterio del equipo; recién al superar 90% de coincidencia en Langfuse se habilita *Canary* en un único par de idiomas.
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
+- **Langfuse (Panel de monitoreo de IA):** Herramienta donde queda registrado el historial de cada consulta a la IA: qué respondió, cuánto costó, cuánto tardó y qué evaluación tuvo.
 - **Shadow Mode (Modo Sombra):** Correr el agente sobre casos reales sin que el usuario vea sus respuestas, solo para medir acierto contra el equipo humano.
 - **Canary Rollout + Feature Flags:** Habilitar la función para un porcentaje chico de usuarios con una llave de apagado rápido.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Hacé clic en las 3 etapas (en las tarjetas o en el pipeline SVG superior) para mostrar cómo cambian exposición, riesgo, criterio de avance y tarea del PM.
+- Hacé clic en las 3 etapas (en las tarjetas o en el pipeline SVG superior) para mostrar cómo cambian exposición, riesgo, criterio de avance y tarea del PM, aclarando qué es Langfuse.
 
 ### 🔗 Puente de Conexión → Slide 8 (UX en productos de IA, Spikes en Agile y riesgos actuales)
 > **"Ahora bien, hay proyectos técnicamente sólidos que salen en Canary y aun así la gente no los usa, o chocan con reglas legales nuevas. Veamos UX, planificación en Agile y los riesgos de hoy en la Slide 8."**
@@ -1716,7 +1719,7 @@ Probemos el criterio de la Tríada RAG sobre un caso concreto de lanzamiento. **
 - **💬 La analogía ganadora:** Es la caja negra y el ticket detallado de cada consulta: ves en 10 segundos qué paso tardó o falló y cuánto costó.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Acá es donde mirás todo lo que pasa en vivo sin tener que pedirle capturas a desarrollo. **Langfuse** te muestra la radiografía de cada consulta dividida en pasos o *Spans*, con una regla temporal arriba de `0ms` a `1.15s`. **[Señalá las barras waterfall a la izquierda]** Fijate a simple vista en la barra ámbar: el sistema tardó `1.15s` en total y costó `$0.0011`, pero casi todo el tiempo (`900ms`) estuvo en la generación del modelo.
+¿Te acordás que en Shadow Mode y Canary nombramos a **Langfuse** como el panel de registro y monitoreo de IA? Acá es donde lo ves por dentro sin tener que pedirle capturas a desarrollo. **Langfuse** guarda el historial completo de cada consulta dividida en pasos o *Spans*, con una regla temporal arriba de `0ms` a `1.15s`. **[Señalá las barras waterfall a la izquierda]** Fijate a simple vista en la barra ámbar: el sistema tardó `1.15s` en total y costó `$0.0011`, pero casi todo el tiempo (`900ms`) estuvo en la generación del modelo.
 
 **[Hacé clic en '[Span 1] Router y Retrieval']** Si abrís el **Span 1** ves qué decidió el router —mandó la consulta a *Gemini Flash* gastando apenas `$0.0001` en `160ms`— y qué fragmentos encontró filtrando por `ES-LATAM, 2026`. **[Hacé clic en '[Span 2] Generación LLM']** En el **Span 2** confirmás que el primer token salió a los `220ms` y qué página del manual citó. **[En '[Span 3] Eval y Feedback', tocá 'Simular reporte → mandar al Golden Dataset']** Y cuando alguien marca un error, fijate cómo con ese clic el caso `#S4-PROD-992` queda guardado directo para sumar al *Golden Dataset*.
 

@@ -1007,108 +1007,99 @@
             </div>
         </div>
 
-        <!-- SLIDE 6: INTERACTIVE ROI, TCO & TIME CALCULATOR -->
+        <!-- SLIDE 6: 3 STATIC COST SCENARIOS FOR FINANZAS -->
         <div class="slide" id="slide-6">
             <h2 class="slide-title">Ejercicio 1: Costos de IA vs. tiempo del equipo</h2>
-            <p class="slide-subtitle">Números creíbles para Finanzas: gasto real de operación frente a horas liberadas del equipo.</p>
+            <p class="slide-subtitle">Tres escenarios para Finanzas: costo operativo frente a horas liberadas.</p>
 
-            <div class="grid-2">
-                <div class="glass-card">
-                    <div class="calculator-row">
-                        <span class="calculator-label">1. Documentos / Tickets al Mes</span>
-                        <span class="calculator-value" id="calc-volume-val">5.000</span>
+            <div class="grid-3" style="margin-bottom: 1rem;">
+                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.35); padding: 1.35rem 1.45rem;">
+                    <span class="pill-tag" style="background: rgba(16,185,129,0.12); color: var(--color-green); border-color: rgba(16,185,129,0.3);">ESCENARIO 1 · ÓPTIMO</span>
+                    <h3 class="card-title" style="font-size: 0.96rem; margin-bottom: 0.85rem;">5.000 docs · 15 min · $20/h</h3>
+                    <div class="compare-bars">
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">Manual</span>
+                                <span style="font-family: monospace; color: #fca5a5; font-weight: 700;">$25,000</span>
+                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 100%; background: rgba(239,68,68,0.65);"></div></div>
+                        </div>
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">IA + HITL (20%)</span>
+                                <span style="font-family: monospace; color: #6ee7b7; font-weight: 700;">$5,209 (21%)</span>
+                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 21%; background: var(--color-green);"></div></div>
+                        </div>
                     </div>
-                    <input type="range" min="500" max="20000" step="500" value="5000" class="calculator-slider" id="calc-volume" oninput="calculateROI()">
-
-                    <div class="calculator-row">
-                        <span class="calculator-label">2. Minutos Humanos por Documento</span>
-                        <span class="calculator-value" id="calc-mins-val">15 min</span>
-                    </div>
-                    <input type="range" min="5" max="45" step="5" value="15" class="calculator-slider" id="calc-mins" oninput="calculateROI()">
-
-                    <div class="calculator-row">
-                        <span class="calculator-label">3. Costo Hora Profesional (USD)</span>
-                        <span class="calculator-value" id="calc-hourly-val">$20 / h</span>
-                    </div>
-                    <input type="range" min="10" max="60" step="1" value="20" class="calculator-slider" id="calc-hourly" oninput="calculateROI()">
-
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
-                        <label class="check-pill">
-                            <input type="checkbox" id="opt-routing" checked onchange="calculateROI()">
-                            <span><strong>Model Routing (80/20):</strong> 80% a modelo chico (-76% API)</span>
-                        </label>
-                        <label class="check-pill">
-                            <input type="checkbox" id="opt-batch" checked onchange="calculateROI()">
-                            <span><strong>Batch API nocturna:</strong> Tareas sin urgencia (-50%)</span>
-                        </label>
-                        <label class="check-pill">
-                            <input type="checkbox" id="opt-tco" checked onchange="calculateROI()">
-                            <span><strong>Sumar TCO fijo:</strong> +$180/mes (infra) y +8% Evals</span>
-                        </label>
+                    <div class="results-box" style="padding: 0.8rem 0.9rem;">
+                        <div class="results-row" style="font-size: 0.79rem;"><span>Manual:</span><span style="font-family: monospace; color: #f8fafc;">1.250 hs (7.8 FTE)</span></div>
+                        <div class="results-row" style="font-size: 0.79rem;"><span>IA + TCO + Evals:</span><span style="font-family: monospace; color: var(--color-green); font-weight: 700;">$209.16/mes</span></div>
+                        <div class="results-row total" style="font-size: 0.84rem; margin-bottom: 0.4rem;"><span>Capacidad liberada:</span><span style="font-family: monospace;">$19,790.84</span></div>
+                        <div class="results-row" style="font-size: 0.78rem; color: #fde68a; font-weight: 700; margin-bottom: 0;"><span>Piloto $15.000:</span><span style="font-family: monospace;">~3.3 semanas</span></div>
                     </div>
                 </div>
 
-                <div class="glass-card" style="border-color: rgba(16, 185, 129, 0.3); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <h3 class="card-title" style="color: var(--color-green); margin-bottom: 0.75rem;">
-                            <i data-lucide="activity" class="icon-sm"></i>
-                            Cuenta mensual (FinOps + TCO)
-                        </h3>
-                        <div class="compare-bars">
-                            <div>
-                                <div class="calculator-row" style="margin-bottom: 0.25rem; font-size: 0.78rem;">
-                                    <span style="color: #cbd5e1;">Manual actual</span>
-                                    <span id="bar-manual-lbl" style="font-family: monospace; color: #fca5a5; font-weight: 700;">$25,000 USD</span>
-                                </div>
-                                <div class="compare-track">
-                                    <div class="compare-fill" id="bar-manual-fill" style="width: 100%; background: rgba(239, 68, 68, 0.65);"></div>
-                                </div>
+                <div class="glass-card" style="border-color: rgba(245, 158, 11, 0.35); padding: 1.35rem 1.45rem;">
+                    <span class="pill-tag">ESCENARIO 2 · SIN FINOPS</span>
+                    <h3 class="card-title" style="font-size: 0.96rem; margin-bottom: 0.85rem;">Sin Routing ni Batch</h3>
+                    <div class="compare-bars">
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">IA optimizada</span>
+                                <span style="font-family: monospace; color: #6ee7b7; font-weight: 700;">$209</span>
                             </div>
-                            <div>
-                                <div class="calculator-row" style="margin-bottom: 0.25rem; font-size: 0.78rem;">
-                                    <span style="color: #cbd5e1;">Operación IA + HITL</span>
-                                    <span id="bar-hybrid-lbl" style="font-family: monospace; color: #6ee7b7; font-weight: 700;">$5,209 (21%)</span>
-                                </div>
-                                <div class="compare-track">
-                                    <div class="compare-fill" id="bar-hybrid-fill" style="width: 21%; background: var(--color-green);"></div>
-                                </div>
-                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 49%; background: var(--color-green);"></div></div>
                         </div>
-                        <div class="results-box">
-                            <div class="results-row">
-                                <span>Valor del tiempo manual actual:</span>
-                                <span id="cost-human" style="font-weight: 700; color: #ffffff; font-family: monospace;">$0.00</span>
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">Sin optimizar</span>
+                                <span style="font-family: monospace; color: #fde68a; font-weight: 700;">$423 (+102%)</span>
                             </div>
-                            <div class="results-row" style="font-size: 0.8rem; color: var(--text-secondary);">
-                                <span>Horas / personas equivalentes:</span>
-                                <span id="hours-needed" style="font-family: monospace;">0 hs (0.0 personas FTE)</span>
-                            </div>
-                            <div class="results-row" style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.5rem; margin-top: 0.5rem;">
-                                <span>API Frontier sin optimizar ($0.045/doc):</span>
-                                <span id="cost-base-api" style="color: var(--color-red); font-family: monospace;">$0.00</span>
-                            </div>
-                            <div class="results-row">
-                                <span style="font-weight: 600; color: var(--color-green);">Costo IA optimizado + infra + Evals:</span>
-                                <span id="cost-opt-api" style="font-weight: 700; color: var(--color-green); font-family: monospace;">$0.00</span>
-                            </div>
-                            <div class="results-row" style="font-size: 0.81rem; color: #93c5fd;">
-                                <span>Revisión humana (HITL · 20% del tiempo):</span>
-                                <span id="cost-hitl" style="font-family: monospace;">$0.00</span>
-                            </div>
-                            <div class="results-row total">
-                                <span>Capacidad liberada (valor equiv./mes):</span>
-                                <span id="roi-savings" style="font-family: monospace;">$0.00</span>
-                            </div>
-                            <div class="results-row" style="margin-bottom: 0; font-size: 0.82rem; color: #fde68a; font-weight: 700;">
-                                <span>Referencia de repago (piloto de $15.000):</span>
-                                <span id="roi-payback" style="font-family: monospace;">-</span>
-                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 100%; background: var(--color-amber);"></div></div>
                         </div>
                     </div>
-                    <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.42;">
-                        Ante Finanzas conviene hablar de capacidad liberada para absorber volumen o bajar demoras, no de recorte inmediato de nómina el mes 1.
-                    </p>
+                    <div class="results-box" style="padding: 0.8rem 0.9rem;">
+                        <div class="results-row" style="font-size: 0.79rem;"><span>API directa:</span><span style="font-family: monospace; color: #fca5a5;">$225.00/mes</span></div>
+                        <div class="results-row" style="font-size: 0.79rem;"><span>IA + Evals + TCO:</span><span style="font-family: monospace; color: var(--color-amber); font-weight: 700;">$423.00/mes</span></div>
+                        <p style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; margin-top: 0.55rem; border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 0.5rem;">
+                            Duplica el gasto IA y escala al subir tráfico.
+                        </p>
+                    </div>
                 </div>
+
+                <div class="glass-card" style="border-color: rgba(239, 68, 68, 0.35); padding: 1.35rem 1.45rem;">
+                    <span class="pill-tag" style="background: rgba(239,68,68,0.12); color: #fca5a5; border-color: rgba(239,68,68,0.3);">ESCENARIO 3 · VOLUMEN BAJO</span>
+                    <h3 class="card-title" style="font-size: 0.96rem; margin-bottom: 0.85rem;">500 docs · 5 min · $20/h</h3>
+                    <div class="compare-bars">
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">Manual</span>
+                                <span style="font-family: monospace; color: #fca5a5; font-weight: 700;">$833</span>
+                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 100%; background: rgba(239,68,68,0.65);"></div></div>
+                        </div>
+                        <div>
+                            <div class="calculator-row" style="margin-bottom: 0.2rem; font-size: 0.76rem;">
+                                <span style="color: #cbd5e1;">IA + HITL (20%)</span>
+                                <span style="font-family: monospace; color: #fca5a5; font-weight: 700;">$350 (42%)</span>
+                            </div>
+                            <div class="compare-track"><div class="compare-fill" style="width: 42%; background: var(--color-red);"></div></div>
+                        </div>
+                    </div>
+                    <div class="results-box" style="padding: 0.8rem 0.9rem;">
+                        <div class="results-row" style="font-size: 0.79rem;"><span>Manual:</span><span style="font-family: monospace; color: #f8fafc;">42 hs (0.3 FTE)</span></div>
+                        <div class="results-row" style="font-size: 0.79rem;"><span>IA + TCO ($180):</span><span style="font-family: monospace; color: #fca5a5; font-weight: 700;">$182.92/mes</span></div>
+                        <div class="results-row total" style="font-size: 0.81rem; color: #fca5a5; margin-bottom: 0.35rem;"><span>Piloto $15.000:</span><span style="font-family: monospace;">~134.3 semanas</span></div>
+                        <div style="font-size: 0.78rem; color: #fca5a5; font-weight: 600;">No conviene construir.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card wide-card" style="padding: 0.85rem 1.35rem; border-color: rgba(255,255,255,0.1);">
+                <p style="font-size: 0.84rem; color: #cbd5e1; line-height: 1.45; text-align: center;">
+                    <strong style="color: var(--color-amber);">Clave ante Finanzas:</strong> representa capacidad liberada para absorber volumen o bajar demoras, no recorte de nómina el mes 1.
+                </p>
             </div>
         </div>
 
@@ -1145,40 +1136,43 @@
                 </svg>
             </div>
 
-            <div class="grid-3" style="margin-bottom: 1.1rem;">
-                <div class="glass-card phase-card phase-active" id="phase-card-1" onclick="selectRolloutPhase(1)" style="border-color: rgba(59, 130, 246, 0.35);">
+            <div class="grid-3" style="margin-bottom: 1rem;">
+                <div class="glass-card phase-card phase-active" id="phase-card-1" onclick="selectRolloutPhase(1)" style="border-color: rgba(59, 130, 246, 0.35); padding: 1.3rem 1.5rem;">
                     <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: var(--color-blue); border-color: rgba(59,130,246,0.3);">ETAPA 1 · SEMANAS 1-2</span>
-                    <h3 class="card-title" style="margin-bottom: 0.55rem;">1. Shadow Mode</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
-                        Corre en segundo plano sin mostrarse al usuario y comparás qué respondió frente al criterio del equipo.
+                    <h3 class="card-title" style="margin-bottom: 0.45rem;">1. Shadow Mode</h3>
+                    <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48;">
+                        Corre en segundo plano sin mostrarse al usuario y comparás contra el equipo.
                     </p>
                 </div>
 
-                <div class="glass-card phase-card" id="phase-card-2" onclick="selectRolloutPhase(2)" style="border-color: rgba(245, 158, 11, 0.3);">
+                <div class="glass-card phase-card" id="phase-card-2" onclick="selectRolloutPhase(2)" style="border-color: rgba(245, 158, 11, 0.3); padding: 1.3rem 1.5rem;">
                     <span class="pill-tag">ETAPA 2 · SEMANAS 3-4</span>
-                    <h3 class="card-title" style="margin-bottom: 0.55rem;">2. Canary Rollout (5% → 100%)</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
-                        Se habilita con Feature Flags para un grupo piloto, con rollback inmediato si sube el costo o cae la calidad.
+                    <h3 class="card-title" style="margin-bottom: 0.45rem;">2. Canary Rollout (5% → 100%)</h3>
+                    <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48;">
+                        Habilitado con Feature Flags para un grupo piloto, con rollback inmediato.
                     </p>
                 </div>
 
-                <div class="glass-card phase-card" id="phase-card-3" onclick="selectRolloutPhase(3)" style="border-color: rgba(16, 185, 129, 0.3);">
+                <div class="glass-card phase-card" id="phase-card-3" onclick="selectRolloutPhase(3)" style="border-color: rgba(16, 185, 129, 0.3); padding: 1.3rem 1.5rem;">
                     <span class="pill-tag" style="background: rgba(16,185,129,0.12); color: var(--color-green); border-color: rgba(16,185,129,0.3);">ETAPA 3 · EN MARCHA</span>
-                    <h3 class="card-title" style="margin-bottom: 0.55rem;">3. Circuito de feedback</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.52;">
-                        Cada voto negativo y corrección del especialista entra al Golden Dataset para que el error no vuelva a pasar.
+                    <h3 class="card-title" style="margin-bottom: 0.45rem;">3. Circuito de feedback</h3>
+                    <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.48;">
+                        Cada voto negativo y corrección suma al Golden Dataset semanal.
                     </p>
                 </div>
             </div>
 
-            <div class="glass-card wide-card" id="rollout-detail" style="padding: 1.25rem 1.65rem; border-color: rgba(245, 158, 11, 0.3);">
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; font-size: 0.85rem; line-height: 1.48;">
-                    <div><strong style="color: var(--color-amber); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">QUIÉN LO VE</strong><span style="color: #f8fafc;">0% clientes (solo equipo interno)</span></div>
-                    <div><strong style="color: var(--color-blue); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">EXPOSICIÓN</strong><span style="color: #6ee7b7;">Sin impacto en el usuario final</span></div>
-                    <div><strong style="color: var(--color-purple); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">CRITERIO DE AVANCE</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. revisión humana</span></div>
-                    <div><strong style="color: var(--color-green); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.28rem;">TU TAREA COMO PM</strong><span style="color: #cbd5e1;">Revisar diferencias en Langfuse y ajustar prompts antes de abrirlo.</span></div>
+            <div class="glass-card wide-card" id="rollout-detail" style="padding: 1.1rem 1.55rem; border-color: rgba(245, 158, 11, 0.3);">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.15rem; font-size: 0.84rem; line-height: 1.45;">
+                    <div><strong style="color: var(--color-amber); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">QUIÉN LO VE</strong><span style="color: #f8fafc;">0% clientes (solo equipo interno)</span></div>
+                    <div><strong style="color: var(--color-blue); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">EXPOSICIÓN</strong><span style="color: #6ee7b7;">Sin impacto en el usuario final</span></div>
+                    <div><strong style="color: var(--color-purple); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">CRITERIO DE AVANCE</strong><span style="color: #f8fafc;">Acuerdo ≥ 90% vs. revisión humana</span></div>
+                    <div><strong style="color: var(--color-green); font-size: 0.72rem; letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">TU TAREA COMO PM</strong><span style="color: #cbd5e1;">Comparar en Langfuse (panel de monitoreo) antes de abrirlo.</span></div>
                 </div>
             </div>
+            <p style="max-width: 1140px; width: 100%; font-size: 0.79rem; color: var(--text-secondary); margin-top: 0.65rem; text-align: center;">
+                <strong style="color: #c4b5fd;">Langfuse:</strong> panel de monitoreo que guarda cada consulta de IA con respuesta, costo y latencia (detalle en Slide 11).
+            </p>
         </div>
 
         <!-- SLIDE 8: UX, SPIKES IN AGILE & CURRENT RISKS -->
@@ -1403,7 +1397,7 @@
         <!-- SLIDE 11: OBSERVABILITY IN LANGFUSE -->
         <div class="slide" id="slide-11">
             <h2 class="slide-title">Monitoreo en producción con Langfuse</h2>
-            <p class="slide-subtitle">Radiografía por pasos de cada respuesta: router, búsqueda, generación y evaluación.</p>
+            <p class="slide-subtitle">Panel de observabilidad que registra cada consulta: modelo, búsqueda, tiempo, costo y calidad.</p>
 
             <div class="grid-2">
                 <div class="glass-card">
@@ -1478,15 +1472,15 @@
                     <div class="stack-list">
                         <div class="clean-item accent-purple">
                             <strong>1. Aislar Span 1 vs. Span 2</strong>
-                            <span class="item-meta">Ver si falló la búsqueda vectorial (Span 1) o la respuesta del modelo (Span 2).</span>
+                            <span class="item-meta">Ver si falló la búsqueda (Span 1) o la respuesta (Span 2).</span>
                         </div>
                         <div class="clean-item accent-red">
                             <strong>2. Detectar Model Drift</strong>
-                            <span class="item-meta">Si cae Fidelidad sin cambios de código, el proveedor varió comportamiento.</span>
+                            <span class="item-meta">Si cae Fidelidad sin cambios propios, varió el proveedor.</span>
                         </div>
                         <div class="clean-item accent-amber">
                             <strong>3. Costo por flujo y P95</strong>
-                            <span class="item-meta">Controlar gasto por área, filtro del router y demora máxima.</span>
+                            <span class="item-meta">Controlar gasto por área, router y latencia máxima.</span>
                         </div>
                     </div>
                 </div>
@@ -1763,8 +1757,6 @@
 
             if (currentSlide === 3) {
                 updateRouterSim();
-            } else if (currentSlide === 6) {
-                calculateROI();
             } else if (currentSlide === 10) {
                 calculateEval();
             }
@@ -1848,70 +1840,6 @@
             box.innerHTML = buildBuyCases[idx];
         }
 
-        // --- SLIDE 6: COSTOS VS TIEMPO DEL EQUIPO ---
-        function calculateROI() {
-            const volume = parseInt(document.getElementById('calc-volume').value, 10);
-            const minsPerDoc = parseInt(document.getElementById('calc-mins').value, 10);
-            const hourlyRate = parseInt(document.getElementById('calc-hourly').value, 10);
-
-            const useRouting = document.getElementById('opt-routing').checked;
-            const useBatch = document.getElementById('opt-batch').checked;
-            const includeTco = document.getElementById('opt-tco').checked;
-
-            document.getElementById('calc-volume-val').textContent = volume.toLocaleString('es-AR');
-            document.getElementById('calc-mins-val').textContent = `${minsPerDoc} min`;
-            document.getElementById('calc-hourly-val').textContent = `$${hourlyRate} / h`;
-
-            const hoursNeeded = (volume * minsPerDoc) / 60;
-            const ftesNeeded = hoursNeeded / 160;
-            const monthlyCostHuman = hoursNeeded * hourlyRate;
-
-            const baseApiCost = volume * 0.045;
-            const routingFactor = useRouting ? 0.24 : 1.0;
-            const batchFactor = useBatch ? 0.50 : 1.0;
-            const evalMult = includeTco ? 1.08 : 1.0;
-            const fixedTco = includeTco ? 180 : 0;
-
-            const totalAiMonthly = (baseApiCost * routingFactor * batchFactor * evalMult) + fixedTco;
-            const monthlyCostHitl = monthlyCostHuman * 0.20;
-            const totalHybridCost = totalAiMonthly + monthlyCostHitl;
-            const netSavings = monthlyCostHuman - totalHybridCost;
-
-            document.getElementById('cost-human').textContent = `$${monthlyCostHuman.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-            document.getElementById('hours-needed').textContent = `${Math.round(hoursNeeded).toLocaleString('es-AR')} hs (${ftesNeeded.toFixed(1)} personas FTE)`;
-            document.getElementById('cost-base-api').textContent = `$${baseApiCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-            document.getElementById('cost-opt-api').textContent = `$${totalAiMonthly.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-            document.getElementById('cost-hitl').textContent = `$${monthlyCostHitl.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-
-            const barManualLbl = document.getElementById('bar-manual-lbl');
-            const barHybridLbl = document.getElementById('bar-hybrid-lbl');
-            const barHybridFill = document.getElementById('bar-hybrid-fill');
-            const hybridRatio = monthlyCostHuman > 0 ? Math.min(100, Math.round((totalHybridCost / monthlyCostHuman) * 100)) : 100;
-            if (barManualLbl) barManualLbl.textContent = `$${Math.round(monthlyCostHuman).toLocaleString('en-US')} USD`;
-            if (barHybridLbl) {
-                barHybridLbl.textContent = `$${Math.round(totalHybridCost).toLocaleString('en-US')} (${hybridRatio}%)`;
-                barHybridLbl.style.color = netSavings > 0 ? '#6ee7b7' : '#fca5a5';
-            }
-            if (barHybridFill) {
-                barHybridFill.style.width = `${Math.max(4, hybridRatio)}%`;
-                barHybridFill.style.background = netSavings > 0 ? 'var(--color-green)' : 'var(--color-red)';
-            }
-
-            const roiEl = document.getElementById('roi-savings');
-            roiEl.textContent = `$${netSavings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-            roiEl.style.color = netSavings > 0 ? 'var(--color-green)' : 'var(--color-red)';
-
-            const paybackEl = document.getElementById('roi-payback');
-            if (netSavings <= 0) {
-                paybackEl.textContent = 'Con estos valores no se justifica';
-                paybackEl.style.color = 'var(--color-red)';
-            } else {
-                const paybackWeeks = (15000 / netSavings) * 4.33;
-                paybackEl.textContent = `~${paybackWeeks.toFixed(1)} semanas de horas liberadas`;
-                paybackEl.style.color = '#fde68a';
-            }
-        }
-
         // --- SLIDE 7: SAFE ROLLOUT STEPPER ---
         const rolloutPhases = {
             1: {
@@ -1919,14 +1847,14 @@
                 risk: 'Sin impacto en el usuario final',
                 riskColor: '#6ee7b7',
                 gate: 'Acuerdo ≥ 90% vs. revisión humana',
-                action: 'Revisar diferencias en Langfuse y ajustar prompts antes de abrirlo.'
+                action: 'Comparar en Langfuse (panel de monitoreo) antes de abrirlo.'
             },
             2: {
                 traffic: '5% → 25% → 100% gradual',
                 risk: 'Acotado, con rollback en 1 clic',
                 riskColor: '#fde68a',
                 gate: 'Latencia P95 < 1.5s y costo estable 7 días',
-                action: 'Vigilar alertas de presupuesto y Drift con Feature Flags activas.'
+                action: 'Vigilar alertas de costo, latencia y Drift en Langfuse con Feature Flags.'
             },
             3: {
                 traffic: '100% en vivo con feedback',
@@ -2168,7 +2096,6 @@
 
         lucide.createIcons();
         updateRouterSim();
-        calculateROI();
         calculateEval();
         updateNavigation();
     </script>
