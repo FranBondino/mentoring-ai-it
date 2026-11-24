@@ -385,7 +385,7 @@ function generateSingleSessionHTML(s) {
 
         <div class="script-section">
           <div class="section-head">
-            <span class="section-label">🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)</span>
+            <span class="section-label">${s.id === 4 ? '🎙️ PASO 2 · GUION LITERAL (QUÉ IR DICIENDO EN VIVO)' : '🎙️ PASO 2 · QUÉ DECIR (ORDENADO EN 3 PUNTOS CORTOS: 1️⃣ → 2️⃣ → 3️⃣)'}</span>
             <button class="copy-btn" onclick="copyText(this, \`${stripMd(sl.script)}\`)">📋 Copiar Guion</button>
           </div>
           <blockquote class="spoken-script">
@@ -1146,7 +1146,7 @@ function generateMasterHubHTML() {
           ` : ''}
 
           <div class="hub-script">
-            <div class="hub-label">🗣️ GUION PASO A PASO (3 BLOQUES CORTOS)</div>
+            <div class="hub-label">${s.id === 4 ? '🗣️ GUION LITERAL (QUÉ IR DICIENDO EN VIVO)' : '🗣️ GUION PASO A PASO (3 BLOQUES CORTOS)'}</div>
             <p>${mdToHtml(sl.script)}</p>
           </div>
 
