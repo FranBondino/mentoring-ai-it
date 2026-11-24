@@ -580,6 +580,38 @@
             align-self: flex-end;
         }
 
+        .interview-feedback {
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(0, 0, 0, 0.34);
+            border-radius: 10px;
+            padding: 0.75rem 0.95rem;
+            font-size: 0.8rem;
+            line-height: 1.46;
+            color: #cbd5e1;
+            margin-top: 0.7rem;
+            min-height: 82px;
+        }
+        .interview-feedback.fb-wrong {
+            border-color: rgba(239, 68, 68, 0.45);
+            background: rgba(239, 68, 68, 0.09);
+            color: #fecaca;
+        }
+        .interview-feedback.fb-right {
+            border-color: rgba(16, 185, 129, 0.45);
+            background: rgba(16, 185, 129, 0.1);
+            color: #d1fae5;
+        }
+        .audit-list {
+            text-align: left;
+            font-size: 0.8rem;
+            color: #e2e8f0;
+            line-height: 1.45;
+            margin-top: 0.45rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
         .text-center { text-align: center; }
 
         /* COMPACT INLINE VISUALS */
@@ -1519,6 +1551,7 @@
                         <i data-lucide="briefcase" class="icon-sm"></i>
                         Tu experiencia en Localización → IA
                     </h3>
+                    <p style="font-size: 0.79rem; color: #c4b5fd; margin: -0.5rem 0 0.85rem;">Ante la pregunta: "¿Tenés experiencia real con productos de IA?"</p>
                     <div class="stack-list">
                         <div class="clean-item accent-amber">
                             <div class="bridge-row">
@@ -1552,10 +1585,10 @@
         <!-- SLIDE 13: REAL INTERVIEW DILEMMA 1 (LOW ADOPTION & BUDGET) -->
         <div class="slide" id="slide-13">
             <h2 class="slide-title">Caso de entrevista 1: Baja adopción y presupuesto en riesgo</h2>
-            <p class="slide-subtitle">Auditá el tablero a la izquierda y elegí qué estrategia defenderías.</p>
+            <p class="slide-subtitle">Paso 1: revisá los datos a la izquierda. Paso 2: elegí qué estrategia defenderías.</p>
 
             <div class="case-quote">
-                <strong>Escenario:</strong> "Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?"
+                <strong>Pregunta del entrevistador:</strong> "Lanzamos un asistente hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% y Finanzas lo corta en 30 días. ¿Qué hacés?"
             </div>
 
             <div class="grid-2">
@@ -1564,7 +1597,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
                             <h3 class="card-title" style="color: var(--color-amber); margin-bottom: 0;">
                                 <i data-lucide="bar-chart-2" class="icon-sm"></i>
-                                Tablero Adopción y Fricción
+                                Paso 1 · Investigar datos
                             </h3>
                             <button type="button" class="btn-nav" onclick="resetAdoptionSim()" style="padding: 5px 10px; font-size: 0.74rem;">
                                 <i data-lucide="rotate-ccw" class="icon-xs"></i> Reiniciar
@@ -1572,35 +1605,34 @@
                         </div>
 
                         <div style="background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.07); padding: 1.05rem; border-radius: 12px; text-align: center; margin-bottom: 1rem;">
-                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.25rem;">USO SEMANAL ACTUAL</p>
-                            <p style="font-size: 1.9rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12%</p>
-                            <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.42;" id="sim-adopt-lbl">1° Tocá "Auditar uso" para cruzar Langfuse y entrevistas cortas.</p>
+                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.25rem;">USO SEMANAL · PLAZO</p>
+                            <p style="font-size: 1.8rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-adopt-val">12% · 30 días</p>
+                            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.45rem; line-height: 1.42;" id="sim-adopt-lbl">Tocá abajo para ver qué encontrás antes de responder.</div>
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-                        <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); flex: 1; justify-content: center;">1. Auditar uso</button>
-                        <button type="button" class="btn-nav" id="btn-fix-adopt" onclick="applyAdoptionFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Aplicar plan</button>
-                    </div>
+                    <button type="button" class="btn-nav" id="btn-run-adopt" onclick="startAdoptionAudit()" style="border-color: var(--color-amber); color: var(--color-amber); background: rgba(245,158,11,0.08); width: 100%; justify-content: center;">Ver datos de auditoría</button>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="chat-container" id="chat-c1">
-                        <div class="chat-bubble mentor">
-                            <strong>Entrevistador:</strong> "Solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"
+                    <div>
+                        <h3 class="card-title" style="color: var(--color-blue); margin-bottom: 0.7rem;">
+                            <i data-lucide="message-square" class="icon-sm"></i>
+                            Paso 2 · Elegir respuesta
+                        </h3>
+                        <div class="roleplay-options">
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('a', this)">
+                                <strong>Opción A (Empujar por mail):</strong> "Pido un mail de dirección y capacitaciones obligatorias para forzar el uso."
+                            </button>
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('b', this)">
+                                <strong>Opción B (Fricción + costo):</strong> "Cruzo Langfuse con 8 charlas cortas, llevo el flujo a Jira con streaming y bajo costo con Routing/Batch."
+                            </button>
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('c', this)">
+                                <strong>Opción C (Cambiar modelo):</strong> "Pido 2 meses más para pasar a un modelo más potente antes de volver a medir."
+                            </button>
                         </div>
                     </div>
-                    <div class="roleplay-options">
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('a', this)">
-                            <strong>Opción A:</strong> "Pido un mail de dirección y capacitaciones obligatorias para empujar el uso."
-                        </button>
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('b', this)">
-                            <strong>Opción B:</strong> "Cruzo Langfuse con 8-10 charlas cortas, llevo el flujo dentro de Jira con streaming y bajo costo con Routing/Batch."
-                        </button>
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseAdoptionOption('c', this)">
-                            <strong>Opción C:</strong> "Pido 2 meses más para migrar a un modelo más potente y sumar integraciones antes de medir."
-                        </button>
-                    </div>
+                    <div class="interview-feedback" id="chat-c1">Elegí una opción arriba para ver la devolución del entrevistador.</div>
                 </div>
             </div>
         </div>
@@ -1608,10 +1640,10 @@
         <!-- SLIDE 14: REAL INTERVIEW DILEMMA 2 (MODEL DRIFT + BONUS) -->
         <div class="slide" id="slide-14">
             <h2 class="slide-title">Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)</h2>
-            <p class="slide-subtitle">Un cambio a modelo económico dejó tests en verde, pero degradó terminología clave.</p>
+            <p class="slide-subtitle">Paso 1: revisá el reporte de Evals. Paso 2: elegí cómo resolver sin perder ahorro.</p>
 
             <div class="case-quote">
-                <strong>Escenario:</strong> "Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?"
+                <strong>Pregunta del entrevistador:</strong> "Pasamos a un modelo más barato (-60%). Unit tests en verde, pero Localización reporta errores de glosario legal. ¿Qué hacés?"
             </div>
 
             <div class="grid-2">
@@ -1620,7 +1652,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
                             <h3 class="card-title" style="color: var(--color-purple); margin-bottom: 0;">
                                 <i data-lucide="trending-down" class="icon-sm"></i>
-                                Calidad y Drift en Evals
+                                Paso 1 · Revisar Evals
                             </h3>
                             <button type="button" class="btn-nav" onclick="resetDriftSim()" style="padding: 5px 10px; font-size: 0.74rem;">
                                 <i data-lucide="rotate-ccw" class="icon-xs"></i> Reiniciar
@@ -1628,42 +1660,41 @@
                         </div>
 
                         <div style="background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.07); padding: 0.95rem; border-radius: 12px; text-align: center; margin-bottom: 0.85rem;">
-                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.2rem;">FIDELIDAD EN TERMINOLOGÍA</p>
-                            <p style="font-size: 1.85rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-drift-val">0.64</p>
-                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem; line-height: 1.4;" id="sim-drift-log">1° Tocá "Simular caída" para revisar el Golden Dataset.</p>
+                            <p style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 0.2rem;">UNIT TESTS: PASS · FIDELIDAD GLOSARIO</p>
+                            <p style="font-size: 1.8rem; font-weight: 800; font-family: monospace; color: var(--color-red);" id="sim-drift-val">0.94 → 0.64</p>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.4;" id="sim-drift-log">Tocá abajo para ver qué midieron los tests.</div>
                         </div>
 
-                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
-                            <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); flex: 1; justify-content: center;">1. Simular caída</button>
-                            <button type="button" class="btn-nav" id="btn-fix-drift" onclick="applyDriftFix()" disabled style="border-color: var(--color-green); color: var(--color-green); background: rgba(16,185,129,0.08); flex: 1; justify-content: center;">2. Rollback + Routing</button>
-                        </div>
+                        <button type="button" class="btn-nav" id="btn-run-drift" onclick="startDriftSim()" style="border-color: var(--color-red); color: var(--color-red); background: rgba(239,68,68,0.08); width: 100%; justify-content: center; margin-bottom: 0.75rem;">Ver reporte de Evals</button>
                     </div>
 
                     <div style="border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 0.65rem;">
-                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">Extra: agente en 30 días sin datos limpios</button>
+                        <button type="button" class="preset-btn" style="width: 100%; text-align: left;" onclick="toggleBonusCase()">Pregunta extra: "Piden agente en 30 días sin datos"</button>
                         <div id="bonus-case-box" style="display: none; margin-top: 0.55rem; font-size: 0.8rem; color: #cbd5e1; background: rgba(245,158,11,0.08); border-left: 3px solid var(--color-amber); padding: 0.6rem 0.75rem; border-radius: 6px; line-height: 1.45;">
-                            <strong>Respuesta:</strong> Spike de 5 días con 30 casos reales + vía Configure/Buy mientras ordenan datos en Shadow Mode.
+                            <strong>Qué responder:</strong> No prometo producción: Spike de 5 días (30 casos), vía Buy/Configure y Shadow Mode.
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="chat-container" id="chat-c2">
-                        <div class="chat-bubble mentor">
-                            <strong>Entrevistador:</strong> "Ahorramos 60% y pasan los tests, pero fallan términos legales. ¿Qué hacés?"
+                    <div>
+                        <h3 class="card-title" style="color: var(--color-blue); margin-bottom: 0.7rem;">
+                            <i data-lucide="message-square" class="icon-sm"></i>
+                            Paso 2 · Elegir respuesta
+                        </h3>
+                        <div class="roleplay-options">
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('a', this)">
+                                <strong>Opción A (Revertir todo):</strong> "Vuelvo el 100% al modelo caro y freno el ahorro."
+                            </button>
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('b', this)">
+                                <strong>Opción B (Revisión total):</strong> "Dejo el modelo chico y revisamos 100% a mano."
+                            </button>
+                            <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('c', this)">
+                                <strong>Opción C (Rollback selectivo):</strong> "Revierto con feature flag solo Legal, evalúo en Langfuse y dejo chico sobre 0.90."
+                            </button>
                         </div>
                     </div>
-                    <div class="roleplay-options">
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('a', this)">
-                            <strong>Opción A:</strong> "Volver el 100% al modelo anterior y suspender el ahorro."
-                        </button>
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('b', this)">
-                            <strong>Opción B:</strong> "Dejar el modelo económico y revisar a mano el 100% durante un mes."
-                        </button>
-                        <button type="button" class="roleplay-opt-btn" onclick="chooseDriftOption('c', this)">
-                            <strong>Opción C:</strong> "Revertir con feature flag el flujo crítico, auditar por categoría en Langfuse y dejar modelo chico donde supere 0.90."
-                        </button>
-                    </div>
+                    <div class="interview-feedback" id="chat-c2">Elegí una opción arriba para ver la devolución del entrevistador.</div>
                 </div>
             </div>
         </div>
@@ -1702,7 +1733,7 @@
                         <div><strong style="color: #93c5fd; display: block; margin-bottom: 0.15rem;">Semana 1</strong>Armá en 1 página tu caso práctico con PRD y cuenta TCO.</div>
                         <div><strong style="color: #6ee7b7; display: block; margin-bottom: 0.15rem;">Semana 2</strong>Conectá tu experiencia en Localización con proyectos de IA en CV y LinkedIn.</div>
                         <div><strong style="color: #c4b5fd; display: block; margin-bottom: 0.15rem;">Semana 3</strong>Practicá explicar en 2 minutos el flujo Antigravity + AWS MCP.</div>
-                        <div><strong style="color: #fde68a; display: block; margin-bottom: 0.15rem;">Semana 4</strong>Repasá los 2 casos de entrevista en el Simulador S4.</div>
+                        <div><strong style="color: #fde68a; display: block; margin-bottom: 0.15rem;">Semana 4</strong>Repasá los 3 casos de entrevista en el Simulador S4.</div>
                     </div>
                 </div>
 
@@ -1972,58 +2003,59 @@
             if (adoptionSimRunning) return;
             adoptionSimRunning = true;
             document.getElementById('btn-run-adopt').disabled = true;
-            document.getElementById('btn-fix-adopt').disabled = false;
 
             const val = document.getElementById('sim-adopt-val');
             const lbl = document.getElementById('sim-adopt-lbl');
-            const chat = document.getElementById('chat-c1');
+            const fb = document.getElementById('chat-c1');
 
-            val.style.color = 'var(--color-red)';
-            val.textContent = 'Bajo · En riesgo';
-            lbl.textContent = 'Hallazgos: espera larga sin streaming, fricción al salir de Jira y uso de cuentas personales.';
-            chat.innerHTML += '<div class="chat-bubble pm"><strong>Auditoría (Langfuse + entrevistas cortas):</strong> No es un problema de precisión: es fricción de uso y costo alto sin Routing.</div>';
-            chat.scrollTop = chat.scrollHeight;
+            val.style.color = 'var(--color-amber)';
+            val.textContent = '12% · 3 hallazgos';
+            lbl.innerHTML = '<div class="audit-list"><span>• Espera de ~12s sin streaming (abandonan)</span><span>• Obliga a salir de Jira/TMS para usarlo</span><span>• Gasto alto por consulta sin Model Routing</span></div>';
+            if (!fb.classList.contains('fb-wrong') && !fb.classList.contains('fb-right')) {
+                fb.textContent = 'Con estos 3 hallazgos sobre la mesa, elegí entre Opción A, B o C arriba.';
+            }
         }
 
         function applyAdoptionFix() {
             adoptionSimRunning = false;
-            document.getElementById('btn-fix-adopt').disabled = true;
+            document.getElementById('btn-run-adopt').disabled = true;
             const val = document.getElementById('sim-adopt-val');
             const lbl = document.getElementById('sim-adopt-lbl');
-            const chat = document.getElementById('chat-c1');
 
             val.style.color = 'var(--color-green)';
-            val.textContent = 'Uso sostenido';
-            lbl.textContent = 'Acceso directo en Jira + Streaming (<1s) + Model Routing/Batch para bajar factura mensual.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Resultado:</strong> Sube el uso recurrente en el equipo piloto, baja el Shadow AI y Finanzas aprueba continuar un trimestre más.</div>';
-            chat.scrollTop = chat.scrollHeight;
+            val.textContent = 'Plan defendible';
+            lbl.innerHTML = 'Botón en Jira + streaming (&lt;1s) + Routing/Batch. Baja la fricción y la factura.';
         }
 
         function chooseAdoptionOption(choice, btn) {
-            const chat = document.getElementById('chat-c1');
+            const fb = document.getElementById('chat-c1');
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            fb.classList.remove('fb-wrong', 'fb-right');
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Un mail de dirección empuja el uso una semana por obligación y luego cae porque la fricción y el gasto siguen iguales.</div>';
+                fb.classList.add('fb-wrong');
+                fb.innerHTML = '<strong>Entrevistador (No convence):</strong> Un mail obligatorio sube el uso una semana y vuelve a caer porque la espera de 12s y el gasto siguen iguales.';
             } else if (choice === 'b') {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "Cruzo Langfuse con 8-10 charlas cortas, llevo el flujo dentro de Jira con streaming y bajo el costo con Model Routing y Batch."</div>';
+                fb.classList.add('fb-right');
+                fb.innerHTML = '<strong>Respuesta sólida (3 pasos):</strong><br><strong>1. Diagnóstico:</strong> Langfuse + 8 charlas cortas.<br><strong>2. Propuesta / trade-off:</strong> Botón en Jira + streaming + Routing (sin sumar features nuevas).<br><strong>3. Métrica de corte:</strong> Uso semanal recurrente y costo por usuario en 30 días.';
                 applyAdoptionFix();
             } else {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Finanzas corta en 30 días: pedir 2 meses más y un modelo más caro sin entender por qué no lo usan acelera el cierre.</div>';
+                fb.classList.add('fb-wrong');
+                fb.innerHTML = '<strong>Entrevistador (No convence):</strong> Finanzas corta en 30 días y el fallo no es precisión: pedir 2 meses más y un modelo más caro acelera el cierre.';
             }
-            chat.scrollTop = chat.scrollHeight;
         }
 
         function resetAdoptionSim() {
             adoptionSimRunning = false;
-            document.getElementById('sim-adopt-val').textContent = '12%';
+            document.getElementById('sim-adopt-val').textContent = '12% · 30 días';
             document.getElementById('sim-adopt-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-adopt-lbl').textContent = '1° Tocá "Auditar uso" para cruzar Langfuse y entrevistas cortas.';
+            document.getElementById('sim-adopt-lbl').textContent = 'Tocá abajo para ver qué encontrás antes de responder.';
             document.getElementById('btn-run-adopt').disabled = false;
-            document.getElementById('btn-fix-adopt').disabled = true;
-            document.getElementById('chat-c1').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Solo lo usa el 12% del equipo y Finanzas lo corta en 30 días. ¿Qué priorizás?"</div>';
+            const fb = document.getElementById('chat-c1');
+            fb.className = 'interview-feedback';
+            fb.textContent = 'Elegí una opción arriba para ver la devolución del entrevistador.';
             document.querySelectorAll('#slide-13 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 
@@ -2033,58 +2065,59 @@
             if (driftSimRunning) return;
             driftSimRunning = true;
             document.getElementById('btn-run-drift').disabled = true;
-            document.getElementById('btn-fix-drift').disabled = false;
 
             const val = document.getElementById('sim-drift-val');
             const log = document.getElementById('sim-drift-log');
-            const chat = document.getElementById('chat-c2');
+            const fb = document.getElementById('chat-c2');
 
             val.style.color = 'var(--color-red)';
-            val.textContent = '0.64 (ALERTA)';
-            log.textContent = 'Tests de código en verde, pero Fidelidad cayó de 0.94 a 0.64 en términos legales bajo NDA.';
-            chat.innerHTML += '<div class="chat-bubble pm"><strong>Diagnóstico Evals:</strong> Los unit tests solo validan formato JSON, no sentido lingüístico. El modelo chico omitió reglas del glosario ES/PT.</div>';
-            chat.scrollTop = chat.scrollHeight;
+            val.textContent = '0.64 · Alerta Drift';
+            log.innerHTML = '<div class="audit-list"><span>• Unit tests solo validan JSON, no idioma ni glosario</span><span>• Modelo chico rinde ≥0.90 en simples, falla en Legal</span></div>';
+            if (!fb.classList.contains('fb-wrong') && !fb.classList.contains('fb-right')) {
+                fb.textContent = 'Con el diagnóstico claro, elegí entre Opción A, B o C arriba.';
+            }
         }
 
         function applyDriftFix() {
             driftSimRunning = false;
-            document.getElementById('btn-fix-drift').disabled = true;
+            document.getElementById('btn-run-drift').disabled = true;
             const val = document.getElementById('sim-drift-val');
             const log = document.getElementById('sim-drift-log');
-            const chat = document.getElementById('chat-c2');
 
             val.style.color = 'var(--color-green)';
-            val.textContent = '0.95 (OK)';
-            log.textContent = 'Routing selectivo (modelo chico donde supera 0.90 / grande en Legal) + alerta de Drift en CI/CD.';
-            chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Solución aplicada:</strong> Se frenan los errores de localización sin perder gran parte del ahorro en consultas simples.</div>';
-            chat.scrollTop = chat.scrollHeight;
+            val.textContent = '0.95 · Estabilizado';
+            log.innerHTML = 'Modelo grande en Legal + chico donde supera 0.90 + alerta de Drift en CI/CD.';
         }
 
         function chooseDriftOption(choice, btn) {
-            const chat = document.getElementById('chat-c2');
+            const fb = document.getElementById('chat-c2');
             btn.parentElement.querySelectorAll('.roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
+            fb.classList.remove('fb-wrong', 'fb-right');
             if (choice === 'a') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Volver el 100% apaga el incendio hoy, pero perdés el ahorro buscado y seguís sin Evals para detectar el próximo Drift.</div>';
+                fb.classList.add('fb-wrong');
+                fb.innerHTML = '<strong>Entrevistador (No convence):</strong> Apagás el incendio hoy, pero perdés el 60% de ahorro y seguís sin Evals para frenar el próximo Drift.';
             } else if (choice === 'b') {
                 btn.classList.add('opt-wrong');
-                chat.innerHTML += '<div class="chat-bubble mentor" style="border-color: var(--color-red); color: #fca5a5;"><strong>Entrevistador:</strong> Revisar el 100% a mano arma un cuello de botella humano más caro que el modelo grande.</div>';
+                fb.classList.add('fb-wrong');
+                fb.innerHTML = '<strong>Entrevistador (No convence):</strong> Revisar el 100% a mano arma un cuello de botella humano más caro que volver al modelo grande.';
             } else {
                 btn.classList.add('opt-right');
-                chat.innerHTML += '<div class="chat-bubble pm" style="background: rgba(16,185,129,0.14); border-color: var(--color-green);"><strong>Tu respuesta:</strong> "Rollback con feature flag solo en terminología crítica, corro el Golden Dataset por categoría en Langfuse y dejo modelo chico donde supere 0.90."</div>';
+                fb.classList.add('fb-right');
+                fb.innerHTML = '<strong>Respuesta sólida (3 pasos):</strong><br><strong>1. Diagnóstico:</strong> Golden Dataset por categoría en Langfuse.<br><strong>2. Propuesta / trade-off:</strong> Feature flag a modelo grande solo en Legal (sostenés ahorro en simples).<br><strong>3. Métrica de corte:</strong> Fidelidad ≥ 0.90 por categoría + alerta automática de Drift.';
                 applyDriftFix();
             }
-            chat.scrollTop = chat.scrollHeight;
         }
 
         function resetDriftSim() {
             driftSimRunning = false;
-            document.getElementById('sim-drift-val').textContent = '0.64';
+            document.getElementById('sim-drift-val').textContent = '0.94 → 0.64';
             document.getElementById('sim-drift-val').style.color = 'var(--color-red)';
-            document.getElementById('sim-drift-log').textContent = '1° Tocá "Simular caída" para revisar el Golden Dataset.';
+            document.getElementById('sim-drift-log').textContent = 'Tocá abajo para ver qué midieron los tests.';
             document.getElementById('btn-run-drift').disabled = false;
-            document.getElementById('btn-fix-drift').disabled = true;
-            document.getElementById('chat-c2').innerHTML = '<div class="chat-bubble mentor"><strong>Entrevistador:</strong> "Ahorramos 60% y pasan los tests, pero fallan términos legales. ¿Qué hacés?"</div>';
+            const fb = document.getElementById('chat-c2');
+            fb.className = 'interview-feedback';
+            fb.textContent = 'Elegí una opción arriba para ver la devolución del entrevistador.';
             document.querySelectorAll('#slide-14 .roleplay-opt-btn').forEach(b => b.classList.remove('opt-wrong', 'opt-right'));
         }
 

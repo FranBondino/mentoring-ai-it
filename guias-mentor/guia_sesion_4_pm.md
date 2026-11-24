@@ -370,95 +370,97 @@ Probemos el criterio de la Tríada RAG sobre un caso concreto de lanzamiento. **
 - **⏱️ Tiempo estimado:** 3 Min | **🏷️ Etiquetas:** Entrevistas IT · Trade-offs · Localización → IA
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Ordenar respuestas en 3 puntos (qué mirás → qué decidís y qué resignás → cómo medís) y conectar Localización con Evals, HITL y costos multilingües.
-- **👆 Qué tocar en la Slide:** Señalá primero los 3 pasos a la izquierda y después los 3 puentes a la derecha.
+- **🎯 Qué explicás acá (En 1 frase):** Ordenar respuestas en 3 puntos (1. Diagnóstico → 2. Propuesta y trade-off → 3. Métrica de corte) y responder sobre experiencia previa conectando Localización con Evals, HITL y multilingüe.
+- **👆 Qué tocar en la Slide:** Señalá primero los 3 pasos a la izquierda y después la pregunta y los 3 puentes a la derecha.
 - **💬 La analogía ganadora:** Tu experiencia en Localización no queda afuera: es exactamente el criterio de lenguaje, calidad y coordinación que falta en muchos equipos técnicos.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Cuando vas a una entrevista de Project o Product Manager para equipos con IA, nadie espera que escribas código. Lo que buscan ver es cómo ordenás una decisión bajo incertidumbre. **[Señalá los 3 pasos a la izquierda]** Si seguís esta estructura de tres pasos no fallás: primero decís qué revisás con datos —cruzar trazas en Langfuse y hablar con usuarios— antes de pedir cambios; segundo proponés una acción concreta aclarando el *trade-off*, o sea qué dejás afuera en esa primera etapa; y tercero definís de entrada la métrica de corte para saber si sirvió.
+Entramos al bloque final de entrevistas, dividido en tres pantallas: primero vemos cómo ordenar cualquier respuesta, y después hacemos dos simulacros concretos donde yo hago de entrevistador. Cuando vas a una entrevista de Project o Product Manager para equipos con IA, nadie espera que escribas código: miran cómo decidís bajo incertidumbre. **[Señalá los 3 pasos a la izquierda]** Si seguís esta **estructura de tres pasos** no fallás: primero decís qué revisás con datos —trazas en Langfuse y charlas con usuarios— antes de pedir cambios; segundo hacés una propuesta concreta aclarando el *trade-off*, o sea qué dejás afuera hoy; y tercero definís de entrada la métrica de corte.
 
-**[Señalá los 3 conectores visuales a la derecha]** Y fijate en la tarjeta derecha cómo tu perfil de Localización encaja directo acá. Haber armado **glosarios y QA lingüístico** te da criterio para diseñar rúbricas de Evals. **Coordinar traductores y entregas** es manejar flujos *Human-in-the-Loop*, acuerdos de servicio y expectativas entre negocio y técnica. Y liderar **proyectos multilingües** te hace anticipar el gasto extra de tokens en español y portugués y cuidar sesgos culturales. Elegí uno de estos tres puentes ahora y contame en treinta segundos cómo lo conectarías con tu experiencia.
+**[Señalá la tarjeta derecha y la pregunta arriba: '¿Tenés experiencia real con productos de IA?']** Y ante la pregunta típica de si ya manejaste productos de IA, mirá cómo tu perfil de Localización encaja directo acá. Haber armado **glosarios y QA lingüístico** es definir rúbricas de Evals. **Coordinar traductores y entregas** es gestionar flujos *Human-in-the-Loop*, SLAs y negocio. Y liderar **proyectos multilingües** te hace prever el gasto extra de tokens en español y portugués y sesgos culturales. Elegí uno de estos tres puentes ahora y contame en treinta segundos cómo responderías.
 
 ### 🎛️ Cómo usar el simulador / ejemplo práctico: Práctica Oral con Puentes Visuales (Localización → IA)
-1. Pedile a Anabela que lea la estructura de 3 pasos a la izquierda (`Diagnóstico con datos → Propuesta y trade-off → Métrica de corte`) como plantilla mental antes de contestar cualquier caso.
-2. Usá los 3 conectores visuales de la derecha (`Glosarios y QA → Rúbricas Evals`, `Coordinar traductores → Flujos HITL`, `Multilingüe ES/PT → FinOps y sesgos`) y elegí uno al azar para que lo diga en 30 segundos conectado con un proyecto real suyo.
-- **Ejemplo práctico para contar:** Si el entrevistador pregunta *"¿Qué experiencia tenés evaluando calidad en IA?"*, puede responder: *"Vengo de dirigir glosarios y QA lingüístico multilingüe: definir criterios objetivos de fidelidad, ambigüedad y tono es exactamente la base para armar rúbricas de AI Evals y calibrar revisores humanos."*
+1. Repasá la plantilla de 3 pasos a la izquierda (`1. Diagnóstico con datos → 2. Propuesta y trade-off → 3. Métrica de corte`) que va a usar en las Slides 13 y 14.
+2. Leé la pregunta guía de la tarjeta derecha (`"¿Tenés experiencia real con productos de IA?"`) y pedile a Anabela que elija uno de los 3 puentes (`Glosarios y QA → Rúbricas Evals`, `Coordinar traductores → Flujos HITL` o `Multilingüe ES/PT → FinOps y sesgos`) para responder en 30 segundos con un ejemplo real suyo.
+- **Ejemplo práctico para contar:** Si preguntan *"¿Tenés experiencia real evaluando productos de IA?"*, responde: *"Vengo de dirigir glosarios y QA multilingüe: definir criterios de fidelidad, tono y ambigüedad con revisores humanos es exactamente la base para armar rúbricas de AI Evals y calibrar flujos HITL."*
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Trade-off:** Elegir qué priorizás y qué dejás de lado (por ejemplo, velocidad o costo frente a cobertura total en una primera etapa).
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Repasá los 3 pasos de la izquierda y usá los 3 puentes visuales de la derecha para practicar respuestas cortas con Anabela.
+- Repasá los 3 pasos de la izquierda y planteá la pregunta de la derecha ('¿Tenés experiencia real con productos de IA?') para que Anabela elija uno de los 3 puentes y arme una respuesta de 30 segundos.
 
 ### 🔗 Puente de Conexión → Slide 13 (Caso de entrevista 1: Baja adopción y presupuesto en riesgo)
-> **"Ahora llevemos esa estructura de tres pasos a dos simulacros de entrevista donde las tres respuestas parecen razonables a primera vista. Empecemos por el primer caso en la Slide 13."**
+> **"Ahora vamos a probar esta estructura de tres pasos en dos simulacros donde yo hago de entrevistador y vos respondés como PM. Empecemos por el Caso 1 en la Slide 13."**
 
 ---
 
 ## Slide 13: Caso de entrevista 1: Baja adopción y presupuesto en riesgo
-- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Caso adopción · UX + FinOps · 3 opciones parejas
+- **⏱️ Tiempo estimado:** 4 Min | **🏷️ Etiquetas:** Caso adopción · UX + FinOps · Paso 1 y Paso 2
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Caso donde el bot funciona técnicamente pero no se adopta: la mejor opción es la B (auditar datos/entrevistas + llevarlo al flujo real con streaming + bajar costo).
-- **👆 Qué tocar en la Slide:** 1° '1. Auditar uso' → 2° Que Anabela elija entre A, B y C (gana la B).
+- **🎯 Qué explicás acá (En 1 frase):** Caso de baja adopción en 2 pasos: auditar por qué no lo usan (12s, salir de Jira, costo) y defender Opción B ordenada en Diagnóstico, Propuesta/trade-off y Métrica.
+- **👆 Qué tocar en la Slide:** Paso 1: 'Ver datos de auditoría' → Paso 2: que elija A, B o C (gana la B) y leer los 3 pasos abajo.
 - **💬 La analogía ganadora:** Si nadie usa una herramienta cara, no sirve mandar un mail obligando ni agregarle funciones: primero mirás dónde se traban.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Imaginá que el entrevistador te plantea este escenario: **[Leé el recuadro Escenario arriba]** *"Lanzamos un asistente interno hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% del equipo y Finanzas corta el presupuesto en 30 días. ¿Qué hacés?"*
+Vamos con el primer simulacro: yo hago de entrevistador y vos respondés como PM usando los tres pasos. **[Leé el recuadro 'Pregunta del entrevistador' arriba]** *"Lanzamos un asistente hace 2 meses. Pasa las pruebas técnicas, pero solo lo usa el 12% y Finanzas lo corta en 30 días. ¿Qué hacés?"*
 
-**[Hacé clic en '1. Auditar uso' a la izquierda]** Antes de proponer soluciones mágicas, auditamos qué está pasando: el tablero cambia a **`Bajo · En riesgo`** y aparecen tres hallazgos reales —espera larga sin streaming, fricción al salir de Jira y gente usando cuentas personales—. Ahora mirá las opciones **A, B y C** a la derecha. Antes de que haga clic, Anabela, ¿cuál defenderías vos y por qué?
+Antes de elegir una solución, ¿qué investigarías primero? **[Tocá 'Ver datos de auditoría' en el Paso 1 a la izquierda]** Fijate qué aparece en el tablero: con `12% · 3 hallazgos` confirmamos que el modelo acierta, pero tiene tres frenos reales —espera de `~12s` sin streaming que hace abandonar, obligación de salir de Jira o del TMS para usarlo, y gasto alto por consulta sin *Model Routing*—.
 
-**[Debatí su respuesta y luego comentá A, C y finalmente cliqueá 'Opción B']** La **Opción A** empuja el uso unos días con un mail de dirección, pero vuelve a caer porque la fricción sigue igual. La **Opción C** pide dos meses y un modelo más caro justo cuando Finanzas corta en treinta días. En cambio al elegir la **Opción B**, fijate cómo pasa el tablero a **`Uso sostenido`**: cruzás Langfuse con entrevistas cortas, metés el asistente dentro de Jira con streaming y bajás la factura mensual con Routing y Batch.
+**[Señalá el Paso 2 a la derecha antes de cliquear]** Con estos datos sobre la mesa, Anabela, entre la **Opción A (Empujar por mail)**, **Opción B (Fricción + costo)** y **Opción C (Cambiar modelo)**, ¿cuál defenderías y por qué? **[Comentá si surge A o C, y luego cliqueá 'Opción B']** La **Opción A** sube el uso una semana a la fuerza y vuelve a caer porque la espera sigue igual. La **Opción C** pide dos meses más y un modelo más caro justo cuando Finanzas corta en treinta días. Al cliquear **Opción B**, el tablero pasa a **`Plan defendible`** y ves la respuesta ordenada en tres pasos: **1. Diagnóstico** con Langfuse y ocho charlas cortas; **2. Propuesta y trade-off** metiendo el botón en Jira con streaming y Routing sin sumar funciones nuevas; y **3. Métrica de corte** con uso semanal recurrente y costo por usuario en treinta días.
 
-### 🎛️ Cómo usar el simulador / ejemplo práctico: Simulador de Entrevista 1: Baja Adopción
-1. Leé el recuadro superior `Escenario` y dejá que Anabela piense qué revisaría primero.
-2. Tocá **'1. Auditar uso'** en el tablero izquierdo → el `12%` cambia a `Bajo · En riesgo`, muestra los hallazgos (espera sin streaming, salir de Jira, uso personal) y habilita **'2. Aplicar plan'**.
-3. Antes de tocar nada a la derecha, pedile a Anabela que elija entre **Opción A, B o C**.
-4. Si menciona A o C, podés cliquearla para mostrar en rojo la devolución del entrevistador; luego tocá **'Opción B'** → se marca en verde, dispara el plan (`Uso sostenido`) y deja la respuesta armada en el chat.
-5. Tocá **'Reiniciar'** si quieren repetir la respuesta oral desde cero.
-- **Ejemplo práctico para contar:** Diferenciar frente al entrevistador un problema de precisión del modelo de un problema de fricción en el flujo de trabajo y costo por usuario activo.
+### 🎛️ Cómo usar el simulador / ejemplo práctico: Simulador de Entrevista 1: Paso 1 (Auditoría) → Paso 2 (Respuesta)
+1. Leé el recuadro `Pregunta del entrevistador` arriba y preguntale a Anabela qué datos revisaría antes de contestar.
+2. En **Paso 1 · Investigar datos**, tocá **`Ver datos de auditoría`** → el tablero muestra **`12% · 3 hallazgos`** (espera `~12s`, salir de Jira/TMS, gasto sin Routing).
+3. En **Paso 2 · Elegir respuesta**, pedile a Anabela que elija entre **Opción A, B o C** antes de hacer clic.
+4. Probá **Opción A** o **Opción C** si hace falta mostrar en el recuadro inferior por qué no convencen; luego tocá **`Opción B`** → se abre la respuesta en **3 pasos** (`1. Diagnóstico`, `2. Propuesta / trade-off`, `3. Métrica de corte`) y el tablero izquierdo cambia a **`Plan defendible`**.
+5. Tocá **`Reiniciar`** si quieren practicar la respuesta oral de corrido sin mirar la pantalla.
+- **Ejemplo práctico para contar:** Frase modelo para decir en entrevista: *"Primero confirmo con Langfuse y ocho charlas dónde se traban; después meto el botón en Jira con streaming y Routing sin sumar features nuevas; y lo mido por uso semanal y costo por usuario en treinta días."*
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Fricción de flujo:** Obligar a la persona a salir de su herramienta diaria (Jira/TMS) para copiar y pegar textos en un chat aparte.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Tocá '1. Auditar uso' a la izquierda, dejá que Anabela elija entre Opción A, B y C a la derecha antes de probarlas, y usá 'Reiniciar' si quieren practicarlo de nuevo.
+- Leé la pregunta de arriba como entrevistador, tocá 'Ver datos de auditoría' en el Paso 1, dejá que Anabela elija entre Opción A, B o C en el Paso 2 y revisen la devolución abajo (gana la B).
 
 ### 🔗 Puente de Conexión → Slide 14 (Caso de entrevista 2: Caída silenciosa de calidad (Model Drift))
-> **"Ahí resolviste un problema de adopción y presupuesto usando UX y FinOps juntos. Vamos al segundo caso de entrevista en la Slide 14, donde se rompe la calidad justo en tu terreno de Localización."**
+> **"Ahí defendiste un caso de baja adopción combinando diagnóstico con usuarios, UX y FinOps. Pasemos ahora al Caso 2 en la Slide 14, donde se cae la calidad justo en terminología legal y sumamos una pregunta extra de cierre."**
 
 ---
 
 ## Slide 14: Caso de entrevista 2: Caída silenciosa de calidad (Model Drift)
-- **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Model Drift · Feature Flag + Routing · Extra Director
+- **⏱️ Tiempo estimado:** 5 Min | **🏷️ Etiquetas:** Model Drift · Feature Flag + Routing · Pregunta extra
 
 ### ⚡ Machete Express de 5 Segundos (Si no repasaste, mirá solo esto)
-- **🎯 Qué explicás acá (En 1 frase):** Resolver un Model Drift en terminología sin tirar todo el ahorro ni tapar con revisión manual 100%: gana la C (rollback selectivo + Evals por categoría + Routing).
-- **👆 Qué tocar en la Slide:** 1° '1. Simular caída' → 2° Debatir A, B y C (gana C) → 3° Abrir bloque Extra abajo.
+- **🎯 Qué explicás acá (En 1 frase):** Resolver un Model Drift sin tirar todo el ahorro ni tapar con revisión manual 100%: Paso 1 ('Ver reporte de Evals') → Paso 2 (gana C en 3 pasos) + Pregunta extra.
+- **👆 Qué tocar en la Slide:** 1° 'Ver reporte de Evals' → 2° Debatir A, B y C (gana C) → 3° Abrir 'Pregunta extra' abajo.
 - **💬 La analogía ganadora:** Si un cambio de proveedor falla solo en textos legales, no frenás toda la operación ni revisás todo a mano: separás por tipo de tarea.
 
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
-Vamos con el segundo caso, bien cerca de tu especialidad: **[Leé el Escenario arriba]** *"Migramos a un modelo más barato (-60%). Los unit tests pasan, pero Localización reporta errores de glosario y quejas. ¿Qué hacés?"*
+Vamos con el segundo simulacro, bien cerca de tu especialidad. **[Leé 'Pregunta del entrevistador' arriba]** *"Pasamos a un modelo más barato (-60%). Unit tests en verde, pero Localización reporta errores de glosario legal. ¿Qué hacés?"*
 
-**[Hacé clic en '1. Simular caída' a la izquierda]** Fijate en el tablero: la fidelidad terminológica cae a **`0.64 (ALERTA)`** porque los tests tradicionales de software solo validan que llegue bien el formato JSON, no si respetó términos legales en español o portugués. Antes de cliquear a la derecha, Anabela, ¿irías por **Opción A, B o C**?
+**[Tocá 'Ver reporte de Evals' en el Paso 1 a la izquierda]** Fijate en esa aparente contradicción: los *unit tests* están en verde, pero la fidelidad del glosario cayó de `0.94` a **`0.64 · Alerta Drift`**. ¿Por qué pasó esto? Porque los tests tradicionales solo validan formato JSON, no idioma ni terminología, y además el reporte muestra que el modelo chico rinde `>= 0.90` en consultas simples y solo falla en Legal.
 
-**[Comentá A y B si surge en debate, y luego tocá 'Opción C']** Si elegís la **Opción A**, apagás el incendio pero perdés todo el ahorro y seguís sin evaluaciones. La **Opción B** —mandar revisar el 100% a mano durante un mes— sale más cara que volver al modelo grande. Al elegir la **Opción C**, el indicador sube a **`0.95 (OK)`**: revertís con *feature flag* únicamente el flujo crítico, corrés el *Golden Dataset* por categoría en Langfuse y dejás el modelo económico donde supera `0.90`. **[Si queda un minuto, abrí 'Extra: agente en 30 días sin datos limpios']** Y abajo te dejo la respuesta para cuando dirección pide un agente en 30 días sin datos ordenados: proponer un Spike de 5 días más una vía Configure/Buy en Shadow Mode.
+**[Señalá el Paso 2 a la derecha antes de cliquear]** Con ese diagnóstico, Anabela, ¿elegís **Opción A (Revertir todo)**, **Opción B (Revisión total)** u **Opción C (Rollback selectivo)**? **[Comentá A y B si surgen, y luego cliqueá 'Opción C']** Con la **Opción A** perdés el 60% de ahorro y seguís sin Evals para el próximo Drift; con la **Opción B** armás una revisión manual más cara que el modelo grande. Al tocar **Opción C**, la fidelidad vuelve a **`0.95 · Estabilizado`** y tenés la respuesta en tres pasos: **1. Diagnóstico** con el Golden Dataset por categoría en Langfuse; **2. Propuesta y trade-off** usando *feature flag* al modelo grande solo en Legal para sostener ahorro en simples; y **3. Métrica de corte** con fidelidad `>= 0.90` por categoría y alerta automática.
 
-### 🎛️ Cómo usar el simulador / ejemplo práctico: Simulador de Entrevista 2: Model Drift + Bloque Extra
-1. Leé el `Escenario` superior: ahorraron 60% pasando a modelo chico, el código pasa los tests, pero fallan términos legales.
-2. Tocá **'1. Simular caída'** → `0.64` cambia a `0.64 (ALERTA)`, el chat explica que los tests unitarios solo miran JSON y no glosario ES/PT, y se habilita **'2. Rollback + Routing'**.
-3. Debatí con Anabela entre **Opción A, B y C** antes de cliquear. Mostrá las objeciones de A o B si hace falta, y tocá **'Opción C'** → se marca en verde y la fidelidad sube a `0.95 (OK)`.
-4. Tocá abajo a la izquierda **'Extra: agente en 30 días sin datos limpios'** para desplegar cómo negociar un pedido urgente sin prometer fechas imposibles (`Spike de 5 días + Configure/Buy + Shadow Mode`).
-- **Ejemplo práctico para contar:** Cambio de proveedor o modelo económico que rompe terminología de glosario bajo NDA sin disparar errores de código: la salida es segmentar por categoría en Langfuse en vez de revertir todo a ciegas.
+**[Abrí 'Pregunta extra' abajo a la izquierda]** Y para cerrar, una repregunta común de dirección: *"Nos piden sacar un agente en 30 días pero los datos no están ordenados"*. La respuesta clara es: no prometo producción en treinta días; propongo un Discovery Spike de cinco días con treinta casos reales, una vía Buy/Configure y salida en Shadow Mode.
+
+### 🎛️ Cómo usar el simulador / ejemplo práctico: Simulador de Entrevista 2: Paso 1 (Evals) → Paso 2 (Rollback selectivo) + Extra
+1. Leé la `Pregunta del entrevistador` arriba marcando el contraste entre `UNIT TESTS: PASS` y los reclamos de Localización.
+2. En **Paso 1 · Revisar Evals**, tocá **`Ver reporte de Evals`** → pasa a **`0.64 · Alerta Drift`** y explica que los unit tests miran JSON y que el modelo chico rinde `≥ 0.90` en simples, pero falla en Legal.
+3. En **Paso 2 · Elegir respuesta**, debatan **Opción A, B y C** antes de cliquear. Tocá **`Opción C`** → el panel inferior explica los **3 pasos** (`1. Diagnóstico`, `2. Propuesta / trade-off`, `3. Métrica de corte`) y el tablero izquierdo sube a **`0.95 · Estabilizado`**.
+4. Tocá abajo a la izquierda **`Pregunta extra: "Piden agente en 30 días sin datos"`** para desplegar la respuesta sobre `Spike de 5 días + Buy/Configure + Shadow Mode`, o tocá **`Reiniciar`** para repetir.
+- **Ejemplo práctico para contar:** Frase modelo en entrevista: *"Dejo el ahorro donde las métricas por categoría en Langfuse superan 0.90 y hago rollback con feature flag solo en glosario legal, sumando alerta de Drift."*
 
 ### 💡 Explicación en Palabras Simples de los Términos Técnicos (Para explicar fácil a Anabela)
 - **Routing por categoría:** Dejar el modelo económico donde las pruebas dan arriba de 0.90 y mantener el modelo grande en los casos donde el detalle importa.
 
 ### ⚡ Dinámica / Interacción en Pantalla
-- Tocá '1. Simular caída' a la izquierda, debatan A, B y C a la derecha (gana la C), y abrí 'Extra: agente en 30 días sin datos limpios' abajo.
+- Leé la pregunta de arriba, tocá 'Ver reporte de Evals' en el Paso 1, debatan A, B y C en el Paso 2 (gana C) y abrí la 'Pregunta extra' abajo a la izquierda.
 
 ### 🔗 Puente de Conexión → Slide 15 (Cierre del programa y próximos pasos)
-> **"Excelente. Ya practicaste los dos casos más comunes de producto IA y viste todas las piezas técnicas y de negocio. Cerremos el programa viendo cómo seguir este mes en la Slide 15."**
+> **"Excelente. Ya practicaste cómo responder preguntas de producto IA con datos, trade-offs y métricas concretas. Cerremos el programa viendo tus próximos pasos para este mes en la Slide 15."**
 
 ---
 
@@ -473,7 +475,7 @@ Vamos con el segundo caso, bien cerca de tu especialidad: **[Leé el Escenario a
 ### 🗣️ Guion Paso a Paso (En 3 Bloques Cortos)
 Llegamos al cierre de las cuatro sesiones, Anabela. **[Señalá las cuatro tarjetas S1 a S4]** Mirá todo el recorrido que armaste: arrancaste entendiendo cómo trabaja ingeniería en S1, cómo buscan contexto los LLMs y RAG en S2, cómo operan los agentes ReAct con MCP y revisión humana en S3, y hoy sumaste FinOps, Build vs. Buy, salida controlada, Evals en Langfuse y defensa en entrevistas.
 
-**[Señalá el bloque central 'Próximo mes · 4 pasos simples']** Para que todo esto te quede firme sin abrumarte, tenés un plan concreto de cuatro semanas: en la Semana 1 bajá a una página tu caso práctico usando el Mock PRD y la cuenta de TCO; en la Semana 2 actualizá CV y LinkedIn conectando Localización con proyectos de IA; en la Semana 3 practicá contar en dos minutos el flujo que viste en Antigravity con AWS MCP; y en la Semana 4 volvé al Simulador S4 y practicá defender los dos casos sin mirar la respuesta.
+**[Señalá el bloque central 'Próximo mes · 4 pasos simples']** Para que todo esto te quede firme sin abrumarte, tenés un plan concreto de cuatro semanas: en la Semana 1 bajá a una página tu caso práctico usando el Mock PRD y la cuenta de TCO; en la Semana 2 actualizá CV y LinkedIn conectando Localización con proyectos de IA; en la Semana 3 practicá contar en dos minutos el flujo que viste en Antigravity con AWS MCP; y en la Semana 4 volvé al Simulador S4 y practicá defender los tres casos de entrevista sin mirar la respuesta.
 
 **[Señalá los tres botones abajo]** Si nos quedan cinco minutos, abrimos juntos el **Simulador Práctico S4** para probar una crisis de punta a punta; si no, todo te queda acá disponible junto al **Glosario Completo S4** y el **Portal Principal** para repasar antes de cualquier entrevista.
 
