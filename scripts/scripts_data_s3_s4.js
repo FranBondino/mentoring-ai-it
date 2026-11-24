@@ -919,33 +919,32 @@ const SESSION_4_DATA = {
             "title": "Ejercicio 2: Simulador de auditoría Evals",
             "duration": "4 Min",
             "tags": [
-                "Auditoría Evals",
+                "Bot de ventas",
                 "Alucinación vs Retrieval",
                 "Diagnóstico"
             ],
-            "interaction": "Tocá los 3 presets arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') y mové el slider de Relevancia para ver cómo cambia el ticket.",
-            "script": "Probemos el criterio de la Tríada RAG sobre un caso concreto de lanzamiento. **[Señalá la tarjeta izquierda]** La pregunta pide el estado de *Pagos v3* y *Checkout v4* para español y portugués. El fragmento recuperado de la base es impecable: dice que *Pagos v3* está activo y *Checkout v4* está **bloqueado en QA lingüístico PT-BR**. Pero mirá la respuesta del bot al final, resaltada en rojo: inventó que *\"mañana al mediodía se aprobará automáticamente sin más pruebas\"*.\n\n**[Señalá el preset activo 'Alucinación' arriba a la derecha]** En el primer escenario la **Precisión del contexto** es `1.0` porque el buscador hizo bien su trabajo, pero la **Fidelidad** cae a `0.2`. Resultado: **`RECHAZADO (70%)`** y el ticket va derecho a **Prompt / Temperatura 0.0 / Guardrail**.\n\n**[Hacé clic en 'Fallo Retrieval']** Ahora mirá qué pasa si el problema fuera al revés: Fidelidad alta (`0.9`) pero Contexto en `0.3` porque la base devolvió un manual viejo. Sigue rechazado (`67%`), pero cambia por completo el equipo asignado: **Ticket para Chunking / Metadatos / Vector DB**. **[Hacé clic en 'Sana' y luego bajá manualmente el slider 3 'Relevancia' a 0.5]** En **`Sana`** todo da `0.95` y pasa a Canary, mientras que si solo bajamos **Relevancia** ves el tercer ticket posible para ajustar formato e instrucción.",
+            "interaction": "Tocá los 3 botones arriba a la derecha ('Alucinación', 'Fallo Retrieval', 'Sana') viendo cómo cambian el catálogo recuperado, la respuesta del bot de ventas y el ticket; luego bajá el slider 3 'Relevancia'.",
+            "script": "Probemos el criterio de la Tríada RAG con un ejemplo bien simple del día a día: un **bot de ventas** de una tienda. **[Señalá la tarjeta izquierda]** Un cliente pregunta: *\"¿La Notebook Air 14 tiene stock y envío gratis?\"*. En este primer caso el fragmento del catálogo recuperado es exacto: dice que sale `$900 USD` y que el envío gratis corre recién **desde `$1.000 USD`**. Pero mirá la frase en rojo al final de la respuesta del bot: por quedar amable con el cliente, inventó que incluye **envío gratis a todo el país y 20% de descuento hoy**.\n\n**[Señalá el botón activo 'Alucinación' arriba a la derecha]** Acá la **Precisión del contexto** es `1.0` porque el buscador trajo la ficha correcta, pero la **Fidelidad** cae a `0.2`. Veredicto: **`RECHAZADO (70%)`** y el ticket va derecho a **Prompt / Temperatura 0.0 / Guardrail** para frenar promesas comerciales falsas.\n\n**[Hacé clic en 'Fallo Retrieval']** Ahora mirá qué pasa cuando cambia el escenario a la izquierda: el buscador recuperó un fragmento sobre **horarios de sucursales y cambios**, no la ficha de la notebook. El bot no inventó nada (`Fidelidad 0.9`), pero faltó el dato (`Contexto 0.3`). Sigue rechazado (`67%`), pero el ticket no va al prompt: va a **Chunking / Metadatos / Vector DB**. **[Hacé clic en 'Sana' y luego bajá manualmente el slider 3 'Relevancia' a 0.5]** En **`Sana`** responde exacto aclarando que el envío gratis aplica desde `$1.000 USD` (`APROBADO PARA CANARY 95%`), y si bajamos **Relevancia** ves el tercer ticket posible para ajustar formato e instrucción.",
             "simulatorGuide": {
-                "title": "Calificador Interactivo Tríada RAG (Presets + Sliders)",
+                "title": "Calificador Interactivo Tríada RAG sobre un Bot de Ventas",
                 "steps": [
-                    "Leé primero la tarjeta izquierda: el fragmento dice explícitamente que *Checkout v4* está bloqueado en QA PT-BR, pero al final del texto del bot aparece la frase marcada en rojo (*\"mañana al mediodía se aprobará automáticamente\"*).",
-                    "Con el preset **'Alucinación'** activo (`0.2 / 1.0 / 0.9`) → marca `RECHAZADO (70%)` y asigna ticket a `Prompt / Temperatura 0.0 / Guardrail`.",
-                    "Tocá **'Fallo Retrieval'** (`0.9 / 0.3 / 0.8`) → marca `RECHAZADO (67%)` y deriva a `Chunking / Metadatos / Vector DB` (sin tocar el prompt).",
-                    "Tocá **'Sana'** (`0.95 / 0.95 / 0.95`) → cambia a verde `APROBADO PARA CANARY (95%)`.",
-                    "Con los otros dos en `0.95`, bajá manualmente el 3er slider (`3. Relevancia`) a `0.5` → muestra el 3er veredicto posible: `Baja Relevancia (< 0.80): Ticket para ajustar formato e instrucción de respuesta`."
+                    "Leé la tarjeta izquierda con **'Alucinación'** activo: el catálogo aclara envío gratis desde `$1.000 USD`, pero el bot promete en rojo envío gratis y `20%` de descuento (`0.2 / 1.0 / 0.9` → `RECHAZADO 70%`, ticket a `Prompt / Temperatura 0.0 / Guardrail`).",
+                    "Tocá **`Fallo Retrieval`** → cambian el fragmento y la respuesta a la izquierda (el buscador trajo horarios de sucursales en lugar del producto: `0.9 / 0.3 / 0.8` → `RECHAZADO 67%`, ticket a `Chunking / Metadatos / Vector DB`).",
+                    "Tocá **`Sana`** → cambia el texto a verde (`0.95 / 0.95 / 0.95`, aclarando que el envío gratis aplica desde `$1.000 USD` → `APROBADO PARA CANARY 95%`).",
+                    "Con los otros dos en `0.95`, bajá manualmente el 3er slider (`3. Relevancia`) a `0.5` → muestra el 3er ticket posible: `Baja Relevancia (< 0.80): Ticket para ajustar formato e instrucción de respuesta`."
                 ],
-                "example": "En la diaria del equipo, cuando alguien reporta \"el bot se equivocó\", este criterio te permite abrir el ticket en la fila correcta (base vectorial vs. prompt vs. formato) sin ida y vuelta."
+                "example": "Cuando en tienda online o soporte alguien dice \"el bot mintió un descuento o no encontró el precio\", este esquema separa al instante si falló el catálogo indexado (Retrieval) o si el modelo inventó una promoción (Fidelidad)."
             },
             "bridge": "Ahora bien: cuando este sistema ya está corriendo en producción todos los días, ¿en qué pantalla abrís cada consulta para ver esos datos sin depender de un desarrollador? Vamos a la Slide 11 para ver Langfuse.",
             "cheatSheet": {
-                "idea": "Distinguir con los 3 presets cuándo el problema es del prompt (Fidelidad) y cuándo es del buscador (Contexto).",
-                "clicks": "Tocá 'Alucinación', 'Fallo Retrieval', 'Sana' y mové el slider 3.",
-                "analogy": "Es separar si alguien contestó mal porque le dieron la fotocopia equivocada (Contexto) o porque inventó fuera de la hoja (Fidelidad)."
+                "idea": "Usar un bot de ventas (Notebook $900 vs envío gratis desde $1.000) para distinguir al instante si inventó el modelo (Fidelidad) o si falló el buscador (Retrieval).",
+                "clicks": "Tocá 'Alucinación', 'Fallo Retrieval', 'Sana' viendo cambiar el ejemplo a la izquierda y mové el slider 3.",
+                "analogy": "Es separar si el vendedor inventó un descuento de la nada (Fidelidad) o si alguien le alcanzó la planilla equivocada de horarios en vez de la lista de precios (Contexto)."
             },
             "plainTerms": [
                 {
                     "term": "Diagnóstico de causa raíz",
-                    "simple": "Identificar si el error salió del buscador vectorial o del modelo antes de abrir una tarea en Jira."
+                    "simple": "Identificar si el error salió del buscador del catálogo o del modelo antes de abrir una tarea en Jira."
                 }
             ]
         },

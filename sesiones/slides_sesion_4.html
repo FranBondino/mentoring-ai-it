@@ -1359,23 +1359,23 @@
         <!-- SLIDE 10: INTERACTIVE EVALS CHECKER (EXERCISE 2) -->
         <div class="slide" id="slide-10">
             <h2 class="slide-title">Ejercicio 2: Simulador de auditoría Evals</h2>
-            <p class="slide-subtitle">Probá los 3 escenarios o mové los controles para distinguir fallas del modelo frente a fallas del buscador.</p>
+            <p class="slide-subtitle">Probá los 3 escenarios sobre un bot de ventas o mové los controles para distinguir fallas del modelo frente al buscador.</p>
 
             <div class="grid-2">
                 <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 0.9rem;">
                     <div>
                         <p style="font-size: 0.85rem; color: #fde68a; margin-bottom: 0.75rem; line-height: 1.45;">
-                            <strong>Pregunta:</strong> "¿Estado de Pagos v3 y Checkout v4 para ES y PT?"
+                            <strong>Cliente (Bot de ventas):</strong> "¿La Notebook Air 14 tiene stock y envío gratis?"
                         </p>
-                        <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem;">1. FRAGMENTO RECUPERADO</span>
-                        <div style="font-size: 0.8rem; font-family: monospace; background: rgba(0,0,0,0.34); padding: 0.7rem 0.9rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); margin-bottom: 0.9rem; color: #cbd5e1; line-height: 1.48;">
-                            - Pagos v3: Activo en Producción (EN, ES, PT).<br>
-                            - Checkout v4: Bloqueado en QA lingüístico (PT-BR).
+                        <span class="pill-tag" style="background: rgba(59,130,246,0.12); color: var(--color-blue); border-color: rgba(59,130,246,0.3); margin-bottom: 0.45rem;">1. FRAGMENTO DEL CATÁLOGO</span>
+                        <div id="eval-context-box" style="font-size: 0.8rem; font-family: monospace; background: rgba(0,0,0,0.34); padding: 0.7rem 0.9rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); margin-bottom: 0.9rem; color: #cbd5e1; line-height: 1.48;">
+                            - Notebook Air 14: Con stock ($900 USD).<br>
+                            - Envío gratis: solo en compras desde $1.000 USD.
                         </div>
 
                         <span class="pill-tag" style="background: rgba(139,92,246,0.12); color: #c4b5fd; border-color: rgba(139,92,246,0.3); margin-bottom: 0.45rem;">2. RESPUESTA DEL BOT</span>
-                        <div style="font-size: 0.85rem; background: rgba(255,255,255,0.03); padding: 0.8rem 0.95rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.5; color: #ffffff;">
-                            "Pagos v3 está activo en producción (EN, ES, PT). Checkout v4 sigue bloqueado en revisión de QA. <span style="background: rgba(239,68,68,0.2); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además, mañana al mediodía se aprobará automáticamente sin más pruebas.</span>"
+                        <div id="eval-answer-box" style="font-size: 0.85rem; background: rgba(255,255,255,0.03); padding: 0.8rem 0.95rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); line-height: 1.5; color: #ffffff;">
+                            "Sí, tenemos stock de la Notebook Air 14 a $900 USD. <span style="background: rgba(239,68,68,0.2); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además incluye envío gratis a todo el país y 20% de descuento hoy.</span>"
                         </div>
                     </div>
                 </div>
@@ -1395,7 +1395,7 @@
 
                     <div>
                         <div class="calculator-row">
-                            <span class="calculator-label">1. Fidelidad al manual (sin inventos):</span>
+                            <span class="calculator-label">1. Fidelidad al catálogo (sin inventos):</span>
                             <span class="score-indicator" id="eval-fidelidad-val">0.2</span>
                         </div>
                         <input type="range" min="0" max="1" step="0.1" value="0.2" class="calculator-slider" id="eval-fidelidad" oninput="calculateEval()">
@@ -1967,18 +1967,26 @@
                 btn.parentElement.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
             }
+            const ctxBox = document.getElementById('eval-context-box');
+            const ansBox = document.getElementById('eval-answer-box');
             if (preset === 'hallucination') {
                 document.getElementById('eval-fidelidad').value = 0.2;
                 document.getElementById('eval-contexto').value = 1.0;
                 document.getElementById('eval-relevancia').value = 0.9;
+                if (ctxBox) ctxBox.innerHTML = '- Notebook Air 14: Con stock ($900 USD).<br>- Envío gratis: solo en compras desde $1.000 USD.';
+                if (ansBox) ansBox.innerHTML = '"Sí, tenemos stock de la Notebook Air 14 a $900 USD. <span style="background: rgba(239,68,68,0.2); color: #fca5a5; padding: 1px 5px; border-radius: 4px; border-bottom: 1px dashed #ef4444;">Además incluye envío gratis a todo el país y 20% de descuento hoy.</span>"';
             } else if (preset === 'retrieval') {
                 document.getElementById('eval-fidelidad').value = 0.9;
                 document.getElementById('eval-contexto').value = 0.3;
                 document.getElementById('eval-relevancia').value = 0.8;
+                if (ctxBox) ctxBox.innerHTML = '<span style="color: #fca5a5;">- Horarios de sucursales: Lun a Vie 9 a 18 hs.<br>- Cambios: dentro de 30 días con ticket.</span>';
+                if (ansBox) ansBox.innerHTML = '"Nuestras sucursales abren de 9 a 18 hs y aceptamos cambios en 30 días. No tengo el dato de stock ni envío de ese modelo."';
             } else {
                 document.getElementById('eval-fidelidad').value = 0.95;
                 document.getElementById('eval-contexto').value = 0.95;
                 document.getElementById('eval-relevancia').value = 0.95;
+                if (ctxBox) ctxBox.innerHTML = '- Notebook Air 14: Con stock ($900 USD).<br>- Envío gratis: solo en compras desde $1.000 USD.';
+                if (ansBox) ansBox.innerHTML = '"Sí, la Notebook Air 14 tiene stock a $900 USD. <span style="background: rgba(16,185,129,0.18); color: #6ee7b7; padding: 1px 5px; border-radius: 4px;">El envío gratis aplica desde $1.000 USD, así que este pedido lleva costo de envío.</span>"';
             }
             calculateEval();
         }
